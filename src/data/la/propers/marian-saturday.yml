@@ -1,0 +1,168 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Sanctæ Mariæ Sabbato (2026-09-05). Same collect text as the
+# Suffragium's own "De Beata Maria" (lauds-suffrage-bvm.yml) -- real
+# practice reuses it for both purposes.
+collect:
+  text: |
+    Orémus.
+    Concéde nos fámulos tuos, quǽsumus, Dómine Deus, perpétua mentis et córporis sanitáte gaudére: et, gloriósa beátæ Maríæ semper Vírginis intercessióne, a præsénti liberári tristítia, et ætérna pérfrui lætítia.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Matins hymn for Marian Saturday ("Quem terra, pontus, æthera" / "The
+# God whom earth, and sea, and sky") — live-verified against Divinum
+# Officium (Monastic Tridentinum 1617, Matins, 2026-10-03, a plain
+# Sanctæ Mariæ Sabbato ~ Simplex day) directly via the CGI instance.
+# Self-contained with its own closing doxology stanza baked in (unlike
+# the plain weekday ferial hymns, whose doxology is split out and
+# reattached seasonally) — same convention as every other per-feast
+# Matins hymn (see e.g. matins-hymn-common-of-an-apostle.yml); this
+# feast's own doxology ("Glória tibi, Dómine, Qui natus es de Vírgine...")
+# is also independently wired via hymn-doxology-by-feast.yml's
+# `marian-saturday: hymn-doxology-nat` entry for any hour that does split
+# its doxology out (e.g. Lauds), so the two mechanisms agree.
+matins-hymn:
+  text: |-
+    Quem terra, pontus, ǽthera
+    Colunt, adórant, prædicant,
+    Trinam regéntem máchinam,
+    Claustrum Maríæ bájulat.
+
+    Cui luna, sol, et ómnia
+    Desérviunt per témpora,
+    Perfúsa cæli grátia,
+    Gestant puéllæ víscera.
+
+    Beáta Mater múnere,
+    Cujus supérnus ártifex
+    Mundum pugíllo cóntinens,
+    Ventris sub arca clausus est.
+
+    Beáta cæli núntio,
+    Fœcúnda sancto Spíritu,
+    Desiderátus géntibus,
+    Cujus per alvum fusus est.
+
+    Glória tibi, Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-10-03 (a plain Sanctæ Mariæ Sabbato ~ Simplex day).
+# Identical text to lauds-capitulum-nativity-bvm.yml — the same Common-
+# of-the-BVM chapter reused by both, not a coincidence.
+lauds-capitulum:
+  text: Ab inítio et ante sǽcula creáta sum, et usque ad futúrum sǽculum non désinam, et in habitatióne sancta coram ipso ministrávi.
+  citation: Sir 24:14
+  status: verified
+
+# Lauds hymn for Marian Saturday ("O gloriósa Dómina" / "O glorious
+# lady!") — live-verified against Divinum Officium (Monastic Tridentinum
+# 1617), Lauds live query, 2026-10-03 (a plain Sanctæ Mariæ Sabbato ~
+# Simplex day). Already the pre-Urban VIII text (this project's own
+# standing preference — see this project's design notes) as the reference source's own
+# default, not a separate choice made here.
+#
+# Fixed 2026-09-04: this text used to live at `lauds-hymn-saturday` (the
+# plain ferial-weekday id), on the reasoning that "a genuinely per-annum
+# unprivileged Saturday isn't achievable" — true for the *hymn*, but
+# `lauds-hymn-saturday.yml`'s own sibling capitulum/responsory/versicle
+# files turned out to be live-verified from a *different*, privileged
+# (Lenten Ember) Saturday, not this one — so reusing the ferial id for
+# just the hymn was silently gluing together content from two different
+# real occasions. Given a real `marian-saturday` id now exists to hold
+# the hymn on its own, moved here; see calendar/index.ts's
+# applyMarianSaturday and hours/resolve-common.ts's
+# ALWAYS_OVERRIDE_TEMPORAL_IDS for how this id actually gets selected.
+#
+# Closing doxology stanza intentionally omitted — handled seasonally via
+# hymn-doxology.ts, which already resolves this feast's own doxology
+# ("Glória tibi, Dómine, Qui natus es de Vírgine...") through
+# hymn-doxology-by-feast.yml's `marian-saturday: hymn-doxology-nat` entry.
+lauds-hymn:
+  text: |
+    O gloriósa Dómina,
+    Excélsa super sídera:
+    Qui te creávit, próvide
+    Lactásti sacro úbere.
+
+    Quod Heva tristis ábstulit,
+    Tu reddis almo gérmine:
+    Intrent ut astra flébiles,
+    Cæli fenéstra facta es.
+
+    Tu Regis alti jánua,
+    Et porta lucis fúlgida:
+    Vitam datam per Vírginem,
+    Gentes redémptæ, pláudite.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-10-03 (a plain Sanctæ Mariæ Sabbato ~ Simplex day).
+# Identical text to lauds-responsory-nativity-bvm.yml — the same Common-
+# of-the-BVM responsory reused by both, not a coincidence.
+lauds-responsory:
+  text: |
+    R.br. Ave María, grátia plena, * Dóminus tecum.
+    R. Ave María, grátia plena, * Dóminus tecum.
+    V. Benedícta tu in muliéribus, et benedíctus fructus ventris tui
+    R. Dóminus tecum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ave María, grátia plena, * Dóminus tecum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-10-03 (a plain Sanctæ Mariæ Sabbato ~ Simplex day).
+lauds-versicle:
+  text: |-
+    V. Benedícta tu in muliéribus.
+    R. Et benedíctus fructus ventris tui.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Sanctæ Mariæ Sabbato (2026-09-05).
+benedictus-antiphon:
+  text: 'Beáta Dei Génitrix * María, Virgo perpétua, templum Dómini, sacrárium Spíritus Sancti, sola sine exémplo placuísti Dómino nostro Jesu Christo: ora pro pópulo, intérveni pro clero, intercéde pro devóto femíneo sexu.'
+  status: verified
+  temporal: true
+
+# Corrected 2026-09-04, per direct instruction: this override previously
+# swapped in the real historical proper psalms (92, 99, 62 — the Common-
+# of-the-BVM's own Lauds psalm set, same numbers used by any duplex-majus+
+# feast's own psalmody override elsewhere in this store), not just the
+# antiphons. Per the user's own explicit design for Marian Saturday
+# ("keep the ferial psalmody but use marian antiphons... we don't want to
+# go little-office"), this now instead keeps plain ferial Saturday's own
+# psalm groups/canticle unchanged (see data/hours/lauds-antiphons.yml's
+# `saturday:` entry — Ps 50, Ps 142, the Canticle of Moses/Deuteronomy
+# split in two, then the Laudate psalms) and only swaps the antiphon text
+# atop them.
+#
+# Ferial Saturday has only 2 psalm-group antiphon slots (plus canticle,
+# plus laudate = 4 total), one fewer than the 3-psalm-group Common-of-BVM
+# pattern this override used to carry — so only the first 2 of the 3
+# already-authored proper antiphons ("Dum esset Rex", "Læva ejus") have a
+# slot to attach to here; the third ("Nigra sum, sed formósa...", live-
+# verified same session) is currently unused. Applies unconditionally
+# whenever Marian Saturday wins the day (see calendar/index.ts's
+# applyMarianSaturday) — not gated by the duplex-majus+ rank threshold the
+# sanctoral overrides use, since Marian Saturday isn't itself ranked in
+# competition with the weekday default the way a saint is.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 50
+      antiphon: Dum esset Rex * in accúbitu suo, nardus mea dedit odórem suavitátis.
+    - psalms:
+        - 142
+      antiphon: Læva ejus * sub cápite meo, et déxtera illíus amplexábitur me.
+  canticle:
+    id: canticum-moysis-deuteronomii
+    split: 32
+    antiphon: 'Jam hiems tránsiit, * imber ábiit et recéssit: surge, amíca mea, et veni.'
+  laudate:
+    antiphon: Speciósa * facta es et suávis in delíciis tuis, sancta Dei Génitrix.

@@ -1,0 +1,37 @@
+collect:
+  text: |
+    Let us pray.
+    Almighty and merciful God, of Whose only gift it cometh that thy faithful people do unto thee true and laudable service, grant, we beseech thee, that we may so faithfully serve thee in this life, that we fail not finally to attain thy heavenly promises.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+benedictus-antiphon:
+  text: 'Master, what shall I do * to inherit eternal life? He said unto him: What is written in the law? How readest thou? And he, answering, said: Thou shalt love the Lord thy God with all thy heart, alleluia.'
+  status: verified
+
+magnificat-antiphon:
+  text: A certain man went down from Jerusalem * to Jericho, and fell among thieves, which stripped him of his raiment, and wounded him, and departed, leaving him half dead.
+  status: verified
+
+nocturn-readings:
+  readings:
+    - nocturn: 3
+      isGospel: true
+      citation: Luke 10:23-37
+      text: 'At that time, Jesus said to His disciples: Blessed are the eyes that see what you see! For I say to you, many prophets and kings have desired to see what you see, and they have not seen it; and to hear what you hear, and they have not heard it. And behold, a certain lawyer got up to test Him, saying, Master, what must I do to gain eternal life? But He said to him, What is written in the Law? How do you read? He answered and said, You shall love the Lord your God with your whole heart, and with your whole soul, and with your whole strength, and with your whole mind; and your neighbor as yourself. And He said to him, You have answered rightly; do this and you shall live. But he, wishing to justify himself, said to Jesus, And who is my neighbor? Jesus answered and said, A certain man was going down from Jerusalem to Jericho, and he fell in with robbers, who after both stripping him and beating him went their way, leaving him half-dead. But, as it happened, a certain priest was going down the same way; and when he saw him, he passed by. And likewise a Levite also, when he was near the place and saw him, passed by. But a certain Samaritan as he journeyed came upon him, and seeing him, was moved with compassion. And he went up to him and bound up his wounds, pouring on oil and wine. And setting him on his own beast, he brought him to an inn and took care of him. And the next day he took out two denarii and gave them to the innkeeper and said, ‘Take care of him; and whatever more you spend, I, on my way back, will repay you.’ Which of these three, in your opinion, proved himself neighbor to him who fell among the robbers? And he said, He who took pity on him. And Jesus said to him, Go and do also in like manner.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: The Venerable Bede, Priest, Book 3, ch. 43 on Luke 10
+      text: |-
+        Blessed were the eyes not of Scribes and Pharisees, which saw but the Body of the Lord, but those eyes, eyes blessed indeed, which were able to see those things whereof it is written "Thou hast hid these things from the wise and prudent, and hast revealed them unto babes." Blessed are the eyes of those little ones unto whom it seemeth good in the eyes of the Son to reveal Himself and the Father also. Abraham rejoiced to see the day of Christ and he saw it, and was glad (John viii. 56). Isaiah, and Micah, and many among the Prophets, saw the glory of the Lord, wherefore also they be called Seers, but all they beheld it and hailed it afar off, seeing but as through a glass, darkly (1 Cor. xiii. 12).
+
+        Otherwise were the Apostles, who saw the Lord face to face, eating with Him, and learning from Him by asking whatsoever they listed. For them there was no need to be taught by Angels, or the shifting fabric of visions. They whom Luke doth call Prophets and kings, Matthew nameth as "Prophets and righteous men" (xiii. 17). Righteous men are indeed mighty kings, who know how to lord it over their own rebellious temptations, instead of falling under them to become their slaves.
+
+        "And, behold, a certain lawyer stood up, and tempted Him, saying Master, what shall I do to inherit eternal life?" This lawyer, who stood up to ask the Lord a tempting question touching eternal life, took the subject of his asking, as I think, from the words which the Lord had just uttered, when He said "Rejoice, because your names are written in heaven." But his attempt was a proof of the truth of that which the Lord immediately added "I thank thee, O Father, Lord of heaven and earth, that Thou hast hid these things from the wise and prudent, and hast revealed them unto babes!"
+      responsory: |-
+        R. One Seraph cried unto another: * Holy, Holy, Holy is the Lord God of hosts; * The whole earth is full of His glory.
+        V. There are Three That bear record in heaven: the Father, the Word, and the Holy Ghost, and these Three are One.
+        R. The whole earth is full of His glory.
+      status: verified

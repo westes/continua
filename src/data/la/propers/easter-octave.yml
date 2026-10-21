@@ -1,0 +1,100 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut qui paschália festa perégimus, hæc, te largiénte, móribus et vita teneámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-04-04 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Cum esset sero die illa una sabbatórum, et fores essent clausæ, ubi erant discípuli congregáti in unum, stetit Jesus in médio, et dixit eis: Pax vobis, allelúia.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-04-04 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: 'Post dies octo * jánuis clausis ingréssus Dóminus dixit eis: Pax vobis, allelúia, allelúia.'
+  status: verified
+  temporal: true
+
+# Nocturn 2-3, Sunday within the Octave of Easter / Low Sunday (temporalId
+# easter-octave). Sourced from Tempora/Pasc1-0.txt (Latin) / English/
+# Tempora/Pasc1-0.txt. See advent-1.yml/lent-1.yml for the general sweep
+# method. (Easter Sunday itself, Pasc0-0.txt, has no Nocturn 2/3 at all in
+# the source - it keeps the ancient single-nocturn, three-lesson form,
+# with no Lectio4-9 - so `easter-sunday` is a genuine, source-confirmed
+# gap, not an oversight of this pass.)
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Augustine's 1st
+# Sermon for the Octave of the Passover (Sermon 157 "de Tempore").
+# Responsory: the source's own [Responsory4] is a cross-reference to
+# Easter Sunday's own Pasc0-1:Responsory1 ("María Magdaléne, et áltera
+# María"), reused here directly.
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (John 20:19-31, the appearance to Thomas, "Et réliqua") -
+# Pope St. Gregory the Great's Homily 26 on the Gospels begins within
+# Lectio7 itself, same pattern used throughout this sweep. Combined
+# Lectio7's homily portion (incipit dropped) with Lectio8-9, using the
+# source's own [Responsory7] - again a cross-reference, to Pasc0-2:
+# Responsory2 ("De ore prudéntis procédit mel").
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Sermon 157, for the Octave of Easter
+      text: |-
+        Paschális solémnitas hodiérna festivitáte conclúditur, et ídeo hódie Neophytórum hábitus commutátur: ita tamen, ut candor, qui de hábitu depónitur, semper in corde teneátur. In qua quidem primum nobis agéndum est, ut quia pascháles dies sunt, id est, indulgéntiæ ac remissiónis, ita a nobis sanctórum diérum festívitas agátur, ut relaxatióne córporum púritas non obfuscétur: sed pótius abstinéntes ab omni luxu, ebrietáte, lascívia, demus óperam sóbriæ remissióni, ac sanctæ sinceritáti: ut, quidquid modo corporáli abstinéntia non acquírimus, méntium puritáte quærámus.
+
+        Ad omnes quidem pértinet sermo, quos cura nostra compléctitur: verúmtamen hódie termináta sacramentórum solemnitáte, vos allóquimur, novélla gérmina sanctitátis, regeneráta ex aqua et Spíritu Sancto: germen pium, exámen novéllum, flos nostri honóris, et fructus labóris, gáudium et coróna mea, omnes qui statis in Dómino. Apostólicis verbis vos álloquor: Ecce nox præcéssit, dies autem appropinquávit: abjícite ópera tenebrárum, et indúite vos arma lucis. Sicut in die honéste ambulémus: non in comessatiónibus et ebrietátibus, non in cubílibus et impudicítiis, non in contentióne et æmulatióne: sed induímini Dóminum Jesum Christum.
+
+        Habémus, inquit, certiórem prophéticum sermónem: cui bene fácitis intendéntes tamquam lucérnæ in obscúro loco, donec dies lucéscat, et lúcifer oriátur in córdibus vestris. Sint ergo lumbi vestri accíncti, et lucérnæ ardéntes in mánibus vestris: et vos símiles homínibus exspectántibus dóminum suum, quando revertátur a núptiis. Ecce dies advéniunt, in quibus Dóminus dicit: Pusíllum, inquit, et non vidébitis me, et íterum pusíllum, et vidébitis me. Hæc est hora, de qua dixit: Vos tristes éritis, sǽculum autem gaudébit: id est, vita ista tentatiónibus plena, in qua peregrinámur ab eo. Sed íterum, inquit, vidébo vos, et gaudébit cor vestrum, et gáudium vestrum nemo tollet a vobis.
+      responsory: |-
+        R. María Magdaléne, et áltera María ibant dilúculo ad monuméntum: * Jesum quem quǽritis, non est hic, surréxit sicut locútus est, præcédet vos in Galilǽam, ibi eum vidébitis, allelúia, allelúia.
+        V. Et valde mane una sabbatórum véniunt ad monuméntum, orto jam sole: et introëúntes vidérunt júvenem sedéntem in dextris, qui dixit illis.
+        R. Jesum quem quǽritis, non est hic, surréxit sicut locútus est, præcédet vos in Galilǽam, ibi eum vidébitis, allelúia, allelúia.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joannes 20:19-31
+      text: 'In illo témpore: Cum sero esset die illo, una sabbatórum, et fores essent clausæ, ubi erant discípuli congregáti propter metum Judæórum: venit Jesus, et stetit in médio, et dixit eis: Pax vobis. Et cum hoc dixísset, osténdit eis manus et latus. Gavísi sunt ergo discípuli, viso Dómino. Dixit ergo eis íterum: Pax vobis. Sicut misit me Pater, et ego mitto vos. Hæc cum dixísset, insufflávit, et dixit eis: Accípite Spíritum Sanctum: quorum remiséritis peccáta, remittúntur eis; et quorum retinuéritis, reténta sunt. Thomas autem unus ex duódecim, qui dícitur Dídymus, non erat cum eis, quando venit Jesus. Dixérunt ergo ei álii discípuli: Vídimus Dóminum. Ille autem dixit eis: Nisi vídero in mánibus ejus fixúram clavórum, et mittam dígitum meum in locum clavórum, et mittam manum meam in latus ejus, non credam. Et post dies octo, íterum erant discípuli ejus intus, et Thomas cum eis. Venit Jesus, jánuis clausis, et stetit in médio, et dixit: Pax vobis. Deínde dicit Thomæ: Infer dígitum tuum huc et vide manus meas, et affer manum tuam et mitte in latus meum: et noli esse incrédulus, sed fidélis. Respóndit Thomas et dixit ei: Dóminus meus et Deus meus. Dixit ei Jesus: Quia vidísti me, Thoma, credidísti: beáti, qui non vidérunt, et credidérunt. Multa quidem et ália signa fecit Jesus in conspéctu discipulórum suórum, quæ non sunt scripta in libro hoc. Hæc autem scripta sunt, ut credátis, quia Jesus est Christus, Fílius Dei: et ut credéntes vitam habeátis in nómine ejus.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 26 on the Gospels
+      text: |-
+        Prima lectiónis hujus evangélicæ quǽstio ánimum pulsat: quómodo post resurrectiónem corpus Domínicum verum fuit, quod clausis jánuis ad discípulos íngredi pótuit? Sed sciéndum nobis est, quod divína operátio, si ratióne comprehénditur, non est admirábilis: nec fides habet méritum, cui humána rátio præbet experiméntum. Sed hæc ipsa nostri Redemptóris ópera, quæ ex semetípsis comprehéndi nequáquam possunt, ex ália ejus operatióne pensánda sunt: ut rebus mirabílibus fidem prǽbeant facta mirabilióra. Illud enim corpus Dómini intrávit ad discípulos jánuis clausis, quod vidélicet ad humános óculos per nativitátem suam clauso exívit útero Vírginis. Quid ergo mirum, si clausis jánuis post resurrectiónem suam in ætérnum jam victúrus intrávit, qui moritúrus véniens, non apérto útero Vírginis exívit?
+
+        Sed quia ad illud corpus, quod vidéri póterat, fides intuéntium dubitábat: osténdit eis prótinus manus et latus, palpándam carnem prǽbuit, quam clausis jánuis introdúxit. Qua in re duo mira, et juxta humánam ratiónem sibi valde contrária osténdit: dum post resurrectiónem suam corpus suum incorruptíbile, et tamen palpábile demonstrávit. Nam et corrúmpi necésse est quod palpátur: et palpári non potest quod non corrúmpitur. Sed miro modo atque inæstimábili Redémptor noster et incorruptíbile post resurrectiónem, et palpábile corpus exhíbuit: ut monstrándo incorruptíbile, invitáret ad prǽmium, et præbéndo palpábile, firmáret ad fidem. Et incorruptíbilem se ergo, et palpábilem demonstrávit: ut profécto esse post resurrectiónem osténderet corpus suum et ejúsdem natúræ, et altérius glóriæ.
+
+        Dixit eis: Pax vobis. Sicut misit me Pater, et ego mitto vos: id est, sicut misit me Pater Deus Deum, et ego mitto vos homo hómines. Pater Fílium misit, qui hunc pro redemptióne géneris humáni incarnári constítuit. Quem vidélicet in mundum veníre ad passiónem vóluit: sed tamen amávit Fílium, quem ad passiónem misit. Eléctos vero Apóstolos Dóminus non ad mundi gáudia, sed sicut ipse missus est, ad passiónes in mundum mittit. Quia ergo et Fílius amátur a Patre, et tamen ad passiónem míttitur: ita et discípuli a Dómino amántur, qui tamen ad passiónem mittúntur in mundum. Itaque recte dícitur: Sicut misit me Pater, et ego mitto vos: id est, ea vos caritáte díligo, cum inter scándala persecutórum mitto, qua me caritáte Pater díligit, quem veníre ad tolerándas passiónes fecit.
+      responsory: |-
+        R. De ore prudéntis procédit mel, allelúia: dulcédo mellis est sub língua ejus, allelúia: * Favus distíllans lábia ejus, allelúia, allelúia.
+        V. Sapiéntia requiéscit in corde ejus, et prudéntia in sermóne oris illíus.
+        R. Favus distíllans lábia ejus, allelúia, allelúia.
+      status: verified

@@ -1,0 +1,40 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Quad6-3.txt,
+# [Oratio 2]. Cross-checked live against Divinum Officium (Monastic
+# Tridentinum 1617), Lauds, real date 2026-04-01 (Wednesday of Holy Week
+# that year) -- confirmed as the actual Lauds/ordinary-hours collect. This
+# day's own Vespers collect ([Oratio 3], "Réspice, quǽsumus, Dómine,
+# super hanc famíliam tuam...") is the very prayer the Triduum's Matins
+# for Maundy Thursday/Good Friday/Holy Saturday all reuse as their own
+# closing "Oratio Matutinum" -- see maundy-thursday-collect.yml -- but per
+# this app's single-collect-per-day design, Wednesday itself keeps its own
+# Lauds/ordinary-hours text here rather than that shared Vespers one.
+collect:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, qui nostris excéssibus incessánter afflígimur, per unigéniti Fílii tui passiónem liberémur:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-04-01. Matches Tempora/Quad6-3.txt's own [Ant 2_]
+# (the Monastic/plain form the live engine actually renders; the file's
+# separate [Ant 2C] "Tanto témpore vobíscum eram..." is the alternative
+# used "sed rubrica cisterciensis", not this app's own track). Mark
+# 14:37, Christ waking Peter in Gethsemane.
+benedictus-antiphon:
+  text: Simon, dormis? * non potuísti una hora vigiláre mecum?
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-04-01. Matches Tempora/Quad6-3.txt's own [Ant 3].
+# Matthew 26:73, the servant-maid's accusation of Peter in the high
+# priest's courtyard -- the Gospel episode that gives this day its
+# traditional English name "Spy Wednesday" (the day Judas the "spy"
+# bargained to betray Christ).
+magnificat-antiphon:
+  text: 'Ancílla dixit * Petro: Vere tu ex illis es: nam et loquéla tua maniféstum te facit.'
+  status: verified
+  temporal: true

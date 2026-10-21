@@ -1,0 +1,149 @@
+collect:
+  text: |
+    Let us pray.
+    O God, Who dost this day gladden us by the yearly Feast of the Exaltation of the Holy
+    Cross, grant, we beseech thee, that even as we have understood the mystery thereof
+    upon earth, so we may worthily enjoy in heaven the fruits of the redemption which was
+    paid thereon.
+    Through the same our Lord Jesus Christ, thy Son, who liveth and reigneth with thee in
+    the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+commemoration:
+  text: |
+    Ant. Thou art higher * than all cedars, whereon the Life of the world hung, whereon Christ openly triumphed, and His death trampled down death for ever.
+    V. We adore thee, O Christ, and we bless thee.
+    R. Because that through thy Cross thou hast redeemed the world.
+    Let us pray.
+    O God, Who dost this day gladden us by the yearly Feast of the Exaltation of the Holy
+    Cross, grant, we beseech thee, that even as we have understood the mystery thereof
+    upon earth, so we may worthily enjoy in heaven the fruits of the redemption which was
+    paid thereon.
+    Through the same our Lord Jesus Christ, thy Son, who liveth and reigneth with thee in
+    the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+matins-invitatory:
+  text: Come adore * Christ the King who was exalted to the cross for us.
+  status: verified
+
+benedictus-antiphon:
+  text: Thou art higher * than all cedars, whereon the Life of the world hung, whereon Christ openly triumphed, and His death trampled down death for ever.
+  status: verified
+
+magnificat-antiphon:
+  text: O blessed art thou, O Cross * thou which wast counted the only tree worthy to bear the Lord and King of heaven. Alleluia.
+  status: verified
+
+magnificat-antiphon/~-first:
+  text: 'O Cross, * surpassing all the stars in splendour, exceeding dear to all Christian people and world-renowned, holiest of earth''s treasures: which only wast counted worthy to hold aloft the Price of our Redemption: sweet is thy wood and sweet thine iron, but sweetest of all the Burden that hung on thee! O that all who come this day to celebrate thy praises may find in thee salvation. '
+  status: verified
+
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 1
+          - 2
+          - 4
+          - 5
+          - 8
+          - 14
+        antiphon: O sweet wood, O sweet nails, that bore his sweet burden, which alone were worthy to support his body.
+    versicle:
+      v: This sign of the Cross shall be in heaven.
+      r: When the Lord cometh to judgment.
+  nocturn2:
+    groups:
+      - psalms:
+          - 22
+          - 26
+          - 75
+          - 95
+          - 96
+          - 97
+        antiphon: Your rod and your staff, they have comforted me, O Lord, my God.
+    versicle:
+      v: We adore thee, O Christ, and we bless thee.
+      r: Because through thy Cross thou hast redeemed the world.
+  nocturn3:
+    antiphon: But God forbid that I should glory, save in the cross of our Lord Jesus Christ; by whom the world is crucified to me, and I to the world.
+    canticles:
+      - refs:
+          - book: hab
+            chapter: 3
+            verses: 1-6
+      - refs:
+          - book: hab
+            chapter: 3
+            verses: 7-12
+      - refs:
+          - book: hab
+            chapter: 3
+            verses: 13-19
+    versicle:
+      v: Let all the earth adore thee, and sing to thee.
+      r: Let it sing a psalm to thy name, O Lord.
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: O what a work of love was that * when Life and death died together upon the Tree.
+    - psalms:
+        - 99
+      antiphon: Save us, * O Christ the Saviour, save us through the might of thy Cross Thou Who didst save Peter when he was ready to sink in the sea, have mercy upon us.
+    - psalms:
+        - 62
+      antiphon: Behold, the Cross of the Lord! * fly, ye ranks of the adversary! The Lion of the tribe of Judah, the Root of David, hath prevailed. Alleluia.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: But us it behoveth to glory * in the Cross of our Lord Jesus Christ.
+  laudate:
+    antiphon: By thy Cross' holy sign, * Jesus, guard this soul of mine from my ghostly enemy.
+
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: O what a work of love was that * when Life and death died together upon the Tree.
+    - psalms:
+        - 110
+      antiphon: Save us, * O Christ the Saviour, save us through the might of thy Cross Thou Who didst save Peter when he was ready to sink in the sea, have mercy upon us.
+    - psalms:
+        - 111
+      antiphon: Behold, the Cross of the Lord! * Fly, ye ranks of the adversary! The Lion of the tribe of Judah, the Root of David, hath prevailed. Alleluia.
+    - psalms:
+        - 112
+      antiphon: By thy Cross' holy sign, * Jesus, guard this soul of mine from my ghostly enemy.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Chosroes of Persia, having, in the last days of the reign of the Emperor Phocas, overrun Egypt and Africa, took Jerusalem, where he slaughtered thousands of Christians and carried off to Persia the Cross of the Lord, which Helen had put upon Mount Calvary. Heraclius, the successor of Phocas, moved by the thought of the hardships and horrid outrages of war, sought for peace, but Chosroes, drunken with conquest, would not allow of it even upon unfair terms. Heraclius therefore, being set in this uttermost strait, earnestly sought help from God by constant fasting and prayer, and through His good inspiration gathered an army, joined battle with the enemy, and prevailed against three of Chosroes' chief captains, and three armies.
+
+        Chosroes was broken by these defeats, and when in his flight he was about crossing the Tigris, he proclaimed his son Medarses partner in his kingdom. Chosroes' eldest son Siroes took this slight to heart, and formed a plot to murder his father and brother, which plot he brought to effect soon after they had come home. Then he got the kingdom from Heraclius upon certain terms, whereof the first was that he should give back the Cross of the Lord Christ. The Cross therefore was received back after that it had been fourteen years in the power of the Persians, and Heraclius came to Jerusalem and bore it with solemn pomp unto the Mount whereunto the Saviour had borne it.
+
+        This event was marked by a famous miracle. Heraclius, who was adorned with gold and jewels, stayed perforce at the gateway which leadeth unto Mount Calvary, and the harder he strove to go forward, the harder he seemed to be held back, whereat both himself and all they that stood by were sore amazed. Then spake Zacharias, Patriarch of Jerusalem, saying: See, O Emperor, that it be not that in carrying the Cross attired in the guise of a Conqueror thou showest too little of the poverty and lowliness of Jesus Christ. Then Heraclius cast away his princely raiment and took off his shoes from his feet, and in the garb of a countryman easily finished his journey, and set up the Cross once more in the same place upon Calvary whence the Persians had carried it away. That the Cross had been put by Heraclius in the same place wherein it had first been planted by the Saviour caused the yearly Feast of the Exaltation of the Holy Cross to become the more famous thenceforward.
+      responsory: |-
+        R. O blessed cross, * Which alone was worthy to bear the Lord and King of the heaven.
+        V. O glorious and admirable cross, O cross to be venerated.
+        R. Which alone was worthy to bear the Lord and King of the heaven.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: John 3:1-15
+      text: 'At that time, there was a man of the Pharisees, named Nicodemus, a ruler of the Jews. This man came to Jesus by night, and said to him, "Rabbi, we know that thou art come a teacher from God; for no man can do these signs which thou dost, unless God be with him." Jesus answered, and said to him, "Amen, amen I say to thee, unless a man be born again, he cannot see the kingdom of God." Nicodemus saith to him, "How can a man be born when he is old? can he enter a second time into his mother''s womb, and be born again?" Jesus answered, "Amen, amen I say to thee, unless a man be born again of water and the Holy Ghost, he cannot enter into the kingdom of God. That which is born of the flesh, is flesh; and that which is born of the Spirit, is spirit. Wonder not, that I said to thee, you must be born again. The Spirit breatheth where he will; and thou hearest his voice, but thou knowest not whence he cometh, and whither he goeth: so is every one that is born of the Spirit." Nicodemus answered, and said to him, "How can these things be done?" Jesus answered, and said to him, "Art thou a master in Israel, and knowest not these things? Amen, amen, I say to thee, that we speak what we know, and we testify what we have seen, and you receive not our testimony. If I have spoken to you earthly things, and you believe not; how will you believe, if I shall speak to you heavenly things? And no man hath ascended into heaven, but he that descended from heaven, the Son of man who is in heaven. And as Moses lifted up the serpent in the desert, so must the Son of man be lifted up: that whosoever believeth in him, may not perish, but may have life everlasting."'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine of Hippo, Tractate 11 on John (on John 3:1-15)
+      text: |-
+        Nicodemus was one of them which believed in the Name of Jesus, when they saw the signs and wonders which He did. So hath John given us to understand a few words before our text: "Now when He was in Jerusalem at the Passover, in the feast-day, many believed in His Name." And wherefore did they believe in His Name John telleth us immediately: "When they saw the miracles which He did." And now, what saith he touching Nicodemus? "There was a man of the Pharisees, named Nicodemus, a ruler of the Jews. The same came to Jesus by night, and said unto Him Rabbi, we know that Thou art a Teacher come from God." Nicodemus therefore believed in His Name. And why did he believe He saith "For no man can do these miracles that Thou doest, except God be with him."
+
+        Lo, then, Nicodemus was one of the many which had believed in His Name, let us seek to find in Nicodemus why "Jesus did not commit Himself unto them." Jesus answered and said unto him "Amen, Amen, I say unto thee except a man be born again, he cannot see the kingdom of God." Jesus therefore committeth Himself unto such as be born again. Behold, Nicodemus and they that were with him believed in Jesus, but Jesus did not commit Himself unto them. Just so are all Catechumens they believe in the Name of Christ, but Jesus hath not yet committed Himself unto them. Now I trust ye will be good enough to pay attention, and understand what I am going to say. If ye ask of a Catechumen "Dost thou believe in Christ" he saith "I believe," and he signeth himself with the sign of the Cross. The Cross of his Lord is marked upon his forehead, and he is not ashamed of it. Behold, he believeth in the Name of Christ. But let us ask him "Dost thou eat the flesh of the Son of Man" and he knoweth not what we mean, for Jesus hath not yet committed Himself unto him.
+      status: verified

@@ -1,0 +1,84 @@
+# Verified against Divinum Officium (Latin/English "Prima Special.txt").
+# This is the Roman/secular breviary's short responsory after the chapter —
+# Monastic Prime doesn't actually have one (see prime-versicle.yml's note),
+# but it's added here by deliberate choice. "Per annum" (ordinary-time) is
+# the default verse — Pentecost's own seasonal variant happens to use the
+# same verse, since Pentecost is what the ordinary-time form is drawn from.
+#
+# Structure (verified against the real engine): R.br, then a full repeat of
+# it, then the verse, then the short response, then Gloria Patri, then a
+# final full repeat — the standard short-responsory shape.
+prime-chapter/responsory-per-annum:
+  text: |
+    R.br. Christe, Fili Dei vivi, * Miserére nobis.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+    V. Qui sedes ad déxteram Patris.
+    R. Miserére nobis.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+  status: verified
+
+# Corrected 2026-09-15 (user flagged "feels wrong", checked against source):
+# the previous text ("Justum deduxit Dominus...", Wis. 10:10) was never
+# Prime's own ordinary-time lectio brevis at all -- it's Common-of-a-
+# Confessor content (appears as a responsory/reading in Commune/C2.txt,
+# C4.txt, C5.txt, tied to the "just man" theme for confessor saints), not
+# anything Prime-specific. The real Monastic Prime "Per Annum" short
+# reading is web/www/horas/Latin/Psalterium/Special/Prima Special.txt's
+# own `[Per Annum]` tag (2 Thess 3:5) -- confirmed directly, both
+# languages, against that file and its English counterpart. `[Dominica]`
+# in the same file (1 Tim 1:17, "Regi saeculorum...") is the OTHER Prime
+# capitulum, `prime-capitulum-dominica.yml`, already correctly sourced --
+# not to be confused with this one.
+#
+# The real office still picks this reading by season (Advent/Lent/
+# Eastertide all have their own `[Adv]`/`[Quad]`/`[Pasch]` tags in the same
+# file) -- that's still milestone-4 work (see calendar season resolution).
+# This "per annum" (ordinary-time) text is used unconditionally until then.
+prime-lectio:
+  text: Dóminus autem dírigat corda et córpora nostra in caritáte Dei et patiéntia Christi.
+  citation: 2 Thess. 3:5
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), clean
+# per-annum runs (2026-08-31, a Monday with no sanctoral override — see
+# hours/terce.ts). "Capitulum Versus" in the source is one combined block:
+# the chapter, then R. Deo grátias, then a short versicle/response pair —
+# unlike Prime, the Little Hours have no separate elaborate short
+# responsory, so all of that is kept together here as one 'chapter' part.
+#
+# Per-annum only for now — real practice varies this by season (confirmed
+# by comparing against a Lenten Ember Wednesday run, which showed different
+# capitulum text entirely), but that seasonal table isn't built yet.
+terce-capitulum:
+  text: |
+    Sana me, Dómine, et sanábor: salvum me fac, et salvus ero: quóniam laus mea tu es.
+    R. Deo grátias.
+    V. Adjútor meus, esto, ne derelínquas me.
+    R. Neque despícias me, Deus, salutáris meus.
+  citation: Jer. 17:14
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), clean
+# per-annum run (2026-08-31). See terce-capitulum-per-annum.yml for the
+# combined-block structure note and the deferred-seasonal-variant caveat.
+sext-capitulum:
+  text: |
+    Alter altérius ónera portáte, et sic adimplébitis legem Christi.
+    R. Deo grátias.
+    V. Dóminus regit me, et nihil mihi déerit.
+    R. In loco páscuæ ibi me collocávit.
+  citation: Gal. 6:2
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), clean
+# per-annum run (2026-08-31). See terce-capitulum-per-annum.yml for the
+# combined-block structure note and the deferred-seasonal-variant caveat.
+none-capitulum:
+  text: |
+    Empti enim estis prétio magno. Glorificáte et portáte Deum in córpore vestro.
+    R. Deo grátias.
+    V. Ab occúltis meis munda me, Dómine.
+    R. Et ab aliénis parce servo tuo.
+  citation: 1 Cor. 6:20
+  status: verified

@@ -1,0 +1,91 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Deus, cujus providéntia in sui dispositióne non fállitur: te súpplices exorámus; ut nóxia cuncta submóveas, et ómnia nobis profutúra concédas.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-07-04 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: Atténdite * a falsis prophétis, qui véniunt ad vos in vestiméntis óvium, intrínsecus autem sunt lupi rapáces; a frúctibus eórum cognoscétis eos, allelúia.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-07-04 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: Non potest arbor * bona fructus malos fácere, nec arbor mala fructus bonos fácere. Omnis arbor quæ non facit fructum bonum, excidétur, et in ignem mittétur, allelúia.
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2027-07-03 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Unxérunt Salomónem * Sadoc sacérdos et Nathan prophéta, regem in Gihon et ascendéntes læti dixérunt: Vivat rex in ætérnum.'
+  status: verified
+  temporal: true
+
+# Nocturn 2-3, 7th Sunday after Pentecost. Sourced from Tempora/Pent07-0.txt.
+# See post-pentecost-02.yml for sweep method/responsory-reuse note.
+# Nocturn 2: St. Jerome's Epistle to Nepotian, on old age and wisdom (via
+# the figure of David and Abishag) - one continuous excerpt (Lectio4-6).
+# Nocturn 3: Lectio7 bare incipit (Matt 7:15-21, false prophets) skipped;
+# Lectio8-9 one continuous homily by St. Hilary of Poitiers, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Jerome, Priest, Epistle 2 to Nepotian
+      text: |-
+        David annos natus septuagínta, bellicósus quondam vir, senectúte frigescénte, non póterat calefíeri. Quǽritur ítaque puélla de univérsis fínibus Israël Abísag Sunamítis, quæ cum rege dormíret, et seníle corpus calefáceret. Quæ est ista Sunamítis, uxor et virgo, tam fervens, ut frígidum calefáceret; tam sancta, ut caléntem ad libídinem non provocáret? Expónat sapientíssimus Sálomon patris sui delícias, et pacíficus bellatóris viri narret ampléxus: Pósside sapiéntiam, pósside intelligéntiam. Ne obliviscáris, et ne declináveris a verbis oris mei: neque derelínquas illam, et apprehéndet te: ama illam, et servábit te.
+
+        Omnes pene virtútes córporis mutántur in sénibus, et crescénte sola sapiéntia, decréscunt cétera: jejúnia, vigíliæ, chaméuniæ, id est, super paviméntum dormitiónes, huc illúcque discúrsus, peregrinórum suscéptio, defénsio páuperum, instántia oratiónum et perseverántia, visitátio languéntium, labor mánuum unde præbeántur eleemósynæ. Et, ne sermónem lóngius prótraham, cuncta exercéntur, fracto córpore, minóra fiunt.
+
+        Nec hoc dico, quod in juvénibus et adhuc solidióris ætátis, his dumtáxat, qui labóre et ardentíssimo stúdio, vitæ quoque sanctimónia, et oratiónis ad Dóminum Jesum frequéntia, sciéntiam consecúti sunt, frígeat sapiéntia, quæ in plerísque sénibus ætáte marcéscit; sed quod adolescéntia multa córporis bella sustíneat, et inter incentíva vitiórum et carnis titillatiónes, quasi ignis in lignis virídibus suffocétur, ut suum non possit explicáre fulgórem. Senéctus vero rursus eórum qui adolescéntiam suam honéstis ártibus instruxérunt, et in lege Dómini meditáti sunt die ac nocte, ætáte fit dóctior, usu trítior, procéssu témporis sapiéntior, et véterum studiórum dulcíssimos fructus metit.
+      responsory: |-
+        R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.
+        V. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?
+        R. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 7:15-21
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Atténdite a falsis prophétis, qui véniunt ad vos in vestiméntis óvium, intrínsecus autem sunt lupi rapáces: a frúctibus eórum cognoscétis eos. Numquid cólligunt de spinis uvas, aut de tríbulis ficus? Sic omnis arbor bona fructus bonos facit: mala autem arbor malos fructus facit. Non potest arbor bona malos fructus fácere: neque arbor mala bonos fructus fácere. Omnis arbor, quæ non facit fructum bonum, excidétur et in ignem mittétur. Igitur ex frúctibus eórum cognoscétis eos. Non omnis, qui dicit mihi, Dómine, Dómine, intrábit in regnum cœlórum: sed qui facit voluntátem Patris mei, qui in cœlis est, ipse intrábit in regnum cœlórum.~'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Hilary, Bishop of Poitiers, Commentary on Matthew, Canon 6
+      text: |-
+        Blandiménta verbórum et mansuetúdinis simulatiónem ádmonet fructu operatiónis expéndi oportére; ut non qualem quis verbis réferat, sed qualem se rebus effíciat, spectémus; quia in multis vestítu óvium rábies lupína contégitur. Ergo ut spinæ uvas, ut tríbuli ficus non génerant, et ut iníquæ árbores utília poma non áfferunt; ita ne in istis quidem consístere docet boni óperis efféctum, et idcírco omnes cognoscéndos esse de frúctibus. Regnum enim cælórum sola verbórum offícia non óbtinent; neque qui díxerit: Dómine, Dómine, heres illíus erit.
+
+        Quid enim mériti est Dómino dícere, Dómine? Numquid Dóminus non erit, nisi fúerit dictus a nobis? Et quæ offícii sánctitas est nóminis nuncupátio, cum cæléstis regni iter obediéntia pótius voluntátis Dei, non nuncupátio, repertúra sit? Multi mihi dicent in illa die: Dómine, Dómine, nonne in tuo nómine prophetávimus? Etiam nunc pseudoprophetárum frauduléntiam et hypocritárum simulaménta condémnat, qui glóriam sibi ex verbi virtúte præsúmunt, in doctrínæ prophetía, et dæmoniórum fuga, et istiúsmodi óperum virtútibus.
+
+        Atque hinc sibi regnum cælórum pollicéntur: quasi vero eórum áliquid próprium sit, quæ loquúntur aut fáciunt, et non ómnia virtus Dei invocáta perfíciat; cum doctrínæ sciéntiam léctio áfferat, dæmónia Christi nomen exágitet. De nostro ígitur est beáta illa ætérnitas promerénda, præstandúmque est áliquid ex próprio, ut bonum velímus, malum omne vitémus, totóque afféctu præcéptis cæléstibus obtemperémus, ac tálibus offíciis cógniti Deo simus, agamúsque pótius quod vult, quam quod potest gloriémur.
+      responsory: |-
+        R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.
+        V. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.
+        R. Plena est omnis terra glória ejus.
+      status: verified

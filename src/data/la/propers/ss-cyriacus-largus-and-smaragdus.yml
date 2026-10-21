@@ -1,0 +1,88 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-08-08).
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos ánnua sanctórum Mártyrum tuórum Cyríaci, Largi et Smarágdi sollemnitáte lætíficas: concéde propítius; ut, quorum gaudémus méritis, accendámur exémplis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-cyriacus-largus-and-smaragdus-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (ss-cyriacus-largus-and-smaragdus-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Deus, qui nos ánnua sanctórum Mártyrum tuórum Cyríaci, Largi et Smarágdi sollemnitáte lætíficas: concéde propítius; ut, quorum gaudémus méritis, accendámur exémplis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Cyriacus, Largus, and Smaragdus's own day (2026-08-08).
+# The Benedictus antiphon.
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Matins Nocturn 2-3 readings for Ss. Cyriacus, Largus, and
+# Smaragdus, Martyrs (Aug 8) — SanctiM/08-08.txt bases `@Sancti/08-08`
+# (the whole day, no Nocturn 2/3 override) but narrows the Officium to
+# Cyriacus alone, the same "Monastic office narrows a joint feast"
+# pattern already seen for several other saints this pass (e.g.
+# `ss-vincent-and-anastasius.yml`) — the full three-martyr text is
+# used here per vu-prefer-text-over-missing (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/08-08.txt, English/Sancti/08-08.txt.
+#
+# Nocturn 2: Lectio4 (the martyrs' vita) and Lectio5-6 (St. John
+# Chrysostom's sermon, a genuinely distinct patristic source) kept
+# split.
+# Nocturn 3: Lectio7's Gospel citation (Mark 16:15-18) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so — per
+# the pre-1955 pass's convention of not transcribing bare incipits —
+# only the homily portion was originally authored (not marked
+# isGospel), combined with Lectio8-9 as one continuous excerpt of Pope
+# St. Gregory the Great's homily. No responsory given for either.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Gregory's homily) — sourced from
+# the day's own Missale [Evangelium] in
+# web/www/missa/Latin/Sancti/08-08.txt (full text given there, not a
+# redirect).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Cyríacus diaconus, cum Sisinio, Largo et Smaragdo diutius inclusus in carcere, multa édidit miracula, in quibus Arthémiam Diocletiáni filiam precibus a dæmone liberávit; missusque ad Saporem Persárum regem, Jobíam étiam ejus filiam a nefario spíritu erípuit. Rege vero ejus patre cum quadringentis ac trigínta aliis baptizatis, Romam rediit; ubi, Maximiáni imperatóris jussu comprehénsus, catenis vinctus ante rhedam suam tráhitur; et post dies quatuor e carcere edúctus, pice liquáta perfusus et in catasta exténsus, demum cum Largo et Smaragdo aliisque viginti secúri percússus est via Salaria, ad hortos Sallustiános. Quorum córpora in eádem via décimo septimo Kalendas Aprilis sepúlta a Joánne presbytero, póstea sexto Idus Augusti a Marcello Pontifice et Lucina nobili femina lineis velis involuta et pretiósis unguentis condíta, in ipsíus Lucinæ prædium via Ostiénsi, septimo ab Urbe lápide transláta sunt.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: St. John Chrysostom, Sermon 1 on the Martyrs
+      text: |-
+        Nemo est, qui nesciat, Mártyrum glorias ad hoc divino consílio a Dei pópulis frequentári, ut et illis débitus honor dicétur, et nobis virtútis exémpla, favénte Christo, monstréntur; ut, dum hæc ita celebrári perspícimus, cognoscámus quanta eos glória máneat in cælis, quorum natalítia táliter celebrántur in terris; quo possímus, étiam ipsi, tálibus provocári exémplis, virtúte pari, devotióne consímili ac fide; ut, Christo præstánte, dimicáre et víncere hostem possímus, ut, parta victória, cum iísdem Sanctis in regnis cæléstibus triumphémus.
+
+        Quis est enim, qui eórum volens mérito copulári, nisi prius constántiam eórum téneat, sectétur fidem, imitétur virtútem passiónis; eórum glóriam páribus vitæ lineaméntis aut invéniat aut exquírat? Qui, etsi martýrio par esse non possit, tamen múneris tanti dignitáte se quisque bonis áctibus dignum præbeat. Adest enim clementíssimus Deus, qui desiderántibus suis aut martýrium præbeat, aut, sine martýrio, cum Sanctis præmia divína retríbuat.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Marc 16:15-18
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Eúntes in mundum univérsum, prædicáte Evangélium omni creatúræ. Qui credíderit, et baptizátus fúerit, salvus erit: qui vero non credíderit, condemnábitur. Signa autem eos, qui credíderint, hæc sequéntur: In nómine meo dæmónia ejícient: linguis loquéntur novis: serpéntes tollent: et si mortíferum quid bíberint, non eis nocébit: super ægros manus impónent, et bene habébunt.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 29 on the Gospels (on Mark 16:15-18)
+      text: |-
+        Potest omnis creaturæ nómine omnis natio Géntium designari. Ante enim dictum fuerat: In viam Géntium ne abieritis; nunc autem dícitur: Prædicate omni creaturæ: ut scilicet prius a Judǽa Apostolórum repulsa prædicátio tunc nobis in adjutórium fieret, cum hanc illa ad damnatiónis suæ testimónium superba repulísset. Sed cum discipulos ad prædicándum Véritas mittit, quid aliud in mundo facit, nisi grana séminis spargit? Et pauca grana mittit in semine, ut multárum messium fruges recipiat ex nostra fide.
+
+        Neque étenim in universo mundo tanta fidelium messis exsúrgeret, si de manu Dómini super rationalem terram illa electa grana prædicántium non venissent. Sequitur: Qui crediderit et baptizátus fúerit, salvus erit: qui vero non credíderit, condemnábitur. Fortasse unusquísque apud semetípsum dicat: Ego jam credidi, salvus ero. Verum dicit, si fidem opéribus tenet. Vera étenim fides est, quæ in hoc, quod verbis dicit, móribus non contradicit. Hinc est enim quod de quibusdam falsis fidelibus Paulus dicit: Qui confiténtur se nosse Deum, factis autem negant.
+
+        Signa autem eos qui credituri sunt, hæc sequéntur: In nómine meo dæmónia ejícient, linguis loquéntur novis, serpéntes tollent: et si mortíferum quid bíberint, non eis nocébit: super ægros manus impónent, et bene habébunt. Numquidnam, fratres mei, quia ista signa non fácitis, minime creditis? Sed hæc necessaria in exordio Ecclésiæ fuérunt. Ut enim ad fidem crésceret multitúdo credéntium, miraculis fuerat nutriénda: quia et nos, cum arbústa plantamus, tamdiu eis aquam infúndimus, quoúsque ea in terra jam coaluisse videámus: et si semel radícem fíxerint, irrigátio cessabit. Hinc est enim quod Paulus dicit: Linguæ in signum sunt non fidelibus, sed infidelibus.
+      status: verified

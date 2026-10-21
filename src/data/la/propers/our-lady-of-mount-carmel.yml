@@ -1,0 +1,91 @@
+# Read directly from web/www/horas/Latin/Sancti/07-16.txt's own
+# [Oratio] and its English counterpart. Doxology "$Qui vivis" spelled
+# out per the convention in st-bibiana-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beatíssimæ semper Vírginis et Genetrícis tuæ Maríæ singulári título
+    Carméli órdinem decorásti: concéde propítius; ut, cujus hódie Commemoratiónem
+    solémni celebrámus offício, ejus muníti præsídiis, ad gáudia sempitérna
+    perveníre mereámur.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (our-lady-of-mount-carmel-antiphon.yml), paired with the standard BVM commemoration versicle already verified elsewhere in this app (propers/common/lauds-suffrage-bvm.yml -- 'V. Ora pro nobis sancta Dei Genitrix'). Collect is the saint's own real proper (our-lady-of-mount-carmel-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Sancta María, succúrre míseris, juva pusillánimes, réfove flébiles, ora pro pópulo, intérveni pro clero, intercéde pro devóto femíneo sexu: séntiant omnes tuum juvámen, quicúmque célebrant tuam solémnem Commemoratiónem.
+    V. Ora pro nobis sancta Dei Génitrix.
+    R. Ut digni efficiámur promissiónibus Christi.
+    Orémus.
+    Deus, qui beatíssimæ semper Vírginis et Genetrícis tuæ Maríæ singulári título
+    Carméli órdinem decorásti: concéde propítius; ut, cujus hódie Commemoratiónem
+    solémni celebrámus offício, ejus muníti præsídiis, ad gáudia sempitérna
+    perveníre mereámur.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: verified
+
+# Lauds' Benedictus antiphon, read from web/www/horas/Latin/Sancti/
+# 07-16.txt's own [Ant 2] and its English counterpart -- corrected
+# 2026-09-14: this file previously held the untagged [Ant 1] (this
+# feast's own First Vespers Magnificat antiphon, a `s/sanctam
+# festivitátem/solémnem Commemoratiónem/` substitution of Commune
+# C11's own Ant1), the same Ant1-for-Benedictus mis-tagging bug already
+# found for the Exaltation of the Holy Cross, Annunciation, Apparition
+# of the Immaculate BVM, and the Seven Sorrows (TODO.md).
+benedictus-antiphon:
+  text: Caput tuum * ut Carmélus, et comæ cápitis tui sicut púrpura Regis vincta canálibus, allelúia.
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/07-16.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast, not a Common
+# substitution.
+magnificat-antiphon:
+  text: Glória Líbani * data est ei, decor Carméli et Saron, allelúia.
+  status: verified
+
+# First Vespers Magnificat antiphon: web/www/horas/Latin/Sancti/07-16.txt's
+# own [Ant 1] (Commune/C11's [Ant 1] with "sanctam festivitátem" swapped for
+# "solémnem Commemoratiónem"). Second Vespers' [Ant 3] is
+# our-lady-of-mount-carmel-magnificat-antiphon.yml (the default); see
+# hours/resolve-common.ts's withVespersVariant. English/Sancti/07-16.txt has
+# no [Ant 1] of its own, so the English is English/Commune/C11.txt's [Ant 1]
+# with the same substitution applied by hand ("this thine holy Feast-day" ->
+# "this thy solemn Commemoration"), marked draft for that reason.
+magnificat-antiphon/~-first:
+  text: 'Sancta María, * succurre míseris, juva pusillánimes, réfove flébiles, ora pro pópulo, intérveni pro clero, intercéde pro devóto femíneo sexu: séntiant omnes tuum juvámen, quicúmque célebrant tuam solémnem Commemoratiónem.'
+  status: verified
+
+# Matins Nocturn 2 reading for Our Lady of Mount Carmel (July 16).
+# Sourced directly from web/www/horas/Latin/Sancti/07-16.txt,
+# English/Sancti/07-16.txt. Lectio4-6 combined into one reading. No
+# Lectio7-9 in her own file (only a `Responsory7` cross-reference to
+# `Commune/C11`) -- defers to the Common of the BVM's own Nocturn 3,
+# not transcribed here, same as our-lady-of-the-snows.yml's own note.
+#
+# Checked 2026-09-05 for a missing Gospel pairing: confirmed via
+# horas/Latin/Sancti/07-16.txt directly — the secular file's Rule
+# ("ex C11") gives only Lectio4-6 (this file's Nocturn 2) as proper
+# text, Lectio7-9 aren't present at all, falling wholesale to
+# Commune/C11's own Nocturn 3. horas/Latin/SanctiM/07-16.txt (Monastic
+# track) does carry its own Lectio9 Gospel (Luke 11:27-28) + St.
+# Bernard homily on it, but that whole Lectio9-12 block is tagged
+# "(rubrica cisterciensis)" — a Cistercian-only variant (unsurprising,
+# given St. Bernard), not part of the plain Monastic 1617 track vu
+# otherwise follows — so it's out of scope here. No pairing added.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Cum sacra Pentecostes die Apóstoli, cælitus afflati, variis linguis loqueréntur, et, invocato augustíssimo Jesu nómine, mira multa patrarent; viri plurimi (ut fertur), qui vestigiis sanctórum prophetárum Elíæ ac Eliséi instíterant, et Joánnis Baptistæ præconio ad Christi advéntum comparáti fuerant, rerum veritáte perspecta atque probata, evangelicam fidem conféstim amplexáti sunt, ac peculiari quodam afféctu beatíssimam Vírginem (cujus colloquiis ac familiaritate feliciter frui potuére) adeo venerari cœpérunt, ut primi ómnium in eo montis Carmeli loco, ubi Elías olim ascendentem nébulam, Vírginis typo insignem, conspexerat, eidem puríssimæ Virgini sacellum construxerint.
+
+        Ad novum ergo sacellum sæpe quotídie conveniéntes, rítibus piis, precatiónibus ac laudibus beatíssimam Vírginem, velut singularem ordinis tutelam, colebant. Quam ob rem fratres beátæ Maríæ de Monte Carmelo passim ab ómnibus appellari cœpérunt; eumque titulum summi Pontifices non modo confírmarunt, sed et indulgéntias peculiares iis, qui eo titulo vel ordinem vel fratres síngulos nuncuparent, concessére. Nec vero nomenclatúram tantum magnificentíssima Virgo tríbuit et tutelam, verum et insigne sacri scapularis; quod beato Simoni Anglico præbuit, ut cælésti hac veste ordo ille sacer dignoscerétur, et a malis ingruéntibus protegerétur. Ac demum, cum olim in Europa ordo esset ignotus, et ob id apud Honórium tertium non pauci pro illíus exstinctióne instarent, ástitit Honorio noctu piíssima Virgo Maria, planeque jussit ut institutum et hómines benígne complecterétur.
+
+        Non in hac tantum sæculo ordinem sibi tam acceptum multis prærogativis beatíssima Virgo insignívit; verum et in alio (cum ubíque et poténtia et misericórdia plurimum valeat) fílios in scapularis societátem relatos, qui abstinéntiam modicam precesque paucas eis præscriptas frequentarunt, ac pro sui status ratióne castitátem coluérunt, materno plane afféctu, dum igne purgatorii expiántur, solari ac in cælestem pátriam obtentu suo quantócius pie creditur efferre. Tot ergo tantisque beneficiis ordo cumulátus, solemnem beatíssimæ Vírginis Commemoratiónem, ritu perpetuo ad ejusdem Vírginis glóriam quotannis celebrandam, instituit.
+      status: verified

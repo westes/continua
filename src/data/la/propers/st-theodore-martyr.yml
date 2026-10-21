@@ -1,0 +1,33 @@
+# Read from the reference engine: web/www/horas/Latin/Sancti/11-09cc.txt [Oratio];
+# English from English/Sancti/11-09cc.txt.
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos beáti Theodóri Mártyris tui confessióne gloriósa circúmdas et prótegis: præsta nobis ex ejus imitatióne profícere, et oratióne fulcíri.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# No proper antiphon of his own -- standard de-Communi text and versicle for
+# common-of-a-martyr; collect is the saint's own (collect-st-theodore-martyr.yml). Not
+# independently live-verified for this category, so marked draft.
+commemoration:
+  text: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Deus, qui nos beáti Theodóri Mártyris tui confessióne gloriósa circúmdas et prótegis: præsta nobis ex ejus imitatióne profícere, et oratióne fulcíri.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Theodore, Martyr. Sourced directly from
+# web/www/horas/Latin/Sancti/11-09cc.txt, English/Sancti/11-09cc.txt.
+# single lesson (Lectio93), one continuous account.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Theodórus, miles christiánus, Maximiáno imperatóre, quod idolórum fanum incendísset, comprehénsus, cum a præfécto legiónis pœna ei remitterétur, si pœ́nitens facti christiánam fidem exsecrarétur, constánter in fídei confessióne persevérans, missus est in cárcerem. Ubi, úngulis excarnificátus, dum costæ nudaréntur, lætus canébat: Benedícam Dóminum in omni témpore. Quare, in ardéntem rogum injéctus, in oratióne et divínis láudibus ánimam Christo réddidit, quinto Idus Novémbris. Cujus corpus Eusébia matróna, síndone involútum, sepelívit in suo prǽdio.'
+      status: verified

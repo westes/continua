@@ -1,0 +1,58 @@
+# Matins Nocturn 2-3 readings for the Dedication of the Basilica of the
+# Most Holy Savior (the Lateran), Nov 9. Sourced directly from
+# web/www/horas/Latin/Sancti/11-09.txt, English/Sancti/11-09.txt.
+#
+# Nocturn 2: Lectio4-6 plus Lectio6a combined into one reading -- one
+# continuous chronological account (Pope St. Sylvester's original
+# dedication through the 1726 and 1884 restorations), no genuine source
+# break. (Lectio1-3, the Book of Revelation excerpt on the heavenly
+# Jerusalem, is left to the bible-plan store as usual, per this app's
+# split between Nocturn 1 scripture and Nocturn 2/3 patristic content.)
+# Nocturn 3: no Lectio7-9 override in this saint's own file at all (only
+# Lectio1-6a + a Commemoratio block) -- her `ex C8` Rule means these come
+# straight from the Common of a Dedication (Commune/C8.txt) instead.
+# Lectio7's Gospel citation (Luke 19:1-10) is a bare incipit ("Et
+# réliqua") with no full pericope text given, so only the homily portion
+# was originally authored (not marked isGospel), St. Ambrose's homily on
+# Zacchaeus (Lectio7's homily + Lectio8-9 combined, one continuous
+# piece). This is the *plain* C8 homily (Ambrose) — distinct from
+# dedication-of-the-basilicas-of-ss-peter-and-paul.yml's own Nocturn 3,
+# which overrides with a different homilist (Gregory's Moralia) in its
+# own file; the Lateran has no such override, so it gets the Common's
+# own default instead.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — this feast's `ex C8`
+# Rule means the Gospel, like the homily, falls to the Common of a
+# Dedication; sourced from horas/Latin/Commune/C8.txt's own
+# [Evangelium] (missa/Latin/Commune has no C8 file — the Common of a
+# Dedication only exists in the horas/office track), English/Commune/
+# C8.txt, not guessed at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Ritus, quos in consecrándis ecclésiis et altáribus Romána servat Ecclésia, beátus Silvéster Papa primus instítuit. Nam, etsi jam ab Apostolórum témpore loca fuérunt Deo dicáta, quæ a quibúsdam oratória, ab áliis ecclésiæ dicebántur, ubi colléctæ fiébant per unam sábbati, et christiánus pópulus oráre, Dei verbum audíre et Eucharístiam súmere sólitus erat; non tamen illa ádeo solémni ritu consecrabántur, nec in eis adhuc in títulum eréctum erat altáre, quod chrísmate delibútum, Dómini nostri Jesu Christi, qui altáre, hóstia et sacérdos noster est, figúram exprímeret.
+
+        Sed, ubi Constantínus imperátor per baptísmi sacraméntum sanitátem salutémque consecútus est, tum primum lege ab eo lata concéssum est toto orbe terrárum, Christiáni ut ecclésias ædificárent; quos ille, non solum edícto, sed étiam exémplo ad sacram ædificatiónem est cohortátus. Nam, et in suo Lateranénsi palátio ecclésiam Salvatóri dedicávit, et ei continéntem basílicam nómine sancti Joánnis Baptístæ cóndidit, eo loco quo ipse, baptizátus a sancto Silvéstro, ab infidelitátis lepra mundátus est; quam idem Póntifex consecrávit quinto idus novémbris. Cujus consecratiónis memória celebrátur hodiérno die, quo primum Romæ públice ecclésia consecráta est, et imágo Salvatóris, in paríete depícta, pópulo Románo appáruit.
+
+        Quod, si beátus Silvéster póstea in consecratióne altáris Príncipis Apostolórum decrévit ut deínceps nisi ex lápide altária non ædificaréntur; tamen basílicæ Lateranénsis altáre fuit e ligno eréctum. Quod mirum non est; nam, cum a sancto Petro usque ad Silvéstrum, propter persecutiónes, Pontífices certo loco consístere non possent, quocúmque eos necéssitas compulísset, sive in cryptas, sive in cœmetéria, sive in ædes piórum, super illo altári lígneo ad arcæ similitúdinem cóncavo, sacra faciébant. Quo altári sanctus Silvéster, réddita Ecclésiæ pace, honóris causa Príncipis Apostolórum, qui in illo sacrificásse dícitur, et reliquórum Pontíficum, qui usque ad id tempus ad mystéria conficiénda eo usi fúerant, in Lateranénsi prima ecclésia collocáto, sancívit ne quisquam in eo, præter Románum Pontíficem, Missam deínceps celebráret.
+
+        Eándem ecclésiam incéndiis, vastatiónibus, terræ ínsuper mótibus disjéctam eversámque, ac sédula summórum Pontíficum cura reparátam, nova póstmodum molitióne restitútam, Benedíctus décimus tértius, Póntifex máximus, órdinis Prædicatórum, die vigésima octáva aprílis anni millésimi septingentésimi vigésimi sexti, ritu solémni consecrávit, ejúsque celebritátis memóriam hac die recoléndam státuit. Quod autem Pius nonus perficiéndum censúerat, Leo décimus tértius cellam máximam, vetustáte fatiscéntem, ingénti molitióne producéndam laxandámque curávit; vetus musívum, multis jam ántea pártibus instaurátum, ad antíquum exémplar restítui et in novam ábsidem, ópere cultúque magnífico exornátam, transférri; aulam transvérsam, laqueári et contignatióne reféctis, expolíri jussit, anno millésimo octingentésimo octuagésimo quarto; sacrário, æde canonicórum, perpetuáque ad baptistérium Constantiniánum pórticu adjéctis.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 19:1-10
+      text: 'In illo témpore: Ingréssus Jesus perambulábat Jéricho. Et ecce, vir nómine Zachǽus: et hic princeps erat publicanórum, et ipse dives: et quærébat vidére Jesum, quis esset: et non póterat præ turba, quia statúra pusíllus erat. Et præcúrrens ascéndit in árborem sycómorum, ut vidéret eum; quia inde erat transitúrus. Et cum venísset ad locum, suspíciens Jesus vidit illum, et dixit ad eum: Zachǽe, festínans descénde; quia hódie in domo tua opórtet me manére. Et festínans descéndit, et excépit illum gaudens. Et cum vidérent omnes, murmurábant, dicéntes, quod ad hóminem peccatórem divertísset. Stans autem Zachǽus, dixit ad Dóminum: Ecce, dimídium bonórum meórum, Dómine, do paupéribus: et si quid áliquem defraudávi, reddo quádruplum. Ait Jesus ad eum: Quia hódie salus dómui huic facta est: eo quod et ipse fílius sit Abrahæ. Venit enim Fílius hóminis quǽrere et salvum fácere, quod períerat.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Ambrose, Commentary on Luke, Book VIII (on Luke 19:1-10)
+      text: |-
+        Zachǽus, statúra pusíllus, hoc est, nulla nobilitátis ingénitæ dignitáte sublímis, exíguus méritis sicut pópulus natiónum, audíto Dómini Salvatóris advéntu, quem sui non recéperant, vidére cupiébat. Sed nemo fácile Jesum videt; nemo potest Jesum vidére constitútus in terra. Et, quia non prophétas, non legem habébat, tamquam formæ grátiam naturális, ascéndit in sycómorum, vanitátem scílicet Judæórum vestígio suo próterens, erráta quoque córrigens superióris ætátis. Et ídeo Jesum in interióris domus recépit hospítio.
+
+        Et bene ascéndit in árborem, ut arbor bona bonos fructus fáceret, ac, naturáli excísus oleástro et contra natúram insértus in bonam olívam, fructum posset legis afférre. Radix enim sancta, etsi rami inútiles. Quorum infructuósam glóriam plebs géntium, fide resurrectiónis, quasi quadam córporis elevatióne, transcéndit. Zachǽus ergo in sycómoro, cæcus in via: quorum álterum Dóminus miseratúrus exspéctat, álterum mansiónis suæ claritáte nobílitat; álterum sanatúrus intérrogat, apud álterum se, non invitátus, invítat. Sciébat enim úberem hospítii sui esse mercédem. Sed tamen, etsi nondum vocem invitántis audíerat, jam víderat afféctum.
+
+        Verum, ne cæcum illum, tamquam fastidiósi páuperum, cito reliquísse videámur et transísse ad dívitem, exspectémus eum, quia exspectávit et Dóminus; interrogémus eum, quia interrogávit et Christus. Nos interrogémus, quia nescímus: ille, quia nóverat. Nos interrogémus, ut sciámus unde iste curátus sit: ille interrogávit, ut in uno plures discerémus unde Dóminum vidére mereámur. Interrogávit enim, ut crederémus, néminem, nisi confiténtem, posse salvári.
+      status: verified

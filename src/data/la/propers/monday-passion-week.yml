@@ -1,0 +1,36 @@
+# Transcribed from the reference engine's Mass propers (not the Office
+# file, which carries no [Oratio] of its own for this day at all -- see
+# web/www/horas/Latin/Tempora/Quad5-1.txt): the actual proper collect for
+# this day lives at web/www/missa/Latin/Tempora/Quad5-1.txt's [Oratio],
+# with the parallel English at web/www/missa/English/Tempora/Quad5-1.txt.
+# Marked `draft`, not `verified`, per this repo's convention: this is a
+# direct Missal-text transcription (with the standard "$Per Dominum"
+# closing-formula macro expanded from
+# web/www/missa/Latin/Ordo/Prayers.txt's own [Per Dominum]/English
+# equivalent), not a live Divine-Office-engine cross-check.
+collect:
+  text: |
+    Orémus.
+    Sanctífica, quǽsumus, Dómine, nostra jejúnia: et cunctárum nobis indulgéntiam propítius largíre culpárum.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-03-23 (a real Monday-of-Passion-week date confirmed
+# clean of any sanctoral collision -- title rendered exactly "Feria
+# Secunda infra Hebdomadam Passionis ~ Feria major", no commemoration).
+benedictus-antiphon:
+  text: 'In die magno * festivitátis stabat Jesus, et clamábat dicens: Si quis sitit, véniat ad me, et bibat.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-03-23 (same clean date as the sibling
+# -benedictus-antiphon.yml; title tag confirmed "Vespera de Tempore
+# occurente" -- this day's own, non-anticipated Second Vespers).
+magnificat-antiphon:
+  text: 'Si quis sitit, * véniat ad me, et bibat: et de ventre ejus fluent aquæ vivæ, dicit Dóminus.'
+  status: verified
+  temporal: true

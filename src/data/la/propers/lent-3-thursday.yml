@@ -1,0 +1,92 @@
+# Lauds collect ([Oratio 2] in the source) — read from
+# web/www/horas/{Latin,English}/Tempora/Quad3-4.txt. Names Ss. Cosmas
+# and Damian by their real stational-church titular, not a stray
+# cross-reference to their Sept. 27 feast — see
+# nocturn-readings/lent-3-thursday.yml's header for the fuller context
+# on this day's unusual Paschaltide-week-7 lesson cross-references.
+collect:
+  text: |
+    Orémus.
+    Magníficet te, Dómine, sanctórum tuórum Cosmæ et Damiáni beáta solémnitas: qua et illis glóriam sempitérnam, et opem nobis ineffábili providéntia contulísti.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Vespers collect ([Oratio 3] in the source), distinct from Lauds' own —
+# read from web/www/horas/{Latin,English}/Tempora/Quad3-4.txt.
+collect/~-vespers:
+  text: |
+    Orémus.
+    Subjéctum tibi pópulum, quǽsumus, Dómine, propitiátio cæléstis amplíficet: et tuis semper fáciat servíre mandátis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad3-4.txt's own
+# [Ant 2] and its English counterpart.
+benedictus-antiphon:
+  text: 'Exíbant autem dæmónia * a multis clamántia, et dicéntia, Quia tu es Christus Fílius Dei: et íncrepans non sinébat ea loqui, quia sciébant ipsum esse Christum.'
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad3-4.txt's own
+# [Ant 3] and its English counterpart.
+magnificat-antiphon:
+  text: Omnes qui habébant infírmos, * ducébant illos ad Jesum, et sanabántur.
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Thursday of Lent week 3 — read from
+# web/www/horas/{Latin,English}/Tempora/Quad3-4.txt, whose own
+# [Lectio1]/[Lectio2] are themselves cross-references
+# (@Tempora/Pasc7-6:Lectio1/Lectio2) to the Paschaltide-week-7 Saturday
+# file — Lenten Thursdays were only added to the ferial cycle later
+# (by Pope St. Gregory II), borrowing an existing homily rather than
+# being freshly composed, which is why the cross-reference reaches into
+# another season entirely. Resolved by reading Tempora/Pasc7-6.txt
+# directly in both languages: only that file (not Quad3-4's own English
+# file, which omits Lectio1/2 in English altogether) carries the English
+# text for the first two parts of this homily. The Gospel pericope
+# itself (Luke 4:38-44, incipit only even in Pasc7-6) was sourced from
+# web/www/missa/{Latin,English}/Tempora/Quad3-4.txt's own [Evangelium]
+# (that Mass file gives the day's own full pericope directly, without
+# needing the Pasc7-6 detour).
+#
+# The Lauds/Vespers collects genuinely name Ss. Cosmas and Damian
+# (Oratio 2: "sanctórum tuórum Cosmæ et Damiáni beáta solémnitas") --
+# not an error: this day's Roman station church is titular to those two
+# saints, a real stational-liturgy feature, not a stray Sept. 27
+# cross-reference.
+#
+# Recombined into one reading (all three Lectio parts are one continuous
+# Ambrose homily on Luke 4, split only to fill the fixed 3-lesson slot
+# count). Responsory: Lectio1's own cross-referenced responsory
+# (@Tempora/Pasc7-0:Responsory2) is a Pentecost-season text containing
+# "Alleluia," which Lent forbids outright -- deliberately NOT used here.
+# Quad3-4's own Responsory2 (@Tempora/Quad3-0:Responsory2, a Lent-
+# appropriate Joseph-narrative text, same pool the rest of this week
+# draws from) is used instead, the nearest available Lent-native
+# responsory in this day's own file.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Luc 4:38-44
+      text: 'In illo témpore: Surgens Jesus de synagóga, introívit in domum Simónis. Socrus autem Simónis tenebátur magnis fébribus: et rogavérunt illum pro ea. Et stans super illam, imperávit febri: et dimísit illam. Et contínuo surgens, ministrábat illis. Cum autem sol occidísset, omnes qui habébant infírmos váriis languóribus, ducébant illos ad eum. At ille síngulis manus impónens, curábat eos. Exíbant autem dæmónia a multis clamántia, et dicéntia: Quia tu es Fílius Dei: et íncrepans non sinébat ea loqui, quia sciébant ipsum esse Christum. Facta autem die egréssus ibat in desértum locum, et turbæ requirébant eum, et venérunt usque ad ipsum: et detinébant illum ne discéderet ab eis. Quibus ille ait: Quia et áliis civitátibus opórtet me evangelizáre regnum Dei: quia ídeo missus sum. Et erat prǽdicans in synagógis Galilǽæ.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Book 4 on Luke iv
+      text: |-
+        Vide cleméntiam Dómini Salvatóris: nec indignatióne commótus nec scélere offénsus, nec injúria violátus Judǽam déserit: quin étiam ímmemor injúriæ, memor cleméntiæ, nunc docéndo, nunc liberándo, nunc sanándo, infídæ plebis corda demúlcet. Et bene sanctus Lucas virum ab spíritu nequítiæ liberátum ante præmísit, et subdit féminæ sanitátem. Utrúmque enim sexum Dóminus curatúrus advénerat: sed prior sanári débuit, qui prior creátus est; nec prætermítti illa, quæ mobilitáte magis ánimi, quam pravitáte peccáverat.
+
+        Sábbato medicínæ Domínicæ ópera cœpta signíficat, ut inde nova creatúra cœ́perit, ubi vetus creatúra ante desívit: nec sub lege esse Dei Fílium, sed supra legem in ipso princípio designáret: nec solvi legem, sed impléri. Neque enim per legem, sed verbo factus est mundus, sicut légimus: Verbo Dómini cæli firmáti sunt. Non sólvitur ergo lex, sed implétur: ut fiat renovátio hóminis jam labéntis. Unde et Apóstolus ait: Exspoliántes vos véterem hóminem, indúite novum, qui secúndum Deum creátus est.
+
+        Et bene sábbato cœpit, ut ipsum se osténderet Creatórem, qui ópera opéribus intéxeret, et prosequerétur opus, quod ipse jam cœ́perat: ut si domum faber renováre dispónat, non a fundaméntis, sed a culmínibus íncipit sólvere vetustátem. Itaque ibi prius manum ádmovet, ubi ante desíerat: deínde a minóribus íncipit, ut ad majóra pervéniat. Liberáre a dǽmone et hómines, sed in verbo Dei possunt: resurrectiónem mórtuis imperáre, divínæ solíus est potestátis. Fortássis étiam in typo mulíeris illíus socrus Simónis et Andréæ, váriis críminum fébribus caro nostra languébat, et diversárum cupiditátum immódicis æstuábat illécebris. Nec minórem febrem amóris esse díxerim, quam calóris. Itaque illa ánimum, hæc corpus inflámmat. Febris enim nostra, avarítia est: febris nostra, libído est: febris nostra, luxúria est: febris nostra, ambítio est: febris nostra, iracúndia est.
+      responsory: |-
+        R. Dixit Judas frátribus suis: Ecce Ismaëlítæ tránseunt; veníte, venumdétur, et manus nostræ non polluántur: * Caro enim et frater noster est.
+        V. Quid enim prodest, si occidérimus fratrem nostrum, et celavérimus sánguinem ipsíus? mélius est ut venumdétur.
+        R. Caro enim et frater noster est.
+      status: verified

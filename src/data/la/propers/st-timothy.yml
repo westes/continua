@@ -1,0 +1,17 @@
+# Matins Nocturn 2 reading for St. Timothy, Bishop and Martyr (Jan 24) —
+# pre-1955-but-post-1617 (no SanctiM/01-24*.txt at all).
+# web/www/horas/Latin/Sancti/01-24.txt, English/Sancti/01-24.txt.
+# Lectio4-5 is this saint's own proper text, one continuous account, no
+# internal break, combined into a single reading; Lectio6 is a bare
+# `@Commune/C2:Lectio4` reference (not proper), skipped per this
+# project's existing "no Common fallback authored into this store"
+# pattern. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Timótheus, Lystris in Lycaónia natus ex patre Gentíli et matre Judǽa, christiánam colébat religiónem, cum in ea loca venit Paulus Apóstolus. Qui fama commótus, quæ de Timóthei sanctitáte percrebúerat, ipsum adhíbuit sócium suæ peregrinatiónis: sed propter Judǽos qui se ad Christum convérterant, sciéntes Timóthei patrem esse Gentílem, eum circumcídit. Cum ígitur ambo Ephesum veníssent, ibi ordinátus est epíscopus ab Apóstolo, ut eam ecclésiam gubernáret.
+
+        Ad quem Apóstolus duas epístolas scripsit, álteram Laodicéa, álteram Roma. Quibus in pastorális offícii cura confirmátus, cum sacrifícium, quod uni Deo debétur fíeri dǽmonum simulácris, ferre non posset; pópulum Ephesínum, Diánæ in ejus celebritáte immolántem, ab illa impietáte removére conátus, lapídibus óbrutus est; ac pene mórtuus, a Christiánis eréptus et in montem óppido vicínum delátus, nono Kaléndas Februárii obdormívit in Dómino.
+      status: verified

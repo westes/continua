@@ -1,0 +1,309 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2033-03-19, a
+# year that date doesn't collide with a Sunday). Same convention as
+# data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Sanctíssimæ Genitrícis tuæ sponsi, quǽsumus, Dómine, méritis adjuvémur; ut quod possibílitas nostra non óbtinet, ejus nobis intercessióne donétur.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-joseph-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-joseph-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Sanctíssimæ Genitrícis tuæ sponsi, quǽsumus, Dómine, méritis adjuvémur; ut quod possibílitas nostra non óbtinet, ejus nobis intercessióne donétur.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# St. Joseph: proper Matins hymn, Latin/Sancti/03-19.txt's [Hymnus Matutinum]. English from English/Sancti/03-19.txt.
+# Before this file the saint fell to the Common's hymn.
+matins-hymn:
+  text: |
+    Cǽlitum Joseph, decus atque nostræ
+    Certa spes vitæ, columénque mundi,
+    Quas tibi læti cánimus, benígnus
+    Súscipe laudes.
+
+    Te Sator rerum státuit pudícæ
+    Vírginis sponsum, voluítque Verbi
+    Te patrem dici, dedit et minístrum
+    Esse salútis.
+
+    Tu Redemptórem stábulo jacéntem,
+    Quem chorus Vatum cécinit futúrum,
+    Aspicis gaudens, humilísque natum
+    Numen adóras.
+
+    Rex Deus regum, Dominátor orbis,
+    Cujus ad nutum tremit inferórum
+    Turba, cui pronus famulátur æther,
+    Se tibi subdit.
+
+    Laus sit excélsæ Tríadi perénnis,
+    Quæ tibi præbens súperos honóres,
+    Det tuis nobis méritis beátæ
+    Gáudia vitæ.
+    Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/03-19.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Christum Dei Fílium, qui putári dignátus est fílius Joseph, * Veníte adorémus.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/03-19.txt's own [Capitulum
+# Laudes] and English/Sancti/03-19.txt's own translation.
+lauds-capitulum:
+  text: Vir fidélis multum laudábitur. Et, qui custos est Dómini sui, glorificábitur.
+  citation: Prov 28:20; 27:18
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/03-19.txt's own [Hymnus
+# Laudes] and English/Sancti/03-19.txt's own translation.
+lauds-hymn:
+  text: |-
+    Iste, quem læti cólimus, fidéles,
+    Cujus excélsos cánimus triúmphos,
+    Hac die Joseph méruit perénnis
+    Gáudia vitæ.
+
+    O nimis felix, nimis o beátus,
+    Cujus extrémam vígiles ad horam
+    Christus et Virgo simul astitérunt
+    Ore seréno.
+
+    Hinc stygis victor, láqueo solútus
+    Carnis, ad sedes plácido sopóre
+    Migrat ætérnas, rutilísque cingit
+    Témpora sertis.
+
+    Ergo regnántem flagitémus omnes,
+    Adsit ut nobis, veniámque nostris
+    Obtinens culpis, tríbuat supérnæ
+    Múnera pacis.
+
+    Sint tibi plausus, tibi sint honóres,
+    Trine, qui regnas, Deus, et corónas
+    Aureas servo tríbuis fidéli
+    Omne per ævum. Amen.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/03-19.txt's own [Versum 2]
+# ("@Commune/C5:Nocturn 2 Versum") and Commune/C5.txt's own English
+# translation for that versicle.
+lauds-versicle:
+  text: |
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 1, per the established
+# Prime=Lauds-Ant1 minor-hours-borrow-from-Lauds convention.
+prime-antiphon:
+  text: Ibant paréntes Jesu * per omnes annos in Jerúsalem, in die solémni Paschæ.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/03-19.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: Prófugum justum dedúxit Sapiéntia per vias rectas, et osténdit illi regnum Dei, et dedit illi sciéntiam sanctórum; honestávit illum in labóribus, et complévit labóres illíus.
+  citation: Sap 10:10
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 2, per the established
+# Terce=Lauds-Ant2 minor-hours-borrow-from-Lauds convention.
+terce-antiphon:
+  text: Cum redírent, * remánsit puer Jesus in Jerúsalem, et non cognovérunt paréntes ejus.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 3, per the established
+# Sext=Lauds-Ant3 minor-hours-borrow-from-Lauds convention.
+sext-antiphon:
+  text: Non inveniéntes * Jesum, regréssi sunt in Jerúsalem requiréntes eum; et post tríduum invenérunt illum in templo sedéntem in médio doctórum, audiéntem et interrogántem eos.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/03-19.txt's own [Capitulum
+# Sexta] and English/Sancti/03-19.txt's own translation.
+sext-capitulum:
+  text: Diléctus Deo et homínibus, cujus memória in benedictióne est. In fide et lenitáte ipsíus sanctum fecit illum, et elégit eum ex omni carne.
+  citation: Sir 45:1; 45:4
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 5, per the established
+# None=Lauds-Ant5 minor-hours-borrow-from-Lauds convention.
+none-antiphon:
+  text: Descéndit Jesus * cum eis, et venit Názareth, et erat súbditus illis.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/03-19.txt's own [Capitulum
+# Nona] ("@:Lectio Prima" -- reuses its own [Lectio Prima]) and English/
+# Sancti/03-19.txt's own translation.
+none-capitulum:
+  text: Prófugum justum dedúxit Sapiéntia per vias rectas, et osténdit illi regnum Dei, et dedit illi sciéntiam sanctórum; honestávit illum in labóribus, et complévit labóres illíus.
+  citation: Sap 10:10
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/03-19.txt's own [Hymnus
+# Vespera] and English/Sancti/03-19.txt's own translation.
+vespers-hymn:
+  text: |-
+    Te, Joseph, célebrent ágmina cǽlitum,
+    Te cuncti résonent christíadum chori,
+    Qui clarus méritis, junctus est ínclitæ
+    Casto fœ́dere Vírgini.
+
+    Almo cum túmidam gérmine cónjugem
+    Admírans, dúbio tángeris ánxius,
+    Afflátu súperi Fláminis Angelus
+    Concéptum Púerum docet.
+
+    Tu natum Dóminum stringis, ad éxteras
+    Ægýpti prófugum tu séqueris plagas;
+    Amíssum Sólymis quæris, et ínvenis,
+    Miscens gáudia flétibus.
+
+    Post mortem réliquos sors pia cónsecrat,
+    Palmámque eméritos glória súscipit:
+    Tu vivens, Súperis par, frúeris Deo,
+    Mira sorte beátior.
+
+    Nobis, summa Trias, parce precántibus,
+    Da Joseph méritis sídera scándere:
+    Ut tandem líceat nos tibi pérpetim
+    Gratum prómere cánticum. Amen.
+  status: verified
+
+# Sourced from web/www/horas/Latin/SanctiM/03-19.txt's own [Responsory
+# Vespera]. No English rendering exists in the reference engine's data;
+# translated here directly (echoes Sir 51:14, the wisdom canticle already
+# associated with Confessor saints in this tradition).
+vespers-responsory:
+  text: |
+    R.br. Invocávi Dóminum, * Patrem Dómini mei.
+    R. Invocávi Dóminum, * Patrem Dómini mei.
+    V. Ut non derelínquat me in die tribulatiónis.
+    R. Patrem Dómini mei.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Invocávi Dóminum, * Patrem Dómini mei.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/03-19.txt's own [Versum 1]
+# (positioned directly after [Hymnus Vespera]) and English/Sancti/03-19
+# .txt's own translation.
+vespers-versicle:
+  text: |
+    V. Constítuit eum dóminum domus suæ.
+    R. Et príncipem omnis possessiónis suæ.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Joseph's own day (2026-03-19) -- the Benedictus
+# antiphon. Corrects the previous version of this file, which had been
+# sourced from the Roman/secular rite's Sancti/03-19.txt's own [Ant 1]
+# instead: real but different text from what Monastic 1617 actually
+# renders at Lauds, same mistake as St. Lawrence's earlier fix.
+benedictus-antiphon:
+  text: Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/03-19.txt's own [Ant Laudes]
+# and English/Sancti/03-19.txt's own translation (the Finding in the
+# Temple narrative, Luke 2). Below duplex-majus (duplex), so hours/
+# lauds.ts's mergeFerialNumbersWithProperAntiphons only takes this file's
+# antiphon text, not its psalm numbers -- the numbers below are
+# placeholders (the standard 92/99/62 scheme), not independently
+# confirmed for this feast, since they have no functional effect at this
+# rank.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Ibant paréntes Jesu * per omnes annos in Jerúsalem, in die solémni Paschæ.
+    - psalms:
+        - 99
+      antiphon: Cum redírent, * remánsit puer Jesus in Jerúsalem, et non cognovérunt paréntes ejus.
+    - psalms:
+        - 62
+      antiphon: Non inveniéntes * Jesum, regréssi sunt in Jerúsalem requiréntes eum; et post tríduum invenérunt illum in templo sedéntem in médio doctórum, audiéntem et interrogántem eos.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Dixit Mater ejus * ad illum: Fili, quid fecísti nobis sic? Ecce pater tuus, et ego doléntes quærebámus te.'
+  laudate:
+    antiphon: Descéndit Jesus * cum eis, et venit Názareth, et erat súbditus illis.
+
+# Sourced from web/www/horas/Latin/Sancti/03-19.txt's own [Ant Vespera]
+# and English/Sancti/03-19.txt's own translation -- the Betrothal/
+# Annunciation-to-Joseph narrative (Matt 1), genuinely distinct from his
+# own Lauds antiphons (the Finding in the Temple, Luke 2). Below
+# duplex-majus, so hours/vespers.ts's mergeFerialNumbersWithProperAntiphons
+# only takes this file's antiphon text, not its psalm numbers.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Jacob autem * génuit Joseph, virum Maríæ, de qua natus est Jesus, qui vocátur Christus.
+    - psalms:
+        - 110
+      antiphon: Missus est * Angelus Gábriel a Deo ad Vírginem desponsátam viro, cui nomen erat Joseph, de domo David, et nomen Vírginis María.
+    - psalms:
+        - 111
+      antiphon: Cum esset desponsáta * Mater Jesu María Joseph, ántequam convenírent, invénta est in útero habens de Spíritu Sancto.
+    - psalms:
+        - 112
+      antiphon: Joseph vir ejus, * cum esset justus, et nollet eam tradúcere, vóluit occúlte dimíttere eam.
+
+# Matins Nocturn 2 reading for St. Joseph, Spouse of the B.V.M.,
+# Confessor (Mar 19) — SanctiM/03-19.txt's own Lectio2-9 all resolve
+# back to `@Sancti/03-19:LectioN` (resliced for the Monastic 9/12-lesson
+# structure with its own added responsories), so this saint's own
+# proper content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/03-19.txt, English/Sancti/03-19.txt.
+# Lectio4-6 (St. Bernard's sermon comparing Joseph the Patriarch to
+# Joseph the husband of Mary) combined into one reading, one continuous
+# excerpt. Lectio7-9 reference `@Sancti/12-24:Lectio1-3` (Christmas
+# Eve's own Nocturn 1 scripture reading) — not proper to Joseph, so not
+# authored here. No responsory given for Lectio4-6.
+#
+# Update (2026-09-05): St. Bernard's homily is "Homily 2 super Missus
+# est", his treatise on the Annunciation Gospel (Luke 1:26-38, the
+# "Missus est" pericope) — that Gospel itself is now authored too
+# (isGospel: true, immediately before the homily), even though it isn't
+# actually proclaimed at Matins here (Lectio1-3 are Genesis readings on
+# Joseph the Patriarch, not this Gospel) — it's the text the homily is
+# preached on. Latin sourced from missa/Latin/Tempora/Adv3-3.txt (Ember
+# Wednesday of Advent shares this same full pericope verbatim); English
+# from missa/English/Sancti/03-25.txt (the Annunciation's own Mass
+# Gospel, same citation "Luke 1:26-38").
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: true
+      citation: Luc 1:26-38
+      text: 'In illo témpore: Missus est Angelus Gábriel a Deo in civitátem Galilǽæ, cui nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, de domo David, et nomen Vírginis María. Et ingréssus Angelus ad eam, dixit: Ave, grátia plena; Dóminus tecum: benedícta tu in muliéribus. Quæ cum audísset, turbáta est in sermóne ejus: et cogitábat, qualis esset ista salutátio. Et ait Angelus ei: Ne tímeas, María, invenísti enim grátiam apud Deum: ecce, concípies in útero, et páries fílium, et vocábis nomen ejus Jesum. Hic erit magnus, et Fílius Altíssimi vocábitur, et dabit illi Dóminus Deus sedem David, patris ejus: et regnábit in domo Jacob in ætérnum, et regni ejus non erit finis. Dixit autem María ad Angelum: Quómodo fiet istud, quóniam virum non cognósco? Et respóndens Angelus, dixit ei: Spíritus Sanctus supervéniet in te, et virtus Altíssimi obumbrábit tibi. Ideóque et quod nascétur ex te Sanctum, vocábitur Fílius Dei. Et ecce, Elísabeth, cognáta tua, et ipsa concépit fílium in senectúte sua: et hic mensis sextus est illi, quæ vocátur stérilis: quia non erit impossíbile apud Deum omne verbum. Dixit autem María: Ecce ancílla Dómini, fiat mihi secúndum verbum tuum.'
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: St. Bernard of Clairvaux, Abbot, Homily 2 on Luke 1:26 (Missus est)
+      text: |-
+        Quis et qualis homo fúerit beátus Joseph, cónice ex appellatióne, qua, licet dispensatória, méruit honorári ádeo, ut pater Dei et dictus et créditus sit; cónice et ex próprio vocábulo, quod augméntum non dúbitas interpretári. Simul et meménto magni illíus quondam Patriárchæ vénditi in Ægýpto; et scito ipsíus istum non solum vocábulum fuísse sortítum, sed et castimóniam adéptum, innocéntiam assecútum et grátiam.
+
+        Síquidem ille Joseph, fratérna ex invídia vénditus et ductus in Ægýptum, Christi venditiónem præfigurávit: iste Joseph, Herodiánam invídiam fúgiens, Christum in Ægýptum portávit. Ille dómino suo fidem servans, dóminæ nóluit commiscéri: iste Dóminam suam, Dómini sui matrem, vírginem agnóscens et ipse cóntinens, fidéliter custodívit. Illi data est intellegéntia in mystériis somniórum: isti datum est cónscium fíeri atque partícipem cæléstium sacramentórum.
+
+        Ille fruménta servávit non sibi, sed omni pópulo: iste Panem vivum e cælo servándum accépit tam sibi quam toti mundo. Non est dúbium, quin bonus et fidélis homo fúerit iste Joseph, cui Mater desponsáta est Salvatóris. Fidélis, inquam, servus, et prudens, quem constítuit Dóminus suæ Matris solátium, suæ carnis nutrítium, solum dénique in terris magni consílii coadjutórem fidelíssimum.
+      status: verified

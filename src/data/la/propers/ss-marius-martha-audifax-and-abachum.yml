@@ -1,0 +1,47 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08.
+# Pulled from the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt + M1617.txt, own title
+# "Ss. Marii, Marthæ, Audifacis, et Abachum Martyrum") and its own source file, not the merged per-date
+# files those tables' fileref points at directly -- see TODO.md.
+collect:
+  text: |
+    Orémus.
+    Exáudi, Dómine, pópulum tuum cum Sanctórum tuórum patrocínio supplicántem: ut et temporális vitæ nos tríbuas pace gaudére; et ætérnæ reperíre subsídium.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-several-martyrs (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags actually used for
+# a mere commemoration, confirmed against this exact category via an
+# independently live-verified precedent elsewhere in this app). ss-marius-martha-audifax-and-abachum has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper. Collect is the saint's own
+# real proper (ss-marius-martha-audifax-and-abachum-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Exáudi, Dómine, pópulum tuum cum Sanctórum tuórum patrocínio supplicántem: ut et temporális vitæ nos tríbuas pace gaudére; et ætérnæ reperíre subsídium.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Marius, Martha, Audifax, and Abachum,
+# Martyrs (Jan 19) — pre-1955-but-post-1617 (source confirmed Tridentine,
+# not Monastic 1617: no 01-19*.txt under SanctiM at all; see memory
+# vu-matins-pre1955-saints).
+# web/www/horas/Latin/Sancti/01-19.txt, English/Sancti/01-19.txt. Source
+# gives one single lesson (Lectio93, the reduced/simplex-feast form —
+# this saint's rank is Simplex, no separate 9-lesson set), a single
+# continuous account with no internal source break, transcribed whole.
+# No responsory given in the source file.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Marius Persa, nobili loco natus, cum Martha cónjuge pari nobilitate, et duobus fíliis Audíface et Abachum, Romam venit Cláudio imperatóre, ut Mártyrum sepúlcra venerarétur. Ibi Christiános in víncula conjectos fovébant, et ópera ac facultátibus suis sustentábant, et Sanctórum córpora sepeliebant. Quam ob rem comprehénsi omnes, cum nec impiórum minis nec terróre commoveréntur, ut diis sacrificarent; primum fustibus debilitati, deínde funibus attracti, tum admótis candéntibus, láminis combusti, et úngulis férreis excarnificáti sunt. Postremo præcisis mánibus, et ad collum alligatis, ducti per mediam urbem, via Cornelia ad tertium décimum ab Urbe milliárium, in eum locum, qui Nymphe dicebátur, necántur: ac primum Martha, quæ virum ac fílios ad supplícia pro Jesu Christi fide constanter perferenda, veheménter fuerat cohortáta; mox ceteris in eádem arenaria cervices abscindúntur, eorúmque córpora conjiciúntur in ignem. Quæ semiusta, Felícitas matrona Romana nobilis, colligenda et in suo prædio sepelienda curávit.'
+      status: verified

@@ -1,0 +1,398 @@
+# Read directly from web/www/horas/Latin/Sancti/10-02.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui ineffábili providéntia sanctos Angelos tuos ad nostram custódiam
+    míttere dignáris: largíre supplícibus tuis; et eórum semper protectióne
+    deféndi, et ætérna societáte gaudére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (guardian-angels-antiphon.yml), paired with the standard de-Communi commemoration versicle for common-of-an-angel (inferred from the C4 "structural category" citation in the saint's own file) (not yet independently live-verified for this specific category, marked draft). Collect is the saint's own real proper (guardian-angels-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Omnes sunt administratórii * Spíritus, in ministérium missi propter eos, qui hereditátem capiunt salútis.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui ineffábili providéntia sanctos Angelos tuos ad nostram custódiam
+    míttere dignáris: largíre supplícibus tuis; et eórum semper protectióne
+    deféndi, et ætérna societáte gaudére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Corrected 2026-09-10: this file previously contained "Tibi Christe
+# splendor Patris" -- St. Michael's Apparition hymn (May 8), copy-pasted
+# from the wrong feast. Guardian Angels' Matins hymn is, per the reference
+# source (Sancti/10-02.txt), `[Hymnus Matutinum]` `@:Hymnus Vespera` -- a
+# straight cross-reference reusing the Vespers hymn verbatim ("Custódes
+# hóminum psállimus Angelos"), same text as vespers-hymn-guardian-
+# angels.yml. No separate Monastic recension exists. Final stanza is
+# fixed -- no `*` marker anywhere in the source.
+matins-hymn:
+  text: |-
+    Custódes hóminum psállimus Angelos,
+    Natúræ frágili quos Pater áddidit
+    Cæléstis cómites, insidiántibus
+    Ne succúmberet hóstibus.
+
+    Nam, quod corrúerit próditor ángelus,
+    Concéssis mérito pulsus honóribus,
+    Ardens invídia péllere nítitur
+    Quos cælo Deus ádvocat.
+
+    Huc, custos, ígitur pérvigil ádvola,
+    Avértens pátria de tibi crédita
+    Tam morbos ánimi quam requiéscere
+    Quidquid non sinit íncolas.
+
+    Sanctæ sit Tríadi laus pia júgiter,
+    Cujus perpétuo númine máchina
+    Triplex hæc régitur, cujus in ómnia
+    Regnat glória sǽcula. Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/10-02.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Regem Angelórum Dóminum, * Veníte, adorémus.
+  status: verified
+
+# Sancti/10-02.txt [Capitulum Laudes]. Replaces a copy of St. Michael's Apparition chapter (Apo 1:1-2), which this feast's own file does not use.
+lauds-capitulum:
+  text: Ecce ego mittam Angelum meum, qui præcédat te, et custódiat in via, et introdúcat in locum, quem parávi. Obsérva eum et audi vocem ejus.
+  citation: Exod 23:20-21
+  status: verified
+
+# Corrected 2026-09-10: this file previously contained "Christe sanctórum
+# decus Angelórum" -- St. Michael's Apparition hymn (May 8), copy-pasted
+# from the wrong feast. Guardian Angels' own Lauds hymn, direct from the
+# reference source (Sancti/10-02.txt's own `[HymnusM Laudes]`, "Orbis
+# Patrátor óptime" -- the Monastic recension used here, per this project's
+# standing preference; the secular `[Hymnus Laudes]` opens "Ætérne Rector
+# síderum" instead but is otherwise identical). Final stanza is fixed --
+# no `*` marker anywhere in the source.
+lauds-hymn:
+  text: |-
+    Orbis Patrátor óptime,
+    Qui quidquid est poténtia
+    Magna creásti, nec regis
+    Minóre providéntia:
+
+    Adésto supplicántium
+    Tibi reórum cœ́tui,
+    Lucísque sub crepúsculum
+    Lucem novam da méntibus.
+
+    Tuúsque nobis Angelus
+    Signátus ad custódiam,
+    Hic adsit, a contágio
+    Qui críminum nos prótegat.
+
+    Serpéntis nobis ǽmuli
+    Calúmnias extérminet,
+    Ne rete frauduléntiæ
+    Incáuta nectat péctora.
+
+    Metum propéllat hóstium
+    Nostris procul de fínibus:
+    Pacem procúret cívium,
+    Fugétque pestiléntiam.
+
+    Deo Patri sit glória,
+    Qui quos redémit Fílius,
+    Et Sanctus unxit Spíritus,
+    Per Angelos custódiat. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-05-08, clean year.
+lauds-responsory:
+  text: |
+    R.br. Stetit Angelus juxta aram templi, * Allelúia, allelúia.
+    R. Stetit Angelus juxta aram templi, * Allelúia, allelúia.
+    V. Habens thuríbulum áureum in manu sua.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Stetit Angelus juxta aram templi, * Allelúia, allelúia.
+  status: verified
+
+# Sancti/10-02.txt [Versum 2] -> Sancti/05-08.txt [Versum 3] (Raphael) / [Versum 1] -> Sancti/05-08.txt [Versum 3] (Guardian Angels). Replaces a copy of St. Michael's 'Stetit Angelus' versicle with a hard-coded Alleluia.
+lauds-versicle:
+  text: |-
+    V. In conspéctu Angelórum psallam tibi, Deus meus.
+    R. Adorábo ad templum sanctum tuum, et confitébor nómini tuo.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/10-02.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: Quod, si audíeris vocem ejus et féceris ómnia quæ loquor, inimícus ero inimícis tuis et afflígam affligéntes te. Præcedétque te Angelus meus.
+  citation: Exod 23:22-23
+  status: verified
+
+# Sancti/10-02.txt [Capitulum Laudes] (Terce takes Lauds' chapter, None takes Lectio Prima, per the reference engine); versicle pair from Sancti/05-08.txt [Responsory Breve Tertia], which 10-02 inherits ('ex Sancti/05-08').
+terce-capitulum:
+  text: |
+    Ecce ego mittam Angelum meum, qui præcédat te, et custódiat in via, et introdúcat in locum, quem parávi. Obsérva eum et audi vocem ejus.
+    R. Deo grátias.
+    V. Stetit Angelus juxta aram templi.
+    R. Habens thuríbulum áureum in manu sua.
+  citation: Exod 23:20-21
+  status: verified
+
+# Sancti/10-02.txt [Capitulum Sexta] (Terce takes Lauds' chapter, None takes Lectio Prima, per the reference engine); versicle pair from Sancti/05-08.txt [Responsory Breve Sexta], which 10-02 inherits ('ex Sancti/05-08').
+sext-capitulum:
+  text: |
+    Nec contemnéndum putes, quia non dimíttet cum peccáveris, et est nomen meum in illo.
+    R. Deo grátias.
+    V. Ascéndit fumus arómatum in conspéctu Dómini.
+    R. De manu Angeli.
+  citation: Exod 23:21
+  status: verified
+
+# Sancti/10-02.txt [Capitulum Nona] (Terce takes Lauds' chapter, None takes Lectio Prima, per the reference engine); versicle pair from Sancti/05-08.txt [Responsory Breve Nona], which 10-02 inherits ('ex Sancti/05-08').
+none-capitulum:
+  text: |
+    Quod, si audíeris vocem ejus et féceris ómnia quæ loquor, inimícus ero inimícis tuis et afflígam affligéntes te. Præcedétque te Angelus meus.
+    R. Deo grátias.
+    V. In conspéctu Angelórum psallam tibi, Deus meus.
+    R. Adorábo ad templum sanctum tuum, et confitébor nómini tuo.
+  citation: Exod 23:22-23
+  status: verified
+
+# Corrected 2026-09-10: this file previously contained "Tibi Christe
+# splendor Patris" -- St. Michael's Apparition hymn (May 8), copy-pasted
+# from the wrong feast. Guardian Angels' own Vespers hymn, direct from the
+# reference source (Sancti/10-02.txt's own `[Hymnus Vespera]`, "Custódes
+# hóminum psállimus Angelos" -- no separate Monastic recension exists, the
+# secular text serves both tracks; Matins reuses this same hymn verbatim
+# via `[Hymnus Matutinum]` `@:Hymnus Vespera`, see matins-hymn-
+# guardian-angels.yml). Final stanza is fixed -- no `*` marker anywhere in
+# the source.
+vespers-hymn:
+  text: |-
+    Custódes hóminum psállimus Angelos,
+    Natúræ frágili quos Pater áddidit
+    Cæléstis cómites, insidiántibus
+    Ne succúmberet hóstibus.
+
+    Nam, quod corrúerit próditor ángelus,
+    Concéssis mérito pulsus honóribus,
+    Ardens invídia péllere nítitur
+    Quos cælo Deus ádvocat.
+
+    Huc, custos, ígitur pérvigil ádvola,
+    Avértens pátria de tibi crédita
+    Tam morbos ánimi quam requiéscere
+    Quidquid non sinit íncolas.
+
+    Sanctæ sit Tríadi laus pia júgiter,
+    Cujus perpétuo númine máchina
+    Triplex hæc régitur, cujus in ómnia
+    Regnat glória sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-05-08, the same clean date already used for lauds-capitulum-guardian-angels.yml.
+vespers-responsory:
+  text: |
+    R.br. Ascéndit fumus arómatum in conspéctu Dómini, * Allelúia, allelúia.
+    R. Ascéndit fumus arómatum in conspéctu Dómini, * Allelúia, allelúia.
+    V. De manu Angeli.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ascéndit fumus arómatum in conspéctu Dómini, * Allelúia, allelúia.
+  status: verified
+
+# Divino Afflatu 1954 engine render (2026-10-02, second Vespers; post-1617 feast, no Monastic render exists). Replaces a text that was either the Common BVM's versicle or the Apparition of St. Michael's with its Paschal Alleluia baked in. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-versicle:
+  text: |
+    V. In conspéctu Angelórum psallam tibi, Deus meus.
+    R. Adorábo ad templum sanctum tuum, et confitébor nómini tuo.
+  status: verified
+
+# Divino Afflatu 1954 engine render, 2026-10-01 guardian-angels first (DA 1954; second Vespers of the Raphael
+# file borrows the Guardian Angels' same Angel-Common versicle). Paschaltide Alleluia is left to
+# hours/paschal-alleluia.ts.
+vespers-versicle/~-first:
+  text: |
+    V. In conspéctu Angelórum psallam tibi, Deus meus.
+    R. Adorábo ad templum sanctum tuum, et confitébor nómini tuo.
+  status: verified
+
+# Read directly from web/www/horas/Latin/Sancti/10-02.txt's own
+# [Ant 1] and its English counterpart -- a real, proper antiphon of
+# this feast, not a Common substitution.
+benedictus-antiphon:
+  text: Omnes sunt administratórii * Spíritus, in ministérium missi propter eos, qui hereditátem capiunt salútis.
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/10-02.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast (own First Vespers
+# [Ant 1] already covers guardian-angels-antiphon.yml, used for the
+# Benedictus), not a Common substitution.
+magnificat-antiphon:
+  text: Sancti Angeli, * custódes nostri, deféndite nos in prǽlio, ut non pereámus in treméndo judício.
+  status: verified
+
+# First Vespers Magnificat antiphon: web/www/horas/Latin/Sancti/10-02.txt's own [Ant 1]
+# and its English counterpart. Second Vespers' [Ant 3] is
+# guardian-angels-magnificat-antiphon.yml (the default); see hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Omnes sunt administratórii * Spíritus, in ministérium missi propter eos, qui hereditátem capiunt salútis.
+  status: verified
+
+# Transcribed from the reference engine's own source files (Latin:
+# web/www/horas/Latin/Sancti/10-02.txt + SanctiM/10-02.txt, English:
+# web/www/horas/English/Sancti/10-02.txt), Monastic Tridentinum 1617
+# rubric. Companion file to ../apparition-of-st-michael.yml — see that
+# file's own header for the "Common-of-an-Angel doesn't exist" context.
+#
+# The secular [Ant Matutinum] supplies 9 distinct proper antiphons.
+# Versum blocks fall back to Apparition of St. Michael (Sancti/05-08)
+# without Paschaltide alleluias, since Oct 2 is never in Paschaltide.
+#
+# Monastic structure (SanctiM/10-02.txt): 12 lectiones → 6+6+3
+# (N1 = Ps 8,10,14,18,23,33; N2 = Ps 89,95,96,97,98,102; N3 = canticles
+# Isa 33:2-10, Isa 33:13-18, Sir 36:14-19). N2 is composed from secular
+# line 7 (s/95/89/) + [AntMatutinumM]:1 (Ps 95) + line 8 + [AntMatutinumM]:2-3
+# (Ps 97, 98) + line 9 — same N2 psalm pool as st-michael.yml.
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 8
+        antiphon: Dóminus, Deus * cæli et terræ, ipse mittet Angelum suum coram te.
+      - psalms:
+          - 10
+        antiphon: Deus meus * misit Angelum suum et conclúsit ora leónum, et non nocuérunt mihi.
+      - psalms:
+          - 14
+        antiphon: Bene ambulétis, * et Dóminus sit in itínere vestro, et Angelus ejus comitétur vobíscum.
+      - psalms:
+          - 18
+        antiphon: 'Cum essem vobíscum, * per voluntátem Dei eram: ipsum benedícite et cantáte ei.'
+      - psalms:
+          - 23
+        antiphon: Tollens se Angelus Dómini, * qui præcedébat castra Israël, ábiit post eos.
+      - psalms:
+          - 33
+        antiphon: Immíttet Angelus Dómini * in circúitu timéntium eum, et erípiet eos.
+    versicle:
+      v: Stetit Angelus juxta aram templi.
+      r: Habens thuríbulum áureum in manu sua.
+  nocturn2:
+    groups:
+      - psalms:
+          - 89
+        antiphon: Misit Dóminus * Angelum suum, qui percússit omnem virum robústum et bellatórem, et príncipem exércitus regis Assyriórum.
+      - psalms:
+          - 95
+        antiphon: Stetit Angelus * juxta aram templi, habens thuríbulum áureum in manu sua.
+      - psalms:
+          - 96
+        antiphon: 'Adoráte Dóminum * omnes Angeli ejus: audívit, et lætáta est Sion.'
+      - psalms:
+          - 97
+        antiphon: Mitte, Dómine, * Angelum bonum ante nos in timóre bráchii tui, ut métuant qui odérunt nos.
+      - psalms:
+          - 98
+        antiphon: 'Angelus meus * vobíscum est, dicit Dóminus: ipse autem exquíret ánimas vestras.'
+      - psalms:
+          - 102
+        antiphon: Benedícite Dómino, * omnes Angeli ejus, poténtes virtúte, faciéntes verbum illíus, ad audiéndam vocem sermónum ejus.
+    versicle:
+      v: Ascéndit fumus arómatum in conspéctu Dómini.
+      r: De manu Angeli.
+  nocturn3:
+    antiphon: Ecce ego * mitto Angelum meum, qui præparábit viam meam ante fáciem tuam.
+    canticles:
+      - refs:
+          - book: isa
+            chapter: 33
+            verses: 2-10
+      - refs:
+          - book: isa
+            chapter: 33
+            verses: 13-18
+      - refs:
+          - book: sir
+            chapter: 36
+            verses: 14-19
+    versicle:
+      v: In conspéctu Angelórum psallam tibi, Deus meus.
+      r: Adorábo ad templum sanctum tuum, et confitébor nómini tuo.
+
+# Sourced from web/www/horas/Latin/Sancti/10-02.txt's own [Ant Vespera]
+# block ("vide C4", "Psalmi Dominica" -- Sunday psalm numbers). This 1670/
+# 1908 feast doesn't exist in the Monastic 1617 calendar at all (a live
+# "Hodie" query for 2026-10-02 renders Marian Saturday instead). Her own
+# distinct proper antiphons -- not St. Michael's (categories/common-of-
+# an-angel.yml's own header claims Guardian Angels "reuses Michael's own
+# antiphons byte-for-byte," but that doesn't hold at Vespers; the raw
+# source file here is unambiguous, so this file wins over that stale
+# claim, per this app's own reference-source-first sourcing principle).
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Angelis suis * Deus mandávit de te, ut custódiant te in ómnibus viis tuis.
+    - psalms:
+        - 110
+      antiphon: Laudémus Dóminum, * quem laudant Angeli, quem Chérubim et Séraphim, sanctus, sanctus, sanctus proclámant.
+    - psalms:
+        - 111
+      antiphon: Angeli eórum * semper vident fáciem Patris mei, qui est in cælis.
+    - psalms:
+        - 112
+      antiphon: Benedíctus Deus, * qui misit Angelum suum, et éruit servos suos qui credidérunt in eum.
+
+# Matins Nocturn 2-3 readings for the Guardian Angels (Oct 2). Sourced
+# directly from web/www/horas/Latin/Sancti/10-02.txt,
+# English/Sancti/10-02.txt. Nocturn 2: Lectio4-6, St. Bernard of
+# Clairvaux's own homily on Psalm 90 ("Qui habitat"), combined into one
+# reading -- not Gospel-tied (Bernard's own Nocturn 2 patristic reading,
+# separate from Nocturn 3's Gospel below). Nocturn 3: Lectio7-9, St.
+# Hilary of Poitiers' Commentary on Matthew ch. 18.
+#
+# Update (2026-09-05): the Gospel pericope itself (Matt 18:1-10) is now
+# authored too (isGospel: true, immediately before the Hilary homily) --
+# sourced from missa/Latin/Sancti/05-08.txt (St. Michael's Apparition,
+# May 8, whose own Mass Gospel is this identical pericope, per a
+# `grep -rl "Matt 18:1-10" missa/Latin/` search of the reference tree)
+# and its English parallel, not guessed at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Bernard of Clairvaux, On Psalm 90 (Qui habitat)
+      text: |-
+        Angelis suis mandávit de te. Mira dignátio, et vere magna diléctio caritátis. Quis enim? quibus? de quo? quid mandávit? Studióse considerémus, fratres, diligénter commendémus memóriæ hoc tam grande mandátum. Quis enim mandávit? cujus sunt Angeli? cujus mandátis obtémperant? cujus obédiunt voluntáti? Nempe Angelis suis mandávit de te, ut custódiant te in ómnibus viis tuis. Nec cunctántur quin étiam in mánibus tollant te. Summa ergo Majéstas mandávit Angelis, et Angelis suis mandávit. Illis útique sublímibus, tam beátis quam próximis sibi cohæréntibus et vere domésticis mandávit de te. Tu quis es? Quid est homo, quod memor es ejus? aut fílius hóminis, quóniam réputas eum? Quasi vero non sit homo putrédo, et fílius hóminis vermis! Sed quid putas mandávit de te? Ut custódiant te.
+
+        Quantam tibi debet hoc verbum inférre reveréntiam, afférre devotiónem, conférre fidúciam! Reveréntiam pro præséntia, devotiónem pro benevoléntia, fidúciam pro custódia. Caute ámbula, ut vidélicet cui adsunt Angeli, sicut eis mandátum est, in ómnibus viis tuis. In quovis diversório, in quovis ángulo, Angelo tuo reveréntiam habe. Tu ne áudeas illo præsénte, quod vidénte me non audéres. An præséntem esse dúbitas, quem non vides? Quid si audíres? quid si tángeres? quid si olfáceres? Vide, quia non solo visu, rerum præséntia comprobétur.
+
+        In ipso ítaque, fratres, affectuóse diligámus Angelos ejus, tamquam futúros aliquándo coherédes nostros, ínterim vero actóres et tutóres, a Patre pósitos et præpósitos nobis. Quid sub tantis custódibus timeámus? Nec superári nec sedúci, minus autem sedúcere possunt, qui custódiunt nos in ómnibus viis nostris. Fidéles sunt, prudéntes sunt, poténtes sunt: quid trepidámus? Tantum sequámur eos, adhæreámus eis, et in protectióne Dei cæli commorémur. Quóties ergo gravíssima cérnitur urgére tentátio et tribulátio véhemens imminére, ínvoca custódem tuum, ductórem tuum, adjutórem tuum in opportunitátibus, in tribulatióne; incláma eum et dic: Dómine, salva nos, perímus.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 18:1-10
+      text: 'In illo témpore: Accessérunt discípuli ad Jesum, dicéntes: Quis, putas, major est in regno cælórum? Et advocáns Jesus párvulum, státuit eum in médio eórum et dixit: Amen, dico vobis, nisi convérsi fuéritis et efficiámini sicut párvuli, non intrábitis in regnum cælórum. Quicúmque ergo humiliáverit se sicut párvulus iste, hic est major in regno cælórum. Et qui suscéperit unum párvulum talem in nómine meo, me súscipit. Qui autem scandalizáverit unum de pusíllis istis, qui in me credunt, expédit ei, ut suspendátur mola asinária in collo ejus, et demergátur in profúndum maris. Væ mundo a scándalis! Necésse est enim, ut véniant scándala: verúmtamen væ hómini illi, per quem scándalum venit! Si autem manus tua vel pes tuus scandalízat te, abscíde eum et projíce abs te: bonum tibi est ad vitam ingrédi débilem vel claudum, quam duas manus vel duos pedes habéntem mitti in ignem ætérnum. Et si óculus tuus scandalízat te, érue eum et projíce abs te: bonum tibi est cum uno óculo in vitam intráre, quam duos óculos habéntem mitti in gehénnam ignis. Vidéte, ne contemnátis unum ex his pusíllis: dico enim vobis, quia Angeli eórum in cælis semper vident fáciem Patris mei, qui in cælis est.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Hilary of Poitiers, Commentary on Matthew, ch. 18
+      text: |-
+        Nónnisi revérsos in natúram puerórum introíre regnum cælórum Dóminus docet: id est, per simplicitátem puerílem vítia córporum nostrórum animǽque revocánda. Púeros autem, credéntes omnes per audiéntiæ fidem nuncupávit. Hi enim patrem sequúntur, matrem amant, próximo velle malum nesciunt, curam opum négligunt; non insoléscunt, non odérunt, non mentiúntur, dictis credunt, et quod áudiunt, verum habent. Reverténdum ígitur est ad simplicitátem infántium; quia, in ea collocáti, spéciem humilitátis Domínicæ circumferémus.
+
+        Væ huic mundo ab scándalis. Humílitas passiónis scándalum mundo est. In hoc enim máxime ignorántia detinétur humána, quod sub deformitáte crucis, ætérnæ glóriæ Dóminum nóluit accípere. Et quid mundo tam periculósum, quam non recepísse Christum? Ideo vere necésse esse ait veníre scándala; quia, ad sacraméntum reddéndæ nobis æternitátis, omnis in eo passiónis humílitas esset explénda.
+
+        Vidéte ne contemnátis unum de pusíllis istis, qui credunt in me. Aptíssimus vínculum mútui amóris impósuit, ad eos præcípue qui vere in Dómino credidíssent. Pusillórum enim Angeli quotídie Deum vident: quia Fílius hóminis venit salváre quæ pérdita sunt. Ergo et Fílius hóminis salvat, et Deum Angeli vident, et Angeli pusillórum præsunt fidélium oratiónibus. Præésse Angelos absolúta auctóritas est. Salvatórum ígitur per Christum oratiónes Angeli quotídie Deo ófferunt. Ergo periculóse ille contémnitur, cujus desidéria ac postulatiónes ad ætérnum et invisíbilem Deum, ambitióso Angelórum famulátu ac ministério, pervehúntur.
+      status: verified

@@ -1,0 +1,28 @@
+# Matins Nocturn 2 reading for St. Hyginus, Pope and Martyr (Jan 11,
+# commemorated -- the day itself is inside the Epiphany octave). The
+# main Sancti/01-11.txt has no vita for him at all (its Nocturn 2/3 is
+# the octave's own homiletic content, carried by
+# octave-readings/epiphany-octave-day-*.yml), which is why this file
+# used to pool the Epiphany homilies in. The Rome-city calendar has a
+# real proper vita: web/www/horas/Latin/Sancti/Urbis/01-11cc.txt
+# (Duplex, nine lessons; also reused for the combined Ss. Telesphorus
+# and Hyginus office of Urbis/01-19). Lectio4-6 combined into one
+# reading, one continuous vita, no genuine source break. No responsory
+# given in the source.
+#
+# Latin typos in the Urbis file corrected here: "primumPontifex" ->
+# "primum Pontifex", "lindecim" -> "undecim", "philosophuæt" ->
+# "philosophus et". English/Sancti has no regional subdirectory, so
+# there is no English source; the English is this project's own
+# translation, marked draft.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Hyginus Atheniénsis, philosopho patre, cum jam Románæ Ecclésiæ présbyter esset, cleri suffrágiis, Telesphoro sufféctus est. Sedit in sancta Petri sede, imperatóre Antoníno Pio Augusto, annos tres, menses undecim, dies vigínti octo. Ubi primum Pontifex renuntiátus est, clericórum ordines in suos gradus distínxit, ac fecit, ut in iis ecclésiis, quas Títulos vocant, tum primarii minístri, tum álii eísdem subjecti adessent, qui fidélibus, cum res postularet, sacra ministrarent.
+
+        Instítuit étiam ne absque celebratióne Missæ templa vel oratoria sacro ritu consecrarentur: ne inconsulto epíscopo, vel nova construerentur, vel jam constructa destruerentur, et ne materies ad sacrum illum usum congesta et destinata, in profanos usus converteretur. Edixit prætérea, ut patrini baptísmo adessent, qui de sacro fonte infantes levarent: ne quis epíscopus reus críminis damnaretur, nisi a comprovincialibus epíscopis ejus causa probe discussa fuísset. Cuncta hæc ejus título ac nómine sancita exstant. Tres ordinatiónes hábuit mense Decémbri, quibus creávit epíscopos sex, presbyteros quíndecim, diáconos quinque.
+
+        Cum autem paulo ante Justínus claríssimus philosophus et Christi Martyr scripsísset apologiam pro religióne christiána ad imperatórem Antoninum Pium Augústum, obtínuit ut persecutio desæviret. Hinc a Christianórum cæde, non quidem omníno, plúrimum tamen, público príncipis edícto, temperatum est. Sanctíssimo tamen pastóri, cujus cura Domínico gregi consultum fúerat, parcitum non fuit; nempe hic glorióso martyrio, ne antecessoribus dissimilis esset, innocentissimam vitam terminavit, die undecima Januárii, et sepúltus est in Vaticáno.
+      status: verified

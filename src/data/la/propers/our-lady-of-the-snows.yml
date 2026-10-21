@@ -1,0 +1,58 @@
+# Matins Nocturn 2-3 readings for Our Lady of the Snows (Dedication of
+# St. Mary Major), Aug 5 — Duplex Majus. `Sancti/08-05.txt`'s untagged
+# [Rank] block. SanctiM/08-05.txt inherits the whole day (`@Sancti/08-05`)
+# with no Nocturn 2/3 override (just reslicing Lectio4-6 into a 12-lesson
+# Monastic structure via `@Sancti/08-05:LectioN` cross-references), so
+# this feast's own content is sourced from the Tridentine track directly.
+# web/www/horas/Latin/Sancti/08-05.txt, English/Sancti/08-05.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading — the miraculous-
+# snowfall founding legend of the basilica of St. Mary Major, one
+# continuous narrative, no genuine source break. (The source's own
+# `[Lectio94]` is a shorter, alternate simplex-rank retelling of the
+# same story, not additional content — not authored separately.)
+# Nocturn 3: her own file has no Lectio7-9 at all (her `[Rule]` is
+# `ex C11`), so — like the day's collect/antiphon — this defers to the
+# Common of Feasts of the BVM's own Nocturn 3 (Commune/C11.txt): a bare
+# Gospel incipit (Luke 11:27-28, "Et réliqua") followed by the Venerable
+# Bede's homily. Per the established convention of not transcribing
+# bare incipits, only the homily was originally authored here (not
+# marked isGospel).
+# Same shared C11 content also used by
+# presentation-of-the-bvm.yml's own Nocturn 3 — the Matins mechanism has
+# no cross-id lookup for nocturn-readings the way collect/antiphon do
+# via `propers`, so it's duplicated rather than referenced.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Bede's homily). Though Commune/
+# C11.txt's own Nocturn 3 Lectio7 cuts it off at "Et réliqua", the full
+# two-verse pericope (Luke 11:27-28) is short enough that C11.txt's own
+# Missa [Evangelium] (same file) gives it complete — sourced from there,
+# not guessed at or reconstructed from the homily's mid-paragraph
+# quotations alone.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Liberio summo Pontifice, Joánnes patricius Romanus et uxor pari nobilitate, cum liberos non suscepíssent, quos bonórum herédes relínquerent, suam hereditátem sanctíssimæ Virgini Dei Matri vovérunt, ab ea summis precibus assidue peténtes, ut in quod pium opus eam pecúniam potíssimum erogari vellet aliquo modo significaret. Quorum preces et vota, ex animo facta, beáta Virgo Maria, benígne áudiens, miraculo comprobávit.
+
+        Nonis ígitur Augusti, quo témpore in Urbi maximi calóres esse solent, noctu nix partem collis Exquilini contéxit. Qua nocte Dei Mater separatim Joánnem et conjugem in somnis admonuit ut quem locum nive conspersum vidérent, in eo ecclésiam ædificarent, quæ Maríæ vírginis nómine dedicarétur; se enim ita velle ab ipsis herédem institui. Quod Joánnes ad Libérium Pontificem détulit, qui idem per sómnium sibi contigisse affirmávit.
+
+        Quare solemni sacerdotum et pópuli supplicatióne ad collem venit nive coopertum, et in eo locum ecclésiæ designávit, quæ Joánnis et uxoris pecúnia exstructa est, póstea a Xysto tertio restituta. Variis nomínibus primum est appellata, basilica Liberii, sancta Maria ad Præsepe; sed, cum multæ jam essent in Urbe ecclésiæ sub nómine sanctæ Maríæ Vírginis, ut quæ basilica novitate miraculi ac dignitate ceteris ejusdem nóminis basilicis præstaret, vocabuli étiam excelléntia significarétur, ecclésia sanctæ Maríæ majoris dicta est. Cujus dedicatiónis memória ex nive, quæ hac die mirabíliter cécidit, anniversaria celebritate cólitur.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 11:27-28
+      text: 'In illo témpore: Loquénte Jesu ad turbas, extóllens vocem quædam múlier de turba, dixit illi: Beátus venter, qui te portávit, et úbera, quæ suxísti. At ille dixit: Quinímmo beáti, qui áudiunt verbum Dei, et custódiunt illud.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: The Venerable Bede, Commentary on Luke, Book IV, ch. 49 (on Luke 11:27-28)
+      text: |-
+        Magnæ devotiónis et fídei hæc múlier osténditur, quæ, scribis et pharisǽis Dóminum tentántibus simul et blasphemántibus, tanta ejus incarnatiónem præ ómnibus sinceritáte cognóscit, tanta fidúcia confitétur, ut et præséntium prócerum calúmniam, et futurórum confúndat hæreticórum perfídiam. Nam, sicut tunc Judǽi, Sancti Spíritus ópera blasphemándo, verum consubstantialémque Patri Dei Fílium negábant; sic hærétici póstea, negándo Maríam semper Vírginem, Sancti Spíritus operánte virtúte, nascitúro cum humánis membris Unigénito Dei, carnis suæ matériam ministrásse, verum consubstantialémque matri Fílium hóminis fatéri non debére dixérunt.
+
+        Si caro Verbi Dei secúndum carnem nascéntis a carne Vírginis matris pronuntiátur extránea, sine causa venter qui eam portásset, úbera quæ lactássent, beatificántur. Dicit autem Apóstolus: Quia misit Deus Fílium suum, factum ex mulíere, factum sub lege. Neque audiéndi sunt, qui legéndum putant: Natum ex mulíere, factum sub lege, sed Factum ex mulíere; quia concéptus ex útero virgináli, carnem non de níhilo, non aliúnde, sed matérna traxit ex carne. Alióquin nec vere Fílius hóminis dicerétur, qui oríginem non habéret ex hómine. Et nos ígitur, his contra Eutychen dictis, extollámus vocem cum Ecclésia cathólica, cujus hæc múlier typum gessit, extollámus et mentem de médio turbárum, dicamúsque Salvatóri: Beátus venter qui te portávit, et úbera quæ suxísti. Vere enim beáta parens, quæ, sicut quidam ait, Eníxa est puérpera Regem, qui cælum terrámque tenet per sǽcula.
+
+        Quinímmo beáti qui áudiunt verbum Dei et custódiunt. Pulchre Salvátor attestatióni mulíeris ánnuit, non eam tantúmmodo quæ Verbum Dei corporáliter generáre merúerat, sed et omnes qui idem Verbum spiritáliter audítu fídei concípere, et boni óperis custódia vel in suo vel in proximórum corde párere et quasi álere studúerint, asséverans esse beátos; quia, et éadem Dei Génetrix, et inde quidem beáta quia Verbi incarnándi minístra facta est temporális, sed inde multo beátior quia ejúsdem semper amándi custos manébat ætérna.
+      status: verified

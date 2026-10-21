@@ -1,0 +1,26 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2030-11-16 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Qui cælórum * cóntines thronum, et abýssos intuéris, Dómine, Rex regum, montes pónderas, terram palmo conclúdis: exáudi nos, Dómine, in gemítibus nostris.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "week IV of November" (Tempora/114-0.txt) — see
+# month-week-081.yml's header for the id scheme. Live-verified (2026-11-15:
+# "Dominica VI Post Epiphaniam IV. Novembris"). Responsory reuses 111's
+# own Responsory4 (source's own cross-reference).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, City of God, Book 18, ch. 28
+      text: |-
+        Osée prophéta, quanto profúndius quidem lóquitur, tanto operósius penetrátur. Sed áliquid inde suméndum est, et hic ex nostra promissióne ponéndum. Et erit, inquit, in loco quo dictum est eis, Non pópulus meus vos; vocabúntur et ipsi fílii Dei vivi. Hoc testimónium prophéticum de vocatióne pópuli Géntium, qui prius non pertinébat ad Deum, étiam Apóstoli intellexérunt.
+
+        Et quia ipse quoque pópulus Géntium spiritáliter est in fíliis Abrahæ, ac per hoc recte dícitur Israël; proptérea séquitur, et dicit: Et congregabúntur fílii Juda et fílii Israël in idípsum, et ponent síbimet principátum unum, et ascéndent a terra. Hoc si adhuc velímus expónere, elóquii prophétici obtundétur sapor. Recolátur tamen lapis ille anguláris, et duo illi paríetes, unus ex Judǽis, alter ex Géntibus: ille nómine filiórum Juda, iste nómine filiórum Israël, eídem uni principátui suo in idípsum inniténtes, et ascendéntes agnoscántur in terra.
+
+        Istos autem carnáles Israëlítas, qui nunc nolunt crédere in Christum, póstea creditúros, id est fílios eórum, (nam útique isti in suum locum moriéndo transíbunt) idem prophéta testátur, dicens: Quóniam diébus multis sedébunt fílii Israël sine rege, sine príncipe, sine sacrifício, sine altári, sine sacerdótio, sine manifestatiónibus. Quis non vídeat, nunc sic esse Judǽos?
+      responsory: |-
+        R. Super muros tuos, Jerúsalem, constítui custódes; * Tota die et nocte non tacébunt laudáre nomen Dómini.
+        V. Prædicábunt pópulis fortitúdinem meam, et annuntiábunt géntibus glóriam meam.
+        R. Tota die et nocte non tacébunt laudáre nomen Dómini.
+      status: verified

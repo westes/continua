@@ -130,7 +130,7 @@ export function getBookIncipit(book: string): { la: string; en: string } | undef
 // bible-plan.ts's) carry only an already-formatted `citation` string, not a
 // raw ScriptureCitation.book — and that citation's own abbreviation isn't
 // authored consistently (e.g. "Luc"/"Luke", "Joann"/"John" across
-// src/data/propers/nocturn-readings/*.yml). Restricted to the four Gospels
+// src/the nocturn-readings sections of data/<lang>/propers/*.yml). Restricted to the four Gospels
 // since those are the only isGospel:true entries this needs to cover.
 const GOSPEL_CITATION_PREFIXES: [RegExp, string][] = [
   [/^matt/i, 'matt'],

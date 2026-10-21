@@ -1,0 +1,432 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C11.txt ("In Festis Beatae Mariae
+# Virginis" -- Common of Feasts of the BVM) and its English counterpart.
+# Unlike the collect-c*.yml martyr/confessor/virgin Commons, this
+# formula addresses "fámulis tuis" generically rather than naming the
+# saint (`beátæ N.`) -- no `{N}` placeholder, nothing to substitute; a
+# saint using this via SaintRecord.collectCommon still needs
+# `collectName` set (getDayCollect requires both), but its value is
+# never actually inserted into this particular template.
+collect/c11:
+  text: |
+    Orémus.
+    Concéde nos fámulos tuos, quǽsumus, Dómine Deus, perpétua mentis et córporis sanitáte gaudére: et, gloriósa beátæ Maríæ semper Vírginis intercessióne, a præsénti liberári tristítia, et ætérna pérfrui lætítia.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Commune Festorum BVM (C11), [Ant 2] -- read directly from the reference engine (Latin/Commune/C11.txt, English/Commune/C11.txt); Versum 2 there is itself an alias to C6's, matching the already-verified lauds-versicle-common-of-the-bvm.yml.
+commemoration-antiphon:
+  text: |
+    Beáta es, * María, quæ credidísti: perficiéntur in te, quæ dicta sunt tibi a Dómino, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Matins
+# `votive=C11` live query, 2026-08 -- "Quem terra, pontus, ǽthera," the
+# classic Common-of-the-BVM Matins hymn. Final stanza corrected 2026-09-10:
+# the live query had baked in the *Lauds* hymn's own ending ("Glória tibi,
+# Dómine... Cum Patre, et Sancto Spíritu"), not Matins' real default
+# ("Jesu, tibi sit glória... Cum Patre, et almo Spíritu" -- C11.txt's own
+# `[Hymnus Matutinum]`, marked with a leading `*` there and carried through
+# unaffected by `[HymnusM Matutinum]`'s `sídera`->`ǽthera` substitution).
+# English was already correct either way (same text either ending).
+matins-hymn:
+  text: |
+    Quem terra, pontus, ǽthera
+    Colunt, adórant, prædicant,
+    Trinam regéntem máchinam,
+    Claustrum Maríæ bájulat.
+
+    Cui luna, sol, et ómnia
+    Desérviunt per témpora,
+    Perfúsa cæli grátia,
+    Gestant puéllæ víscera.
+
+    Beáta Mater múnere,
+    Cujus supérnus ártifex
+    Mundum pugíllo cóntinens,
+    Ventris sub arca clausus est.
+
+    Beáta cæli núntio,
+    Fœcúnda sancto Spíritu,
+    Desiderátus géntibus,
+    Cujus per alvum fusus est.
+
+    * Jesu, tibi sit glória,
+    Qui natus es de Vírgine,
+    Cum Patre, et almo Spíritu
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Commune/C10.txt's own [Invit] (CommuneM/C10.txt
+# has no Monastic override and defers to @Commune/C10) and its English counterpart.
+matins-invitatory:
+  text: Ave María, grátia plena, * Dóminus tecum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C11` live query, 2026-08 -- read directly from the source
+# first (Sancti/02-11.txt, 05-31.txt, 07-16.txt, 09-24.txt, 10-11.txt --
+# the 5 saints/feasts in this category, Apparition of the Immaculate
+# BVM, Queenship, Our Lady of Mount Carmel, Our Lady of Ransom, and the
+# Maternity), all of whose own `[Rank]`/`[Rule]` say plain "ex C11"/"vide
+# C11", settling the votive number with no calendar dependency. Same
+# chapter reused for Vespers -- no separate vespers-capitulum-<id> file
+# authored, per vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
+lauds-capitulum:
+  text: Ab inítio et ante sǽcula creáta sum, et usque ad futúrum sǽculum non désinam, et in habitatióne sancta coram ipso ministrávi.
+  citation: Sir 24:14
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C11` live query, 2026-08 -- see lauds-capitulum-common-of-the-
+# bvm.yml's header. "O gloriósa Dómina" -- the same pre-Urban VIII hymn
+# text already found for the Annunciation's own proper (a separate,
+# individually-imported saint, not this Common) -- a real, confirmed
+# overlap between the two, not a mix-up.
+lauds-hymn:
+  text: |-
+    O gloriósa Dómina,
+    Excélsa super sídera:
+    Qui te creávit, próvide
+    Lactásti sacro úbere.
+
+    Quod Heva tristis ábstulit,
+    Tu reddis almo gérmine:
+    Intrent ut astra flébiles,
+    Cæli fenéstra facta es.
+
+    Tu Regis alti jánua,
+    Et porta lucis fúlgida:
+    Vitam datam per Vírginem,
+    Gentes redémptæ, pláudite.
+
+    Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C11` live query, 2026-08 -- see lauds-capitulum-common-of-the-
+# bvm.yml's header. Same responsory text as Vespers (unusual for this
+# app's Common categories so far -- every other one so far had distinct
+# Lauds/Vespers responsories).
+lauds-responsory:
+  text: |
+    R.br. Ave María, grátia plena, * Dóminus tecum.
+    R. Ave María, grátia plena, * Dóminus tecum.
+    V. Benedícta tu in muliéribus, et benedíctus fructus ventris tui.
+    R. Dóminus tecum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ave María, grátia plena, * Dóminus tecum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C11` live query, 2026-08 -- see lauds-capitulum-common-of-the-
+# bvm.yml's header. Vespers has its own distinct versicle -- see
+# vespers-versicle-common-of-the-bvm.yml.
+lauds-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# New file, 2026-09-15: the Common-category tier of Prime's Lectio
+# Brevis override (see hours/resolve-common.ts's getPrimeLectioBrevis) --
+# a saint with no proper Lectio Prima of her own, but who belongs to a
+# Common category, uses that category's own text rather than falling all
+# the way to the generic per-annum default. Sourced directly from
+# web/www/horas/Latin/Commune/C11.txt's own [Lectio Prima] tag and its
+# English counterpart.
+prime-lectio:
+  text: 'In platéis sicut cinnamómum et bálsamum aromatízans odórem dedi: quasi myrrha elécta, dedi suavitátem odóris.'
+  citation: Sir 24:19-20
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce.
+# Extracted (2026-08) from the Nativity of the BVM and the Immaculate
+# Conception's independently-authored content, confirmed byte-for-byte
+# identical via diff. The Assumption's own Terce capitulum uses a
+# *different* reading (Sir 24:11-12, not this Sir 24:14) and proper
+# versicles even where the Sext/None reading bodies do match this Common
+# — a first-class feast's proper office overriding the plain Common,
+# still worth a fully proper file rather than forcing it in here (see
+# assumption's own terce/sext/none-capitulum files and TODO.md).
+terce-capitulum:
+  text: |
+    Ab inítio et ante sǽcula creáta sum, et usque ad futúrum sǽculum non désinam, et in habitatióne sancta coram ipso ministrávi.
+    R. Deo grátias.
+    V. Spécie tua et pulchritúdine tua.
+    R. Inténde, próspere procéde, et regna.
+  citation: Sir 24:14
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext.
+# Extracted (2026-08) from the Nativity of the BVM and the Immaculate
+# Conception's independently-authored content, confirmed byte-for-byte
+# identical via diff. The reading body (Sir 24:15-16) matches the
+# Assumption's own Sext capitulum too, but her versicle is proper to her
+# own feast ("Assúmpta est María in cælum...") rather than this Common's
+# plain one — see assumption-sext-capitulum.yml and TODO.md.
+sext-capitulum:
+  text: |
+    Et sic in Sion firmáta sum, et in civitáte sanctificáta simíliter requiévi, et in Jerúsalem potéstas mea. Et radicávi in pópulo honorificáto, et in parte Dei mei heréditas illíus, et in plenitúdine sanctórum deténtio mea.
+    R. Deo grátias.
+    V. Adjuvábit eam Deus vultu suo.
+    R. Deus in médio ejus, non commovébitur.
+  citation: Sir 24:15-16
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None.
+# Extracted (2026-08) from the Nativity of the BVM and the Immaculate
+# Conception's independently-authored content, confirmed byte-for-byte
+# identical via diff. The reading body (Sir 24:19-20) matches the
+# Assumption's own None capitulum too, but her versicle is proper to her
+# own feast ("María Virgo assúmpta est...") rather than this Common's
+# plain one — see assumption-none-capitulum.yml and TODO.md.
+none-capitulum:
+  text: |
+    In platéis sicut cinnamómum et bálsamum aromatízans odórem dedi: quasi myrrha elécta, dedi suavitátem odóris.
+    R. Deo grátias.
+    V. Elégit eam Deus, et præelégit eam.
+    R. In tabernáculo suo habitáre facit eam.
+  citation: Sir 24:19-20
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C11` live query, 2026-08 -- "Ave maris stella," the classic
+# Common-of-the-BVM Vespers hymn, genuinely distinct from the Lauds hymn
+# (unlike some other categories this session where the two hours shared
+# one hymn text) -- see lauds-capitulum-common-of-the-bvm.yml's header
+# for the fuller gap/sourcing writeup.
+vespers-hymn:
+  text: |-
+    Ave maris stella,
+    Dei Mater alma,
+    Atque semper Virgo,
+    Felix cæli porta.
+
+    Sumens illud Ave
+    Gabriélis ore,
+    Funda nos in pace,
+    Mutans Hevæ nomen.
+
+    Solve vincla reis,
+    Profer lumen cæcis,
+    Mala nostra pelle,
+    Bona cuncta posce.
+
+    Monstra te esse matrem,
+    Sumat per te preces,
+    Qui pro nobis natus,
+    Tulit esse tuus.
+
+    Virgo singuláris,
+    Inter omnes mitis,
+    Nos culpis solútos
+    Mites fac et castos.
+
+    Vitam præsta puram,
+    Iter para tutum,
+    Ut vidéntes Jesum,
+    Semper collætémur.
+
+    Sit laus Deo Patri,
+    Summo Christo decus,
+    Spirítui Sancto,
+    Tribus honor unus. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C11` live query, 2026-08 -- see lauds-capitulum-common-of-the-
+# bvm.yml's header. Same responsory text as Lauds -- see that file's own
+# header note.
+vespers-responsory:
+  text: |
+    R.br. Ave María, grátia plena, * Dóminus tecum.
+    R. Ave María, grátia plena, * Dóminus tecum.
+    V. Benedícta tu in muliéribus, et benedíctus fructus ventris tui.
+    R. Dóminus tecum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ave María, grátia plena, * Dóminus tecum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C11` live query, 2026-08 -- distinct from the Lauds versicle
+# (see lauds-versicle-common-of-the-bvm.yml).
+vespers-versicle:
+  text: |
+    V. Dignáre me laudáre te, Virgo sacráta.
+    R. Da mihi virtútem contra hostes tuos.
+  status: verified
+
+# Corrected 2026-08-31: originally read from C11.txt's [Ant 1] ("Sancta
+# Maria succurre miseris"), but that's this Common's *First Vespers*
+# antiphon, not the Lauds Benedictus one -- discovered while sourcing
+# magnificat-antiphon-common-of-the-bvm.yml, which made clear this file's
+# layout is Vespers1(Ant1) -> Matins -> Lauds(Ant2) -> minor hours ->
+# Vespers2(Ant3), the same pattern confirmed live for several sibling
+# Commons (see e.g. magnificat-antiphon-common-of-several-martyrs.yml's
+# own header). The real Lauds text is C11's own [Ant 2]. Not
+# independently live-queried for this specific Common. Reusable by any
+# BVM feast keyed to `common: common-of-the-bvm`
+# (SaintRecord.common) that has no proper Benedictus antiphon
+# of its own -- e.g. our-lady-of-the-snows.yml.
+benedictus-antiphon:
+  text: 'Beáta es, * María, quæ credidísti: perficiéntur in te, quæ dicta sunt tibi a Dómino, allelúia.'
+  status: verified
+
+# Second Vespers Magnificat antiphon for `common-of-the-bvm` (In Festis
+# Beatae Mariae Virginis, Latin/Commune/C11.txt's own [Ant 3]) --
+# fittingly the Magnificat's own opening line ("Beatam me dicent omnes
+# generationes"). Discovered while sourcing this file that
+# benedictus-antiphon-common-of-the-bvm.yml had been reading the wrong
+# tag ([Ant 1], this Common's First Vespers antiphon, "Sancta Maria
+# succurre miseris") instead of [Ant 2] (the real Lauds Benedictus
+# antiphon, "Beata es Maria quae credidisti") -- corrected there in the
+# same pass; see this file's own header note.
+magnificat-antiphon:
+  text: Beátam me dicent * omnes generatiónes, quia ancíllam húmilem respéxit Deus.
+  status: verified
+
+# First Vespers Magnificat antiphon for this Common: Latin/Commune/C11.txt's own
+# [Ant 1] (and its English counterpart), where it differs from [Ant 3]. Second
+# Vespers' [Ant 3] is magnificat-antiphon-common-of-the-bvm.yml (the default); see
+# hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: 'Sancta María, * succúrre míseris, juva pusillánimes, réfove flébiles, ora pro pópulo, intérveni pro clero, intercéde pro devóto femíneo sexu: séntiant omnes tuum juvámen, quicúmque célebrant tuam sanctam festivitátem.'
+  status: verified
+
+# Generic Common-of-the-BVM Matins psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayMatutinum,
+# 2026-08-05 -- Our Lady of the Snows, whose own file is `propers: null`
+# -- confirmed against her own saint-file comment as a real Common-only
+# case, no proper of her own -- so her output *is* this category's
+# generic scheme). Rank Duplex majus, clears the Duplex+ three-nocturn
+# gate.
+#
+# Reference-engine votive number: C11 ("Beatae Mariae Virginis"), per
+# `horas.dialog`'s own `[votives]` index -- see
+# `common-of-a-virgin-martyr.yml`'s own header for why the CGI's
+# `votive=` parameter isn't itself usable to pull this live (it doesn't
+# swap Matins nocturn psalmody, only the Invitatory/Lauds/Vespers) --
+# a real Duplex+ saint's own calendar date remains the only reliable path.
+#
+# All 6 Nocturn 1/2 antiphons are Marian (Song of Songs bridal imagery
+# plus proper Marian phrases like "Sicut myrrha elécta" and "Gaude, María
+# Virgo"); Nocturn 3's antiphon+canticle is the "Hortus conclúsus" (Song
+# of Songs 4) text, genuinely distinct content from both
+# Common-of-a-Virgin-Martyr and Common-of-a-Virgin's own Nocturn 3.
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 8
+        antiphon: Benedícta tu * in muliéribus, et benedíctus fructus ventris tui.
+      - psalms:
+          - 18
+        antiphon: Sicut myrrha * elécta, odórem dedísti suavitátis, sancta Dei Génitrix.
+      - psalms:
+          - 23
+        antiphon: Ante torum * hujus Vírginis frequentáte nobis dúlcia cántica drámatis.
+      - psalms:
+          - 44
+        antiphon: Spécie tua * et pulchritúdine tua inténde, próspere procéde, et regna.
+      - psalms:
+          - 45
+        antiphon: 'Adjuvábit eam * Deus vultu suo: Deus in médio ejus, non commovébitur.'
+      - psalms:
+          - 47
+        antiphon: 'Favus distíllans * lábia tua, Sponsa, mel et lac sub lingua tua: † et odor vestimentórum tuórum sicut odor thuris.'
+    versicle:
+      v: Spécie tua et pulchritúdine tua.
+      r: Inténde, próspere procéde, et regna.
+  nocturn2:
+    groups:
+      - psalms:
+          - 84
+        antiphon: Fons hortórum, * púteus aquárum vivéntium, † quæ fluunt ímpetu de Líbano.
+      - psalms:
+          - 86
+        antiphon: Sicut lætántium * ómnium nostrum habitátio est in te, sancta Dei Génitrix.
+      - psalms:
+          - 95
+        antiphon: 'Gaude, María Virgo: * cunctas hǽreses sola interemísti in univérso mundo.'
+      - psalms:
+          - 96
+        antiphon: 'Dignáre me * laudáre te, Virgo sacráta: da mihi virtútem contra hostes tuos.'
+      - psalms:
+          - 97
+        antiphon: 'Post partum, * Virgo, invioláta permansísti: Dei Génitrix, intercéde pro nobis.'
+      - psalms:
+          - 98
+        antiphon: Descéndi * in hortum nucum, ut vidérem poma convállium, † et inspícerem, si floruísset vinea, et germinássent mala púnica, allelúia.
+    versicle:
+      v: Adjuvábit eam Deus vultu suo.
+      r: Deus in médio ejus, non commovébitur.
+  nocturn3:
+    antiphon: 'Hortus conclúsus * es Dei Génitrix, hortus conclúsus, fons signátus: † surge própera, amíca mea, et veni.'
+    canticles:
+      - refs:
+          - book: sir
+            chapter: 39
+            verses: 17-21
+      - refs:
+          - book: isa
+            chapter: 61
+            verses: 10-11
+          - book: isa
+            chapter: 62
+            verses: 1-3
+      - refs:
+          - book: isa
+            chapter: 62
+            verses: 4-7
+    versicle:
+      v: Elégit eam Deus, et præelégit eam.
+      r: In tabernáculo suo habitáre facit eam.
+
+# Generic Common-of-the-BVM Lauds psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayLaudes,
+# votive=C11). Psalm numbers (92, 99, 62, Canticum Trium Puerorum) are
+# the same fixed Duplex-majus+ set used by every Common (see
+# hours/lauds-psalmody-overrides.ts's own doc comment) -- only these
+# antiphons are specific to this Common.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Dum esset Rex * in accúbitu suo, nardus mea dedit odórem suavitátis.
+    - psalms:
+        - 99
+      antiphon: Læva eius * sub cápite meo, et déxtera illíus amplexábitur me.
+    - psalms:
+        - 62
+      antiphon: Nigra sum, * sed formósa, fíliæ Ierúsalem; ídeo diléxit me Rex, et introdúxit me in cubículum suum.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Iam hiems tránsiit, * imber ábiit et recéssit: surge, amíca mea, et veni.'
+  laudate:
+    antiphon: Speciósa * facta es et suávis in delíciis tuis, sancta Dei Génetrix.
+
+# Generic Common-of-the-BVM Vespers psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayVespera,
+# votive=C11, 2026-08-28). Same four psalm numbers as Common-of-a-Virgin/
+# Common-of-a-Holy-Woman (109, 112, 121, 126) -- only the antiphons
+# differ, so this is deliberately its own category file rather than an
+# alias.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Dum esset Rex * in accúbitu suo, nardus mea dedit odórem suavitátis.
+    - psalms:
+        - 112
+      antiphon: Læva eius * sub cápite meo, et déxtera illíus amplexábitur me.
+    - psalms:
+        - 121
+      antiphon: Nigra sum, * sed formósa, fíliæ Ierúsalem; ídeo diléxit me Rex, et introdúxit me in cubículum suum.
+    - psalms:
+        - 126
+      antiphon: Speciósa * facta es et suávis in delíciis tuis, sancta Dei Génetrix.

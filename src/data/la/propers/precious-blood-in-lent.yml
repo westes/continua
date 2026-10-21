@@ -1,0 +1,77 @@
+# Copy of collect-most-precious-blood.yml: the Friday of Lent 4 keeps the office of the Most Precious Blood (Quad4-5-SanguisDNJC.txt is the one line @Sancti/07-DP, which is Sancti/07-01), so this is the same text under this feast's own id, for the commemoration lookup (temporal collect-<id> / benedictus- and magnificat-antiphon-<id>).
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui unigénitum Fílium tuum mundi Redemptórem
+    constituísti, ac ejus Sánguine placári voluísti: concéde, quǽsumus, salútis
+    nostræ prétium solémni cultu ita venerári, atque a præséntis vitæ malis ejus
+    virtúte deféndi in terris; ut fructu perpétuo lætémur in cælis.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Copy of benedictus-antiphon-most-precious-blood.yml: the Friday of Lent 4 keeps the office of the Most Precious Blood (Quad4-5-SanguisDNJC.txt is the one line @Sancti/07-DP, which is Sancti/07-01), so this is the same text under this feast's own id, for the commemoration lookup (temporal collect-<id> / benedictus- and magnificat-antiphon-<id>).
+benedictus-antiphon:
+  text: Accessístis * ad Sion montem, et civitátem Dei vivéntis, Jerúsalem cæléstem, et Testaménti novi mediatórem Jesum, et sánguinis aspersiónem mélius loquéntem quam Abel.
+  status: verified
+  temporal: true
+
+# Copy of magnificat-antiphon-most-precious-blood.yml: the Friday of Lent 4 keeps the office of the Most Precious Blood (Quad4-5-SanguisDNJC.txt is the one line @Sancti/07-DP, which is Sancti/07-01), so this is the same text under this feast's own id, for the commemoration lookup (temporal collect-<id> / benedictus- and magnificat-antiphon-<id>).
+magnificat-antiphon:
+  text: 'Habébitis autem * hunc diem in monuméntum: et celebrábitis eum solémnem Dómino in generatiónibus vestris cultu sempitérno.'
+  status: verified
+  temporal: true
+
+# Copy of magnificat-antiphon-most-precious-blood-first.yml: the Friday of Lent 4 keeps the office of the Most Precious Blood (Quad4-5-SanguisDNJC.txt is the one line @Sancti/07-DP, which is Sancti/07-01), so this is the same text under this feast's own id, for the commemoration lookup (temporal collect-<id> / benedictus- and magnificat-antiphon-<id>).
+magnificat-antiphon/~-first:
+  text: Accessístis * ad Sion montem, et civitátem Dei vivéntis, Jerúsalem cæléstem, et Testaménti novi mediatórem Jesum, et sánguinis aspersiónem mélius loquéntem quam Abel.
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 and 3 readings for the Most Precious Blood on the Friday of Lent 4.
+# Source: web/www/horas/Latin/Sancti/aliquibus locis/Quad4-5-SanguisDNJC.txt is the one
+# line "@Sancti/07-DP", and Sancti/07-DP.txt rearranges the Lectio4-6 of Sancti/07-01.txt
+# by include rules: Lectio4 is 07-01's with "Vis" read "Vultis"; the Pius XI note
+# (the end of 07-01's Lectio6, "Recurrente autem anno...") is cut; and one more
+# paragraph, 07-DP's own [Lectio5 finem], is set between 07-01's "latus illud Dominicum
+# initium fuit." and "Latus miles aperuit". Nocturn 3 (Lectio7-9) is 07-01's unchanged.
+# This file therefore carries continua's most-precious-blood.yml reading, with those
+# three changes made, and the Gospel and Augustine homily of that file as they are.
+#
+# Latin of the added paragraph: the source reads "perciissit" and "diliiimur" (OCR
+# damage); "percussit" and "diluimur" are supplied. Its English is this project's own
+# translation, so the reading is marked draft in English; the rest of the English is
+# the reference engine's own, as in most-precious-blood.yml.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. John Chrysostom, Homily 84 on John, ch. 19
+      text: |
+        Vultis sánguinis Christi audíre virtútem? Redeámus ad ejus exémplum, et priórem typum recordémur, et prístinam Scriptúram narrémus. In Ægýpto, nocte média, Ægýptiis Deus plagam décimam minabátur, ut eórum primogénita deperírent, quia primogénitum ejus pópulum detinébant. Sed, ne amáta plebs Judæórum una cum illis periclitarétur, quia unus locus continébat univérsos, remédium discretiónis invéntum est. Proínde exémplum mirábile, ut discas in veritáte virtútem. Ira divínæ indignatiónis operabátur, et domos síngulas mórtifer circuíbat. Quid ígitur Móyses? Occídite, inquit, agnum annículum, et sánguine ejus liníte jánuas. Quid ais, Móyses? Sanguis ovis rationálem hóminem liberáre consuévit? Valde, inquit; non eo quod sanguis est, sed quia Domínici sánguinis per eum demonstrátur exémplum.
+
+        Nam, sicut regnántium státuæ, quæ sine causa sunt et sermóne, nonnúmquam ad se confugiéntibus homínibus, ánima et ratióne decorátis, subveníre consuevérunt, non quia sunt ære conféctæ, sed quia rétinent imáginem principálem; ita et sanguis ille, qui irrationális fuit, ánimas habéntes hómines liberávit, non quia sanguis fuit, sed quia hujus sánguinis ostendébat advéntum. Et tunc Angelus ille vastátor, cum linítos postes atque áditus pervidéret, transjécit gressus et non est ausus intráre. Nunc ergo si víderit inimícus, non póstibus impósitum sánguinem typi, sed fidélium ore lucéntem sánguinem veritátis Christi, templi póstibus dedicátum, multo magis se súbtrahet. Si enim Angelus cessit exémplo, quanto magis terrébitur inimícus, si ipsam perspéxerit veritátem? Vis et áliam hujus sánguinis scrutári virtútem? Volo. Unde primum occúrrit, inspícias, et de quo fonte manávit. De ipsa primum cruce procéssit; latus illud Domínicum inítium fuit.
+
+        Mortuo enim, ait, Jesu, et adhuc in cruce pendente, approximat miles, latus lancea percussit, et exinde aqua fluxit, et sanguis. Unum baptismatis symbolum, aliud sacramenti. Ideo non ait: Exiit sanguis et aqua; sed exiit aqua primum et sanguis, quia primum baptismate diluimur, et postea mysterio dedicamur.
+
+        Latus miles apéruit, et templi sancti paríetem patefécit; et ego thesáurum præclárum invéni, et fulgéntes divítias me grátulor reperíre.
+
+        Sic et de illo agno factum est: Judǽi ovem occidérunt, et ego fructum de sacraménto cognóvi. De látere sanguis et aqua. Nolo tam fácile, audítor, tránseas tanti secréta mystérii; restat enim mihi mýstica atque secretális orátio. Dixi baptísmatis sýmbolum et mysteriórum, aquam illam et sánguinem demonstráre. Ex his enim sancta fundáta est Ecclésia per lavácri regeneratiónem, et renovatiónem Spíritus Sancti. Per baptísma, inquam, et mystéria, quæ ex látere vidéntur esse proláta. Ex látere ígitur suo Christus ædificávit Ecclésiam, sicut de látere Adam ejus conjux Heva proláta est. Nam hac de causa Paulus quoque testátur dicens: De córpore ejus et de óssibus ejus sumus; latus vidélicet illud signíficans. Nam, sicut de illo látere Deus fecit féminam procreári, sic et de suo látere Christus aquam nobis et sánguinem dedit, unde repararétur Ecclésia.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joann 19:30-35
+      text: 'In illo témpore: Cum accepísset Jesus acétum, dixit: Consummátum est. Et inclináto cápite trádidit spíritum. Judæi ergo -- quóniam Parascéve erat --, ut non remanérent in cruce córpora sábbato -- erat enim magnus dies ille sábbati --, rogavérunt Pilátum, ut frangeréntur eórum crura et tolleréntur. Venérunt ergo mílites: et primi quidem fregérunt crura et altérius, qui crucifíxus est cum eo. Ad Jesum autem cum venissent, ut vidérunt eum jam mórtuum, non fregérunt ejus crura, sed unus mílitum láncea latus ejus apéruit, et contínuo exívit sanguis et aqua. Et qui vidit, testimónium perhíbuit; et verum est testimónium ejus.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine of Hippo, Tractate 120 on John
+      text: |
+        Vigilánti verbo Evangelísta usus est, ut non díceret: Latus ejus percússit, aut vulnerávit, aut quid áliud, sed Apéruit; ut illic quodámmodo vitæ óstium panderétur, unde sacraménta Ecclésiæ manavérunt, sine quibus ad vitam, quæ vera vita est, non intrátur. Ille sanguis qui fusus est, in remissiónem fusus est peccatórum. Aqua illa salutáre témperat póculum; hæc et lavácrum præstat et potum. Hoc prænuntiábat quod Noë in látere arcæ óstium fácere jussus est, quo intrárent animália quæ non erant dilúvio peritúra, quibus præfigurabátur Ecclésia. Propter hoc prima múlier facta est de látere viri dormiéntis, et appelláta est vita matérque vivórum. Magnum quippe significávit bonum, ante magnum prævaricatiónis malum. Hic secúndus Adam, inclináto cápite, in cruce dormívit, ut inde formarétur ei conjux, quæ de látere dormiéntis efflúxit. O mors, unde mórtui revivíscunt! Quid isto sánguine múndius? Quid vúlnere isto salúbrius?
+
+        Tenebántur hómines captívi sub diábolo, et dæmónibus serviébant; sed redémpti sunt a captivitáte. Véndere enim se potuérunt, sed redímere non potuérunt. Venit Redémptor, et dedit prétium; fudit sánguinem suum, et emit orbem terrárum. Quǽritis quid émerit? Vidéte quid déderit, et inveniétis quid émerit. Sanguis Christi prétium est. Tanti quid valet? quid, nisi totus orbis? quid, nisi omnes gentes? Valde ingráti sunt prétio suo, aut multum supérbi sunt, qui dicunt, aut illud tam parum esse ut solos Afros émerit, aut se tam magnos esse pro quibus solis illud sit datum. Non ergo exsúltent, non supérbiant. Pro toto dedit, quantum dedit.
+
+        Hábuit ille sánguinem, unde nos redímeret; et ad hoc accépit sánguinem, ut esset quem pro nobis rediméndis effúnderet. Sanguis Dómini tui, si vis, datus est pro te; si nolúeris esse, non est datus pro te. Forte enim dicis: Hábuit sánguinem Deus meus, quo me redímeret, sed jam, cum passus est, totum dedit; quid illi remánsit, quod det et pro me? Hoc est magnum, quia semel dedit, et pro ómnibus dedit. Sanguis Christi volénti est salus, nolénti supplícium. Quid ergo dúbitas, qui mori non vis, a secúnda pótius morte liberári? Qua liberáris, si vis tóllere crucem tuam, et sequi Dóminum; quia ille tulit suam, et quæsívit servum.
+      status: verified

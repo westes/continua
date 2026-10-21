@@ -1,0 +1,509 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C8.txt ("In Anniversario Dedicationis
+# Ecclesiae") and its English counterpart, 2026-08. Not a name-templated
+# Common — a Dedication-of-a-Church collect has no "{N}" to substitute,
+# so this file is used directly via a saint's own `propers`, not through
+# the collectCommon/collectName mechanism the other collect-c*.yml files
+# use.
+collect/c8:
+  text: |
+    Orémus.
+    Deus, qui nobis per síngulos annos hujus sancti templi tui consecratiónis réparas diem, et sacris semper mystériis repræséntas incólumes: exáudi preces pópuli tui, et præsta; ut quisquis hoc templum benefíciis petitúrus ingréditur, cuncta se impetrásse lætétur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Commune Dedicationis Ecclesiae (C8), [Ant 2] -- read directly from the reference engine (Latin/Commune/C8.txt, English/Commune/C8.txt); this Common had no lauds-versicle file yet either, see the new lauds-versicle-common-of-a-dedication.yml (Versum 2 there aliases Versum 1).
+commemoration-antiphon:
+  text: |
+    Zachǽe, * festínans descénde, quia hódie in domo tua opórtet me manére. At ille festínans descéndit, et suscépit illum gaudens in domum suam. Hódie huic dómui salus a Deo facta est, allelúia.
+  status: verified
+
+# Matins hymn: the reference engine's Commune/C8 [HymnusM Matutinum] is '@Commune/C8:HymnusM Vespera', i.e. the Vespers hymn verbatim. Copy of vespers-hymn-common-of-a-dedication.yml.
+# Vespers hymn. Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-11-09, the Dedication of the Basilica of the Most Holy Savior; the Nov 18 Dedication of the Basilicas of Ss. Peter and Paul, also ex C8, takes the same Common). Before this file the Common of a Dedication had no Lauds/Vespers bundle and both feasts fell through to the ferial chapter, responsory and hymn.
+matins-hymn:
+  text: |
+    Urbs beáta Jerúsalem,
+    Dicta pacis vísio,
+    Quæ constrúitur in cælis
+    Vivis ex lapídibus,
+    Et Ángelis coronáta
+    Ut sponsáta cómite.
+
+    Nova véniens e cælo,
+    Nuptiáli thálamo
+    Præparáta, ut sponsáta
+    Copulétur Dómino:
+    Platéæ et muri ejus
+    Ex auro puríssimo.
+
+    Portæ nitent margarítis
+    Ádytis paténtibus,
+    Et virtúte meritórum
+    Illuc introdúcitur
+    Omnis qui ob Christi nomen
+    Hic in mundo prémitur.
+
+    Tunsiónibus, pressúris
+    Expolíti lápides,
+    Suis coaptántur locis
+    Per manus artíficis,
+    Disponúntur permansúri
+    Sacris ædifíciis.
+
+    Glória et honor Deo
+    Usquequáque altíssimo,
+    Una Patri, Filióque,
+    Inclyto Paráclito,
+    Cui laus est et potéstas
+    Per ætérna sǽcula.
+    Amen.
+  status: verified
+
+# The Common of the Dedication of a Church's own invitatory antiphon
+# ("Domum Dei decet sanctitúdo" / "Holiness becometh the house of God"),
+# read from the reference engine's own Commune/C8.txt [Invit] line (both
+# languages). Any winning dedication feast with no proper invitatory
+# antiphon of its own authored falls to this Common tier
+# (hours/matins.ts's resolveMatinsInvitatoryText).
+matins-invitatory:
+  text: 'Domum Dei decet sanctitúdo: * Sponsum ejus Christum adorémus in ea.'
+  status: verified
+
+# Chapter (Rev 21:2), the same at Lauds and Vespers. Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-11-09, the Dedication of the Basilica of the Most Holy Savior; the Nov 18 Dedication of the Basilicas of Ss. Peter and Paul, also ex C8, takes the same Common). Before this file the Common of a Dedication had no Lauds/Vespers bundle and both feasts fell through to the ferial chapter, responsory and hymn.
+lauds-capitulum:
+  text: |
+    Vidi civitátem sanctam, Jerúsalem novam, descendéntem de cælo a Deo, parátam sicut sponsam ornátam viro suo.
+    R. Deo grátias.
+  status: verified
+
+# Lauds hymn. Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-11-09, the Dedication of the Basilica of the Most Holy Savior; the Nov 18 Dedication of the Basilicas of Ss. Peter and Paul, also ex C8, takes the same Common). Before this file the Common of a Dedication had no Lauds/Vespers bundle and both feasts fell through to the ferial chapter, responsory and hymn.
+lauds-hymn:
+  text: |
+    Anguláris fundaméntum
+    Lapis Christus missus est,
+    Qui paríetum compáge
+    In utróque néctitur,
+    Quem Sion sancta suscépit,
+    In quo credens pérmanet.
+
+    Omnis illa Deo sacra
+    Et dilécta cívitas,
+    Plena módulis, in laude,
+    Et canóre júbilo,
+    Trinum Deum unicúmque
+    Cum fervóre prǽdicat.
+
+    Hoc in templo, summe Deus,
+    Exorátus ádveni,
+    Et cleménti bonitáte
+    Precum vota súscipe,
+    Largam benedictiónem
+    Hic infúnde júgiter.
+
+    Hic promereántur omnes
+    Petíta acquírere,
+    Et adépta possidére,
+    Cum Sanctis perénniter
+    Paradísum introíre,
+    Transláti in réquiem.
+
+    Glória et honor Deo
+    Usquequáque altíssimo,
+    Una Patri, Filióque,
+    Inclyto Paráclito,
+    Cui laus est et potéstas
+    Per ætérna sǽcula.
+    Amen.
+  status: verified
+
+# Lauds short responsory. Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-11-09, the Dedication of the Basilica of the Most Holy Savior; the Nov 18 Dedication of the Basilicas of Ss. Peter and Paul, also ex C8, takes the same Common). Before this file the Common of a Dedication had no Lauds/Vespers bundle and both feasts fell through to the ferial chapter, responsory and hymn.
+lauds-responsory:
+  text: |
+    R.br. Domum tuam, Dómine, * Decet sanctitúdo.
+    R. Domum tuam, Dómine, * Decet sanctitúdo.
+    V. In longitúdinem diérum.
+    R. Decet sanctitúdo.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Domum tuam, Dómine, * Decet sanctitúdo.
+  status: verified
+
+# Read directly from the reference engine (Latin/Commune/C8.txt,
+# English/Commune/C8.txt): Commune Dedicationis Ecclesiae's Versum 2
+# aliases its own Versum 1 (no distinct text). No lauds-versicle file
+# existed for this Common before -- needed now for
+# common-of-a-dedication-commemoration-antiphon.yml's Ant 2 pairing.
+lauds-versicle:
+  text: |
+    V. Hæc est domus Dómini fírmiter ædificáta.
+    R. Bene fundáta est supra firmam petram.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (dedication of the basilicas of ss peter and paul, 11-18-2025) -- common-of-a-dedication.
+# For the Dedication of a Church (Commune/C8.txt) -- currently only
+# one saint on this app's calendar uses it. `SaintRecord.common` calls
+# it `common-of-an-apostle` (Peter and Paul's own basilicas), but its
+# actual P/T/S/N and Benedictus antiphon draw from the Dedication
+# Common instead (about the building, not the apostles) -- confirmed
+# live, not assumed from the collect's own `collect-c8`.
+prime-antiphon:
+  text: Domum tuam, Dómine, * decet sanctitúdo in longitúdinem diérum.
+  status: verified
+
+# New file, 2026-09-15: the Common-category tier of Prime's Lectio
+# Brevis override (see hours/resolve-common.ts's getPrimeLectioBrevis) --
+# a saint with no proper Lectio Prima of her own, but who belongs to a
+# Common category, uses that category's own text rather than falling all
+# the way to the generic per-annum default. Sourced directly from
+# web/www/horas/Latin/Commune/C8.txt's own [Lectio Prima] tag and its
+# English counterpart. English citation "Rev 21:4-4" in the source is a
+# single-character typo (duplicated "4"); corrected to "Rev 21:4-5" to
+# match the Latin's own "Apo 21:4-5".
+prime-lectio:
+  text: 'Et abstérget Deus omnem lácrimam ab óculis eórum: et mors ultra non erit, neque luctus, neque clamor, neque dolor erit ultra, quia prima abiérunt. Et dixit qui sedébat in throno: Ecce nova fácio ómnia.'
+  citation: Apo 21:4-5
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (dedication of the basilicas of ss peter and paul, 11-18-2025) -- common-of-a-dedication.
+# For the Dedication of a Church (Commune/C8.txt) -- currently only
+# one saint on this app's calendar uses it. `SaintRecord.common` calls
+# it `common-of-an-apostle` (Peter and Paul's own basilicas), but its
+# actual P/T/S/N and Benedictus antiphon draw from the Dedication
+# Common instead (about the building, not the apostles) -- confirmed
+# live, not assumed from the collect's own `collect-c8`.
+terce-antiphon:
+  text: Domus mea, * domus oratiónis vocábitur.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (dedication of the basilicas of ss peter and paul, 11-18-2025) -- common-of-a-dedication.
+# For the Dedication of a Church (Commune/C8.txt) -- currently only
+# one saint on this app's calendar uses it. `SaintRecord.common` calls
+# it `common-of-an-apostle` (Peter and Paul's own basilicas), but its
+# actual P/T/S/N and Benedictus antiphon draw from the Dedication
+# Common instead (about the building, not the apostles) -- confirmed
+# live, not assumed from the collect's own `collect-c8`.
+terce-capitulum:
+  text: |
+    Vidi civitátem sanctam, Jerúsalem novam, descendéntem de cælo a Deo, parátam sicut sponsam ornátam viro suo.
+    R. Deo grátias.
+    V. Domum tuam, Dómine, decet sanctitúdo.
+    R. In longitúdinem diérum.
+  citation: Apo 21:2
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (dedication of the basilicas of ss peter and paul, 11-18-2025) -- common-of-a-dedication.
+# For the Dedication of a Church (Commune/C8.txt) -- currently only
+# one saint on this app's calendar uses it. `SaintRecord.common` calls
+# it `common-of-an-apostle` (Peter and Paul's own basilicas), but its
+# actual P/T/S/N and Benedictus antiphon draw from the Dedication
+# Common instead (about the building, not the apostles) -- confirmed
+# live, not assumed from the collect's own `collect-c8`.
+sext-antiphon:
+  text: Hæc est domus Dómini * fírmiter ædificáta, bene fundáta est supra firmam petram.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (dedication of the basilicas of ss peter and paul, 11-18-2025) -- common-of-a-dedication.
+# For the Dedication of a Church (Commune/C8.txt) -- currently only
+# one saint on this app's calendar uses it. `SaintRecord.common` calls
+# it `common-of-an-apostle` (Peter and Paul's own basilicas), but its
+# actual P/T/S/N and Benedictus antiphon draw from the Dedication
+# Common instead (about the building, not the apostles) -- confirmed
+# live, not assumed from the collect's own `collect-c8`.
+sext-capitulum:
+  text: |
+    Et audívi vocem magnam de throno dicéntem: Ecce tabernáculum Dei cum homínibus, et habitábit cum eis; et ipsi pópulus ejus erunt, et ipse Deus cum eis erit eórum Deus.
+    R. Deo grátias.
+    V. Locus iste sanctus est, in quo orat sacérdos.
+    R. Pro delíctis et peccátis pópuli.
+  citation: Apo 21:3
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (dedication of the basilicas of ss peter and paul, 11-18-2025) -- common-of-a-dedication.
+# For the Dedication of a Church (Commune/C8.txt) -- currently only
+# one saint on this app's calendar uses it. `SaintRecord.common` calls
+# it `common-of-an-apostle` (Peter and Paul's own basilicas), but its
+# actual P/T/S/N and Benedictus antiphon draw from the Dedication
+# Common instead (about the building, not the apostles) -- confirmed
+# live, not assumed from the collect's own `collect-c8`.
+none-antiphon:
+  text: Lápides pretiósi * omnes muri tui, et turres Jerúsalem gemmis ædificabúntur.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (dedication of the basilicas of ss peter and paul, 11-18-2025) -- common-of-a-dedication.
+# For the Dedication of a Church (Commune/C8.txt) -- currently only
+# one saint on this app's calendar uses it. `SaintRecord.common` calls
+# it `common-of-an-apostle` (Peter and Paul's own basilicas), but its
+# actual P/T/S/N and Benedictus antiphon draw from the Dedication
+# Common instead (about the building, not the apostles) -- confirmed
+# live, not assumed from the collect's own `collect-c8`.
+none-capitulum:
+  text: |
+    Et abstérget Deus omnem lácrimam ab óculis eórum: et mors ultra non erit, neque luctus, neque clamor, neque dolor erit ultra, quia prima abiérunt. Et dixit qui sedébat in throno: Ecce nova fácio ómnia.
+    R. Deo grátias.
+    V. Hæc est domus Dómini fírmiter ædificáta.
+    R. Bene fundáta est supra firmam petram.
+  citation: Apo 21:4-5
+  status: verified
+
+# Vespers hymn. Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-11-09, the Dedication of the Basilica of the Most Holy Savior; the Nov 18 Dedication of the Basilicas of Ss. Peter and Paul, also ex C8, takes the same Common). Before this file the Common of a Dedication had no Lauds/Vespers bundle and both feasts fell through to the ferial chapter, responsory and hymn.
+vespers-hymn:
+  text: |
+    Urbs beáta Jerúsalem,
+    Dicta pacis vísio,
+    Quæ constrúitur in cælis
+    Vivis ex lapídibus,
+    Et Ángelis coronáta
+    Ut sponsáta cómite.
+
+    Nova véniens e cælo,
+    Nuptiáli thálamo
+    Præparáta, ut sponsáta
+    Copulétur Dómino:
+    Platéæ et muri ejus
+    Ex auro puríssimo.
+
+    Portæ nitent margarítis
+    Ádytis paténtibus,
+    Et virtúte meritórum
+    Illuc introdúcitur
+    Omnis qui ob Christi nomen
+    Hic in mundo prémitur.
+
+    Tunsiónibus, pressúris
+    Expolíti lápides,
+    Suis coaptántur locis
+    Per manus artíficis,
+    Disponúntur permansúri
+    Sacris ædifíciis.
+
+    Glória et honor Deo
+    Usquequáque altíssimo,
+    Una Patri, Filióque,
+    Inclyto Paráclito,
+    Cui laus est et potéstas
+    Per ætérna sǽcula.
+    Amen.
+  status: verified
+
+# Vespers short responsory. Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-11-09, the Dedication of the Basilica of the Most Holy Savior; the Nov 18 Dedication of the Basilicas of Ss. Peter and Paul, also ex C8, takes the same Common). Before this file the Common of a Dedication had no Lauds/Vespers bundle and both feasts fell through to the ferial chapter, responsory and hymn.
+vespers-responsory:
+  text: |
+    R.br. Locus iste sanctus est, * In quo orat sacérdos.
+    R. Locus iste sanctus est, * In quo orat sacérdos.
+    V. Pro delíctis et peccátis pópuli.
+    R. In quo orat sacérdos.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Locus iste sanctus est, * In quo orat sacérdos.
+  status: verified
+
+# Second Vespers versicle. Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-11-09, the Dedication of the Basilica of the Most Holy Savior; the Nov 18 Dedication of the Basilicas of Ss. Peter and Paul, also ex C8, takes the same Common). Before this file the Common of a Dedication had no Lauds/Vespers bundle and both feasts fell through to the ferial chapter, responsory and hymn.
+vespers-versicle:
+  text: |
+    V. Domum tuam, Dómine, decet sanctitúdo.
+    R. In longitúdinem diérum.
+  status: verified
+
+# First Vespers versicle (engine render 2026-11-17, the Dedication of the Basilicas of Ss. Peter and Paul, ex C8; same as the Lauds versicle). See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Hæc est domus Dómini fírmiter ædificáta.
+    R. Bene fundáta est supra firmam petram.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# query (Dedication of the Basilicas of Ss. Peter and Paul, 11-18-2025) --
+# common-of-a-dedication. For the Dedication of a Church (Commune/C8.txt)
+# -- currently only one saint on this app's calendar uses it.
+# `SaintRecord.common` calls it `common-of-an-apostle` (Peter and Paul's
+# own basilicas), but its actual P/T/S/N and Benedictus antiphon draw
+# from the Dedication Common instead (about the building, not the
+# apostles) -- confirmed live, not assumed from the collect's own
+# `collect-c8`. No embedded "*": this feast is Duplex (double-or-higher),
+# so its own query shows the antiphon in full at both open and close with
+# no separate incipit marker -- correct as-is for its only current user,
+# but worth reconstructing from a lower-rank source if this Common ever
+# gains a Simplex/Semiduplex member (see the analogous fix in
+# benedictus-antiphon-common-of-an-abbot.yml/-a-virgin.yml).
+benedictus-antiphon:
+  text: Zachǽe, festínans descénde, quia hódie in domo tua opórtet me manére. At ille festínans descéndit, et suscépit illum gaudens in domum suam. Hódie huic dómui salus a Deo facta est, allelúia.
+  status: verified
+
+# Second Vespers Magnificat antiphon for `common-of-a-dedication`
+# (Commune Dedicationis Ecclesiae, Latin/Commune/C8.txt's own [Ant 3] --
+# the "O quam metuendus est locus iste" Jacob's-ladder text, Genesis
+# 28:17). Ant 2 in this same file matches the already-authored
+# benedictus-antiphon-common-of-a-dedication.yml's "Zacchæe" text
+# exactly, confirming the Vespers1(Ant1)/Lauds(Ant2)/Vespers2(Ant3) read
+# for this Common. Read directly from source, not independently
+# live-queried (this Common's only current user, Ss. Peter and Paul's
+# basilicas, sits in a crowded November stretch where every date tried
+# lost the evening to a neighboring feast).
+magnificat-antiphon:
+  text: 'O quam metuéndus est * locus iste: vere non est hic áliud, nisi domus Dei, et porta cæli.'
+  status: verified
+
+# First Vespers Magnificat antiphon for this Common: Latin/Commune/C8.txt's own
+# [Ant 1] (and its English counterpart), where it differs from [Ant 3]. Second
+# Vespers' [Ant 3] is magnificat-antiphon-common-of-a-dedication.yml (the default); see
+# hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: 'Sanctificávit Dóminus * tabernáculum suum: quia hæc est domus Dei, in qua invocábitur nomen ejus, de quo scriptum est: Et erit nomen meum ibi, dicit Dóminus.'
+  status: verified
+
+# Generic Common-of-a-Dedication Matins psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayMatutinum,
+# 2026-11-09 -- the Dedication of the Basilica of the Most Holy Saviour
+# (the Lateran), `propers: null` in her own vu file, so this is genuinely
+# this category's generic scheme, not proper content). Rank Duplex,
+# clears the Duplex+ three-nocturn gate. Currently only one saint/feast
+# on the vu calendar uses this Common, so this file is both the category
+# default and, in practice, this feast's own content.
+#
+# Reference-engine votive number: C8 ("Dedicationis Ecclesiae"), per
+# `horas.dialog`'s own `[votives]` index (see `common-of-a-virgin-
+# martyr.yml`'s header for why `votive=` isn't itself usable live for
+# Matins psalmody).
+#
+# All six Nocturn 1/2 antiphons are temple/house-of-God imagery (drawn
+# from Pss 5, 10, 23, 28, 45, 47, 83, 86, 87, 90, 95, 98); Nocturn 3 is
+# Jacob's ladder ("Vidit Jacob scalam") with a canticle set from Tobit,
+# Isaiah, and Jeremiah -- distinct scripture from every other Common in
+# this pool.
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 5
+        antiphon: Introíbo * in domum tuam, Dómine, † et adorábo ad templum sanctum tuum.
+      - psalms:
+          - 10
+        antiphon: Dóminus * in templo sancto suo, † Dóminus in cælo sedes ejus.
+      - psalms:
+          - 23
+        antiphon: Tóllite portas, * príncipes vestras, et elevámini, portæ æternáles.
+      - psalms:
+          - 28
+        antiphon: Adoráte * Dóminum in aula sancta ejus.
+      - psalms:
+          - 45
+        antiphon: Erit mihi Dóminus * in Deum, et lapis iste vocábitur domus Dei.
+      - psalms:
+          - 47
+        antiphon: Ædificávit * Móyses altáre Dómino Deo.
+    versicle:
+      v: Domum tuam, Dómine, decet sanctitúdo.
+      r: In longitúdinem diérum.
+  nocturn2:
+    groups:
+      - psalms:
+          - 83
+        antiphon: Beáti, * qui hábitant in domo tua, Dómine; † in sǽcula sæculórum laudábunt te.
+      - psalms:
+          - 86
+        antiphon: Non est hic áliud, * nisi domus Dei, et porta cæli.
+      - psalms:
+          - 87
+        antiphon: Templum Dómini * sanctum est, Dei structúra est, Dei ædificátio est.
+      - psalms:
+          - 90
+        antiphon: Qui hábitat * in adjutório Altíssimi, in protectióne Dei cæli commorábitur.
+      - psalms:
+          - 95
+        antiphon: Eréxit Jacob * lápidem in títulum, fundens óleum désuper.
+      - psalms:
+          - 98
+        antiphon: Benedícta * glória Dómini, de loco sancto suo, allelúia.
+    versicle:
+      v: Domus mea.
+      r: Domus oratiónis vocábitur.
+  nocturn3:
+    antiphon: 'Vidit Jacob scalam, * súmmitas ejus cælos tangébat, et descendéntes Angelos, et dixit: Vere locus iste sanctus est.'
+    canticles:
+      - refs:
+          - book: tob
+            chapter: 13
+            verses: 10-17
+      - refs:
+          - book: isa
+            chapter: 2
+            verses: 2-3
+      - refs:
+          - book: jer
+            chapter: 7
+            verses: 2-7
+    versicle:
+      v: Hæc est domus Dómini fírmiter ædificáta.
+      r: Bene fundáta est supra firmam petram.
+
+# Generic Common-of-a-Dedication (of a Church) Lauds psalmody, live-
+# verified against Divinum Officium (Monastic Tridentinum 1617, command=
+# prayLaudes, votive=C8, 2026-09-05 — all 7 weekdays checked, 11-09 through
+# 11-15-2026). Genuinely its own scheme, unlike most Commons: proper psalms
+# 50/5/35 (not the usual 92/99/62), same "own numbers, not the standard
+# duplex-majus set" pattern already noted in this Common's own Vespers file
+# (109/110/111/147).
+#
+# The canticle slot is unusual again, in a different way: its *antiphon* is
+# this Common's own fixed text ("Bene fundáta est...", confirmed identical
+# on every weekday tested), but the underlying canticle *text* is not
+# proper to Dedication at all -- it's simply whichever plain ferial
+# weekday canticle the day already uses (Isaiah Mon, Ezechias Tue, Anna
+# Wed, Moses/Exodus Thu, Habacuc Fri, Moses/Deuteronomy split Sat, Three
+# Young Men Sun) -- all 7 already authored, hours/lauds-canticles.ts. This
+# supersedes the earlier (2026-08-28) note on this file's Vespers sibling
+# claiming a "Canticum Ieremiæ" was needed and never transcribed -- that
+# was a live-verify session that captured a plain ferial Thursday's output
+# instead of actually passing votive=C8; no such canticle appears anywhere
+# in the real Dedication scheme on any weekday. `canticle.id` is
+# intentionally omitted here -- see hours/lauds.ts's resolvePsalmody and
+# hours/lauds-psalmody-overrides.ts's own doc comment for the fallback.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 50
+      antiphon: Domum tuam, Dómine, * decet sanctitúdo in longitúdinem diérum.
+    - psalms:
+        - 5
+      antiphon: Domus mea, * domus oratiónis vocábitur.
+    - psalms:
+        - 35
+      antiphon: Hæc est domus Dómini * fírmiter ædificáta, bene fundáta est supra firmam petram.
+  canticle:
+    antiphon: Bene fundáta est * domus Dómini supra firmam petram.
+  laudate:
+    antiphon: Lápides pretiósi * omnes muri tui, et turres Ierúsalem gemmis ædificabúntur.
+
+# Generic Common-of-a-Dedication (of a Church) Vespers psalmody, live-
+# verified against Divinum Officium (Monastic Tridentinum 1617, command=
+# prayVespera, votive=C8, 2026-08-28). Genuinely its own scheme, unlike
+# every other Common authored so far: 109/110/111/147 (Ps 147, not the
+# expected next-in-sequence 112, for the 4th slot).
+#
+# Lauds' own category file (lauds-psalmody-overrides/categories/common-of-
+# a-dedication.yml) is now authored too. An earlier note here claimed
+# Lauds needed an untranscribed "Canticum Ieremiæ" and was left open --
+# that was based on a mis-targeted live query (a plain ferial Thursday's
+# output, not actually votive=C8); a fresh 7-weekday live-verify
+# (2026-09-05) found no such canticle anywhere in the real scheme, see
+# that file's own header comment for the corrected detail.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Domum tuam, Dómine, * decet sanctitúdo in longitúdinem diérum.
+    - psalms:
+        - 110
+      antiphon: Domus mea, * domus oratiónis vocábitur.
+    - psalms:
+        - 111
+      antiphon: Hæc est domus Dómini * fírmiter ædificáta, bene fundáta est supra firmam petram.
+    - psalms:
+        - 147
+      antiphon: Lápides pretiósi * omnes muri tui, et turres Ierúsalem gemmis ædificabúntur.

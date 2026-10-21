@@ -1,0 +1,56 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08.
+# Pulled from the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt + M1617.txt, own title
+# "S. Catharinae Senensis Virginis") and its own source file, not the merged per-date
+# files those tables' fileref points at directly -- see TODO.md.
+collect:
+  text: |
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut, qui beátæ Catharínæ Vírginis tuæ natalícia cólimus; et ánnua solemnitáte lætémur, et tantæ virtútis proficiámus exémplo.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-virgin (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags actually used for
+# a mere commemoration, confirmed against this exact category via an
+# independently live-verified precedent elsewhere in this app). st-catherine-of-siena has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper. Collect is the saint's own
+# real proper (st-catherine-of-siena-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Símile est regnum cælórum * hómini negotiatóri quærénti bonas margarítas: invénta una pretiósa, dedit ómnia sua, et comparávit eam.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut, qui beátæ Catharínæ Vírginis tuæ natalícia cólimus; et ánnua solemnitáte lætémur, et tantæ virtútis proficiámus exémplo.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Catherine of Siena, Virgin (Apr 29
+# on this app's own calendar, sharing the date with St. Robert — see
+# st-robert.yml) — an off-date sourcing case like St. Paul the Hermit
+# in the pre-1955 pass (memory vu-matins-pre1955-saints): the general
+# Tridentine calendar keeps Catherine on Apr 30 instead (this app's own
+# Apr 30 slot going to St. Peter Martyr — see st-peter-martyr.yml's own
+# note on this same date swap). `SanctiM/04-30.txt` inherits the whole
+# day (`@Sancti/04-30`) with no Nocturn 2/3 override, so this saint's
+# own vita is sourced from the Tridentine track there, exactly as for a
+# pre-1955 saint (see memory vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/04-30.txt, English/Sancti/04-30.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Catharina, virgo Senensis piis orta parentibus, beati Dominici habitum, quem sorores de Pœnitentia gestant, impetravit. Summa ejus fuit abstinentia, et admirabilis vitæ austeritas. Inventa est aliquando a die Cinerum usque ad Ascensionem Domini jejunium perduxisse, sola Eucharistiæ communione contenta. Luctabatur quam frequentissime cum dæmonibus, multisque illorum molestiis vexabatur, æstuabat febribus, nec aliorum morborum cruciatu carebat. Magnum et sanctum erat Catharinæ nomen, et undique ad eam ægroti et malignis vexati spiritibus deducebantur. Languoribus et febribus in Christi nomine imperabat, et dæmones cogebat ab obsessis abire corporibus.
+
+        Cum Pisis immoraretur die Dominico, refecta cibo cælesti, et in extasim rapta, vidit Dominum crucifixum magno cum lumine advenientem, et ex ejus vulnerum cicatricibus quinque radios ad quinque loca sui corporis descendentes; ideoque mysterium advertens, Dominum precata, ne cicatrices apparerent; continuo radii colorem sanguineum mutaverunt in splendidum, et in formam puræ lucis pervenerunt ad manus, pedes, et cor ejus: ac tantus erat dolor, quem sensibiliter patiebatur, ut nisi Deus minuisset, brevi se crederet morituram. Hanc ítaque gratiam amantissimus Dominus nova gratia cumulavit, ut sentiret dolorem illapsa vi vulnerum et cruenta signa non apparerent. Quod ita contigisse cum Dei famula confessario suo Raymundo retulisset, ut oculis étiam repræsentaretur, radios in imaginibus beatæ Catharinæ ad dicta quinque loca pertingentes, pia fidelium cura pictis coloribus expressit.
+
+        Doctrina ejus infusa, non acquisita fuit; sacrarum litterarum professoribus difficillimas de divinitate quæstiones proponentibus respondit; nemo ad eam accessit, qui non melior abierit: multa exstinxit odia, et mortales sedavit inimicitias. Pro pace Florentinorum, qui cum Ecclesia dissidebant, et interdicto ecclesiastico suppositi erant, Avenionem ad Gregorium undecimum Pontificem maximum profecta est. Cui étiam votum ejus de petenda Urbe soli Deo notum, sese divinitus cognovisse monstravit: deliberavitque Pontifex, ea étiam suadente, ad sedem suam Romanam personaliter accedere: quod et fecit. Eidem Gregorio et Urbano sexto ejus successori acceptissima fuit, adeo ut legationibus eorum fungeretur. Denique post innumera virtutum insignia, dono prophetiæ, et pluribus clara miraculis, anno ætatis suæ tertio circiter et trigesimo, migravit ad Sponsum. Quam Pius secundus Pontifex maximus sanctarum Virginum numero adscripsit.
+      status: verified

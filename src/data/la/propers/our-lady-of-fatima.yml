@@ -1,0 +1,53 @@
+# The source (`web/www/horas/Latin/Sancti/05-13n.txt`) has no [Oratio] of
+# its own -- "vide Sancti/02-11" (Our Lady of Lourdes). This is Lourdes'
+# own real proper collect (web/www/horas/Latin/Sancti/02-11.txt's
+# [Oratio], English/Sancti/02-11.txt's own translation), reused verbatim
+# for Fatima exactly as the source itself does -- not composed or adapted,
+# genuinely the same text the reference engine renders for this date.
+collect:
+  text: |
+    Orémus.
+    Deus, qui per immaculátam Vírginis Conceptiónem dignum Fílio tuo habitáculum præparásti:
+    súpplices a te quǽsumus; ut, ejúsdem Vírginis Apparitiónem celebrántes, salútem mentis
+    et córporis consequámur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in
+    unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle, same shape as st-canute-
+# commemoration.yml. Ant 2/Versum 2 are the standard de-Communi pairing
+# for the Common of the BVM (C11, per [Rule]) --
+# common-of-the-bvm-commemoration-antiphon.yml / lauds-versicle-common-of-
+# the-bvm.yml, both already verified elsewhere. Collect is Fatima's own
+# (reused from Lourdes, see our-lady-of-fatima-collect.yml).
+commemoration:
+  text: |
+    Ant. Beáta es, * María, quæ credidísti: perficiéntur in te, quæ dicta sunt tibi a Dómino, allelúia.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Deus, qui per immaculátam Vírginis Conceptiónem dignum Fílio tuo habitáculum præparásti: súpplices a te quǽsumus; ut, ejúsdem Vírginis Apparitiónem celebrántes, salútem mentis et córporis consequámur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 3 Gospel for Our Lady of Fatima (May 13). Source
+# `[Lectio93]` is `@Sancti/08-22:Lectio7` (Immaculate Heart of Mary), which
+# is itself just the incipit "In illo témpore: Stabant juxta crucem Jesu
+# Mater ejus... Et réliqua" (John 19:25-27) with no homily attached and no
+# full pericope text given in the source file itself -- same
+# incipit-only convention flagged in memory vu-matins-gospel-pericope-gap.
+# Rather than transcribe the bare incipit, the full canonical Gospel text
+# (Vulgate/Douay-Rheims, matching this corpus's usual register for
+# scripture citations) is given below -- this is Scripture, not composed
+# hagiography, so quoting it directly is not the same class of gap-filling
+# as St. Rita's invented vita. No patristic homily is attached (the source
+# gives none for this reused Lectio); isGospel: true, no nested homily.
+nocturn-readings:
+  readings:
+    - nocturn: 3
+      isGospel: true
+      citation: Joann 19:25-27
+      text: 'In illo témpore: Stabant juxta crucem Jesu mater ejus, et soror matris ejus María Cléophæ, et María Magdaléne. Cum vidísset ergo Jesus matrem, et discípulum stantem, quem diligébat, dicit matri suæ: Múlier, ecce fílius tuus. Deinde dicit discípulo: Ecce mater tua. Et ex illa hora accépit eam discípulus in sua.'
+      status: verified

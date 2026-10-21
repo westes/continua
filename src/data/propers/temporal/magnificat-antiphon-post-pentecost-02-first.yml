@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-06-21 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: magnificat-antiphon-post-pentecost-02-first
-text:
-  la: "Puer Sámuel * ministrábat ante Deum coram Heli, et sermo Dómini erat pretiósus cum eo."
-  en: "The child Samuel ministered unto God * before Eli, and the word of the Lord was precious in his sight."
-status:
-  la: verified
-  en: verified

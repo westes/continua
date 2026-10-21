@@ -1,0 +1,342 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2035-06-30).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui multitúdinem géntium beáti Pauli Apóstoli prædicatióne docuísti: da nobis, quǽsumus; ut, cujus natalícia cólimus, ejus apud te patrocínia sentiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (commemoration-of-st-paul-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-apostle (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (commemoration-of-st-paul-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vos qui secúti estis me, sedébitis super sedes, judicántes duódecim tribus Israël, dicit Dóminus.
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+    Orémus.
+    Deus, qui multitúdinem géntium beáti Pauli Apóstoli prædicatióne docuísti: da nobis, quǽsumus; ut, cujus natalícia cólimus, ejus apud te patrocínia sentiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Commemoration of St. Paul: proper Matins hymn, "Doctor egregie Paule" (Sancti/06-30.txt [HymnusM Matutinum]; the Monastic and 1570 versions take it over [Hymnus Matutinum], "Egregie Doctor Paule").
+# Latin and English as rendered by the local reference engine (Monastic
+# Tridentinum 1617, command=prayMatutinum, 06-30-2027); before this file the saint
+# fell to the Common's Matins hymn.
+matins-hymn:
+  text: |
+    Doctor egrégie Paule, mores ínstrue,
+    Et mente polum non transférre sátage:
+    Donec perféctum largiátur plénius,
+    Evacuáto quod ex parte gérimus.
+
+    Sit Trinitáti sempitérna glória,
+    Honor, potéstas, atque jubilátio,
+    In unitáte, cui manet impérium,
+    Ex tunc et modo, per ætérna sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2035-06-30 (clean year, per commemoration-of-st-paul.yml's
+# own comment). Real proper content is narrower than most individually-
+# imported saints this session: only the chapter is his own (2 Tim
+# 4:7-8, "Bonum certámen certávi" -- St. Paul's own famous "I have
+# fought the good fight"); the responsory, hymn, and versicle are all
+# byte-identical to Common-of-an-Apostle's own already-authored content
+# -- duplicated here rather than left to fall through, since
+# resolveOfficeBundle resolves a whole bundle per id, not per part (a
+# missing responsory/hymn/versicle under his own id would render blank,
+# not fall back to the Common). Same chapter reused for Vespers -- no
+# separate vespers-capitulum-<id> file authored, per vespers.ts's
+# lookupPart (Vespers chapter, Lauds sibling) fallback.
+lauds-capitulum:
+  text: Bonum certámen certávi, cursum consummávi, fidem servávi. In réliquo repósita est mihi coróna justítiæ, quam reddet mihi Dóminus in illa die justus judex.
+  citation: 2 Tim 4:7-8
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C1` live query, 2026-08 -- see lauds-capitulum-common-of-an-
+# apostle.yml's header for why the votive-office view was used.
+# "Exsúltet cælum láudibus" -- the classic Common-of-Apostles hymn, same
+# text both hours here, a single genuine recension found in the
+# reference engine.
+lauds-hymn:
+  text: |-
+    Exsúltet cælum láudibus,
+    Resúltet terra gáudiis:
+    Apostolórum glóriam
+    Sacra canunt solémnia.
+
+    Vos sæcli justi júdices,
+    Et vera mundi lúmina,
+    Votis precámur córdium,
+    Audíte preces súpplicum.
+
+    Qui cælum verbo cláuditis,
+    Serásque ejus sólvitis:
+    Nos a peccátis ómnibus
+    Sólvite jussu, quǽsumus.
+
+    Quorum præcépto súbditur,
+    Salus, et languor ómnium:
+    Sanáte ægros móribus,
+    Nos reddéntes virtútibus.
+
+    Ut, cum Judex advénerit
+    Christus in fine sǽculi,
+    Nos sempitérni gáudii
+    Fáciat esse cómpotes.
+
+    Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C1` live query, 2026-08 -- see lauds-capitulum-common-of-an-
+# apostle.yml's header for why the votive-office view was used.
+lauds-responsory:
+  text: |
+    R.br. In omnem terram * Exívit sonus eórum.
+    R. In omnem terram * Exívit sonus eórum.
+    V. Et in fines orbis terræ verba eórum.
+    R. Exívit sonus eórum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. In omnem terram * Exívit sonus eórum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C1` live query, 2026-08 -- see lauds-capitulum-common-of-an-
+# apostle.yml's header for why the votive-office view was used.
+lauds-versicle:
+  text: |
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 1, per the established
+# Prime=Lauds-Ant1 minor-hours-borrow-from-Lauds convention.
+prime-antiphon:
+  text: Ego plantávi, * Apóllo rigávit, Deus autem increméntum dedit, allelúia.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/06-30.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: Ego enim sum mínimus Apostolórum, qui non sum dignus vocári Apóstolus, quóniam persecútus sum Ecclésiam Dei. Grátia autem Dei sum id quod sum, et grátia ejus in me vácua non fuit.
+  citation: 1 Cor 15:9-10
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 2, per the established
+# Terce=Lauds-Ant2 minor-hours-borrow-from-Lauds convention.
+terce-antiphon:
+  text: Libénter gloriábor * in infirmitátibus meis, ut inhábitet in me virtus Christi.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 3, per the established
+# Sext=Lauds-Ant3 minor-hours-borrow-from-Lauds convention.
+sext-antiphon:
+  text: Grátia Dei * in me vácua non fuit, sed grátia ejus semper in me manet.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/06-30.txt's own [Capitulum
+# Sexta] and English/Sancti/06-30.txt's own translation.
+sext-capitulum:
+  text: 'Ne magnitúdo revelatiónum extóllat me, datus est mihi stímulus carnis meæ, ángelus sátanæ, qui me colaphízet: propter quod ter Dóminum rogávi ut discéderet a me, et dixit mihi: Súfficit tibi grátia mea.'
+  citation: 2 Cor 12:7-9
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 5, per the established
+# None=Lauds-Ant5 minor-hours-borrow-from-Lauds convention.
+none-antiphon:
+  text: Ter virgis cæsus sum, * semel lapidátus sum, ter naufrágium pértuli pro Christi nómine.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/06-30.txt's own [Capitulum
+# Nona] ("@:Lectio Prima") and English/Sancti/06-30.txt's own translation.
+none-capitulum:
+  text: Ego enim sum mínimus Apostolórum, qui non sum dignus vocári Apóstolus, quóniam persecútus sum Ecclésiam Dei. Grátia autem Dei sum id quod sum, et grátia ejus in me vácua non fuit.
+  citation: 1 Cor 15:9-10
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C1` live query, 2026-08 -- byte-identical to the Lauds hymn
+# ("Exsúltet cælum láudibus") -- see lauds-capitulum-common-of-an-
+# apostle.yml's header for the fuller gap/sourcing writeup.
+vespers-hymn:
+  text: |-
+    Exsúltet cælum láudibus,
+    Resúltet terra gáudiis:
+    Apostolórum glóriam
+    Sacra canunt solémnia.
+
+    Vos sæcli justi júdices,
+    Et vera mundi lúmina,
+    Votis precámur córdium,
+    Audíte preces súpplicum.
+
+    Qui cælum verbo cláuditis,
+    Serásque ejus sólvitis:
+    Nos a peccátis ómnibus
+    Sólvite jussu, quǽsumus.
+
+    Quorum præcépto súbditur,
+    Salus, et languor ómnium:
+    Sanáte ægros móribus,
+    Nos reddéntes virtútibus.
+
+    Ut, cum Judex advénerit
+    Christus in fine sǽculi,
+    Nos sempitérni gáudii
+    Fáciat esse cómpotes.
+
+    Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum. Amen.
+  status: verified
+
+# Duplicated verbatim from Common-of-an-Apostle's own Vespers responsory
+# (2026-08-26): unlike Lauds (independently live-verified all-Common-
+# except-chapter on 2035-06-30, see lauds-capitulum-commemoration-of-st-
+# paul.yml), this saint's real Vespers is permanently masked in the
+# reference engine by the (unmodeled-in-this-app) Octave of the
+# Nativity of St. John the Baptist closing the same day, every year
+# checked (2026-2030) -- inferred by the same "all-Common-except-
+# chapter" pattern established at Lauds, not independently verified.
+vespers-responsory:
+  text: |
+    R.br. Constítues eos príncipes * Super omnem terram.
+    R. Constítues eos príncipes * Super omnem terram.
+    V. Mémores erunt nóminis tui, Dómine.
+    R. Super omnem terram.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Constítues eos príncipes * Super omnem terram.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C1` live query, 2026-08 -- same versicle as Lauds (see lauds-
+# versicle-commemoration-of-st-paul.yml).
+vespers-versicle:
+  text: |
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, the Commemoration of St. Paul's own day (2026-06-30) -- the
+# Benedictus antiphon. Corrects the previous version of this file, which
+# had been sourced from the Roman/secular rite's Sancti/06-30.txt's own
+# [Ant 1] instead: real but different text from what Monastic 1617
+# actually renders at Lauds, same mistake as St. Lawrence's earlier fix
+# -- the same text as the Conversion of St. Paul's own (already
+# corrected), confirmed independently rather than assumed.
+benedictus-antiphon:
+  text: Vos qui secúti estis me, sedébitis super sedes, judicántes duódecim tribus Israël, dicit Dóminus.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/06-30.txt's own [Ant Laudes]
+# ("@:Ant Vespera" -- Lauds reuses the Vespers antiphons verbatim) and
+# English/Sancti/06-30.txt's own translation. Antiphons 1-3 are shared
+# with conversion-of-st-paul.yml's own Vespers antiphons; 4 and 5 are
+# distinct to this commemoration. Below duplex-majus, so hours/lauds.ts's
+# mergeFerialNumbersWithProperAntiphons only takes this file's antiphon
+# text, not its psalm numbers -- the numbers below are placeholders (the
+# standard 92/99/62 scheme), not independently confirmed for this feast,
+# since they have no functional effect at this rank.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Ego plantávi, * Apóllo rigávit, Deus autem increméntum dedit, allelúia.
+    - psalms:
+        - 99
+      antiphon: Libénter gloriábor * in infirmitátibus meis, ut inhábitet in me virtus Christi.
+    - psalms:
+        - 62
+      antiphon: Grátia Dei * in me vácua non fuit, sed grátia ejus semper in me manet.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Damásci, præpósitus * gentis Arétæ regis vóluit me comprehéndere: a frátribus per murum demíssus sum in sporta, et sic evási manus ejus in nómine Dómini.'
+  laudate:
+    antiphon: Ter virgis cæsus sum, * semel lapidátus sum, ter naufrágium pértuli pro Christi nómine.
+
+# Sourced from web/www/horas/Latin/Sancti/06-30.txt's own [Ant Vespera]
+# and English/Sancti/06-30.txt's own translation -- same text as lauds-
+# psalmody-overrides/commemoration-of-st-paul.yml (her Lauds is just this
+# Vespers set reused, per the source's own reference). Below duplex-majus,
+# so hours/vespers.ts's mergeFerialNumbersWithProperAntiphons only takes
+# this file's antiphon text, not its psalm numbers.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Ego plantávi, * Apóllo rigávit, Deus autem increméntum dedit, allelúia.
+    - psalms:
+        - 110
+      antiphon: Libénter gloriábor * in infirmitátibus meis, ut inhábitet in me virtus Christi.
+    - psalms:
+        - 111
+      antiphon: Grátia Dei * in me vácua non fuit, sed grátia ejus semper in me manet.
+    - psalms:
+        - 112
+      antiphon: 'Damásci, præpósitus * gentis Arétæ regis vóluit me comprehéndere: a frátribus per murum demíssus sum in sporta, et sic evási manus ejus in nómine Dómini.'
+
+# Matins Nocturn 2-3 readings for the Commemoration of St. Paul (Jun
+# 30) — SanctiM/06-30.txt's own Lectio4-9 all resolve back to
+# `@Sancti/06-30:LectioN` (resliced), so this feast's own proper
+# content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/06-30.txt, English/Sancti/06-30.txt.
+#
+# Nocturn 2: Lectio4-6 (St. Augustine's treatise On Grace and Free
+# Will) combined into one reading, one continuous excerpt.
+# Nocturn 3: Lectio7's Gospel citation (Matt 10:16-22) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so only the
+# homily portion was originally authored (not marked isGospel), combined
+# with Lectio8-9 as one continuous excerpt of St. John Chrysostom's
+# homily.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — this feast's own
+# [Evangelium] redirects `@Sancti/06-11:Evangelium` (St. Barnabas's own
+# Mass Gospel), sourced from missa/Latin/Sancti/06-11.txt,
+# English/Sancti/06-11.txt, not guessed at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, On Grace and Free Will, ch. 6-7
+      text: |-
+        Apóstolus Paulus, quem certe invénimus sine ullis méritis bonis, immo cum multis méritis malis, Dei grátiam consecútum, reddéntis bona pro malis, videámus quid dicat, sua jam propinquánte passióne, scribens ad Timótheum: Ego enim jam ímmolor, inquit, et tempus resolutiónis meæ instat. Bonum certámen certávi, cursum consummávi, fidem servávi. Ista útique jam mérita sua bona commémorat; ut post bona mérita consequátur corónam, qui post mérita mala consecútus est grátiam. Dénique atténdite quid sequátur: Súperest, inquit, mihi coróna justítiæ, quam reddet mihi Dóminus in illa die justus judex. Cui rédderet corónam justus judex, si non donásset grátiam miséricors Pater? Et quómodo esset ista coróna justítiæ, nisi præcessísset grátia, quæ justíficat ímpium? Quómodo ista débita redderétur, nisi prius illa gratúita donarétur?
+
+        Proínde considerémus ipsa mérita Apóstoli Pauli, quibus dixit corónam redditúrum júdicem justum, et videámus utrum mérita ipsíus tamquam ipsíus, id est, ex ipso ei comparáta, an dona sint Dei. Bonum, inquit, certámen certávi, cursum consummávi, fidem servávi. Primo ista bona ópera, si non ea præcessíssent cogitatiónes bonæ, nulla essent. Atténdite ítaque quid de ipsis cogitatiónibus dicat; ait enim scribens ad Corínthios: Non quia idónei sumus cogitáre áliquid a nobis, tamquam a nobismetípsis; sed sufficiéntia nostra ex Deo est. Deínde síngula inspiciámus.
+
+        Bonum, inquit, certámen certávi. Quæro qua virtúte certáverit, utrum quæ illi ex semetípso fúerit, an quæ désuper data sit? Sed absit ut tantus doctor ignoráverit legem Dei, cujus vox est in Deuteronómio: Ne dicas in corde tuo: Fortitúdo mea et poténtia manus meæ fecit mihi virtútem magnam hanc; sed memoráberis Dómini Dei tui, quia ipse tibi dat fortitúdinem fácere virtútem. Quid autem prodest bonum certámen, nisi sequátur victória? Et quis dat victóriam, nisi ille, de quo dicit ipse: Grátias Deo, qui dat nobis victóriam per Dóminum nostrum Jesum Christum?
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 10:16-22
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Ecce, ego mitto vos sicut oves in médio lupórum. Estóte ergo prudéntes sicut serpéntes, et símplices sicut colúmbæ. Cavéte autem ab homínibus. Tradent enim vos in concíliis, et in synagógis suis flagellábunt vos: et ad præsides et ad reges ducémini propter me in testimónium illis et géntibus. Cum autem tradent vos, nolíte cogitáre, quómodo aut quid loquámini: dábitur enim vobis in illa hora, quid loquámini. Non enim vos estis, qui loquímini, sed Spíritus Patris vestri, qui lóquitur in vobis. Tradet autem frater fratrem in mortem, et pater fílium: et insúrgent fílii in paréntes, et morte eos affícient: et éritis ódio ómnibus propter nomen meum: qui autem perseveráverit usque in finem, hic salvus erit.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. John Chrysostom, Homily 34 on Matthew (on Matt 10:16-22)
+      text: |-
+        Sed dícere vidétur: Nolíte turbári, si, cum vos inter lupos mitto, tamquam oves et colúmbas esse júbeo. Nam, etsi possum contrárium quoque præstáre, et non permíttere ut grave áliquid patiámini, nec lupis tamquam oves subjécti sitis, sed effícere ut leónibus terribilióres evadátis; tamen sic éxpedit fíeri: hoc et vos quoque illustrióres fáciet, et meam declarábit virtútem. Sic enim póstea dixit Paulo: Súfficit tibi grátia mea, nam virtus mea in infirmitáte perfícitur. Ipse ígitur vos ut tales essétis feci.
+
+        Sed inspiciámus quam prudéntiam éxigit: serpéntis certe. Nam, quemádmodum serpens totum seípsum tradit, nec mínimum curat si ipsum quoque corpus incídi necésse sit, dúmmodo caput suum íntegrum servet; eódem tu quoque modo, præter fidem cétera pérdere non cures, sive pecúnias, sive corpus, sive étiam vitam ipsam profúndere necésse sit. Fides enim caput est et radix; qua serváta, etiámsi ómnia perdas, ómnia tamen rursus majóre cum glória recuperábis. Idcírco nec símplices solum jussit esse, nec prudéntes solum; sed ambo hæc in unum míscuit, ut ea in virtútem convertántur.
+
+        Quod si rebus ipsis id ita fíeri vidére desíderas, lege Actuum Apostolórum librum; perspícies profécto, cum sæpe Judæórum pópulus in Apóstolos insurréxerit ac dentes exacúerit, illos, colúmbæ simplicitátem imitándo et cum decénti modéstia respondéndo, iram ipsórum superásse, furórem exstinxísse, ímpetum retardásse. Nam, cum illi dícerent: Nonne præcipiéndo præcépimus vobis, ne docerétis in nómine isto? quamvis innúmera possent édere mirácula, nihil tamen ásperum neque dixérunt neque fecérunt; sed summa cum mansuetúdine respondéntes dicébant: Si justum est vos audíre magis quam Deum, judicáte. Perspexísti simplicitátem colúmbæ, vide nunc serpéntis prudéntiam: Non enim póssumus, ínquiunt, nos quæ vídimus et audívimus, non loqui.
+      status: verified

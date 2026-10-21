@@ -1,0 +1,497 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-09-08).
+collect:
+  text: |
+    Orémus.
+    Fámulis tuis, quǽsumus, Dómine, cæléstis grátiæ munus impertíre: ut, quibus beátæ Vírginis partus éxstitit salútis exórdium; Nativitátis ejus votíva solémnitas pacis tríbuat increméntum.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (nativity-bvm-antiphon.yml), paired with the standard BVM commemoration versicle already verified elsewhere in this app (propers/common/lauds-suffrage-bvm.yml -- 'V. Ora pro nobis sancta Dei Genitrix'). Collect is the saint's own real proper (nativity-bvm-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Nativitátem hodiérnam perpétuæ Vírginis Genitrícis Dei Maríæ solémniter celebrémus, qua celsitúdo throni procéssit, allelúia.
+    V. Ora pro nobis sancta Dei Génitrix.
+    R. Ut digni efficiámur promissiónibus Christi.
+    Orémus.
+    Fámulis tuis, quǽsumus, Dómine, cæléstis grátiæ munus impertíre: ut, quibus beátæ Vírginis partus éxstitit salútis exórdium; Nativitátis ejus votíva solémnitas pacis tríbuat increméntum.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against the reference engine (Monastic Tridentinum 1617,
+# ../divinum-officium-reference) -- read directly from Sancti/09-08.txt's
+# own [Octava] section (Latin/Sancti/09-08.txt:38-48, English/Sancti/
+# 09-08.txt:24-33). This is the "Commemoratio Octavæ Nativitatis Beatæ
+# Mariæ Virginis" block said on days within the Nativity's own Sept 8-15
+# octave where the Nativity itself does not win the day outright. Same
+# collect text already used in nativity-bvm-collect.yml/
+# nativity-bvm-commemoration.yml (the feast's own [Oratio]); the antiphon
+# and V/R here are the octave's own distinct pair, not reused from the
+# feast day's own [Ant 1].
+commemoration/octave-~:
+  text: |
+    Ant. Natívitas tua, * Dei Génetrix Virgo, gáudium annuntiávit univérso mundo: ex te enim ortus est sol justítiæ, Christus Deus noster: qui solvens maledictiónem, dedit benedictiónem; et confúndens mortem, donávit nobis vitam sempitérnam.
+    V. Natívitas est hódie sanctæ Maríæ Vírginis.
+    R. Cujus vita ínclita cunctas illústrat ecclésias.
+    Orémus.
+    Fámulis tuis, quǽsumus, Dómine, cæléstis grátiæ munus impertíre: ut, quibus beátæ Vírginis partus éxstitit salútis exórdium; Nativitátis ejus votíva solémnitas pacis tríbuat increméntum.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/09-08.txt's own [Invit] (no
+# Monastic override exists in SanctiM/09-08.txt) and its English counterpart.
+matins-invitatory:
+  text: 'Nativitátem Vírginis Maríæ celebrémus: * Christum ejus Fílium adorémus Dóminum.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-09-08, clean year.
+lauds-capitulum:
+  text: Ab inítio et ante sǽcula creáta sum, et usque ad futúrum sǽculum non désinam, et in habitatióne sancta coram ipso ministrávi.
+  citation: Sir 24:14
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-09-08, clean year.
+lauds-hymn:
+  text: |
+    O gloriósa Dómina,
+    Excélsa super sídera:
+    Qui te creávit, próvide
+    Lactásti sacro úbere.
+
+    Quod Heva tristis ábstulit,
+    Tu reddis almo gérmine:
+    Intrent ut astra flébiles,
+    Cæli fenéstra facta es.
+
+    Tu Regis alti jánua,
+    Et porta lucis fúlgida:
+    Vitam datam per Vírginem,
+    Gentes redémptæ, pláudite.
+
+    Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-09-08, clean year.
+lauds-responsory:
+  text: |
+    R.br. Ave María, grátia plena, * Dóminus tecum.
+    R. Ave María, grátia plena, * Dóminus tecum.
+    V. Benedícta tu in muliéribus, et benedíctus fructus ventris tui
+    R. Dóminus tecum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ave María, grátia plena, * Dóminus tecum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-09-08, clean year.
+lauds-versicle:
+  text: |-
+    V. Natívitas est hódie sanctæ Maríæ Vírginis.
+    R. Cujus vita ínclita cunctas illústrat ecclésias.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, the Nativity of the BVM's own day (2026-09-08, clean year).
+# Latin asterisk confirmed against source data file
+# web/www/horas/Latin/Sancti/09-08.txt.
+prime-antiphon:
+  text: Natívitas gloriósæ * Vírginis Maríæ ex sémine Abrahæ, ortæ de tribu Juda, clara ex stirpe David.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, the Nativity of the BVM's own day (2026-09-08, clean year).
+# Latin asterisk confirmed against source data file
+# web/www/horas/Latin/Sancti/09-08.txt.
+terce-antiphon:
+  text: Natívitas est hódie * sanctæ Maríæ Vírginis, cujus vita ínclita cunctas illústrat ecclésias.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, the Nativity of the BVM's own day (2026-09-08, clean year).
+# Latin asterisk confirmed against source data file
+# web/www/horas/Latin/Sancti/09-08.txt.
+sext-antiphon:
+  text: Regáli ex progénie * María exórta refúlget; cujus précibus nos adjuvári, mente et spíritu devotíssime póscimus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, the Nativity of the BVM's own day (2026-09-08, clean year).
+# Latin asterisk confirmed against source data file
+# web/www/horas/Latin/Sancti/09-08.txt.
+none-antiphon:
+  text: Cum jucunditáte * Nativitátem beátæ Maríæ celebrémus, ut ipsa pro nobis intercédat ad Dóminum Jesum Christum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-09-08, the same clean date already used for lauds-capitulum-nativity-bvm.yml.
+vespers-hymn:
+  text: |
+    Prima stropha sequentis hymni dicitur flexis genibus.
+    Ave maris stella,
+    Dei Mater alma,
+    Atque semper Virgo,
+    Felix cæli porta.
+
+    Sumens illud Ave
+    Gabriélis ore,
+    Funda nos in pace,
+    Mutans Hevæ nomen.
+
+    Solve vincla reis,
+    Profer lumen cæcis,
+    Mala nostra pelle,
+    Bona cuncta posce.
+
+    Monstra te esse matrem,
+    Sumat per te preces,
+    Qui pro nobis natus,
+    Tulit esse tuus.
+
+    Virgo singuláris,
+    Inter omnes mitis,
+    Nos culpis solútos
+    Mites fac et castos.
+
+    Vitam præsta puram,
+    Iter para tutum,
+    Ut vidéntes Jesum,
+    Semper collætémur.
+
+    Sit laus Deo Patri,
+    Summo Christo decus,
+    Spirítui Sancto,
+    Tribus honor unus.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-09-08, the same clean date already used for lauds-capitulum-nativity-bvm.yml. The one line the reference engine left untranslated (Luke 1:42, the Hail Mary's own second line) is filled in here with its standard Douay-Rheims/Ave Maria wording, not freely translated.
+vespers-responsory:
+  text: |
+    R.br. Ave María, grátia plena, * Dóminus tecum.
+    R. Ave María, grátia plena, * Dóminus tecum.
+    V. Benedícta tu in muliéribus, et benedíctus fructus ventris tui
+    R. Dóminus tecum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ave María, grátia plena, * Dóminus tecum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-09-08, the same clean date already used for lauds-capitulum-nativity-bvm.yml.
+vespers-versicle:
+  text: |-
+    V. Natívitas est hódie sanctæ Maríæ Vírginis.
+    R. Cujus vita ínclita cunctas illústrat ecclésias.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, the Nativity of the Blessed Virgin Mary's own day
+# (2026-09-08) -- the Benedictus antiphon. Corrects the previous version
+# of this file, which had been sourced from the Roman/secular rite's
+# Sancti/09-08.txt's own [Ant 1] instead: real but different text from
+# what Monastic 1617 actually renders at Lauds, same mistake as
+# St. Lawrence's earlier fix.
+benedictus-antiphon:
+  text: Nativitátem hodiérnam perpétuæ Vírginis Genitrícis Dei Maríæ solémniter celebrémus, qua celsitúdo throni procéssit, allelúia.
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/09-08.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast, not a Common
+# substitution. (This feast's own Benedictus antiphon,
+# nativity-bvm-antiphon.yml, already correctly sourced [Ant 2] --
+# unlike several sibling BVM feasts found mis-tagged to [Ant 1] the
+# same day, TODO.md.)
+magnificat-antiphon:
+  text: 'Natívitas tua, * Dei Génetrix Virgo, gáudium annuntiávit univérso mundo: ex te enim ortus est sol justítiæ, Christus Deus noster: qui solvens maledictiónem, dedit benedictiónem; et confúndens mortem, donávit nobis vitam sempitérnam.'
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 09-08
+# nativity-bvm (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Gloriósæ * Vírginis Maríæ ortum digníssimum recolámus, quæ et Genitrícis dignitátem obtínuit, et virginálem pudicítiam non amísit.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-09-08, clean year.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Natívitas gloriósæ * Vírginis Maríæ ex sémine Abrahæ, ortæ de tribu Juda, clara ex stirpe David.
+    - psalms:
+        - 99
+      antiphon: Natívitas est hódie * sanctæ Maríæ Vírginis, cujus vita ínclita cunctas illústrat ecclésias.
+    - psalms:
+        - 62
+      antiphon: Regáli ex progénie * María exórta refúlget; cujus précibus nos adjuvári, mente et spíritu devotíssime póscimus.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Corde et ánimo * Christo canámus glóriam in hac sacra solemnitáte præcélsæ Genitrícis Dei Maríæ.
+  laudate:
+    antiphon: Cum jucunditáte * Nativitátem beátæ Maríæ celebrémus, ut ipsa pro nobis intercédat ad Dóminum Jesum Christum.
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-09-08, own day). Same four psalm numbers as
+# her Common (common-of-the-bvm.yml: 109/112/121/126), but her own proper
+# antiphons throughout -- same shape as her already-authored Lauds/Matins-
+# invitatory overrides.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Natívitas gloriósæ * Vírginis Maríæ ex sémine Abrahæ, ortæ de tribu Juda, clara ex stirpe David.
+    - psalms:
+        - 112
+      antiphon: Natívitas est hódie * sanctæ Maríæ Vírginis, cujus vita ínclita cunctas illústrat ecclésias.
+    - psalms:
+        - 121
+      antiphon: Regáli ex progénie * María exórta refúlget; cujus précibus nos adjuvári, mente et spíritu devotíssime póscimus.
+    - psalms:
+        - 126
+      antiphon: Cum jucunditáte * Nativitátem beátæ Maríæ celebrémus, ut ipsa pro nobis intercédat ad Dóminum Jesum Christum.
+
+# Matins Nocturn 2 reading for the Nativity of the B.V.M. (Sep 8) —
+# SanctiM/09-08.txt inherits the whole day (`@Sancti/09-08`) with no
+# Nocturn 2/3 override, so this feast's own proper content is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/09-08.txt, English/Sancti/09-08.txt.
+# Lectio4-6 combined into one reading, one continuous excerpt of St.
+# Augustine's sermon. No responsory given in the source for these
+# lessons.
+#
+# Checked 2026-09-05 for a Gospel pairing: this reading (Augustine's
+# Sermon 18, Lectio4-6) is Nocturn 2, not Nocturn 3 -- it is a
+# panegyric on Mary's nativity generally, not an exegesis of a Gospel
+# pericope, so no isGospel pairing applies to it.
+#
+# Update (2026-09-05, second pass): Nocturn 3 now authored too --
+# horas/Latin/Sancti/09-08.txt's own Lectio7-9 (Gospel Matt 1:1-16, the
+# genealogy, bare incipit; St. Jerome's Commentary on Matthew Bk. 1 as
+# the homily, Lectio7's own portion + Lectio8-9 combined per this
+# store's recombine convention). Full Gospel pericope sourced from this
+# feast's own Missale [Evangelium] (missa/Latin/Sancti/09-08.txt's own
+# `@Sancti/08-16` redirect, St. Hyacinth's date reusing the same
+# genealogy text), English the parallel missa/English/Sancti/08-16.txt.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Sermon 18 on the Saints
+      text: |-
+        Adest nobis, dilectíssimi, optátus dies beátæ ac venerábilis semper Vírginis Maríæ; ídeo cum summa exsultatióne gáudeat terra nostra, tantæ Vírginis illustráta natáli. Hæc est enim flos campi, de qua ortum est pretiósum lílium convállium, per cujus partum mutátur natúra protoplastórum, delétur et culpa. Præcísum est in ea illud Hevæ infelicitátis elógium, quo dícitur: In dolóre páries fílios tuos; quia ista in lætítia Dóminum péperit.
+
+        Heva enim luxit, ista exsultávit: Heva lácrimas, María gáudium in ventre portávit; quia illa peccatórem, ista édidit innocéntem. Mater géneris nostri pœnam íntulit mundo, Génetrix Dómini nostri salútem íntulit mundo. Auctrix peccáti Heva, auctrix mériti María. Heva occidéndo óbfuit, María vivificándo prófuit. Illa percússit, ista sanávit. Pro inobediéntia enim obediéntia commutátur, fides pro perfídia compensátur.
+
+        Plaudat nunc órganis María, et inter velóces artículos týmpana puérperæ cóncrepent. Cóncinant lætántes chori, et alternántibus módulis dulcísona cármina misceántur. Audíte ígitur, quemádmodum tympanístria nostra cantáverit; ait enim: Magníficat ánima mea Dóminum: et exsultávit spíritus meus in Deo, salutári meo. Quia respéxit humilitátem ancíllæ suæ: ecce enim ex hoc beátam me dicent omnes generatiónes. Quia fecit mihi magna qui potens est. Causam ígitur invalescéntis erráti, miráculum novi partus evícit; et Hevæ planctum Maríæ cantus exclúsit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 1:1-16
+      text: 'Liber generatiónis Jesu Christi, fílii David, fílii Abraham. Abraham génuit Isaac. Isaac autem génuit Jacob. Jacob autem génuit Judam et fratres ejus. Judas autem génuit Phares et Zaram de Thamar. Phares autem génuit Esron. Esron autem génuit Aram. Aram autem génuit Amínadab. Amínadab autem génuit Naásson. Naásson autem génuit Salmon. Salmon autem génuit Booz de Rahab. Booz autem génuit Obed ex Ruth. Obed autem génuit Jesse. Jesse autem génuit David regem. David autem rex génuit Salomónem ex ea, quæ fuit Uriæ. Sálomon autem génuit Róboam. Róboam autem génuit Abíam. Abías autem génuit Asa. Asa autem génuit Jósaphat. Jósaphat autem génuit Joram. Joram autem génuit Ozíam. Ozías autem génuit Jóatham. Jóatham autem génuit Achaz. Achaz autem génuit Ezechíam. Ezechías autem génuit Manássen. Manásses autem génuit Amon. Amon autem génuit Josíam. Josías autem génuit Jechoníam et fratres ejus in transmigratióne Babylónis. Et post transmigratiónem Babylónis: Jechonías génuit Saláthiel. Saláthiel autem génuit Zoróbabel. Zoróbabel autem génuit Abiud. Abiud autem génuit Elíacim. Elíacim autem génuit Azor. Azor autem génuit Sadoc. Sadoc autem génuit Achim. Achim autem génuit Eliud. Eliud autem génuit Eleázar. Eleázar autem génuit Mathan. Mathan autem génuit Jacob. Jacob autem génuit Joseph, virum Maríæ, de qua natus est Jesus, qui vocátur Christus.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Priest, Commentary on Matthew, Bk. 1, at the beginning
+      text: |-
+        In Isaía légimus: Generatiónem ejus quis enarrábit? Non ergo putémus Evangelístam Prophétæ esse contrárium, ut quod ille impossíbile dixit effátu, hic narráre incípiat: quia ibi de generatióne Divinitátis, hic de incarnatióne est dictum. A carnálibus autem cœpit, ut per hóminem, Deum díscere incipiámus. Fílii David, fílii Abraham. Ordo præpósterus, sed necessário commutátus. Si enim primum posuísset Abraham et póstea David, rursus ei repeténdus fúerat Abraham, ut generatiónis séries texerétur.
+
+        Ideo autem, céteris prætermíssis, horum fílium nuncupávit, quia ad hos tantum facta est de Christo repromíssio. Ad Abraham: In sémine, inquit, tuo benedicéntur omnes gentes, quod est Christus. Ad David: De fructu ventris tui ponam super sedem tuam. Judas autem génuit Phares et Zaram de Thamar. Notándum, in genealogía Salvatóris nullam sanctárum assúmi mulíerum, sed eas quas Scriptúra reprehéndit; ut, qui propter peccatóres vénerat, de peccatóribus nascens, ómnium peccáta deléret. Unde et in consequéntibus Ruth Moabítis pónitur, et Bethsabée uxor Uríæ.
+
+        Jacob autem génuit Joseph. Hunc locum objécit nobis Juliánus Augústus de dissonántia Evangelistárum, cur Evangelísta Matthǽus Joseph díxerit fílium Jacob et Lucas eum fílium appellárit Heli; non intéllegens consuetúdinem Scripturárum, quod alter secúndum natúram, alter secúndum legem ei pater sit. Scimus enim hoc per Móysen, Deo jubénte, præcéptum, ut, si frater aut propínquus absque líberis mórtuus fúerit, álius accípiat uxórem ad suscitándum semen fratris vel propínqui sui. Joseph virum Maríæ. Cum virum audíeris, suspício tibi non súbeat nuptiárum; sed recordáre consuetúdinis Scripturárum, quod sponsi viri, et sponsæ vocéntur uxóres.
+      status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-09-09). Matins reading for day 2 of the Nativity
+# of the BVM's own octave -- collapsed into one continuous reading per project
+# convention. The source's own English translation is used as-is, including
+# gaps in its own punctuation (some older "oct"/"bmv"-suffixed variant files
+# drop question marks entirely in places) -- not corrected here, since
+# guessing where they belong isn't the same class of fix as an isolated
+# single-character typo.
+#
+# 2026-09-09: the source's own commemoration of St. Gorgonius (also Sep 9)
+# was originally appended here as a third paragraph under Augustine's own
+# attribution -- wrong on two counts: it mixed an unrelated source into
+# one attributed reading, and it duplicated the ordinary per-saint pooling
+# mechanism's own independent pull of nocturn-readings/st-gorgonius.yml
+# for the same saint. Removed; Gorgonius's own commemoration reading is
+# sourced from that file alone now.
+#
+# 2026-09-09 (second fix): `text.la`/`text.en` also had the reference
+# source's own citation line ("De Sermone sancti Augustíni Epíscopi. Serm.
+# 18. de Sanctis, in med." / "From the Sermons of Saint Augustine, Bishop
+# (of Hippo) Serm. 18 on the Saints") baked into the start of the reading
+# body, run on directly into the sermon's own opening words with no
+# separating punctuation -- redundant with the separate `source` field
+# above, which already renders as this reading's label. Stripped, both
+# languages. NOTE: several other files under this directory (e.g. the
+# Assumption's own octave days, Christmas Day's octave day 6) show the
+# same pattern -- not fixed here, out of scope for this file's own bug,
+# but worth a dedicated sweep.
+octave-readings/~-octave-day-2:
+  source: De Sermone sancti Augustíni Epíscopi.
+  text: |
+    Exsultat Maria, et matrem se læta miratur, et de Spiritu sancto se peperisse gaudet; nec quia peperit innupta, terretur; sed quia genuerit, cum exsultatione miratur. Ofemina super feminas benedicta, quæ virum omnino non novit, et virum suo utero circumdedit! Circumdat virum Maria Angelo fidem dando, quia Heva perdidit virum, serpenti consentiendo. Ofelix obedientia, o insignis gratia! quæ dum fidem humiliter dedit, cæli in se opificem corporavit. Hinc promeruit gloriam, quam ipsa postmodum auxit. Ecce, ait, ex hoc beatam me dicent omnes generationes.
+
+    Obeata Maria, quis tibi digne valeat jura gratiarum ac laudum præconia rependere, quæ singulari tuo assensu mundo succurristi perdito? Quas tibi laudes fragilitas humani generis persolvat, quæ solo tuo commercio recuperandi aditum invenit? Accipe ítaque quascumque exiles, quascumque meritis tuis impares gratiarum actiones: et cum susceperis vota, culpas nostras orando excusa. Admitte nostras preces intra sacrarium exauditionis et reporta nobis antidotum reconciliationis.
+  responsory: |
+    R. Hódie nata est beáta Virgo María ex progénie David; * Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo. V. Nativitátem beátæ Maríæ Vírginis cum gáudio celebrémus. R. Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin/
+# Sancti/09-10bmv.txt) -- day 3 of the Nativity of the BVM's own octave, the
+# one day in this octave with a genuine Lectio override rather than a bare
+# "ex Sancti/09-08" cross-reference (see nativity-bvm-octave-day-7.yml's own
+# absence: day 7 has no override and correctly needs no file of its own,
+# same as immaculate-conception-octave-day-4/6). Lectio7's own Gospel
+# pericope (Matt 1:1-17, the genealogy) is a bare incipit ("Et réliqua," no
+# full text) -- per the established "don't transcribe bare incipits" rule
+# (see memory vu-matins-sanctim-saints, fourth finding), only St. Jerome's
+# homily on the genealogy (Lectio7's own homily portion through Lectio9) is
+# authored, isGospel: false. No English translation exists in the reference
+# engine for this file at all -- English/Sancti/09-10bmv.txt is a verbatim
+# duplicate of the Latin text, the same reference-engine data-bug class as
+# st-anicetus/st-george (see memory vu-matins-pre1955-saints /
+# vu-matins-sanctim-saints) -- so `en` is this project's own translation,
+# `draft`.
+# Responsory missing from this file alone among the octave's day-2/4/5/6
+# siblings, which all already carry this same text -- the Nativity's own
+# Responsory1 (Sancti/09-08.txt), reused across the octave's combined-
+# lesson readings the same way those siblings do, not a per-lesson
+# responsory (the Monastic 09-10bmv.txt source has none of its own for
+# Lectio7-9, inheriting Sancti/09-08's via its own "ex Sancti/09-08" rule).
+octave-readings/~-octave-day-3:
+  source: De Homilia S. Hierónymi Presbýteri (in Matt. 1:1-17)
+  text: |
+    Et post transmigrationem Babylonis Jechonias genuit Salathiel. Si voluerimus Jechoniam in fine primæ tessaradecadis ponere, in sequenti non erunt quattuordecim, sed tredecim. Sciamus igitur Jechoniam priorem ipsum esse quem et Joacim, secundum autem filium non patrem. Quorum prior describitur; quod scriptorum vitio et longitudine temporum apud Græcos Latinosque confusus est.
+
+    Jacob autem genuit Joseph. Hunc locum objecit nobis Julianus Augustus dissonantiæ evangelistarum, cur evangelista Matthæus Joseph dixerit filium Jacob, et Lucas eum filium appellarit Heli, non intelligens consuetudinem scripturarum, quod alter secundum naturam, alter secundum legem ei pater sit. Scimus enim hoc per Moysem deo jubente præceptum, ut si frater aut propinquus absque liberis mortuus fuerit, alius ejus frater accipiat uxorem ad suscitandum semen fratris, vel propinqui sui. Joseph virum Mariæ, cum utrum audieris, suspitio tibi non subeat nuptiarum, sed recordare consuetudinis scripturarum, quod sponsi viri, et sponsæ vocentur uxores.
+
+    Et a transmigratione Babylonis usque ad Christum generationes quattuordecim. Numera a Jechonia usque ad Joseph, et invenies generationes tredecim. Quartadecima ergo generatio in ipsum Christum reputabitur. Christi autem generatio sic erit. Quærat diligens lector, et dicat: Cum Joseph non sit pater domini salvatoris, quid pertinet ad dominum generationis ordo deductus usque ad Joseph? Cui respondebimus primum, non esse consuetudinis scripturarum, ut mulierum in generationis ordo texatur: deinde, ex una tribu fuisse Joseph et Mariam, unde ex lege eam accipere cogebatur ut propinquam.
+  responsory: |
+    R. Hódie nata est beáta Virgo María ex progénie David; * Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo. V. Nativitátem beátæ Maríæ Vírginis cum gáudio celebrémus. R. Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-09-11). Matins reading for day 4 of the Nativity
+# of the BVM's own octave -- collapsed into one continuous reading per project
+# convention. The source's own English translation is used as-is, including
+# gaps in its own punctuation (some older "oct"/"bmv"-suffixed variant files
+# drop question marks entirely in places) -- not corrected here, since
+# guessing where they belong isn't the same class of fix as an isolated
+# single-character typo.
+#
+# 2026-09-09: same shape as nativity-bvm-octave-day-2.yml's own fix --
+# both `text.la` and `text.en` had the source citation baked into their
+# opening words (redundant with the `source` field above), and the
+# source's own commemoration of Ss. Protus and Hyacinth (also Sep 11) was
+# appended as a third paragraph under Bernard's own attribution, mixing
+# an unrelated source into one attributed reading and duplicating the
+# ordinary per-saint pooling mechanism's own independent pull of
+# nocturn-readings/ss-protus-and-hyacinth.yml for the same saints (in
+# this case a near-verbatim duplicate, not even differently worded).
+# Both stripped; Protus and Hyacinth's own commemoration reading is
+# sourced from that file alone now.
+octave-readings/~-octave-day-4:
+  source: Sermo sancti Bernardi Abbatis.
+  text: |
+    Novum fecit Dominus super terram, ut mulier circumdaret virum, nec alium quam Christum, de quo dicitur: Ecce vir, Oriens nomen ejus. Novum quoque fecit in cælo, ut mulier sole appareret amicta. Denique et coronavit eum, et vicissim ab eo meruit coronari. Egredimini filiæ Sion, et videte regem Salomonem in diademate, quo coronavit eum mater sua. Verum hoc alias. Interim sane ingredimini magis, et videte Reginam in diademate, quo coronavit eam filius suus. In capite, inquit, ejus corona stellarum duodecim.
+
+    Dignum plane stellis coronari caput, quod et ipsis longe clarius micans, ornet eas potius quam ornetur ab eis. Quidni coronent sidera, quam sol vestit? Sicut dies verni, ait, circumdabant eam flores rosarum et lilia convallium. Nimirum læva sponsi sub capite ejus, et jam dextera illius amplexatur eam. Quis illas æstimet gemmas? Quis stellas nominet, quibus Mariæ regium diadema compactum est?
+  responsory: |
+    R. Hódie nata est beáta Virgo María ex progénie David; * Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo. V. Nativitátem beátæ Maríæ Vírginis cum gáudio celebrémus. R. Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-09-12). Matins reading for day 5 of the Nativity
+# of the BVM's own octave -- collapsed into one continuous reading per project
+# convention. No English translation exists in the source at all for this
+# reading; since it's prose, this English is a translation done for this
+# project rather than left missing (2026-08 decision) -- draft, not verified
+# against any source. The source's own English translation is used as-is,
+# including gaps in its own punctuation (some older "oct"/"bmv"-suffixed
+# variant files drop question marks entirely in places) -- not corrected here,
+# since guessing where they belong isn't the same class of fix as an isolated
+# single-character typo.
+#
+# 2026-09-09: `text.la` had the source citation baked into its opening
+# words, redundant with the `source` field above (`en` was already clean).
+# Stripped (part of a repo-wide sweep of octave-readings files with the
+# same pattern).
+octave-readings/~-octave-day-5:
+  source: Sermo Sancti Joánnis Chrysóstomi.
+  text: |
+    Dei Fílius non díuitem, aut locuplétem áliquam féminam sibi matrem elégit, sed beátam vírginem illa, cujus ánima virtútibus ornáta erat. Cum enim beáta María supra omnem humánam natúram castitátem seruáret, proptérea Christum Dóminum in ventre concépit. Ad hanc ígitur sanctíssimam vírginem et Dei matrem accurréntes, ejus patrocíniis utilitátem assequámur. Ítaque quacúmque estis vírgines, ad matrem Dómini confúgite. Illa enim pulchérrimam, pretiosíssimam, et incorruptíbilem possessiónem patrocínio suo vobis conservábit.
+
+    Magnum reuéra miráculum, fratres dilectíssimi, fuit beáta semper virgo María. Quid namque illa majus aut illústrius ullo umquam témpore inuéntum est, seu aliquándo inveníri póterit? Hæc sola cælum ac terram amplitúdine superávit. Quidnam illa sánctius? Non Prophétæ, non Apóstoli, non Mártyres, non Patriárchæ, non Ángeli, non Throni, non Dominatiónes, no Séraphim, non Chérubim, non dénique áliud quídpiam inter creátas res visíbiles aut inuisíbiles, majus aut excelléntius inveníri potest. Eadem ancílla Dei est et mater: éadem virgo et génitrix.
+
+    Hac ejus mater est, qui a Patre ante omne princípium génitus suit, que Ángeli et hómines agnóscunt Dóminum rerum ómnium. Vis ne cognóscere, quanto virgo hæc præstántior fit cæléstibus poténtis? Illæ cum timóre et tremóre assistunt, fáciem velántes suam: hæc humánum genus illi offert quem génuit. Per hanc et peccatórum véniam conséquimur. Ave ígitur mater, cælum, puélla, virgo, thronus, Ecclésiæ nostræ decus, glória et firmaméntum, assídue pro nobis precáre Jesum fílium tuum et Dóminum nostrum: ut per te misericórdiam inveníre in die judícij, et quæ repósita sunt iis qui díligunt Deum, bona cónsequi possímus, grátia et benignitáte Dómini nostri Jesu Christi: cum quo Patri simul et sancto Spirítui glória, honor, et impérium nunc et semper in sǽcula sæculórum, Amen.
+  responsory: |
+    R. Hódie nata est beáta Virgo María ex progénie David; * Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo. V. Nativitátem beátæ Maríæ Vírginis cum gáudio celebrémus. R. Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-09-13). Matins reading for day 6 of the Nativity
+# of the BVM's own octave -- collapsed into one continuous reading per project
+# convention. The source's own English translation is used as-is, including
+# gaps in its own punctuation (some older "oct"/"bmv"-suffixed variant files
+# drop question marks entirely in places) -- not corrected here, since
+# guessing where they belong isn't the same class of fix as an isolated
+# single-character typo.
+#
+# 2026-09-09: both `text.la` and `text.en` had the source citation baked
+# into their opening words, redundant with the `source` field above.
+# Stripped (part of a repo-wide sweep of octave-readings files with the
+# same pattern).
+octave-readings/~-octave-day-6:
+  source: Ex libro sancti Epiphanii Epíscopi adversus hæreses
+  text: |
+    Beata Mater Dei Maria per Hevam significatur, quæ per ænigma accepit, ut mater viventium vocetur. Illa etenim mater viventium vocata est, étiam postquam audivit: Terra es, et in terram reverteris, post transgressionem. Et mirum est, quod post transgressionem hoc magnum cognomen habuit. Et quod quidem pertinet ad rem sensibilem, ab illa Heva omnis hominum generatio deducta est in terra: hic autem vere a Maria hæc vita mundo genita est, ut viventem gigneret, et fieret Maria mater viventium. Per ænigma igitur Maria mater viventium appellata est.
+
+    Hevæ datum est operire corpus sensibile propter nuditatem sensibilem: Mariæ vero datum est a Deo, ut pareret nobis Agnum et ovem, et ex gloria ipsius Agni et ovis fieret nobis velut a vellere in sapientia per virtutem ipsius indumentum incorruptibilitatis. Heva étiam mortis causa facta est hominibus: per ipsam enim mors ingressa est in mundum: Maria vero causa vitæ, per quam genita est nobis vita, et per hanc Filius Dei advenit in mundum: et ubi abundavit peccatum, ibi superabundavit et gratia: et unde illata est mors, illinc processit et vita, ut vita pro morte fieret: et qui per mulierem nobis vita factus est, mortem ex muliere inductam excluderet. Et quoniam illic Heva, cum adhuc esset virgo, per inobedientiam transgressa est: e contrario per Virginem obedientia gratiæ facta est, annuntiato adventu in carne de cælo, et vita æterna.
+
+    De Maria accipitur (liceat mihi hoc dicere) quod scriptum est de Ecclesia: Relinquet homo patrem suum et matrem suam, et adhærebit uxori suæ: et erunt duo in carne una. Sanctus autem Apostolus dicit: Mysterium hoc magnum est, ego autem dico in Christo et Ecclesia. Et vide Scripturarum accuratam dicendi proprietatem, quod de Adam quidem dixit, formavit: de Heva vero non formatam esse, sed ædificatam. Accepit enim, inquit, unam de costis ejus, et ædificavit ipsi in uxorem. Quo ostendat, Dominum quidem de Maria efformasse sibi ipsi corpus, ab ipsa vero costa ædificatam esse Ecclesiam, in eo quod punctum et apertum est ipsius latus, et mysteria sanguinis et aquæ, pretia redemptionis facta sunt.
+  responsory: |
+    R. Hódie nata est beáta Virgo María ex progénie David; * Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo. V. Nativitátem beátæ Maríæ Vírginis cum gáudio celebrémus. R. Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo.
+  status: verified
+
+# Replaced 2026-09-15 (user request): the previous Canticles 1:1-10
+# Scripture excerpt (a Monastic Tridentinum 1617 live prayMatutinum query,
+# 2025-09-15) came from that track's own 3-lesson ferial Historia scheme,
+# not this octave-closing day's real proper content. The secular/Tridentine
+# 1906 track has its own dedicated file for this exact day --
+# web/www/horas/Latin/Sancti/09-15t.txt, "In Octavam Nativitatis Beatæ
+# Mariæ Virginis" (a distinct file from 09-15.txt, which is Seven Sorrows,
+# Divino Afflatu's own fixed date for this day) -- whose Lectio4-6 is a
+# genuine homily, not Scripture: St. Cyril of Alexandria's "Homilia contra
+# Nestorium," his celebrated defense of the title Theotokos preached at the
+# Council of Ephesus (431), collapsed into one continuous reading per this
+# directory's usual convention. English from the parallel
+# English/Sancti/09-15t.txt (already a complete, non-draft translation).
+# Lectio4's own `@:Lectio4o` redirect carries a set of 1888/1906-rubric
+# textual substitutions on top of the plain Lectio4o text below -- not
+# applied here, same "don't resolve every conditional variant" stance as
+# elsewhere in this project; the unmodified base text is used.
+octave-readings/~-octave-day-8:
+  source: Sermo sancti Cyrílli Epíscopi Alexandríni. Homilía contra Nestórium.
+  text: |
+    Hílarem vídeo hódie cœtum fidélium ómnium, qui convenérunt promptis ánimis, a sancta et Dei Matre María semper Vírgine convocáti. Laus et glória sit tibi sancta Trínitas, quod omnes nos ad hanc celebritátem convocáris. Sit étiam tibi sancta Dei Mater laus. Tu enim es pretiósa margaríta orbis terrárum: tu lucérna inextíncti lúminis, coróna virginitátis, sceptrum orthodóxæ fídei, templum indissolúbile cóntinens eum qui núsquam continéri potest, Mater et Virgo: tu benedícta inter mulíeres, ejus párens qui benedíctus venit in nómine Dómini.
+
+    Per te Trínitas sanctificátur: per te crux pretiósa dícitur, et adorátur in toto orbe terrárum. Per te exsúltat cælum, lætántur Angeli et Archángeli, fugántur dæmónes, et homo ipse ad cælum revocátur. Omnis creatúra idolórum erróre deténta, convérsa est ad notítiam veritátis, et fidéles hómines ad sanctum baptísma pervenérunt, atque in toto orbe terrárum constrúctæ sunt ecclésiæ.
+
+    Te adjutríce gentes véniunt ad pœniténtiam. Quid plura? Per te unigénitus Dei Fílius vera illa lux effúlsit sedéntibus in ténebris et umbra mortis. Te Prophétæ prænuntiavérunt, te apóstoli summis láudibus celebravérunt. Quisnam póterit tuárum láudum præcónia explicáre, María Mater et Virgo? Hanc, fratres dilectíssimi, celebrémus, ejus Fílium Ecclésiæ sponsum immaculátum adorántes: cui honor et glória in sǽcula sæculórum. Amen.
+  responsory: |
+    R. Hódie nata est beáta Virgo María ex progénie David; * Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo. V. Nativitátem beátæ Maríæ Vírginis cum gáudio celebrémus. R. Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo.
+  status: verified

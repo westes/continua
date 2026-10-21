@@ -1,0 +1,175 @@
+collect:
+  text: |
+    Let us pray.
+    O God, Which seest that sins and sufferings do on every side rise up to trouble us, grant, we beseech thee, that we may find a shield in time of need through the glorious intercession of thy blessed Apostle and Evangelist John.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+commemoration:
+  text: |
+    Ant. Daughters of Jerusalem, come and see the crowned martyrs, the Lord crowned them in his solemnity and delight, alleluia, alleluia.
+    V. They have declared the works of God:
+    R. And have wisely considered of his doings.
+    Let us pray.
+    O God, Which seest that sins and sufferings do on every side rise up to trouble us, grant, we beseech thee, that we may find a shield in time of need through the glorious intercession of thy blessed Apostle and Evangelist John.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: draft
+
+lauds-capitulum:
+  text: Then shall the just stand with great constancy against those that have afflicted them, and taken away their labours.
+  citation: Wis 5:1
+  status: verified
+
+lauds-hymn:
+  text: |
+    In this our bright and Paschal day
+    The sun shines out with purer ray,
+    When Christ, to earthly sight made plain,
+    The glad Apostles see again.
+
+    The wounds, the riven wounds He shows
+    In that His flesh with light that glows,
+    In loud accord both far and nigh
+    The Lord's arising testify.
+
+    O Christ, the King Who lovest to bless,
+    Do Thou our hearts and souls possess;
+    To Thee our praise that we may pay,
+    To Whom our praise is due for aye.
+
+    We pray Thee, King with glory decked,
+    In this our Paschal joy, protect
+    From all that death would fain effect
+    Thy ransomed flock, Thine own elect.
+
+    * To Thee Who, dead, again dost live,
+    All glory, Lord, Thy people give;
+    All glory, as is ever meet,
+    To Father and to Paraclete. Amen.
+  status: verified
+
+lauds-responsory:
+  text: |
+    R.br. Saints and just, rejoice in the Lord, * Alleluia, alleluia.
+    R. Saints and just, rejoice in the Lord, * Alleluia, alleluia.
+    V. The Lord has chosen you for his inheritance.
+    R. Alleluia, alleluia.
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. Saints and just, rejoice in the Lord, * Alleluia, alleluia.
+  status: verified
+
+lauds-versicle:
+  text: |-
+    V. Precious in the sight of the Lord, alleluia.
+    R. Is the death of his saints, alleluia.
+  status: verified
+
+vespers-hymn:
+  text: |
+    While Christ's disciples, grieving, sad,
+    Their master's painful death deplore,
+    Whom faithless servants' cruel hands,
+    Had bathed in his own crimson gore;
+
+    Quick from the happy realms above,
+    An angel comes on joyful wing,
+    And to the women tells the joy
+    That to his flock their Lord will bring.
+
+    As they with eager steps make haste,
+    Their joyous message to repeat,
+    Their master's glorious form they see,
+    And falling clasp his sacred feet.
+
+    Cheered by this tale, his faithful flock
+    The Galilean mount ascend,
+    And there with loving awe behold
+    Their heart's sole wish, their truest friend.
+
+    That thou mayst be our Paschal joy
+    Through happy, never-ending years,
+    thine own poor children, Jesu, free
+    From sin's sad death with all its fears.
+
+    * To Thee Who, dead, again dost live,
+    All glory, Lord, Thy people give;
+    All glory, as is ever meet,
+    To Father and to Paraclete.
+    Amen.
+  status: verified
+
+vespers-responsory:
+  text: |
+    R.br. Eternal light will shine over your saints, O Lord, * Alleluia, alleluia.
+    R. Eternal light will shine over your saints, O Lord, * Alleluia, alleluia.
+    V. And the eternity of times.
+    R. Alleluia, alleluia.
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. Eternal light will shine over your saints, O Lord, * Alleluia, alleluia.
+  status: verified
+
+vespers-versicle:
+  text: |-
+    V. Precious in the sight of the Lord, alleluia.
+    R. Is the death of his saints, alleluia.
+  status: verified
+
+vespers-versicle/~-first:
+  text: |
+    V. Saints and just, rejoice in the Lord, alleluia.
+    R. The Lord has chosen you for his inheritance, alleluia.
+  status: verified
+
+benedictus-antiphon:
+  text: Daughters of Jerusalem, come and see the crowned martyrs, the Lord crowned them in his solemnity and delight, alleluia, alleluia.
+  status: verified
+
+magnificat-antiphon:
+  text: The blessed Apostle John * was cast into a vessel of boiling oil, but by the favour and protection of God, he came out unharmed. Alleluia.
+  status: verified
+
+magnificat-antiphon/~-first:
+  text: The blessed Apostle John * was cast into a vessel of boiling oil, but by the favour and protection of God, he came out unharmed. Alleluia.
+  status: verified
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: 'Your saints, O Lord, * flourish like lilies, alleluia: and like the smell of balsam are before you, alleluia.'
+    - psalms:
+        - 99
+      antiphon: 'In the heavenly kingdom is the habitation of the saints, alleluia: and they rest in the eternity, alleluia.'
+    - psalms:
+        - 62
+      antiphon: Protected by a veil * your saints turn to you, O Lord, alleluia, alleluia.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Spirits and souls * of the just, sing hymns to our Lord, alleluia, alleluia.
+  laudate:
+    antiphon: The just shine * like the sun at the face of God, alleluia.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Jerome, Priest, Against Jovinian, Bk. 1
+      text: |-
+        The Apostle John was one of the disciples of the Lord. There is a tradition that he was the youngest of the Apostles. He was a virgin when the Faith of Christ found him, and he hath remained a virgin for ever. This is why he was the disciple whom Jesus loved more than any of the others, and why he leaned on Jesus' Breast. When Peter, who had been married, wished to ask the Lord who it was that was about to betray Him, he dared not ask for himself, but beckoned to John, that he should ask it. After the Resurrection, when Mary Magdalene came and told the disciples that the Lord was risen, Peter and John ran both together to the sepulchre, but John did outrun Peter. Later on, when the Apostles were on the Sea of Galilee, in a ship, fishing, Jesus stood on the shore, but the disciples knew not that it was Jesus, till virgin knew Virgin, and that disciple whom Jesus loved saith unto Peter: It is the Lord.
+
+        John was both an Apostle, and an Evangelist, and a Prophet. He was an Apostle, in that he wrote to the Churches, as their Teacher. He was an Evangelist, in that he wrote one of the Gospels, the like whereto was not done by any other of the twelve Apostles, save Matthew. He was a Prophet, in that when he was in the isle of Patmos, whither he had been banished by Domitian on account of his uplifting of his testimony for the Lord, he saw there that Apocalypse which containeth such unfathomable mysteries concerning things which shall be hereafter. Tertullian also saith that when he was at Rome, he was put into a vessel of boiling oil, but that he came out cleaner and healthier than he went in.
+
+        There is a great difference between his Gospel and the three others. Matthew beginneth to write as of a man: The Book of the Generation of Jesus Christ, the Son of David, the son of Abraham. Luke's first words of history relate to the priesthood of Zacharias; Mark commenceth with the prophecies of Malachi and Isaiah. The first hath the face of a man, with an human genealogy; the second hath the face of a calf, being a victim offered by priests; the third hath the face of a lion, even the voice of one crying in the wilderness, Prepare ye the way of the Lord, make His paths straight; but the John of whom I write is like a flying eagle, whose kingly flight beareth him up above earth-gathered clouds, an eagle that wingeth his way toward the Father Himself, and which crieth: In the beginning was the Word, and the Word was with God, and the Word was God.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 20:20-23
+      text: 'At that time, the mother of the sons of Zebedee came to Jesus with her sons, adoring and asking something of Him. And He said to her: What wilt thou? She saith to Him: Say that these my two sons may sit, the one on Thy right hand and the other on Thy left, in Thy kingdom. And Jesus answering, said: You know not what you ask. Can you drink the chalice that I shall drink? They say to Him: We can. He saith to them: My chalice indeed you shall drink; but to sit on My right hand or left is not Mine to give to you, but to them for whom it is prepared by My Father.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Priest, Commentary on Matthew, Bk. 3 (on Matt 20:20-23)
+      text: 'Whence had the mother of Zebedee''s children gotten her idea of the Lord''s kingdom? He had but just said: The Son of man shall be betrayed unto the chief priests and unto the scribes, and they shall condemn Him to death, and shall deliver Him to the Gentiles to mock, and to scourge, and to crucify Him. He had told His trembling disciples of the outrages that awaited Him in His Passion, and yet that mother came to Him to ask for her sons a share in the glory of His Triumph. I think it was because the Lord, after He had said all the rest, had said also: And the third day He shall rise again. The woman supposed that after His resurrection His kingdom would immediately be established, and that that would be fulfilled at His first coming which is promised at His second. And so, with womanly haste, she forgetteth the future, and catcheth at the present.'
+      status: verified

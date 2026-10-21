@@ -1,0 +1,385 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-12-26).
+# Nearly identical wording to finding-of-st-stephen-collect.yml (Aug 3,
+# which cross-references this feast's text with one word substituted) --
+# this is that substitution's own source text, given here in full rather
+# than as a reference, per this project's one-file-per-id convention.
+collect:
+  text: |
+    Orémus.
+    Da nobis, quǽsumus, Dómine, imitári quod cólimus: ut discámus et inimícos dilígere; quia ejus natalícia celebrámus, qui novit étiam pro persecutóribus exoráre Dóminum nostrum Jesum Christum Fílium tuum:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-stephen-protomartyr-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-martyr (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-stephen-protomartyr-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Stéphanus autem * plenus grátia et fortitúdine, faciébat signa magna in pópulo.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Da nobis, quǽsumus, Dómine, imitári quod cólimus: ut discámus et inimícos dilígere; quia ejus natalícia celebrámus, qui novit étiam pro persecutóribus exoráre Dóminum nostrum Jesum Christum Fílium tuum:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against the reference engine (Monastic Tridentinum 1617,
+# ../divinum-officium-reference) -- read directly from Sancti/12-26.txt's
+# own [Octava 3] section (Latin/Sancti/12-26.txt:249-258, English/Sancti/
+# 12-26.txt:164-173), the non-Cistercian rubric -- see christmas-day-
+# octave-commemoration.yml's own comment for why Octava 3 (Second
+# Vespers' own text) was picked as the single shared version this app
+# renders regardless of hour. Collect body + doxology reused verbatim
+# from the already-authored st-stephen-protomartyr-collect.yml (same
+# text, `$Qui tecum` macro), rather than re-translating -- the reference
+# engine's own English for this collect is a close paraphrase of that
+# file's already-verified wording.
+commemoration/octave-~:
+  text: |
+    Ant. Sepeliérunt Stéphanum viri timoráti, et fecérunt planctum magnum super eum.
+    V. Stéphanus vidit cælos apértos.
+    R. Vidit, et introívit: beátus homo, cui cæli patébant.
+    Orémus.
+    Da nobis, quǽsumus, Dómine, imitári quod cólimus: ut discámus et inimícos dilígere; quia ejus natalícia celebrámus, qui novit étiam pro persecutóribus exoráre Dóminum nostrum Jesum Christum Fílium tuum:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/12-26.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Christum natum, qui beátum hódie coronávit Stéphanum, * Veníte, adorémus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-12-26, clean year.
+lauds-capitulum:
+  text: Stéphanus autem plenus grátia et fortitúdine, faciébat prodígia et signa magna in pópulo.
+  citation: Act. 6:8
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-12-26, clean year. English final stanza corrected
+# 2026-09-10: the live query had baked in the Martyr Common's own generic
+# English ending ("All praise to God the Father be...") despite the Latin
+# already correctly showing the Nat/NatT-swapped text (St. Stephen falls
+# within Christmastide's `Doxology=Nat` window) -- a real bilingual
+# mismatch, since the Nat swap should apply to both languages. Corrected to
+# the same Nat/NatT English used by vespers-hymn-st-stephen-protomartyr.yml
+# ("All honour, praise and glory be...").
+lauds-hymn:
+  text: |
+    Martyr Dei, qui únicum
+    Patris sequéndo Fílium,
+    Victis triúmphas hóstibus,
+    Victor fruens cæléstibus.
+
+    Tui precátus múnere
+    Nostrum reátum dílue,
+    Arcens mali contágium,
+    Vitæ rémovens tǽdium.
+
+    Solúta sunt jam víncula
+    Tui sacráti córporis:
+    Nos solve vinclis sǽculi,
+    Amóre Fílii Dei.
+
+    * Glória tibi, Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-12-26, clean year.
+lauds-responsory:
+  text: |
+    R.br. Glória et honóre * Coronásti eum, Dómine.
+    R. Glória et honóre * Coronásti eum, Dómine.
+    V. Et constituísti eum super ópera mánuum tuárum.
+    R. Coronásti eum, Dómine.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Glória et honóre * Coronásti eum, Dómine.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-12-26, clean year.
+lauds-versicle:
+  text: |-
+    V. Sepeliérunt Stéphanum viri timoráti.
+    R. Et fecérunt planctum magnum super eum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, St. Stephen Protomartyr's own day (2029-12-26, a clean year
+# where the Christmas Octave Sunday falls elsewhere -- see
+# calendar/index.ts's applyChristmasOctaveSunday).
+prime-antiphon:
+  text: 'Lapidavérunt Stéphanum, * et ipse invocábat Dóminum, dicens: Ne státuas illis hoc peccátum.'
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/12-26.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: 'Pósitis autem génibus, clamávit voce magna, dicens: Dómine, ne státuas illis hoc peccátum. Et cum hoc dixísset, obdormívit in Dómino.'
+  citation: Act. 7:59
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, St. Stephen Protomartyr's own day (2029-12-26, clean year).
+terce-antiphon:
+  text: 'Lápides torréntis * illi dulces fuérunt: ipsum sequúntur omnes ánimæ justæ.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, St. Stephen Protomartyr's own day (2029-12-26, clean year).
+terce-capitulum:
+  text: |
+    Stéphanus autem plenus grátia et fortitúdine, faciébat prodígia et signa magna in pópulo.
+    R. Deo grátias.
+    V. Glória et honóre coronásti eum, Dómine.
+    R. Et constituísti eum super ópera mánuum tuárum.
+  citation: Act 6:8
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, St. Stephen Protomartyr's own day (2029-12-26, clean year).
+sext-antiphon:
+  text: Adhǽsit ánima mea * post te, quia caro mea lapidáta est pro te, Deus meus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, St. Stephen Protomartyr's own day (2029-12-26, clean year).
+sext-capitulum:
+  text: |
+    Surrexérunt autem quidam de synagóga, quæ appellátur Libertinórum, et Cyrenénsium, et Alexandrinórum, et eórum qui erant a Cilícia, et Asia, disputántes cum Stéphano: et non póterant resístere sapiéntiæ, et Spirítui qui loquebátur.
+    R. Deo grátias.
+    V. Posuísti, Dómine, super caput ejus.
+    R. Corónam de lápide pretióso.
+  citation: Act 6:9-10
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, St. Stephen Protomartyr's own day (2029-12-26, clean year).
+none-antiphon:
+  text: Ecce vídeo * cælos apértos, et Jesum stantem a dextris virtútis Dei.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, St. Stephen Protomartyr's own day (2029-12-26, clean year).
+none-capitulum:
+  text: |
+    Pósitis autem génibus, clamávit voce magna, dicens: Dómine, ne státuas illis hoc peccátum. Et cum hoc dixísset, obdormívit in Dómino.
+    R. Deo grátias.
+    V. Magna est glória ejus in salutári tuo.
+    R. Glóriam et magnum decórem impónes super eum.
+  citation: Act 7:59
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2029-12-26, the same clean date already used for lauds-capitulum-st-stephen-protomartyr.yml. This hymn's closing doxology stanza is seasonally variable in the source (tagged `{Doxology: NatT}`); what's captured here is whatever rendered live on the query date above, not a season-aware substitution -- same known-not-modeled gap as the Paschaltide alleluia suffix elsewhere (see TODO.md).
+vespers-hymn:
+  text: |
+    Deus tuórum mílitum
+    Sors, et córona, prǽmium,
+    Laudes canéntes Mártyris
+    Absólve nexu críminis.
+
+    Hic nempe mundi gáudia,
+    Et blandiménta nóxia
+    Cadúca rite députans,
+    Pervénit ad cæléstia.
+
+    Pœnas cucúrrit fórtiter,
+    Et sústulit viríliter,
+    Pro te effúndens sánguinem,
+    Ætérna dona póssidet.
+
+    Ob hoc precátu súpplici
+    Te póscimus, piíssime;
+    In hoc triúmpho Mártyris
+    Dimítte noxam sérvulis.
+
+    * Glória tibi, Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2029-12-26, the same clean date already used for lauds-capitulum-st-stephen-protomartyr.yml.
+vespers-responsory:
+  text: |
+    R.br. Posuísti, Dómine, * Super caput ejus.
+    R. Posuísti, Dómine, * Super caput ejus.
+    V. Corónam de lápide pretióso.
+    R. Super caput ejus.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Posuísti, Dómine, * Super caput ejus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2029-12-26, the same clean date already used for lauds-capitulum-st-stephen-protomartyr.yml.
+vespers-versicle:
+  text: |-
+    V. Stéphanus vidit cælos apértos.
+    R. Vidit, et introívit: beátus homo, cui cæli patébant.
+  status: verified
+
+# Content read from the reference engine (Monastic Tridentinum 1617, command=prayVespera): First Vespers variant; the default (second Vespers) file is the same id without "-first". See hours/resolve-common.ts withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Glória et honóre coronásti eum, Dómine.
+    R. Et constituísti eum super ópera mánuum tuárum.
+  status: verified
+
+# Verified against Divinum Officium (Latin/English Sancti/12-26.txt's own
+# [Ant 1] — the Lauds-hour antiphon, not Terce's, and this feast's own
+# canonical source for the same text duplicated (unmodified) at
+# finding-of-st-stephen-antiphon.yml (Aug 3).
+benedictus-antiphon:
+  text: Stéphanus autem * plenus grátia et fortitúdine, faciébat signa magna in pópulo.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-12-26 st-stephen-protomartyr second (continua had "quiuultuenirepostme"). Paschaltide Alleluia is left to
+# hours/paschal-alleluia.ts. See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon:
+  text: Sepeliérunt Stéphanum * viri timoráti, et fecérunt planctum magnum super eum.
+  status: verified
+
+# Content read from the reference engine (Monastic Tridentinum 1617, command=prayVespera): First Vespers variant; the default (second Vespers) file is the same id without "-first". See hours/resolve-common.ts withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Stéphanus autem * plenus grátia et fortitúdine, faciébat signa magna in pópulo.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-12-26, clean year.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: 'Lapidavérunt Stéphanum, * et ipse invocábat Dóminum, dicens: Ne státuas illis hoc peccátum.'
+    - psalms:
+        - 99
+      antiphon: 'Lápides torréntis * illi dulces fuérunt: ipsum sequúntur omnes ánimæ justæ.'
+    - psalms:
+        - 62
+      antiphon: Adhǽsit ánima mea * post te, quia caro mea lapidáta est pro te, Deus meus.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Stéphanus vidit * cælos apértos, vidit, et introívit: beátus homo, cui cæli patébant.'
+  laudate:
+    antiphon: Ecce vídeo * cælos apértos, et Jesum stantem a dextris virtútis Dei.
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-12-26, own day). Antiphons 1-3 (Ps 109/110/111)
+# are the shared Christmas-Octave scheme (byte-identical across St.
+# Stephen/St. John/Holy Innocents, all within the Octave); only antiphon 4
+# (Ps 131) is specific to Stephen, not `common-of-a-martyr`'s generic text.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Tecum princípium * in die virtútis tuæ, in splendóribus sanctórum, ex útero ante lucíferum génui te.
+    - psalms:
+        - 110
+      antiphon: 'Redemptiónem * misit Dóminus pópulo suo: mandávit in ætérnum testaméntum suum.'
+    - psalms:
+        - 111
+      antiphon: 'Exórtum est * in ténebris lumen rectis corde: miséricors, et miserátor, et justus Dóminus.'
+    - psalms:
+        - 131
+      antiphon: De fructu * ventris tui ponam super sedem tuam.
+
+# Matins Nocturn 2-3 readings for St. Stephen, Protomartyr (Dec 26) —
+# SanctiM/12-26.txt inherits the whole day (`@Sancti/12-26`) with no
+# Nocturn 2/3 override, so this feast's own proper content is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/12-26.txt, English/Sancti/12-26.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, St. Fulgentius's
+# sermon contrasting yesterday's Nativity with today's martyrdom — one
+# continuous piece, no genuine source break.
+# Nocturn 3: Lectio7's Gospel citation (Matt 23:34-39) was a bare
+# incipit ("Et réliqua") with no full pericope text given; the full
+# pericope is now authored too (isGospel: true, immediately before the
+# homily) — sourced from `web/www/missa/Latin/Sancti/08-03.txt` (Dec
+# 26's own Missale [Evangelium] is `@Sancti/08-03`),
+# English/Sancti/08-03.txt (2026-09-05 update). The homily portion
+# remains St. Jerome's commentary (Lectio7's homily + Lectio8-9
+# combined, one continuous piece on "Zacharias son of Barachias").
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Fulgentius of Ruspe, Sermon 3 on St. Stephen
+      text: |-
+        Heri celebrávimus temporálem sempitérni Regis nostri natálem: hódie celebrámus triumphálem mílitis passiónem. Heri enim Rex noster trábea carnis indútus, de aula úteri virginális egrédiens, visitáre dignátus est mundum: hódie miles de tabernáculo córporis éxiens, triumphátor migrávit ad cælum. Ille, sempitérnæ Deitátis majestáte serváta, servíle cinctórium carnis assúmens, in hujus sǽculi campum pugnatúrus intrávit; iste, depósitis corruptibílibus córporis induméntis, ad cæli palátium perénniter regnatúrus ascéndit. Ille descéndit carne velátus, iste ascéndit sánguine laureátus.
+
+        Ascéndit iste lapidántibus Judǽis, quia ille descéndit lætántibus Angelis. Glória in excélsis Deo, heri sancti Angeli exsultántes cantavérunt: hódie Stéphanum lætántes in suum consórtium suscepérunt. Heri Dóminus exívit de útero Vírginis: hódie miles egréssus est de ergástulo carnis. Heri Christus pro nobis pannis est involútus: hódie Stéphanus stola est ab eo immortalitátis indútus. Heri præsépis angústia Christum portávit infántem: hódie imménsitas cæli suscépit Stéphanum triumphántem. Solus Dóminus descéndit, ut multos eleváret: humiliávit se Rex noster, ut suos mílites exaltáret.
+
+        Necessárium tamen nobis est, fratres, agnóscere, quibus armis præcínctus Stéphanus sævítiam Judæórum pótuit superáre, ut ita meruísset felíciter triumpháre. Stéphanus ergo, ut nóminis sui corónam meruísset accípere, caritátem pro armis habébat, et per ipsam ubíque vincébat. Per caritátem Dei sæviéntibus Judǽis non cessit: per caritátem próximi pro lapidántibus intercéssit. Per caritátem arguébat errántes, ut corrigeréntur: per caritátem pro lapidántibus orábat, ne puniréntur. Caritátis virtúte subníxus, vicit Saulum crudéliter sæviéntem; et quem hábuit in terra persecutórem, in cælo méruit habére consórtem.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 23:34-39
+      text: 'In illo témpore: Dicébat Jesus scribis et pharisǽis: Ecce, ego mitto ad vos prophétas, et sapiéntes, et scribas, et ex illis occidétis et crucifigétis, et ex eis flagellábitis in synagógis vestris, et persequémini de civitáte in civitátem: ut véniat super vos omnis sanguis justus, qui effúsus est super terram, a sánguine Abel justi usque ad sánguinem Zacharíæ, fílii Barachíæ, quem occidístis inter templum et altáre. Amen, dico vobis, vénient hæc ómnia super generatiónem istam. Jerúsalem, Jerúsalem, quæ occídis prophétas, et lápidas eos, qui ad te missi sunt, quóties vólui congregáre fílios tuos, quemádmodum gallína cóngregat pullos suos sub alas, et noluísti? Ecce, relinquétur vobis domus vestra desérta. Dico enim vobis, non me vidébitis ámodo, donec dicátis: Benedíctus, qui venit in nómine Dómini.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Commentary on Matthew, Book IV, on Matt 23:34-39
+      text: |-
+        Hoc quod ántea dixerámus, Impléte mensúram patrum vestrórum; ad persónam Dómini pertinére, eo quod occidéndus esset ab eis, potest et ad discípulos ejus reférri, de quibus nunc dicit: Ecce ego mitto ad vos prophétas, et sapiéntes, et scribas. Simúlque obsérva, juxta Apóstolum scribéntem ad Corínthios, vária esse dona discipulórum Christi; álios prophétas, qui ventúra prædícent; álios sapiéntes, qui novérunt quando débeant proférre sermónem; álios scribas in lege doctíssimos, ex quibus lapidátus est Stéphanus, Paulus occísus, crucifíxus Petrus, flagelláti in Actibus Apostolórum discípuli.
+
+        Quǽrimus, quis iste sit Zacharías fílius Barachíæ: quia multos légimus Zacharías. Et ne líbera nobis tribuerétur erróris facúltas, ádditum est: Quem occidístis inter templum et altáre. In divérsis divérsa legi: et débeo singulórum opiniónes pónere. Alii Zacharíam fílium Barachíæ dicunt, qui in duódecim prophétis undécimus est, patrísque in eo nomen conséntit: sed ubi occísus sit inter templum et altáre, Scriptúra non lóquitur; máxime cum tempóribus ejus vix ruínæ templi fúerint. Alii Zacharíam patrem Joánnis intellégi volunt, ex quibúsdam apocryphórum sómniis approbántes, quod proptérea occísus sit, quia Salvatóris prædicáverit advéntum.
+
+        Alii istum volunt esse Zacharíam, qui occísus est a Joas rege Judæ inter templum et altáre, sicut Regum narrat história. Sed observándum, quod ille Zacharías non sit fílius Barachíæ, sed fílius Jójadæ sacerdótis: unde et Scriptúra refert: Non fuit recordátus Joas patris ejus Jójadæ, quia sibi fecísset bona. Cum ergo et Zacharíam teneámus et occisiónis conséntiat locus: quǽrimus, quare Barachíæ dicátur fílius, et non Jójadæ? Barachía lingua nostra Benedíctus Dómini dícitur, et sacerdótis Jójadæ justítia Hebrǽo nómine demonstrátur. In Evangélio, quo utúntur Nazaréni, pro fílio Barachíæ, fílium Jójadæ reperímus scriptum.
+      status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Sancti/01-02.txt) -- day 8, "In Octava," St. Stephen's own octave closing
+# day. Unlike the full graduated 8-day octaves (Assumption, Lawrence, etc.),
+# this Christmas-week octave's own intervening days (2-7, Dec 27-31) turn
+# out to carry NO Lectio override at all in the source -- every suffix file
+# checked at those dates (`12-27o`, `12-28o`/`12-28r`, `12-29o`/`12-29r`,
+# `12-31o`/`12-31r`; Dec 30 has no suffix file whatsoever) is a bare
+# `@Sancti/MM-DD` alias with no `[LectioN]` content of its own, correctly
+# left unauthored -- same "vide-only, not a gap" pattern as the fixed-date
+# octaves audited earlier (see memory vu-octave-readings-by-date). Only the
+# closing day carries real content: St. Augustine's own sermon on Stephen
+# (Lectio4-6) + St. Jerome's homily on Matt 23:34-35 (Lectio7-9, bare
+# incipit dropped).
+# Responsory missing from this file -- authoring gap, not a design choice
+# (same class as nativity-bvm-octave-day-3.yml's own fix). Reuses St.
+# Stephen's own Responsory1 (Sancti/12-26.txt), the octave's one well-known
+# opening responsory, matching the convention already established for the
+# Nativity-BVM octave (every combined-lesson octave-day file there reuses
+# that feast's own Responsory1 regardless of which specific historical
+# Lectio number the combined text corresponds to).
+octave-readings/~-octave-day-8:
+  source: Sermo sancti Augustíni Epíscopi; Homilía sancti Hierónymi Presbýteri
+  text: |
+    Post hestérnum festivíssimum diem, quo Salvatóris nostri Christi nobis Natívitas illúxit, étiam hodiérnus dies beáti Mártyris Stéphani coróna illustrátur. Mártyris illíus mérita nulla pars orbis ignórat: passus enim est in ipso princípio Ecclésiæ, id est, in ipsa urbe Jerosólyma. Ibi enim Diáconus ministrávit: et in ipso juventútis flore decórem ætátis suæ sánguine purpurávit. Pássio ejus insígnis est, multúmque mirábilis. Hanc modo de libro Actuum Apostolórum, cum legerétur, non solum audívimus, sed étiam óculis spectávimus.
+
+    Christus ergo caput Mártyrum prior passus est pro nobis, relínquens vobis exémplum, ut sequámini vestígia ejus. Cujus passiónis vestígia prosecútus beatíssimus Stéphanus, confiténdo Christum lapidátus a Judǽis, corónam méruit tamquam suo sibi nómine pósitam. Stéphanus enim Græce, Latíne coróna appellátur. Jam coróna nomen habébat, et ídeo palmam martýrii suo nómine præferébat.
+
+    Qui cum lapidarétur, non solum non exspectábat de persecutóribus reportáre vindíctam, sed eis pótius a Deo véniam postulábat. Memínerat enim dixísse Dóminum: Mihi vindíctam, ego retríbuam, dicit Dóminus. Et íterum: Ne díxeris, Ulcíscar me de inimícis meis; sed exspécta Dóminum, ut tibi auxílio sit. Exspectáre nos jubet Dóminus Deus, ut in die futúræ retributiónis cum sanctis Martýribus vindicémur.
+
+    Jerúsalem, Jerúsalem, quæ occídis prophétas. Jerúsalem, non saxa et ædifícia civitátis, sed habitatóres vocat: quam plangit patris afféctu, sicut et in álio loco légimus, quod videns eam, fléverit. In eo autem quod dicit: Quóties vólui congregáre fílios tuos: omnes retro prophétas a se missos esse testátur. Gallínæ quoque similitúdinem congregántis sub alas pullos suos, in cántico Deuteronómii légimus: Sicut áquila prótegit nidum suum, et super pullos suos desiderávit: expándens alas suas, suscépit eos, et tulit super pennas suas.
+
+    Ecce relinquétur vobis domus vestra desérta. Hoc ipsum ex persóna Jeremíæ jam ante díxerat: Relíqui domum meam, dimísi hereditátem meam: facta est mihi heréditas mea quasi spelúnca hyǽnæ. Desértam Judæórum domum, id est, templum illud, quod fulgébat augústius, óculis comprobámus, quia habitatórem Christum pérdidit, et hereditátem prærípere géstiens, occídit herédem.
+
+    Dico enim vobis: Non me vidébitis ámodo, donec dicátis: Benedíctus qui venit in nómine Dómini. Ad Jerúsalem lóquitur, et ad pópulum Judæórum. Versículum autem istum, quo et párvuli atque lacténtes in ingréssu Jerúsalem Dómini Salvatóris usi sunt, quando dixérunt: Benedíctus qui venit in nómine Dómini, hosánna in excélsis, sumpsit de centésimo décimo séptimo Psalmo, qui maniféste de advéntu Dómini scriptus est.
+  responsory: |
+    R. Stéphanus autem plenus grátia et fortitúdine, * Faciébat prodígia et signa magna in pópulo. V. Surrexérunt quidam de synagóga disputántes cum Stéphano: et non póterant resístere sapiéntiæ, et Spirítui qui loquebátur. R. Faciébat prodígia et signa magna in pópulo.
+  status: verified

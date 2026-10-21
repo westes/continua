@@ -1,0 +1,84 @@
+# Read directly from the reference engine's own Sancti/12-24.txt (Latin)
+# and English/Sancti/12-24.txt -- the Vigil of Christmas's own proper
+# Oratio (`In Vigilia Nativitatis Domini`, Duplex I classis), used on Dec
+# 24 regardless of rank contest (see calendar/temporal-id.ts's own
+# `vigil-of-christmas` case, currently scoped to a non-Sunday Dec 24 only).
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos redemptiónis nostræ ánnua exspectatióne lætíficas: præsta; ut Unigénitum tuum, quem Redemptórem læti suscípimus, veniéntem quoque Júdicem secúri videámus, Dóminum nostrum Jesum Christum Fílium tuum:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Sourced from web/www/horas/Latin/Sancti/12-24.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: Per quem accépimus grátiam, et apostolátum ad obediéndum fídei in ómnibus géntibus pro nómine ejus, in quibus estis et vos vocáti Jesu Christi Dómini nostri.
+  citation: Rom 1:5-6
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-12-24 (a plain Thursday, non-Sunday Vigil of
+# Christmas). The static reference file (Sancti/12-24.txt) has no
+# explicit `[Ant Benedictus]` tag for this date -- turns out the live
+# engine reuses the same text tagged `[Ant 2]` there (labeled "Antiphona
+# ex Proprio Sanctorum" in the live render), already imported separately
+# for Matins' own Nocturn 2 -- see nocturn-readings/vigil-of-christmas.yml.
+# Same text, two real uses, not a coincidence to collapse into one file:
+# these are two distinct ResolvedPart slots.
+benedictus-antiphon:
+  text: 'Oriétur * sicut sol Salvátor mundi: et descéndet in úterum Vírginis, sicut imber super gramen, allelúia.'
+  status: verified
+  temporal: true
+
+# Read directly from the reference engine's Sancti/12-24.txt (Latin `[Ant
+# Laudes]`, 5 antiphons) and English/Sancti/12-24.txt -- the Vigil of
+# Christmas's own proper Lauds antiphons, mapped onto this app's usual
+# 3-psalm-group + canticle + laudate override shape (same fixed 92/99/62
+# psalm set every other duplex-majus+ override here uses, e.g.
+# christmas-octave-sunday.yml/all-saints.yml).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: 'Judǽa et Jerúsalem, * nolíte timére: cras egrediémini, et Dóminus erit vobíscum, allelúia.'
+    - psalms:
+        - 99
+      antiphon: 'Hódie sciétis * quia véniet Dóminus: et mane vidébitis glóriam ejus.'
+    - psalms:
+        - 62
+      antiphon: 'Crástina die * delébitur iníquitas terræ: et regnábit super nos Salvátor mundi.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Dóminus véniet, * occúrrite illi, dicéntes: Magnum princípium, et regni ejus non erit finis: Deus, Fortis, Dominátor, Princeps pacis, allelúia.'
+  laudate:
+    antiphon: Crástina erit * vobis salus, dicit Dóminus Deus exercítuum.
+
+# Matins reading for the Vigil of Christmas (Dec 24, when it's not itself
+# Advent 4's own Sunday) -- read directly from the reference engine's
+# Sancti/12-24.txt (Lectio1, Latin) and English/Sancti/12-24.txt (Lectio1,
+# English): the day's Gospel pericope (Matt 1:18-21, given in full, not a
+# bare incipit) plus St. Jerome's homily on it. Same single-nocturn Vigil
+# shape as vigil-of-st-john-the-baptist.yml -- `nocturn: 1`, matching the
+# Ember-day convention for a ferial day's one real nocturn (see
+# hours/matins.ts's own nocturnReadingIds doc comment).
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Matt 1:18-21
+      text: Cum esset desponsáta Mater Jesu María Joseph, ántequam convenírent, invénta est in útero habens de Spíritu Sancto. Et réliqua.
+      status: verified
+      responsory: |
+        R. Sanctificámini hódie, et estóte paráti: quia die crástina vidébitis
+        * Majestátem Dei in vobis.
+        V. Hódie sciétis quia véniet Dóminus, et mane vidébitis.
+        R. Majestátem Dei in vobis.
+    - nocturn: 1
+      isGospel: false
+      source: Homily by St. Jerome, Priest (at Bethlehem), Book of Commentaries, on Matth. i.
+      text: 'Quare non de símplici vírgine, sed de desponsáta concípitur? Primum, ut per generatiónem Joseph, orígo Maríæ monstrarétur: secúndo, ne lapidarétur a Judǽis ut adúltera: tértio, ut in Ægýptum fúgiens habéret solátium. Martyr Ignátius étiam quartam áddidit causam, cur a desponsáta concéptus sit: Ut partus, ínquiens, ejus celarétur diábolo, dum eum putat non de vírgine, sed de uxóre generátum.'
+      status: verified

@@ -1,0 +1,314 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2029-05-01).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos ánnua Apostolórum tuórum Philíppi et Jacóbi solemnitáte lætíficas: præsta, quǽsumus; ut, quorum gaudémus méritis, instruámur exémplis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-philip-and-james-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-apostle (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (ss-philip-and-james-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Ego sum via, véritas, et vita: nemo venit ad Patrem, nisi per me, allelúia.
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+    Orémus.
+    Deus, qui nos ánnua Apostolórum tuórum Philíppi et Jacóbi solemnitáte lætíficas: præsta, quǽsumus; ut, quorum gaudémus méritis, instruámur exémplis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-05-01, clean year.
+lauds-capitulum:
+  text: Stabunt justi in magna constántia advérsus eos qui se angustiavérunt et qui abstulérunt labóres eórum.
+  citation: Sap 5:1
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-05-01, clean year.
+lauds-hymn:
+  text: |
+    Claro pascháli gáudio
+    Sol mundo nitet rádio,
+    Cum Christum jam Apóstoli
+    Visu cernunt corpóreo.
+
+    Osténsa sibi vúlnera
+    In Christi carne fúlgida,
+    Resurrexísse Dóminum
+    Voce faténtur pública.
+
+    Rex Christe clementíssime,
+    Tu corda nostra pósside,
+    Ut tibi laudes débitas
+    Reddámus omni témpore.
+
+    Quǽsumus, Auctor ómnium,
+    In hoc pascháli gáudio,
+    Ab omni mortis ímpetu
+    Tuum defénde pópulum.
+
+    Glória tibi Dómine,
+    Qui surrexísti a mórtuis,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-05-01, clean year.
+lauds-responsory:
+  text: |
+    R.br. Sancti et justi in Dómino gaudéte, * Allelúia, allelúia.
+    R. Sancti et justi in Dómino gaudéte, * Allelúia, allelúia.
+    V. Vos elégit Deus in hereditátem sibi.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Sancti et justi in Dómino gaudéte, * Allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-05-01, clean year.
+lauds-versicle:
+  text: |-
+    V. Pretiósa in conspéctu Dómini, allelúia.
+    R. Mors Sanctórum ejus, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, Ss. Philip and James's own day (2026-05-01, clean year).
+prime-antiphon:
+  text: Dómine, * osténde nobis Patrem, et súfficit nobis, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, Ss. Philip and James's own day (2026-05-01, clean year).
+terce-antiphon:
+  text: Philíppe, * qui videt me, videt et Patrem meum, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, Ss. Philip and James's own day (2026-05-01, clean year).
+# English source ran the two sentences together with no punctuation at
+# all where the Latin has a clear question mark ("cognovístis me?
+# Philíppe") -- added the same punctuation on the English side, marked
+# draft since it's an edit, not a straight transcription.
+sext-antiphon:
+  text: Tanto témpore * vobíscum sum, et non cognovístis me? Philíppe, qui videt me, videt et Patrem meum, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, Ss. Philip and James's own day (2026-05-01, clean year).
+none-antiphon:
+  text: Si dilígitis me, * mandáta mea serváte, allelúia, allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-05-01, the same clean date already used for lauds-capitulum-ss-philip-and-james.yml. This hymn's closing doxology stanza is seasonally variable in the source (tagged `{Doxology: PaschT}`); what's captured here is whatever rendered live on the query date above, not a season-aware substitution -- same known-not-modeled gap as the Paschaltide alleluia suffix elsewhere (see TODO.md).
+vespers-hymn:
+  text: |
+    Tristes erant Apóstoli
+    De nece sui Dómini,
+    Quem pœna mortis crudéli
+    Servi damnárant ímpii.
+
+    Sermóne blando Angelus
+    Prædíxit muliéribus:
+    In Galilǽa Dóminus
+    Vidéndus est quantócius.
+
+    Illæ dum pergunt cóncitæ,
+    Apóstolis hoc dícere,
+    Vidéntes eum vívere,
+    Osculántur pedes Dómini.
+
+    Quo ágnito, discípuli
+    In Galilǽam própere
+    Pergunt vidére fáciem
+    Desiderátam Dómini.
+
+    Quǽsumus, Auctor ómnium,
+    In hoc pascháli gáudio,
+    Ab omni mortis ímpetu
+    Tuum defénde pópulum.
+
+    Glória tibi Dómine,
+    Qui surrexísti a mórtuis,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-05-01, the same clean date already used for lauds-capitulum-ss-philip-and-james.yml.
+vespers-responsory:
+  text: |
+    R.br. Lux perpétua lucébit Sanctis tuis, Dómine, * Allelúia, allelúia.
+    R. Lux perpétua lucébit Sanctis tuis, Dómine, * Allelúia, allelúia.
+    V. Et ætérnitas témporum.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Lux perpétua lucébit Sanctis tuis, Dómine, * Allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-05-01, the same clean date already used for lauds-capitulum-ss-philip-and-james.yml.
+vespers-versicle:
+  text: |-
+    V. Pretiósa in conspéctu Dómini, allelúia.
+    R. Mors Sanctórum ejus, allelúia.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 05-01
+# ss-philip-and-james (saint file = second). First Vespers variant; the default (second Vespers) file is the
+# same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Sancti et justi in Dómino gaudéte, allelúia.
+    R. Vos elégit Deus in hereditátem sibi, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Philip and James's own day (2026-05-01) -- the
+# Benedictus antiphon. Corrects the previous version of this file, which
+# had been sourced from the Roman/secular rite's Sancti/05-01.txt's own
+# [Ant 1] instead: real but different text from what Monastic 1617
+# actually renders at Lauds, same mistake as St. Lawrence's earlier fix.
+benedictus-antiphon:
+  text: 'Ego sum via, véritas, et vita: nemo venit ad Patrem, nisi per me, allelúia.'
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 05-01
+# ss-philip-and-james (new saint-level second; continua had "estotefortes"). See hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon:
+  text: Si manséritis in me, * et verba mea in vobis mánserint, quodcúmque petiéritis, fiet vobis, allelúia, allelúia, allelúia.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 05-01
+# ss-philip-and-james (saint file = second). First Vespers variant; the default (second Vespers) file is the
+# same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: 'Non turbétur * cor vestrum, neque formídet: créditis in Deum, et in me crédite: in domo Patris mei mansiónes multæ sunt, allelúia, allelúia.'
+  status: verified
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayLaudes), 2026-05-01, own day. Their fixed date falls inside
+# Paschaltide in most years (Easter's range is Mar 22-Apr 25, so May 1 is
+# essentially always within it) -- this rendered text already carries the
+# season's own Alleluia throughout, same "permanently Paschaltide, no
+# real non-Paschaltide baseline exists to render instead" situation as
+# common-of-pope-martyrs.yml's own documented case.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Dómine, * osténde nobis Patrem, et súfficit nobis, allelúia.
+    - psalms:
+        - 99
+      antiphon: Philíppe, * qui videt me, videt et Patrem meum, allelúia.
+    - psalms:
+        - 62
+      antiphon: Tanto témpore * vobíscum sum, et non cognovístis me? Philíppe, qui videt me, videt et Patrem meum, allelúia.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Si cognovissétis me, * et Patrem meum útique cognovissétis, et ámodo cognoscétis eum, et vidístis eum, allelúia, allelúia, allelúia.
+  laudate:
+    antiphon: Si dilígitis me, * mandáta mea serváte, allelúia, allelúia, allelúia.
+
+# Second Vespers (default). Fourth psalm is 125, not the Apostles' Common 138: engine May 1 renders Ps 109/112/115/125.
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera), 2026-05-01, own day. Same "permanently
+# Paschaltide" situation as their own Lauds antiphons (see lauds-
+# psalmody-overrides/ss-philip-and-james.yml) -- byte-identical to Lauds
+# antiphons 1/2/3/5, same historical minor-hours/Vespers-borrow-from-
+# Lauds pattern seen elsewhere.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Dómine, * osténde nobis Patrem, et súfficit nobis, allelúia.
+    - psalms:
+        - 112
+      antiphon: Philíppe, * qui videt me, videt et Patrem meum, allelúia.
+    - psalms:
+        - 115
+      antiphon: Tanto témpore * vobíscum sum, et non cognovístis me? Philíppe, qui videt me, videt et Patrem meum, allelúia.
+    - psalms:
+        - 125
+      antiphon: Si dilígitis me, * mandáta mea serváte, allelúia, allelúia, allelúia.
+
+# First Vespers (engine Apr 30: Ps 109/110/111/112, same four antiphons).
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera), 2026-05-01, own day. Same "permanently
+# Paschaltide" situation as their own Lauds antiphons (see lauds-
+# psalmody-overrides/ss-philip-and-james.yml) -- byte-identical to Lauds
+# antiphons 1/2/3/5, same historical minor-hours/Vespers-borrow-from-
+# Lauds pattern seen elsewhere.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Dómine, * osténde nobis Patrem, et súfficit nobis, allelúia.
+    - psalms:
+        - 110
+      antiphon: Philíppe, * qui videt me, videt et Patrem meum, allelúia.
+    - psalms:
+        - 111
+      antiphon: Tanto témpore * vobíscum sum, et non cognovístis me? Philíppe, qui videt me, videt et Patrem meum, allelúia.
+    - psalms:
+        - 112
+      antiphon: Si dilígitis me, * mandáta mea serváte, allelúia, allelúia, allelúia.
+
+# Matins Nocturn 2-3 readings for Ss. Philip and James, Apostles (May
+# 1). No genuine SanctiM match: `SanctiM/05-01b.txt` bases
+# `@TemporaM/Pasc2-3` (a paschaltide-feria filler, not this feast at
+# all) and `SanctiM/05-01r.txt` bases `@Sancti/05-01r` (St. Joseph the
+# Worker, a different, later feast sharing this date's suffix scheme)
+# — neither matches; a missed pre-1955-pool candidate rather than a
+# genuine SanctiM case (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/05-01.txt, English/Sancti/05-01.txt.
+#
+# Nocturn 2: Lectio4 (Philip's own vita) and Lectio5-6 (James's, a
+# genuinely distinct Apostle) kept split.
+# Nocturn 3: Lectio7-9's Gospel pericope (John 14:1-13) is given in
+# full, not a bare incipit, so authored as a genuine Gospel reading,
+# `isGospel: true`; combined with St. Augustine's homily (Lectio7's
+# remainder + Lectio8-9), one continuous excerpt. No responsory given
+# in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Philíppus Bethsáidæ natus, unus ex duódecim Apóstolis, qui primum a Christo Dómino vocáti sunt: a quo cum accepísset Nathánaël, venísse Messíam in lege promíssum, ad Dóminum dedúctus est. Quam vero Christus eum familiáriter adhibéret, illud fácile declárat, quod gentíles Salvatórem vidére cupiéntes, ad Philíppum accessérunt; et Dóminus, cum in solitúdine hóminum multitúdinem páscere vellet, sic Philíppum affátus est: Unde emémus panes, ut mandúcent hi? Is, accépto Spíritu Sancto, cum ei Scýthia ad prædicándum Evangélium obtigísset, omnem fere illam gentem ad christiánam fidem convértit. Postrémo, cum Hierápolim Phrýgiæ venísset, pro Christi nómine cruci affíxus lapidibúsque óbrutus est, Kaléndis Maji. Ejus corpus ibídem a Christiánis sepúltum, póstea Romam delátum, in basílica duódecim Apostolórum una cum córpore beáti Jacóbi Apóstoli cónditum est.'
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Jacóbus frater Dómini, cognoménto Justus, ab ineúnte ætáte vinum et síceram non bibit, carne abstínuit, nunquam tonsus est, nec unguénto nec bálneo usus. Huic uni licébat íngredi in Sancta sanctórum. Idem líneis véstibus utebátur: cui étiam assidúitas orándi ita callum génibus obdúxerat, ut durítie caméli pellem imitarétur. Eum post Christi ascensiónem Apóstoli Jerosolymórum epíscopum creavérunt; ad quem étiam Princeps Apostolórum misit qui nuntiáret se e cárcere ab Angelo edúctum fuísse. Cum autem in concílio Jerosólymis controvérsia esset orta de lege et circumcisióne; Jacóbus, Petri senténtiam secútus, ad fratres hábuit conciónem, in qua vocatiónem géntium probávit, fratribúsque abséntibus scribéndum esse dixit, ne géntibus jugum Mosáicæ legis impónerent. De quo et lóquitur Apóstolus ad Gálatas: Alium autem Apostolórum vidi néminem, nisi Jacóbum fratrem Dómini.
+
+        Tanta autem erat Jacóbi vitæ sánctitas, ut fímbriam vestiménti ejus certátim hómines cúperent attíngere. Nam is nonagínta sex annos natus, cum trigínta annis illi Ecclésiæ sanctíssime præfuísset, Christum Dei Fílium constantíssime prǽdicans, lapídibus primum appétitur; mox in altíssimum Templi locum addúctus, inde præcipitátus est. Qui, confráctis crúribus, jacens semivívus, manus tendébat ad cælum, Deúmque pro illórum salúte deprecabátur his verbis: Ignósce eis, Dómine, quia nésciunt quid fáciunt. Qua in oratióne, gráviter ejus cápite fullónis fuste percússo, ánimam Deo réddidit, séptimo Nerónis anno, et juxta Templum, ubi præcipitátus fúerat, sepúltus est. Unam scripsit Epístolam, quæ de septem cathólicis est.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joann 14:1-13
+      source: St. Augustine, Bishop of Hippo, Tract 67 on John
+      text: |-
+        In illo témpore: Dixit Jesus discípulis suis: Non turbétur cor vestrum. Créditis in Deum, et in me crédite. In domo Patris mei mansiónes multæ sunt. Et réliqua.
+
+        Erigénda est nobis, fratres, ad Deum major inténtio, ut verba sancti Evangélii, quæ modo in nostris áuribus sonuérunt, étiam mente cápere utcúmque possímus. Ait enim Dóminus Jesus: Non turbétur cor vestrum. Créditis in Deum, et in me crédite. Ne mortem tamquam hómines timérent, et ídeo turbaréntur, consolátur eos, étiam se Deum esse contéstans. Créditis, inquit, in Deum, et in me crédite. Cónsequens est enim, ut, si in Deum créditis, et in me crédere debeátis: quod non esset cónsequens, si Christus non esset Deus.
+
+        Créditis in Deum, et in eum crédite, cui natúra est, non rapína, esse æquálem Deo; semetípsum enim exinanívit, non tamen formam Dei amíttens, sed formam servi accípiens. Mortem metúitis huic formæ servi: non turbétur cor vestrum; suscitábit illam forma Dei. Sed quid est, quod séquitur: In domo Patris mei mansiónes multæ sunt; nisi quia et sibi metuébant? Unde audíre debuérunt: Non turbétur cor vestrum. Quis enim eórum non metúeret, cum Petro dictum esset, fidentióri atque promptióri: Non cantábit gallus, donec ter me neges?
+
+        Tamquam ergo essent ab illo peritúri, mérito turbabántur; sed cum áudiunt, In domo Patris mei mansiónes multæ sunt; si quo minus, dixíssem vobis: Quia vado paráre vobis locum; a perturbatióne recreántur, certi ac fidéntes, étiam post perícula tentatiónum, se apud Deum cum Christo esse mansúros. Quia etsi álius est álio fórtior, álius álio sapiéntior, álius álio jústior, álius álio sánctior, in domo Patris mei mansiónes multæ sunt. Nullus eórum alienábitur ab illa domo, ubi mansiónem pro suo quisque acceptúrus est mérito.
+      status: verified

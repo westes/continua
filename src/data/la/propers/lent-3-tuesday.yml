@@ -1,0 +1,67 @@
+# Lauds collect ([Oratio 2] in the source) — read from
+# web/www/horas/{Latin,English}/Tempora/Quad3-2.txt.
+collect:
+  text: |
+    Orémus.
+    Exáudi nos, omnípotens et miséricors Deus: et continéntiæ salutáris propítius nobis dona concéde.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Vespers collect ([Oratio 3] in the source), distinct from Lauds' own —
+# read from web/www/horas/{Latin,English}/Tempora/Quad3-2.txt.
+collect/~-vespers:
+  text: |
+    Orémus.
+    Tua nos, Dómine, protectióne defénde: et ab omni semper iniquitáte custódi.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad3-2.txt's own
+# [Ant 2] and its English counterpart.
+benedictus-antiphon:
+  text: 'Si duo ex vobis * consénserint super terram: de omni re quamcúmque petíerint, fiet illis a Patre meo, dicit Dóminus.'
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad3-2.txt's own
+# [Ant 3] and its English counterpart.
+magnificat-antiphon:
+  text: Ubi duo vel tres * congregáti fúerint in nómine meo, in médio eórum sum, dicit Dóminus.
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Tuesday of Lent week 3 — read from
+# web/www/horas/{Latin,English}/Tempora/Quad3-2.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quad3-2.txt's own [Evangelium].
+# Recombined into one reading (Lectio1-3 are one continuous Augustine
+# homily split only to fill the fixed 3-lesson slot count). Responsory
+# is Lectio1's own (given directly in this file, not a cross-reference);
+# Lectio2/3's own distinct responsories (cross-references to
+# Tempora/Quad3-0's Responsory5/6) are dropped, same as every other
+# collapsed-reading case.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Matt 18:15-22
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Si peccáverit in te frater tuus, vade, et córripe eum inter te et ipsum solum. Si te audíerit, lucrátus eris fratrem tuum. Si autem te non audíerit, ádhibe tecum adhuc unum vel duos, ut in ore duórum vel trium téstium stet omne verbum. Quod si non audíerit eos: dic ecclésiæ. Si autem ecclésiam non audíerit: sit tibi sicut éthnicus et publicánus. Amen, dico vobis, quæcúmque alligavéritis super terram, erunt ligáta et in cœlo: et quæcúmque solvéritis super terram, erunt solúta et in cœlo. Iterum dico vobis, quia si duo ex vobis consénserint super terram, de omni re quamcúmque petíerint, fiet illis a Patre meo, qui in cœlis est. Ubi enim sunt duo vel tres congregáti in nómine meo, ibi sum in médio eórum. Tunc accédens Petrus ad eum, dixit: Dómine, quóties peccábit in me frater meus, et dimíttam ei? usque sépties? Dicit illi Jesus: Non dico tibi usque sépties, sed usque septuágies sépties.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Sermon 16 on the Words of the Lord
+      text: |-
+        Quare illum córripis? Quia tu doles, quod peccáverit in te? Absit. Si amóre tui id facis, nihil facis: si amóre illíus facis, óptime facis. Dénique in ipsis verbis atténde, cujus amóre id fácere débeas, utrum tui, an illíus. Si te audíerit, inquit, lucrátus es fratrem tuum. Ergo propter illum fac, ut lucréris illum. Sic faciéndo lucráris: nisi fecísses, períerat. Quid est ergo, quod pleríque hómines ista peccáta contémnunt, et dicunt: Quid magnum feci? In hóminem peccávi. Noli contémnere: in hóminem peccásti.
+
+        Vis nosse, quia in hóminem peccándo perísti? Si te ille, in quem peccásti, corripúerit inter te et ipsum solum, et audíeris illum, lucrátus est te. Quid est, Lucrátus est te; nisi quia períeras, si non lucrarétur te? Nam si non períeras, quómodo te lucrátus est? Nemo ergo contémnat, quando peccat in fratrem. Ait enim quodam loco Apóstolus: Sic autem peccántes in fratres, et percutiéntes consciéntiam eórum infírmam, in Christum peccátis: ídeo quia membra Christi omnes facti sumus. Quómodo non peccas in Christum, qui peccas in membrum Christi?
+
+        Nemo ergo dicat, quia non peccávi in Deum, sed peccávi in fratrem: in hóminem peccávi, leve, vel nullum peccátum est. Forte inde dicis: Leve est, quia cito curátur. Peccásti in fratrem: fac satis, et sanátus es. Cito fecísti mortíferam rem, sed remédium cito invenísti. Quis nostrum speret regnum cælórum, fratres mei, quando dicit Evangélium: Qui díxerit fratri suo, Fátue: reus erit gehénnæ ignis? Magnus terror: sed vide ibi remédium. Si obtúleris munus tuum ad altáre, et ibi recordátus fúeris, quia frater tuus habet áliquid advérsum te, relínque ibi munus tuum ante altáre. Non iráscitur Deus, quia differs impónere munus tuum: te quærit Deus magis, quam munus tuum.
+      responsory: |-
+        R. Nuntiavérunt Jacob dicéntes: Joseph fílius tuus vivit, et ipse dominátur in tota terra Ægýpti: quo audíto revíxit spíritus ejus, et dixit: * Súfficit mihi, vadam et vidébo eum ántequam móriar.
+        V. Cumque audísset Jacob quod fílius ejus víveret, quasi de gravi somno evígilans, ait.
+        R. Súfficit mihi, vadam et vidébo eum ántequam móriar.
+      status: verified

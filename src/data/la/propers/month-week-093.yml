@@ -1,0 +1,28 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2026-09-12 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: Ne reminiscáris, * Dómine, delícta mea vel paréntum meórum, neque vindíctam sumas de peccátis meis.
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "3rd Sunday of September" (Tempora/093-0.txt) — see
+# month-week-081.yml's header for the id scheme. Own Responsory4 (not a
+# cross-reference) — a September-Ember homily, distinct from
+# calendar/ember-days.ts's own September Ember day content (that covers
+# the Wed/Fri/Sat feria offices themselves, this is the governing Sunday's
+# own Matins reading).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Leo the Great, Sermon 9, On the September Fast
+      text: |-
+        Scio quidem, dilectíssimi, plúrimos vestrum ita in iis, quæ ad observántiam christiánæ fídei pértinent, esse devótos, ut nostris cohortatiónibus non indígeant admonéri. Quod enim dudum et tradítio decrévit, et consuetúdo firmávit; nec erudítio ignórat, nec píetas prætermíttit. Sed quia sacerdotális offícii est, erga omnes Ecclésiæ fílios curam habére commúnem, in id quod et rúdibus prosit et doctis, quos simul dilígimus, páriter incitámus; ut jejúnium, quod nobis séptimi mensis recúrsus indícit, fide álacri per castigatiónem ánimi et córporis celebrémus.
+
+        Ideo enim ipsa continéntiæ observántia quátuor est assignáta tempóribus, ut in idípsum totíus anni redeúnte decúrsu, cognoscerémus nos indesinénter purificatiónibus indigére; sempérque esse niténdum, dum hujus vitæ varietáte jactámur, ut peccátum, quod fragilitáte carnis et cupiditátum pollutióne contráhitur, jejúniis atque eleemósynis deleátur. Esuriámus páululum, dilectíssimi, et aliquántulum, quod juvándis possit prodésse paupéribus, nostræ consuetúdini subtrahámus.
+
+        Delectétur consciéntia benignórum frúctibus largitátis: et gáudia tríbuens, quo es lætificándus, accípies. Diléctio próximi, diléctio Dei est, qui plenitúdinem legis et prophetárum in hac géminæ caritátis unitáte constítuit; ut nemo ambígeret, Deo se offérre, quod hómini contulísset, dicénte Dómino Salvatóre, cum de aléndis juvandísque paupéribus loquerétur: Quod uni eórum fecístis, mihi fecístis. Quarta ígitur et sexta féria jejunémus; sábbato vero apud beátum Petrum Apóstolum vigílias celebrémus: cujus nos méritis et oratiónibus crédimus adjuvándos, ut misericórdi Deo jejúnio nostro et devotióne placeámus.
+      responsory: |-
+        R. Sufficiébat nobis paupértas nostra, ut divítiæ computaréntur: numquam fuísset pecúnia ipsa, pro qua misísti fílium nostrum, * Báculum senectútis nostræ!
+        V. Heu me, fili mi, ut quid te mísimus peregrinári, lumen oculórum nostrórum?
+        R. Báculum senectútis nostræ!
+      status: verified

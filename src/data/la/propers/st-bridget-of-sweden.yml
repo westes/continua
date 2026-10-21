@@ -1,0 +1,51 @@
+# Read directly from web/www/horas/Latin/Sancti/10-08.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Dómine, Deus noster, qui beátæ Birgíttæ per Fílium tuum unigénitum
+    secréta cæléstia revelásti: ipsíus pia intercessióne da nobis fámulis
+    tuis; in revelatióne sempitérnæ glóriæ tuæ gaudére lætántes.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-widow (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags actually used for
+# a mere commemoration, confirmed against this exact category via an
+# independently live-verified precedent elsewhere in this app). st-bridget-of-sweden has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper. Collect is the saint's own
+# real proper (st-bridget-of-sweden-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Date ei de frúctu mánuum suárum, et laudent eam in portis ópera ejus.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Dómine, Deus noster, qui beátæ Birgíttæ per Fílium tuum unigénitum
+    secréta cæléstia revelásti: ipsíus pia intercessióne da nobis fámulis
+    tuis; in revelatióne sempitérnæ glóriæ tuæ gaudére lætántes.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Bridget, Widow (Oct 8). Sourced
+# directly from web/www/horas/Latin/Sancti/10-08.txt,
+# English/Sancti/10-08.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in her own file (her `[Rule]` is `vide
+# C7a`) -- defers to the Common's own Nocturn 3, not transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Birgitta, in Suecia illustribus et piis paréntibus orta, sanctíssime vixit. Cum adhuc in útero gestarétur, a naufragio propter eam mater erepta est. Decennis, post audítum de passióne Dómini sermónem, sequénti nocte Jesum in cruce, recénti sánguine perfusum, vidit, et de eadem passióne secum loquentem. Quo ex témpore in ejusdem meditatióne ita afficiebátur, ut de ea sine lácrimis cogitare deinceps numquam posset.
+
+        Ulfoni, Nericiæ principi, in matrimónium tradita, virum ipsum ad pietátis officia, tum optimis exemplis, tum efficacibus verbis, adhortáta est. In filiórum educatióne piíssima; paupéribus, et maxime infirmis, domo ad id muneris dicata, inserviébat quam diligentíssime, illórum pedes sólita lavare et osculari. Cum autem una cum viro suo rediret Compostella, ubi sancti Jacobi Apóstoli sepúlcrum visitaverant, et Atrébati Ulfo gráviter ægrotaret, sanctus Dionysius Birgittæ noctu appáruit, et de mariti salúte aliisque de rebus, quæ futuræ erant, præmonuit.
+
+        Viro Cisterciénsi monacho facto et paulo post defuncto, Birgitta, audíta Christi voce in somnis, arctiórem vitæ formam est aggressa. Cui deínde arcana multa fuérunt divínitus revelata. Monastérium Vastanense sub regula sancti Salvatoris, ab ipso Dómino accepta, instituit. Romam Dei jussu venit, ubi plurimos ad amórem divinum veheménter accendit. Inde Jerosolymam pétiit, et íterum Romam. Qua ex peregrinatióne cum in febrim incidísset, gravibus per annum integrum afflictáta morbis, cumuláta meritis, prænuntiáto mortis die, migrávit in cælum. Corpus ejus ad Vastanense monastérium translátum est; et miraculis illustrem Bonifatius nonus in Sanctórum númerum retulit.
+      status: verified

@@ -1,0 +1,73 @@
+# Read directly from web/www/horas/Latin/Sancti/06-21.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Cæléstium donórum distribútor, Deus, qui in angélico júvene Aloísio miram vitæ
+    innocéntiam pari cum pœniténtia sociásti: ejus méritis et précibus concéde; ut,
+    innocéntem non secúti, pœniténtem imitémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-aloysius-gonzaga has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-aloysius-gonzaga-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Cæléstium donórum distribútor, Deus, qui in angélico júvene Aloísio miram vitæ
+    innocéntiam pari cum pœniténtia sociásti: ejus méritis et précibus concéde; ut,
+    innocéntem non secúti, pœniténtem imitémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2-3 readings for St. Aloysius Gonzaga, Confessor
+# (June 21). Sourced directly from
+# web/www/horas/Latin/Sancti/06-21.txt, English/Sancti/06-21.txt.
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope is now authored too
+# (isGospel: true, immediately before Chrysostom's homily). Citation
+# confirmed via this feast's own Lectio7 (Matt 22:29-40, the Sadducees'
+# question on the resurrection and the Great Commandment) — full text
+# sourced from this same date's Missale [Evangelium],
+# web/www/missa/Latin/Sancti/06-21.txt, English/Sancti/06-21.txt.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Aloisius, Ferdinandi Gonzagæ Castellionis Stiverorum marchionis filius, festinato propter vitæ periculum baptismo, prius cælo quam terris nasci visus, primam illam gratiam tam constanter retinuit, ut in ea confirmatus crederetur. A primo rationis usu, quo se Deo statim obtulit, vitam duxit quotidie sanctiorem. Novennis Florentiæ ante aram beatæ Virginis, quam parentis loco semper habuit, perpetuam virginitatem vovit: eamque, insigni Dei beneficio, nulla mentis aut corporis pugna tentatam servavit. Reliquas animi perturbationes cœpit ætate illa tam fortiter comprimere, ut ne primo quidem earum motu deínde incitaretur. Sensus etiam, oculos præcipue, ita cohibuit, ut non modo illos numquam in faciem intenderit Mariæ Austriacæ, quam plures annos inter honorarios Hispaniarum principis ephebos fere quotidie salutavit; sed a matris étiam vultu contineret: homo propterea sine carne, aut angelus in carne merito appellatus.
+
+        Adjecit sensuum custodiæ corporis cruciatum. Tria singulis hebdomadis jejunia, eaque plerumque modico pane et aqua tolerabat, quamquam perpetuum fuísse per id tempus ipsius jejunium videri potest, cum ejus prandia ferme vix unciam æquarent. Sæpe étiam ter in die se funibus aut catenis cruentabat: flagella quandoque canum loris, cilicia equorum calcaribus supplevit. Mollem lectulum clam injectis asserum fragmentis asperabat, eo étiam ut citius ad orandum excitaretur, magnam quippe noctis partem, summa étiam hieme, solo tectus indusio, positis humi genibus, vel præ languore jacens ac pronus, in cælestium contemplatione traducebat. Interdiu quoque tres, quatuor, quinque horas in ea perstabat immotus, donec unam saltem animo nusquam distracto percurrisset. Cujus constantiæ præmium fuit stabilitas mentis inter orandum alio non vagantis, immo perpetua velut extasi in Deo defixæ. Ei demum ut unice adhæreret, victo post triennale acerrimum certamen patre, et aviti principatus jure in fratrem translato, societati Jesu, ad quam cælesti voce Matriti fuerat accitus, Romæ se adjunxit.
+
+        In tirocinio ipso virtutum omnium magister haberi cœpit, Exactissima in eo erat legum étiam minimarum custodia, mundi contemptus singularis, implacabile odium sui, Dei vero amor tam ardens, ut corpus étiam sensim absumeret, Jussus propterea mentem a divinis rebus tantisper avertere, occurrentem sibi ubique Deum irrito conatu fugiebat. Mira étiam proximos caritate amplexus, in publicis, quibus alacriter ministrabat, nosocomiis, contagiosam luem traxit, Qua lente consumptus, die quem prædixerat, undecimo Kalendas Julii, ætatis anno quarto et vigesimo jam inchoato, cum antea flagellis cædi, atque humi stratus mori postulasset, migravit in cælum, Ibi eum sancta Maria Magdalena de Pazzis tanta frui gloria, Deo monstrante, vidit, quantam vix esse in cælo credidisset; ipsumque sanctimonia insignem, et caritate Martyrem incognitum fuísse prædicavit, Multis étiam magnisque claruit miraculis, Quibus rite probatis, Benedictus decimus tertius Sanctorum fastis angelicum juvenum adscripsit, atque innocentiæ et castitatis exemplar simul et patronum studiosæ præsertim juventuti dedit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 22:29-40
+      text: 'In illo témpore: Respóndens Jesus, ait sadducæis: Errátis, nesciéntes Scriptúras neque virtútem Dei. In resurrectióne enim neque nubent neque nubéntur: sed erunt sicut Angeli Dei in cœlo. De resurrectióne autem mortuórum non legístis, quod dictum est a Deo dicénte vobis: Ego sum Deus Abraham et Deus Isaac et Deus Jacob? Non est Deus mortuórum, sed vivéntium. Et audiéntes turbæ, mirabántur in doctrína ejus. Pharisæi autem audiéntes, quod siléntium imposuísset sadducæis, convenérunt in unum: et interrogávit eum unus ex eis legis doctor, tentans eum: Magíster, quod est mandátum magnum in lege? Ait illi Jesus: Díliges Dóminum, Deum tuum, ex toto corde tuo, et in tota ánima tua, et in tota mente tua. Hoc est máximum et primum mandátum. Secúndum autem símile est huic: Díliges próximum tuum, sicut teípsum. In his duóbus mandátis univérsa lex pendet et Prophétæ.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. John Chrysostom, Book on Virginity
+      text: |-
+        Virginitas est bona: id ego quoque fateor. Atqui nuptiis étiam melior et istud tibi assentior: ac si libet, illud adjungam, tanto nuptiis eam præstare, quanto cælum terræ, quanto hominibus Angeli antecellunt: ac, si quid præterea addendum est, étiam magis. Nam si neque nubunt Angeli, neque uxorem ducunt, non étiam carne et sanguine coagmentati sunt: in terris præterea non commorantur, non cupiditatum aut libidinum perturbationibus sunt obnoxii; non cibi indigent, aut potus; non sunt ejusmodi, ut eos dulcis sonus, aut cantus mollis, aut præclara species possit allicere; nulla denique ejus generis illecebra capiuntur.
+
+        At humánum genus cum natura beatis illis mentibus inferius sit, omni vi studioque contendit, ut, quoad ejus fieri potest, illas assequatur. Quomodo? Non nubunt Angeli: at neque étiam virgo. Assistentes illi semper ad Deum, eidem inserviunt; et istud ipsum virgo. Quod si virgines, quamdiu corporis onere deprimuntur, quemadmodum Angeli in cælum nequeunt ascendere, illud eo vel maximo solatio compensant, quod modo spiritu et corpore sancti sint, cæli Regem recipiunt. Videsne virginitatis præstantiam? quomodo terrarum incolas sic afficiat, ut qui corpore vestiti sunt, eos incorporeis mentibus exæquet?
+
+        Qua enim, quæso, re differebant ab Angelis Elias, Eliseus, Joannes, veri hi virginitatis amatores? Nulla, nisi quod mortali natura constabant. Nam cetera si quis diligenter inquirat, hi nihilo minus affecti reperientur, quam beatæ illæ mentes: et idipsum quo inferiore conditione videntur esse, in magna est eorum laude ponendum. Ut enim terrarum incolæ, et ii qui essent mortali natura, possent ad illam virtutem vi et contentione pervenire; vide quanta eos fortitudine, quanta vitæ ratione præditos fuísse oporteat.
+      status: verified

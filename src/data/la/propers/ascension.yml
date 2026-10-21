@@ -1,0 +1,686 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output, 2026-05-14
+# (Ascension Day itself). A real, pre-existing content gap:
+# `getDayCollect` already looked up `${winner.id}-collect` for Ascension
+# unconditionally (it's the day's own kind:'temporal' winner regardless
+# of the hymnody-mechanism fix elsewhere), but this file never existed.
+collect:
+  text: |
+    Orémus.
+    Concéde, quǽsumus, omnípotens Deus: ut, qui hodiérna die Unigénitum tuum, Redemptórem nostrum, ad cælos ascendísse crédimus; ipsi quoque mente in cæléstibus habitémus.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against the reference engine (Monastic Tridentinum 1617,
+# ../divinum-officium-reference) -- read directly from Ascension Day's own
+# Tempora/Pasc5-4.txt [Octava 2] section (Latin/Tempora/Pasc5-4.txt:306-317,
+# English/Tempora/Pasc5-4.txt:231-238), the Lauds-slot Octava variant (same
+# "middle" Octava-2 choice already made for christmas-day-octave-
+# commemoration.yml). The collect is the feast's own real [Oratio], already
+# authored verbatim in ascension-collect.yml -- reused here, "Per eúmdem"
+# doxology included. The source's V/R has a Cistercian-rubric alternate
+# ("Ascéndit Deus in jubilatióne...") noted inline; the primary
+# (non-Cistercian) versicle is used here, matching this project's own
+# standing preference (see christmas-day-octave-commemoration.yml's own
+# header comment for the same choice).
+commemoration/octave-~:
+  text: |
+    Ant. Ascéndo ad Patrem meum, * et Patrem vestrum: Deum meum, et Deum vestrum, allelúia.
+    V. Dóminus in cælo, allelúia.
+    R. Parávit sedem suam, allelúia.
+    Orémus.
+    Concéde, quǽsumus, omnípotens Deus: ut, qui hodiérna die Unigénitum tuum, Redemptórem nostrum, ad cælos ascendísse crédimus; ipsi quoque mente in cæléstibus habitémus.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Corrected 2026-09-10: this file previously contained "Jesu nostra
+# redémptio" -- that IS the real Ascension hymn, but it's the Lauds/Vespers
+# one (see lauds-hymn-ascension.yml/vespers-hymn-ascension.yml), not
+# Matins' own. Matins' real hymn, direct from the reference source
+# (Tempora/Pasc5-4.txt's own `[Hymnus Matutinum]`/`[HymnusM Matutinum]`),
+# is "Ætérne Rex altíssime" -- a genuinely different text. The Monastic
+# form applies four word/line-range substitutions to the secular block
+# (computed by hand here, same convention used elsewhere in this store for
+# regex-derived Monastic text): stanzas 1-2 rewritten wholesale, "Peccat
+# caro, mundat" -> "Culpat caro, purgat" (stanza 4), "Sis ipse" -> "Tu
+# esto" and "prǽmium," -> "prǽditum:" (stanza 5). Final stanza is marked
+# with a leading "* " -- Divinum Officium's own marker for a hymn's
+# variable doxology; see hours/resolve-common.ts's substituteDoxology and
+# hours/hymn-doxology.ts. The English translation already reflects the
+# Ascension-doxology ending directly (no separate unmarked default exists
+# in the source's English) -- harmless here since Ascension Day and its
+# whole octave always resolve to the Asc doxology anyway (`ascension` is
+# in ALWAYS_OVERRIDE_TEMPORAL_IDS and `ascensiontide` maps to
+# hymn-doxology-asc), so the marker's "no override" branch never actually
+# fires for this file in practice.
+matins-hymn:
+  text: |-
+    Ætérne Rex altíssime,
+    Redémptor et fidélium,
+    Quo mors solúta déperit,
+    Datur triúmphum grátiæ.
+
+    Scandens tribúnal déxteræ
+    Patris, potéstas ómnium
+    Colláta Jesu cǽlitus,
+    Quæ non erat humánitus:
+
+    Ut trina rerum máchina,
+    Cæléstium, terréstrium,
+    Et inferórum cóndita,
+    Flectat genu jam súbdita.
+
+    Tremunt vidéntes Angeli
+    Versam vicem mortálium:
+    Culpat caro, purgat caro,
+    Regnat Deus Dei caro.
+
+    Tu esto nostrum gáudium,
+    Manens olýmpo prǽditum:
+    Mundi regis qui fábricam,
+    Mundána vincens gáudia.
+
+    Hinc te precántes quǽsumus,
+    Ignósce culpis ómnibus,
+    Et corda sursum súbleva
+    Ad te supérna grátia.
+
+    Ut, cum repénte cœ́peris
+    Clarére nube júdicis,
+    Pœnas repéllas débitas,
+    Reddas corónas pérditas.
+
+    * Jesu, tibi sit glória,
+    Qui victor in cælum redis,
+    Cum Patre, et almo Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# The Ascension's own Lauds chapter (Acts 1:1-2) — shared with Vespers
+# via lookupPart (Vespers chapter, Lauds sibling)'s own cross-hour fallback (see
+# hours/vespers.ts), not duplicated into a separate vespers-capitulum-
+# ascension.yml. Live-verified against Divinum Officium (Monastic
+# Tridentinum 1617), Lauds/Vespers live query, 2026-05-14 (Ascension Day
+# itself) — see matins-hymn-ascension.yml's own header for the fuller
+# mechanism story (a temporal-feast octave with no saint record wasn't
+# being picked up at all before this).
+lauds-capitulum:
+  text: Primum quidem sermónem feci de ómnibus, o Theóphile, quæ cœpit Jesus fácere et docére usque in diem, qua præcípiens Apóstolis per Spíritum Sanctum, quos elégit, assúmptus est.
+  citation: Act 1:1-2
+  status: verified
+
+# The Ascension's own Lauds hymn ("Jesu nostra redémptio") — identical
+# text to Matins' own (matins-hymn-ascension.yml) and Vespers' own
+# (vespers-hymn-ascension.yml). Live-verified against Divinum Officium
+# (Monastic Tridentinum 1617), Lauds live query, 2026-05-14 (Ascension
+# Day itself). Self-contained — this hour's own resolveOfficeBundle
+# doesn't run a hymn through the doxology-split/append mechanism at all,
+# and this hymn's own natural ending has no separate doxology stanza in
+# the source anyway.
+lauds-hymn:
+  text: |-
+    Jesu nostra redémptio,
+    Amor et desidérium,
+    Deus Creátor ómnium,
+    Homo in fine témporum:
+
+    Quæ te vicit cleméntia,
+    Ut ferres nostra crímina,
+    Crudélem mortem pátiens,
+    Ut nos a morte tólleres!
+
+    Inférni claustra pénetrans,
+    Tuos captívos rédimens,
+    Victor triúmpho nóbili
+    Ad dextram Patris résidens.
+
+    Ipsa te cogat píetas,
+    Ut mala nostra súperes
+    Parcéndo, et voti cómpotes
+    Nos tuo vultu sáties.
+
+    Tu esto nostrum gáudium,
+    Qui es futúrus prǽmium,
+    Sit nostra in te glória,
+    Per cuncta semper sǽcula. Amen.
+  status: verified
+
+# The Ascension's own Lauds responsory ("Ascéndit Deus in jubilatióne")
+# — distinct from Vespers' own ("Ascéndens Christus in altum", see
+# vespers-responsory-ascension.yml). Live-verified against Divinum
+# Officium (Monastic Tridentinum 1617), Lauds live query, 2026-05-14
+# (Ascension Day itself).
+lauds-responsory:
+  text: |
+    R.br. Ascéndit Deus in jubilatióne, * Allelúia, allelúia.
+    R. Ascéndit Deus in jubilatióne, * Allelúia, allelúia.
+    V. Et Dóminus in voce tubæ.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ascéndit Deus in jubilatióne, * Allelúia, allelúia.
+  status: verified
+
+# The Ascension's own versicle — identical at both Lauds and Vespers
+# (see vespers-versicle-ascension.yml). Live-verified against Divinum
+# Officium (Monastic Tridentinum 1617), Lauds/Vespers live query,
+# 2026-05-14 (Ascension Day itself).
+lauds-versicle:
+  text: |-
+    V. Dóminus in cælo, allelúia.
+    R. Parávit sedem suam, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayPrima, 2027-05-06); Latin and English both taken from the page.
+prime-antiphon:
+  text: Viri Galilǽi, * quid aspícitis in cælum? Hic Jesus qui assúmptus est a vobis in cælum, sic véniet, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Latin/English "Prima Special.txt").
+# Seasonal variant of prime-chapter-responsory-per-annum.yml — same fixed
+# responsory, with just the "V." verse line swapped for the season.
+prime-chapter/responsory-asc:
+  text: |
+    R.br. Christe, Fili Dei vivi, * Miserére nobis.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+    V. Qui scandis super sídera.
+    R. Miserére nobis.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Tempora/Pasc5-4.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: Viri Galilǽi, quid statis aspiciéntes in cælum? Hic Jesus qui assúmptus est a vobis in cælum, sic véniet, quemádmodum vidístis eum eúntem in cælum.
+  citation: Act. 1:11
+  status: verified
+  temporal: true
+
+# New file, 2026-09-15: closes the seasonal-variant gap
+# `prime-lectio-per-annum.yml`'s own header already flagged, wrongly
+# attributed to "milestone 4" (that blocker was stale -- see the dated
+# TODO.md entry this sweep came out of; calendar/temporal.ts's resolveSeason
+# has been a complete, real implementation for a while). Sourced directly
+# from web/www/horas/Latin/Psalterium/Special/Prima Special.txt's own [Asc]
+# tag and its English counterpart.
+prime-lectio/asc:
+  text: Viri Galilǽi, quid statis aspiciéntes in cælum? Hic Jesus, qui assúmptus est a vobis in cælum, sic véniet, quemádmodum vidístis eum eúntem in cælum.
+  citation: Act. 1:11
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2027-05-06); Latin and English both taken from the page.
+terce-antiphon:
+  text: Cumque intueréntur * in cælum eúntem illum, dixérunt, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2027-05-06); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    Act. 1:1-2 Primum quidem sermónem feci de ómnibus, o Theóphile, quæ cœpit Jesus fácere et docére usque in diem, qua præcípiens Apóstolis per Spíritum Sanctum, quos elégit, assúmptus est.
+    R. Deo grátias.
+    V. Ascéndit Deus in jubilatióne, allelúia.
+    R. Et Dóminus in voce tubæ, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2027-05-06); Latin and English both taken from the page.
+sext-antiphon:
+  text: Elevátis mánibus, * benedíxit eis, et ferebátur in cælum, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2027-05-06); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    Act. 1:4-5 Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris, quam audístis (inquit) per os meum: quia Joánnes quidem baptizávit aqua, vos autem baptizabímini Spíritu Sancto non post multos hos dies.
+    R. Deo grátias.
+    V. Ascéndens Christus in altum, allelúia.
+    R. Captívam duxit captivitátem, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2027-05-06); Latin and English both taken from the page.
+none-antiphon:
+  text: Vidéntibus illis, * elevátus est, et nubes suscépit eum in cælo, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2027-05-06); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    Act. 1:11 Viri Galilǽi, quid statis aspiciéntes in cælum? Hic Jesus qui assúmptus est a vobis in cælum, sic véniet, quemádmodum vidístis eum eúntem in cælum.
+    R. Deo grátias.
+    V. Ascéndo ad Patrem meum, et Patrem vestrum, allelúia.
+    R. Deum meum, et Deum vestrum, allelúia.
+  citation: ''
+  status: verified
+
+# The Ascension's own Vespers hymn ("Jesu nostra redémptio") — identical
+# text to Matins' own (matins-hymn-ascension.yml) and Lauds' own
+# (lauds-hymn-ascension.yml). Live-verified against Divinum Officium
+# (Monastic Tridentinum 1617), Vespers live query, 2026-05-14 (Ascension
+# Day itself).
+vespers-hymn:
+  text: |-
+    Jesu nostra redémptio,
+    Amor et desidérium,
+    Deus Creátor ómnium,
+    Homo in fine témporum:
+
+    Quæ te vicit cleméntia,
+    Ut ferres nostra crímina,
+    Crudélem mortem pátiens,
+    Ut nos a morte tólleres!
+
+    Inférni claustra pénetrans,
+    Tuos captívos rédimens,
+    Victor triúmpho nóbili
+    Ad dextram Patris résidens.
+
+    Ipsa te cogat píetas,
+    Ut mala nostra súperes
+    Parcéndo, et voti cómpotes
+    Nos tuo vultu sáties.
+
+    Tu esto nostrum gáudium,
+    Qui es futúrus prǽmium,
+    Sit nostra in te glória,
+    Per cuncta semper sǽcula. Amen.
+  status: verified
+
+# The Ascension's own Vespers responsory ("Ascéndens Christus in
+# altum") — distinct from Lauds' own ("Ascéndit Deus in jubilatióne",
+# see lauds-responsory-ascension.yml). Live-verified against Divinum
+# Officium (Monastic Tridentinum 1617), Vespers live query, 2026-05-14
+# (Ascension Day itself).
+vespers-responsory:
+  text: |
+    R.br. Ascéndens Christus in altum, * Allelúia, allelúia.
+    R. Ascéndens Christus in altum, * Allelúia, allelúia.
+    V. Captívam duxit captivitátem.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ascéndens Christus in altum, * Allelúia, allelúia.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-05-14 ascension second. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-versicle:
+  text: |
+    V. Dóminus in cælo.
+    R. Parávit sedem suam.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-05-13 ascension first. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-versicle/~-first:
+  text: |
+    V. Ascéndit Deus in jubilatióne.
+    R. Et Dóminus in voce tubæ.
+  status: verified
+
+# Read directly from the reference engine's own static file:
+# web/www/horas/Latin/Tempora/Pasc5-4.txt's [Ant 2] (the Lauds/Benedictus
+# antiphon, per this project's Ant1=Vespers1/Ant2=Lauds/Ant3=Vespers2
+# convention) / English/Tempora/Pasc5-4.txt's own [Ant 2]. The audit
+# found this id (registered in ALWAYS_OVERRIDE_TEMPORAL_IDS) had its own
+# collect authored but no antiphons or Matins reading.
+benedictus-antiphon:
+  text: 'Ascéndo ad Patrem meum, * et Patrem vestrum: Deum meum, et Deum vestrum, allelúia.'
+  status: verified
+  temporal: true
+
+# Read directly from the reference engine's own static file:
+# web/www/horas/Latin/Tempora/Pasc5-4.txt's [Ant 3] (the Second Vespers/
+# Magnificat antiphon, per this project's Ant1=Vespers1/Ant2=Lauds/
+# Ant3=Vespers2 convention) / English/Tempora/Pasc5-4.txt's own [Ant 3].
+magnificat-antiphon:
+  text: O Rex glóriæ, * Dómine virtútum, qui triumphátor hódie super omnes cælos ascendísti, ne derelínquas nos órphanos; sed mitte promíssum Patris in nos, Spíritum veritátis, allelúia.
+  status: verified
+  temporal: true
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-05-13 ascension first. Paschaltide Alleluia is left to hours/resolve-common.ts's withPaschaltideAlleluia.
+magnificat-antiphon/~-first:
+  text: 'Pater, * manifestávi nomen tuum homínibus quos dedísti mihi: nunc autem pro eis rogo, non pro mundo, quia ad te vénio.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Latin/English Doxologies.txt, the
+# Monastic "T"-suffixed variant). Seasonal doxology for "Iam lucis orto
+# sidere" and any other hymn ending "* Deo Patri sit gloria..." — see
+# hours/hymn-doxology.ts.
+hymn-doxology/asc:
+  text: |-
+    Glória tibi Dómine,
+    Qui scandis super sídera,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-05-06); Latin and English both taken from the page. Antiphons only; the psalm numbers are the Monastic Sunday scheme (92/99/62, canticle, Laudate).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Viri Galilǽi, * quid aspícitis in cælum? Hic Jesus qui assúmptus est a vobis in cælum, sic véniet, allelúia.
+    - psalms:
+        - 99
+      antiphon: Cumque intueréntur * in cælum eúntem illum, dixérunt, allelúia.
+    - psalms:
+        - 62
+      antiphon: Elevátis mánibus, * benedíxit eis, et ferebátur in cælum, allelúia.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Exaltáte Regem regum, * et hymnum dícite Deo, allelúia.
+  laudate:
+    antiphon: Vidéntibus illis, * elevátus est, et nubes suscépit eum in cælo, allelúia.
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-05-14 ascension second. Named temporal feast: the app had no Vespers psalm antiphons for it and fell back
+# to the ferial/Sunday set. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Viri Galilǽi, * quid aspícitis in cælum? Hic Jesus qui assúmptus est a vobis in cælum, sic véniet.
+    - psalms:
+        - 110
+      antiphon: Cumque intueréntur * in cælum eúntem illum, dixérunt.
+    - psalms:
+        - 111
+      antiphon: Elevátis mánibus, * benedíxit eis, et ferebátur in cælum.
+    - psalms:
+        - 112
+      antiphon: Vidéntibus illis, * elevátus est, et nubes suscépit eum in cælo.
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-05-13 ascension first. Named temporal feast: the app had no Vespers psalm antiphons for it and fell back
+# to the ferial/Sunday set. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Viri Galilǽi, * quid aspícitis in cælum? Hic Jesus qui assúmptus est a vobis in cælum, sic véniet.
+    - psalms:
+        - 110
+      antiphon: Cumque intueréntur * in cælum eúntem illum, dixérunt.
+    - psalms:
+        - 111
+      antiphon: Elevátis mánibus, * benedíxit eis, et ferebátur in cælum.
+    - psalms:
+        - 112
+      antiphon: Vidéntibus illis, * elevátus est, et nubes suscépit eum in cælo.
+
+# Matins nocturn content for Ascension Thursday (temporalId ascension,
+# Duplex I classis cum Octava). Sourced from Tempora/Pasc5-4.txt (Latin)
+# / English/Tempora/Pasc5-4.txt, and the Gospel pericope's full text from
+# missa/Latin+English/Tempora/Pasc5-4.txt's own [Evangelium] (the Matins
+# file itself only gives the incipit + "Et réliqua" for Lectio7, per this
+# project's Gospel/homily-split convention).
+#
+# The audit found this id registered in ALWAYS_OVERRIDE_TEMPORAL_IDS,
+# with a real collect already authored (ascension-collect.yml), but no
+# antiphons or Matins reading. Ascension is a real 9-lesson, 3-nocturn
+# day in the source (not one of the "1 nocturn" compressed solemnities
+# like Easter/Pentecost). Nocturn 1 (Lectio1-3, Acts 1:1-14) left
+# unauthored here per this project's convention of leaving Nocturn 1
+# scripture to the bible-plan store.
+#
+# Nocturn 2: Lectio4-6 (St. Leo the Great's own first sermon on the
+# Ascension) combined into one continuous excerpt.
+# Nocturn 3: the Gospel pericope (Mark 16:14-20) authored in full
+# (isGospel: true), followed by Lectio7's homily portion (incipit
+# dropped) combined with Lectio8-9 as one continuous excerpt of St.
+# Gregory the Great's own Homily 29 on the Gospels.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Leo the Great, Pope, Sermon 1 on the Ascension of the Lord
+      text: |-
+        Post beátam et gloriósam resurrectiónem Dómini nostri Jesu Christi, qua verum Dei templum, Judáica impietáte resolútum, divína in tríduo poténtia suscitávit, quadragenárius hódie, dilectíssimi, sanctórum diérum explétus est númerus, sacratíssima ordinatióne dispósitus, et ad utilitátem nostræ eruditiónis impénsus: ut, dum a Dómino in hoc spátio mora præséntiæ corporális exténditur, fides resurrectiónis documéntis necessáriis munirétur. Mors enim Christi multum discipulórum corda turbáverat: et de supplício crucis, de emissióne spíritus, de exanimáti córporis sepultúra gravátis mœstitúdine méntibus, quidam diffidéntiæ torpor obrépserat.
+
+        Unde beatíssimi Apóstoli, omnésque discípuli, qui et de éxitu crucis fúerant trépidi, et de fide resurrectiónis ambígui, ita sunt veritáte perspícua roboráti, ut, Dómino in cælórum eúnte sublímia, non solum nulla afficeréntur tristítia, sed étiam magno gáudio repleréntur. Et revéra magna et ineffábilis erat causa gaudéndi, cum in conspéctu sanctæ multitúdinis super ómnium creaturárum cæléstium dignitátem humáni géneris natúra conscénderet, supergressúra Angélicos órdines, et ultra Archangelórum altitúdines elevánda: nec ullis sublimitátibus modum suæ provectiónis habitúra, nisi ætérni Patris recépta conséssu, illíus glóriæ sociarétur in throno, cujus natúræ copulabátur in Fílio.
+
+        Quia ígitur Christi ascénsio, nostra provéctio est; et quo præcéssit glória cápitis, eo spes vocátur et córporis: dignis, dilectíssimi, exsultémus gáudiis, et pia gratiárum actióne lætémur. Hódie enim non solum paradísi possessóres firmáti sumus, sed étiam cælórum in Christo supérna penetrávimus: amplióra adépti per ineffábilem Christi grátiam, quam per diáboli amiserámus invídiam. Nam quos viruléntus inimícus primi habitáculi felicitáte dejécit, eos sibi concorporátos Dei Fílius ad déxteram Patris collocávit: cum quo vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum. Amen.
+      responsory: |-
+        R. Non turbétur cor vestrum: ego vado ad Patrem; et cum assúmptus fúero a vobis, mittam vobis, allelúia, * Spíritum veritátis, et gaudébit cor vestrum, allelúia.
+        V. Ego rogábo Patrem, et álium Paráclitum dabit vobis.
+        R. Spíritum veritátis, et gaudébit cor vestrum, allelúia.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Marc 16:14-20
+      text: 'In illo témpore: Recumbéntibus úndecim discípulis, appáruit illis Jesus: et exprobrávit incredulitátem eórum et durítiam cordis: quia iis, qui víderant eum resurrexísse, non credidérunt. Et dixit eis: Eúntes in mundum univérsum, prædicáte Evangélium omni creatúræ. Qui credíderit et baptizátus fúerit, salvus erit: qui vero non credíderit, condemnábitur. Signa autem eos, qui credíderint, hæc sequéntur: In nómine meo dæmónia ejícient: linguis loquentur novis: serpentes tollent: et si mortíferum quid bíberint, non eis nocébit: super ægros manus impónent, et bene habébunt. Et Dóminus quidem Jesus, postquam locútus est eis, assúmptus est in cœlum, et sedet a dextris Dei. Illi autem profécti, prædicavérunt ubíque, Dómino cooperánte et sermónem confirmánte, sequéntibus signis.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 29 on the Gospels
+      text: |-
+        Quod resurrectiónem Domínicam discípuli tarde credidérunt, non tam illórum infírmitas, quam nostra, ut ita dicam, futúra fírmitas fuit. Ipsa namque resurréctio illis dubitántibus per multa arguménta monstráta est: quæ dum nos legéntes agnóscimus, quid áliud quam de illórum dubitatióne solidámur? Minus enim mihi María Magdaléne prǽstitit, quæ cítius crédidit, quam Thomas, qui diu dubitávit. Ille étenim dubitándo, vúlnerum cicatríces tétigit, et de nostro péctore dubitatiónis vulnus amputávit.
+
+        Ad insinuándam quoque veritátem Domínicæ resurrectiónis, notándum nobis est quid Lucas réferat, dicens: Convéscens, præcépit eis ab Jerosólymis ne discéderent. Et post pauca: Vidéntibus illis, elevátus est, et nubes suscépit eum ab óculis eórum. Notáte verba, signáte mystéria. Convéscens elevátus est. Comédit, et ascéndit: ut vidélicet per efféctum comestiónis, véritas patésceret carnis. Marcus vero, priúsquam cælum Dóminus ascéndat, eum de cordis atque infidelitátis durítia increpásse discípulos mémorat. Qua in re quid considerándum est, nisi quod idcírco Dóminus tunc discípulos increpávit, cum eos corporáliter relíquit, ut verba, quæ recédens díceret, in corde audiéntium árctius impréssa remanérent?
+
+        Increpáta ígitur eórum durítia, quid admonéndo dicat, audiámus: Eúntes in mundum univérsum, prædicáte Evangélium omni creatúræ. Numquid, fratres mei, sanctum Evangélium vel insensátis rebus, vel brutis animálibus fúerat prædicándum, ut de eo discípulis dicátur: Prædicáte omni creatúræ? Sed omnis creatúræ nómine signátur homo. Omnis autem creatúræ áliquid habet homo. Habet namque commúne esse cum lapídibus, vívere cum arbóribus, sentíre cum animálibus, intellégere cum Angelis. Si ergo commúne habet áliquid cum omni creatúra homo, juxta áliquid omnis creatúra est homo. Omni ergo creatúræ prædicátur Evangélium, cum soli hómini prædicátur.
+      responsory: |-
+        R. Ego rogábo Patrem, et álium Paráclitum dabit vobis, * Ut máneat vobíscum in ætérnum, Spíritum veritátis, allelúia.
+        V. Si enim non abíero, Paráclitus non véniet ad vos: si autem abíero, mittam eum ad vos.
+        R. Ut máneat vobíscum in ætérnum, Spíritum veritátis, allelúia.
+      status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pasc5-5.txt) -- day 2 of the Ascension's own movable octave (per
+# user direction 2026-08-28: movable-feast octave content lives in the
+# Tempora/TemporaM directories, keyed by liturgical offset, not a calendar
+# date -- no representative year needs picking). Joins St. Leo the Great's
+# sermon on the Ascension (Lectio4-6, Nocturn 2) with Pope St. Gregory the
+# Great's homily on Mark 16:14-20 (Lectio7-9, Nocturn 3, the bare Gospel
+# incipit dropped per the usual rule). Responsory: reuses the Ascension's
+# own well-known opening Matins responsory (Tempora/Pasc5-4.txt's own
+# Responsory1, "Post passiónem suam...") across every combined-lesson
+# octave day, rather than picking one of this day's several per-lesson
+# responsories (none of which map cleanly onto a single recombined
+# reading) -- the same resolution already used for nativity-bvm's own
+# octave (see nativity-bvm-octave-day-3.yml's own header).
+octave-readings/~-octave-day-2:
+  source: Sermo sancti Leónis Papæ; Homilía sancti Gregórii Papæ
+  text: |
+    Sacraméntum, dilectíssimi, salútis nostræ, quam prétio sánguinis sui universitátis Cónditor æstimávit, a die corporális ortus usque ad éxitum passiónis, per dispensatiónem humilitátis implétum est. Et licet multa, étiam in forma servi, divinitátis signa radiáverint; próprie tamen illíus témporis áctio ad demonstrándam suscépti hóminis pertínuit veritátem. Post passiónem vero ruptis mortis vínculis, quæ vim suam in eum, qui peccáti erat néscius, incedéndo perdíderat; infírmitas in virtútem, mortálitas in immortalitátem, contumélia transívit in glóriam: quam Dóminus Jesus Christus in multis manifestísque documéntis, multórum declarávit aspéctibus, donec triúmphum victóriæ, quem reportárat a mórtuis, inférret et cælis.
+
+    Sicut ergo in solemnitáte pascháli resurréctio Dómini fuit nobis causa lætándi: ita ascénsio ejus in cælos præséntium nobis est matéria gaudiórum, recoléntibus illum diem, et rite venerántibus, quo natúra nostræ humilitátis in Christo super omnem cæli milítiam, super omnes órdines Angelórum, et ultra ómnium altitúdinem potestátum, ad Dei Patris est provécta conséssum. Quo órdine óperum divinórum nos fundáti, nos ædificáti sumus: ut mirabílior fíeret grátia Dei, cum remótis a conspéctu hóminum, quæ mérito reveréntiam sui sentiebántur indícere, fides non defíceret, spes non fluctuáret, cáritas non tepéret.
+
+    Magnárum hic vigor est méntium, et valde fidélium lumen est animárum, incunctánter crédere, quæ corpóreo non vidéntur intúitu, et ibi fígere desidérium, quo néqueas inférre conspéctum. Hæc autem píetas unde in nostris córdibus nascerétur, aut quómodo quisquam justificarétur per fidem, si in iis tantum salus nostra consísteret, quæ obtútibus subjacérent? Unde et illi viro, qui de resurrectióne Christi videbátur ambígere, nisi in ipsíus carne vestígia passiónis et visu explorásset et tactu: Quia vidísti me, inquit Dóminus credidísti: beáti qui non vidérunt, et credidérunt.
+
+    Qui credíderit, et baptizátus fúerit, salvus erit: qui vero non credíderit, condemnábitur. Fortásse unusquísque apud semetípsum dicat: Ego jam crédidi, salvus ero. Verum dicit, si fidem opéribus tenet. Vera étenim fides est, quæ in hoc, quod verbis dicit, móribus non contradícit. Hinc est enim quod de quibúsdam falsis fidélibus Paulus dicit: Qui confiténtur se nosse Deum, factis autem negant. Hinc Joánnes ait: Qui dicit se nosse Deum, et mandáta ejus non custódit, mendax est.
+
+    Quod cum ita sit, fídei nostræ veritátem in vitæ nostræ consideratióne debémus agnóscere. Tunc enim veráciter fidéles sumus, si quod verbis promíttimus, opéribus complémus. In die quippe baptísmatis, ómnibus nos antíqui hostis opéribus, atque ómnibus pompis abrenuntiáre promísimus. Itaque unusquísque vestrum ad consideratiónem suam mentis óculos redúcat; et si servat post baptísmum, quod ante baptísmum spopóndit, certus jam, quia fidélis est, gáudeat.
+
+    Sed ecce, si quod promísit, mínime servávit, si ad exercénda prava ópera, ad concupiscéndas mundi pompas dilápsus est: videámus, si jam scit plángere quod errávit. Apud misericórdem namque júdicem nec ille fallax habétur, qui ad veritátem revértitur, étiam postquam mentítur: quia omnípotens Deus, dum libénter nostram pœniténtiam súscipit, ipse suo judício hoc, quod errávimus, abscóndit.
+  responsory: |
+    R. Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúia: * Et, vidéntibus illis, elevátus est, allelúia: et nubes suscépit eum ab óculis eórum, allelúia. V. Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris. R. Et, vidéntibus illis, elevátus est, allelúia: et nubes suscépit eum ab óculis eórum, allelúia.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pasc5-6.txt) -- day 3 of the Ascension's own movable octave, same
+# shape/rationale as ascension-octave-day-2.yml. Joins the continuation of
+# St. Leo's own Ascension sermon (Lectio4-6, a different passage than day 2)
+# with the continuation of Pope St. Gregory's homily on Mark 16:14-20
+# (Lectio7-9, same Gospel pericope as day 2, different homily passage; bare
+# incipit dropped). Responsory: reuses the Ascension's own well-known
+# opening Matins responsory (Tempora/Pasc5-4.txt's own Responsory1, "Post
+# passiónem suam...") across every combined-lesson octave day -- same
+# resolution as ascension-octave-day-2.yml.
+octave-readings/~-octave-day-3:
+  source: Sermo sancti Leónis Papæ; Homilía sancti Gregórii Papæ
+  text: |
+    Quod ítaque Redemptóris nostri conspícuum fuit, in sacraménta transívit: et ut fides excelléntior esset ac fírmior, visióni doctrína succéssit, cujus auctoritátem supérnis illumináta rádiis credéntium corda sequeréntur. Hanc fidem ascensióne Dómini auctam, et Spíritus Sancti múnere roborátam, non víncula, non cárceres, non exsília, non fames, non ignis, non laniátus ferárum, nec exquisíta persequéntium crudelitátibus supplícia terruérunt. Pro hac fide per univérsum mundum non solum viri, sed étiam féminæ: nec tantum impúbes púeri, sed étiam téneræ vírgines usque ad effusiónem sui sánguinis decertárunt. Hæc fides dæmónia ejécit, ægritúdines dépulit, mórtuos suscitávit.
+
+    Unde et ipsi beáti Apóstoli, qui tot miráculis confirmáti, tot sermónibus erudíti, atrocitátem tamen Domínicæ passiónis expáverant, et veritátem resurrectiónis ejus non sine hæsitatióne suscéperant; tantum de ascensióne Dómini profecérunt, ut quidquid illis prius intúlerat metum, verterétur in gáudium. Totam enim contemplatiónem ánimi in divinitátem ad Patris déxteram considéntis eréxerant: nec jam corpóreæ visiónis tardabántur objéctu, quo minus in id áciem mentis inténderent, quod nec a Patre descendéndo abfúerat, nec a discípulis ascendéndo discésserat. Tunc ígitur, dilectíssimi, Fílius hóminis, Dei Fílius excelléntius sacratiúsque innótuit, cum in patérnæ majestátis glóriam se recépit: et ineffábili modo cœpit esse divinitáte præséntior, qui factus est humanitáte longínquior.
+
+    Tunc ad æquálem Patri Fílium erudítior fides gressu mentis cœpit accédere, et contrectatióne in Christo corpóreæ substántiæ, qua Patre minor est, non egére: quóniam glorificáti córporis manénte natúra, eo fides credéntium vocabátur, ubi non carnáli manu, sed spiritáli intelléctu par Genitóri Unigénitus tangerétur. Hinc illud est, quod post resurrectiónem suam Dóminus Maríæ Magdalénæ persónam Ecclésiæ gerénti, cum ad contáctum ipsíus properáret accédere, dicit: Noli me tángere, nondum enim ascéndi ad Patrem meum: hoc est, Nolo ut ad me corporáliter vénias, nec ut me sensu carnis agnóscas: ad sublimióra te díffero, majóra tibi prǽparo: cum ad Patrem ascéndero, tunc me perféctius veriúsque palpábis, apprehensúra quod non tangis, et creditúra quod non cernis.
+
+    Signa autem eos qui creditúri sunt, hæc sequéntur: In nómine meo dæmónia eícient, linguis loquéntur novis, serpéntes tollent: et si mortíferum quid bíberint, non eis nocébit: super ægros manus impónent, et bene habébunt. Numquídnam, fratres mei, quia ista signa non fácitis, mínime créditis? Sed hæc necessária in exórdio Ecclésiæ fuérunt. Ut enim ad fidem crésceret multitúdo credéntium, miráculis fúerat nutriénda: quia et nos, cum arbústa plantámus, támdiu eis aquam infúndimus, quoúsque ea in terra jam coaluísse videámus: et si semel radícem fíxerint, irrigátio cessábit. Hinc est enim quod Paulus dicit: Linguæ in signum sunt non fidélibus, sed infidélibus.
+
+    Habémus de his signis atque virtútibus, quæ adhuc subtílius consideráre debeámus. Sancta quippe Ecclésia quotídie spiritáliter facit, quod tunc per Apóstolos corporáliter faciébat. Nam sacerdótes ejus cum per exorcísmi grátiam manum credéntibus impónunt, et habitáre malígnos spíritus in eórum mente contradícunt, quid áliud fáciunt, nisi dæmónia ejíciunt? Et fidéles quique, qui jam vitæ véteris sæculária verba derelínquunt, sancta autem mystéria ínsonant, Conditóris sui laudes et poténtiam, quantum prǽvalent, narrant: quid áliud fáciunt, nisi novis linguis loquúntur? Qui dum bonis suis exhortatiónibus malítiam de aliénis córdibus áuferunt, serpéntes tollunt.
+
+    Et dum pestíferas suasiónes áudiunt, sed tamen ad operatiónem pravam mínime pertrahúntur, mortíferum quidem est quod bibunt, sed non eis nocébit. Qui quóties próximos suos in bono ópere infirmári conspíciunt, dum eis tota virtúte concúrrunt, et exémplo suæ operatiónis illórum vitam róborant, qui in própria actióne títubant: quid áliud fáciunt, nisi super ægros manus impónunt, ut bene hábeant? Quæ nimírum mirácula tanto majóra sunt, quanto spiritália: tanto majóra sunt, quanto per hæc non córpora, sed ánimæ suscitántur.
+  responsory: |
+    R. Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúia: * Et, vidéntibus illis, elevátus est, allelúia: et nubes suscépit eum ab óculis eórum, allelúia. V. Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris. R. Et, vidéntibus illis, elevátus est, allelúia: et nubes suscépit eum ab óculis eórum, allelúia.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pasc6-0.txt) -- day 4 of the Ascension's own movable octave (the
+# Sunday within the octave), same shape/rationale as
+# ascension-octave-day-2.yml. Joins St. Augustine's own Ascension sermon
+# (Lectio4-6, a different Father than days 2-3's Leo) with a Tractate of
+# St. Augustine on John (Lectio7-9, the Gospel John 15:26-27;16:1-4's bare
+# incipit dropped). The source's own `[Lectio6_]`/`[Lectio6_2]` variant
+# split (a Tridentine-vs-1570-rubric alternative reading) uses only the
+# default `Lectio6_` branch here -- the `Lectio6_2` alternate has no
+# matching English translation in the source and is only used under the
+# other rubric anyway. Responsory: reuses the Ascension's own well-known
+# opening Matins responsory (Tempora/Pasc5-4.txt's own Responsory1, "Post
+# passiónem suam...") across every combined-lesson octave day -- same
+# resolution as ascension-octave-day-2.yml.
+octave-readings/~-octave-day-4:
+  source: Sermo sancti Augustíni Epíscopi; Tractátus sancti Augustíni in Joánnem
+  text: |
+    Salvátor noster, dilectíssimi fratres, ascéndit in cælum: non ergo turbémur in terra. Ibi sit mens, et hic erit réquies. Ascendámus cum Christo ínterim corde: cum dies ejus promíssus advénerit, sequémur et córpore. Scire tamen debémus, fratres, quia cum Christo non ascéndit supérbia, non avarítia, non luxúria: nullum vítium nostrum ascéndit cum médico nostro. Et ídeo si post médicum desiderámus ascéndere, debémus vítia et peccáta depónere. Omnes enim quasi quibúsdam compédibus nos premunt, et peccatórum nos rétibus ligáre conténdunt: et ídeo cum Dei adjutório, secúndum quod ait Psalmísta: Dirumpámus víncula eórum: ut secúri possímus dícere Dómino: Dirupísti víncula mea, tibi sacrificábo hóstiam laudis.
+
+    Resurréctio Dómini spes nostra est: ascénsio Dómini glorificátio nostra est. Ascensiónis hódie solémnia celebrámus. Si ergo recte, si fidéliter, si devóte, si sancte, si pie ascensiónem Dómini celebrámus, ascendámus cum illo, et sursum corda habeámus. Ascendéntes autem non extollámur, nec de nostris, quasi de própriis méritis præsumámus. Sursum autem corda habére debémus ad Dóminum. Sursum enim cor non ad Dóminum, supérbia vocátur: sursum autem cor ad Dóminum, refúgium vocátur. Vidéte, fratres, magnum miráculum. Altus est Deus: érigis te, et fugit a te: humílias te, et descéndit ad te. Quare hoc? Quia excélsus est, et humília réspicit, et alta de longe cognóscit. Humília de próximo réspicit, ut attóllat: alta, id est, supérba, de longe cognóscit, ut déprimat.
+
+    Resurréxit enim Christus, ut spem nobis daret, quia surgit homo, qui móritur: ne moriéndo desperarémus, et vitam nostram in morte finítam putarémus, secúros nos fecit. Sollíciti enim erámus de ipsa ánima: et ille nobis resurgéndo, de carnis resurrectióne fidúciam dedit. Crede ergo, ut mundéris. Prius te opórtet crédere, ut póstea per fidem Deum mereáris aspícere. Deum enim vidére vis? Audi ipsum: Beáti mundo corde: quóniam ipsi Deum vidébunt. Prius ergo cógita de corde mundándo: quidquid ibi vides, quod dísplicet Deo, tolle.
+
+    Dóminus Jesus in sermóne, quem locútus est discípulis suis post cenam, próximus passióni, tamquam itúrus, et relictúrus eos præséntia corporáli, cum ómnibus autem suis usque in consummatiónem sǽculi futúrus præséntia spiritáli, exhortátus est eos ad perferéndas persecutiónes impiórum, quos mundi nómine nuncupávit. Ex quo tamen mundo étiam ipsos discípulos se elegísse dixit: ut scirent se Dei grátia esse, quod sunt; suis autem vítiis fuísse, quod fuérunt.
+
+    Deínde persecutóres et suos et ipsórum, Judǽos evidénter expréssit: ut omníno apparéret étiam ipsos mundi damnábilis appellatióne conclúsos, qui persequúntur sanctos. Cumque de illis díceret, quod ignorárent eum a quo missus est; et tamen odíssent et Fílium, et Patrem, hoc est, et eum qui missus est, et eum a quo missus est: (de quibus ómnibus in áliis semónibus jam disserúimus) ad hoc pervénit, ubi ait: Ut adimpleátur sermo, qui in lege eórum scriptus est: Quia ódio habuérunt me gratis.
+
+    Deínde tamquam consequénter adjúnxit, unde modo disputáre suscépimus: Cum autem vénerit Paráclitus, quem ego mittam vobis a Patre, Spíritum veritátis, qui a Patre procédit, ille testimónium perhibébit de me: et vos testimónium perhibébitis, quia ab inítio mecum estis. Quid hoc pértinet ad illud quod díxerat: Nunc autem et vidérunt, et odérunt et me, et Patrem meum: sed ut impleátur sermo, qui in lege eórum scriptus est: Quia ódio habuérunt me gratis? An quia Paráclitus quando venit Spíritus veritátis, eos, qui vidérunt, et odérunt, testimónio manifestióre convícit? Immo vero étiam áliquos ex illis qui vidérunt, et adhuc óderant, ad fidem, quæ per dilectiónem operátur, sui manifestatióne convértit.
+  responsory: |
+    R. Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúia: * Et, vidéntibus illis, elevátus est, allelúia: et nubes suscépit eum ab óculis eórum, allelúia. V. Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris. R. Et, vidéntibus illis, elevátus est, allelúia: et nubes suscépit eum ab óculis eórum, allelúia.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pasc6-1.txt) -- day 5 of the Ascension's own movable octave, same
+# shape/rationale as ascension-octave-day-2.yml. Joins a sermon of St. John
+# Chrysostom on the Ascension (Lectio4-6) with the continuation of Pope St.
+# Gregory's homily on Mark 16:14-20 (Lectio7-9, same Gospel pericope as
+# days 2-3/5, a different homily passage on Elijah/Enoch as types of the
+# Ascension; bare incipit dropped). Responsory: reuses the Ascension's own well-known opening
+# Matins responsory (Tempora/Pasc5-4.txt's own Responsory1, "Post
+# passiónem suam...") across every combined-lesson octave day -- same
+# resolution as ascension-octave-day-2.yml.
+octave-readings/~-octave-day-5:
+  source: Sermo sancti Joánnis Chrysóstomi; Homilía sancti Gregórii Papæ
+  text: |
+    Christus ascéndens in cælum, nostræ natúræ primítias óbtulit Patri, et oblátum donum mirátus est Pater, quod et tanta dígnitas offerébat; et quod offerebátur, nulla mácula fœdabátur. Nam et suis mánibus suscépit oblátum, et suæ sedis fecit esse partícipem, et quod plus est, ad partem suæ déxteræ collocávit. Cognoscámus, quis est ille qui audívit, Sede ad déxteram meam: quæ natúra est, cui Deus dixit, Esto meæ párticeps sedis. Illa natúra est, quæ audívit: Terra es, et in terram ibis.
+
+    Non enim ad omnem glóriam cælos transísse suffécerat, non cum Angelis stare: sed cælos transívit, supra Chérubim ascéndit, ultra Séraphim elevátur, nec ante stetit, nisi sedem Domínicam meruísset. Vide quo spátio cælum separátur a terra, immo terra quanto ab ínferis abest, et ipsum cælum quanto ab altióre cælo separátur, et de altióre cælo ad Angelos quantum spátii est, ad superióres étiam Potestátes, ad ipsam quoque Domínicam sedem. Super hæc ómnia natúra nostra eleváta est, ut homo, qui loco tam húmili tenebátur, ut descéndere non posset ultérius, ad tam excélsam sedem elevarétur, ut áltius non posset ascéndere.
+
+    Et hæc osténdens Paulus dicébat: Qui descéndit, ipse est qui ascéndit. Et íterum: Descéndit ad inferióra terræ, et ascéndit super omnes cælos. Díscite ígitur quisnam ascéndit, et quæ natúra eleváta est. In hoc enim cúpio remorári sermóne, ut humáni géneris commemoratióne, divínam cleméntiam cum omni admiratióne discámus, quæ summum honórem, magnámque glóriam nostræ natúræ largíta est, quæ ómnibus hodiérna die méruit excélsior reperíri. Hódie Angeli atque Archángeli natúram nostram in sede Domínica immortáli glória fulgéntem vidérunt.
+
+    Et Dóminus quidem Jesus, postquam locútus est eis, assúmptus est in cælum, et sedet a dextris Dei. In véteri Testaménto cognóvimus, quod Elias sit raptus in cælum. Sed áliud est cælum ǽreum, áliud æthéreum. Cælum quippe ǽreum terræ est próximum: unde et aves cæli dícimus, quia eas volitáre in aëre vidémus. In cælum ítaque ǽreum Elias sublevátus est, ut in secrétam quamdam terræ regiónem repénte ducerétur, ubi in magna jam carnis et spíritus quiéte víveret, quoúsque ad finem mundi rédeat, et mortis débitum solvat. Ille étenim mortem dístulit, non evásit: Redémptor autem noster, quia non dístulit, superávit, eámque resurgéndo consúmpsit, et resurrectiónis suæ glóriam ascendéndo declarávit.
+
+    Notándum quoque est, quod Elias in curru légitur ascendísse: ut vidélicet apérte demonstrarétur, quia homo purus adjutório indigébat aliéno. Per Angelos quippe facta illa et osténsa sunt adjuménta: quia nec in cælum quidem aéreum per se ascéndere póterat, quem natúræ suæ infírmitas gravábat. Redémptor autem noster non curru, non Angelis sublevátus légitur: quia is, qui fécerat ómnia, nimírum super ómnia sua virtúte ferebátur. Illo étenim revertebátur, ubi erat: et inde redíbat, ubi remanébat: quia cum per humanitátem ascénderet in cælum, per divinitátem suam et terram páriter continébat et cælum.
+
+    Sicut autem Joseph a frátribus vénditus venditiónem Redemptóris nostri figurávit: sic Henoch translátus, atque ad cælum aéreum Elias sublevátus, ascensiónem Domínicam utérque designávit. Ascensiónis ergo suæ Dóminus prænúntios et testes hábuit, unum ante legem, álium sub lege: ut quandóque veníret ipse, qui veráciter cælos penetráre potuísset. Unde et ipse ordo in eórum quoque utrorúmque sublevatióne per quædam increménta distínguitur. Nam Henoch translátus, Elías vero ad cælum subvéctus esse memorátur: ut veníret póstmodum, qui nec translátus nec subvéctus, cælum æthéreum sua virtúte penetráret.
+  responsory: |
+    R. Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúia: * Et, vidéntibus illis, elevátus est, allelúia: et nubes suscépit eum ab óculis eórum, allelúia. V. Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris. R. Et, vidéntibus illis, elevátus est, allelúia: et nubes suscépit eum ab óculis eórum, allelúia.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pasc6-2.txt) -- day 6 of the Ascension's own movable octave, same
+# shape/rationale as ascension-octave-day-2.yml. Joins a homily of St.
+# Maximus, Bishop of Turin (Lectio4-6, the eagle-and-captivity imagery, from
+# a homily originally written for Pentecost but placed here in this office)
+# with the continuation of Pope St. Gregory's homily on Mark 16:14-20
+# (Lectio7-9, same Gospel pericope as days 2-3/5-6, a different homily
+# passage on "sitting" vs. "standing" in the Ascension's own iconography;
+# bare incipit dropped). Responsory: reuses the Ascension's own well-known
+# opening Matins responsory (Tempora/Pasc5-4.txt's own Responsory1, "Post
+# passiónem suam...") across every combined-lesson octave day -- same
+# resolution as ascension-octave-day-2.yml.
+octave-readings/~-octave-day-6:
+  source: Sermo sancti Máximi Epíscopi; Homilía sancti Gregórii Papæ
+  text: |
+    Méminit sánctitas vestra, quod áquilæ illi de Psaltério, cujus innovátam juventútem légimus, comparáverim Salvatórem. Est enim similitúdo non parva. Sicut enim áquila humília déserit, alta petit, cælórum vicína conscéndit: ita et Salvátor humília inférni deséruit, paradísi altióra pétiit, cælórum fastígia penetrávit. Et sicut áquila relíctis terrénis sórdibus, sublíme volans, purióris áëris salubritáte perfrúitur: ita et Dóminus, terrenórum fæcem déserens peccatórum, in Sanctis suis vólitans, purióris vitæ simplicitáte lætátur.
+
+    Per ómnia ígitur áquilæ comparátio cónvenit Salvatóri. Sed quid fácimus, quod áquila prædam frequénter díripit, tollit frequénter aliénum? Nec in hoc tamen dissímilis est Salvátor. Prædam enim quodámmodo sústulit, cum hóminem, quem suscépit, inférni raptum fáucibus portávit ad cælum, et aliénæ dominatiónis, id est, diabólicæ potestátis servum de captivitáte érutum, duxit ad altióra captívum, sicut scriptum est in prophéta: Ascéndens in altum, captívam duxit captivitátem, dedit dona homínibus.
+
+    Ascéndit, inquit, in altum, captívam duxit captivitátem. Quam bene triúmphum Dómini prophéta descríbit! Solébat, sicut dicunt, regum triumphántium currus captivórum pompa præcédere. Ecce Dóminum eúntem ad cælos non præcédit, sed comitátur gloriósa captívitas; non ante vehículum dúcitur, sed ipsa évehit Salvatórem. Quodam enim mystério, dum Fílius Dei Fílium hóminis sústulit ad cælum, ipsa captívitas portátur, et portat.
+
+    Considerándum nobis est, quid est quod Marcus ait: Sedet a dextris Dei: et Stéphanus dicit: Vídeo cælos apértos, et Fílium hóminis stantem a dextris Dei. Quid est quod hunc Marcus sedéntem, Stéphanus vero stantem se vidére testátur? Sed scitis, fratres, quia sedére judicántis est, stare vero pugnántis, vel adjuvántis.
+
+    Quia ergo Redémptor noster assúmptus in cælum et nunc ómnia júdicat, et ad extrémum judex ómnium véniet, hunc post assumptiónem Marcus sedére descríbit, quia post ascensiónis suæ glóriam judex in fine vidébitur. Stéphanus vero hunc in labóre certáminis pósitus stantem vidit, quem adjutórem hábuit: quia ut iste in terra persecutórum infidelitátem vínceret, pro illo de cælo illíus grátia pugnávit.
+
+    Séquitur: Illi autem profécti prædicavérunt ubíque, Dómino cooperánte et sermónem confirmánte sequéntibus signis. Quid in his considerándum est, quid memóriæ commendándum: nisi quod præcéptum obediéntia, obediéntiam vero signa secúta sunt?
+  responsory: |
+    R. Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúia: * Et, vidéntibus illis, elevátus est, allelúia: et nubes suscépit eum ab óculis eórum, allelúia. V. Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris. R. Et, vidéntibus illis, elevátus est, allelúia: et nubes suscépit eum ab óculis eórum, allelúia.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pasc6-3.txt) -- day 7 of the Ascension's own movable octave, same
+# shape/rationale as ascension-octave-day-2.yml. Joins St. Gregory of
+# Nyssa's discourse on the Ascension (Lectio4-6, Psalm 23's "Lift up your
+# gates" as a dialogue between the ascending Christ and heaven's gatekeeper
+# angels) with the continuation of Pope St. Gregory the Great's homily on
+# Mark 16:14-20 (Lectio7-9, same Gospel pericope as every other day, a
+# different homily passage on the white-robed angels of Acts 1:9-10; bare
+# incipit dropped). Responsory: reuses the Ascension's own well-known
+# opening Matins responsory (Tempora/Pasc5-4.txt's own Responsory1, "Post
+# passiónem suam...") across every combined-lesson octave day -- same
+# resolution as ascension-octave-day-2.yml.
+octave-readings/~-octave-day-7:
+  source: Sermo sancti Gregórii Nysséni; Homilía sancti Gregórii Papæ
+  text: |
+    Hodiérnam celebritátem satis per se magnam, prophéta David majórem éfficit, dum illi gáudium e Psalmis adjúngit. Hic enim excélsus Prophéta supra seípsum egrédiens, tamquam córporis ónere nihil premátur, infert se cæléstibus potestátibus, et voces eárum nobis expónit, cum in cælum redeúntem Dóminum ipsæ comitántes, Angelis, qui versántur in terris, quibúsque in humánam vitam ingréssus commíssus est, ímperant ad hunc modum: Tóllite portas, príncipes, vestras; et elevámini, portæ æternáles, et introíbit Rex glóriæ.
+
+    Et quóniam ubicúmque fúerit ille, qui in seípso ómnia cóntinet, pro suscipiéntium captu seípsum dimetítur (neque enim solum inter hómines homo fit, verum étiam dum inter Angelos versátur, ad illórum vocem sese demíttit) idcírco janitóres intérrogant: Quis est iste Rex glóriæ? Respóndent ipsis, demonstrántque fortem et poténtem in prǽlio, qui pugnatúrus erat contra illum, qui natúram humánam in servitúte captívam detinébat, et eversúrus eum, qui mortis habébat impérium: ut gravíssimo hoste superáto, genus hóminum in libertátem et pacem vindicáret.
+
+    Occúrrunt ei custódes, et portas jubent reclúdi, ut in ipsis rursum glóriam assequátur. Verum non agnóscunt eum, qui sórdidam vitæ nostræ stolam indútus est: cujus rubra sunt vestiménta ex humanórum malórum torculári. Itaque rursus cómites ejus vócibus illis interrogántur: Quis est iste Rex glóriæ? Respondétur autem non ámplius, Fortis et potens in prǽlio; sed, Dóminus virtútum, qui mundi principátum obtínuit, qui summátim ómnia in se collégit, qui prístinum in statum cuncta restítuit: ipse est Rex glóriæ.
+
+    Hoc autem nobis primum quæréndum est, quidnam sit, quod, nato Dómino, apparuérunt Angeli, et tamen non legúntur in albis véstibus apparuísse: ascendénte autem Dómino, missi Angeli in albis legúntur véstibus apparuísse. Sic étenim scriptum est: Vidéntibus illis elevátus est, et nubes suscépit eum ab óculis eórum. Cumque intueréntur in cælum eúntem illum, ecce duo viri stetérunt juxta illos in véstibus albis. In albis autem véstibus gáudium et solémnitas mentis osténditur. Quid est ergo, quod, nato Dómino, non in albis véstibus; ascendénte autem Dómino, in albis véstibus Angeli appárent: nisi quod tunc magna solémnitas Angelis facta est, cum cælum Deus homo penetrávit? Quia nascénte Dómino, videbátur divínitas humiliáta; ascendénte vero Dómino, est humánitas exaltáta. Albæ étenim vestes exaltatióni magis cóngruunt, quam humiliatióni.
+
+    In ascensióne ergo ejus Angeli in albis véstibus vidéri debuérunt: quia qui in nativitáte sua appáruit Deus húmilis, in ascensióne sua osténsus est homo sublímis. Sed hoc nobis magnópere, fratres caríssimi, in hac solemnitáte pensándum est: quia delétum est hodiérna die chirógraphum damnatiónis nostræ, mutáta est senténtia corruptiónis nostræ. Illa enim natúra, cui dictum est: Terra es, et in terram ibis; hódie in cælum ivit. Pro hac ipsa namque carnis nostræ sublevatióne, per figúram beátus Job Dóminum avem vocat. Quia enim ascensiónis ejus mystérium Judǽam non intellígere conspéxit, de infidelitáte ejus per figúram beátus Job senténtiam prótulit, dicens: Sémitam ignorávit avis.
+
+    Avis enim recte appellátus est Dóminus, quia corpus cárneum ad ǽthera librávit. Cujus avis sémitam ignorávit, quisquis eum ad cælum ascendísse non crédidit. De hac solemnitáte per Psalmístam dícitur: Eleváta est magnificéntia tua super cælos. De hac rursus ait: Ascéndit Deus in jubilatióne, et Dóminus in voce tubæ. De hac íterum dicit: Ascéndens in altum captívam duxit captivitátem, dedit dona homínibus. Ascéndens quippe in altum, captívam duxit captivitátem: quia corruptiónem nostram virtúte suæ incorruptiónis absórbuit. Dedit vero dona homínibus: quia misso désuper Spíritu, álii sermónem sapiéntiæ, álii sermónem sciéntiæ, álii grátiam virtútum, álii grátiam curatiónum, álii génera linguárum, álii interpretatiónem tríbuit sermónum.
+  responsory: |
+    R. Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúia: * Et, vidéntibus illis, elevátus est, allelúia: et nubes suscépit eum ab óculis eórum, allelúia. V. Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris. R. Et, vidéntibus illis, elevátus est, allelúia: et nubes suscépit eum ab óculis eórum, allelúia.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pasc6-4.txt) -- day 8, "In Octava," the Ascension's own octave
+# closing day, same shape/rationale as ascension-octave-day-2.yml. Joins
+# another sermon of St. Augustine on the Ascension (Lectio4-6, distinct from
+# day 4's own Augustine sermon -- a different numbered sermon in the source)
+# with the conclusion of Pope St. Gregory's homily on Mark 16:14-20
+# (Lectio7-9, same Gospel pericope as every other day; bare incipit
+# dropped). The source's own English for Lectio8-9 is visibly garbled near
+# the seam between the two lessons (a clause is missing outright -- the
+# Song of Songs allusion "Trahe nos: post te currémus..." has no English at
+# all -- and another sentence is transposed) -- reconstructed here following
+# the Latin closely rather than transcribed as-is; `en` marked `draft`
+# accordingly (a larger repair than the usual isolated-typo fix, see
+# memory vu-prefer-text-over-missing). Responsory: reuses the Ascension's
+# own well-known opening Matins responsory (Tempora/Pasc5-4.txt's own
+# Responsory1, "Post passiónem suam...") across every combined-lesson
+# octave day -- same resolution as ascension-octave-day-2.yml.
+octave-readings/~-octave-day-8:
+  source: Sermo sancti Augustíni Epíscopi; Homilía sancti Gregórii Papæ
+  text: |
+    Omnia, caríssimi, quæ Dóminus Jesus Christus in hoc mundo sub fragilitáte nostra mirácula édidit, nobis profíciunt: qui dum humánam conditiónem sidéribus importávit, credéntibus cælum patére posse monstrávit: et dum victórem mortis in cæléstia elevávit, victóribus quo sequántur osténdit. Ascénsio ergo Dómini cathólicæ fídei confirmátio fuit: ut secúri in pósterum crederémus miráculi illíus donum, cujus jam in præsénti percepissémus efféctum: et fidélis quisque cum jam tanta percéperit, per ea, quæ cognóscit prǽstita, discat speráre promíssa, ac Dei sui prætéritam præsentémque bonitátem, quasi futurórum téneat cautiónem.
+
+    Super excélsa ergo cæli terrénum corpus impónitur: ossa, intra sepúlcri angústias paulo ante conclúsa, Angelórum cœ́tibus interúntur: in grémium immortalitátis mortális natúra transfúnditur: et ídeo sacra apostólicæ lectiónis testátur história: Cum hæc dixísset, inquit, vidéntibus illis, elevátus est. Dum audis elevátum, agnósce milítiæ cæléstis obséquium: unde hodiérna festívitas hóminis nobis et Dei sacraménta manifestávit. Sub una eadémque persóna, in eo qui élevat, divínam poténtiam; in eo autem, qui elevátur, humánam cognósce substántiam.
+
+    Ideóque omnímodis detestánda sunt venéna Orientális erróris, qui ímpia novitáte præsúmit assérere Fílium Dei ac Fílium hóminis uníus esse natúræ. In altérutra enim parte, vel qui solum hóminem fuísse díxerit, negábit Conditóris glóriam: vel qui solum Deum, negábit misericórdiam Redemptóris. Quo génere non fácile Ariánus evangélicam póterit habére veritátem, ubi Fílium Dei nunc æquálem légimus, nunc minórem. Qui enim uníus natúræ Salvatórem nostrum mortífera persuasióne credíderit, solum hóminem, aut solum Deum cogétur dícere crucifíxum. Sed non ita est. Mortem enim nec solus Deus sentíre, nec solus homo superáre potuísset.
+
+    De hac ascensiónis ejus glória étiam Hábacuc ait: Elevátus est sol, et luna stetit in órdine suo. Quis enim solis nómine, nisi Dóminus; et quæ lunæ nómine, nisi Ecclésia designátur? Quoúsque enim Dóminus ascéndit ad cælos, sancta ejus Ecclésia advérsa mundi omnímodo formidávit: at postquam ejus ascensióne roboráta est, apérte prædicávit quod occúlte crédidit. Elevátus est ergo sol, et luna stetit in órdine suo: quia cum Dóminus cælum pétiit, sancta ejus Ecclésia in auctoritáte prædicatiónis excrévit.
+
+    Hinc ejúsdem Ecclésiæ voce per Salomónem dícitur: Ecce iste venit sáliens in móntibus, et transíliens colles. Considerávit namque tantórum óperum cúlmina, et ait: Ecce iste venit sáliens in móntibus. Veniéndo quippe ad redemptiónem nostram, quosdam, ut ita dicam, saltus dedit. Vultis, fratres caríssimi, ipsos ejus saltus agnóscere? De cælo venit in úterum, de útero venit in præsépe, de præsépe venit in crucem, de cruce venit in sepúlcrum, de sepúlcro rédiit in cælum. Ecce, ut nos post se cúrrere fáceret, quosdam pro nobis saltus manifestáta per carnem Véritas dedit: quia exsultávit ut gigas ad curréndam viam suam, ut nos ei dicerémus ex corde: Trahe nos: post te currémus in odórem unguentórum tuórum.
+
+    Unde, fratres caríssimi, opórtet, ut illuc sequámur corde, ubi eum córpore ascendísse crédimus. Desidéria terréna fugiámus: nihil nos jam deléctet in ínfimis, qui Patrem habémus in cælis. Et hoc nobis est magnópere perpendéndum: quia is qui plácidus ascéndit, terríbilis redíbit; et quidquid nobis cum mansuetúdine præcépit, hoc a nobis cum distinctióne éxiget. Nemo ergo indúlta pœniténtiæ témpora parvipéndat, nemo curam sui, dum valet, ágere négligat: quia Redémptor noster tanto tunc in judícium distríctior véniet, quanto nobis ante judícium magnam patiéntiam prærogávit.
+  responsory: |
+    R. Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúia: * Et, vidéntibus illis, elevátus est, allelúia: et nubes suscépit eum ab óculis eórum, allelúia. V. Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris. R. Et, vidéntibus illis, elevátus est, allelúia: et nubes suscépit eum ab óculis eórum, allelúia.
+  status: verified

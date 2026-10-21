@@ -1,0 +1,56 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2028-07-18).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos concédis sanctórum Mártyrum tuórum Symphorósæ et filiórum ejus natalítia cólere: da nobis in ætérna beatitúdine de eórum societáte gaudére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-symphorosa-and-seven-sons-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (ss-symphorosa-and-seven-sons-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Deus, qui nos concédis sanctórum Mártyrum tuórum Symphorósæ et filiórum ejus natalítia cólere: da nobis in ætérna beatitúdine de eórum societáte gaudére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Symphorosa and Her Seven Sons's own day (2028-07-18 --
+# 2026/2027 are Our Lady's Saturday / an ordinary Sunday respectively).
+# The Benedictus antiphon.
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Matins Nocturn 2 reading for St. Symphorosa and her Seven Sons,
+# Martyrs (Jul 18). No genuine SanctiM match: the correct Tridentine
+# file is the suffixed `Sancti/07-18o.txt` (the plain `Sancti/07-18.txt`
+# is St. Camillus de Lellis instead), and the only SanctiM file for
+# this date, `SanctiM/07-18M.txt`, is the final (octave) day of the
+# Octave of St. Benedict (Jul 11-18) — neither matches; a missed
+# pre-1955-pool candidate rather than a genuine SanctiM case (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/07-18o.txt, English/Sancti/07-18o.txt.
+# The file's `Lectio93` is itself the full continuous account (the
+# same story as `Lectio2`/`Lectio3` under a different rubric),
+# authored as one reading, no genuine internal break — Symphorosa's
+# own martyrdom followed immediately by her seven sons'. No responsory
+# given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Symphorosa Tiburtina, Getulii Mártyris uxor, ex eo septem fílios péperit, Crescéntium, Julianum, Nemesium, Primitivum, Justinum, Stacteum, et Eugenium; qui omnes propter christianæ fidei professiónem una cum matre, Hadriáno imperatóre, comprehénsi sunt. Quorum pietas, multis variisque tentáta suppliciis, cum stábilis permanéret, mater, quæ fíliis fidei magistra fúerat, dux eisdem ad martyrium éxstitit. Nam, saxo ad collum alligato, in profluentem dejícitur: cujus corpus, conquisítum a fratre ejus Eugenio, sepelítur. Postridie ejus diéi, qui fuit décimo quinto Kalendas Augusti, septem fratres singuli ad palum alligati, varie sunt interfécti: Crescentio guttur ferro transfígitur; Juliáno pectus confóditur; Nemesio cor transverberátur; Primitivo trajícitur umbilicus; Justinus membratim secátur; Stacteus telis confígitur; Eugenius a péctore in duas partes dividitur. Ita octo hostiæ Deo gratíssimæ sunt immolátæ. Corpora in altíssimam fóveam projecta sunt via Tiburtina, nono ab Urbe lápide; quæ, póstea Romam translata, cóndita sunt in ecclésia sancti Angeli in piscina.'
+      status: verified

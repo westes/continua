@@ -1,0 +1,60 @@
+# Read directly from web/www/horas/Latin/Sancti/01-19o.txt's own [Oratio]
+# and English/Sancti/01-19o.txt's own translation.
+collect:
+  text: |
+    Orémus.
+    Deus, qui ad illustrándam Ecclésiam tuam beátum Canútum regem martýrii palma et gloriósis
+    miráculis decoráre dignátus es: concéde propítius; ut, sicut ipse Domínicæ passiónis
+    imitátor fuit, ita nos, per ejus vestígia gradiéntes, ad gáudia sempitérna perveníre
+    mereámur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in
+    unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle, same combined-bundle shape as
+# st-gorgonius-commemoration.yml -- see hours/resolve-common.ts's
+# sanctoralCommemorationPart for how this renders, falling back to the
+# bare collect (st-canute-collect.yml) when this file didn't exist.
+# Only reachable in the rarer case Jan 19 itself is outranked (Canute wins
+# the day outright against the Marius group in the ordinary case -- see
+# calendar/saints/st-canute.yml's own header). Ant 2/Versum 2 are the
+# standard de-Communi pairing for the Common of a Martyr not a Pontiff
+# (C2a-1, his own real common per [Rank]/[Rule]) -- common-of-a-martyr-
+# commemoration-antiphon.yml / lauds-versicle-common-of-a-martyr.yml, both
+# already verified elsewhere (same text st-gorgonius-commemoration.yml
+# uses, since it's Common text, not proper to either saint).
+commemoration:
+  text: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Deus, qui ad illustrándam Ecclésiam tuam beátum Canútum regem martýrii palma et gloriósis miráculis decoráre dignátus es: concéde propítius; ut, sicut ipse Domínicæ passiónis imitátor fuit, ita nos, per ejus vestígia gradiéntes, ad gáudia sempitérna perveníre mereámur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Canute, King and Martyr (Jan 19).
+# Sourced from web/www/horas/Latin/Sancti/01-19o.txt (Lectio4-6, combined
+# into one continuous vita, same combining convention st-titus.yml/
+# st-rose-of-lima.yml use). The reference engine's own English/Sancti/
+# 01-19o.txt carries only the [Officium] name and [Oratio] -- no English
+# translation of the vita at all -- so the English text below is this
+# project's own translation of the Latin, not carried over from the
+# source; marked `draft` accordingly (status.en), matching the "prefer
+# real translated text over a missing placeholder" convention. Latin is
+# the source's own verified text. No Lectio7-9 of his own -- the source
+# points those at a Common (see st-canute.yml's header on the C2-1/C2a-1
+# discrepancy), not transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Canutus quartus, Suenónis Esthrítii Danórum regis fílius, fide, pietáte et morum honestáte conspícuus, exímiæ sanctitátis a téneris annis specimen dedit. Patérnum sceptrum summa ómnium acclamatióne adéptus, religióni promovéndæ sédulo incúmbere, ecclésias redítibus augére, et pretiósa suppelléctili ornáre coepit. Tum zelo propagándæ fídei succénsus, bárbara regna justo certámine aggréssus, devíctas subditásque natiónes christiánæ legi subjugávit. Victóriis autem plúrimis gloriósus, et divítiis auctus, regale diadéma ad Christi crucifíxi pedes abjécit, se et regnum illi subjíciens, qui Rex regum est, et Dóminus dominántium. Corpus suum jejúniis, cilíciis et flagéllis castigávit. In oratióne et contemplatióne assíduus, erga páuperes profúsus, erga omnes benéficus semper fuit: nec umquam a justítiæ divinǽque legis sémita deflexit.
+
+        His aliísque virtútibus imbútus, ad suprémum perfectiónis apicem sanctus rex properábat. Accidit autem ut Angliæ regnum a Wilhélmo Normandórum duce, formidábili exércitu invaderétur. Anglis vero, Danórum opem implorántibus, cum succúrrere rex decrevísset, belli expeditiónem Oláo fratri commísit. Qui regnándi cupiditáte illéctus, arma vertit in regis perniciém, mílitibus et pópulo contra illum concitátis. Nec defuérunt rebellióni fómenta. Cum enim rex, edítis légibus, décimas ecclésiis solvi, Dei et Ecclésiæ præcépta servári, transgressóres puníri sanxísset, plérique perversi ac scelaráti hómines exacerbáti, primum quidem tumultuári, tum plebem commovére, ac tandem sanctíssimo regi necem molíri coepérunt.
+
+        Sciens ígitur rex, futurórum præscius, mortem sibi propter justítiam imminére; ea prænuntiáta, ad ecclésiam sancti Albáni Mártyris Othóniæ, tamquam ad locum certáminis, proféctus est: et sacraméntis munítus, agónem suum Dómino commendábat. Mox ibi advéniens conjurátorum multitúdo, ecclésiæ ignem admovére, fores confríngere et in eam irrúmpere tentárunt. Quod cum perfícere non possent, ad fenéstras accedéntes, saxa et sagíttas in sanctum regem, fléxis génibus pro inimícis orántem, magno ímpetu jaculári non cessábant: donec lápidum et telórum íctibus, ac tandem lancea confóssus, gloriósa martýrio, ante altáre exténsis bráchiis procúmbens, coronátus est, sedénte in apostólico throno Gregório séptimo. Multis póstea miráculis Mártyrem suum illustrávit Deus. Nam gravi penúria et divérsis calamitátibus opprésssa Dánia, patráti sacrilégii pœnas luit. Plures étiam váriis languóribus afflícti, ad ejus túmulum remédium et incolumitátem consecúti sunt. Cumque regína sacrum ejus corpus noctu clam surrípere, et álio transférre conarétur, emísso cǽlitus ingénti splendóre perterríta, a propósito cessávit.
+      status: verified

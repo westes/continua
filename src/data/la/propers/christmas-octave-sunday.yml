@@ -1,0 +1,395 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+# Cross-checked (2026-08) against a "Divino Afflatu 1954" live query,
+# 2026-12-27, and against the raw Monastic Tridentinum 1617 source file
+# (web/www/horas/Latin/Tempora/Nat1-0.txt's own [Oratio]) -- identical in
+# both, despite 1617 not rendering this Sunday's identity live on most
+# dates under its own calendar rules; see lauds-psalmody-overrides/
+# christmas-octave-sunday.yml's header for why the rest of this Sunday's
+# newly-authored content (2026-08) had to come from Divino Afflatu instead.
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, dírige actus nostros in beneplácito tuo: ut in nómine dilécti Fílii tui mereámur bonis opéribus abundáre:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium ("Divino Afflatu 1954"), Lauds live
+# query, 2026-12-27 -- see lauds-psalmody-overrides/christmas-octave-
+# sunday.yml's header. Matches Terce's own capitulum reading (Gal 4:1-2)
+# -- Terce's chapter equals Lauds' in the Monastic tradition, same pattern
+# already seen in the Common of Apostles (terce-capitulum-common-of-
+# apostles.yml).
+lauds-capitulum:
+  text: 'Fratres: Quanto témpore heres párvulus est, nihil differt a servo, cum sit dóminus ómnium: sed sub tutóribus et actóribus est usque ad præfínitum tempus a patre.'
+  citation: Gal 4:1-2
+  status: verified
+
+# Verified against Divinum Officium ("Divino Afflatu 1954"), Lauds live
+# query, 2026-12-27 -- see lauds-psalmody-overrides/christmas-octave-
+# sunday.yml's header. "A solis ortus cardine" -- self-contained,
+# including its own final doxology stanza (no `*` marker in the source at
+# all for this hymn, so no substitution mechanism applies here, unlike most
+# other hours' hymns).
+#
+# Reviewed 2026-09-11 against the Monastic ([HymnusM Laudes],
+# Sancti/12-25.txt) word substitutions -- same review as
+# lauds-hymn-circumcision.yml's own header (this file's text is a direct
+# copy of that one, both borrowing Christmas Day's own propers, which have
+# no authored hymn file of their own yet): most substitutions are a wash
+# and not adopted, "Jesu tibi sit glória"/"almo Spíritu" are kept as-is
+# because they're the more specific wording, and only "Concépit alvo" ->
+# "Verbo concépit" is adopted (ties the Incarnation to the Johannine
+# "Verbum caro factum est" rather than a plain anatomical phrasing).
+lauds-hymn:
+  text: |
+    A solis ortus cárdine
+    Ad usque terræ límitem,
+    Christum canámus Príncipem,
+    Natum María Vírgine.
+
+    Beátus auctor sǽculi
+    Servíle corpus índuit:
+    Ut carne carnem líberans,
+    Ne pérderet quos cóndidit.
+
+    Castæ Paréntis víscera
+    Cæléstis intrat grátia:
+    Venter Puéllæ báiulat
+    Secréta, quæ non nóverat.
+
+    Domus pudíci péctoris
+    Templum repénte fit Dei:
+    Intácta nésciens virum,
+    Verbo concépit Fílium.
+
+    Enítitur puérpera,
+    Quem Gábriel prædíxerat,
+    Quem ventre Matris géstiens,
+    Baptísta clausum sénserat.
+
+    Fœno iacére pértulit:
+    Præsépe non abhórruit:
+    Et lacte módico pastus est,
+    Per quem nec ales ésurit.
+
+    Gaudet chorus cæléstium,
+    Et Angeli canunt Deo;
+    Palámque fit pastóribus
+    Pastor, Creátor ómnium.
+
+    Iesu, tibi sit glória,
+    Qui natus es de Vírgine,
+    Cum Patre, et almo Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium ("Divino Afflatu 1954"), Lauds live
+# query, 2026-12-27 -- see lauds-psalmody-overrides/christmas-octave-
+# sunday.yml's header.
+lauds-versicle:
+  text: |-
+    V. Verbum caro factum est, allelúia.
+    R. Et habitávit in nobis, allelúia.
+  status: verified
+
+# Verified against Divinum Officium ("Divino Afflatu 1954"), Prime live
+# query, 2026-12-27 -- see lauds-psalmody-overrides/christmas-octave-
+# sunday.yml's header.
+prime-antiphon:
+  text: Allelúia, * confitémini Dómino, quóniam in sǽculum misericórdia eius, allelúia, allelúia.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Tempora/Nat1-0.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: 'Itaque jam non est servus, sed fílius: quod si fílius, et hæres per Deum.'
+  citation: Gal 4:7
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium ("Divino Afflatu 1954"), Terce live
+# query, 2026-12-27 -- see lauds-psalmody-overrides/christmas-octave-
+# sunday.yml's header.
+terce-antiphon:
+  text: Allelúia, * deduc me, Dómine, in sémitam mandatórum tuórum, allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium ("Divino Afflatu 1954"), Terce live
+# query, 2026-12-27 -- see lauds-psalmody-overrides/christmas-octave-
+# sunday.yml's header. Reading matches Lauds' own capitulum (Gal 4:1-2,
+# lauds-capitulum-christmas-octave-sunday.yml) -- Terce's chapter equals
+# Lauds' in the Monastic tradition -- but with its own distinct closing
+# versicle here, per the live rendering.
+terce-capitulum:
+  text: |
+    Fratres: Quanto témpore heres párvulus est, nihil differt a servo, cum sit dóminus ómnium: sed sub tutóribus et actóribus est usque ad præfínitum tempus a patre.
+    R. Deo grátias.
+    V. Ipse invocábit me, allelúia.
+    R. Pater meus es tu, allelúia.
+  citation: Gal 4:1-2
+  status: verified
+
+# Verified against Divinum Officium ("Divino Afflatu 1954"), Sext live
+# query, 2026-12-27 -- see lauds-psalmody-overrides/christmas-octave-
+# sunday.yml's header.
+sext-antiphon:
+  text: Allelúia, * tuus sum ego, salvum me fac, Dómine, allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium ("Divino Afflatu 1954"), Sext live
+# query, 2026-12-27 -- see lauds-psalmody-overrides/christmas-octave-
+# sunday.yml's header.
+sext-capitulum:
+  text: |
+    At ubi venit plenitúdo témporis, misit Deus Fílium suum factum ex mulíere, factum sub lege, ut eos, qui sub lege erant, redímeret, ut adoptiónem filiórum reciperémus.
+    R. Deo grátias.
+    V. Vidérunt omnes fines terræ, allelúia.
+    R. Salutáre Dei nostri, allelúia.
+  citation: Gal 4:4-5
+  status: verified
+
+# Verified against Divinum Officium ("Divino Afflatu 1954"), None live
+# query, 2026-12-27 -- see lauds-psalmody-overrides/christmas-octave-
+# sunday.yml's header.
+none-antiphon:
+  text: Allelúia, * fáciem tuam, Dómine, illúmina super servum tuum, allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium ("Divino Afflatu 1954"), None live
+# query, 2026-12-27 -- see lauds-psalmody-overrides/christmas-octave-
+# sunday.yml's header.
+none-capitulum:
+  text: |
+    Itaque iam non est servus, sed fílius: quod si fílius, et hæres per Deum.
+    R. Deo grátias.
+    V. Verbum caro factum est, allelúia.
+    R. Et habitávit in nobis, allelúia.
+  citation: Gal 4:7
+  status: verified
+
+# Verified against Divinum Officium ("Divino Afflatu 1954") -- read
+# directly from the reference engine's own real-date output
+# (web/www/horas/Latin/Tempora/Nat2-0.txt's own [Hymnus Vespera] and its
+# English counterpart), same source file as lauds-hymn-christmas-octave-
+# sunday.yml (a genuinely different hymn -- "Jesu, dulcis memoria", not
+# Lauds' "A solis ortus cardine"; Vespers does have its own hymn here,
+# unlike this id's chapter, which is byte-identical between the two
+# hours -- see lookupPart (Vespers chapter, Lauds sibling)'s own doc comment). No `*`
+# doxology marker in the source -- a fixed, non-swappable ending, same
+# as the Lauds hymn.
+vespers-hymn:
+  text: |-
+    Jesu, dulcis memória,
+    Dans vera cordis gáudia:
+    Sed super mel, et ómnia,
+    Ejus dulcis præséntia.
+
+    Nil cánitur suávius,
+    Nil audítur jucúndius,
+    Nil cogitátur dúlcius,
+    Quam Jesus Dei Fílius.
+
+    Jesu, spes pœniténtibus,
+    Quam pius es peténtibus!
+    Quam bonus te quæréntibus!
+    Sed quid inveniéntibus?
+
+    Nec lingua valet dícere,
+    Nec líttera exprímere:
+    Expértus potest crédere,
+    Quid sit Jesum dilígere.
+
+    Sis, Jesu, nostrum gáudium,
+    Qui es futúrus prǽmium:
+    Sit nostra in te glória,
+    Per cuncta semper sǽcula.
+    Amen.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-12-25 christmas-octave-sunday second. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-versicle:
+  text: |
+    V. Notum fecit Dóminus, allelúia.
+    R. Salutáre suum, allelúia.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-12-24 christmas-octave-sunday first. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-versicle/~-first:
+  text: |
+    V. Crástina die delébitur iníquitas terræ.
+    R. Et regnábit super nos Salvátor mundi.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-12-30 -- the Sunday within the Octave of Christmas,
+# found via the reference engine's own dedicated Tempora/Nat1-0 proper
+# (its actual identity in the reference engine, distinct from any of the
+# individual octave-day saints' own pages, e.g. Nat02/Nat03/Nat04 for
+# Dec 26/27/28). This particular date was picked because it's the one
+# clean case in range where the Sunday actually wins outright with no
+# saint commemorated at all ("Dominica Infra Octavam Nativitatis ~
+# Semiduplex Dominica minor", no Commemoratio line) -- on most years the
+# Sunday instead falls on one of the Duplex-II-classis octave-day feasts
+# (St. Stephen, St. John, Holy Innocents) and is itself only commemorated,
+# which is what earlier searches this session kept running into and
+# concluded (wrongly) meant there was no clean date at all.
+benedictus-antiphon:
+  text: Dum médium siléntium * tenérent ómnia, et nox in suo cursu médium iter perágeret, omnípotens Sermo tuus, Dómine, a regálibus sédibus venit, allelúia.
+  status: verified
+  temporal: true
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-12-25 christmas-octave-sunday second. Paschaltide Alleluia is left to hours/resolve-common.ts's
+# withPaschaltideAlleluia.
+magnificat-antiphon:
+  text: 'Hódie * Christus natus est: hódie Salvátor appáruit: hódie in terra canunt Angeli, lætántur Archángeli: hódie exsúltant justi, dicéntes: Glória in excélsis Deo, allelúia.'
+  status: verified
+  temporal: true
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-12-24 christmas-octave-sunday first. Paschaltide Alleluia is left to hours/resolve-common.ts's
+# withPaschaltideAlleluia.
+magnificat-antiphon/~-first:
+  text: Cum ortus fúerit * sol de cælo, vidébitis Regem regum procedéntem a Patre, tamquam sponsum de thálamo suo.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium ("Divino Afflatu 1954" -- not Monastic
+# Tridentinum 1617, which has no real "Dominica Infra Octavam Nativitatis"
+# identity of its own under its own calendar rules; see christmas-octave-
+# sunday-benedictus-antiphon.yml's header and TODO.md for the Dec 26-30
+# Sunday rule this is a deliberate remix around), Lauds live query,
+# 2026-12-27 (the actual Sunday that year, St. John's own day commemorated
+# in return).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Quem vidístis, * pastóres? dícite, annuntiáte nobis, in terris quis appáruit? Natum vídimus, et choros Angelórum collaudántes Dóminum, allelúia, allelúia.
+    - psalms:
+        - 99
+      antiphon: 'Génuit puérpera * Regem, cui nomen ætérnum, et gáudia matris habens cum virginitátis honóre: nec primam símilem visa est, nec habére sequéntem, allelúia.'
+    - psalms:
+        - 62
+      antiphon: 'Angelus ad pastóres * ait: Annúntio vobis gáudium magnum: quia natus est vobis hódie Salvátor mundi, allelúia.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Facta est cum Angelo * multitúdo cæléstis exércitus laudántium Deum, et dicéntium: Glória in excélsis Deo, et in terra pax homínibus bonæ voluntátis, allelúia.'
+  laudate:
+    antiphon: 'Párvulus fílius * hódie natus est nobis: et vocábitur Deus, Fortis, allelúia, allelúia.'
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-12-25 christmas-octave-sunday second. Named temporal feast: the app had no Vespers psalm antiphons for it
+# and fell back to the ferial/Sunday set. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Tecum princípium * in die virtútis tuæ, in splendóribus sanctórum, ex útero ante lucíferum génui te.
+    - psalms:
+        - 110
+      antiphon: 'Redemptiónem * misit Dóminus pópulo suo: mandávit in ætérnum testaméntum suum.'
+    - psalms:
+        - 111
+      antiphon: 'Exórtum est * in ténebris lumen rectis corde: miséricors, et miserátor, et justus Dóminus.'
+    - psalms:
+        - 129
+      antiphon: Apud Dóminum * misericórdia, et copiósa apud eum redémptio.
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-12-24 christmas-octave-sunday first. Named temporal feast: the app had no Vespers psalm antiphons for it
+# and fell back to the ferial/Sunday set. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Rex pacíficus * magnificátus est, cujus vultum desíderat univérsa terra.
+    - psalms:
+        - 110
+      antiphon: Magnificátus est * Rex pacíficus super omnes reges univérsæ terræ.
+    - psalms:
+        - 111
+      antiphon: Compléti sunt * dies Maríæ, ut páreret Fílium suum primogénitum.
+    - psalms:
+        - 112
+      antiphon: 'Leváte cápita vestra: * ecce appropínquat redémptio vestra.'
+
+# Nocturn 2-3, Sunday within the Octave of Christmas (temporalId
+# christmas-octave-sunday). Sourced from Tempora/Nat1-0.txt (Latin) /
+# English/Tempora/Nat1-0.txt - see christmas-octave-sunday-collect.yml's
+# own header for why this Sunday's other content (2026-08) had to be
+# sourced from a Divino Afflatu 1954 live query instead: the Monastic
+# Tridentinum 1617 rubrics rarely let this Sunday's own identity render on
+# a real date, but its underlying office (this file's own source) is real
+# and shared across both tracks. See advent-1.yml for the general sweep
+# method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Leo the Great's
+# 9th Sermon on Christmas. Responsory: Lectio4's own, a cross-reference in
+# the source to Sancti/12-25 (Christmas Day itself)'s Responsory5 ("Beáta
+# Dei Génetrix María") - resolved and transcribed here directly, same
+# pattern the post-Pentecost files used for their own cross-references.
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Luke 2:33-40, "Et réliqua") - St. Ambrose's own homily
+# (Bk. 2 on Luke ii) begins within Lectio7 itself, same pattern as the
+# Advent Sundays. Combined Lectio7's homily portion (incipit dropped) with
+# Lectio8-9, using Lectio7's own responsory - again a cross-reference, to
+# Sancti/12-25's Responsory8 ("Verbum caro factum est") - rather than the
+# inline "O Regem cæli" text this file gives at its own [Responsory8] slot
+# (that inline text belongs to the *next* Sunday's now-renumbered
+# sequence after Lectio1 was swapped for "OctNat" per this file's own
+# [Rule], not to the Lectio7-9 unit authored here).
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Leo the Great, Sermon 9 on Christmas
+      text: |-
+        Excédit quidem, dilectíssimi, multúmque superéminet humáni elóquii facultátem divini operis magnitúdo: et inde óritur difficultas fandi, unde adest rátio non tacendi. Quia in Christo Jesu Fílio Dei non solum ad divinam esséntiam, sed étiam ad humanam spectat natúram quod dictum est per prophétam: Generatiónem ejus quis enarrábit? Utrámque enim substántiam in unam convenísse persónam, nisi fides credat, sermo non explicat. Et ideo numquam materia déficit laudis, quia numquam sufficit copia laudatóris.
+
+        Gaudeámus ígitur, quod ad eloquéndum tantæ misericórdiæ sacraméntum ímpares sumus; et cum salútis nostræ altitúdinem prómere non valeamus, sentiámus nobis bonum esse, quod vincimur. Nemo enim ad cognitiónem veritátis magis propinquat, quam qui intélligit in rebus divinis, étiam si multum profíciat, semper sibi superesse quod quærat. Nam qui se ad id, in quod tendit, pervenísse præsúmit, non quæsíta réperit, sed in inquisitióne déficit.
+
+        Ne autem infirmitátis nostræ perturbemur angústiis, evangélicæ nos et prophéticæ ádjuvant voces; quibus ita accendimur, et docemur, ut nos nativitátem Dómini, qua Verbum caro factum est, non tam prætéritam recólere, quam præséntem videámur inspícere. Quod enim pastóribus pro gregum suórum custódia vigilántibus nuntiávit Angelus, étiam nostrum implévit audítum: et ideo Dominicis ovibus præsumus, quia verba divínitus édita cordis aure servámus: tamquam et in hodiérna festivitáte dicátur: Evangelizo vobis gáudium magnum, quod erit omni pópulo, quia natus est vobis hódie Salvator, qui est Christus Dóminus, in civitáte David.
+      responsory: |-
+        R. Beáta Dei Génetrix María, cujus víscera intácta pérmanent: * Hódie génuit Salvatórem sǽculi.
+        V. Beáta, quæ crédidit: quóniam perfécta sunt ómnia, quæ dicta sunt ei a Dómino.
+        R. Hódie génuit Salvatórem sǽculi.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 2:33-40
+      text: 'In illo témpore: Erat Joseph et María Mater Jesu, mirántes super his quæ dicebántur de illo. Et benedíxit illis Símeon, et dixit ad Maríam Matrem ejus: Ecce, pósitus est hic in ruínam et in resurrectiónem multórum in Israël: et in signum, cui contradicétur: et tuam ipsíus ánimam pertransíbit gládius, ut reveléntur ex multis córdibus cogitatiónes. Et erat Anna prophetíssa, fília Phánuel, de tribu Aser: hæc procésserat in diébus multis, et víxerat cum viro suo annis septem a virginitáte sua. Et hæc vídua usque ad annos octogínta quátuor: quæ non discedébat de templo, jejúniis et obsecratiónibus sérviens nocte ac die. Et hæc, ipsa hora supervéniens, confitebátur Dómino, et loquebátur de illo ómnibus, qui exspectábant redemptiónem Israël. Et ut perfecérunt ómnia secúndum legem Dómini, revérsi sunt in Galilǽam in civitátem suam Názareth. Puer autem crescébat, et confortabátur, plenus sapiéntia: et grátia Dei erat in illo.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Commentary on Luke, Book 2
+      text: |-
+        Vides úberem in omnes grátiam, Dómini generatióne diffúsam, et prophetíam incrédulis negátam esse, non justis. Ecce et Símeon prophétat, in ruínam et resurrectiónem plurimórum venísse Dóminum Jesum Christum, ut justórum, iniquorúmque mérita discérnat; et pro nostrórum qualitáte factórum, judex verus et justus aut supplícia decérnat, aut prǽmia.
+
+        Et tuam ipsíus ánimam pertransíbit gládius. Nec littera, nec historia docet, ex hac vita Mariam corporalis necis passióne migrasse. Non enim anima, sed corpus materiali gládio transverberátur. Et ideo prudéntiam Maríæ haud ignaram mysterii cæléstis osténdit. Vivum enim verbum Dei, et válidum, et acutius omni gládio acutíssimo, pénetrans usque ad divisiónem ánimæ et spíritus, artuum quoque et medullárum, cogitatiónes cordis et secreta scrutátur animórum, quia nuda et apérta sunt ómnia Dei Fílio, quem consciéntiæ secreta non fallunt.
+
+        Prophetávit ítaque Simeon, prophetáverat virgo, prophetáverat copuláta conjugio; prophétare debuit étiam vidua, ne qua aut proféssio deésset, aut sexus. Et ideo Anna et stipendiis viduitátis, et móribus talis inducitur, ut digna plane fuísse credátur, quæ Redemptórem ómnium venisse nuntiáret. Cujus mérita cum álibi descripsérimus, cum víduas hortarémur, hoc loco, quóniam ad ália properámus, non putámus iteránda.
+      responsory: |-
+        R. Verbum caro factum est, et habitávit in nobis: * Et vídimus glóriam ejus, glóriam quasi Unigéniti a Patre, plenum grátiæ et veritátis.
+        V. Omnia per ipsum facta sunt, et sine ipso factum est nihil.
+        R. Et vídimus glóriam ejus, glóriam quasi Unigéniti a Patre, plenum grátiæ et veritátis.
+      status: verified

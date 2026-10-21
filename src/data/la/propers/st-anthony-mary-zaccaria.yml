@@ -1,0 +1,74 @@
+# Read directly from web/www/horas/Latin/Sancti/07-05.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Fac nos, Dómine Deus, supereminéntem Jesu Christi sciéntiam, spíritu Pauli
+    Apóstoli, edíscere: qua beátus Antónius María mirabíliter erudítus, novas in
+    Ecclésia tua clericórum et vírginum famílias congregávit.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-anthony-mary-zaccaria has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-anthony-mary-zaccaria-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Fac nos, Dómine Deus, supereminéntem Jesu Christi sciéntiam, spíritu Pauli
+    Apóstoli, edíscere: qua beátus Antónius María mirabíliter erudítus, novas in
+    Ecclésia tua clericórum et vírginum famílias congregávit.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2-3 readings for St. Anthony Mary Zaccaria, Confessor
+# (July 5). Sourced directly from web/www/horas/Latin/Sancti/07-05.txt,
+# English/Sancti/07-05.txt. Nocturn 2: Lectio4-6 combined into one
+# reading, one continuous vita.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope, previously left
+# unauthored because horas/Latin/Sancti/07-05.txt's own Lectio7 gives
+# only the incipit ("Et réliqua"), is now authored too (isGospel: true,
+# immediately before the homily) -- the citation (Mark 10:15-21) and full
+# text are sourced from missa/Latin/Sancti/07-05.txt's own [Evangelium]
+# (the Mass Gospel and the Matins Nocturn 3 Gospel are the same
+# pericope), not guessed at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Antonius Maria Zaccaría, Cremonæ in Insubria nobili genere natus, jam a púero qua futurus esset sanctitáte porténdere visus est. Eximiárum enim in eo virtútum significatiónes mature eluxérunt, pietátis in Deum ac beátam Vírginem; insígnis præsertim in páuperes misericórdiæ; quorum inópiæ sublevandæ, vel pretiósa veste sibi detracta, haud semel præsto fuit. Humanióribus litteris in pátria excultus, Ticíni philosophíæ, Patavii medicinæ addiscendæ operam dedit; utque ómnibus vitæ integritate, ita et æquálibus acúmine ingenii facile antecelluit. Lauream adeptus ac domum reversus, ubi intelléxit se Dei mónitu ad animórum magis quam córporum morbis medéndum vocari, in sacras disciplínas percipiendas sédulo incúbuit. Interea ægrotos vísere, púeros christiana doctrina informare, júvenum cœtus pietáte excólere, ætate étiam provectos ad mores emendándos frequenter hortari non déstitit. Sacris initiatus, cum primo litáret, cælésti oborto lúmine, Angelórum coróna circúmdatus stupénti pópulo apparuísse tráditur. Exinde animárum salúti impensius consúlere, depravátis móribus summa ope obsístere curæ fuit. Ad hæc ádvenas, egénos, afflictos paterno complexus afféctu, piis alloquiis atque subsidiis recreatos ita solari, ut ejus domus miserórum perfúgium haberétur, ípseque pater pátriæ atque angelus merúerit a suis civibus appellari.
+
+        Mediolani, cum secum agitaret uberióres in rem christianam manare posse fructus, si in vinea Dómini sibi labórum socios adscísceret, re communicáta cum Bartholomæo Ferrario et Jacobo Morígia, nobilíssimis et sanctíssimis viris, sodalitátis Clericórum regulárium fundaménta jecit; quam, ob suum in Géntium Apostolum amórem, a sancto Paulo nuncupávit. Quæ, Cleménte septimo Pontifice máximo approbante et Paulo tertio confirmánte, brevi per complures regiónes propagáta est. Sanctimoniálium quoque Angelicárum socíetas ipsum Antónium Mariam parentem et auctórem hábuit. Qui tamen adeo de se submisse sentiebat, ut nullo pacto præésse suo ordini umquam volúerit. Tanta vero fuit patiéntia, ut formidolosíssimas tempestates in suos commótas constanti animo perferret; tanta caritate, ut piis adhortatiónibus religiósos viros ad Dei amórem inflammare, sacerdótes ad apostolicam vivéndi normam revocare, patrumque familias sodalítia ad bonam frugem institúere numquam intermíserit. Immo, intérdum præláta cruce per cómpita plateasque cum suis progréssus, férvida ac veheménti oratióne aberrántes improbosque hómines ad salútem redúceret.
+
+        Illud étiam memorándum, quod, in Jesum crucifixum amóre flagrans, crucis mystérium ab ómnibus, ad statum æris campani indícium, sexta quaque feria sub vésperas, recoléndum curávit. Sanctíssimum Christi nomen in suis scriptis passim usurpábat et in ore semper habebat; ejusdémque cruciatus, vere Pauli discipulus, in corpore suo præ se ferebat. In sacram Eucharistiam singulari caritate ferebátur; cujus et frequenter percipiendæ consuetúdinem instaurávit, et morem e sublimi throno publice in triduum adorandæ invexísse perhibétur. Pudicítiam adeo coluit, ut étiam in exsangui corpore, revivíscere visus, ejus amórem testarétur. Accéssere cæléstia dona éxtasis, lacrimárum, futurórum eventuum cognitiónis, scrutatiónis cordium, virtútis in humani generis hostem. Tandem, magnis labóribus ubíque exantlátis, Guastallæ quo pacis sequester accítus fuerat, gravi morbo correptus est. Cremonam adductus, inter suórum fletus et complexus piíssimæ matris, quam proxime obituram prædixit, superna Apostolórum visióne recreatus, sodalitátis suæ increménta prænuntians, tertio Nonas Julii anno millesimo quingentésimo trigesimo nono, sanctíssime obiit, annos natus sex supra trigínta.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Marc 10:15-21
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Quisquis non recéperit regnum Dei velut párvulus, non intrábit in illud. Et compléxans párvulos et impónens manus super illos, benedicébat eos. Et cum egréssus esset in viam, procúrrens quidam, genu flexo ante eum, rogábat eum: Magíster bone, quid fáciam, ut vitam ætérnam percípiam? Jesus autem dixit ei: Quid me dicis bonum? Nemo bonus, nisi unus Deus. Præcépta nosti: Ne adúlteres, ne occídas, ne furéris, ne falsum testimónium díxeris, ne fraudem féceris, honora patrem tuum et matrem. At ille respóndens, ait illi: Magíster, hæc ómnia observávi a juventúte mea. Jesus autem intúitus eum, diléxit eum et dixit ei: Unum tibi deest: vade, quæcúmque habes, vende et da paupéribus, et habébis thesáurum in cælo: et veni, séquere me.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine of Hippo, Sermon 47 (various)
+      text: |-
+        Durum vidétur et grave quod Dóminus imperávit, ut, si quis eum vult sequi ábneget seípsum; sed non est durum nec grave quod ille ímperat, qui ádjuvat ut fiat quod ímperat. Nam illud verum est quod ei dícitur in Psalmo: Propter verba labiórum tuórum ego custodívi vias duras. Quidquid enim durum est in præceptis, ut sis lene, caritas facit. Nóvimus quanta ipse amor facit. Quid autem est, Neget se? Non præsumat de se, séntiat se hóminem, et respiciat dictum propheticum: Maledictus omnis qui spem suam ponit in hómine: subdúcat se sibi sed non deorsum versus: subdúcat se sibi, ut hæreat Deo.
+
+        Quo sequendus est Dóminus? Quo iit, novimus; resurréxit enim et ascéndit in cælum: illo sequendus est. Plane desperándum non est, quia ipse promísit, non quia homo aliquid potest. Jam quare desperémus, si membra illíus cápitis sumus? Bonum est illo eum sequi; sed vidéndum est, qua. Etenim verba ista Dóminus Jesus non tunc dicebat quando a mórtuis jam resurrexerat; nondum erat passus, venturus erat ad crucem, venturus ad exhonoratiónem, ad contumelias, ad flagélla, ad spinas, ad vulnera, ad insultatiónes, oppróbria, mortem. Quasi exasperáta est via: pigrum te facis, non vis sequi: Séquere. Nam quis non velit ire ad exaltatiónem? omnes delectat celsitudo, sed humilitas gradus est.
+
+        Tolle crucem tuam, et séquere Dóminum. Crux enim nostra, quam Dóminus portari a nobis jubet, ut eum expeditíssimi sequamur, quid aliud quam mortalitátem carnis hujus significat? Ipsa enim nos cruciat, donec absorbeátur mors in victoriam. Crux ergo hæc ipsa crucifigenda est, et transfigenda est clavis timoris Dei, ne solutis et liberis membris reluctántem portare non possis; sequi enim Dóminum, nisi eam portans, omnino non vales. Nam quómodo eum sequéris, si non es ejus? Qui autem Jesu Christi sunt, ait Apóstolus, carnem suam crucifixérunt cum passiónibus et desidériis.
+      status: verified

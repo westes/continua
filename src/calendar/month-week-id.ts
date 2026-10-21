@@ -7,7 +7,7 @@
 // given date shifts every year with Easter's date, so there is no fixed
 // post-pentecost-NN <-> month-week correspondence to hard-code. See
 // hours/matins.ts's buildReadingPool, which pools this id's own authored
-// content (data/propers/nocturn-readings/month-week-<id>.yml) alongside
+// content (the nocturn-readings section of data/<lang>/propers/month-week-<id>.yml) alongside
 // the ordinary temporalId-keyed pool, same dual-key precedent as
 // propers/bible-plan.ts's Dec25-Jan13 calendar-date stretch.
 //

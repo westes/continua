@@ -1,0 +1,57 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Quad6-1.txt,
+# [Oratio 2] (its [Rule]'s "Antiphonas horas"/Feria pattern gives each hour
+# its own antiphon; Terce/Sext/None/Compline still just reuse this Lauds
+# text -- see resolve-common.ts's getDayCollect). Cross-checked live
+# against Divinum Officium (Monastic Tridentinum 1617), Lauds, real date
+# 2026-03-30 (Monday of Holy Week that year) -- confirmed this is the
+# actual Lauds/ordinary-hours collect text and wording. This day's real
+# Vespers uses a *different* forward-looking collect of its own ([Oratio
+# 3] in the source) -- now modeled separately, see
+# monday-holy-week-collect-vespers.yml (retrofitted 2026-09-19 once the
+# per-hour collect mechanism existed; previously not modeled at all).
+collect:
+  text: |
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut, qui in tot advérsis ex nostra infirmitáte defícimus; intercedénte unigéniti Fílii tui passióne respirémus:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Vespers collect ([Oratio 3] in the source), distinct from Lauds' own
+# ([Oratio 2], see monday-holy-week-collect.yml) — read from
+# web/www/horas/{Latin,English}/Tempora/Quad6-1.txt. Retrofitted
+# 2026-09-19 alongside the wider Lent-ferias campaign, closing the gap
+# monday-holy-week-collect.yml's own header already flagged (this app
+# previously had no per-hour collect-variation mechanism at all — see
+# hours/resolve-common.ts's getDayCollect).
+collect/~-vespers:
+  text: |
+    Orémus.
+    Adjuva nos, Deus, salutáris noster: et ad benefícia recolénda, quibus nos instauráre dignátus es, tríbue veníre gaudéntes.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-03-30 (Monday of Holy Week that year, no saint
+# collision). Also matches Tempora/Quad6-1.txt's own [Ant 2] (Monastic
+# form; the file's separate "(rubrica praedicatorum)" variant, "Non
+# habéres...", is a Dominican-use alternative not followed here). John
+# 13:31-32, Christ's own words at the Last Supper as read forward into
+# Monday's Gospel pericope (John 12).
+benedictus-antiphon:
+  text: Clarífica me, Pater, * apud temetípsum claritáte, quam hábui priúsquam mundus fíeret.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-03-30. Matches Tempora/Quad6-1.txt's own [Ant 3]. John
+# 19:11, Christ's answer to Pilate -- read here proleptically, as Holy
+# Week's Vespers antiphons throughout look forward to the Passion
+# narrative regardless of the day's own Gospel reading.
+magnificat-antiphon:
+  text: Non habéres * in me potestátem, nisi désuper tibi datum fuísset.
+  status: verified
+  temporal: true

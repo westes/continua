@@ -1,0 +1,224 @@
+# Advent's own Matins hymn ("Verbum supérnum, pródiens"). Live-verified
+# against both a plain Advent Sunday and a plain Advent feria
+# (2026-12-10, a Thursday with no saint of its own) — byte-identical, so
+# this season doesn't vary its Matins hymn by weekday the way the plain
+# per-annum ferial cycle does. Self-contained with its own closing
+# doxology stanza baked in (a fixed, unique ending, "Laus, honor, virtus,
+# glória... In sæculórum sǽcula" — not the shared weekday doxology).
+matins-hymn:
+  text: |-
+    Verbum supérnum, pródiens
+    A Patre olim éxiens,
+    Qui natus orbi súbvenis,
+    Cursu declívi témporis.
+
+    Illúmina nunc péctora,
+    Tuóque amóre cóncrema;
+    Audíto ut præcónio
+    Sint pulsa tandem lúbrica.
+
+    Judéxque cum post áderis
+    Rimári facta péctoris,
+    Reddens vicem pro ábditis,
+    Justísque regnum pro bonis.
+
+    Non demum arctémur malis
+    Pro qualitáte críminis;
+    Sed cum beátis cómpotes
+    Simus perénnes cælibes.
+
+    Laus, honor, virtus, glória,
+    Deo Patri, et Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula. Amen.
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[Adv Laudes_]",
+# Psalterium/Special/Major Special.txt). Not live-query-verified (see
+# TODO.md) — read directly from source.
+lauds-capitulum:
+  text: 'Veníte, et ascendámus ad montem Dómini, et ad domum Dei Jacob, et docébit nos vias suas, et ambulábimus in sémitis ejus: quia de Sion exíbit lex, et verbum Dómini de Jerúsalem.'
+  citation: Isa 2:3
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Adv Laudes]",
+# resolving to "[HymnusM Adv Laudes_]" on the non-Cistercian branch —
+# Psalterium/Special/Major Special.txt) — full separate Monastic text
+# ("Vox clara ecce íntonat"), not a substitution against the Roman "En
+# clara vox redárguit". English is the familiar John Mason Neale
+# translation ("Hark! a herald voice is calling"), traditionally used for
+# both this hymn's Roman and Monastic/Sarum recensions — a closer match
+# than the Advent Vespers hymn's English got. Not live-query-verified (see
+# TODO.md).
+lauds-hymn:
+  text: |
+    Vox clara ecce íntonat,
+    Obscúra quæque íncrepat:
+    Pellántur éminus sómnia;
+    Ab æthre Christus prómicat.
+
+    Mens jam resúrgat tórpida
+    Quæ sorde exstat sáucia;
+    Sidus refúlget jam novum,
+    Ut tollat omne nóxium.
+
+    E sursum Agnus míttitur
+    Laxáre gratis débitum:
+    Omnes pro indulgéntia
+    Vocem demus cum lácrimis,
+
+    Secúndo ut cum fúlserit,
+    Mundúmque horror cínxerit,
+    Non pro reátu púniat,
+    Sed nos pius tunc prótegat.
+
+    * Laus, honor, virtus, glória,
+    Deo Patri, et Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula.
+    Amen.
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block ("[Responsory Adv
+# Laudes]", Psalterium/Special/Major Special.txt). Not live-query-verified
+# (see TODO.md) — read directly from source.
+lauds-responsory:
+  text: |
+    R.br. Veni ad liberándum nos * Dómine Deus virtútum.
+    R. Veni ad liberándum nos * Dómine Deus virtútum.
+    V. Osténde fáciem tuam et salvi érimus.
+    R. Dómine Deus virtútum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Veni ad liberándum nos * Dómine Deus virtútum.
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block ("[Adv Versum 2_]",
+# Psalterium/Special/Major Special.txt). Not live-query-verified (see
+# TODO.md) — read directly from source.
+lauds-versicle:
+  text: |
+    V. Vox clamántis in desérto: Paráte viam Dómini.
+    R. Rectas fácite sémitas ejus.
+  status: draft
+
+# Verified against Divinum Officium (Latin/English "Prima Special.txt").
+# Seasonal variant of prime-chapter-responsory-per-annum.yml — same fixed
+# responsory, with just the "V." verse line swapped for the season.
+prime-chapter/responsory-adv:
+  text: |
+    R.br. Christe, Fili Dei vivi, * Miserére nobis.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+    V. Qui ventúrus es in mundum.
+    R. Miserére nobis.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+  status: verified
+
+# New file, 2026-09-15: closes the seasonal-variant gap
+# `prime-lectio-per-annum.yml`'s own header already flagged, wrongly
+# attributed to "milestone 4" (that blocker was stale -- see the dated
+# TODO.md entry this sweep came out of; calendar/temporal.ts's resolveSeason
+# has been a complete, real implementation for a while). Sourced directly
+# from web/www/horas/Latin/Psalterium/Special/Prima Special.txt's own [Adv]
+# tag and its English counterpart.
+prime-lectio/adv:
+  text: 'Dómine, miserére nostri: te enim exspectávimus: esto brácchium nostrum in mane, et salus nostra in témpore tribulatiónis.'
+  citation: Isa 33:2
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[Adv Vespera]",
+# Psalterium/Special/Major Special.txt). Not live-query-verified (see
+# TODO.md) — read directly from source.
+vespers-capitulum:
+  text: Non auferétur sceptrum de Juda, et dux de fémore ejus, donec véniat qui mitténdus est; et ipse erit exspectátio géntium.
+  citation: Gen 49:10
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Adv Vespera]",
+# Psalterium/Special/Major Special.txt) — full separate Monastic text
+# ("Cónditor alme síderum", the older/more familiar form of this hymn),
+# not a substitution against the Roman "Creátor alme síderum". English is
+# the given translation of the *Roman* text ("Bright builder of the
+# heavenly poles... Jesus, Redeemer of mankind"), which differs from the
+# Monastic Latin in specific imagery (stanza 2 especially — "lest the
+# world perish by the deceit of the demon" vs. "grieving that the world
+# would perish by the ruin of death"), not just word order — kept anyway
+# as the closest available English, `draft`. Not live-query-verified (see
+# TODO.md).
+vespers-hymn:
+  text: |
+    Cónditor alme síderum,
+    Ætérna lux credéntium,
+    Christe, Redémptor ómnium,
+    Exáudi preces súpplicum.
+
+    Qui cóndolens intéritu
+    Mortis períre sǽculum,
+    Salvásti mundum lánguidum,
+    Donans reis remédium,
+
+    Vergénte mundi véspere,
+    Uti sponsus de thálamo,
+    Egréssus honestíssima
+    Vírginis matris cláusula.
+
+    Cujus forti poténtiæ
+    Genu curvántur ómnia;
+    Cæléstia, terréstria
+    Nutu faténtur súbdita.
+
+    Te deprecámur, hágie,
+    Ventúre judex sǽculi,
+    Consérva nos in témpore
+    Hostis a telo pérfidi.
+
+    * Laus, honor, virtus, glória,
+    Deo Patri, et Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula.
+    Amen.
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block ("[Responsory Adv
+# Vespera_]", the non-Cistercian branch "[Responsory Adv Vespera]"
+# resolves to — Psalterium/Special/Major Special.txt). Not
+# live-query-verified (see TODO.md) — read directly from source.
+vespers-responsory:
+  text: |
+    R.br. Osténde nobis Dómine * Misericórdiam tuam.
+    R. Osténde nobis Dómine * Misericórdiam tuam.
+    V. Et salutáre tuum da nobis.
+    R. Misericórdiam tuam.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Osténde nobis Dómine * Misericórdiam tuam.
+  status: draft
+
+# The versicle right before the Magnificat, in Advent — the famous
+# "Rorate cæli". Sourced from Divinum Officium's Monastic block ("[Adv
+# Versum 3]", Psalterium/Special/Major Special.txt). Not
+# live-query-verified (see TODO.md) — read directly from source.
+vespers-versicle:
+  text: |
+    V. Roráte, cæli, désuper, et nubes pluant justum.
+    R. Aperiátur terra, et gérminet Salvatórem.
+  status: draft
+
+# Verified against Divinum Officium (Latin/English Mariaant.txt, [Advent]).
+# Same antiphon text as the Christmastide form (marian-antiphon-alma-
+# redemptoris-nativity.yml) but a different versicle and collect — Advent
+# looks forward to the Incarnation, Christmastide back on it having happened.
+marian-antiphon/alma-redemptoris-~:
+  text: |
+    Alma Redemptóris Mater, quæ pérvia cæli
+    Porta manes, et stella maris, succúrre cadénti,
+    Súrgere qui curat, pópulo: tu quæ genuísti,
+    Natúra miránte, tuum sanctum Genitórem,
+    Virgo prius ac postérius, Gabriélis ab ore
+    Sumens illud Ave, peccatórum miserére.
+
+    V. Ángelus Dómini nuntiávit Maríæ.
+    R. Et concépit de Spíritu Sancto.
+
+    Orémus.
+    Grátiam tuam, quǽsumus, Dómine, méntibus nostris infúnde: ut, qui, Ángelo nuntiánte, Christi Fílii tui incarnatiónem cognóvimus; per passiónem ejus et crucem, ad resurrectiónis glóriam perducámur. Per eúmdem Christum Dóminum nostrum. Amen.
+  status: verified

@@ -1,0 +1,53 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-09-30).
+collect:
+  text: |
+    Orémus.
+    Deus, qui Ecclésiæ tuæ in exponéndis sacris Scriptúris beátum Hierónymum, Confessórem tuum, Doctórem máximum providére dignátus es: præsta, quǽsumus; ut, ejus suffragántibus méritis, quod ore simul et ópere dócuit, te adjuvánte, exercére valeámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-jerome-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor-not-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-jerome-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui Ecclésiæ tuæ in exponéndis sacris Scriptúris beátum Hierónymum, Confessórem tuum, Doctórem máximum providére dignátus es: præsta, quǽsumus; ut, ejus suffragántibus méritis, quod ore simul et ópere dócuit, te adjuvánte, exercére valeámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Jerome's own day (2026-09-30). The Benedictus antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Jerome, Priest, Confessor, Doctor
+# (Sep 30) — SanctiM/09-30.txt inherits the whole day (`@Sancti/09-30`)
+# with no Nocturn 2/3 override, so this saint's own vita is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/09-30.txt, English/Sancti/09-30.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Hieronymus, Eusebii fílius, Stridone in Dalmatia, Constantio imperatóre, natus, Romæ adoléscens est baptizatus, et in liberálibus disciplinis a Donato et aliis viris doctíssimis eruditus. Tum discéndi studio Gálliam peragrávit; ubi pios aliquot et in divinis litteris eruditos viros coluit, multosque sacros libros sua manu descripsit. Mox se in Græciam cónferens, philosophía et eloquéntia instructus, summórum theologórum consuetúdine flóruit. In primis vero Gregório Nazianzeno Constantinopoli operam dedit; quo doctore se sacras litteras didicisse profitétur. Tum religiónis causa visit Christi Dómini incunábula, totamque lustrávit Palæstinam; quam peregrinatiónem, adhíbitis Hebræórum eruditíssimis, ad sacræ Scripturæ intelligéntiam sibi multum profuísse testátur.
+
+        Deínde secessit in vastam Syriæ solitúdinem; ubi quadriennium in lectióne divinórum librórum cælestísque beatitúdinis contemplatióne consumpsit, assidua se abstinéntia, vi lacrimárum et corporis afflictatióne discrucians. Présbyter a Paulino episcopo Antiochíæ factus, Romam de controversiis quorúmdam episcopórum cum Paulino et Epiphanio ad Dámasum Pontificem profectus, ejus ecclesiásticis epistolis scribéndis adjútor fuit. Verum, cum prístinæ solitúdinis desidério tenerétur, in Palæstinam reversus, Bethlehem ad Christi Dómini præsepe, in monasterio quod a Paula Romana exstructum erat, cælestem quamdam vitæ ratiónem instituit; et, quamquam varie morbis doloribúsque tentarétur, tamen corporis incommoda piis labóribus et perpetua lectióne ac scriptióne superabat.
+
+        Tamquam ad oraculum, ex ómnibus orbis terræ partibus, ad ipsum divinæ Scripturæ quæstiónes explicandæ referebántur. Illum Dámasus Pontifex, illum sanctus Augustinus de locis Scripturæ difficillimis sæpe consuluit, propter ejus singularem doctrinam, et linguæ non solum Latinæ et Græcæ, sed Hebráicæ étiam et Chaldáicæ, intelligéntiam; et quod omnes pene scriptores, ejusdem Augustíni testimonio, légerat. Hæreticos acerrimis scriptis exagitávit; piórum et catholicórum patrocinium semper suscépit. Vetus Testaméntum ex Hebræo convértit; novum, jussu Dámasi, Græcæ fidei réddidit, magna étiam ex parte explicávit. Multa præterea Latine réddidit scripta doctórum virórum, et ipse aliis proprii ingenii monuméntis christianam disciplínam illustrávit. Qui, ad summam senectútem perveniens, sanctitáte et doctrina illustris, Honorio imperatóre, migrávit in cælum. Cujus corpus, ad Bethlehem sepúltum, póstea Romam in basilicam sanctæ Maríæ ad Præsepe translátum est.
+      status: verified

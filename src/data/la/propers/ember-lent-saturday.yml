@@ -1,0 +1,68 @@
+# Read directly from web/www/horas/Latin/Tempora/Quad1-6.txt's own
+# [Oratio 2] and its English counterpart. Ember Saturday in Lent gives
+# only one collect in the source (no [Oratio 3]), unlike Wednesday/
+# Friday's own two -- see ember-lent-wednesday-collect.yml's comment for
+# the general split-collect background, which doesn't apply here.
+collect:
+  text: |
+    Orémus.
+    Pópulum tuum, quǽsumus, Dómine, propítius réspice: atque ab eo flagélla tuæ iracúndiæ cleménter avérte.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad1-6.txt's own
+# [Ant 2] and its English counterpart, echoing Lectio1's Gospel line
+# (Matt 17:1-2).
+benedictus-antiphon:
+  text: Assúmpsit Jesus * discípulos suos, et ascéndit in montem, et transfigurátus est ante eos.
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Lent Ember Saturday (Sabbato Quattuor
+# Temporum Quadragesimæ) — Gospel pericope (Matt 17:1-9, the
+# Transfiguration) sourced from web/www/missa/Latin/Tempora/Quad2-0.txt
+# (Latin/Tempora/Quad1-6.txt's own [Evangelium] is itself a bare
+# `@Tempora/Quad2-0:Evangelium` cross-reference — the 2nd Sunday of
+# Lent's own Missale Gospel, reused verbatim for this day) and
+# missa/English/Tempora/Quad1-6.txt (which gives the full pericope
+# directly, no cross-reference needed on the English side); homily
+# sourced from horas/Latin/Tempora/Quad1-6.txt and horas/English/
+# Tempora/Quad1-6.txt. No Monastic-track override exists — Latin/
+# TemporaM/Quad1-6.txt is a bare `@Tempora/Quad1-6` pass-through (plus a
+# Cistercian-only extra responsory, not used here).
+#
+# Recombined into one reading, same convention as ember-lent-wednesday.yml
+# (see ember-september-friday.yml's own doc comment for the fuller
+# rationale): Pope St. Leo's homily is one continuous text on the
+# Transfiguration, split only to fill the fixed 3-lesson slot count.
+# Responsory: Lectio1/2's own (Responsory1/2) are bare cross-references
+# to the 1st Sunday of Lent's own generic Nocturn responsories
+# (@Tempora/Quad1-0:Responsory7/8) — Lectio3's own Responsory3 is instead
+# a deliberate cross-reference to ember-lent-wednesday's own genuinely
+# proper text (@Tempora/Quad1-3:Responsory3, "Abscóndite eleemósynam..."),
+# the source's own explicit choice to reuse Wednesday's proper responsory
+# here rather than a generic Sunday one — used as-is, same text as that
+# sibling file.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Matth 17:1-9
+      text: 'In illo témpore: Assúmpsit Jesus Petrum, et Jacóbum, et Joánnem fratrem eius, et duxit illos in montem excélsum seórsum: et transfigurátus est ante eos. Et resplénduit fácies ejus sicut sol: vestiménta autem ejus facta sunt alba sicut nix. Et ecce, apparuérunt illis Móyses et Elías cum eo loquéntes. Respóndens autem Petrus, dixit ad Jesum: Dómine, bonum est nos hic esse: si vis, faciámus hic tria tabernácula, tibi unum, Móysi unum et Elíæ unum. Adhuc eo loquénte, ecce, nubes lúcida obumbrávit eos. Et ecce vox de nube, dicens: Hic est Fílius meus diléctus, in quo mihi bene complácui: ipsum audíte. Et audiéntes discípuli, cecidérunt in fáciem suam, et timuérunt valde. Et accéssit Jesus, et tétigit eos, dixítque eis: Súrgite, et nolíte timére. Levántes autem óculos suos, néminem vidérunt nisi solum Jesum. Et descendéntibus illis de monte, præcépit eis Jesus, dicens: Némini dixéritis visiónem, donec Fílius hóminis a mórtuis resúrgat.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: Pope St. Leo the Great, homily on the Transfiguration of the Lord
+      text: |-
+        Evangélica lectio, dilectíssimi, quæ per aures córporis interiórem méntium nostrárum pulsávit audítum, ad magni sacraménti nos intellegéntiam vocat: quam, aspiránte grátia Dei, facílius assequémur, si consideratiónem nostram ad ea, quæ paulo supérius sunt narráta, referámus. Salvátor enim humáni géneris Jesus Christus, condens eam fidem, quæ et ímpios ad justítiam, et mórtuos révocat ad vitam, ad hoc discípulos suos doctrínæ mónitis, et óperum miráculis imbuébat, ut idem Christus et Unigénitus Dei, et hóminis Fílius crederétur. Nam unum horum sine áltero non próderat ad salútem: et æquális erat perículi, Dóminum Jesum Christum aut Deum tantúmmodo sine hómine, aut sine Deo solum hóminem credidísse: cum utrúmque esset páriter confiténdum: quia sicut Deo vera humánitas, ita hómini ínerat vera divínitas.
+
+        Ad confírmandam ergo hujus fídei salubérrimam cognitiónem interrogáverat discípulos suos Dóminus, inter divérsas aliórum opiniónes quid ipsi de eo créderent, quidve sentírent. Ubi Petrus Apóstolus, per revelatiónem summi Patris corpórea súperans, et humána transcéndens, vidit mentis óculis Fílium Dei vivi, et conféssus est glóriam Deitátis; quia non ad solam respéxit substántiam carnis et sánguinis: tantúmque in hac fídei sublimitáte complácuit, ut beatitúdinis felicitáte donátus, sacram inviolábilis petræ accíperet firmitátem: super quam fundáta Ecclésia, portis ínferi et mortis légibus prævaléret: nec in solvéndis aut ligándis quorumcúmque causis áliud ratum esset in cælis, quam quod Petri sedísset arbítrio.
+
+        Hæc autem, dilectíssimi, laudátæ intellegéntiæ celsitúdo instruénda erat de inferióris substántiæ sacraménto: ne apostólica fides ad glóriam confiténdæ in Christo Deitátis evécta, infirmitátis nostræ receptiónem indígnam impassíbili Deo atque incóngruam judicáret: et ita jam in Christo humánam créderet glorificátam esse natúram, ut nec supplício posset áffici, nec morte dissólvi. Et ídeo dicénte Dómino, quod oportéret eum ire Jerosólymam, et multa pati a senióribus et scribis, ac princípibus sacerdótum, et occídi, et tértia die resúrgere: cum beátus Petrus, qui supérno illustrátus lúmine, de ardentíssima Fílii Dei confessióne fervébat, contumélias illusiónum et crudelíssimæ mortis oppróbrium religióso, ut putábat, et líbero fastídio respuísset; benígna a Jesu increpatióne corréptus, et ad cupiditátem participándæ cum eo passiónis animátus est.
+      responsory: |-
+        R. Abscóndite eleemósynam in sinu páuperum, et ipsa orábit pro vobis ad Dóminum: * Quia sicut aqua extínguit ignem, ita eleemósyna extínguit peccátum.
+        V. Date eleemósynam, et ecce ómnia munda sunt vobis.
+        R. Quia sicut aqua extínguit ignem, ita eleemósyna extínguit peccátum.
+      status: verified

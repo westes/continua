@@ -1,0 +1,166 @@
+collect:
+  text: |
+    Let us pray.
+    O God, Who didst use thine holy Apostles Simon and Jude to make known unto us thy Name, grant unto us so to profit by their doctrine as to do honour to their everlasting glory, and so to honour that glory as to gain profit to ourselves.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+commemoration:
+  text: |
+    Ant. Ye who have left all things, and have followed me, shall receive an hundredfold, and shall possess life everlasting.
+    V. They have declared the works of God:
+    R. And have wisely considered of his doings.
+    Let us pray.
+    O God, Who didst use thine holy Apostles Simon and Jude to make known unto us thy Name, grant unto us so to profit by their doctrine as to do honour to their everlasting glory, and so to honour that glory as to gain profit to ourselves.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: draft
+
+lauds-capitulum:
+  text: 'Brothers: Now therefore you are no more strangers and foreigners; but you are fellow citizens with the saints, and the domestics of God, built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone.'
+  citation: Eph 2:19-20
+  status: verified
+
+lauds-hymn:
+  text: |
+    Now let the earth with joy resound,
+    And heaven the chant re-echo round;
+    Nor heaven nor earth too high can raise
+    The great Apostles' glorious praise.
+
+    O ye who, throned in glory dread,
+    Shall judge the living and the dead,
+    Lights of the world forevermore!
+    To you the suppliant prayer we pour.
+
+    Ye close the sacred gates on high;
+    At your command apart they fly:
+    Oh! loose for us the guilty chain
+    We strive to break, and strive in vain.
+
+    Sickness and health your voice obey;
+    At your command they go or stay:
+    From sin's disease our souls restore;
+    In good confirm us more and more.
+
+    So when the world is at its end,
+    And Christ to judgement shall descend,
+    May we be called those joys to see
+    Prepared from all eternity.
+
+    Praise to the Father, with the Son,
+    And Holy Spirit, Three in One;
+    As ever was in ages past,
+    And so shall be while ages last. Amen.
+  status: verified
+
+lauds-responsory:
+  text: |
+    R.br. Their sound hath gone * forth into all the earth.
+    R. Their sound hath gone * forth into all the earth.
+    V. And their words unto the ends of the world.
+    R. Forth into all the earth.
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. Their sound hath gone * forth into all the earth.
+  status: verified
+
+lauds-versicle:
+  text: |-
+    V. They declared the works of God.
+    R. And understood his doings.
+  status: verified
+
+vespers-hymn:
+  text: |
+    Now let the earth with joy resound,
+    And heaven the chant re-echo round;
+    Nor heaven nor earth too high can raise
+    The great Apostles' glorious praise.
+
+    O ye who, throned in glory dread,
+    Shall judge the living and the dead,
+    Lights of the world forevermore!
+    To you the suppliant prayer we pour.
+
+    Ye close the sacred gates on high;
+    At your command apart they fly:
+    Oh! loose for us the guilty chain
+    We strive to break, and strive in vain.
+
+    Sickness and health your voice obey;
+    At your command they go or stay:
+    From sin's disease our souls restore;
+    In good confirm us more and more.
+
+    So when the world is at its end,
+    And Christ to judgement shall descend,
+    May we be called those joys to see
+    Prepared from all eternity.
+
+    Praise to the Father, with the Son,
+    And Holy Spirit, Three in One;
+    As ever was in ages past,
+    And so shall be while ages last.
+    Amen.
+  status: verified
+
+vespers-responsory:
+  text: |
+    R.br. Thou shalt make them princes * over all the earth.
+    R. Thou shalt make them princes * over all the earth.
+    V. They shall remember thy name, O Lord.
+    R. All over the earth.
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. Thou shalt make them princes * over all the earth.
+  status: verified
+
+vespers-versicle:
+  text: |-
+    V. They declared the works of God.
+    R. And understood his doings.
+  status: verified
+
+vespers-versicle/~-first:
+  text: |
+    V. Their sound hath gone forth into all the earth:
+    R. And their words unto the ends of the world.
+  status: verified
+
+benedictus-antiphon:
+  text: Ye who have left all things, and have followed me, shall receive an hundredfold, and shall possess life everlasting.
+  status: draft
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: This is my commandment * that you love one another, as I have loved you.
+    - psalms:
+        - 99
+      antiphon: Greater love than this no man hath, * that a man lay down his life for his friends.
+    - psalms:
+        - 62
+      antiphon: You are my friends * if you do the things that I command you, said the Lord.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Blessed are the peacemakers * the clean of heart, they shall see God.
+  laudate:
+    antiphon: In your patience * you shall possess your souls.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Simon the Canaanite, called also Zelotes, went through Egypt preaching the Gospel, whileas the like was done in Mesopotamia by Thaddaeus, called also in the Gospel Judas the brother of James, and the writer of one of the Catholic Epistles. They met together afterwards in Persia, where they begat countless children in Jesus Christ, spread the faith far and wide in those lands, amid raging heathens, and glorified together by their teaching and miracles, and, in the end, by a glorious martyrdom, the most holy name of Jesus Christ.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: John 15:17-25
+      text: 'At that time, Jesus said to His disciples, "These things I command you, that you may love one another. If the world hates you, know that it has hated Me before you. If you were of the world, the world would love what is its own. But because you are not of the world, but I have chosen you out of the world, therefore the world hates you. Remember the word that I have spoken to you: No servant is greater than his master. If they persecuted Me, they will persecute you also; if they have kept My word, they will keep yours also. But all these things they will do to you for My name''s sake, because they do not know Him Who sent Me. If I had not come and spoken to them, they would have no sin. But now they have no excuse for their sin. He who hates Me hates My Father also. If I had not done among them works such as no one else has done, they would have no sin. But now they have seen, and have hated both Me and My Father; but that the word written in their Law may be fulfilled, ''They have hated Me without cause.''"'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Tract 87 on John (on John 15:17-25)
+      text: 'In the reading from the Gospel, the last before this, the Lord had said: Ye have not chosen Me, but I have chosen you, and ordained you, that ye should go, and bring forth fruit, and that your fruit should remain; that whatsoever ye shall ask of the Father in My Name, He may give it you. And here He saith: These things I command you, that ye love one another. And by this it is that we must understand what fruit from us it is, whereof He saith: I have chosen, that ye should go, and bring forth fruit, and that your fruit should remain, and so the words added: That whatsoever ye shall ask of the Father in My Name, He may give it you. He will give unto us when we love one another, since this mutual love is itself the gift of Him Who hath chosen us when as yet we were fruitless, since it hath not been we who have chosen Him, but He Who hath chosen us, and ordained us, that we should go, and bring forth fruit, that is to say, should love one another.'
+      status: verified

@@ -1,0 +1,49 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08.
+# Pulled from the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt + M1617.txt, own title
+# "S. Chrysogoni Martyris") and its own source file, not the merged per-date
+# files those tables' fileref points at directly -- see TODO.md.
+collect:
+  text: |
+    Orémus.
+    Adésto, Dómine, supplicatiónibus nostris: ut, qui ex iniquitáte nostra reos nos esse cognóscimus, beáti Chrysógoni Mártyris tui intercessióne liberémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-martyr (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-chrysogonus has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-chrysogonus-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Adésto, Dómine, supplicatiónibus nostris: ut, qui ex iniquitáte nostra reos nos esse cognóscimus, beáti Chrysógoni Mártyris tui intercessióne liberémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Chrysogonus, Martyr (Nov 24). No
+# genuine SanctiM match: the correct Tridentine file is the suffixed
+# `Sancti/11-24o.txt` (the plain `Sancti/11-24.txt` is St. John of the
+# Cross instead), and the only SanctiM file for this date bases
+# `@Sancti/11-24` (John of the Cross, not Chrysogonus) — a missed
+# pre-1955-pool candidate rather than a genuine SanctiM case (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/11-24o.txt, English/Sancti/11-24o.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Chrysógonus, Diocletiáno imperatóre, Romæ inclusus in carcere, ibi biennium sanctæ Anastasiæ facultátibus vixit; quam etiam, afflictam propter Christum a viro suo Publio, proptereáque a suis oratiónibus per litteras auxílium postulántem, mútuis epistolis est consolatus. Sed, cum imperátor Romam scripsísset ut, reliquis Christiánis qui in vinculis essent interfectis, Chrysógonus Aquilejam ad se mitterétur, eo perductus est. Cui imperátor: Accersívi, inquit, te, Chrysógone, ut honóribus augeam, si modo induxeris ánimum deos cólere. At ille: Ego eum, qui vere est Deus, mente et oratióne véneror; deos autem, qui nihil sunt nisi dæmonum simulacra, odi et éxsecror. Quo responso excandéscens imperátor, ad Aquas Gradatas eum secúri pércuti jubet octavo Kalendas Decembris. Cujus corpus, projectum in mare, paulo post in littore invéntum, Zóilus presbyter in suis ædibus sepelívit.'
+      status: verified

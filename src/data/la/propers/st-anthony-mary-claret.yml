@@ -1,0 +1,33 @@
+# Read from the reference engine: web/www/horas/Latin/Sancti/10-23r.txt [Oratio];
+# English from English/Sancti/10-23r.txt.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátum Antónium Maríam Confessórem tuum atque Pontíficem, apostólicis virtútibus sublimásti, et per eum novas in Ecclésia clericórum ac vírginum famílias collegísti: concéde, quǽsumus; ut, ejus dirigéntibus mónitis ac suffragántibus méritis, animárum salútem quǽrere júgiter studeámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# No proper antiphon of his own -- standard de-Communi text and versicle for
+# common-of-a-confessor-bishop; collect is the saint's own (collect-st-anthony-mary-claret.yml). Not
+# independently live-verified for this category, so marked draft.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui beátum Antónium Maríam Confessórem tuum atque Pontíficem, apostólicis virtútibus sublimásti, et per eum novas in Ecclésia clericórum ac vírginum famílias collegísti: concéde, quǽsumus; ut, ejus dirigéntibus mónitis ac suffragántibus méritis, animárum salútem quǽrere júgiter studeámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Anthony Mary Claret, Bishop and Confessor. Sourced directly from
+# web/www/horas/Latin/Sancti/10-23r.txt, English/Sancti/10-23r.txt.
+# single lesson (Lectio94), one continuous account.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Antónius María Claret, Salléntii in Hispánia, piis honestísque paréntibus natus, adoléscens textóriam artem exércuit, sed dein, sacerdótio auctus, primum parœciále ministérium excóluit, póstea vero Romam venit ut a Propagándæ Fídei Congregatióne ad éxteras missiónes mitterétur. Sed, Deo disponénte, Hispániam revérsus, missionárius apostólicus Cataláuniam, et Fortunátas Insulas peragrávit. Bonórum librórum scriptor fecúndus, Congregatiónem quoque Filiórum Immaculáti Cordis Maríæ fundávit. Archiepiscopáli sedi Sancti Jacóbi in Cuba præféctus, zelántis Pastóris virtútibus mire effúlsit; seminárium restítuit, doctrínam et disciplínam clericórum promóvit, ópera sociália cóndidit, pro christiána filiárum institutióne Soróres Docéntes a María Immaculáta instítuit. Matríti demum accersítus, ut Hispaniárum Regínæ a confessiónibus et in gravíssimis ecclesiásticis negótiis a consíliis esset, austeritátis omniúmque virtútum exímium prǽbuit exémplar. In Vaticáno Concílio Románi Pontíficis infallibilitátem strénue deféndit. Devotiónem erga Sanctíssimum Sacraméntum et Cor Maríæ Immaculátum ejúsque Rosárium mirífice propagávit. Tandem, apud Fontem Frígidum, in Gállia, exsul móritur, anno millésimo octingentésimo septuagésimo. Quem, miráculis clarum, Pius Papa undécimus Beatórum, Pius vero duodécimus Sanctórum fastis adscrípsit.
+      status: verified

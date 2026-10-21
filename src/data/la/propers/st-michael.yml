@@ -1,0 +1,267 @@
+# Matins hymn for St. Michael's Apparition and the whole Angel family
+# (Guardian Angels, St. Michael's own Sep 29 feast, St. Gabriel, St.
+# Raphael) -- confirmed byte-identical to the Vespers hymn via
+# SanctiM/05-08.txt's own [HymnusM Matutinum] `@:HymnusM Vespera`
+# cross-reference, live-verified 2026-05-08 (Monastic Tridentinum 1617).
+# Same Guardian-Angels/Archangels proper-content-reuse finding as this
+# session's earlier Lauds/Vespers pass -- no `common-of-an-angel`
+# category exists in the source at all.
+matins-hymn:
+  text: |
+    Tibi Christe splendor Patris,
+    Vita, virtus córdium,
+    In conspéctu Angelórum,
+    Votis, voce psállimus:
+    Alternántes concrepándo
+    Melos damus vócibus.
+
+    Collaudámus venerántes
+    Omnes cæli mílites,
+    Sed præcípue Primátem
+    Cæléstis exércitus:
+    Michaélem in virtúte
+    Conteréntem zábulum.
+
+    Quo custóde procul pelle,
+    Rex Christe piíssime,
+    Omne nefas inimíci:
+    Mundo corde et córpore,
+    Paradíso redde tuo
+    Nos sola cleméntia.
+
+    Glóriam Patri melódis
+    Personémus vócibus,
+    Glóriam Christo canámus,
+    Glóriam Paráclito,
+    Qui trinus et unus Deus
+    Exstat ante sǽcula.
+    Amen.
+  status: verified
+
+# Sourced from Sancti/09-29.txt's [Invit] block (cross-referenced from
+# Sancti/05-08.txt). Identical text to matins-invitatory-apparition-of-
+# st-michael.yml but without the (Allelúia.) suffix: Sept 29 never falls
+# in Paschaltide, so the alleluia appendix used for May 8 is always absent.
+matins-invitatory:
+  text: Regem Archangelórum Dóminum, * Veníte, adorémus.
+  status: verified
+
+# Sept 29 (St. Michael, Dedication of the Basilica): engine Lauds render
+# (Monastic Tridentinum 1617, command=prayLaudes, 2026-09-29). Unlike the
+# Apparition's own (lauds-responsory-apparition-of-st-michael.yml), no Alleluia.
+lauds-responsory:
+  text: |
+    R.br. In conspéctu Angelórum * Psallam tibi, Deus meus.
+    R. In conspéctu Angelórum * Psallam tibi, Deus meus.
+    V. Adorábo ad templum sanctum tuum, et confitébor nómini tuo.
+    R. Psallam tibi, Deus meus.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. In conspéctu Angelórum * Psallam tibi, Deus meus.
+  status: verified
+
+# Sept 29 engine Lauds render (no Alleluia, unlike the Apparition's).
+lauds-versicle:
+  text: |
+    V. Stetit Angelus juxta aram templi.
+    R. Habens thuríbulum áureum in manu sua.
+  status: verified
+
+# Sept 29 engine Vespers render (no Alleluia, unlike the Apparition's).
+vespers-responsory:
+  text: |
+    R.br. Ascéndit fumus arómatum * In conspéctu Dómini.
+    R. Ascéndit fumus arómatum * In conspéctu Dómini.
+    V. De manu Angeli.
+    R. In conspéctu Dómini.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ascéndit fumus arómatum * In conspéctu Dómini.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 09-29
+# st-michael (new saint-level second). See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle:
+  text: |
+    V. In conspéctu Angelórum psallam tibi, Deus meus.
+    R. Adorábo ad templum sanctum tuum, et confitébor nómini tuo.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 09-29
+# st-michael (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Stetit Angelus juxta aram templi.
+    R. Habens thuríbulum áureum in manu sua.
+  status: verified
+
+# Transcribed from the reference engine's own source files (Latin:
+# web/www/horas/Latin/Sancti/09-29.txt + SanctiM/09-29.txt, English:
+# web/www/horas/English/Sancti/09-29.txt), Monastic Tridentinum 1617
+# rubric. Companion file to ../apparition-of-st-michael.yml — see that
+# file's own header for the "Common-of-an-Angel doesn't exist" context.
+#
+# **Correction to this saint's own calendar-file comment** (`src/data/
+# calendar/saints/st-michael.yml`, which says the two feasts' content is
+# "word-for-word identical" and that only the *collect* needed checking):
+# that claim holds for the Oratio (confirmed — 09-29.txt has no [Oratio]
+# block), but Matins psalmody is NOT shared — 09-29.txt supplies its own
+# 9 proper antiphons. Only the Versum blocks fall back to Apparition's.
+#
+# Monastic structure (SanctiM/09-29.txt): 12 lectiones → 6+6+3
+# (N1 = Ps 8,10,14,18,23,33; N2 = Ps 89,95,96,97,98,102; N3 = canticles
+# Isa 33:2-10, Isa 33:13-18, Sir 36:14-19). N2 is composed from
+# Sancti/09-29 lines 7-9 interleaved with 3 [AntMatutinumM] antiphons;
+# the line-7 psalm 95 antiphon ("Ángelus Archángelus...") retains its
+# own built-in "allelúia, allelúia" as fixed text, not a seasonal add.
+#
+# Per this app's own established note (`hours/matins.ts`'s
+# `getMatinsSaintOverride`/`getMatinsPsalmodyOverride`, keyed off the
+# day's own resolved winner id, not the `propers` field), this file is
+# required even though `st-michael.yml`'s own comment records that this
+# feast's real rank (Duplex I. classis, "In dedicatione S. Michaëlis
+# Archangelis") has never won outright against a stronger day in any of
+# the 6 years spot-checked live — so this content may currently be
+# unreachable through the app's actual calendar resolution, but is
+# authored for completeness/correctness rather than left as a silent gap.
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 8
+        antiphon: Concússum est mare, * et contrémuit terra, ubi Archángelus Míchaël descendébat de cælo.
+      - psalms:
+          - 10
+        antiphon: Laudémus Dóminum, * quem laudant Ángeli, quem Chérubim et Séraphim, Sanctus, Sanctus, Sanctus proclámant.
+      - psalms:
+          - 14
+        antiphon: Ascéndit * fumus arómatum in conspéctu Dómini de manu Ángeli.
+      - psalms:
+          - 18
+        antiphon: Míchaël Archángele, * veni in adjutórium pópulo Dei.
+      - psalms:
+          - 23
+        antiphon: Míchaël * præpósitus paradísi, quem honoríficant Angelórum cives.
+      - psalms:
+          - 33
+        antiphon: 'Gloriósus * apparuísti in conspéctu Dómini: proptérea decórem índuit te Dóminus.'
+    versicle:
+      v: Stetit Angelus juxta aram templi.
+      r: Habens thuríbulum áureum in manu sua.
+  nocturn2:
+    groups:
+      - psalms:
+          - 89
+        antiphon: Sancte Míchaël Archángele, defénde nos in prœ́lio, * ut non pereámus in treméndo judício.
+      - psalms:
+          - 95
+        antiphon: Ángelus Archángelus Míchaël, * Dei núntius pro animábus justis, allelúia, allelúia.
+      - psalms:
+          - 96
+        antiphon: Data sunt ei * incénsa multa, ut adoléret ea ante altáre áureum, quod est ante óculos Dómini.
+      - psalms:
+          - 97
+        antiphon: Multa magnália * de Michaéle Archángelo, qui, fortis in prǽlio, fecit victóriam.
+      - psalms:
+          - 98
+        antiphon: Stetit Angelus juxta aram templi, * habens thuríbulum áureum in manu sua.
+      - psalms:
+          - 102
+        antiphon: 'Benedícite Dóminum, omnes Angeli ejus: * benedícite, minístri ejus, qui fácitis voluntátem ejus: Benedícite Dóminum.'
+    versicle:
+      v: Ascéndit fumus arómatum in conspéctu Dómini.
+      r: De manu Angeli.
+  nocturn3:
+    antiphon: 'Míchaël, Gábriel, * Chérubim et Séraphim, qui non cessant clamáre quotídie, dicéntes: Dignus es, Dómine, accípere glóriam.'
+    canticles:
+      - refs:
+          - book: isa
+            chapter: 33
+            verses: 2-10
+      - refs:
+          - book: isa
+            chapter: 33
+            verses: 13-18
+      - refs:
+          - book: sir
+            chapter: 36
+            verses: 14-19
+    versicle:
+      v: In conspéctu Angelórum psallam tibi, Deus meus.
+      r: Adorábo ad templum sanctum tuum, et confitébor nómini tuo.
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-09-29 (own day, outside Paschaltide). The source's own
+# [Rule] for Sancti/09-29.txt is literally "ex Sancti/05-08" -- this
+# office reuses Apparition of St. Michael's (May 8) content wholesale --
+# but the *rendered* text differs from apparition-of-st-michael.yml
+# because that file was authored on 2026-05-08, which fell inside
+# Paschaltide that year: antiphons 1 and the canticle antiphon there carry
+# a Paschaltide-only "allelúia" that isn't part of their fixed proper
+# text (confirmed live for 09-29: antiphon 1 and the canticle antiphon
+# render with no "allelúia" at all); antiphons 2 and 5 do carry "allelúia"
+# unconditionally, baked into the proper text itself, on both dates.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Stetit Angelus * juxta aram templi, habens thuríbulum áureum in manu sua.
+    - psalms:
+        - 99
+      antiphon: 'Dum præliarétur * Míchaël Archángelus cum dracóne, audíta est vox dicéntium: Salus Deo nostro, allelúia.'
+    - psalms:
+        - 62
+      antiphon: Archángele Míchaël, * constítui te príncipem super omnes ánimas suscipiéndas.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Angeli Dómini, * Dóminum benedícite in ætérnum.
+  laudate:
+    antiphon: Angeli, Archángeli, * Throni et Dominatiónes, Principátus et Potestátes, Virtútes cælórum, laudáte Dóminum de cælis, allelúia.
+
+# Matins Nocturn 2-3 readings for the Dedication of St. Michael the
+# Archangel (Sep 29) — SanctiM/09-29.txt's own structure borrows from
+# `SanctiM/05-08` (St. Michael's own May 8 Apparition file) but its
+# Officium and Lectio5-12 resolve back to `@Sancti/09-29:LectioN`
+# (resliced), so this feast's own proper content is sourced from the
+# Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/09-29.txt, English/Sancti/09-29.txt.
+#
+# Nocturn 2: Lectio4-6 (Pope St. Gregory the Great's homily on the
+# nine choirs of Angels) combined into one reading, one continuous
+# excerpt.
+# Nocturn 3: Lectio7's Gospel citation (Matt 18:1-10) was a bare
+# incipit ("Et réliqua") with no full pericope text given; the full
+# pericope is now authored too (isGospel: true, immediately before the
+# homily) — sourced from `web/www/missa/Latin/Sancti/05-08.txt` (Sep
+# 29's own Missale [Evangelium] is `@Sancti/05-08`, St. Michael's own
+# May Apparition Gospel reused), English/Sancti/05-08.txt (2026-09-05
+# update). The homily portion remains combined with Lectio8-9 as one
+# continuous excerpt of St. Jerome's commentary. No responsory given
+# for either reading.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 34 on the Gospels
+      text: |-
+        Novem Angelórum órdines dícimus, quia vidélicet esse, testánte sacro elóquio, scimus: Angelos, Archángelos, Virtútes, Potestátes, Principátus, Dominatiónes, Thronos, Chérubim atque Séraphim. Esse namque Angelos et Archángelos pene omnes sacri elóquii páginæ testántur. Chérubim vero atque Séraphim sæpe, ut notum est, libri prophetárum loquúntur. Quátuor quoque órdinum nómina Paulus Apóstolus ad Ephésios enúmerat, dicens: Supra omnem Principátum, et Potestátem, et Virtútem, et Dominatiónem. Qui rursus ad Colossénses scribens, ait: Sive Throni, sive Potestátes, sive Principátus, sive Dominatiónes. Dum ergo illis quátuor, quæ ad Ephésios dixit, conjungúntur Throni, quinque sunt órdines; quibus dum Angeli et Archángeli, Chérubim atque Séraphim adjúncta sunt, procul dúbio novem esse Angelórum órdines inveniúntur.
+
+        Sciéndum vero quod Angelórum vocábulum nomen est offícii, non natúræ. Nam sancti illi cæléstis pátriæ Spíritus, semper quidem sunt Spíritus, sed semper vocári Angeli nequáquam possunt; quia tunc solum sunt Angeli, cum per eos áliqua nuntiántur. Unde et per Psalmístam dícitur: Qui facit Angelos suos spíritus; ac si paténter dicat: Qui eos, quos semper habet Spíritus, étiam, cum volúerit, Angelos facit. Hi autem qui mínima núntiant, Angeli; qui vero summa annúntiant, Archángeli vocántur. Hinc est enim quod ad Maríam Vírginem non quílibet Angelus, sed Gábriel Archángelus míttitur. Ad hoc quippe ministérium, summum Angelum veníre dignum fúerat, qui summum ómnium nuntiábat. Qui idcírco étiam privátis nomínibus censéntur, ut signétur per vocábula, étiam in operatióne quid váleant. Míchaël namque, Quis ut Deus? Gábriel autem, Fortitúdo Dei; Ráphaël vero dícitur Medicína Dei.
+
+        Et quóties miræ virtútis áliquid ágitur, Míchaël mitti perhibétur; ut ex ipso actu et nómine detur intéllegi quia nullus potest fácere, quod fácere prǽvalet Deus. Unde et ille antíquus hostis, qui Deo esse per supérbiam símilis concupívit, dicens: In cælum conscéndam, super astra cæli exaltábo sólium meum, símilis ero Altíssimo; dum in fine mundi in sua virtúte relinquétur extrémo supplício periméndus, cum Michaéle Archángelo præliatúrus esse perhibétur, sicut per Joánnem dícitur: Factum est prǽlium cum Michaéle Archángelo. Ad Maríam quoque Gábriel míttitur, qui Dei Fortitúdo nominátur; illum quippe nuntiáre veniébat, qui ad debellándas aéreas potestátes húmilis appárere dignátus est. Ráphaël quoque interpretátur, ut díximus, Medicína Dei; quia vidélicet, dum Tobíæ óculos quasi per offícium curatiónis tétigit, cæcitátis ejus ténebras tersit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 18:1-10
+      text: 'In illo témpore: Accessérunt discípuli ad Jesum, dicéntes: Quis, putas, major est in regno cœlórum? Et ádvocans Jesus párvulum, státuit eum in médio eórum et dixit: Amen, dico vobis, nisi convérsi fuéritis et efficiámini sicut párvuli, non intrábitis in regnum cœlórum. Quicúmque ergo humiliáverit se sicut párvulus iste, hic est major in regno cœlórum. Et qui suscéperit unum párvulum talem in nómine meo, me súscipit. Qui autem scandalizáverit unum de pusíllis istis, qui in me credunt, expédit ei, ut suspendátur mola asinária in collo ejus, et demergátur in profúndum maris. Væ mundo a scándalis! Necésse est enim, ut véniant scándala: verúmtamen væ hómini illi, per quem scándalum venit! Si autem manus tua vel pes tuus scandalízat te, abscíde eum et projíce abs te: bonum tibi est ad vitam ingrédi débilem vel claudum, quam duas manus vel duos pedes habéntem mitti in ignem ætérnum. Et si óculus tuus scandalízat te, érue eum et projice abs te: bonum tibi est cum uno óculo in vitam intráre, quam duos óculos habéntem mitti in gehénnam ignis. Vidéte, ne contemnátis unum ex his pusíllis: dico enim vobis, quia Angeli eórum in cœlis semper vident fáciem Patris mei, qui in cœlis est.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Priest, Commentary on Matthew, Bk. 3 (on Matt 18:1-10)
+      text: |-
+        Post invéntum statérem, post tribúta réddita, quid sibi vult Apostolórum repentína interrogátio, Quis, putas, major est in regno cælórum? Quia víderant pro Petro et Dómino idem tribútum rédditum, ex æqualitáte prétii arbitráti sunt Petrum ómnibus Apóstolis esse prælátum, qui in redditióne tribúti Dómino fúerat comparátus; ídeo intérrogant quis major sit in regno cælórum. Vidénsque Jesus cogitatiónes eórum, et causas erróris intéllegens, vult desidérium glóriæ, humilitátis contentióne, sanáre.
+
+        Si autem manus tua vel pes tuus scandalízat te, abscínde eum et próice abs te. Necésse est quidem veníre scándala; væ tamen ei est hómini, qui, quod necésse est ut fiat in mundo, vítio suo facit ut per se fiat. Igitur omnis truncátur afféctus et univérsa propínquitas amputátur, ne per occasiónem pietátis unusquísque credéntium scándalis páteat. Si, inquit, ita est quis tibi conjúnctus, ut manus, pes, óculus; et est útilis atque sollícitus, et acútus ad perspiciéndum, scándalum autem tibi facit, et propter dissonántiam morum te pértrahit in gehénnam: mélius est ut et propinquitáte ejus et emoluméntis carnálibus cáreas, ne, dum vis lucri fácere cognátos et necessários, causam hábeas ruinárum.
+
+        Dico vobis quia Angeli eórum in cælis semper vident fáciem Patris mei. Supra díxerat, per manum et pedem et óculum, omnes propinquitátes et necessitúdines, quæ scándalum fácere póterant, amputándas; austeritátem, ítaque senténtiæ subjécto præcépto témperat, dicens: Vidéte ne contemnátis unum ex pusíllis istis. Sic, inquit, præcípio severitátem, ut commiscéri cleméntiam dóceam. Quia Angeli eórum in cælis vident semper fáciem Patris. Magna dígnitas animárum, ut unaquǽque hábeat ab ortu nativitátis, in custódiam sui, Angelum delegátum. Unde légimus in Apocalýpsi Joánnis: Angelo Ephesi, et reliquárum ecclesiárum, scribe hæc. Apóstolus quoque prǽcipit velári cápita, in ecclésiis, feminárum propter Angelos.
+      status: verified

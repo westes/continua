@@ -1,0 +1,50 @@
+# Matins Nocturn 2 readings for Ss. Soter and Caius, Popes and Martyrs
+# (Apr 22) — pre-1955-but-post-1617 (no SanctiM/04-22*.txt at all).
+# web/www/horas/Latin/Sancti/04-22.txt, English/Sancti/04-22.txt.
+# Lectio4 (Soter's own vita) and Lectio5 (Caius's own vita) are kept as
+# two separate readings — different saint, genuine source change, not a
+# split-for-slot-count case. Lectio6 (St. Ambrose's sermon) is its own
+# third reading, a different genre/source again. Lectio7-9 (not present
+# in this file, implicitly Common) skipped. No responsory given.
+#
+# Checked 2026-09-05 for a Gospel pairing: all three readings here are
+# Nocturn 2. St. Ambrose's Sermon 22 is the same generic
+# post-Paschaltide "rejoice with the Martyrs" homily reused verbatim
+# for other martyr-Popes (see ss-cletus-and-marcellinus.yml), not tied
+# to any Gospel pericope -- no isGospel pairing applies.
+#
+# Update (2026-09-05, second pass): Nocturn 3 (Common of Popes -> Matt
+# 16:13-19, "Tu es Petrus", Pope St. Leo the Great's own Sermon 2 on
+# the Anniversary of his Election) now authored -- reused verbatim from
+# `st-martin-i.yml`/`ss-cletus-and-marcellinus.yml`, already authored
+# this session with the identical Common-of-Popes text.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Soter, Fundis in Campánia natus, sancívit ne sacræ vírgines vasa sacra et pallas attingerent, neve thuris ministerio in ecclésia uteréntur. Idem státuit ut Christi corpus in Cœna Dómini sumerétur ab ómnibus, iis exceptis, qui propter grave peccátum id fácere prohiberéntur. Sedit in pontificatu annos tres, menses undecim, dies decem et octo. Martyrio coronátur sub Marco Aurelio imperatóre, et in cœmeterio, quod póstea Callísti dictum est, sepelitur; more majórum mense Decembri creátis presbyteris decem et octo, diáconis novem, epíscopis per diversa loca undecim.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      text: 'Cajus Dálmata ex genere Diocletiáni imperatóris, constítuit ut his ordinum et honórum gradibus in Ecclésia ad episcopátum ascenderétur: Ostiarii, Lectóris, Exorcistæ, Acólythi, Subdiáconi, Diáconi, Presbýteri. Hic Diocletiáni crudelitátem in Christiános fúgiens, aliquámdiu in spelúnca delituit; verum octo post annis una cum Gabino fratre martyrii corónam consecutus est, cum sedísset annos duodecim, menses quatuor, dies quinque; creátis mense Decembri presbyteris vigintiquinque, diáconis octo, epíscopis quinque. Sepultus est in cœmeterio Callísti, décimo Kalendas Maji. Ejus memóriam Urbanus octavus in Urbe renovávit, dírutam ecclésiam restituit; titulo, statióne et ipsíus relíquiis decorávit.'
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Sermon 22
+      text: 'Dignum et congruum est, fratres, ut post lætítiam Paschæ, quam in Ecclésia celebrávimus, gaudia nostra cum sanctis Martyribus conferámus; et iis annuntiémus Dominicæ resurrectiónis glóriam, qui consortes sunt Dominicæ passiónis. Qui enim socii sunt contumeliæ, debent et participes esse lætítiæ. Ita enim dicit beátus Apóstolus: Sicut socii passiónum estis, et resurrectiónis eritis; si tolerábimus, inquit, et conregnábimus. Qui ergo toleravérunt mala propter Christum, debent et glóriam habere cum Christo.'
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 16:13-19
+      text: 'In illo témpore: Venit Jesus in partes Cæsaréæ Philíppi, et interrogábat discípulos suos, dicens: Quem dicunt hómines esse Fílium hóminis? At illi dixérunt: Alii Joánnem Baptístam, alii autem Elíam, álii vero Jeremíam, aut unum ex prophétis. Dicit illis Jesus: Vos autem quem me esse dícitis? Respóndens Simon Petrus, dixit: Tu es Christus, Fílius Dei vivi. Respóndens autem Jesus, dixit ei: Beátus es, Simon Bar Jona: quia caro et sanguis non revelávit tibi, sed Pater meus, qui in cœlis est. Et ego dico tibi, quia tu es Petrus, et super hanc petram ædificábo Ecclésiam meam, et portæ ínferi non prævalébunt advérsus eam. Et tibi dabo claves regni cœlórum. Et quodcúmque ligáveris super terram, erit ligátum et in cœlis: et quodcúmque sólveris super terram, erit solútum et in cœlis.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Leo the Great, Sermon 2 on the Anniversary of his own Election (on Matt 16:13-19)
+      text: |-
+        Cum, sicut evangelica lectióne reserátum est, interrogasset Dóminus discipulos, quem ipsum (multis diversa opinántibus) crederent; respondissétque beátus Petrus, dicens: Tu es Christus Fílius Dei vivi; Dóminus ait: Beátus es, Simon Bar-Jona, quia caro et sanguis non revelávit tibi, sed Pater meus, qui in cælis est: et ego dico tibi, quia tu es Petrus, et super hanc petram ædificábo Ecclésiam meam, et portæ ínferi non prævalébunt advérsus eam. Et tibi dabo claves regni cælórum: et quodcúmque ligáveris super terram, erit ligátum et in cælis: et quodcúmque solveris super terram, erit solutum et in cælis. Manet ergo disposítio veritátis, et beátus Petrus, in accepta fortitúdine petræ persevérans, suscepta Ecclésiæ gubernácula non relíquit.
+
+        In univérsa namque Ecclésia, Tu es Christus Fílius Dei vivi, quotídie Petrus dicit; et omnis lingua, quæ confitétur Dóminum, magisterio hujus vocis imbuitur. Hæc fides diabolum vincit et captivórum ejus víncula dissolvit. Hæc érutos mundo, ínserit cælo, et portæ ínferi advérsus eam prævalere non possunt. Tanta enim divinitus soliditate muníta est, ut eam neque hæretica umquam corrumpere pravitas, nec pagána potúerit superare perfidia. His ítaque modis, dilectíssimi, rationábile obsequio celebrétur hodiérna festívitas: ut in persona humilitátis meæ ille intelligátur, ille honorétur, in quo et ómnium pastórum sollicitudo, cum commendatárum sibi óvium custódia persevérat, et cujus étiam dignitas in indigno heréde non déficit.
+
+        Cum ergo cohortatiónes nostras áuribus vestræ sanctitátis adhibemus, ipsum vobis, cujus vice fungimur, loqui crédite: quia et illíus vos afféctu monémus, et non aliud vobis, quam quod docuit, prædicámus; obsecrántes, ut succincti lumbos mentis vestræ, castam et sobriam vitam in Dei timóre ducatis. Corona mea, sicut Apóstolus ait, et gáudium vos estis, si fides vestra, quæ ab inítio Evangélii in universo mundo prædicáta est, in dilectióne et sanctitáte permanserit. Nam licet omnem Ecclésiam, quæ in toto est orbe terrárum, cunctis oporteat florere virtútibus; vos tamen præcipue inter ceteros pópulos decet meritis pietátis excellere, quos in ipsa apostolicæ petræ arce fundatos, et Dóminus noster Jesus Christus cum ómnibus redémit, et beátus Apóstolus Petrus præ ómnibus erudívit.
+      status: verified

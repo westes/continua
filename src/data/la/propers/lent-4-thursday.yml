@@ -1,0 +1,66 @@
+# Lauds collect ([Oratio 2] in the source) — read from
+# web/www/horas/{Latin,English}/Tempora/Quad4-4.txt.
+collect:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, quos jejúnia votíva castígant, ipsa quoque devótio sancta lætíficet; ut, terrénis afféctibus mitigátis, facílius cæléstia capiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Vespers collect ([Oratio 3] in the source), distinct from Lauds' own —
+# read from web/www/horas/{Latin,English}/Tempora/Quad4-4.txt.
+collect/~-vespers:
+  text: |
+    Orémus.
+    Pópuli tui, Deus, institútor et rector: peccáta, quibus impugnátur, expélle; ut semper tibi plácitus, et tuo munímine sit secúrus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad4-4.txt's own
+# [Ant 2] and its English counterpart.
+benedictus-antiphon:
+  text: 'Ibat Jesus * in civitátem, quæ vocátur Naim: et ecce defúnctus efferebátur fílius únicus matris suæ.'
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad4-4.txt's own
+# [Ant 3] and its English counterpart.
+magnificat-antiphon:
+  text: Prophéta magnus * surréxit in nobis, et quia Deus visitávit plebem suam.
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Thursday in the 4th week of Lent — read from
+# web/www/horas/{Latin,English}/Tempora/Quad4-4.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quad4-4.txt's own [Evangelium].
+# Recombined into one reading (Lectio1-3 are one continuous Ambrose
+# homily split only to fill the fixed 3-lesson slot count). Responsory1 is
+# a cross-reference (@Tempora/Quad4-0:Responsory1, the 4th Sunday of
+# Lent's own) — used here per the "the first one, when several collapse"
+# convention.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Luc 7:11-16
+      text: 'In illo témpore: Ibat Jesus in civitátem, quæ vocátur Naim: et ibant cum eo discípuli ejus et turba copiósa. Cum autem appropinquáret portæ civitátis, ecce, defúnctus efferebátur fílius únicus matris suæ: et hæc vídua erat, et turba civitátis multa cum illa. Quam cum vidísset Dóminus, misericórdia motus super eam, dixit illi: Noli flere. Et accéssit et tétigit lóculum. - Hi autem, qui portábant, stetérunt - Et ait: Adoléscens, tibi dico, surge. Et resédit, qui erat mórtuus, et cœpit loqui. Et dedit illum matri suæ. Accépit autem omnes timor: et magnificábant Deum, dicéntes: Quia Prophéta magnus surréxit in nobis: et quia Deus visitávit plebem suam.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Book 5, Commentary on Luke, ch. 7
+      text: |-
+        Et hic locus ad utrámque redúndat grátiam; et ut cito flecti divínam misericórdiam matris víduæ lamentatióne credámus, ejus præcípue, quæ únici fílii vel labóre, vel morte frangátur; cui tamen víduæ gravitátis méritum exsequiárum turba concíliet: et ut hanc víduam populórum turba septam, plus vidéri esse quam féminam, quæ resurrectiónem únici et adolescéntis fílii suis lácrimis merúerit impetráre: eo quod sancta Ecclésia pópulum juniórem a pompa fúneris atque a suprémis sepúlcri, suárum révocet ad vitam contemplatióne lacrimárum: quæ flere prohibétur eum, cui resurréctio debebátur.
+
+        Qui quidem mórtuus in lóculo materiálibus quátuor ad sepúlcrum ferebátur eleméntis, sed spem resurgéndi habébat, quia ferebátur in ligno. Quod etsi nobis ante non próderat, tamen posteáquam Jesus id tétigit, profícere cœpit ad vitam: ut esset indício, salútem pópulo per crucis patíbulum refundéndam. Audíto ígitur Dei verbo, stetérunt acérbi illi fúneris portitóres, qui corpus humánum letháli fluxu natúræ materiális urgébant. Quid enim áliud, nisi quasi in quodam féretro, hoc est, suprémi fúneris instruménto, jacémus exánimes, cum vel ignis immódicæ cupiditátis exǽstuat, vel frígidus humor exúndat, vel pigra quadam terréni córporis habitúdine vigor hebetátur animórum; vel concréta noster spíritus labe, puræ lucis vácuus mentem alit? Hi sunt nostri fúneris portitóres.
+
+        Sed quamvis supréma mortis spem vitæ omnis aboléverint, et túmulo próxima córpora jáceant defunctórum: verbo tamen Dei jam mórtua resúrgunt cadávera: vox redit, rédditur fílius matri, revocátur a túmulo, erípitur a sepúlcro. Quis iste est túmulus tuus, nisi mali mores? Túmulus tuus perfídia est: sepúlcrum tuum guttur est. Sepúlcrum enim patens, est guttur eórum, unde verba mórtua proferúntur. Ab hoc sepúlcro te líberat Christus: ab hoc túmulo surges, si áudias verbum Dei. Et si grave peccátum est, quod pœniténtiæ lácrimis ipse laváre non possis; fleat pro te mater Ecclésia, quæ pro síngulis tamquam pro únicis fíliis vídua mater intérvenit. Compátitur enim quodam spiritáli dolóre natúræ, cum suos líberos letháli vítiis ad mortem cernit urgéri.
+      responsory: |-
+        R. Locútus est Dóminus ad Móysen, dicens: Descénde in Ægýptum, et dic Pharaóni: * Ut dimíttat pópulum meum: indurátum est cor Pharaónis: non vult dimíttere pópulum meum, nisi in manu forti.
+        V. Clamor filiórum Israël venit ad me, vidíque afflictiónem eórum: sed veni, mittam te ad Pharaónem.
+        R. Ut dimíttat pópulum meum: indurátum est cor Pharaónis: non vult dimíttere pópulum meum, nisi in manu forti.
+      status: verified

@@ -1,0 +1,71 @@
+# Read directly from web/www/horas/Latin/Sancti/03-27.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui ad cultum sacrárum imáginum asseréndum, beátum
+    Joánnem cælésti doctrína et admirábili spíritus fortitúdine imbuísti: concéde nobis
+    ejus intercessióne et exémplo; ut, quorum cólimus imágines, virtútes imitémur et
+    patrocínia sentiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# No proper antiphon of his own -- standard de-Communi text, paired with the standard de-Communi commemoration versicle for common-of-a-confessor-doctor (non-Bishop, C5a -- inherits C5's own Ant2/Versum2 with no override) (not yet independently live-verified for this specific category, marked draft). Collect is the saint's own real proper (st-john-damascene-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Omnípotens sempitérne Deus, qui ad cultum sacrárum imáginum asseréndum, beátum
+    Joánnem cælésti doctrína et admirábili spíritus fortitúdine imbuísti: concéde nobis
+    ejus intercessióne et exémplo; ut, quorum cólimus imágines, virtútes imitémur et
+    patrocínia sentiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2-3 readings for St. John Damascene, Confessor,
+# Doctor of the Church (Mar 27). Sourced directly from
+# web/www/horas/Latin/Sancti/03-27.txt, English/Sancti/03-27.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
+# Nocturn 3: Lectio7's Gospel citation (Luke 6:6-11) was a bare incipit
+# ("Et réliqua"), so only the homily was authored (not marked isGospel),
+# St. Peter Chrysologus's homily (Lectio7's homily + Lectio8-9
+# combined).
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily), matching the newer
+# convention set by ember-september-friday.yml/post-pentecost-16.yml —
+# sourced from missa/Latin/Sancti/03-27.txt and missa/English/Sancti/
+# 03-27.txt's own [Evangelium] (given directly, no redirect).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Joánnes, a pátrio loco Damascenus dictus, nobili genere natus, humanis divinisque litteris a Cosma monacho Constantinopoli fuit excultus; cumque ea tempestáte imperátor Leo Isáuricus nefario bello sacrárum imaginum cultum insectarétur, Joánnes, hortatu Gregórii tertii Romani Pontificis, et sermóne et scriptis sanctitátem illíus cultus sédulo propugnávit. Quo facto tantam Leónis advérsum se invidiam concitávit, ut hic confictis litteris ipsum tamquam proditórem accusarit apud Damasci calípham, qui Joánne consiliario et administro utebátur. Credulus fraudi princeps Joánni nequidquam calumniam ejuranti præcídi déxteram jussit. Verum innocéntiæ vindex ádfuit cliénti suo sanctíssima Virgo, cujus opem precibus enixe imploraverat, ejusque beneficio trunca manus restituta ita brácchio coáluit, ac si divisa numquam fuísset. Quo maxime miraculo permotus Joánnes, quod pridem animo conceperat, éxsequi státuit. Itaque ægre a calípha impetrato secessu, suas omnes facultates in egénos distríbuit, et servos libertáte donávit; tum sacra Palæstinæ loca peregrínus lustrávit, ac demum una cum Cosma institutore suo in lauram sancti Sabbæ prope Hierosolymam concessit, ibique présbyter initiátus est.
+
+        In religióne vitæ palæstra præclarióra virtútum exempla monachis præbuit, demissiónis potíssimum et obediéntiæ. Abjectíssima quæque cœnobii munia véluti sibi propria deposcebat, ac sédulo obíbat. Contextas a se spórtulas venditare Damasci jussus, in ea nimirum civitáte ubi olim summis honóribus perfunctus fuerat, irrisiónes ac ludíbria vulgi ávide captábat. Obediéntiam ádeo cóluit, ut non modo ad quémlibet præsidum nutum præsto esset; sed ne causam quidem eórum quæ præcipiebántur, quamvis ardua essent et insolita, quæréndam sibi umquam putarit. Inter has virtútum exercitatiónes, catholicum dogma de sanctárum imaginum cultu impense tueri numquam déstitit. Quare ut ante Leónis Isáurici, ita postmodum Constantini Coprónymi advérsum se odia vexatiónesque provocávit; eo vel magis quod líbere arrogantiam imperatórum retúnderet, qui fidei negotia pertractare, deque his senténtiam arbitratu suo ferre audebant.
+
+        Mirum sane est quam multa tum ad fidem tutandam, tum ad pietátem fovéndam, et soluta et adstricta numeris oratióne, Joánnes elucubráverit; dignus sane qui ab áltera Nicæna synodo amplíssimis laudibus celebrarétur, et ob aureum oratiónis flumen Chrysórrhoas appellarétur. Neque solum contra Iconómachos orthodoxam fidem deféndit; sed omnes ferme hæreticos, præsertim Acéphalos, Monothelitas, Theopaschitas strenue impugnávit. Ecclésiæ jura potestátemque egregie vindicávit. Primátum Principis Apostolórum disertíssimis verbis asseruit; ipsumque ecclesiárum cólumen, infractam petram, orbis terrárum magistrum et moderatórem sæpius nóminat. Universa autem ejus scripta non modo eruditióne et doctrina præstant, sed étiam quemdam ingenuæ pietátis sensum præférunt, præcipue cum Genitrícis Dei laudes prædicat, quam singulari cultu et amóre prosequebátur. Illud vero maxime in laudem Joánnis cedit, quod primus universam theologíam recto ordine comprehénderit et sancti Thomæ viam complanáverit ad sacram doctrinam tam præclára méthodo tractandam. Tandem vir sanctíssimus meritis plenus devexáque jam ætate, in pace Christi quiévit anno circiter septingentésimo quinquagesimo quarto. Ejus Offícium et Missam Leo décimus tertius Pontifex maximus, áddito Doctoris título, univérsæ Ecclésiæ concessit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 6:6-11
+      text: 'In illo témpore: Factum est et in álio sábbato, ut intráret Jesus in synagógam et docéret. Et erat ibi homo, et manus ejus déxtera erat árida. Observábant autem scribæ et pharisæi, si in sábbato curáret: ut invenírent, unde accusárent eum. Ipse vero sciébat cogitatiónes eórum. Et ait hómini, qui habébat manum áridam: Surge et sta in médium. Et surgens stetit. Ait autem ad illos Jesus: Intérrogo vos, si licet sábbatis benefácere, an male: ánimam salvam fácere, an pérdere? Et circumspéctis ómnibus dixit hómini: Exténde manum tuam. Et exténdit: et restitúta est manus ejus. Ipsi autem repléti sunt insipiéntia, et colloquebántur ad ínvicem, quidnam fácerent Jesu.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Peter Chrysologus, Sermon 32 (on Luke 6:6-11)
+      text: |-
+        In hoc hómine ómnium hóminum imago figurátur, in hoc geritur cura cunctórum, in hoc universórum sánitas diu exspectáta reparátur. Arúerat enim manus hóminis magis stupore fidei quam siccitate nervórum, et plus culpa consciéntiæ quam debilitate carnali. Antíqua ista nimis erat, et quæ in ipso mundi principio contígerat ægritúdo; nec arte hóminis aut beneficio póterat hæc curari, quæ Dei fuerat indignatióne contracta. Tetigerat vétita, inconcessa præsumpserat, cum se ad árborem sciéndi bonum malumque porrexerat: Auctore indigebat, non qui malagma impóneret, sed qui posset illatam relaxare senténtiam, et ignoscéndo resólvere quod religáverat indignando.
+
+        In hoc hómine nostræ tantum géritur umbra sanitátis; perfécta autem salus nobis reservátur in Christo: quia tunc aríditas nostræ manus miseranda dissolvitur, cum cruore perfunditur Dominicæ passiónis, cum in illo vitali ligno crucis exténditur, cum carpit fructuosam de dolóre virtútem, cum totam árborem salútis amplectitur, cum clavis Dómini corpus affígitur, quo numquam ad árborem concupiscéntiæ et áridæ redeat voluptátis. Et ait hómini habénti manum áridam: Surge in médium, professor debilitátis própriæ, supernæ pietátis exactor, testis divinæ virtútis, Judáicæ incredulitátis assertor: surge in médium; ut quos non compungit virtus tanta signórum, quos non ópera tantæ salútis inclínant, vel debilitátis tantæ miserátio constringat et mítiget.
+
+        Dixit homini: Extende manum tuam; et extendit, et restituta est manus illius. Extende manum tuam: jussione solvitur, qua fuerat jussione convincta. Extende manum tuam: agnovit pœna judicem, opus Deum, indulgentia prodidit conditorem. Orate, fratres, ut sola synagoga tali debilitate fuscetur, nec sit in Ecclesia cujus manum arefaciat cupiditas, contrahat avaritia, rapina debilitet, tenacitas ægrotam constringat; sed si acciderit id ipsum, audiat Dominum et cito eam in opere pietatis extendat, relaxet et in misericordia, in eleemosynis porrigat. Sanari nescit, qui nescit pauperi fœnerari.
+      status: verified

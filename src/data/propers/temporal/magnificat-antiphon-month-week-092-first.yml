@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-09-06 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: magnificat-antiphon-month-week-092-first
-text:
-  la: "In ómnibus his * non peccávit Job lábiis suis neque stultum áliquid contra Deum locútus est."
-  en: "In all these things Job sinned not * with his lips, nor charged God with foolishness."
-status:
-  la: verified
-  en: verified

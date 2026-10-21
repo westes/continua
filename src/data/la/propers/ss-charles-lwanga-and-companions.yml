@@ -1,0 +1,35 @@
+# Read directly from web/www/horas/Latin/Sancti/06-03n.txt's own [Oratio].
+# English/Sancti/06-03n.txt's own [Oratio] is a bare "@Commune/C3"
+# cross-reference, not a real translation -- the English below is this
+# project's own translation, marked draft accordingly.
+collect:
+  text: |
+    Orémus.
+    Omnípotens et miséricors Deus, qui univérsum mundum lúmine veritátis illústras, et per
+    gloriósos Mártyres Matthíam, Cárolum et Sócios fídei prodígia in Africæ regiónibus renováre
+    dignátus es: largíre supplícibus tuis; ut, ipsis intercedéntibus, in nobis grátiæ tuæ dona
+    custódias, et inter gentes omnes mérito et número pópulus tibi sérviens augeátur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle, same combined-bundle shape as
+# st-canute-commemoration.yml. Ant 2/Versum 2 are the standard de-Communi
+# pairing for the Common of Several Martyrs (C3a, the non-Pontiff default
+# used for this group -- see ss-charles-lwanga-and-companions.yml's own
+# header) -- common-of-several-martyrs-commemoration-antiphon.yml /
+# lauds-versicle-common-of-several-martyrs.yml, both already verified
+# elsewhere (Common text, not proper to this group). Collect's English
+# half is this project's own translation (see ss-charles-lwanga-and-
+# companions-collect.yml).
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Omnípotens et miséricors Deus, qui univérsum mundum lúmine veritátis illústras, et per gloriósos Mártyres Matthíam, Cárolum et Sócios fídei prodígia in Africæ regiónibus renováre dignátus es: largíre supplícibus tuis; ut, ipsis intercedéntibus, in nobis grátiæ tuæ dona custódias, et inter gentes omnes mérito et número pópulus tibi sérviens augeátur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified

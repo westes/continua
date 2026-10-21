@@ -1,0 +1,348 @@
+# Read from the reference engine: web/www/horas/Latin/Sancti/01-01.txt and
+# web/www/horas/English/Sancti/01-01.txt's own [Oratio] — the day's proper
+# collect (addressed to the Virgin's fruitful motherhood, not the
+# Circumcision itself directly, per the feast's own traditional Marian
+# framing in this slot).
+collect:
+  text: |
+    Orémus.
+    Deus, qui salútis ætérnæ, beátæ Maríæ virginitáte fecúnda, humáno géneri prǽmia præstitísti: tríbue, quǽsumus; ut ipsam pro nobis intercédere sentiámus, per quam merúimus auctórem vitæ suscípere, Dóminum nostrum Jesum Christum Fílium tuum:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Same hymn as Vespers (the source's own "[HymnusM Matutinum]
+# @:HymnusM Vespera" cross-reference in Sancti/12-25.txt) -- see
+# vespers-hymn-circumcision.yml's header for the full sourcing note.
+matins-hymn:
+  text: |
+    Christe Redémptor ómnium,
+    Ex Patre Patris únice,
+    Solus ante princípium
+    Natus ineffabíliter.
+
+    Tu lumen, tu splendor Patris,
+    Tu spes perénnis ómnium:
+    Inténde quas fundunt preces
+    Tui per orbem fámuli.
+
+    Meménto salútis Auctor,
+    Quod nostri quondam córporis,
+    Ex illibáta Vírgine
+    Nascéndo, formam súmpseris.
+
+    Sic præsens testátur dies,
+    Currens per anni círculum,
+    Quod solus a sede Patris
+    Mundi salus advéneris.
+
+    Hunc cælum, terra, hunc mare,
+    Hunc omne quod in eis est,
+    Auctórem advéntus tui,
+    Laudans exsúltat cántico.
+
+    Nos quoque, qui sancto tuo
+    Redémpti sánguine sumus,
+    Ob diem natális tui,
+    Hymnum novum concínimus.
+
+    Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/01-01.txt's own [Capitulum Laudes]
+# and its English counterpart. Also serves Vespers (see
+# hours/vespers.ts's lookupPart (Vespers chapter, Lauds sibling): no distinct
+# `vespers-capitulum-circumcision` file exists in the source either — the
+# reference engine reuses this same chapter at both hours, same pattern
+# already established for every other feast this project has authored).
+lauds-capitulum:
+  text: 'Fratres: Appáruit grátia Dei Salvatóris nostri ómnibus homínibus, erúdiens nos, ut abnegántes impietátem, et sæculária desidéria, sóbrie, et juste, et pie vivámus in hoc sǽculo.'
+  citation: Tit 2:11-12
+  status: verified
+
+# Circumcision's own rubric ("[Rank]" block, Sancti/01-01.txt) reads "ex
+# Sancti/12-25" -- it borrows Christmas Day's own propers wholesale except
+# where it has its own (collect, Benedictus/Magnificat antiphons). Christmas
+# Day itself has no authored hymn files of its own yet (a separate, larger
+# gap -- Dec 25 doesn't resolve as its own winner id at all, see TODO.md),
+# so this is a direct copy of the identical, already-verified text from
+# lauds-hymn-christmas-octave-sunday.yml ("A solis ortus cardine", Divino
+# Afflatu 1954 Lauds live query) rather than a new translation -- Christmas
+# Day's own [Hymnus Laudes] in Sancti/12-25.txt is byte-identical to the
+# Octave Sunday's.
+#
+# Reviewed 2026-09-11 against the Monastic ([HymnusM Laudes]) word
+# substitutions: most are a wash (auctor/Auctor capitalization,
+# Enítitur/Eníxa est tense, ventre Matris/matris alvo word order,
+# Baptísta clausum/Clausus Joánnes title-vs-name, Et lacte módico/Parvóque
+# lacte -- all synonymous, not adopted). Two of the Monastic swaps
+# (Jesu tibi sit glória -> Glória tibi Dómine, almo -> Sancto Spíritu)
+# actually flatten this text's own more specific wording (the direct
+# address to the Holy Name, "almo" as a distinctive life-giving epithet
+# vs. the generic "Sancto" every other hymn's doxology already uses) --
+# kept as-is. Only "Concépit alvo" -> "Verbo concépit" adopted: a real
+# improvement, not just a meter tweak -- it ties the Incarnation directly
+# to the Johannine "Verbum caro factum est" (the Word made flesh), which
+# the plain "conceived in the womb" phrasing doesn't carry.
+lauds-hymn:
+  text: |
+    A solis ortus cárdine
+    Ad usque terræ límitem,
+    Christum canámus Príncipem,
+    Natum María Vírgine.
+
+    Beátus auctor sǽculi
+    Servíle corpus índuit:
+    Ut carne carnem líberans,
+    Ne pérderet quos cóndidit.
+
+    Castæ Paréntis víscera
+    Cæléstis intrat grátia:
+    Venter Puéllæ báiulat
+    Secréta, quæ non nóverat.
+
+    Domus pudíci péctoris
+    Templum repénte fit Dei:
+    Intácta nésciens virum,
+    Verbo concépit Fílium.
+
+    Enítitur puérpera,
+    Quem Gábriel prædíxerat,
+    Quem ventre Matris géstiens,
+    Baptísta clausum sénserat.
+
+    Fœno iacére pértulit:
+    Præsépe non abhórruit:
+    Et lacte módico pastus est,
+    Per quem nec ales ésurit.
+
+    Gaudet chorus cæléstium,
+    Et Angeli canunt Deo;
+    Palámque fit pastóribus
+    Pastor, Creátor ómnium.
+
+    Iesu, tibi sit glória,
+    Qui natus es de Vírgine,
+    Cum Patre, et almo Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# See vespers-versicle-circumcision.yml's own note — the source's own
+# [Versum 2] is "@:Versum 1", the identical text reused at Lauds.
+lauds-versicle:
+  text: |-
+    V. Verbum caro factum est, allelúia.
+    R. Et habitávit in nobis, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2027-01-01); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    Titus 2:11-12 Appáruit grátia Dei Salvatóris nostri ómnibus homínibus, erúdiens nos, ut abnegántes impietátem, et sæculária desidéria, sóbrie, et juste, et pie vivámus in hoc sǽculo.
+    R. Deo grátias.
+    V. Verbum caro factum est, allelúia.
+    R. Et habitávit in nobis, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2027-01-01); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    Heb 1:10 Et: Tu in princípio, Dómine, terram fundásti: et ópera mánuum tuárum sunt cæli.
+    R. Deo grátias.
+    V. Notum fecit Dóminus, allelúia.
+    R. Salutáre suum, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2027-01-01); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    Heb 1:11-12 Ipsi períbunt, tu autem permanébis; et omnes sicut vestiméntum veteráscent: et velut amíctum mutábis eos, et mutabúntur: tu autem idem ipse es, et anni tui non defícient.
+    R. Deo grátias.
+    V. Vidérunt omnes fines terræ, allelúia.
+    R. Salutáre Dei nostri, allelúia.
+  citation: ''
+  status: verified
+
+# Circumcision's rubric ("ex Sancti/12-25", see lauds-hymn-circumcision.yml's
+# header for the fuller note) borrows Christmas Day's own Vespers/Matins
+# hymn. Unlike the Laudes hymn (a plain word-substitution of the secular
+# text), the Monastic Vespers/Matins hymn is a genuinely separate text --
+# "Christe Redémptor ómnium" ([HymnusM Vespera], Sancti/12-25.txt), not the
+# secular "Jesu, Redémptor ómnium" -- same house preference already applied
+# to vespers-hymn-advent.yml's "Cónditor alme síderum". Latin sourced
+# directly from that file; no English exists anywhere in the reference
+# engine for this Monastic variant (only for the secular "Jesu, Redémptor"
+# text, whose wording differs enough stanza-by-stanza -- Auctor/epithet
+# choices, "a sede Patris" vs "e sinu Patris", etc. -- that reusing it
+# outright would misrepresent the Latin), so the translation below is new,
+# `draft`, following this project's usual practice for an unattested
+# Monastic variant (cf. St. Scholastica's Lauds hymn). The closing doxology
+# stanza reuses this project's already-verified standard English for
+# "Glória tibi Dómine, Qui natus es de Vírgine..." (see lauds-hymn-holy-
+# innocents.yml). Matins reuses this same hymn verbatim (the source's own
+# "[HymnusM Matutinum] @:HymnusM Vespera" cross-reference) -- see the
+# matins- sibling file.
+vespers-hymn:
+  text: |
+    Christe Redémptor ómnium,
+    Ex Patre Patris únice,
+    Solus ante princípium
+    Natus ineffabíliter.
+
+    Tu lumen, tu splendor Patris,
+    Tu spes perénnis ómnium:
+    Inténde quas fundunt preces
+    Tui per orbem fámuli.
+
+    Meménto salútis Auctor,
+    Quod nostri quondam córporis,
+    Ex illibáta Vírgine
+    Nascéndo, formam súmpseris.
+
+    Sic præsens testátur dies,
+    Currens per anni círculum,
+    Quod solus a sede Patris
+    Mundi salus advéneris.
+
+    Hunc cælum, terra, hunc mare,
+    Hunc omne quod in eis est,
+    Auctórem advéntus tui,
+    Laudans exsúltat cántico.
+
+    Nos quoque, qui sancto tuo
+    Redémpti sánguine sumus,
+    Ob diem natális tui,
+    Hymnum novum concínimus.
+
+    Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-01-01 circumcision second. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-versicle:
+  text: |
+    V. Notum fecit Dóminus, allelúia.
+    R. Salutáre suum, allelúia.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/01-01.txt's own [Ant 2] (the
+# antiphon slotted right after Lauds' [Capitulum Laudes]/[Versum 2], i.e.
+# Lauds' own Benedictus antiphon) and its English counterpart. The source
+# also carries a distinct [Ant 3] ("Magnum hereditátis mystérium...") for
+# Second Vespers' own Magnificat antiphon — not modeled here since this
+# project's magnificat-antiphon lookup doesn't distinguish First/Second
+# Vespers (see hours/resolve-common.ts's getMagnificatAntiphon).
+benedictus-antiphon:
+  text: 'Mirábile mystérium * declarátur hódie: innovántur natúræ, Deus homo factus est: id quod fuit permánsit, et quod non erat assúmpsit; non commixtiónem passus, neque divisiónem.'
+  status: verified
+  temporal: true
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-01-01 circumcision second. Paschaltide Alleluia is left to hours/resolve-common.ts's
+# withPaschaltideAlleluia.
+magnificat-antiphon:
+  text: 'Magnum * hereditátis mystérium: templum Dei factus est úterus nesciéntis virum: non est pollútus ex ea carnem assúmens; omnes gentes vénient dicéntes: Glória tibi, Dómine.'
+  status: verified
+  temporal: true
+
+# Read from web/www/horas/Latin/Sancti/01-01.txt's own [Ant Vespera] (5
+# antiphons) via its own [Ant Laudes] rule ("@:Ant Vespera:s/;;.*//g" —
+# the reference engine's own instruction to reuse the Vespers antiphon
+# *text* wholesale at Lauds, stripped of the psalm-number tags that only
+# mattered for Vespers' own Ps 109/112/121/126/147 psalmody). Slotted onto
+# Lauds' own standard 5-antiphon scheme (Ps 92/99/62, the Canticle, and
+# Laudate), matching every other feast's lauds-psalmody-overrides shape —
+# see christ-the-king.yml's own file for the same structure.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: 'O admirábile commércium: * Creátor géneris humáni, animátum corpus sumens, de Vírgine nasci dignátus est; et procédens homo sine sémine, largítus est nobis suam Deitátem.'
+    - psalms:
+        - 99
+      antiphon: 'Quando natus es * ineffabíliter ex Vírgine, tunc implétæ sunt Scriptúræ: sicut plúvia in vellus descendísti, ut salvum fáceres genus humánum: te laudámus, Deus noster.'
+    - psalms:
+        - 62
+      antiphon: 'Rubum, quem víderat Móyses * incombústum, conservátam agnóvimus tuam laudábilem virginitátem: Dei Génetrix, intercéde pro nobis.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Germinávit radix Jesse, * orta est stella ex Jacob: Virgo péperit Salvatórem; te laudámus, Deus noster.'
+  laudate:
+    antiphon: 'Ecce María génuit * nobis Salvatórem, quem Joánnes videns, exclamávit, dicens: Ecce Agnus Dei, ecce qui tollit peccáta mundi, allelúia.'
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-01-01 circumcision second. Named temporal feast: the app had no Vespers psalm antiphons for it and fell
+# back to the ferial/Sunday set. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'O admirábile commércium: * Creátor géneris humáni, animátum corpus sumens, de Vírgine nasci dignátus est; et procédens homo sine sémine, largítus est nobis suam Deitátem.'
+    - psalms:
+        - 112
+      antiphon: 'Quando natus es * ineffabíliter ex Vírgine, tunc implétæ sunt Scriptúræ: sicut plúvia in vellus descendísti, ut salvum fáceres genus humánum: te laudámus, Deus noster.'
+    - psalms:
+        - 121
+      antiphon: 'Rubum, quem víderat Móyses * incombústum, conservátam agnóvimus tuam laudábilem virginitátem: Dei Génitrix, intercéde pro nobis.'
+    - psalms:
+        - 126
+      antiphon: 'Ecce María génuit * nobis Salvatórem, quem Joánnes videns, exclamávit, dicens: Ecce Agnus Dei, ecce qui tollit peccáta mundi, allelúia.'
+
+# Matins Nocturn 2-3 readings for the Circumcision of Our Lord (Jan 1).
+# Sourced directly from web/www/horas/Latin/Sancti/01-01.txt,
+# English/Sancti/01-01.txt.
+# Nocturn 2: Lectio4-6, a sermon of St. Leo the Great on the Nativity
+# (this feast's own [Rule] reuses Christmas's own backbone, "ex
+# Sancti/12-25" — this is that same sermon), combined into one reading
+# per this project's own condensed-Matins convention (see nearby
+# immaculate-heart-of-mary.yml). Nocturn 3: Lectio7-9, St. Ambrose's
+# homily on the Circumcision itself.
+#
+# Update (2026-09-05): the Gospel pericope itself (Luke 2:21, this
+# feast's own Gospel — the whole verse; the reference's own "Et réliqua"
+# bare incipit is not a truncation here, the Missale's own full
+# [Evangelium] text for this same pericope is exactly this one sentence)
+# is now authored too (isGospel: true, immediately before the homily) —
+# sourced from missa/Latin/Tempora/Nat2-0.txt (the Circumcision Mass's
+# own [Evangelium] redirects here) and its English parallel, not guessed
+# at. The same text is reused verbatim by holy-name-of-jesus.yml (Jan
+# 2), whose own Nocturn 3 Gospel is this identical pericope.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Leo the Great, Sermon 7 on the Nativity
+      text: |-
+        Festivitátis hodiérnæ, dilectíssimi, verus venerátor est, et pius cultor, qui nec de Incarnatióne Dómini áliquid falsum, nec de Deitáte áliquid sentit indígnum. Paris enim perículi malum est, si illi aut natúræ nostræ véritas, aut Patérnæ glóriæ negátur æquálitas. Cum ergo ad intellegéndum sacraméntum nativitátis Christi, qua de Matre vírgine est ortus, accédimus, abigátur procul terrenárum calígo ratiónum, et ab illuminátæ fídei óculo mundánæ sapiéntiæ fumus abscédat.
+
+        Divína est enim auctóritas, cui crédimus: divína est doctrína, quam séquimur. Quóniam sive legis testificatióni, sive oráculis prophetárum, sive evangélicæ tubæ interiórem admoveámus audítum; verum est, quod Joánnes plenus Spíritu Sancto intónuit: In princípio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum. Hoc erat in princípio apud Deum. Omnia per ipsum facta sunt, et sine ipso factum est nihil. Et simíliter verum est, quod idem prædicátor adjécit: Verbum caro factum est et habitávit in nobis: et vídimus glóriam ejus, glóriam quasi Unigéniti a Patre.
+
+        In utráque ergo natúra idem est Dei Fílius, nostra suscípiens, et própria non amíttens: in hómine hóminem rénovans, in se incommutábilis persevérans. Déitas enim, quæ illi cum Patre commúnis est, nullum detriméntum omnipoténtiæ súbiit, nec Dei formam servi forma violávit: quia summa et sempitérna esséntia, quæ se ad humáni géneris inclinávit salútem, nos quidem in suam glóriam tránstulit, sed quod erat, esse non déstitit. Unde cum Unigénitus Dei minórem se Patre confitétur, cui se dicit æquálem, veritátem in se formæ utriúsque demónstrat: ut et humánam probet imparílitas, et divínam decláret æquálitas.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 2:21
+      text: 'In illo témpore: Postquam consummáti sunt dies octo, ut circumciderétur Puer: vocátum est nomen ejus Jesus, quod vocátum est ab Angelo, priúsquam in útero conciperétur.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Ambrose, Commentary on Luke, Book II
+      text: |-
+        Circumcíditur ítaque Puer. Quis est iste puer, nisi ille, de quo dictum est: Puer natus est nobis, Fílius datus est nobis? Factus est enim sub lege, ut eos, qui sub lege essent, lucrifáceret. Ut sísterent eum Dómino. Quid sit autem in Jerúsalem sisti Dómino, dícerem, nisi in Isaíæ comméntis ante dixíssem. Circumcísus enim vítiis, Domínico dignus judicátur obtútu; quia, Oculi Dómini super justos. Vides omnem legis véteris sériem fuísse typum futúri: nam et circumcísio purgatiónem signíficat delictórum.
+
+        Sed quóniam prona quadam cupiditáte peccándi, humánæ carnis et mentis fragílitas inextricabílibus vítiis implicátur, eo per octávum circumcisiónis diem culpæ totíus futúra purgátio, resurrectiónis præfigurabátur ætáte. Hoc est enim illud: Quia omne masculínum adapériens vulvam, sanctum Dómino vocábitur. Verbis enim legis promittebátur Vírginis partus. Et vere sanctus, quia immaculátus. Dénique ipsum esse, qui lege signétur, in eúndem modum ab Angelo repetíta verba declárant: Quod nascétur, inquit, Sanctum, vocábitur Fílius Dei.
+
+        Solus enim per ómnia ex natis de fémina sanctus Dóminus Jesus, qui terrénæ contágia corruptélæ, immaculáti partus novitáte non sénserit, et cælésti majestáte depúlerit. Nam si lítteram sequámur: quómodo sanctus omnis másculus, cum multos sceleratíssimos fuísse non láteat? Numquid sanctus Achab? numquid sancti pseudoprophétæ, quos ad Elíæ preces ultor cæléstis injúriæ ignis absúmpsit? Sed ille sanctus, quem in figúra futúri mystérii pia legis divínæ præscrípta signábant; eo quod solus sanctæ Ecclésiæ vírginis ad generándos pópulos Dei, immaculátæ fecunditátis aperíret genitále secrétum.
+      status: verified

@@ -1,0 +1,163 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2028-07-26).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátæ Annæ grátiam conférre dignátus es, ut Genitrícis unigéniti Fílii tui mater éffici mererétur: concéde propítius; ut, cujus solémnia celebrámus, ejus apud te patrocíniis adjuvémur. Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-anne-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-holy-woman (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (st-anne-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Date ei de fructu mánuum suárum, et laudent eam in portis ópera ejus.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Deus, qui beátæ Annæ grátiam conférre dignátus es, ut Genitrícis unigéniti Fílii tui mater éffici mererétur: concéde propítius; ut, cujus solémnia celebrámus, ejus apud te patrocíniis adjuvémur. Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+
+    R. Amen.
+  status: verified
+
+# St. Anne: proper Matins hymn, Latin/SanctiM/07-26r.txt's [Hymnus Matutinum]. English from English/SanctiM/07-26r.txt.
+# Before this file the saint fell to the Common's hymn.
+matins-hymn:
+  text: |
+    Gaude, mater Anna,
+    Gaude mater sancta,
+    Cum sis Dei facta
+    Genetrícis Dei.
+
+    Plaude tali natæ
+    Vírgini Maríæ;
+    Ejus genitóri
+    Jóachim congáude
+
+    In hac nostra terra
+    Primo benedícta,
+    Quæ fuit in Eva
+    Quondam maledícta.
+
+    Ergo sume laudes
+    Quas damus ovántes;
+    Nos ab omni sorde
+    Tua prece terge.
+
+    Sit laus Deo Patri,
+    Summo Christo decus,
+    Spirítui Sancto
+    Tribus honor unus.
+    Amen.
+  status: verified
+
+# St. Anne: proper Lauds hymn, Latin/SanctiM/07-26r.txt's [Hymnus Laudes]. The reference has no English for it, so the English is a fresh translation, marked draft.
+# Before this file the saint fell to the Common's hymn.
+lauds-hymn:
+  text: |
+    Succédit nocti lúcifer,
+    Quem mox auróra séquitur,
+    Solis ortum prænúntians
+    Mundum lustrántis lúmine.
+
+    Christus sol est justítiæ,
+    Auróra Mater grátiæ,
+    Quam, Anna, præit rútilans
+    Legis propéllens ténebras.
+
+    Anna, radix ubérrima,
+    Arbor tu salutífera,
+    Virgam prodúcens flóridam
+    Quæ Christum nobis áttulit.
+
+    Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# St. Anne: proper Vespers hymn, Latin/SanctiM/07-26r.txt's [Hymnus Vespera]. The reference has no English for it, so the English is a fresh translation, marked draft.
+# Before this file the saint fell to the Common's hymn.
+vespers-hymn:
+  text: |
+    Omnis sanctórum cóncio
+    Matrem colláudet Vírginis,
+    De cujus puerpério,
+    Salus procéssit hóminis.
+
+    Hæc prolem devotíssime
+    Pétiit a Patre lúminum,
+    Et méruit digníssime
+    Maríam decus vírginum.
+
+    Ex Jóachim, quem hábuit
+    Vitæ virum exímiæ,
+    Anna Maríam génuit,
+    Matrem Regis justítiæ.
+
+    Stirps Jesse clara déluit
+    Evæ matris oppróbrium,
+    Dum Anna prolem génuit,
+    Florem sanctórum ómnium.
+
+    Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et Sancto Spíritu
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Anne's own day (2026-07-26) -- the Benedictus antiphon
+# (Prov 31:31, the same verse St. Monica's own draws on).
+benedictus-antiphon:
+  text: Date ei de fructu mánuum suárum, et laudent eam in portis ópera ejus.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-07-26 st-anne second (continua had "uenisponsachristi"). Paschaltide Alleluia is left to
+# hours/paschal-alleluia.ts. See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon:
+  text: Manum suam * apéruit ínopi, et palmas suas exténdit ad páuperem, et panem otiósa non comédit.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Anne, Mother of the B.V.M. (Jul 26)
+# — SanctiM/07-26.txt's own Lectio5-8 resolve back to
+# `@Sancti/07-26:LectioN` (resliced), so this saint's own proper
+# content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints). A second SanctiM variant
+# (`SanctiM/07-26r.txt`) is its own file for the joint "Ss. Joachim
+# and Anne" feast — not needed since the plain suffix already matches
+# our target saint.
+# web/www/horas/Latin/Sancti/07-26.txt, English/Sancti/07-26.txt.
+# Lectio4-6 (St. John of Damascus's sermon) combined into one reading,
+# one continuous excerpt. No responsory given in the source.
+#
+# Verified 2026-09-05 (Gospel-pairing sweep): SanctiM/07-26.txt's own
+# [Rule] is "ex C7a; 9 lectiones", but only Lectio4-6 (this Nocturn 2
+# sermon) is a proper override in the source file -- there is no
+# proper Lectio7-9 at all (no Nocturn 3 Gospel/homily of St. Anne's own
+# to add here). Nocturn 3 falls through entirely to Common of Holy
+# Women (C7a)'s own generic content, already handled by this store's
+# per-Common-category pool (see memory vu-matins-responsory-pools) --
+# not a gap in this file.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. John of Damascus, Sermon 2 on the Nativity of the B.V.M.
+      text: |-
+        Propónitur nobis Annæ thálamus, conjugális vitæ simul et virginitátis formam réferens, illam matris, hanc fíliæ: quarum áltera recens sterilitáte liberáta est, áltera autem aliquánto post, Christi partum, ad nostræ natúræ conditiónem divíno opifício formátum, supra natúram est editúra. Mérito ígitur Anna, divíno Spíritu plena, læto hilaríque ánimo pérsonat: Congaudéte mecum, quæ promissiónis germen ex stérili ventre péperi, ac benedictiónis fructum ubéribus meis, ut optáveram, nútrio. Sterilitátis mæstítiam, éxui, ac lætum fecunditátis vestem índui. Congáudeat mecum hódie Anna illa, Phenénnæ adversária, et novum hoc atque inopinátum miráculum, quod in me gestum est, suo exémplo concélebret.
+
+        Exsúltet Sara, seníli gáudio géstiens, meúmque ab sterilitáte concéptum præfigúrans. Cóncinant simul stériles et infecúndæ visitatiónem meam, admirábili modo cǽlitus factam. Dicant item matres omnes hac fecunditáte prǽditæ: Benedíctus, qui orántibus id quod optábant, largítus est, et fecunditátem stérili dedit, ac felicíssimum illud germen Vírginis concéssit, quæ Mater Dei secúndum carnem fuit, cujus venter cælum est, in qua habitávit is qui nullo loco capi potest. Cónsonam his nos quoque ipsi, quæ vocabátur sterilis nunc autem virgínei thálami mater éxstitit, laudem offerámus. Dicámus ad eam cum Scriptúra: Quam beáta domus David, ex qua prodiísti, et venter, in quo Deus sanctificatiónis arcam, hoc est, eam a qua ipse sine semine concéptus est, fabricávit.
+
+        Vere beáta es, ac ter beáta, quæ beatitúdine donátam a Deo infántem, hoc est, Maríam, nómine quoque ipso magnópere venerándam, peperísti; ex qua Christus vitæ flos éxstitit, cujus Vírginis et gloriósus fuit ortus, et partus mundo sublímior. Nos quoque, o beatíssima fémina, tibi gratulámur; étenim nostrum ómnium spem divínitus concéssam, hoc est, promissiónis fœtum peperísti. Beáta revéra es, et beátus fructus ventris tui. Piórum autem lingua germen tuum magníficat, ac sermo omnis lætus partum tuum prǽdicat. Dignum sane quidem, ac máxime dignum est eam laudáre, quæ divína benignitáte oráculum accépit, ac talem et tantum nobis fructum édidit, ex quo dulcis Jesus pródiit.
+      status: verified

@@ -1,0 +1,111 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live
+# query. See lauds-suffrage-cross.yml for the set this belongs to. The
+# raw source also has a "De Patrono vel Titulo Ecclesiæ" slot here (a local
+# church's own patron/title commemoration) — not modeled, since there's no
+# fixed local patron in this context; its rubric note is just "insert the
+# usual commemoration before or after these, per its own dignity, and last."
+lauds-suffrage-apostles:
+  text: |
+    Ant. Gloriósi príncipes terræ, quómodo in vita sua dilexérunt se, ita et in morte non sunt separáti.
+    V. In omnem terram exívit sonus eórum.
+    R. Et in fines orbis terræ verba eórum.
+    Orémus.
+    Deus, cujus déxtera beátum Petrum ambulántem in flúctibus, ne mergerétur, eréxit, et coapóstolum ejus Paulum tértio naufragántem de profúndo pélagi liberávit: exáudi nos propítius, et concéde; ut ambórum méritis, æternitátis glóriam consequámur.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live
+# query. See lauds-suffrage-cross.yml for the set this belongs to.
+lauds-suffrage-bvm:
+  text: |
+    Ant. Sancta María, succúrre míseris, juva pusillánimes, réfove flébiles, ora pro pópulo, intérveni pro clero, intercéde pro devóto femíneo sexu: séntiant omnes tuum juvámen, quicúmque célebrant tuam sanctam commemoratiónem.
+    V. Ora pro nobis sancta Dei Génitrix.
+    R. Ut digni efficiámur promissiónibus Christi.
+    Orémus.
+    Concéde nos fámulos tuos, quǽsumus, Dómine Deus, perpétua mentis et córporis sanitáte gaudére: et, gloriósa beátæ Maríæ semper Vírginis intercessióne, a præsénti liberári tristítia, et ætérna pérfrui lætítia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live
+# query. First of four fixed Suffragium commemorations said daily after the
+# day's own collect(s) (Holy Cross, BVM, SS Peter & Paul, Peace) — see
+# lauds-suffrage-bvm.yml, lauds-suffrage-apostles.yml, lauds-suffrage-
+# peace.yml. Only the last of the four (Peace) carries the closing
+# doxology; these three flow straight into the next without "Amen."
+lauds-suffrage-cross:
+  text: |
+    Ant. Per signum Crucis de inimícis nostris líbera nos, Deus noster.
+    V. Omnis terra adóret te, et psallat tibi.
+    R. Psalmum dicat nómini tuo, Dómine.
+    Orémus.
+    Perpétua nos, quǽsumus, Dómine, pace custódi, quos per lignum sanctæ Crucis redímere dignátus es.
+  status: verified
+
+# Verified against Divinum Officium (Tridentine 1910, i.e. the version
+# labeled "Tridentine - 1906" in the reference engine's own picker), Lauds
+# live query, clean ferial day 2026-06-17. Sourced from a different
+# rubric track than the other four suffrages (Monastic Tridentinum 1617,
+# which doesn't carry a St. Joseph suffrage at Lauds at all) per direct
+# instruction -- see lauds-suffrage-cross.yml's header for the set this
+# joins, and calendar/lauds.ts's suffrages case for the fuller sourcing
+# story and how this one differs from the other four in when it's shown
+# (never omitted, only the BVM suffrage is, and only when the day's own
+# office is already Marian).
+lauds-suffrage-joseph:
+  text: |
+    Ant. Ipse Jesus erat incípiens quasi annórum trigínta ut putabátur fílius Joseph.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui ineffábili providéntia beátum Joseph sanctíssimæ Genitrícis tuæ sponsum elígere dignátus es: præsta quǽsumus; ut quem protectórem venerámur in terris, intercessórem habére mereámur in cælis.
+  status: verified
+
+# Throughout Paschaltide (Eastertide/Ascensiontide/Pentecost), the whole
+# ordinary 5-suffrage set (Cross/BVM/Joseph/Apostles/Peace) collapses into
+# this single alleluia-form "Suffragium Paschale" instead — live-verified
+# against Divinum Officium (Monastic Tridentinum 1617 and Tridentine 1906,
+# byte-identical between the two tracks), Lauds live query, 2026-04-20 (a
+# plain Eastertide feria). Distinct antiphon from Vespers' own
+# (vespers-suffrage-paschale.yml, "Crucem sanctam súbiit..."); the
+# versicle/response and collect are shared between both hours.
+lauds-suffrage-paschale:
+  text: |
+    Ant. Crucifíxus surréxit a mórtuis, et redémit nos, allelúia, allelúia.
+    V. Dícite in natiónibus, allelúia.
+    R. Quia Dóminus regnávit a ligno, allelúia.
+    Orémus.
+    Deus qui pro nobis Fílium tuum Crucis patíbulum subíre voluísti, ut inimíci a nobis expélleres potestátem: concéde nobis fámulis tuis; ut resurrectiónis grátiam consequámur.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live
+# query. Last of the four (see lauds-suffrage-cross.yml) — carries the
+# closing doxology the other three don't.
+lauds-suffrage-peace:
+  text: |
+    Ant. Da pacem Dómine in diébus nostris, quia non est álius, qui pugnet pro nobis, nisi tu Deus noster.
+    V. Fiat pax in virtúte tua.
+    R. Et abundántia in túrribus tuis.
+    Orémus.
+    Deus, a quo sancta desidéria, recta consília, et justa sunt ópera: da servis tuis illam, quam mundus dare non potest, pacem; ut et corda nostra mandátis tuis dédita, et hóstium subláta formídine, témpora sint tua protectióne tranquílla.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.
+  status: verified
+
+# Vespers' own antiphon for the same "Suffragium Paschale" substitution
+# described in lauds-suffrage-paschale.yml's own header — shares that
+# file's versicle/response and collect, but its own distinct antiphon
+# ("Crucem sanctam súbiit..."), live-verified against Divinum Officium
+# (Monastic Tridentinum 1617), Vespers live query, 2026-04-20 (a plain
+# Eastertide feria). English antiphon translation is this project's own
+# (the reference engine's own English-language render leaves this
+# particular antiphon untranslated, Latin-only) — status left `draft`
+# for the English text specifically pending a better-sourced translation.
+vespers-suffrage-paschale:
+  text: |
+    Ant. Crucem sanctam súbiit, qui inférnum confrégit; accínctus est poténtia, surréxit die tértia, allelúia.
+    V. Dícite in natiónibus, allelúia.
+    R. Quia Dóminus regnávit a ligno, allelúia.
+    Orémus.
+    Deus qui pro nobis Fílium tuum Crucis patíbulum subíre voluísti, ut inimíci a nobis expélleres potestátem: concéde nobis fámulis tuis; ut resurrectiónis grátiam consequámur.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified

@@ -1,0 +1,65 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2029-01-16, a
+# year that date doesn't collide with a Sunday). Same convention as
+# data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Preces pópuli tui, quǽsumus, Dómine, cleménter exáudi: ut beáti Marcélli Mártyris tui atque Pontíficis méritis adjuvémur, cujus passióne lætámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-marcellus-i-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-martyr-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-marcellus-i-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Preces pópuli tui, quǽsumus, Dómine, cleménter exáudi: ut beáti Marcélli Mártyris tui atque Pontíficis méritis adjuvémur, cujus passióne lætámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Marcellus I's own day (2026-01-16). The Benedictus
+# antiphon.
+benedictus-antiphon:
+  text: Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Marcellus I, Pope and Martyr (Jan 16) —
+# the first of the "pre-1955-but-post-1617" saints (source confirmed
+# Tridentine, not Monastic 1617: web/www/horas/Latin/SanctiM has no
+# 01-16*.txt at all; see memory vu-matins-pre1955-saints).
+# web/www/horas/Latin/Sancti/01-16.txt, English/Sancti/01-16.txt.
+# Lectio1-3 and 7-9 are Common-of-a-Martyr-Pope ("vide C2b" in [Rule]),
+# not proper to this saint, so not authored here per this project's
+# existing "no Common fallback authored into this store" pattern. Only
+# Lectio4-6 are this saint's own proper text — one continuous vita
+# account, no internal source break, so combined into a single reading
+# per the project's recombine-don't-reproduce-the-lesson-split rule.
+# Responsory: the plain (non-"rubrica tridentina", which is just an alias
+# to Commune/C2a) Responsory8 text.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Marcellus Romanus, a Constantio et Galerio usque ad Maxéntium pontificátum gessit. Cujus hortatu Lucina matrona Romana, bonórum suórum Dei Ecclésiam fecit heredem. Aucto in Urbe fidelium numero, ad eórum utilitátem, ad baptismum pœnitentiámque dandam eis, qui christianam religiónem suscíperent, et ad Mártyrum sepultúram, novos Titulos instituit, et quasi álteras diœcéses distríbuit. Quibus rebus ira incénsus Maxentius, Marcello gravia supplícia minátur, nisi, depósito pontificatu, idolis immoláret.
+
+        Qui cum insanas hóminis voces neglígeret, misit eum in catábulum, ut bestiárum, quæ publice alebántur, curam sustinéret: ubi Marcéllus assiduis jejuniis et precibus novem menses vitam duxit, parochias, quas præsens non póterat, visitans per epistolas. Inde ereptus a clericis, hospítio recípitur a beáta Lucina, in cujus ædibus ecclésiam dedicávit, quæ hódie titulo sancti Marcelli nominátur: in qua et Christiáni orábant, et ipse beátus Marcellus prædicabat.
+
+        Quibus cógnitis, Maxéntius in eam ecclésiam catábuli bestias transférri, et a Marcello custodiri jubet: ubi loci fœditate, multisque ærumnis afflíctus obdormívit in Dómino. Cujus corpus in cœmeterio Priscillæ via Salaria a beáta Lucina sepúltum est décimo septimo Kalendas Februarii. Sedit annos quinque, mensem unum, dies viginti quinque. Scripsit epistolam ad episcopos Antiochenæ provinciæ de primatu Romanæ Ecclésiæ, quam caput ecclesiárum appellandam demonstrat; ubi étiam illud scriptum est, nullum concílium jure celebrari, nisi ex auctoritáte Romani Pontificis. Ordinávit mense Decembri Romæ presbyteros viginti quinque, diaconos duos, episcopos per diversa loca viginti unum.
+      responsory: |-
+        R. Dómine, prævenísti eum in benedictiónibus dulcédinis: * Posuísti in cápite ejus corónam de lápide pretióso.
+        V. Vitam pétiit a te, et tribuísti ei longitúdinem diérum in sæculum sæculi.
+        R. Posuísti in cápite ejus corónam de lápide pretióso.
+      status: verified

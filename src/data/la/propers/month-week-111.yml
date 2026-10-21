@@ -1,0 +1,27 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2030-11-02 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Vidi Dóminum * sedéntem super sólium excélsum, et plena erat omnis terra majestáte ejus: et ea, quæ sub ipso erant, replébant templum.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "1st Sunday of November" (Tempora/111-0.txt) — see
+# month-week-081.yml's header for the id scheme. Own Responsory4 (not a
+# cross-reference). Live-verified (2026-11-01, Monastic Tridentinum 1617):
+# "Dominica XXIII Post Pentecosten I. Novembris" — confirming the "081"-
+# style id scheme also matches for November's own boundary.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Gregory the Great, Homilies on Ezekiel, Book 1, Homily 2
+      text: |-
+        Usus prophéticæ locutiónis est, ut prius persónam, tempus, locúmque descríbat, et póstmodum dícere mystéria prophetíæ incípiat; quátenus ad veritátem solídius ostendéndam, ante, históriæ radícem figat, et post, fructus spíritus per signa et allegorías próferat. Ezéchiel ítaque ætátis suæ tempus índicat, dicens: Et factum est in trigésimo anno, in quarto mense, in quinta mensis. Locum quoque denúntians, adjúngit: Cum essem in médio captivórum juxta flumen Chobar, apérti sunt cæli, et vidi visiónes Dei. Tempus étiam insínuat, subdens, In quinta mensis, ipse est annus quintus transmigratiónis regis Jóachin. Qui ut bene persónam índicet, étiam genus narrat, cum súbditur: Et factum est verbum Dómini ad Ezechiélem, fílium Buzi, sacerdótem.
+
+        Sed prima quǽstio nobis óritur, cur is qui nihil adhuc díxerat, ita exórsus est dicens: Et factum est in trigésimo anno. Et, namque sermo conjunctiónis est: et scimus quia non conjúngitur sermo súbsequens, nisi sermóni præcedénti. Qui ígitur nihil díxerat, cur dicit, Et factum est: cum non sit sermo, cui hoc quod íncipit, subjúngat? Qua in re intuéndum est, quia sicut nos corporália, sic prophétæ sensu spiritália aspíciunt; eísque et illa sunt præséntia, quæ nostræ ignorántiæ abséntia vidéntur. Unde fit, ut in mente prophetárum ita conjúncta sint exterióribus interióra, quátenus simul útraque vídeant, simúlque in eis fiat et intus verbum quod áudiunt, et foris quod dicunt.
+
+        Patet ígitur causa, cur qui nihil díxerat, inchoávit dicens: Et factum est in trigésimo anno: quia hoc verbum quod foris prótulit, illi verbo quod intus audíerat, conjúnxit. Continuávit ergo verba quæ prótulit visióni íntimæ, et idcírco íncipit dicens, Et factum est. Subjúnxit enim hoc quod extérius loqui ínchoat; ac si et illud foris sit, quod intus vidit. Hoc autem quod dícitur, quia in trigésimo anno spíritum prophetíæ accéperit, índicat áliquid nobis considerándum; vidélicet quia juxta ratiónis usum, doctrínæ sermo non súppetit, nisi in ætáte perfécta. Unde et ipse Dóminus anno duodécimo ætátis suæ in médio doctórum in templo sedens, non docens sed intérrogans vóluit inveníri.
+      responsory: |-
+        R. Super muros tuos, Jerúsalem, constítui custódes; * Tota die et nocte non tacébunt laudáre nomen Dómini.
+        V. Prædicábunt pópulis fortitúdinem meam, et annuntiábunt géntibus glóriam meam.
+        R. Tota die et nocte non tacébunt laudáre nomen Dómini.
+      status: verified

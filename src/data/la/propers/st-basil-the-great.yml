@@ -1,0 +1,84 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2035-06-14).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Exáudi, quǽsumus, Dómine, preces nostras, quas in beáti Basilíi Confessóris tui atque Pontíficis solemnitáte deférimus: et, qui tibi digne méruit famulári, ejus intercedéntibus méritis, ab ómnibus nos absólve peccátis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-basil-the-great-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-basil-the-great-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Exáudi, quǽsumus, Dómine, preces nostras, quas in beáti Basilíi Confessóris tui atque Pontíficis solemnitáte deférimus: et, qui tibi digne méruit famulári, ejus intercedéntibus méritis, ab ómnibus nos absólve peccátis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Basil the Great's own day (2026-06-14). The Benedictus
+# antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+  status: verified
+
+# Matins Nocturn 2-3 readings for St. Basil the Great, Bishop,
+# Confessor, Doctor (Jun 14) — SanctiM/06-14.txt inherits the whole day
+# (`@Sancti/06-14`) with no Nocturn 2/3 override, so this saint's own
+# content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/06-14.txt, English/Sancti/06-14.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita,
+# no genuine source break.
+# Nocturn 3: Lectio7's Gospel citation (Luke 14:26-35) quotes only the
+# opening sentence before "Et réliqua", not the full pericope, so —
+# per the pre-1955 pass's convention of not transcribing bare incipits
+# — only the homily portion was originally authored (not marked
+# isGospel), combined with Lectio8-9 as one continuous excerpt of St.
+# Basil's own Rule. No responsory given for either reading.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Basil's own homily) — sourced
+# from the day's own Missale [Evangelium] in
+# web/www/missa/Latin/Sancti/06-14.txt (full text given there, not a
+# redirect).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Basilíus, nobilis Cáppadox, Athénis una cum Gregório Nazianzéno, ejus amicíssimo, sæculáribus lítteris, deínde in monastério sacris mirabíliter erudítus, eum brevi cursum fecit ad omnem doctrínæ et morum excelléntiam, ut inde Magni cognómen invénerit. Is ad prædicándum Jesu Christi Evangélium in Pontum accersítus, eam provínciam, a christiánis institútis aberrántem, ad viam salútis revocávit. Mox ab Eusébio Cæsaréæ epíscopo ad erudiéndam eam civitátem adjútor adhibétur: in cujus locum póstea succéssit. Is Fílium Patri consubstantiálem esse in primis deféndit, ac Valéntem imperatórem, sibi irátum, miráculis ádeo flexit, ut, incumbéntem ad voluntátem ejiciéndi ipsum in exsílium, a senténtia discédere coégerit.
+
+        Nam et Valéntis sella, in qua factúrus decrétum de ejiciéndo e civitáte Basilío sedére volébat, confrácta est. Et tribus ab eo cálamis adhíbitis ad scribéndam exsílii legem, nullus eórum réddidit atraméntum; et, cum nihilóminus in propósito scribéndi ímpium decrétum persísteret, ipsíus déxtera, dissolútis nervis, tota contrémuit. His commótus Valens chartam utráque manu conscídit. Ea autem nocte, quæ ad deliberándum Basilío data est, Valéntis uxor íntimis est cruciáta dolóribus, et únicus fílius in gravem morbum íncidit. Quibus ille pertérritus, iniquitátem suam recognóscens, Basilíum accérsit, quo præsénte, puer cœpit convaléscere; verum, vocátis a Valénte ad viséndum púerum hæréticis, paulo post móritur.
+
+        Abstinéntia et continéntia fuit admirábili; una túnica conténtus erat: in jejúnio servándo diligentíssimus, in oratióne assíduus, in qua sæpe totam noctem consumébat. Virginitátem perpétuo cóluit. Monastériis exstrúctis, ita monachórum institútum temperávit, ut solitáriæ atque actuósæ vitæ utilitátes præcláre simul conjúngeret. Multa erudíte scripsit; ac nemo, teste Gregório Nazianzéno, sacræ Scriptúræ libros vérius aut ubérius explicávit. Obiit Kaléndis Januárii, cum tantum spíritu vivens, præter ossa et pellem, nulla prætérea córporis parte constáre viderétur.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 14:26-35
+      text: 'In illo témpore: Dixit Jesus turbis: Si quis venit ad me, et non odit patrem suum, et matrem, et uxórem, et fílios, et fratres, et soróres, adhuc autem et ánimam suam, non potest meus esse discípulus. Et qui non bájulat crucem suam, et venit post me, non potest meus esse discípulus. Quis enim ex vobis volens turrim ædificáre, non prius sedens cómputat sumptus, qui necessárii sunt, si hábeat ad perficiéndum; ne, posteáquam posúerit fundaméntum, et non potúerit perfícere, omnes, qui vident, incípiant illúdere ei, dicéntes: Quia hic homo cœpit ædificáre, et non pótuit consummáre? Aut quis rex itúrus commíttere bellum advérsus álium regem, non sedens prius cógitat, si possit cum decem mílibus occúrrere ei, qui cum vigínti mílibus venit ad se? Alióquin, adhuc illo longe agénte, legatiónem mittens, rogat ea, quæ pacis sunt. Sic ergo omnis ex vobis, qui non renúntiat ómnibus, quæ póssidet, non potest meus esse discípulus. Bonum est sal. Si autem sal evanúerit, in quo condiétur? Neque in terram neque in sterquilínium útile est, sed foras mittétur. Qui habet aures audiéndi, áudiat.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Basil, Archbishop of Caesarea, Paraphrase of his Rule, Q. 8 (on Luke 14:26-35)
+      text: |-
+        Perfécta quidem renuntiátio in eo consístit, ut id assequámur, ne ad ipsíus étiam vitæ affectiónem propénsi simus, et respónsum mortis habeámus, ut non simus fidéntes in nobis ipsis. Hujúsmodi autem renuntiátio inítium sumit ab alienatióne rerum externárum, véluti a possessiónibus, ab ináni glória, a vivéndi consuetúdine, a rerum inutílium amóre; quemádmodum étiam suo exémplo nobis ostendérunt sancti Dómini nostri discípuli, Jacóbus quidem et Joánnes, relícto patre Zebedǽo et ipsa quoque navícula, de qua omnis illórum victus rátio pendébat; Matthǽus vero, cum ab ipso telónio surréxit ac Dóminum secútus est.
+
+        Sed quid opus est nostris ratiónibus aut sanctórum virórum exémplis id quod dícimus confirmáre, cum ipsa Dómini verba in médium líceat afférre, iísque ipsis religiósam ac Deum timéntem ánimam commovére, quibus ille perspícue et sine controvérsia protestátur, dicens: Sic ígitur quicúmque ex vobis non renuntiáverit ómnibus quæ póssidet, non potest meus esse discípulus? Et álio in loco, cum prius dixísset: Si vis perféctus esse, vade, et vende ómnia quæ habes, et da paupéribus; póstea subjúnxit: Veni, séquere me.
+
+        Est ígitur renuntiátio, quemádmodum docúimus, vinculórum terrénæ hujus ac temporális vitæ solútio, atque ab humánis negótiis liberátio, per quam ad ineúndam viam, qua ad Deum pervenítur, aptióres et promptióres effícimur; et expedíta rátio ad acquisitiónem usúmque rerum, quæ super aurum et lápidem pretiósum multum longe sunt pretiosióres. Et in summa, cordis humáni ad cæléstem conversatiónem translátio, ita ut dícere líceat: Nostra conversátio in cælis est; et, quod máximum est, inítium unde ad Christi similitúdinem evádimus, qui cum dives esset, propter nos pauper est factus.
+      status: verified

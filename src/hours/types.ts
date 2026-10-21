@@ -19,7 +19,7 @@ export const HOUR_IDS: readonly HourId[] = [
   'compline',
 ];
 
-/** Reference into one of the proper-text stores (data/propers/**). Not built yet — placeholder shape. */
+/** Reference into one of the proper-text stores (data/<lang>/{commons,propers,ordinary}). Not built yet — placeholder shape. */
 export interface PropersRef {
   source: 'sanctoral' | 'temporal' | 'common';
   id: string;
@@ -131,7 +131,7 @@ export type HourPart =
   | { kind: 'lauds-psalmody' }
   // Lauds only. The weekday-resolved chapter/short-responsory/hymn/closing
   // versicle bundle that follows the psalmody — see hours/lauds.ts and
-  // data/propers/common/lauds-{capitulum,responsory,hymn,versicle}-*.yml.
+  // the lauds-{capitulum,responsory,hymn,versicle} sections of data/<lang>/{commons,propers}/*.yml.
   // Expands into 4 ResolvedParts (chapter, responsory, hymn, versicle).
   | { kind: 'lauds-office' }
   // Vespers only. The weekday-resolved 4-psalm-group psalmody — see
@@ -146,7 +146,7 @@ export type HourPart =
   | { kind: 'vespers-psalmody' }
   // Vespers only. The weekday-resolved chapter/short-responsory/hymn/
   // versicle bundle that follows the psalmody — see hours/vespers.ts and
-  // data/propers/common/vespers-{capitulum,responsory,hymn,versicle}-*.yml.
+  // the vespers-{capitulum,responsory,hymn,versicle} sections of data/<lang>/{commons,propers}/*.yml.
   // Expands into 4 ResolvedParts (chapter, responsory, hymn, versicle).
   | { kind: 'vespers-office' }
   // Vespers only. Magnificat (Luke 1:46-55), fixed text, framed by a
@@ -157,7 +157,7 @@ export type HourPart =
   // Benedictus has no equivalent of. Same incipit-or-full/full-after
   // framing as benedictus/nunc-dimittis, gated by isDoubleOrHigher.
   | { kind: 'magnificat' }
-  // Lauds only. Benedictus (Luke 1:68-79), fixed text (see propers/common/
+  // Lauds only. Benedictus (Luke 1:68-79), fixed text (see data/<lang>/{commons,propers}/
   // benedictus.yml) framed by a day-resolved antiphon (see hours/
   // resolve-common.ts's getBenedictusAntiphon) — same incipit-or-full/
   // full-after-Creed... no Creed at Lauds, just before+after framing shape
@@ -165,7 +165,7 @@ export type HourPart =
   | { kind: 'benedictus' }
   // Lauds and Vespers. The four fixed Tridentine suffrages (Holy Cross,
   // BVM, Ss. Peter & Paul, Peace) said after the day's collect(s) — see
-  // data/propers/common/lauds-suffrage-*.yml (reused byte-identical at
+  // data/<lang>/ordinary/suffrages.yml (reused byte-identical at
   // Vespers, same fixed formula after either hour, live-verified
   // 2026-08-25 — see hours/resolve-common.ts's resolveSuffrages).
   // `omitOnDouble` gates the whole set at once (real practice: suffrages

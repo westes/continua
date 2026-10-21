@@ -1,0 +1,385 @@
+# Collect of The Five Holy Wounds of Our Lord Jesus Christ. Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). English is this project's own translation, marked draft.
+collect:
+  text: |
+    Orémus.
+    Deus, qui unigéniti Fílii tui passióne et, per quinque Vúlnera ejus, sánguinis effusióne, humánam natúram peccáto pérditam reparásti: tríbue nobis, quǽsumus; ut, qui ab eo suscépta Vúlnera venerámur in terris, ejúsdem pretiosíssimi sánguinis fructum cónsequi mereámur in cœlis.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Pange, lingua, in its Passiontide recension: the source's [Hymnus Vespera]/[Hymnus Matutinum] both point at Psalterium/Special/Matutinum Special [Hymnus Quad5] (Monastic: [HymnusM Quad5]); text and English copied from matins-hymn-passiontide.yml. English is this project's own translation, marked draft.
+matins-hymn:
+  text: |
+    Pange, lingua, gloriósi
+    Prœlium certáminis,
+    Et super Crucis trophǽo
+    Dic triúmphum nóbilem,
+    Quáliter Redémptor orbis
+    Immolátus vícerit.
+
+    De paréntis protoplásti
+    Fraude Factor cóndolens,
+    Quando pomi noxiális
+    Morsu in mortem córruit,
+    Ipse lignum tunc notávit,
+    Damna ligni ut sólveret.
+
+    Hoc opus nostræ salútis
+    Ordo depopóscerat,
+    Multifórmis proditóris
+    Ars ut artem fálleret,
+    Et medélam ferret inde,
+    Hostis unde lǽserat.
+
+    Quando venit ergo sacri
+    Plenitúdo témporis,
+    Missus est ab arce Patris
+    Natus, orbis Cónditor,
+    Atque ventre virgináli
+    Carne amíctus pródiit.
+
+    Vagit infans inter arcta
+    Cónditus præsépia:
+    Membra pannis involúta
+    Virgo Mater álligat:
+    Et manus, pedésque, et crura
+    Stricta cingit fáscia.
+
+    Glória, et honor Deo
+    Usqueqáque Altíssimo,
+    Una Patri, Filióque;
+    Inclyto Paráclito:
+    Cui laus est et potéstas,
+    Per ætérna sǽcula. Amen.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). English is this project's own translation, marked draft.
+matins-invitatory:
+  text: Christum in cruce confixum, quinque plagis vulnerátum, * Veníte adorémus.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). English is this project's own translation, marked draft.
+lauds-capitulum:
+  text: 'Christus vulnerátus est propter iniquitátes nostras, attrítus est propter scélera nostra: cujus livóre sanáti sumus.'
+  citation: Is 53:5
+  status: verified
+
+# The source's [Hymnus Laudes] points at Psalterium/Special/Major Special [Hymnus Quad5 Laudes] (Monastic: [HymnusM Quad5 Laudes]); text and English copied from lauds-hymn-passiontide.yml. English is this project's own translation, marked draft.
+lauds-hymn:
+  text: |
+    Lustris sex qui jam peráctis,
+    Tempus implens córporis,
+    Se volénte natus ad hoc,
+    Passióni déditus,
+    Agnus in Crucis levátur
+    Immolándus stípite.
+
+    Hic acétum, fel, arúndo,
+    Sputa, clavi, láncea:
+    Mite corpus perforátur,
+    Sanguis, unda prófluit:
+    Terra, pontus, astra, mundus,
+    Quo lavántur flúmine!
+
+    Crux fidélis, inter omnes
+    Arbor una nóbilis:
+    Nulla silva talem profert
+    Fronde, flore, gérmine:
+    Dulce lignum, dulces clavos,
+    Dulce pondus sústinet.
+
+    Flecte ramos, arbor alta,
+    Tensa laxa víscera,
+    Et rigor lentéscat ille,
+    Quem dedit natívitas:
+    Ut supérni membra Regis
+    Miti tendas stípite.
+
+    Sola digna tu fuísti
+    Ferre sæcli prétium,
+    Atque portum præparáre
+    Nauta mundo náufrago,
+    Quem sacer cruor perúnxit,
+    Fusus Agni córpore.
+
+    * Glória et honor Deo
+    Usquequáque altíssimo:
+    Una Patri, Filióque,
+    Inclyto Paráclito:
+    Cui laus est et potéstas
+    Per ætérna sǽcula.
+    Amen.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). English is this project's own translation, marked draft.
+lauds-versicle:
+  text: |
+    V. Vidébunt in quem transfixérunt.
+    R. Et dolébunt super eum, ut in morte primogéniti.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). The short responsory is the standard Prime form (as in prime-chapter-responsory-most-precious-blood.yml) with this feast's own versicle. English is this project's own translation, marked draft.
+prime-chapter/responsory-~:
+  text: |
+    R.br. Christe, Fili Dei vivi, * Miserére nobis.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+    V. Qui vulnerátus es pro nobis.
+    R. Miserére nobis.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). English is this project's own translation, marked draft.
+prime-lectio:
+  text: 'Trádidit Christus in mortem ánimam suam, et cum scelerátis reputátus est: et ipse peccáta multórum tulit, et pro transgressóribus rogávit.'
+  citation: Is 53:12
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). English is this project's own translation, marked draft.
+terce-capitulum:
+  text: |
+    Christus vulnerátus est propter iniquitátes nostras, attrítus est propter scélera nostra: cujus livóre sanáti sumus.
+    R. Deo grátias.
+    V. O vos omnes, qui transitis per viam.
+    R. Atténdite, et vidéte dolórem meum.
+  citation: Is 53:5
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). English is this project's own translation, marked draft.
+sext-capitulum:
+  text: |
+    Fáciem meam non avérti ab increpántibus et conspuéntibus in me. Dóminus Deus auxiliátor meus, et ídeo non sum confúsus.
+    R. Deo grátias.
+    V. Disciplína pacis nostræ super eum.
+    R. Et livóre ejus sanáti sumus.
+  citation: Is 50:6-7
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). English is this project's own translation, marked draft.
+none-capitulum:
+  text: |
+    Trádidit Christus in mortem ánimam suam, et cum scelerátis reputátus est: et ipse peccáta multórum tulit, et pro transgressóribus rogávit.
+    R. Deo grátias.
+    V. Oblátus est quia ipse vóluit.
+    R. Et livóre ejus sanáti sumus.
+  citation: Is 53:12
+  status: verified
+
+# Pange, lingua, in its Passiontide recension: the source's [Hymnus Vespera]/[Hymnus Matutinum] both point at Psalterium/Special/Matutinum Special [Hymnus Quad5] (Monastic: [HymnusM Quad5]); text and English copied from matins-hymn-passiontide.yml. English is this project's own translation, marked draft.
+vespers-hymn:
+  text: |
+    Pange, lingua, gloriósi
+    Prœlium certáminis,
+    Et super Crucis trophǽo
+    Dic triúmphum nóbilem,
+    Quáliter Redémptor orbis
+    Immolátus vícerit.
+
+    De paréntis protoplásti
+    Fraude Factor cóndolens,
+    Quando pomi noxiális
+    Morsu in mortem córruit,
+    Ipse lignum tunc notávit,
+    Damna ligni ut sólveret.
+
+    Hoc opus nostræ salútis
+    Ordo depopóscerat,
+    Multifórmis proditóris
+    Ars ut artem fálleret,
+    Et medélam ferret inde,
+    Hostis unde lǽserat.
+
+    Quando venit ergo sacri
+    Plenitúdo témporis,
+    Missus est ab arce Patris
+    Natus, orbis Cónditor,
+    Atque ventre virgináli
+    Carne amíctus pródiit.
+
+    Vagit infans inter arcta
+    Cónditus præsépia:
+    Membra pannis involúta
+    Virgo Mater álligat:
+    Et manus, pedésque, et crura
+    Stricta cingit fáscia.
+
+    Glória, et honor Deo
+    Usqueqáque Altíssimo,
+    Una Patri, Filióque;
+    Inclyto Paráclito:
+    Cui laus est et potéstas,
+    Per ætérna sǽcula. Amen.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). English is this project's own translation, marked draft.
+vespers-versicle:
+  text: |
+    V. Vidébunt in quem transfixérunt.
+    R. Et dolébunt super eum, ut in morte primogéniti.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). English is this project's own translation, marked draft.
+vespers-versicle/~-first:
+  text: |
+    V. Vidébunt in quem transfixérunt.
+    R. Et dolébunt super eum, ut in morte primogéniti.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). English is this project's own translation, marked draft.
+benedictus-antiphon:
+  text: Unus mílitum láncea latus ejus apéruit, et contínuo exívit sanguis et aqua.
+  status: verified
+  temporal: true
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). English is this project's own translation, marked draft.
+magnificat-antiphon:
+  text: 'Ego sum vestra redémptio: manus meæ, quæ vos fecérunt, clavis confixæ sunt: propter vos flagéllis cæsus sum, spinis coronátus sum: aquam pétii pendens, et acétum porrexerunt: in escam meam fel dedérunt, et in latus lanceam: mórtuus et sepúltus resurrexi: vobíscum sum, et vivo in ætérnum.'
+  status: verified
+  temporal: true
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). English is this project's own translation, marked draft.
+magnificat-antiphon/~-first:
+  text: Dum in cruce pendéret unigénitus Dei Fílius, et ab ómnibus subsannarétur, mater ejus Virgo María ipsum verum Deum et hóminem cóndolens venerabátur.
+  status: verified
+  temporal: true
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). Matins psalmody: nine antiphons with the psalms the source assigns. English is this project's own translation, marked draft.
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 10
+        antiphon: Quis est * qui venit de Edom, tinctis véstibus de Bosra?
+      - psalms:
+          - 14
+        antiphon: Quare ergo * rubrum est induméntum tuum, et vestiménta tua sicut calcántium in torculári?
+      - psalms:
+          - 23
+        antiphon: Tórcular * calcávi solus, et de géntibus non est vir mecum
+    versicle:
+      v: Fodérunt manus meas et pedes meos.
+      r: Dinumeravérunt omnia ossa mea.
+  nocturn2:
+    groups:
+      - psalms:
+          - 21
+        antiphon: Fodérunt * manus meas et pedes meos; dinumeravérunt ómnia ossa mea.
+      - psalms:
+          - 65
+        antiphon: A planta pedis * usque ad vérticem non est in eo sánitas.
+      - psalms:
+          - 75
+        antiphon: Vulnus, * et livor, et plaga tumens non est circumligáta, nec curáta medicámine, neque fota óleo.
+    versicle:
+      v: Vere languóres nostros ipse tulit.
+      r: Et dolóres nostros ipse portávit.
+  nocturn3:
+    groups:
+      - psalms:
+          - 95
+        antiphon: Quid sunt plagæ istæ in médio mánuum tuárum?
+      - psalms:
+          - 96
+        antiphon: His plagátus sum in domo eórum qui diligébant me.
+      - psalms:
+          - 97
+        antiphon: In amaritúdine sermo meus est, et manus plagæ meæ aggraváta est super gémitum meum.
+    versicle:
+      v: Ipse vulnerátus est propter iniquitátes nostras.
+      r: Attrítus est propter scélera nostra.
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). Lauds psalmody: Sunday psalms (92, 99, 62, canticle, Laudate) under this feast's own five antiphons. English is this project's own translation, marked draft.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Vere languóres * nostros ipse tulit, et dolóres nostros ipse portávit.
+    - psalms:
+        - 99
+      antiphon: Ipse autem * vulnerátus est propter iniquitátes nostras, attrítus est propter scélera nostra.
+    - psalms:
+        - 62
+      antiphon: Alligávit Dóminus * plagam pópuli sui, et percussúram ejus sanávit.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Omnis qui transibit, * stupebit super omnes plagas ejus.
+  laudate:
+    antiphon: O vos omnes * qui transitis per viam, atténdite, et vidéte si est dolor sicut dolor meus.
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). Vespers psalmody: the source's five antiphons reduced to the Monastic four: antiphons 1, 2, 3 under their own psalms, antiphon 5 under the fourth antiphon's psalm (140), as the engine's Monastic Vespers does. English is this project's own translation, marked draft.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 115
+      antiphon: Vere languóres * nostros ipse tulit, et dolóres nostros ipse portávit.
+    - psalms:
+        - 119
+      antiphon: Ipse autem * vulnerátus est propter iniquitátes nostras, attrítus est propter scélera nostra.
+    - psalms:
+        - 139
+      antiphon: Alligávit Dóminus * plagam pópuli sui, et percussúram ejus sanávit.
+    - psalms:
+        - 140
+      antiphon: O vos omnes * qui transitis per viam, atténdite, et vidéte si est dolor sicut dolor meus.
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt (Duplex majus, Friday of the third week of Lent). Vespers psalmody: the source's five antiphons reduced to the Monastic four: antiphons 1, 2, 3 under their own psalms, antiphon 5 under the fourth antiphon's psalm (140), as the engine's Monastic Vespers does. English is this project's own translation, marked draft.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 115
+      antiphon: Vere languóres * nostros ipse tulit, et dolóres nostros ipse portávit.
+    - psalms:
+        - 119
+      antiphon: Ipse autem * vulnerátus est propter iniquitátes nostras, attrítus est propter scélera nostra.
+    - psalms:
+        - 139
+      antiphon: Alligávit Dóminus * plagam pópuli sui, et percussúram ejus sanávit.
+    - psalms:
+        - 140
+      antiphon: O vos omnes * qui transitis per viam, atténdite, et vidéte si est dolor sicut dolor meus.
+
+# Matins Nocturn 2 and 3 readings for the Five Holy Wounds (Friday of Lent 3).
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt.
+# Nocturn 2: Lectio4-6, two passages of St. Bernard on the Passion (the source names
+# them "Lib. de Pass. Dom., cap. 41" and "Serm. de Passione Domini"), combined into
+# one reading, its closing responsory the source's Responsory6. Nocturn 3: the
+# Gospel (John 19:28-35, the source's Mass Gospel via Commune/Votiva/V6) and then
+# St. Cyril of Alexandria's homily on it (Lectio7 after the incipit, and Lectio8),
+# its closing responsory the source's Responsory8. Nocturn 1 (Lectio1-3) is not
+# carried: continua's first nocturn runs the Scripture course.
+#
+# The English is this project's own translation, marked draft.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Bernard of Clairvaux, On the Passion of the Lord
+      text: |
+        Captus ergo Jesus post plúrimas illusiones tam Judæórum quam Géntium, post sánguinis plures effusiones, clavis immitibus mánibus simul et pédibus perforatur, et confígitur ligno crucis Salvátor noster mitissimus Jesus. Intuere, et réspice rosam passiónis sanguineæ, quómodo rubet in indícium ardentissimæ caritátis. Contendunt pássio et cáritas: illa, ut plus ardeat; ista, ut plus rúbeat.
+
+        Vide quómodo hoc flore rosæ florúerit optima vitis nostra, rubicúndus Jesus. Vide totum corpus, sicubi rosæ sanguineæ florem non invénias. Inspice manum unam et álteram, si florem rosæ non invénias in utráque. Inspice pedem unum et álterum: numquid non rosei? Inspice láteris apertúram, quia nec illa caret rosa, quamvis ipsa subrúbea sit, propter mixtúram aquæ, quia, sicut narrat Evangelísta, cum unus mílitum láncea latus ejus perforasset, exívit sanguis et aqua.
+
+        Réspice Dómine sancte Pater de sanctuário tuo, et de excélso cœlorum habitáculo, et intuere hanc sacrosanctam hóstiam, quam tibi offert magnus póntifex noster, sanctus puer tuus Dóminus Jesus, pro peccátis fratrum suórum; et esto placabilis super multitúdine malítiæ nostræ. Cognósce Pater túnicam fílii tui Joseph. Heu! fera péssima devorávit eum, et conculcávit in furóre suo vestiméntum ejus: ecce quinque scissúras lamentabiles in eo relíquit.
+      responsory: |
+        R. Videmus Jesum propter passiónem mortis glória et honóre coronátum, * Ut pro ómnibus gustaret mortem.
+        V. Decebat eum, qui multos fílios in glóriam addúxerat, auctórem salútis eórum per passiónem consummari.
+        R. Ut pro ómnibus gustaret mortem.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joann 19:28-35
+      text: 'In illo témpore: Sciens Jesus, quia ómnia consummáta sunt, ut consummarétur Scriptúra, dixit: Sítio. Vas ergo erat pósitum acéto plenum. Illi autem spóngiam plenam acéto, hyssópo circumponéntes, obtulérunt ori ejus. Cum ergo accepísset Jesus acétum, dixit: Consummátum est. Et inclináto cápite trádidit spíritum. Judǽi ergo (quóniam Parascéve erat), ut non remanérent in cruce córpora sábbato (erat enim magnus dies ille sábbati), rogavérunt Pilátum, ut frangeréntur eórum crura et tolleréntur. Venérunt ergo mílites: et primi quidem fregérunt crura et altérius, qui crucifíxus est cum eo. Ad Jesum autem cum veníssent, ut vidérunt eum jam mórtuum, non fregérunt ejus crura, sed unus mílitum láncea latus ejus apéruit, et contínuo exívit sanguis et aqua. Et qui vidit, testimónium perhíbuit: et verum est testimónium ejus.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Cyril of Alexandria, Commentary on John, Bk. 12
+      text: |
+        Cum ab immanibus Judǽis omnis in Christum expleta esset impietas, nec quidquam jam ad summam crudelitátem relíquum esset, ad extrémum caro Christi sanctíssima próprium quiddam ac naturale rursus pátitur. Multis enim ac váriis dolóribus exsiccata, siti torquétur. Graves síquidem dolóres magnam ad sitim commovendam vim habent, naturáli quodam et inexplicábili calóre húmidum consumentes, et igneis ardoribus præcórdia urentes.
+
+        Consummátum esse ait impietatis Judaicæ modum, et impotentem sæviendi ánimum. Quid enim Judǽi intentatum reliquerunt, aut quid non extremæ crudelitátis adhibuerunt? Quod supplicii aut contumeliæ genus prætermiserunt? Quamóbrem jure, Consummátum est, ait: sed hora jam eum ad prædicándum spirítibus, qui apud ínferos erant, invitante (advenit enim ut mortuórum ac vivórum dominaretur), ipsam pro nobis mortem suscépit, commúnem hanc natúræ nostræ passiónem sustínuit in carne sua.
+      responsory: |
+        R. Dignus es Dómine accípere librum, et aperíre signácula ejus, quóniam occísus es, et redemísti nos Deo * In sánguine tuo.
+        V. Fecísti enim nos Deo nostro regnum, et sacerdótes.
+        R. In sánguine tuo.
+      status: verified

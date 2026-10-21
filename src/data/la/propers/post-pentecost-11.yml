@@ -1,0 +1,87 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui, abundántia pietátis tuæ, et mérita súpplicum excédis et vota: effúnde super nos misericórdiam tuam; ut dimíttas quæ consciéntia métuit, et adícias quod orátio non præsúmit.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-09 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: Cum transísset Dóminus * fines Tyri, surdos fecit audíre et mutos loqui.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-08-09 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: Bene ómnia fecit * et surdos fecit audíre et mutos loqui.
+  status: verified
+  temporal: true
+
+# Nocturn 2-3, 11th Sunday after Pentecost. Sourced from Tempora/Pent11-0.txt.
+# See post-pentecost-02.yml for sweep method/responsory-reuse note. This is
+# the last Sunday of the season with its own proper Nocturn 2 content in the
+# source (Pent12 onward have Lectio7-9 only).
+# Nocturn 2: St. Jerome's Exposition of Isaiah, on Hezekiah's illness as a
+# type - one continuous excerpt (Lectio4-6). Nocturn 3: Lectio7 bare incipit
+# (Mark 7:31-37, the healing of the deaf-mute, "Ephphetha") skipped;
+# Lectio8-9 one continuous homily by Pope St. Gregory the Great, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Jerome, Priest, Exposition of the Prophet Isaiah, Book 11, ch. 38
+      text: |-
+        Ne elevarétur cor Ezechíæ post incredíbiles triúmphos et de média captivitáte victóriam, infirmitáte córporis sui visitátur, et audit se esse moritúrum; ut convérsus ad Dóminum flectat senténtiam ejus. Quod quidem et in Jona prophéta légimus, et in comminatiónibus contra David: quæ dicúntur futúra, nec facta sunt, non Deo mutánte senténtiam, sed provocánte humánum genus ad notítiam sui. Dóminus enim pœ́nitens est super malítiis. Convertítque Ezechías fáciem suam ad paríetem, quia ad templum ire non póterat.
+
+        Audiénsque se esse moritúrum, non precátur vitam et annos plúrimos, sed in Dei judício, quid velit præstáre, dimíttit. Nóverat enim idcírco Deo placuísse Salomónem, quod annos vitæ non petíerit amplióres; sed itúrus ad Dóminum narrat ópera sua, quómodo ambuláverit coram eo in veritáte et in corde perfécto. Felix consciéntia, quæ afflictiónis témpore bonórum óperum recordátur. Beáti enim mundo corde: quóniam ipsi Deum vidébunt.
+
+        Flevit autem fletu magno, propter promissiónem Dómini ad David, quam vidébat in sua morte peritúram. Eo enim témpore Ezechías fílios non habébat; nam post mortem ejus Manásses cum duódecim esset annórum, regnáre cœpit in Judǽa: ex quo perspícuum est, post tértium annum concéssæ vitæ Manássen esse generátum. Ergo iste omnis est fletus, quod desperábat Christum de suo sémine nascitúrum.
+      responsory: |-
+        R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.
+        V. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?
+        R. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Marc 7:31-37
+      text: 'In illo témpore: Exiens Jesus de fínibus Tyri, venit per Sidónem ad mare Galilǽæ, inter médios fines Decapóleos. Et addúcunt ei surdum et mutum, et deprecabántur eum, ut impónat illi manum. Et apprehéndens eum de turba seórsum, misit dígitos suos in aurículas ejus: et éxspuens, tétigit linguam ejus: et suspíciens in cœlum, ingémuit, et ait illi: Ephphetha, quod est adaperíre. Et statim apértæ sunt aures ejus, et solútum est vínculum linguæ ejus, et loquebátur recte. Et præcépit illis, ne cui dícerent. Quanto autem eis præcipiébat, tanto magis plus prædicábant: et eo ámplius admirabántur, dicéntes: Bene ómnia fecit: et surdos fecit audíre et mutos loqui.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 10, Book 1 on Ezekiel
+      text: |-
+        Quid est quod creátor ómnium Deus, cum surdum et mutum sanáre voluísset, in aures illíus suos dígitos misit, et éxspuens linguam ejus tétigit? Quid per dígitos Redemptóris, nisi dona Sancti Spíritus designántur? Unde cum in álio loco ejecísset dæmónium, dixit: Si in dígito Dei eício dæmónia, profécto pervénit in vos regnum Dei. Ex quo utróque loco collígitur, quia dígitus Spíritus vocátur. Dígitos ergo in aurículas míttere, est per dona Spíritus Sancti mentem surdi ad obediéndum aperíre.
+
+        Quid est vero, quod éxspuens linguam ejus tétigit? Salíva nobis est ex ore Redemptóris, accépta sapiéntia in elóquio divíno. Salíva quippe ex cápite défluit in ore. Ea ergo sapiéntia, quæ ipse est, dum lingua nostra tángitur, mox ad prædicatiónis verba formátur. Qui suspíciens in cælum, ingémuit: non quod ipse necessárium gémitum habéret, qui dabat quod postulábat; sed nos ad eum gémere, qui cælo prǽsidet, dócuit: ut et aures nostræ per donum Spíritus Sancti aperíri, et lingua per salívam oris, id est, per sciéntiam divínæ locutiónis, solvi débeat ad verba prædicatiónis.
+
+        Cui mox, Ephphétha, id est, Adaperíre dícitur: et statim apértæ sunt aures ejus, et solútum est vínculum linguæ ejus. Qua in re notándum est, quia propter clausas aures dictum est, Adaperíre. Sed cui aures cordis ad obediéndum apértæ fúerint, ex subsequénti procul dúbio étiam linguæ ejus vínculum sólvitur; ut bona quæ ipse fécerit, étiam faciénda áliis loquátur. Ubi bene ádditur: Et loquebátur recte. Ille enim recte lóquitur, qui prius obediéndo fécerit quæ loquéndo ádmonet esse faciénda.
+      responsory: |-
+        R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.
+        V. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.
+        R. Plena est omnis terra glória ejus.
+      status: verified

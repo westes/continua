@@ -1,0 +1,54 @@
+# Matins Nocturn 2 readings for Ss. Cornelius, Pope, and Cyprian,
+# Bishop, Martyrs (Sep 16) — pre-1955-but-post-1617 (no SanctiM/09-16*.txt
+# at all). web/www/horas/Latin/Sancti/09-16.txt,
+# English/Sancti/09-16.txt. Lectio4-5 (Cornelius's own vita) combined
+# into one reading, no internal break. Lectio6 (Cyprian's vita, drawn
+# from St. Jerome's De Scriptoribus Ecclesiasticis, ch. 67) is a
+# genuinely distinct source/saint, kept separate. No responsory given.
+#
+# Checked 2026-09-05 for a Gospel pairing: both readings here are
+# Nocturn 2 (Lectio4-6). St. Jerome's De Scriptoribus Ecclesiasticis
+# entry on Cyprian is a biographical/bibliographical catalogue excerpt,
+# not an exegesis of any Gospel pericope -- no isGospel pairing
+# applies.
+#
+# Update (2026-09-05, second pass): Nocturn 3 now authored too --
+# 09-16.txt's own [Rule] ("vide C3") inherits it wholesale from the
+# Common of Several Martyrs (horas/Latin/Commune/C3.txt: Luke 21:9-19,
+# "Cum audiéritis prǽlia", Pope St. Gregory's Homily 35 on the
+# Gospels). Full Gospel pericope from obsolete/missa/Latin+English/
+# Commune/C3.txt (no live missa/Commune/C3.txt in this reference-engine
+# copy); homily English from horas/English/Commune/C3.txt.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Cornélius Romanus, Gallo et Volusiáno imperatóribus pontificátum gerens, cum Lucina, femina sanctíssima, córpora Apostolórum Petri et Pauli e catacumbis in opportuniórem locum tránstulit; ac Pauli corpus Lucina in suo prædio via Ostiénsi, prope eum locum, ubi fuerat gládio percússus, collocávit; Cornélius Principis Apostolórum corpus non longe inde, ubi crucifixus fuerat, repósuit. Quod cum ad imperatóres delátum esset, et Pontifice auctore multos fíeri Christiános, mittitur is in exsílium ad Centumcellas; ubi eum sanctus Cyprianus, epíscopus Carthaginiénsis, per litteras est consolatus.
+
+        Hoc autem christianæ caritátis offícium cum frequens alter alteri persólveret, deteriórem in partem id accipiéntes imperatóres, accersítum Romam Cornelium tamquam de majestáte reum plumbátis cædi, raptumque ad Martis simulacrum, ei sacrificáre jubent. Quam impietátem cum ille detestarétur, ei caput abscissum est décimo octavo Kalendas Octobris. Cujus corpus beáta Lucina, clericis adjutóribus, humávit in arenaria prædii sui prope cœmetérium Callísti. Vixit in pontificatu annos circiter duos.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: St. Jerome, Priest, On Illustrious Men, ch. 67
+      text: Cyprianus, Afer, primum gloriose rhetoricam docuit. Exinde, suadénte presbytero Cæcílio, a quo et cognoméntum sortitus est, christianus factus, omnem substantiam suam paupéribus erogávit. Ac post non multum témporis, eléctus in presbyterum, étiam epíscopus Carthaginiénsis constitútus est. Hujus ingenii superfluum est indicem téxere, cum sole clarióra sint ejus opera. Passus est sub Valeriáno et Gallieno princípibus, persecutióne octava, eodem die quo Romæ Cornélius, sed non eodem anno.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 21:9-19
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Cum audiéritis prǽlia et seditiónes, nolíte terréri: opórtet primum hæc fíeri, sed nondum statim finis. Tunc dicébat illis: Surget gens contra gentem, et regnum advérsus regnum. Et terræmótus magni erunt per loca, et pestiléntiæ, et fames, terrorésque de cœlo, et signa magna erunt. Sed ante hæc ómnia injícient vobis manus suas, et persequéntur tradéntes in synagógas et custódias, trahéntes ad reges et præsides propter nomen meum: contínget autem vobis in testimónium. Pónite ergo in córdibus vestris non præmeditári, quemádmodum respondeátis. Ego enim dabo vobis os et sapiéntiam, cui non potérunt resístere et contradícere omnes adversárii vestri. Tradémini autem a paréntibus, et frátribus, et cognátis, et amícis, et morte affícient ex vobis: et éritis ódio ómnibus propter nomen meum: et capíllus de cápite vestro non períbit. In patiéntia vestra possidébitis ánimas vestras.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 35 on the Gospels
+      responsory: |-
+        R. Propter testaméntum Dómini, et leges patérnas, Sancti Dei perstitérunt in amóre fraternitátis: * Quia unus fuit semper spíritus in eis, et una fides.
+        V. Ecce quam bonum et quam jucúndum habitáre fratres in unum.
+        R. Quia unus fuit semper spíritus in eis, et una fides.
+      text: |-
+        Dóminus ac Redémptor noster peritúri mundi præcurréntia mala denúntiat, ut eo minus pertúrbent veniéntia, quo fúerint præscíta. Minus enim jácula fériunt, quæ prævidéntur: et nos tolerabílius mundi mala suscípimus, si contra hæc per præsciéntiæ clípeum munímur. Ecce enim dicit: Cum audiéritis prǽlia et seditiónes, nolíte terréri: opórtet enim primum hæc fíeri, sed nondum statim finis. Pensánda sunt verba Redemptóris nostri, per quæ nos áliud intérius, áliud extérius passúros esse denúntiat; bella quippe ad hostes pértinent, seditiónes ad cives. Ut ergo nos índicet intérius exteriúsque turbári, áliud nos fatétur ab hóstibus, áliud a frátribus pérpeti.
+
+        Sed his malis præveniéntibus, quia non statim finis sequátur, adjúngit: Surget gens contra gentem, et regnum advérsus regnum: et terræmótus magni erunt per loca, et pestiléntiæ, et fames, terrorésque de cælo: et signa magna erunt. Última tribulátio multis tribulatiónibus prævenítur: et per crebra mala, quæ prævéniunt, indicántur mala perpétua, quæ subsequéntur. Et ídeo post bella et seditiónes non statim finis: quia multa debent mala præcúrrere, ut malum váleant sine fine nuntiáre.
+
+        Sed cum tot signa perturbatiónis dicta sint, opórtet, ut eórum consideratiónem bréviter per síngula perstringámus: quia necésse est, ut ália e cælo, ália e terra, ália ab eleméntis, ália ab homínibus patiámur. Ait enim: Surget gens contra gentem, ecce perturbátio hóminum: erunt terræmótus magni per loca, ecce respéctus iræ désuper: erunt pestiléntiæ ecce inæquálitas córporum: erit fames, ecce sterílitas terræ: terrorésque de cælo et tempestátes, ecce inæquálitas áëris. Quia ergo ómnia consummánda sunt, ante consummatiónem ómnia perturbántur: et qui in cunctis delíquimus, in cunctis ferímur: ut impleátur quod dícitur, Et pugnábit pro eo orbis terrárum contra insensátos.
+      status: verified

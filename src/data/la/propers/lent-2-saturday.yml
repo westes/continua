@@ -1,0 +1,67 @@
+# Lauds collect ([Oratio 2] in the source) — read from
+# web/www/horas/{Latin,English}/Tempora/Quad2-6.txt.
+collect:
+  text: |
+    Orémus.
+    Da, quǽsumus, Dómine, nostris efféctum jejúniis salutárem: ut castigátio carnis assúmpta, ad nostrárum vegetatiónem tránseat animárum.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Vespers collect ([Oratio 3] in the source), distinct from Lauds' own —
+# read from web/www/horas/{Latin,English}/Tempora/Quad2-6.txt.
+collect/~-vespers:
+  text: |
+    Orémus.
+    Quǽsumus, omnípotens Deus, vota humílium réspice: atque ad defensiónem nostram, déxteram tuæ majestátis exténde.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad2-6.txt's own
+# [Ant 2] and its English counterpart.
+benedictus-antiphon:
+  text: 'Vadam ad Patrem meum * et dicam ei: Pater, fac me sicut unum ex mercenáriis tuis.'
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad2-6.txt's own
+# [Ant 3] and its English counterpart.
+magnificat-antiphon:
+  text: 'Dixit autem pater * ad servos suos: Cito proférte stolam primam, et indúite illum, et date ánulum in manu ejus, et calceaménta in pédibus ejus.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Saturday of Lent week 2 — read from
+# web/www/horas/{Latin,English}/Tempora/Quad2-6.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quad2-6.txt's own [Evangelium].
+# Recombined into one reading (Lectio1-3 are one continuous Ambrose
+# excerpt split only to fill the fixed 3-lesson slot count). Responsory1
+# is given directly in this file (not a cross-reference). Source's own
+# homily attribution is inconsistent between languages ("Bk. vii" in
+# English, "Lib. 8" in Latin) — kept as each language's own header gives
+# it, not silently reconciled.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Luc 15:11-32
+      text: 'In illo témpore: Dixit Jesus pharisǽis et scribis parábolam istam: Homo quidam hábuit duos fílios, et dixit adolescéntior ex illis patri: Pater, da mihi portiónem substántiæ, quæ me contíngit. Et divísit illis substántiam. Et non post multos dies, congregátis ómnibus, adolescéntior fílius péregre proféctus est in regiónem longínquam, et ibi dissipávit substántiam suam vivéndo luxurióse. Et postquam ómnia consummásset, facta est fames válida in regióne illa, et ipse cœpit egére. Et ábiit, et adhǽsit uni cívium regiónis illíus. Et misit illum in villam suam, ut pásceret porcos. Et cupiébat implére ventrem suum de síliquis, quas porci manducábant: et nemo illi dabat. In se autem revérsus, dixit: Quanti mercenárii in domo patris mei abúndant pánibus, ego autem hic fame péreo? Surgam, et ibo ad patrem meum, et dicam ei: Pater, peccávi in cœlum et coram te: jam non sum dignus vocári fílius tuus: fac me sicut unum de mercenáriis tuis. Et surgens venit ad patrem suum. Cum autem adhuc longe esset, vidit illum pater ipsíus, et misericórdia motus est, et accúrrens cécidit super collum ejus, et osculátus est eum. Dixítque ei fílius: Pater, peccávi in cœlum et coram te, jam non sum dignus vocári fílius tuus. Dixit autem pater ad servos suos: Cito proférte stolam primam, et indúite illum, et date ánnulum in manum ejus, et calceaménta in pedes ejus: et addúcite vítulum saginátum et occídite, et manducémus et epulémur, quia hic fílius meus mórtuus erat, et revíxit: períerat, et invéntus est. Et cœpérunt epulári. Erat autem fílius ejus sénior in agro: et cum veníret, et appropinquáret dómui, audívit symphóniam et chorum: et vocávit unum de servis, et interrogávit, quid hæc essent. Isque dixit illi: Frater tuus venit, et occídit pater tuus vítulum saginátum, quia salvum illum recépit. Indignátus est autem, et nolébat introíre. Pater ergo illíus egréssus, cœpit rogáre illum. At ille respóndens, dixit patri suo: Ecce, tot annis sérvio tibi, et numquam mandátum tuum præterívi, et numquam dedísti mihi hædum, ut cum amícis meis epulárer: sed postquam fílius tuus hic, qui devorávit substántiam suam cum meretrícibus, venit, occidísti illi vítulum saginátum. At ipse dixit illi: Fili, tu semper mecum es, et ómnia mea tua sunt: epulári autem et gaudére oportébat, quia frater tuus hic mórtuus erat, et revíxit: períerat, et invéntus est.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Commentary on Luke, ch. 15
+      text: |-
+        Vides, quod divínum patrimónium peténtibus datur. Nec putes culpam patris, quod adolescentióri dedit. Nulla Dei regno infírma ætas: nec fides gravátur annis. Ipse certe se judicávit idóneum, qui popóscit. Atque útinam non recessísset a patre, impediméntum nescísset ætátis. Sed posteáquam domum pátriam derelínquens péregre proféctus est, cœpit egére. Mérito ergo prodégit patrimónium, qui recéssit ab Ecclésia.
+
+        Péregre proféctus est in regiónem longínquam. Quid longínquius, quam a se recédere: nec regiónibus, sed móribus separári: stúdiis discrétum esse, non terris; et quasi interfúso luxúriæ sæculáris æstu, divórtia habére sanctórum? Etenim qui se a Christo séparat, exsul est pátriæ, civis est mundi. Sed nos non sumus ádvenæ atque peregríni, sed cives sumus Sanctórum, et doméstici Dei. Qui enim erámus longe, facti sumus prope in sánguine Christi. Non invideámus de longínqua regióne remeántibus: quia et nos fúimus in regióne longínqua, sicut Isaías docet. Sic enim habes: Qui sedébant in regióne umbræ mortis, lux orta est illis. Régio ergo longínqua, umbra est mortis.
+
+        Nos autem, quibus spíritus ante fáciem Christus est Dóminus, in umbra vívimus Christi. Et ídeo dicit Ecclésia: In umbra ejus concupívi, et sedi. Ille ígitur vivéndo luxurióse, consúmpsit ómnia ornaménta natúræ. Unde tu, qui accepísti imáginem Dei, qui habes similitúdinem ejus, noli eam irrationábili fœditáte consúmere. Opus Dei es: noli ligno dícere, Pater meus es tu: ne accípias similitúdinem ligni, quia scriptum est: Símiles illis fiant qui fáciunt ea.
+      responsory: |-
+        R. Pater, peccávi in cælum, et coram te: jam non sum dignus vocári fílius tuus: * Fac me sicut unum ex mercenáriis tuis.
+        V. Quanti mercenárii in domo patris mei abúndant pánibus, ego autem hic fame péreo! Surgam, et ibo ad patrem meum, et dicam ei.
+        R. Fac me sicut unum ex mercenáriis tuis.
+      status: verified

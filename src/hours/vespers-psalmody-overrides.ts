@@ -1,5 +1,6 @@
 import { sharedOfficeId } from './office-source';
 import { resolveCommonCategoryId } from './psalmody-common-category';
+import { psalmodyRecords } from '../propers/store';
 
 /** Vespers' own analogue of hours/lauds-psalmody-overrides.ts (and, more
  * distantly, matins-psalmody-overrides.ts) — a whole-block substitute for
@@ -9,14 +10,14 @@ import { resolveCommonCategoryId } from './psalmody-common-category';
  * getOfficeOverrideId). Two tiers, consulted in order by
  * `getVespersPsalmodyOverride`:
  *
- * 1. **Proper** — `data/hours/vespers-psalmody-overrides/saints/*.yml`,
+ * 1. **Proper** — the vespers-psalmody section of `data/<lang>/propers/*.yml`,
  *    a specific saint's own proper Vespers psalmody, keyed by saint id.
  *    None authored yet (no duplex-majus+ saint in this app currently has
  *    proper Vespers psalm antiphons distinct from their Common's) — the
  *    tier exists so one can be added later without a mechanism change,
  *    same "mechanism first, content incrementally" pattern as Lauds'.
- * 2. **Common** — `data/hours/vespers-psalmody-overrides/categories/
- *    *.yml`, one file per `SaintRecord.common` category (with optional
+ * 2. **Common** — the vespers-psalmody section of
+ *    `data/<lang>/commons/*.yml`, one file per `SaintRecord.common` category (with optional
  *    `aliases` for a second category id sharing the identical scheme).
  *    Live-verified (2026-08-28, `votive=C1`..`C11` queries against
  *    Divinum Officium, Monastic Tridentinum 1617): unlike Lauds (whose
@@ -40,25 +41,14 @@ export interface VespersPsalmodyCategory extends VespersPsalmodyOverride {
   aliases?: string[];
 }
 
-const saintModules = import.meta.glob<{ default: VespersPsalmodyOverride }>(
-  '../data/hours/vespers-psalmody-overrides/saints/*.yml',
-  { eager: true },
-);
-const categoryModules = import.meta.glob<{ default: VespersPsalmodyCategory }>(
-  '../data/hours/vespers-psalmody-overrides/categories/*.yml',
-  { eager: true },
-);
-
-const overrides = new Map<string, VespersPsalmodyOverride>();
-for (const mod of Object.values(saintModules)) {
-  overrides.set(mod.default.id, mod.default);
-}
+const vespersRecords = psalmodyRecords<VespersPsalmodyCategory>('vespers');
+const overrides = vespersRecords.saints as Map<string, VespersPsalmodyOverride>;
 
 const categories = new Map<string, VespersPsalmodyCategory>();
-for (const mod of Object.values(categoryModules)) {
-  categories.set(mod.default.id, mod.default);
-  for (const alias of mod.default.aliases ?? []) {
-    categories.set(alias, mod.default);
+for (const category of vespersRecords.categories.values()) {
+  categories.set(category.id, category);
+  for (const alias of category.aliases ?? []) {
+    categories.set(alias, category);
   }
 }
 

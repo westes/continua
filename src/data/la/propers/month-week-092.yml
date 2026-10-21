@@ -1,0 +1,34 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-09-06 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: In ómnibus his * non peccávit Job lábiis suis neque stultum áliquid contra Deum locútus est.
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "2nd Sunday of September" (Tempora/092-0.txt) — see
+# month-week-081.yml's header for the id scheme. Responsory reuses 091's
+# own Responsory4 (source's own cross-reference).
+#
+# Text identical to post-pentecost-15.yml's own Nocturn 2 (both cite the
+# same Moralia in Job, Book 9, ch. 2 passage) — not a duplication error,
+# the reference engine's own Tempora files independently reuse this same
+# excerpt for both a Pentecost-numbered Sunday and this calendar-month
+# Sunday; reusing this project's own already-authored, live-verified
+# translation rather than re-transcribing it.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Gregory the Great, Moralia in Job, Book 9, ch. 2
+      text: |-
+        Vero scio quod ita sit, et quod non justificábitur homo compósitus Deo. Homo quippe Deo non compósitus justítiam pércipit, compósitus amíttit; quia quisquis se auctóri bonórum cómparat, bono se, quod accéperat, privat. Qui enim accépta bona sibi árrogat, suis contra Deum donis pugnat. Unde ergo despéctus erígitur, dignum est ut eréctus inde destruátur.
+
+        Sanctus autem vir, quia omne virtútis nostræ méritum esse vítium cónspicit, si ab intérno árbitro distrícte judicétur, recte subjúngit: Si volúerit conténdere cum eo, non póterit respondére ei unum pro mille.
+
+        In Scriptúra sancta millenárius númerus pro universitáte solet intélligi. Hinc étenim Psalmísta ait: Verbi, quod mandávit in mille generatiónes: cum profécto constet, quod ab ipso mundi exórdio usque ad Redemptiónis advéntum per Evangelístam non ámplius quam septuagínta et septem propágines numeréntur. Quid ergo in millenário número nisi ad proferéndam novam sóbolem perfécta univérsitas præscítæ generatiónis exprímitur? Hinc et per Joánnem dícitur: Et regnábunt cum eo mille annis: quia vidélicet regnum sanctæ Ecclésiæ universitátis perfectióne solidátur.
+
+        Quia vero monas décies multiplicáta in denárium dúcitur, denárius per semetípsum ductus in centenárium dilatátur, qui rursus per denárium ductus in millenárium ténditur; cum ab uno incípimus, ut ad millenárium veniámus, quid hoc loco uníus appellatióne, nisi bene vivéndi inítium? quid millenárii númeri amplitúdine, nisi ejúsdem bonæ vitæ perféctio designátur? Cum Deo autem conténdere, est, non ei tribúere, sed sibi glóriam suæ virtútis arrogáre. Sed sanctus vir conspíciat, quia et qui summa jam dona percépit, si de accéptis extóllitur, cuncta quæ accéperat, amíttit.
+      responsory: |-
+        R. Indúta est caro mea putrédine, et sórdibus púlveris cutis mea áruit et contrácta est: * Meménto mei, Dómine, quóniam ventus est vita mea.
+        V. Dies mei velócius transiérunt quam a texénte tela succíditur, et consúmpti sunt absque ulla spe.
+        R. Meménto mei, Dómine, quóniam ventus est vita mea.
+      status: verified

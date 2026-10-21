@@ -1,0 +1,55 @@
+# Read directly from web/www/horas/Latin/Sancti/06-06.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátum Norbértum Confessórem tuum atque Pontíficem verbi tui præcónem
+    exímium effecísti, et per eum Ecclésiam tuam nova prole fecundásti: præsta,
+    quǽsumus; ut, ejúsdem suffragántibus méritis, quod ore simul et ópere dócuit, te
+    adjuvánte, exercére valeámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor-bishop (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-norbert has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-norbert-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui beátum Norbértum Confessórem tuum atque Pontíficem verbi tui præcónem
+    exímium effecísti, et per eum Ecclésiam tuam nova prole fecundásti: præsta,
+    quǽsumus; ut, ejúsdem suffragántibus méritis, quod ore simul et ópere dócuit, te
+    adjuvánte, exercére valeámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Norbert, Bishop and Confessor
+# (June 6). Sourced directly from web/www/horas/Latin/Sancti/06-06.txt,
+# English/Sancti/06-06.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in his own file (his `[Rule]` is `vide
+# C4`) -- defers to the Common of a Confessor Bishop's own Nocturn 3,
+# not transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Norbértus, nobilíssimis paréntibus natus, adoléscens liberálibus disciplínis erudítus, in ipsa póstea imperatóris aula, spretis mundi illécebris, ecclesiásticæ milítiæ adscríbi vóluit. Sacris initiátus, rejéctis móllibus ac spléndidis véstibus, pellícea melóte indútus, prædicatióni verbi Dei se totum dedit. Abdicátis ecclesiásticis provéntibus satis amplis, et património in páuperes erogáto, semel in die sub vésperam solo cibo quadragesimáli utens, nudísque pédibus et lácera veste sub brumáli rigóre incédens, miræ austeritátis vitam est aggréssus. Potens ígitur ópere et sermóne, innúmeros hæréticos ad fidem, peccatóres ad pœniténtiam, dissidéntes ad pacem et concórdiam revocávit.
+
+        Cum Laudúni esset, ab epíscopo rogátus ne a sua diœcési discéderet, desértum in ea locum, qui Præmonstrátus dicebátur, sibi delégit; ibíque, trédecim sóciis aggregátis, Præmonstraténsem órdinem instítuit, divínitus accépta per visum régula a sancto Augustíno. Cum vero ejus fama sanctitátis in dies magis augerétur, ac plúrimi ad eum quotídie discípuli convenírent, idem ordo ab Honório secúndo aliísque summis Pontifícibus confirmátus, ac plúribus ab eo monastériis ædificátis, mirífice propagátus est.
+
+        Antvérpiam accersítus, in ea urbe Tanchelíni nefáriam hæresim profligávit. Prophético spíritu et miráculis cláruit. Archiepíscopus tandem (licet relúctans) Magdeburgénsis creátus, ecclesiásticam disciplínam, præsértim cælibátum, constánter propugnávit. Rhemis in concílio Innocéntium secúndum egrégie adjúvit, et Romam cum áliis epíscopis proféctus, schisma Petri Leónis compréssit. Postrémo vir Dei, méritis et Spíritu Sancto plenus, Magdebúrgi obdormívit in Dómino, anno salútis millésimo centésimo trigésimo quarto, die sexta Júnii.
+      status: verified

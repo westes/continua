@@ -1,0 +1,365 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2026-12-28).
+collect:
+  text: |
+    Orémus.
+    Deus, cujus hodiérna die præcónium Innocéntes Mártyres non loquéndo, sed moriéndo conféssi sunt: ómnia in nobis vitiórum mala mortífica; ut fidem tuam, quam lingua nostra lóquitur, étiam móribus vita fateátur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (holy-innocents-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (holy-innocents-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Hi sunt, * qui cum muliéribus non sunt coinquináti: vírgines enim sunt, et sequúntur Agnum quocúmque íerit.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Deus, cujus hodiérna die præcónium Innocéntes Mártyres non loquéndo, sed moriéndo conféssi sunt: ómnia in nobis vitiórum mala mortífica; ut fidem tuam, quam lingua nostra lóquitur, étiam móribus vita fateátur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against the reference engine (Monastic Tridentinum 1617,
+# ../divinum-officium-reference) -- read directly from Sancti/12-28.txt's
+# own [Octava 3] section (Latin/Sancti/12-28.txt:277-286), the non-
+# Cistercian rubric -- see christmas-day-octave-commemoration.yml's own
+# comment for why Octava 3 (Second Vespers' own text) was picked as the
+# single shared version this app renders regardless of hour. Collect
+# body + doxology reused verbatim from the already-authored
+# holy-innocents-collect.yml (same text, `$Per Dominum` macro).
+#
+# The English Octava 3 block (English/Sancti/12-28.txt:201-210) turned
+# out to carry the wrong antiphon -- "These are they who were not
+# defiled with women..." (the Common-of-Many-Martyrs "Isti sunt" text,
+# not a translation of the Latin antiphon actually printed alongside it)
+# -- a reference-engine data mismatch, not a real variant (same shape as
+# the St. Apollinaris/St. Leo II wrong-date bugs TODO.md already
+# documents). Used this file's own real English elsewhere instead: [Ant
+# 3] (English/Sancti/12-28.txt:198-199) is the correct, matching
+# translation of the same Latin antiphon printed at Latin/Sancti/
+# 12-28.txt:271-272 (identical Latin to the Octava 3 antiphon). Versicle/
+# response likewise taken from this file's own [Versum 3]
+# (English/Sancti/12-28.txt:194-196), the correctly paired English for
+# the same "Sub throno Dei" V/R the Octava 3 block uses.
+commemoration/octave-~:
+  text: |
+    Ant. Innocéntes pro Christo infántes occísi sunt, ab iníquo rege lacténtes interfécti sunt: ipsum sequúntur Agnum sine mácula, et dicunt semper: Glória tibi, Dómine.
+    V. Sub throno Dei omnes Sancti clamant.
+    R. Víndica sánguinem nostrum, Deus noster.
+    Orémus.
+    Deus, cujus hodiérna die præcónium Innocéntes Mártyres non loquéndo, sed moriéndo conféssi sunt: ómnia in nobis vitiórum mala mortífica; ut fidem tuam, quam lingua nostra lóquitur, étiam móribus vita fateátur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-12-28, clean year.
+lauds-capitulum:
+  text: Vidi supra montem Sion Agnum stantem, et cum eo centum quadragínta quátuor míllia habéntes nomen ejus, et nomen Patris ejus scriptum in fróntibus suis.
+  citation: Apo 14:1
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-12-28, clean year.
+lauds-hymn:
+  text: |
+    Salvéte, flores Mártyrum,
+    Quos lucis ipso in límine
+    Christi insecútor sústulit,
+    Ceu turbo nascéntes rosas.
+
+    Vos prima Christi víctima,
+    Grex immolatórum tener,
+    Aram ante ipsam símplices
+    Palma et corónis lúditis.
+
+    Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et almo Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-12-28, clean year.
+lauds-responsory:
+  text: |
+    R.br. Lætámini in Dómino, * Et exsultáte justi.
+    R. Lætámini in Dómino, * Et exsultáte justi.
+    V. Et gloriámini omnes recti corde.
+    R. Et exsultáte justi.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Lætámini in Dómino, * Et exsultáte justi.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-12-28, clean year.
+lauds-versicle:
+  text: |-
+    V. Heródes irátus occídit multos púeros.
+    R. In Béthlehem Judæ civitáte David.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, Holy Innocents' own day (2029-12-28, a clean year where the
+# Christmas Octave Sunday falls elsewhere -- see calendar/index.ts's
+# applyChristmasOctaveSunday).
+prime-antiphon:
+  text: Heródes irátus * occídit multos púeros in Béthlehem Judæ civitáte David.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/12-28.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: 'Hi empti sunt ex homínibus primítiæ Deo et Agno, et in ore ipsórum non est invéntum mendácium: sine mácula enim sunt ante thronum Dei.'
+  citation: Apo 14:4-5
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, Holy Innocents' own day (2029-12-28, clean year).
+terce-antiphon:
+  text: A bimátu * et infra occídit multos púeros Heródes propter Dóminum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, Holy Innocents' own day (2029-12-28, clean year).
+terce-capitulum:
+  text: |
+    Vidi supra montem Sion Agnum stantem, et cum eo centum quadragínta quátuor míllia habéntes nomen ejus, et nomen Patris ejus scriptum in fróntibus suis.
+    R. Deo grátias.
+    V. Lætámini in Dómino, et exsultáte justi.
+    R. Et gloriámini omnes recti corde.
+  citation: Apo 14:1
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, Holy Innocents' own day (2029-12-28, clean year).
+sext-antiphon:
+  text: Angeli eórum * semper vident fáciem Patris.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, Holy Innocents' own day (2029-12-28, clean year).
+sext-capitulum:
+  text: |
+    Hi sunt, qui cum muliéribus non sunt coinquináti: vírgines enim sunt. Hi sequúntur Agnum quocúmque íerit.
+    R. Deo grátias.
+    V. Exsúltent justi in conspéctu Dei.
+    R. Et delecténtur in lætítia.
+  citation: Apo 14:4
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, Holy Innocents' own day (2029-12-28, clean year).
+none-antiphon:
+  text: 'Sub throno Dei * omnes Sancti clamant: Víndica sánguinem nostrum, Deus noster.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, Holy Innocents' own day (2029-12-28, clean year).
+none-capitulum:
+  text: |
+    Hi empti sunt ex homínibus primítiæ Deo et Agno, et in ore ipsórum non est invéntum mendácium: sine mácula enim sunt ante thronum Dei.
+    R. Deo grátias.
+    V. Justi autem in perpétuum vivent.
+    R. Et apud Dóminum est merces eórum.
+  citation: Apo 14:4-5
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2029-12-28, the same clean date already used for lauds-capitulum-holy-innocents.yml.
+vespers-hymn:
+  text: |
+    Salvéte, flores Mártyrum,
+    Quos lucis ipso in límine
+    Christi insecútor sústulit,
+    Ceu turbo nascéntes rosas.
+
+    Vos prima Christi víctima,
+    Grex immolatórum tener,
+    Aram ante ipsam símplices
+    Palma et corónis lúditis.
+
+    Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et almo Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2029-12-28, the same clean date already used for lauds-capitulum-holy-innocents.yml.
+vespers-responsory:
+  text: |
+    R.br. Exsúltent justi * In conspéctu Dei.
+    R. Exsúltent justi * In conspéctu Dei.
+    V. Et delecténtur in lætítia.
+    R. In conspéctu Dei.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Exsúltent justi * In conspéctu Dei.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2029-12-28, the same clean date already used for lauds-capitulum-holy-innocents.yml.
+vespers-versicle:
+  text: |-
+    V. Sub throno Dei omnes Sancti clamant.
+    R. Víndica sánguinem nostrum, Deus noster.
+  status: verified
+
+# Verified against Divinum Officium (Latin/English Sancti/12-28.txt's own
+# [Ant 1] — the Lauds-hour antiphon, not Terce's.
+benedictus-antiphon:
+  text: 'Hi sunt, * qui cum muliéribus non sunt coinquináti: vírgines enim sunt, et sequúntur Agnum quocúmque íerit.'
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/12-28.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast, not a Common
+# substitution. (This feast's own Benedictus antiphon,
+# holy-innocents-antiphon.yml, already correctly sources [Ant 1] --
+# [Ant 2] there is a bare `@:Ant 1` cross-reference, same text reused
+# for both, not a mis-tagging.)
+magnificat-antiphon:
+  text: 'Innocéntes pro Christo * infántes occísi sunt, ab iníquo rege lacténtes interfécti sunt: ipsum sequúntur Agnum sine mácula, et dicunt semper: Glória tibi, Dómine.'
+  status: verified
+
+# First Vespers Magnificat antiphon: web/www/horas/Latin/Sancti/12-28.txt's own [Ant 1]
+# and its English counterpart. Second Vespers' [Ant 3] is
+# holy-innocents-magnificat-antiphon.yml (the default); see hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon/~-first:
+  text: 'Hi sunt, * qui cum muliéribus non sunt coinquináti: vírgines enim sunt, et sequúntur Agnum quocúmque íerit.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-12-28, clean year.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Heródes irátus * occídit multos púeros in Béthlehem Judæ civitáte David.
+    - psalms:
+        - 99
+      antiphon: A bimátu * et infra occídit multos púeros Heródes propter Dóminum.
+    - psalms:
+        - 62
+      antiphon: Angeli eórum * semper vident fáciem Patris.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Vox in Rama * audíta est, plorátus et ululátus, Rachel plorans fílios suos.
+  laudate:
+    antiphon: 'Sub throno Dei * omnes Sancti clamant: Víndica sánguinem nostrum, Deus noster.'
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-12-28, own day). Antiphons 1-3 (Ps 109/110/111)
+# are the shared Christmas-Octave scheme (byte-identical across St.
+# Stephen/St. John/Holy Innocents, all within the Octave); only antiphon 4
+# (Ps 131, same text as St. Stephen's own) is specific, not `common-of-
+# several-martyrs`' generic text.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Tecum princípium * in die virtútis tuæ, in splendóribus sanctórum, ex útero ante lucíferum génui te.
+    - psalms:
+        - 110
+      antiphon: 'Redemptiónem * misit Dóminus pópulo suo: mandávit in ætérnum testaméntum suum.'
+    - psalms:
+        - 111
+      antiphon: 'Exórtum est * in ténebris lumen rectis corde: miséricors, et miserátor, et justus Dóminus.'
+    - psalms:
+        - 131
+      antiphon: De fructu * ventris tui ponam super sedem tuam.
+
+# Matins Nocturn 2-3 readings for the Holy Innocents (Dec 28) —
+# SanctiM/12-28.txt inherits the whole day (`@Sancti/12-28`) with no
+# Nocturn 2/3 override, so this feast's own proper content is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/12-28.txt, English/Sancti/12-28.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, St. Augustine's
+# sermon — one continuous piece, no genuine source break.
+# Nocturn 3: Lectio7's Gospel citation (Matt 2:13-18) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so only the
+# homily portion was originally authored (not marked isGospel), St.
+# Jerome's commentary (Lectio7's homily + Lectio8-9 combined, one
+# continuous piece).
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — this feast's own
+# [Evangelium] carries the full pericope directly (not a redirect),
+# sourced from missa/Latin/Sancti/12-28.txt, English/Sancti/12-28.txt,
+# not guessed at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine of Hippo, Sermon 10 on the Saints
+      text: |-
+        Hódie, fratres caríssimi, natálem illórum infántium cólimus, quos ab Heróde crudelíssimo rege interféctos esse, Evangélii textus elóquitur. Et ídeo cum summa exsultatióne gáudeat terra, cæléstium mílitum et tantárum parens fecúnda virtútum. Ecce profánus hostis nunquam beátis párvulis tantum prodésse potuísset obséquio, quantum prófuit ódio. Nam, sicut sacratíssimum præséntis diéi festum maniféstat, quantum in beátos párvulos iníquitas abundávit, tantum in eis grátia benedictiónis refúdit.
+
+        Beáta es, o Béthlehem terra Juda, quæ Heródis regis immanitátem in puerórum exstinctióne perpéssa es: quæ sub uno témpore candidátam plebem imbéllis infántiæ Deo offérre meruísti. Digne tamen natálem illórum cólimus, quos beátius ætérnæ vitæ mundus édidit, quam quos maternórum víscerum partus effúdit. Síquidem ante vitæ perpétuæ adépti sunt dignitátem, quam usúram præséntis accéperint.
+
+        Aliórum quidem pretiósa mors Mártyrum laudem in confessióne proméruit, horum in consummatióne complácuit; quia incipiéntis vitæ primórdiis, ipse eis occásus inítium glóriæ dedit, qui præséntis términum impósuit. Quos Heródis impíetas lactántes matrum ubéribus abstráxit; qui jure dicúntur Mártyrum flores, quos in médio frígore infidelitátis exórtos, velut primas erumpéntes Ecclésiæ gemmas, quædam persecutiónis pruína decóxit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 2:13-18
+      text: 'In illo témpore: Angelus Dómini appáruit in somnis Joseph, dicens: Surge, et áccipe Púerum et Matrem ejus, et fuge in Ægýptum, et esto ibi, usque dum dicam tibi. Futúrum est enim, ut Heródes quærat Púerum ad perdéndum eum. Qui consúrgens accépit Púerum et Matrem ejus nocte, et secéssit in Ægýptum: et erat ibi usque ad óbitum Heródis: ut adimplerétur quod dictum est a Dómino per Prophétam dicéntem: Ex Ægýpto vocávi Fílium meum. Tunc Heródes videns, quóniam illúsus esset a Magis, irátus est valde, et mittens occídit omnes púeros, qui erant in Béthlehem et in ómnibus fínibus ejus, a bimátu et infra, secúndum tempus, quod exquisíerat a Magis. Tunc adimplétum est, quod dictum est per Jeremíam Prophétam dicéntem: Vox in Rama audíta est, plorátus et ululátus multus: Rachel plorans fílios suos, et nóluit consolári, quia non sunt.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Commentary on Matthew, Book I, on Matt 2:13-18
+      text: |-
+        Quando tulit Púerum et Matrem ejus, ut in Ægýptum tránseat, nocte tulit, et in ténebris: quia noctem ignorántiæ his, a quibus ipse recéssit, relíquit incrédulis. Quando vero revértitur in Judǽam, nec nox, nec ténebræ ponúntur in Evangélio: quia in fine mundi Judǽi fidem, tamquam Christum ab Ægýpto reverténtem suscipiéntes, illuminabúntur.
+
+        Ut adimplerétur quod dictum est a Dómino per prophétam dicéntem: Ex Ægýpto vocávi Fílium meum. Respóndeant, qui Hebræórum volúminum dénegant veritátem, ubi hoc in Septuagínta legátur interprétibus. Quod cum non invénerint, nos eis dicémus, in Osée prophéta scriptum, sicut et exemplária probáre possunt, quæ nuper edídimus.
+
+        Tunc adimplétum est, quod dictum est per Jeremíam prophétam dicéntem: Vox in Rama audíta est, plorátus et ululátus multus, Rachel plorans fílios suos. De Rachel natus est Bénjamin, in cujus tribu non est Béthlehem. Quǽritur ergo, quómodo Rachel fílios Judæ, id est Béthlehem, quasi suos ploret. Respondébimus bréviter, quia sepúlta sit juxta Béthlehem in Ephrata; et ex matérno corpúsculi hospítio matris nomen accéperit; sive quóniam Juda et Bénjamin duæ tribus junctæ erant, et Heródes præcéperat non solum in Béthlehem intérfici púeros, sed et in ómnibus fínibus ejus.
+      status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Sancti/01-04.txt) -- day 8, "In Octava," the Holy Innocents' own octave
+# closing day, same shape/rationale as
+# st-stephen-protomartyr-octave-day-8.yml (this octave's own intervening
+# days likewise carry no Lectio override in the source, correctly
+# unauthored). Joins St. Augustine's own first sermon for Childermas
+# (Lectio4-6) with St. John Chrysostom's homily on Matt 2:13-18
+# (Lectio7-9, bare incipit dropped). Lectio4's own closing sentence in the
+# source's English ("Pígnora sunt, non crédita, sed creáta; non depósita,
+# sed expósita" -- a legal-term wordplay on "pledges") is garbled into an
+# incoherent fragment in the reference engine's own translation --
+# reconstructed here to match the Latin rather than transcribed as-is; `en`
+# marked `draft` accordingly (the same class of repair as
+# ascension-octave-day-8.yml, not just an isolated typo).
+# Responsory missing from this file -- authoring gap, not a design choice
+# (same class as nativity-bvm-octave-day-3.yml's own fix). Reuses the Holy
+# Innocents' own Responsory1 (Sancti/12-28.txt), the octave's one well-known
+# opening responsory, matching the convention already established for the
+# Nativity-BVM octave (every combined-lesson octave-day file there reuses
+# that feast's own Responsory1 regardless of which specific historical
+# Lectio number the combined text corresponds to).
+octave-readings/~-octave-day-8:
+  source: Sermo sancti Augustíni Epíscopi; Homilía sancti Joánnis Chrysóstomi
+  text: |
+    Nascénte Dómino, luctus cœpit, non cælo, sed mundo: indícitur mátribus lamentátio, Angelis exsultátio, infántibus transmigrátio. Deus est, qui natus est: Innocéntes illi debéntur víctima, qui venit damnáre mundi malítiam. Agnélli debent immolári, quia Agnus futúrus est crucifígi, qui tollit peccáta mundi. Sed oves úlulant matres, quia agnos perdunt sine voce balántes. Grande martýrium, crudéle spectáculum! Exímitur machæra, et nulla intérvenit causa: sola stridet invídia, cum qui natus est, nulli fáciat violéntiam. Sed oves cérnimus matres: quæ super agnos lugent: Vox in Rama audíta est, plorátus et ululátus magnus. Pígnora sunt, non crédita, sed creáta; non depósita, sed expósita.
+
+    Testis est ipsa natura, quæ pugnábat in Mártyres, cum tyránnus jactáret infántes. Mater crines cápitis dissipábat, quæ ornaméntum cápitis amittébat. Quantis modis infántem volébat abscóndere, et ipse se infántulus publicábat! Nesciébat tacére, quia necdum didícerat formidáre. Pugnábat mater, et cárnifex: ille trahébat, illa tenébat. Ad carníficem mater clamábat: Quid séparas a me, quem génui ex me? Uterus génuit, non mansit ille, cum vixit, úbera mea frustra lacte contórquens. Caute portávi, quem a te vídeo manu crudéli jactári. Modo eum effudérunt víscera mea, et tu elídis ad terram.
+
+    Alia acclamábat mater, cum exáctor latro non compélleret simul occídi cum párvulo matrem: Ut quid me dimíttis inánem? Si culpa est, mea est: si non est crimen, junge mortem, et líbera matrem. Alia dicébat: Quid quǽritis? Unum quǽritis, et multos occíditis, et ad unum, qui unus est, attíngere non potéstis. Alia contra clamábat: Veni jam, veni Salvátor mundi, quámdiu quæréris? Nullum times: vídeat te miles, et nostros non occídat infántes. Miscebátur lamentátio matrum, et ad cælum transíbat oblátio parvulórum.
+
+    Quæ cum audísset Joseph, nequáquam passus est scándalum, neque dixit: Incérta ista res est, ac prorsus ambígua. Tu paulo ante dicébas, quia salvábit populum suum, et nunc seípsum quidem non potest de perículis liberáre: sed fuga nobis est necessária, et peregrinátio, ac transmigrátio longínqua. Contrária omníno sunt facta promíssis. Sed horum nihil prorsus oppónit: vir enim erat fidélis: neque reversiónis tempus curióse inquírit, quod útique ab Angelo non signáte fúerat expréssum: sed: Esto ibi, inquit, úsquequo dicam tibi.
+
+    Verum ille nec per ista quidem factus est ségnior, sed obedívit libénter, et crédidit, omnes prorsus tribulatiónes cum gáudio sustinéndo. Enim vero miséricors Deus mœstis rebus quædam étiam jucúnda permíscuit. Quod certe in sanctis ómnibus facit, quos neque tribulatiónes, neque jucunditátes sinit habére contínuas: sed tum de advérsis, tum ex prósperis justórum vitam quasi admirábili varietáte contéxit. Quod hic quoque eum fecísse consídera.
+
+    Vidéndo quippe sanctus Joseph grávidam Vírginem, in conturbatiónem íncidit máximam: sed ádfuit repénte Angelus, timórem prorsus exstínguens. Deínde videns púerum natum, máxima exsultatióne replétus est: sed rursus huic étiam gáudio perículum grande succéssit, cum tota útique cívitas turbarétur, ipse rex fúreret, et ad necem púerum quǽreret. Sed et hunc mœrórem alia rursus lætítia subsecúta est, apparítio vidélicet stellæ, et adorátio Magórum. Post hanc quoque jucunditátem íterum perículum, iterúmque formído. Quærit, inquit, Heródes ánimam púeri, et fúgere necésse est, et in longínqua transíre.
+  responsory: |
+    R. Centum quadragínta quátuor míllia, qui empti sunt de terra, hi sunt qui cum muliéribus non sunt coinquináti: * Vírgines enim permansérunt, ídeo regnant cum Deo, et Agnus Dei cum illis. V. Isti sunt qui venérunt ex magna tribulatióne, et lavérunt stolas suas in sánguine Agni. R. Vírgines enim permansérunt, ídeo regnant cum Deo, et Agnus Dei cum illis.
+  status: verified

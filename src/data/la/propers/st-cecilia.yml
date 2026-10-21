@@ -1,0 +1,144 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2032-11-22).
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos ánnua beátæ Cæcíliæ Vírginis et Mártyris tuæ solemnitáte lætíficas: da, ut, quam venerámur offício, étiam piæ conversatiónis sequámur exémplo.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-cecilia-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-virgin-martyr (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (st-cecilia-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Dum auróra * finem daret, Cæcília exclamávit dicens: Eja, mílites Christi, abjícite ópera tenebrárum et induímini arma lucis.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Deus, qui nos ánnua beátæ Cæcíliæ Vírginis et Mártyris tuæ solemnitáte lætíficas: da, ut, quam venerámur offício, étiam piæ conversatiónis sequámur exémplo.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Same text as her Lauds antiphon 1 (lauds-psalmody-overrides/
+# st-cecilia.yml), per the established Prime=Lauds-Ant1 minor-hours-
+# borrow-from-Lauds convention.
+prime-antiphon:
+  text: 'Cantántibus órganis, * Cæcília Dómino decantábat, dicens: Fiat cor meum immaculátum, ut non confúndar.'
+  status: verified
+
+# Same text as her Lauds antiphon 2, per the established Terce=Lauds-Ant2
+# minor-hours-borrow-from-Lauds convention.
+terce-antiphon:
+  text: Valeriánus * in cubículo Cæcíliam cum Angelo orántem invénit.
+  status: verified
+
+# Same text as her Lauds antiphon 3, per the established Sext=Lauds-Ant3
+# minor-hours-borrow-from-Lauds convention.
+sext-antiphon:
+  text: Cæcília * fámula tua, Dómine, quasi apis tibi argumentósa desérvit.
+  status: verified
+
+# Same text as her Lauds "laudate" antiphon, per the established
+# None=Lauds-Ant5 minor-hours-borrow-from-Lauds convention.
+none-antiphon:
+  text: Triduánas * a Dómino popósci indúcias, ut domum meam ecclésiam consecrárem.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Cecilia's own day (2027-11-22 -- 2026's own Nov 22 is
+# the last Sunday after Pentecost). The Benedictus antiphon. Corrects the
+# previous version of this file, which had been sourced from the Roman/
+# secular rite's Sancti/11-22.txt's own [Ant 1] instead: real but
+# different text from what Monastic 1617 actually renders at Lauds, same
+# mistake as St. Lawrence's earlier fix.
+benedictus-antiphon:
+  text: 'Dum auróra * finem daret, Cæcília exclamávit dicens: Eja, mílites Christi, abjícite ópera tenebrárum et induímini arma lucis.'
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/11-22.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast, not a Common
+# substitution. (This feast's own Benedictus antiphon,
+# st-cecilia-antiphon.yml, already correctly sourced [Ant 2].)
+magnificat-antiphon:
+  text: Virgo gloriósa * semper Evangélium Christi gerébat in péctore suo, et non diébus neque nóctibus a collóquiis divínis et oratióne cessábat.
+  status: verified
+
+# First Vespers Magnificat antiphon: web/www/horas/Latin/Sancti/11-22.txt's own [Ant 1]
+# and its English counterpart. Second Vespers' [Ant 3] is
+# st-cecilia-magnificat-antiphon.yml (the default); see hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon/~-first:
+  text: 'Est secrétum, * Valeriáne, quod tibi volo dícere: Angelum Dei hábeo amatórem, qui nímio zelo custódit corpus meum.'
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/11-22.txt's own [Ant Laudes]
+# ("@:Ant Vespera:s/;;.*//g" -- Lauds reuses the Vespers antiphons
+# verbatim) and English/Sancti/11-22.txt's own translation. Below
+# duplex-majus, so hours/lauds.ts's mergeFerialNumbersWithProperAntiphons
+# only takes this file's antiphon text, not its psalm numbers -- kept the
+# source's own real numbers (109/112/121/126/147) anyway for
+# documentation accuracy, though unused at this rank.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'Cantántibus órganis, * Cæcília Dómino decantábat, dicens: Fiat cor meum immaculátum, ut non confúndar.'
+    - psalms:
+        - 112
+      antiphon: Valeriánus * in cubículo Cæcíliam cum Angelo orántem invénit.
+    - psalms:
+        - 121
+      antiphon: Cæcília * fámula tua, Dómine, quasi apis tibi argumentósa desérvit.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Benedíco te, * Pater Dómini mei Jesu Christi, quia per Fílium tuum ignis exstínctus est a látere meo.
+  laudate:
+    antiphon: Triduánas * a Dómino popósci indúcias, ut domum meam ecclésiam consecrárem.
+
+# Sourced from web/www/horas/Latin/Sancti/11-22.txt's own [Ant Vespera]
+# (default rubric block) and English/Sancti/11-22.txt's own translation
+# -- same text as lauds-psalmody-overrides/st-cecilia.yml (her Lauds is
+# just this Vespers set reused, per the source's own reference). Below
+# duplex-majus, so hours/vespers.ts's mergeFerialNumbersWithProperAntiphons
+# only takes this file's antiphon text, not its psalm numbers.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'Cantántibus órganis, * Cæcília Dómino decantábat, dicens: Fiat cor meum immaculátum, ut non confúndar.'
+    - psalms:
+        - 112
+      antiphon: Valeriánus * in cubículo Cæcíliam cum Angelo orántem invénit.
+    - psalms:
+        - 121
+      antiphon: Cæcília * fámula tua, Dómine, quasi apis tibi argumentósa desérvit.
+    - psalms:
+        - 126
+      antiphon: Benedíco te, * Pater Dómini mei Jesu Christi, quia per Fílium tuum ignis exstínctus est a látere meo.
+
+# Matins Nocturn 2 reading for St. Cecilia, Virgin, Martyr (Nov 22) —
+# SanctiM/11-22.txt inherits the whole day (`@Sancti/11-22`) with no
+# Nocturn 2/3 override, so this saint's own vita is sourced from the
+# Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/11-22.txt, English/Sancti/11-22.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Cæcília, Virgo Romana, nobili genere nata, a prima ætate christianæ fidei præceptis instituta, virginitátem suam Deo vovit. Sed, cum póstea, contra suam voluntátem, data esset in matrimónium Valeriáno, prima nuptiárum nocte hunc cum eo sermónem hábuit: Ego, Valeriane, in Angeli tutela sum, qui virginitátem meam custódit; quare ne quid in me committas, quo ira Dei in te concitétur. Quibus verbis commótus Valerianus, illam attingere non est ausus; quin étiam addidit se in Christum creditúrum, si eum Angelum vidéret. Cui Cæcília cum sine baptismo negaret id fíeri posse, incénsus cupiditate vidéndi Angelum, se baptizari velle respóndit. Quare hortatu Vírginis ad Urbanum Papam, qui propter persecutiónem in Mártyrum sepúlcris via Appia latebat, veniens, ab eo baptizátur.
+
+        Inde ad Cæciliam reversus, orántem et cum ea Angelum divino splendore fulgentem invénit. Quo aspectu obstupefactus, ut primum ex timóre confirmátus est, Tiburtium fratrem suum accersit; qui, a Cæcília Christi fide imbutus et ab eodem Urbano baptizatus, ipse étiam ejusdem Angeli, quem frater ejus viderat, aspectu dignátus est. Uterque autem paulo post, Almachio præfecto, constanter martyrium subiit. Qui mox Cæciliam comprehéndi imperat, ab eáque primum, ubi Tiburtii et Valeriáni facultates sint, exquirit.
+
+        Cui, cum Virgo ómnia illórum paupéribus distributa esse respondísset, eo furóre concitátus est, ut eam, in ipsíus ædes reductam, in balneo comburi jusserit. Quo in loco cum diem noctemque ita fuísset ut ne flamma quidem illam attingeret, eo immissus est carnifex, qui ter secúri ictam, cum caput abscindere non potuísset, semivivam relíquit. Illa triduo post, sextodecimo Kalendas Octobris, Alexandro imperatóre, duplici virginitátis et martyrii palma decorata, evolávit in cælum. Cujus corpus ab ipso Urbano Papa in Callísti cœmeterio sepúltum est, in ejus ædibus ecclésia ipsíus Cæcíliæ consecrata. Ejus et Urbani ac Lucii Pontificum, Tiburtii, Valeriáni et Maximi corpora, a Paschali primo Pontifice inde transláta in Urbem, in eádem sanctæ Cæcíliæ ecclésia cóndita sunt.
+      status: verified

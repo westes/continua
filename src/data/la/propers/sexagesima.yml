@@ -1,0 +1,288 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Deus, qui cónspicis, quia ex nulla nostra actióne confídimus: concéde propítius; ut, contra advérsa ómnia Doctóris géntium protectióne muniámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2028-02-20); Latin and English both taken from the page.
+lauds-capitulum:
+  text: 'Fratres: Libénter suffértis insipiéntes, cum sitis ipsi sapiéntes: sustinétis enim si quis vos in servitútem rédigit, si quis dévorat, si quis áccipit, si quis extóllitur, si quis in fáciem vos cædit.'
+  citation: 2 Cor 11:19-20
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2028-02-20); Latin and English both taken from the page.
+lauds-hymn:
+  text: |
+    Ætérne rerum Cónditor,
+    Noctem diémque qui regis,
+    Et témporum das témpora,
+    Ut álleves fastídium.
+
+    Præco diéi jam sonat,
+    Noctis profúndæ pérvigil,
+    Noctúrna lux viántibus,
+
+    A nocte noctem ségregans.
+
+    Hoc excitátus Lúcifer
+    Solvit polum calígine,
+    Hoc omnis errónum cohors
+    Viam nocéndi déserit.
+
+    Hoc nauta vires cólligit,
+    Pontíque mitéscunt freta:
+    Hoc, ipsa Petr a Ecclésiæ,
+    Canénte, culpam díluit.
+
+    Surgámus ergo strénue,
+    Gallus jacéntes éxcitat,
+    Et somnoléntos íncrepat,
+    Gallus negántes árguit.
+
+    Gallo canénte spes redit,
+    Ægris salus refúnditur,
+    Mucro latrónis cónditur,
+    Lapsis fides revértitur.
+
+    Jesu labéntes réspice,
+    Et nos vidéndo córrige:
+    Si réspicis, lapsus cadunt,
+    Fletúque culpa sólvitur.
+
+    Tu lux refúlge sénsibus,
+    Mentísque somnum díscute:
+    Te nostra vox primum sonet,
+    Et vota solvámus tibi.
+
+    Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc et in perpétuum.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2028-02-20); Latin and English both taken from the page.
+lauds-responsory:
+  text: |
+    R.br. Inclína cor meum, Deus, * In testimónia tua.
+    R. Inclína cor meum, Deus, * In testimónia tua.
+    V. Avérte óculos meos, ne vídeant vanitátem: in via tua vivífica me.
+    R. In testimónia tua.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Inclína cor meum, Deus, * in testimónia tua.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2028-02-20); Latin and English both taken from the page.
+lauds-versicle:
+  text: V. Dómine, refúgium factus es nobis. R. A generatióne et progénie.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayPrima, 2028-02-20); Latin and English both taken from the page.
+prime-antiphon:
+  text: Semen cécidit * in terram bonam, et áttulit fructum in patiéntia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2028-02-20); Latin and English both taken from the page.
+terce-antiphon:
+  text: Qui verbum Dei * rétinent corde perfécto et óptimo, fructum áfferunt in patiéntia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2028-02-20); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    2 Cor 11:19-20 Fratres: Libénter suffértis insipiéntes, cum sitis ipsi sapiéntes: sustinétis enim si quis vos in servitútem rédigit, si quis dévorat, si quis áccipit, si quis extóllitur, si quis in fáciem vos cædit.
+    R. Deo grátias.
+    V. Ego dixi: Dómine, miserére mei.
+    R. Sana ánimam meam, quia peccávi tibi.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2028-02-20); Latin and English both taken from the page.
+sext-antiphon:
+  text: Semen cécidit * in terram bonam, et áttulit fructum, áliud centésimum, et áliud sexagésimum.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2028-02-20); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    2 Cor 11:25 Ter virgis cæsus sum, semel lapidátus sum: ter naufrágium feci, nocte et die in profúndo maris fui.
+    R. Deo grátias.
+    V. Dóminus regit me, et nihil mihi déerit.
+    R. In loco páscuæ ibi me collocávit.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2028-02-20); Latin and English both taken from the page.
+none-antiphon:
+  text: Si vere, fratres, * dívites esse cúpitis, veras divítias amáte.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2028-02-20); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    2 Cor 12:9 Libénter ígitur gloriábor in infirmitátibus meis, ut inhábitet in me virtus Christi.
+    R. Deo grátias.
+    V. Ab occúltis meis munda me, Dómine.
+    R. Et ab aliénis parce servo tuo.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2028-02-20); Latin and English both taken from the page.
+vespers-hymn:
+  text: |
+    Lucis Creátor óptime,
+    Lucem diérum próferens,
+    Primórdiis lucis novæ,
+    Mundi parans oríginem:
+
+    Qui mane junctum vésperi
+    Diem vocári prǽcipis:
+    Tetrum chaos illábitur,
+    Audi preces cum flétibus.
+
+    Ne mens graváta crímine,
+    Vitæ sit exsul múnere,
+    Dum nil perénne cógitat,
+    Seséque culpis ílligat.
+
+    Cælórum pulset íntimum,
+    Vitále tollat prǽmium:
+    Vitémus omne nóxium:
+    Purgémus omne péssimum.
+
+    Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2028-02-20); Latin and English both taken from the page.
+vespers-responsory:
+  text: |
+    R.br. Quam magnificáta sunt * ópera tua, Dómine.
+    R. Quam magnificáta sunt * ópera tua, Dómine.
+    V. Ómnia in sapiéntia fecísti.
+    R. Ópera tua Dómine.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Quam magnificáta sunt * ópera tua, Dómine.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2028-02-20); Latin and English both taken from the page.
+vespers-versicle:
+  text: V. Dirigátur, Dómine, orátio mea. R. Sicut incénsum in conspéctu tuo.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-01-31 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Cum turba * plúrima convenírent ad Jesum, et de civitátibus properárent ad eum, dixit per similitúdinem: Exiit qui séminat, semináre semen suum.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-01-31 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: Vobis datum est * nosse mystérium regni Dei, céteris autem in parábolis, dixit Jesus discípulis suis.
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2027-01-30 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Dixit Dóminus * ad Noë: Finis univérsæ carnis venit coram me: fac tibi arcam de lignis lævigátis, ut salvétur univérsum semen in ea.'
+  status: verified
+  temporal: true
+
+# Engine (Monastic Tridentinum 1617, command=prayLaudes, 2027-01-31); source Tempora/Quadp2-0.txt's [Ant Laudes] entries 1,2,3,4,7 in Latin and English. Antiphons for the Sunday's own psalm slots (Ps 66 first, no antiphon). Applies via the numbers-override path for this temporal Sunday (resolve-common.ts getPsalmodyNumbersOverrideId).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 50
+      antiphon: Secúndum magnam misericórdiam * tuam miserére mei, Deus.
+    - psalms:
+        - 117
+      antiphon: Si mihi Dóminus * salvátor fúerit, non timébo, quid fáciat mihi homo.
+    - psalms:
+        - 62
+      antiphon: 'In velaménto * clamávi valde dilúculo: Deus, Deus meus, ad te de luce vígilo.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Hymnum dicámus * Dómino Deo nostro.
+  laudate:
+    antiphon: In týmpano et choro, * in chordis et órgano, laudáte Deum.
+
+# Nocturn 2-3, Sexagesima Sunday (temporalId sexagesima). Sourced from
+# Tempora/Quadp2-0.txt (Latin) / English/Tempora/Quadp2-0.txt. See
+# advent-1.yml/septuagesima.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Ambrose's book On
+# Noah and the Ark, chapter 4 (continuing the Genesis/Fall-to-Flood
+# Nocturn 1 cycle begun at Septuagesima). Responsory: Lectio4's own
+# (Responsory4, "Ædificávit Noë altáre Dómino").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Luke 8:4-15, the parable of the sower, "Et réliqua") -
+# Pope St. Gregory the Great's Homily 15 on the Gospels begins within
+# Lectio7 itself, same pattern used throughout this sweep. Combined
+# Lectio7's homily portion (incipit dropped) with Lectio8-9, using
+# Responsory7 ("Benedíxit Deus Noë, et fíliis ejus") - the first
+# responsory of the group the combined reading spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, On Noah and the Ark, Chapter 4
+      text: |-
+        Habes, quia irátus Dóminus est: quóniam quamvis cogitáret, hoc est sciret, quia homo pósitus in terræ regióne, carnem portans, sine peccáto esse non possit, (terra enim velut quidam tentatiónum locus est, caróque corruptélæ illécebra) tamen cum habérent mentem ratiónis capácem, virtutémque ánimæ infusam córpori, sine consideratióne áliqua in lapsum ruérunt, ex quo revocáre se nollent. Neque enim Deus cógitat sicut hómines, ut áliqua ei nova succédat senténtia, neque iráscitur quasi mutábilis: sed ídeo hæc legúntur, ut exprimátur peccatórum nostrórum acérbitas, quæ divínam merúerit offénsam: tamquam eoúsque incréverit culpa, ut étiam Deus, qui naturáliter non movétur aut ira, aut ódio, aut passióne ulla, provocátus videátur ad iracúndiam.
+
+        Minitátus est prætérea, quod deléret hóminem. Ab hómine, inquit, usque ad pecus, et a reptílibus usque ad volatília delébo. Quid læserant irrationabília? Sed quia propter hóminem illa facta erant, eo útique deléto, propter quem facta sunt, cónsequens erat, ut étiam illa deleréntur, quia non erat qui his uterétur. Sensu autem altióre illud manifestátur: quia homo mens est, quæ est ratiónis capax. Homo enim definítur ánimal vivum, mortále, rationábile. Principáli ígitur exstíncto, étiam sensus omnis exstínguitur: eo quod nihil réliqui ad salútem supérsit, cum salútis fundaméntum virtus defécerit.
+
+        Ad condemnatiónem autem ceterórum, et ad expressiónem pietátis divínæ, dícitur Noë apud Deum grátiam invenísse. Simul osténditur, quod hóminem justum non obúmbret aliórum offénsio, quando ipse ad totíus géneris reservátur seminárium. Qui non generatiónis nobilitáte, sed justítiæ et perfectiónis mérito laudátur. Probáti enim viri genus, virtútis prosápia est: quia sicut hóminum genus hómines, ita animárum genus virtútes sunt. Etenim famíliæ hóminum splendóre géneris nobilitántur, animárum autem clarificátur grátia splendóre virtútis.
+      responsory: |-
+        R. Ædificávit Noë altáre Dómino, ófferens super illud holocáustum: odoratúsque est Dóminus odórem suavitátis, et benedíxit ei, dicens: * Créscite, et multiplicámini, et repléte terram.
+        V. Ecce ego státuam pactum meum vobíscum, et cum sémine vestro post vos.
+        R. Créscite, et multiplicámini, et repléte terram.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 8:4-15
+      text: 'In illo témpore: Cum turba plúrima convenírent, et de civitátibus properárent ad Jesum, dixit per similitúdinem: Exiit, qui séminat, semináre semen suum: et dum séminat, áliud cécidit secus viam, et conculcátum est, et vólucres cæli comedérunt illud. Et áliud cécidit supra petram: et natum áruit, quia non habébat humórem. Et áliud cécidit inter spinas, et simul exórtæ spinæ suffocavérunt illud. Et áliud cécidit in terram bonam: et ortum fecit fructum céntuplum. Hæc dicens, clamábat: Qui habet aures audiéndi, áudiat. Interrogábant autem eum discípuli ejus, quæ esset hæc parábola. Quibus ipse dixit: Vobis datum est nosse mystérium regni Dei, céteris autem in parábolis: ut vidéntes non vídeant, et audiéntes non intéllegant. Est autem hæc parábola: Semen est verbum Dei. Qui autem secus viam, hi sunt qui áudiunt: déinde venit diábolus, et tollit verbum de corde eórum, ne credéntes salvi fiant. Nam qui supra petram: qui cum audíerint, cum gáudio suscípiunt verbum: et hi radíces non habent: qui ad tempus credunt, et in témpore tentatiónis recédunt. Quod autem in spinas cécidit: hi sunt, qui audiérunt, et a sollicitudínibus et divítiis et voluptátibus vitæ eúntes, suffocántur, et non réferunt fructum. Quod autem in bonam terram: hi sunt, qui in corde bono et óptimo audiéntes verbum rétinent, et fructum áfferunt in patiéntia.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 15 on the Gospels
+      text: |-
+        Léctio sancti Evangélii, quam modo, fratres caríssimi, audístis, expositióne non índiget, sed admonitióne. Quam enim per semetípsam Véritas expósuit, hanc discútere humána fragílitas non præsúmat. Sed est quod sollícite in hac ipsa expositióne Domínica pensáre debeámus: quia si nos vobis semen verbum, agrum mundum, vólucres dæmónia, spinas divítias significáre dicerémus ad credéndum nobis mens fórsitan vestra dubitáret. Unde et idem Dóminus per semetípsum dignátus est expónere quod dicébat, ut sciátis rerum significatiónes quǽrere in iis étiam, quæ per semetípsum nóluit explanáre.
+
+        Exponéndo ergo quod dixit, figuráte se loqui innótuit: quátenus certos nos rédderet, cum vobis nostra fragílitas verbórum illíus figúras aperíret. Quis enim mihi umquam créderet, si spinas divítias interpretári voluíssem? máxime cum illæ pugnant, istæ deléctent. Et tamen spinæ sunt, quia cogitatiónum suárum punctiónibus mentem lácerant: et cum usque ad peccátum pértrahunt, quasi inflícto vúlnere cruéntant. Quas bene hoc in loco, álio Evangelísta testánte, nequáquam Dóminus divítias, sed falláces divítias appéllat.
+
+        Falláces enim sunt, quæ nobíscum diu permanére non possunt: falláces sunt, quæ mentis nostræ inópiam non expéllunt. Solæ autem divítiæ veræ sunt, quæ nos dívites virtútibus fáciunt. Si ergo, fratres caríssimi, esse dívites cúpitis, veras divítias amáte. Si culmen veri honóris quæritis, ad cæléste regnum téndite. Si glóriam dignitátum dilígitis, in illa supérna Angelórum cúria adscríbi festináte. Verba Dómini, quæ aure percípitis, mente retinéte. Cibus enim mentis est sermo Dei: et quasi accéptus cibus stómacho languénte rejícitur, quando audítus sermo in ventre memóriæ non tenétur. Sed quisquis aliménta non rétinet, hujus profécto vita desperátur.
+      responsory: |-
+        R. Benedíxit Deus Noë, et fíliis ejus, et dixit ad eos: * Créscite, et multiplicámini, et repléte terram.
+        V. Ecce ego státuam pactum meum vobíscum, et cum sémine vestro post vos.
+        R. Créscite, et multiplicámini, et repléte terram.
+      status: verified

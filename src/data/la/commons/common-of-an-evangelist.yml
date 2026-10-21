@@ -1,0 +1,277 @@
+# The Common of an Evangelist's Matins hymn: Commune/C1a.txt's own
+# [Hymnus Matutinum] is the Apostles' hymn (matins-hymn-common-of-an-apostle.yml)
+# with three Latin substitutions -- "Palmas et hymnos débitos" -> "Laudes
+# canéntes débitas", "tyránnum cónterit" -> "triúmphat príncipem", and stanza 4
+# reordered ("In his volúntas Spíritus, / Exsúltat in his Fílius"). The English
+# is the Apostles' unchanged, as in the reference (it has no Evangelist
+# English of its own for this hymn).
+matins-hymn:
+  text: |-
+    Ætérna Christi múnera,
+    Apostolórum glóriam,
+    Laudes canéntes débitas
+    Lætis canámus méntibus.
+
+    Ecclesiárum Príncipes,
+    Belli triumpháles duces,
+    Cæléstis aulæ mílites,
+    Et vera mundi lúmina.
+
+    Devóta Sanctórum fides,
+    Invícta spes credéntium,
+    Perfécta Christi cáritas
+    Mundi triúmphat príncipem.
+
+    In his Patérna glória,
+    In his volúntas Spíritus,
+    Exsúltat in his Fílius,
+    Cælum replétur gáudio.
+
+    * Patri, simúlque Fílio,
+    Tibíque Sancte Spíritus,
+    Sicut fuit, sit júgiter
+    Sæclum per omne glória. Amen.
+  status: verified
+
+# Evangelists (Sancti 'ex C1a'/'ex C1') inherit Commune/C1's invitatory.
+matins-invitatory:
+  text: Regem Apostolórum Dóminum, * Veníte, adorémus.
+  status: verified
+
+# Same text as prime-antiphon-common-of-apostles (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime.
+# Extracted (2026-08) from the identical content independently authored
+# for 8 duplex-majus+ Apostle/Evangelist feasts and confirmed byte-for-
+# byte identical via diff: st-matthias, st-barnabas, st-james-the-greater,
+# st-thomas-apostle, ss-simon-and-jude, st-luke, st-matthew, st-bartholomew
+# (each saint's own live-query date recorded in git history, not repeated
+# here). See SaintRecord.common (calendar/feasts.ts) for how
+# saints reach this file, and TODO.md for the saints still missing it.
+prime-antiphon:
+  text: Hoc est præcéptum meum, * ut diligátis ínvicem, sicut diléxi vos.
+  status: verified
+
+# Same text as prime-antiphon-common-of-apostles-paschaltide (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against the reference engine's own source data files (not a
+# live query): web/www/horas/Latin/Commune/C1p.txt and English/Commune/
+# C1p.txt ("Commune Apostolorum tempore Paschali"), 2026-08. Cross-checked
+# against st-mark's already-authored, live-queried content (2026-04-25) --
+# identical except this source's own asterisk falls one word earlier
+# ("Sancti tui, * Dómine..." not "Sancti tui, Dómine, * ...") -- trusted
+# over the live-rendered incipit split, per resolveMinorHourAntiphon's own
+# Paschaltide-variant fallback (hours/resolve-common.ts) and
+# SaintRecord.common (calendar/feasts.ts). See TODO.md for which
+# saints (st-mark, st-john-before-the-latin-gate, ss-philip-and-james)
+# reach this file and why only Apostles/Martyr-Bishop/Several-Martyrs
+# commons have a Paschaltide variant at all.
+prime-antiphon/~-paschaltide:
+  text: 'Sancti tui, * Dómine, florébunt sicut lílium, allelúia: et sicut odor bálsami erunt ante te, allelúia.'
+  status: verified
+
+# Sourced from web/www/horas/Latin/Commune/C1.txt's own [Lectio Prima] and its
+# English counterpart.
+# Evangelists (Mark, Luke) are `ex C1a`, and C1a is @Commune/C1.
+prime-lectio:
+  text: Ibant Apóstoli gaudéntes a conspéctu concílii, quóniam digni hábiti sunt pro nómine Jesu contuméliam pati.
+  citation: Act 5:41
+  status: verified
+
+# Same text as terce-antiphon-common-of-apostles (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce.
+# Extracted (2026-08) — see prime-antiphon-common-of-apostles.yml's header
+# for the full provenance note (same 8-saint group, confirmed via diff).
+terce-antiphon:
+  text: Majórem caritátem * nemo habet, ut ánimam suam ponat quis pro amícis suis.
+  status: verified
+
+# Same text as terce-antiphon-common-of-apostles-paschaltide (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C1p.txt and English/Commune/C1p.txt, 2026-08
+# -- see prime-antiphon-common-of-apostles-paschaltide.yml's header. The
+# source's own English rendering has no asterisk at all for this line (a
+# real gap in that file, not a capture error) -- placed here to match the
+# Latin split's own sense, same as st-mark's already-authored terce
+# antiphon this matches exactly.
+terce-antiphon/~-paschaltide:
+  text: 'In cæléstibus regnis * Sanctórum habitátio est, allelúia: et in ætérnum réquies eórum, allelúia.'
+  status: verified
+
+# Same text as terce-capitulum-common-of-apostles (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce.
+# Extracted (2026-08) — see prime-antiphon-common-of-apostles.yml's header
+# for the full provenance note (same 8-saint group, confirmed via diff).
+terce-capitulum:
+  text: |
+    Fratres: Jam non estis hóspites et ádvenæ: sed estis cives Sanctórum et doméstici Dei: superædificáti super fundaméntum Apostolórum, et Prophetárum, ipso summo angulári lápide Christo Jesu.
+    R. Deo grátias.
+    V. In omnem terram exívit sonus eórum.
+    R. Et in fines orbis terræ verba eórum.
+  citation: Eph 2:19-20
+  status: verified
+
+# Same text as terce-capitulum-common-of-apostles-paschaltide (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C1p.txt and English/Commune/C1p.txt, 2026-08
+# -- see prime-antiphon-common-of-apostles-paschaltide.yml's header (C1p's
+# own [Capitulum Laudes]/[Versum 1] sections -- Terce's chapter equals
+# Lauds' in the Monastic tradition).
+terce-capitulum/~-paschaltide:
+  text: |
+    Stabunt justi in magna constántia advérsus eos qui se angustiavérunt et qui abstulérunt labóres eórum.
+    R. Deo grátias.
+    V. Sancti et justi in Dómino gaudéte, allelúia.
+    R. Vos elégit Deus in hereditátem sibi, allelúia.
+  citation: Sap 5:1
+  status: verified
+
+# Same text as sext-antiphon-common-of-apostles (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext.
+# Extracted (2026-08) — see prime-antiphon-common-of-apostles.yml's header
+# for the full provenance note (same 8-saint group, confirmed via diff).
+sext-antiphon:
+  text: Vos amíci mei estis, * si fecéritis quæ præcípio vobis, dicit Dóminus.
+  status: verified
+
+# Same text as sext-antiphon-common-of-apostles-paschaltide (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C1p.txt and English/Commune/C1p.txt, 2026-08
+# -- see prime-antiphon-common-of-apostles-paschaltide.yml's header.
+sext-antiphon/~-paschaltide:
+  text: In velaménto * clamábant Sancti tui, Dómine, allelúia, allelúia, allelúia.
+  status: verified
+
+# Same text as sext-capitulum-common-of-apostles (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext.
+# Extracted (2026-08) — see prime-antiphon-common-of-apostles.yml's header
+# for the full provenance note (same 8-saint group, confirmed via diff).
+sext-capitulum:
+  text: |
+    Per manus autem Apostolórum fiébant signa et prodígia multa in plebe.
+    R. Deo grátias.
+    V. Constítues eos príncipes super omnem terram.
+    R. Mémores erunt nóminis tui, Dómine.
+  citation: Act 5:12
+  status: verified
+
+# Same text as sext-capitulum-common-of-apostles-paschaltide (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C1p.txt and English/Commune/C1p.txt, 2026-08
+# -- see prime-antiphon-common-of-apostles-paschaltide.yml's header (C1p's
+# own [Capitulum Sexta]/[Nocturn 2 Versum] sections).
+sext-capitulum/~-paschaltide:
+  text: |
+    Ecce quómodo computáti sunt inter fílios Dei, et inter sanctos sors illórum est.
+    R. Deo grátias.
+    V. Lux perpétua lucébit Sanctis tuis, Dómine, allelúia.
+    R. Et ætérnitas témporum, allelúia.
+  citation: Sap 5:5
+  status: verified
+
+# Same text as none-antiphon-common-of-apostles (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None.
+# Extracted (2026-08) — see prime-antiphon-common-of-apostles.yml's header
+# for the full provenance note (same 8-saint group, confirmed via diff).
+none-antiphon:
+  text: In patiéntia vestra * possidébitis ánimas vestras.
+  status: verified
+
+# Same text as none-antiphon-common-of-apostles-paschaltide (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C1p.txt and English/Commune/C1p.txt, 2026-08
+# -- see prime-antiphon-common-of-apostles-paschaltide.yml's header. C1p's
+# own [Ant Vespera] has 5 antiphons cycled across the hours; this is the
+# 5th (4th, "Spíritus et ánimæ...", is used elsewhere, not at None).
+none-antiphon/~-paschaltide:
+  text: Fulgébunt justi * sicut sol in conspéctu Dei, allelúia.
+  status: verified
+
+# Same text as none-capitulum-common-of-apostles (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None.
+# Extracted (2026-08) — see prime-antiphon-common-of-apostles.yml's header
+# for the full provenance note (same 8-saint group, confirmed via diff).
+none-capitulum:
+  text: |
+    Ibant Apóstoli gaudéntes a conspéctu concílii, quóniam digni hábiti sunt pro nómine Jesu contuméliam pati.
+    R. Deo grátias.
+    V. Nimis honoráti sunt amíci tui, Deus.
+    R. Nimis confortátus est principátus eórum.
+  citation: Act 5:41
+  status: verified
+
+# Same text as none-capitulum-common-of-apostles-paschaltide (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C1p.txt and English/Commune/C1p.txt, 2026-08
+# -- see prime-antiphon-common-of-apostles-paschaltide.yml's header (C1p's
+# own [Lectio Prima]/[Nocturn 3 Versum] sections, reached at None via
+# [Capitulum Nona]'s `@:Lectio Prima` reference).
+none-capitulum/~-paschaltide:
+  text: |
+    Scimus quóniam diligéntibus Deum ómnia cooperántur in bonum, iis qui secúndum propósitum vocáti sunt sancti.
+    R. Deo grátias.
+    V. Lætítia sempitérna super cápita eórum, allelúia.
+    R. Gáudium et exsultatiónem obtinébunt, allelúia.
+  citation: Rom 8:28
+  status: verified
+
+# Second Vespers Magnificat antiphon for `common-of-an-evangelist`
+# (Commune Evangelistarum, Latin/Commune/C1a.txt) -- C1a.txt is
+# "@Commune/C1" with only Lectio1-9 overridden (its own Matins-lesson
+# content, Ezechiel + St. Gregory); every antiphon section, including
+# [Ant 3], is inherited unchanged from C1 (Commune Apostolorum). Same
+# text as magnificat-antiphon-common-of-an-apostle.yml, registered under
+# its own id per this codebase's standing convention for shared Common
+# content rather than aliased (see e.g. benedictus-antiphon-common-of-a-
+# confessor-not-bishop.yml's own header for the same pattern).
+magnificat-antiphon:
+  text: 'Estóte fortes * in bello, et pugnáte cum antíquo serpénte: et accipiétis regnum ætérnum, allelúia.'
+  status: verified
+
+# First Vespers Magnificat antiphon for this Common: Latin/Commune/C1.txt's own
+# [Ant 1] (and its English counterpart), where it differs from [Ant 3]. Second
+# Vespers' [Ant 3] is magnificat-antiphon-common-of-an-evangelist.yml (the default); see
+# hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Tradent enim vos * in concíliis, et in synagógis suis flagellábunt vos, et ante reges et prǽsides ducémini propter me in testimónium illis, et Géntibus.
+  status: verified

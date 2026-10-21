@@ -1,0 +1,70 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Dírigat corda nostra, quǽsumus, Dómine, tuæ miseratiónis operátio: quia tibi sine te placére non póssumus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-09-19 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Dixit Dóminus * paralýtico: Confíde, fili, remittúntur tibi peccáta tua.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-09-19 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: 'Tulit ergo * paralýticus lectum suum, in quo jacébat, magníficans Deum: et omnis plebs, ut vidit, dedit laudem Deo.'
+  status: verified
+  temporal: true
+
+# Nocturn 3, 18th Sunday after Pentecost. Sourced from Tempora/Pent18-0.txt.
+# See post-pentecost-02.yml/post-pentecost-12.yml for sweep method note (no
+# proper Nocturn 2 in the source). Lectio7 bare incipit (Matt 9:1-8, the
+# healing of the paralytic) skipped; Lectio7-9's homily by St. Peter
+# Chrysologus is one continuous work, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 9:1-8
+      text: 'In illo témpore: Ascéndens Jesus in navículam, transfretávit et venit in civitátem suam. Et ecce, offerébant ei paralýticum jacéntem in lecto. Et videns Jesus fidem illórum, dixit paralýtico: Confíde, fili, remittúntur tibi peccáta tua. Et ecce, quidam de scribis dixérunt intra se: Hic blasphémat. Et cum vidísset Jesus cogitatiónes eórum, dixit: Ut quid cogitátis mala in córdibus vestris? Quid est facílius dícere: Dimittúntur tibi peccáta tua; an dícere: Surge et ámbula? Ut autem sciátis, quia Fílius hóminis habet potestátem in terra dimitténdi peccáta, tunc ait paralýtico: Surge, tolle lectum tuum, et vade in domum tuam. Et surréxit et ábiit in domum suam. Vidéntes autem turbæ timuérunt, et glorificavérunt Deum, qui dedit potestátem talem homínibus.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Peter Chrysologus, Archbishop of Ravenna, Sermon 50
+      text: |-
+        Christum in humánis áctibus divína gessísse mystéria, et in rebus visibílibus invisibília exercuísse negótia, léctio hodiérna monstrávit. Ascéndit, inquit, in navículam, et transfretávit, et venit in civitátem suam. Nonne ipse est, qui, fugátis flúctibus, maris profúnda nudávit, ut Israëlíticus pópulus inter stupéntes undas sicco vestígio velut móntium cóncava pertransíret? Nonne hic est, qui Petri pédibus marínos vórtices inclinávit, ut iter líquidum humánis gréssibus sólidum præbéret obséquium.
+
+        Et quid est, quod ipse sibi sic maris dénegat servitútem, ut brevíssimi lacus tránsitum sub mercéde náutica transfretáret? Ascéndit, inquit, in navículam, et transfretávit. Et quid mirum, fratres? Christus venit suscípere infirmitátes nostras, et suas nobis conférre virtútes; humána quǽrere, præstáre divína; accípere injúrias, réddere dignitátes; ferre tǽdia, reférre sanitátes: quia médicus, qui non fert infirmitátes, curáre nescit; et qui non fúerit cum infírmo infirmátus, infírmo non potest conférre sanitátem.
+
+        Christus ergo, si in suis mansísset virtútibus, commúne cum homínibus nil habéret; et nisi implésset carnis órdinem, carnis in illo esset otiósa suscéptio. Ascéndit, inquit, in navículam, et transfretávit, et venit in civitátem suam. Creátor rerum orbis Dóminus, posteáquam se propter nos nostra angustávit in carne, cœpit habére humánam pátriam, cœpit civitátis Judáicæ esse civis, paréntes habére cœpit paréntum ómnium ipse parens; ut invitáret amor, attráheret cáritas, vincíret afféctio, suadéret humánitas, quos fúgerat dominátio, metus dispérserat, fécerat vis potestátis extórres.
+      responsory: |-
+        R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.
+        V. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.
+        R. Plena est omnis terra glória ejus.
+      status: verified

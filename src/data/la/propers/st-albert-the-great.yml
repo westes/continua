@@ -1,0 +1,46 @@
+# Read directly from web/www/horas/Latin/Sancti/11-15.txt's own
+# [Oratio] and its English counterpart. Doxology "$Per Dominum"
+# spelled out per the convention in st-bibiana-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátum Albértum Pontíficem tuum atque Doctórem in humána
+    sapiéntia divínæ fídei subiciénda magnum effecísti: da nobis,
+    quǽsumus; ita ejus magistérii inhærére vestígiis, ut luce perfécta
+    fruámur in cælis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et
+    regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# No proper antiphon of his own -- standard de-Communi text, paired with the standard de-Communi commemoration versicle for common-of-a-confessor-doctor (Bishop-Doctor, C4a -- inherits C4's own Ant2/Versum2 with no override) (not yet independently live-verified for this specific category, marked draft). Collect is the saint's own real proper (st-albert-the-great-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui beátum Albértum Pontíficem tuum atque Doctórem in humána
+    sapiéntia divínæ fídei subiciénda magnum effecísti: da nobis,
+    quǽsumus; ita ejus magistérii inhærére vestígiis, ut luce perfécta
+    fruámur in cælis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et
+    regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Albert the Great (Nov 15). Sourced
+# directly from web/www/horas/Latin/Sancti/11-15.txt,
+# English/Sancti/11-15.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No [Lectio7] in the source -- no own Nocturn 3.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Albertus, ob singularem doctrinam cognomento Magnus, Lauíngiæ ad Danubium, in Suevia, natus, a púero diligenter institútus est. Studiórum causa e pátria discédens, dum Patavii morarétur, hortante beato Jordano, generali Magistro Ordinis Prædicatórum, Dominicianæ famíliæ, frustra obsisténte avunculo, adscribi postulávit. Inter fratres adlectus, in ómnibus Deo deditus, religiosa observántia et pietáte enituit, filiali ac tenerrima in beátam Mariam Vírginem devotióne flagrans. Totam vitæ formam, oratióne studium præveniendo, ita dispósuit, ut apostolicam religiónem proféssus, ad prædicatiónem verbi Dei et animárum salútem procurandam idoneus evaderet administer. Mox ad stúdia explenda Colóniam Agrippinam missus, ita profecit, ut omnes fere sæculares sciéntias diligentíssime præ ómnibus suis coævis investigaverit atque auxerit; et de divinæ legis fonte, testante Alexandro quarto, adeo salutifera fluéntia doctrinæ potávit, ut ejusdem in suo péctore vigéret plenitudo.
+
+        Ut scientiárum thesáuris alios ditaret, lector Hildeshémii, deinceps Friburgi, Ratisbonæ et Argentinæ constitútus est. Omnium in se admiratiónem convértens, cum in Parisiénsi inclyta universitáte sacræ facultáti docéndo decus adderet, magister theologíæ renunciátus est. Doctrinis gentílium philosophórum ad rectæ ratiónis dictámina revocatis, eárum cum fide cohæréntiam clarius commonstrávit. De divinórum intelléctu mira expósuit. Quantum vero univérsas disciplínas, præsertim sacras, férvido ingenio atque indefesso studio provexerit, plurima ejus scripta in omni fere scientiárum génere aperte declarant. Ut studio generali sui Ordinis præesset, Colóniam reversus est, eo successu ut ejus in scholis auctoritas et doctrinæ fama magis magisque vigúerit. Thomam de Aquino discipulum diléctum hábuit, cujus altitúdinem mentis ipse primus perspéxit ac prædicávit. Erga Sacrosanctum altaris Sacraméntum piíssimo ferebátur afféctu, deque eo præclára conscripsit; rei quoque mysticæ ánimis instituéndis vias ampliores parávit, adeo ut frúgifer tanti magistri zelus quam late in Ecclésia patúerit.
+
+        Tot inter gravíssima munia, religiosæ vitæ exemplis præfulgens, a frátribus Prior Teutoníæ provinciæ eléctus est. Anágniam vocatus, Gulielmum, Ordines mendicántes ímpio ausu impetentem, coram summo Pontifice Alexandro quarto rétudit, qui Episcopum Ratisbonensem eum póstea constítuit. Curæ sui gregis Albertus se totum impendit, morum humilitate ac paupertátis amóre studiosíssime reténtis. Dimisso officio, ad episcopalis tamen ordinis labóres promptus atque álacer per Germaniam et finítimas regiónes spiritualia ministrávit. Consília requiréntibus quam recta ac salutifera sollicite præbebat, et in sedandis discordiis tam prudentem se osténdit, ut eum non solum Colónia pacis conciliatórem noverit, verum étiam ad díssitas regiónes Præláti ac viri príncipes árbitrum componéndis dissidiis eum sæpe advocáverint. A sancto Ludovíco, Francórum rege, relíquiis Christi Passiónis, quam devotíssime Albertus colebat, donatus est. In altero Concílio Lugdunénsi negotia gravióra peregit. Tandem, senio consumptus, docére déstitit. Contemplatióni exínde intentus, in gáudium Dómini sui intrávit anno millesimo ducentésimo octogésimo. Sacros honores in diœcesibus plúribus atque in Ordine Prædicatórum ei, Romanórum Pontificum auctoritate, jam antea tributos, Pius Papa undecimus cumulans, sancti Alberti Magni festum, addito Doctoris titulo, Sacrórum Rituum Congregatiónis votum libentíssime excípiens, ad Ecclésiam universam exténdit; et eum Pius duodecimus cultórum scientiárum naturalium cælestem apud Deum Patronum constítuit.
+      status: verified

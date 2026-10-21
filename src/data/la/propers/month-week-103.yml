@@ -1,0 +1,25 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2030-10-12 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Lugébat autem Judam * Israël planctu magno et dicébat: Quómodo cecidísti, potens in prǽlio, qui salvum faciébas pópulum Dómini?'
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "3rd Sunday of October" (Tempora/103-0.txt) — see
+# month-week-081.yml's header for the id scheme. Responsory reuses 101's
+# own Responsory4 (source's own cross-reference).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, On the Duties of the Clergy, Book 1, ch. 41
+      text: |-
+        Quia fortitúdo non solum secúndis rebus, sed étiam advérsis probátur, spectémus Judæ Machabǽi éxitum. Is enim post victum Nicánorem, regis Demétrii ducem, secúrior advérsus vigínti míllia exércitus regis, cum octingéntis viris bellum adórsus, voléntibus his cédere, ne multitúdine opprimeréntur, gloriósam magis mortem quam turpem fugam suásit: Ne crimen, inquit, nostræ relinquámus glóriæ. Ita commísso prǽlio, cum a primo ortu diéi in vésperam dimicarétur, dextrum cornu, in quo validíssimam manum advértit hóstium, aggréssus fácile avértit. Sed dum fugiéntes séquitur, a tergo vúlneri locum prǽbuit; ítaque gloriosiórem triúmphis mortem invénit.
+
+        Quid Jónatham fratrem ejus attéxam, qui cum parva manu advérsus exércitus régios pugnans, desértus a suis et cum duóbus tantum relíctus, reparávit bellum, avértit hostem, fugitántes suos ad societátem revocávit triúmphi? Habes fortitúdinem béllicam, in qua non medíocris honésti ac decóri forma est, quod mortem servitúti prǽferat ac turpitúdini. Quid autem de Mártyrum dicam passiónibus? Et ne lóngius evagémur, non minórem de supérbo rege Antíocho Machabǽi púeri revexérunt triúmphum, quam paréntes próprii; síquidem illi armáti, isti sine armis vicérunt.
+
+        Stetit invícta septem puerórum cohors, régiis cincta legiónibus: defecérunt supplícia, cessérunt tortóres, non defecérunt Mártyres. Alius córium cápitis exútus, spéciem mutáverat, virtútem áuxerat. Alius linguam jussus amputándam prómere, respóndit: Non solos Dóminus audit loquéntes, qui audiébat Móysen tacéntem; plus audit tácitas cogitatiónes suórum, quam voces ómnium. Linguæ flagéllum times, flagéllum sánguinis non times? Habet et sanguis vocem suam, qua clamat ad Deum, sicut clamávit in Abel.
+      responsory: |-
+        R. Impetum inimicórum ne timuéritis: mémores estóte, quómodo salvi facti sunt patres nostri: * Et nunc clamémus in cælum et miserébitur nostri Deus noster.
+        V. Mementóte mirabílium ejus, quæ fecit pharaóni et exercítui ejus in Mari Rubro.
+        R. Et nunc clamémus in cælum et miserébitur nostri Deus noster.
+      status: verified

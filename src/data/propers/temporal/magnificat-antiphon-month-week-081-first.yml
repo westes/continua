@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-08-02 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: magnificat-antiphon-month-week-081-first
-text:
-  la: "Sapiéntia * ædificávit sibi domum, excídit colúmnas septem, súbdidit sibi gentes, superbórum et sublímium colla própria virtúte calcávit."
-  en: "Wisdom * hath builded her house, she hath hewn out her seven pillars, she hath broken the nations under her in the greatness of her strength, she hath trodden under her feet the necks of such as be haughty and proud."
-status:
-  la: verified
-  en: verified

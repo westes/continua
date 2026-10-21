@@ -1,0 +1,203 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617). Final (3rd)
+# stanza marked with a leading "* " — Divinum Officium's own marker for a
+# hymn's variable doxology (hymni.pl's gethymn(), Minor Special.txt's own
+# `[Hymnus Tertia]`), ported here directly; see hours/resolve-common.ts's
+# substituteDoxology and hours/hymn-doxology.ts. Clarified 2026-09-10: an
+# earlier version of this file's comment conflated "body invariant by
+# season" (still true, per explicit user direction) with "doxology
+# invariant too" (not true — only the first 2 stanzas are fixed).
+terce-hymn:
+  text: |
+    Nunc, Sancte, nobis, Spíritus,
+    Unum Patri cum Fílio,
+    Dignáre promptus íngeri
+    Nostro refúsus péctori.
+
+    Os, lingua, mens, sensus, vigor
+    Confessiónem pérsonent.
+    Flamméscat igne cáritas,
+    Accéndat ardor próximos.
+
+    * Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum.
+    Amen.
+  status: verified
+
+# Terce's own Pentecost-week hymn -- a full whole-hymn swap, not just a
+# doxology-stanza substitution like the other 7 hours get. Confirmed
+# against the reference engine's static source (Psalterium/Special/Minor
+# Special.txt's own `[Hymnus Pasc7 Tertia]`/`[HymnusM Pasc7 Tertia]`
+# blocks): `Tempora/Pasc7-0.txt` (Pentecost Sunday) redirects *Vespers* to
+# this same hymn (already authored in vespers-hymn-pentecost-sunday.yml,
+# Monastic variant -- this file's body-stanza text is copied verbatim from
+# there), and `Pasc7-1.txt` through `Pasc7-6.txt` (the octave weekdays) all
+# inherit from `Pasc7-0` via their own `[Rule] ex Pasc7-0`. There is no
+# `Pasc7 Sexta`/`Pasc7 Nona` block anywhere in the source, so Sext and None
+# are NOT affected -- this swap is Terce-only, all 7 days of Pentecost's
+# octave (Sunday included, since the Third Hour is the hour of Pentecost
+# itself, Acts 2:15).
+#
+# Final stanza carries the source's own `*` marker (unlike
+# vespers-hymn-pentecost-sunday.yml, which bakes a fixed doxology in) --
+# every day this file is used falls within the Pentecost season, so
+# `getHymnDoxologyOverrideId`/`hymn-doxology-pent.yml` always supplies the
+# real override at render time; the text below the marker is this hymn's
+# own source default, kept for fidelity/fallback only.
+#
+# English is the reference engine's own translation (English/Psalterium/
+# Special/Minor Special.txt's `[Hymnus Pasc7 Tertia]`), not a new
+# translation -- verified stanza-by-stanza against the Latin.
+terce-hymn-pentecost-week:
+  text: |
+    Veni Creátor Spíritus,
+    Mentes tuórum vísita,
+    Imple supérna grátia,
+    Quæ tu creásti péctora.
+
+    Qui Paráclitus díceris,
+    Donum Dei altíssimi,
+    Fons vivus, ignis, cáritas,
+    Et spiritális únctio.
+
+    Tu septifórmis múnere,
+    Dextræ Dei tu dígitus,
+    Tu rite promíssum Patris,
+    Sermóne ditans gúttura.
+
+    Accénde lumen sénsibus:
+    Infúnde amórem córdibus:
+    Infírma nostri córporis
+    Virtúte firmans pérpeti.
+
+    Hostem repéllas lóngius,
+    Pacémque dones prótinus:
+    Ductóre sic te prǽvio
+    Vitémus omne nóxium.
+
+    Per te sciámus da Patrem,
+    Noscámus atque Fílium,
+    Te utriúsque Spíritum
+    Credámus omni témpore.
+
+    Glória Patri Dómino,
+    Natóque, qui a mórtuis
+    Surréxit, ac Paráclito,
+    In sæculórum sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617). Final (3rd)
+# stanza marked with a leading "* " — Divinum Officium's own marker for a
+# hymn's variable doxology (hymni.pl's gethymn()); see
+# hours/resolve-common.ts's substituteDoxology and hours/hymn-doxology.ts.
+# See terce-hymn.yml's own note (clarified 2026-09-10) — same body-fixed/
+# doxology-variable distinction applies here.
+sext-hymn:
+  text: |
+    Rector potens, verax Deus,
+    Qui témperas rerum vices,
+    Splendóre mane ínstruis,
+    Et ígnibus merídiem:
+
+    Exstíngue flammas lítium,
+    Aufer calórem nóxium,
+    Confer salútem córporum,
+    Verámque pacem córdium.
+
+    * Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617). Final (3rd)
+# stanza marked with a leading "* " — Divinum Officium's own marker for a
+# hymn's variable doxology (hymni.pl's gethymn()); see
+# hours/resolve-common.ts's substituteDoxology and hours/hymn-doxology.ts.
+# Same Latin doxology as Terce/Sext but its own distinct English
+# translation, matching this hymn's own different meter. See
+# terce-hymn.yml's own note (clarified 2026-09-10) — same body-fixed/
+# doxology-variable distinction applies here.
+none-hymn:
+  text: |
+    Rerum, Deus, tenax vigor,
+    Immótus in te pérmanens,
+    Lucis diúrnæ témpora
+    Succéssibus detérminans:
+
+    Largíre clarum véspere,
+    Quo vita nusquam décidat,
+    Sed prǽmium mortis sacræ
+    Perénnis instet glória.
+
+    * Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), clean
+# per-annum run (2026-08-31) — identical across Terce, Sext, and None
+# (confirmed by comparing all three directly), unlike Prime's/Compline's
+# own distinct conclusios.
+little-hour-conclusio:
+  text: |
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+    V. Benedicámus Dómino.
+    R. Deo grátias.
+    V. Fidélium ánimæ per misericórdiam Dei requiéscant in pace.
+    R. Amen.
+  status: verified
+
+# Split out of minor-hour-preces-feriales.yml on 2026-09-01, by explicit
+# choice: Terce/Sext/None should always show the Kyrie and Pater Noster
+# (with its own "Et ne nos indúcas/Sed líbera nos a malo" completion),
+# even on a Sunday or feast, while the further Preces versicles that used
+# to follow in the same block (now trimmed down to just those, still under
+# minor-hour-preces-feriales's own id) become ferial-only — see that
+# file's header and data/hours/terce.yml's for the reasoning. Text
+# otherwise unchanged from what was verified there.
+minor-hour-kyrie-pater:
+  text: |
+    Kýrie, eléison. Christe, eléison. Kýrie, eléison.
+    Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum cotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris:
+    V. Et ne nos indúcas in tentatiónem:
+    R. Sed líbera nos a malo.
+  status: verified
+
+# Verified against Divinum Officium ("Psalterium/Special/Minor Special.txt"
+# [Preces Feriales] macro = $Kyrie, $rubrica Pater secreto, $Pater noster Et,
+# $Preces feriales minora; text pulled from "Psalterium/Common/Prayers.txt"
+# [Kyrie]/[Pater noster Et] and "Psalterium/Special/Preces.txt"
+# [Preces feriales minora]). Shared by Terce, Sext, and None — the Latin is
+# identical across all three per the reference engine.
+#
+# Trimmed 2026-09-01, by explicit choice: this file used to hold the whole
+# block (Kyrie + Pater Noster + all four V/R pairs) and was shown every
+# day. The Kyrie/Pater Noster piece was split out into its own always-
+# shown `minor-hour-kyrie-pater` part (see that file) so it keeps
+# appearing regardless of rank; what's left here — the three further V/R
+# pairs, the actual "Preces" versicles proper — is now ferial-only
+# (`ferialOnly: true` in data/hours/terce.yml etc.), matching real
+# historical practice (Preces are dropped on Sundays/feasts) more closely
+# than the old "every day" simplification did.
+#
+# Deliberate deviation from real Monastic 1617 (which has no Preces at the
+# Little Hours at all): by explicit choice this project still adds them on
+# ferial days, mirroring the same "every day" simplification originally
+# made for Prime's ferial Preces (see prime-preces-feriales.yml) but now
+# scoped to ferias only, per direct instruction.
+minor-hour-preces-feriales:
+  text: |
+    V. Dómine, Deus virtútum, convérte nos.
+    R. Et osténde fáciem tuam, et salvi érimus.
+    V. Exsúrge, Christe, ádjuva nos.
+    R. Et líbera nos propter nomen tuum.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+  status: verified

@@ -1,0 +1,85 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Deus, qui omnipoténtiam tuam parcéndo máxime et miserándo maniféstas: multíplica super nos misericórdiam tuam; ut, ad tua promíssa curréntes, cæléstium bonórum fácias esse consórtes.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2028-08-13 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Stans a longe * publicánus, nolébat óculos ad cælum leváre, sed percutiébat pectus suum dicens: Deus, propítius esto mihi peccatóri.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2028-08-13 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: Descéndit * hic justificátus in domum suam ab illo; quia omnis qui se exáltat, humiliábitur, et, qui se humíliat, exaltábitur.
+  status: verified
+  temporal: true
+
+# Nocturn 2-3, 10th Sunday after Pentecost. Sourced from Tempora/Pent10-0.txt.
+# See post-pentecost-02.yml for sweep method/responsory-reuse note.
+# Nocturn 2: St. John Chrysostom on the Epistle to the Romans, on the guilt
+# of leading others into sin - one continuous excerpt (Lectio4-6). Nocturn
+# 3: Lectio7 bare incipit (Luke 18:9-14, the Pharisee and the publican)
+# skipped; Lectio8-9 one continuous homily by St. Augustine, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. John Chrysostom, Homily 25 on the Epistle to the Romans
+      text: |-
+        Non putémus nos excusatiónem habitúros, si quando delictórum sócios invenérimus: nam istud, supplícium magis augébit. Quandóquidem et serpens magis punítus est quam múlier, quemádmodum et múlier plus quam vir. Et Jézabel majóres pœnas dedit, quam Achab víneæ raptor; ipsa quippe univérsum istud negótium texúerat, regíque lapsus occasiónem déderat. Igitur et tu quoque, si réliquis perditiónis causa fúeris, gravióra patiéris quam qui per te subvérsi sunt. Neque enim peccáre tantum in se perditiónis habet, quantum quod réliqui ad peccándum inducúntur.
+
+        Itaque, si quando peccántes vidérimus, non solum non impellámus, sed et extrahámus ex ipso malítiæ bárathro, ne et aliénæ perditiónis pœnas demus. Recordémur quoque perpétuo terríbilis illíus tribunális, flúminis ígnei, vinculórum insolubílium, profundárum tenebrárum, stridórum déntium, venenosíque vermis. Sed dices: Benígnus est Deus. Ergo hæc ómnia verba sunt, et neque punítur dives ille Lázari contémptor, neque fátuæ vírgines a sponso rejiciúntur?
+
+        Sed minátur ista tantúmmodo Deus? Utique ínquies. Et unde, dic quæso, tantam rem audes públice loqui, atque ex te ipso ferre senténtiam? Ego quippe et ex iis quæ dixit Deus, et ex iis quæ fecit, contrárium probáre pótero. Quod si propter futúra non credis, vel saltem propter ea quæ jam facta sunt, crede. Non enim certe minæ sunt et verba tantúmmodo, quæ facta sunt et in opus ipsum exiérunt. Quis ígitur totum orbem indúcto dilúvio stagnávit, ac grave illud naufrágium, omnimodámque géneris nostri perditiónem effécit? Nonne hæc ómnia et ália Deus illis íntulit?
+      responsory: |-
+        R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.
+        V. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?
+        R. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 18:9-14
+      text: 'In illo témpore: Dixit Jesus ad quosdam, qui in se confidébant tamquam justi et aspernabántur céteros, parábolam istam: Duo hómines ascendérunt in templum, ut orárent: unus pharisǽus, et alter publicánus. Pharisǽus stans, hæc apud se orábat: Deus, grátias ago tibi, quia non sum sicut céteri hóminum: raptóres, injústi, adúlteri: velut étiam hic publicánus. Jejúno bis in sábbato: décimas do ómnium, quæ possídeo. Et publicánus a longe stans nolébat nec óculos ad cœlum leváre: sed percutiébat pectus suum, dicens: Deus, propítius esto mihi peccatóri. Dico vobis: descéndit hic justificátus in domum suam ab illo: quia omnis qui se exáltat, humiliábitur: et qui se humíliat, exaltábitur.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Sermon 36 on the Words of the Lord
+      text: |-
+        Díceret saltem pharisǽus: Non sum sicut multi hómines. Quid est, céteri hómines, nisi omnes præter ipsum? Ego, inquit, justus sum, céteri peccatóres. Non sum sicut céteri hómines, injústi, raptóres, adúlteri. Et ecce tibi ex vicíno publicáno majóris tumóris occásio: Sicut, inquit, publicánus iste. Ego, inquit, solus sum: iste de céteris est. Non sum, inquit, talis, qualis iste, per justítias meas, quibus iníquus non sum.
+
+        Jejúno bis in sábbato, décimas do ómnium quæ possídeo. Quid rogáverit Deum, quære in verbis ejus, nihil invénies. Ascéndit oráre: nóluit Deum rogáre, sed se laudáre. Parum est, non Deum rogáre, sed se laudáre; ínsuper et rogánti insultáre. Publicánus autem de longínquo stabat et Deo tamen ipse appropinquábat: cordis consciéntia eum removébat, píetas applicábat. Publicánus autem de longínquo stabat, sed Dóminus eum de propínquo attendébat.
+
+        Excélsus enim Dóminus, et humília réspicit; excélsos autem, qualis erat ille pharisǽus, a longe cognóscit. Excélsa quidem Deus a longe cognóscit, sed non ignóscit. Adhuc audi humilitátem publicáni. Parum est, quia de longínquo stabat: nec óculos suos ad cælum levábat: ut aspicerétur, non aspiciébat; respícere sursum non audébat: premébat consciéntia, spes sublevábat. Adhuc audi: Percutiébat pectus suum. Pœnas a se ipso exigébat; proptérea Dóminus confiténti parcébat. Percutiébat pectus suum, dicens: Dómine, propítius esto mihi peccatóri. Ecce qui rogat. Quid miráris, si Deus ignóscit, quando ipse agnóscit?
+      responsory: |-
+        R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.
+        V. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.
+        R. Plena est omnis terra glória ejus.
+      status: verified

@@ -1,0 +1,225 @@
+# Read directly from the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C7b.txt ("Commune plurimarum non Virginum
+# Martyrum") -- its own [Oratio] is itself a cross-reference to C6b
+# ("Commune plurium Virginum et Martyrum") with "Vírginum et "/"Virgins
+# and " removed, computed by hand here. `{N}` (used twice) stands for
+# the two saints' own names, substituted by getDayCollect via
+# SaintRecord.collectCommon/collectName.
+collect/c7b:
+  text: |
+    Orémus.
+    Da nobis, quǽsumus, Dómine Deus noster, sanctárum Mártyrum tuárum {N} et {N} palmas
+    incessábili devotióne venerári: ut quas digna mente non póssumus celebráre, humílibus
+    saltem frequentémus obséquiis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Commune Plurimarum non Virginum Martyrum (C7b) aliases its own Ant 1/Versum 1 for Ant 2/Versum 2 -- identical text already verified elsewhere (magnificat-antiphon-common-of-several-women-martyrs.yml, which is this Common's Ant 3, itself aliased to Ant 1).
+commemoration-antiphon:
+  text: |
+    Istárum est enim * regnum cælórum, quæ contempsérunt vitam mundi, et pervenérunt ad prǽmia regni, et lavérunt stolas suas in sánguine Agni.
+  status: verified
+
+# Commune/C7b has no hymn of its own and inherits Commune/C7 ('@Commune/C7'); copy of matins-hymn-common-of-a-holy-woman.yml.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Matins
+# `votive=C7` live query, 2026-08 -- a genuinely shorter form than
+# Common-of-a-Virgin(-Martyr)'s own Matins hymn: just its closing two
+# stanzas (doxology included), not the full five-stanza "Vírginis
+# Proles." Confirmed identical across `C7`/`C7a`/`C7b` (the same three
+# sub-variants already seen for this category at Lauds/Vespers).
+matins-hymn:
+  text: |
+    Hujus obténtu, Deus alme, nostris
+    Parce jam culpis, vítia remíttens,
+    Quo tibi puri resonémus almum
+    Péctoris hymnum.
+
+    Glória Patri genitǽque Proli,
+    Et tibi compar utriúsque semper
+    Spíritus alme, Deus unus, omni
+    Témpore sæcli. Amen.
+  status: verified
+
+# Commune/C7b: C7's template with 'beátæ N.' -> 'beatárum N. et N.'. Saint supplies two names via invitatoryName.
+matins-invitatory:
+  text: Laudémus Deum nostrum * In confessióne beatárum {N} et {N}.
+  status: verified
+
+# Chapter (Sir 51:1-3), same at Lauds and Vespers. Engine render with votive=C7b (Common of Several Women Martyrs), Monastic Tridentinum 1617, command=prayLaudes. Before this file the Common had no Lauds/Vespers bundle and Ss. Perpetua and Felicity fell through to the seasonal chapter, responsory and hymn.
+lauds-capitulum:
+  text: |
+    Confitébor tibi, Dómine, Rex, et collaudábo te Deum Salvatórem meum. Confitébor nómini tuo: quóniam adjútor et protéctor factus es mihi, et liberásti corpus meum a perditióne.
+    R. Deo grátias.
+  status: verified
+
+# Common of Several Women Martyrs (C7b) takes the same "Fortem viríli péctore" as the Common of a Holy Woman; engine
+# render with votive=C7b (Monastic Tridentinum 1617), Lauds and Vespers. Text copied from lauds-hymn-common-of-a-holy-woman.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds,
+# St. Anne's own real day (2026-07-26) -- see lauds-capitulum-common-of-
+# a-holy-woman.yml's header. "Fortem viríli péctore" -- the classic
+# Common-of-a-Holy-Woman hymn, same text both hours here.
+lauds-hymn:
+  text: |-
+    Fortem viríli péctore
+    Laudémus omnes féminam,
+    Quæ sanctitátis glória
+    Ubíque fulget ínclita.
+
+    Hæc Christi amóre sáucia,
+    Dum mundi amórem nóxium
+    Horréscit, ad cæléstia
+    Iter perégit árduum.
+
+    Carnem domans jejúniis,
+    Dulcíque mentem pábulo
+    Oratiónis nútriens,
+    Cæli potítur gáudiis.
+
+    Rex Christe, virtus fórtium,
+    Qui magna solus éfficis,
+    Hujus precátu, quǽsumus,
+    Audi benígnus súpplices.
+
+    * Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Nunc, et per omne sǽculum. Amen.
+  status: verified
+
+# Lauds short responsory. Engine render with votive=C7b (Common of Several Women Martyrs), Monastic Tridentinum 1617, command=prayLaudes. Before this file the Common had no Lauds/Vespers bundle and Ss. Perpetua and Felicity fell through to the seasonal chapter, responsory and hymn.
+lauds-responsory:
+  text: |
+    R.br. Spécie tua * Et pulchritúdine tua.
+    R. Spécie tua * Et pulchritúdine tua.
+    V. Inténde, próspere procéde, et regna.
+    R. Et pulchritúdine tua.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Spécie tua * Et pulchritúdine tua.
+  status: verified
+
+# Read directly from the reference engine (Latin/Commune/C7b.txt,
+# English/Commune/C7b.txt): Commune Plurimarum non Virginum Martyrum's
+# Versum 2 aliases its own Versum 1 (no distinct text). No lauds-versicle
+# file existed for this Common before -- needed now for
+# common-of-several-women-martyrs-commemoration-antiphon.yml's Ant 2
+# pairing.
+lauds-versicle:
+  text: |
+    V. Glória et honóre coronásti eas, Dómine.
+    R. Et constituísti eas super ópera mánuum tuárum.
+  status: verified
+
+# Commune/C7b->C7 [Lectio Prima].
+prime-lectio:
+  text: |
+    Laudábit usque ad mortem ánima mea Dóminum, quóniam éruis sustinéntes te, et líberas eos de manu angústiæ, Dómine, Deus noster.
+  citation: Sir 51:8; 51:12
+  status: verified
+
+# Commune/C7b.txt [Capitulum Laudes] (a widow takes C7a; several women martyrs take C7b->C7). Terce takes the Lauds chapter and None takes Lectio Prima per the engine. The V/R pair after the chapter is the responsory breve inherited from Commune/C6. Replaced a copy of the Virgin's chapter (2 Cor 10:17 etc.), which the reference does not use for this Common.
+terce-capitulum:
+  text: |
+    Confitébor tibi, Dómine, Rex, et collaudábo te Deum Salvatórem meum. Confitébor nómini tuo: quóniam adjútor et protéctor factus es mihi, et liberásti corpus meum a perditióne.
+    R. Deo grátias.
+    V. Spécie tua et pulchritúdine tua.
+    R. Inténde, próspere procéde, et regna.
+  citation: Sir 51:1-3
+  status: verified
+
+# Commune/C7b.txt [Capitulum Sexta] (a widow takes C7a; several women martyrs take C7b->C7). Terce takes the Lauds chapter and None takes Lectio Prima per the engine. The V/R pair after the chapter is the responsory breve inherited from Commune/C6. Replaced a copy of the Virgin's chapter (2 Cor 10:17 etc.), which the reference does not use for this Common.
+sext-capitulum:
+  text: |
+    Liberásti me secúndum multitúdinem misericórdiæ nóminis tui a rugiéntibus, præparátis ad escam, de mánibus quæréntium ánimam meam, et de multis tribulatiónibus quæ circumdedérunt me.
+    R. Deo grátias.
+    V. Adjuvábit eam Deus vultu suo.
+    R. Deus in médio ejus, non commovébitur.
+  citation: Sir 51:4-5
+  status: verified
+
+# Commune/C7b.txt [Capitulum Nona] (a widow takes C7a; several women martyrs take C7b->C7). Terce takes the Lauds chapter and None takes Lectio Prima per the engine. The V/R pair after the chapter is the responsory breve inherited from Commune/C6. Replaced a copy of the Virgin's chapter (2 Cor 10:17 etc.), which the reference does not use for this Common.
+none-capitulum:
+  text: |
+    Laudábit usque ad mortem ánima mea Dóminum, quóniam éruis sustinéntes te, et líberas eos de manu angústiæ, Dómine, Deus noster.
+    R. Deo grátias.
+    V. Elégit eam Deus, et præelégit eam.
+    R. In tabernáculo suo habitáre facit eam.
+  citation: Sir 51:8; 51:12
+  status: verified
+
+# Common of Several Women Martyrs (C7b) takes the same "Fortem viríli péctore" as the Common of a Holy Woman; engine
+# render with votive=C7b (Monastic Tridentinum 1617), Lauds and Vespers. Text copied from vespers-hymn-common-of-a-holy-woman.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers,
+# St. Anne's own real day (2026-07-26) -- byte-identical to the Lauds
+# hymn ("Fortem viríli péctore") -- see lauds-capitulum-common-of-a-holy-
+# woman.yml's header for the fuller gap/sourcing writeup.
+vespers-hymn:
+  text: |-
+    Fortem viríli péctore
+    Laudémus omnes féminam,
+    Quæ sanctitátis glória
+    Ubíque fulget ínclita.
+
+    Hæc Christi amóre sáucia,
+    Dum mundi amórem nóxium
+    Horréscit, ad cæléstia
+    Iter perégit árduum.
+
+    Carnem domans jejúniis,
+    Dulcíque mentem pábulo
+    Oratiónis nútriens,
+    Cæli potítur gáudiis.
+
+    Rex Christe, virtus fórtium,
+    Qui magna solus éfficis,
+    Hujus precátu, quǽsumus,
+    Audi benígnus súpplices.
+
+    * Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Nunc, et per omne sǽculum. Amen.
+  status: verified
+
+# Vespers short responsory. Engine render with votive=C7b (Common of Several Women Martyrs), Monastic Tridentinum 1617, command=prayVespera. Before this file the Common had no Lauds/Vespers bundle and Ss. Perpetua and Felicity fell through to the seasonal chapter, responsory and hymn.
+vespers-responsory:
+  text: |
+    R.br. Adjuvábit eam * Deus vultu suo.
+    R. Adjuvábit eam * Deus vultu suo.
+    V. Deus in médio ejus, non commovébitur.
+    R. Deus vultu suo.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Adjuvábit eam * Deus vultu suo.
+  status: verified
+
+# Vespers versicle: the Common's [Versum 1] (engine votive=C7b), identical to its Lauds versicle below.
+# Read directly from the reference engine (Latin/Commune/C7b.txt,
+# English/Commune/C7b.txt): Commune Plurimarum non Virginum Martyrum's
+# Versum 2 aliases its own Versum 1 (no distinct text). No lauds-versicle
+# file existed for this Common before -- needed now for
+# common-of-several-women-martyrs-commemoration-antiphon.yml's Ant 2
+# pairing.
+vespers-versicle:
+  text: |
+    V. Glória et honóre coronásti eas, Dómine.
+    R. Et constituísti eas super ópera mánuum tuárum.
+  status: verified
+
+# Read directly from the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C7b.txt ("Commune plurimarum non Virginum
+# Martyrum") own [Ant 1] and its English counterpart.
+benedictus-antiphon:
+  text: Istárum est enim * regnum cælórum, quæ contempsérunt vitam mundi, et pervenérunt ad prǽmia regni, et lavérunt stolas suas in sánguine Agni.
+  status: verified
+
+# Second Vespers Magnificat antiphon for `common-of-several-women-martyrs`
+# (Commune plurimarum non Virginum Martyrum, Latin/Commune/C7b.txt) --
+# its own [Ant 2] and [Ant 3] are both bare `@:Ant 1` cross-references,
+# i.e. this small Common reuses one single antiphon at Lauds and both
+# Vespers alike. Same text as the already-authored
+# benedictus-antiphon-common-of-several-women-martyrs.yml (itself read
+# from this file's [Ant 1]), by design, not by coincidence.
+magnificat-antiphon:
+  text: Istárum est enim * regnum cælórum, quæ contempsérunt vitam mundi, et pervenérunt ad prǽmia regni, et lavérunt stolas suas in sánguine Agni.
+  status: verified

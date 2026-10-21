@@ -1,0 +1,46 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25
+# run. The opening "Deus in adiutorium" versicle — shared across every hour
+# that has one (Prime drops the silent Pater/Ave/Credo that would normally
+# precede it; Compline says it aloud right after its own pre-psalm Confiteor).
+#
+# This is the default (per-annum) ending — Septuagesima through Holy
+# Saturday swaps "Allelúia" for "Laus tibi..." instead; see
+# opening-laus-tibi.yml and hours/opening-versicle.ts.
+opening-alleluia:
+  text: |
+    V. Deus ✠ in adjutórium meum inténde.
+    R. Dómine, ad adjuvándum me festína.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen. Allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-09-02.
+# Matins-only, unlike opening-alleluia.yml/opening-laus-tibi.yml (shared
+# across every hour). In the Monastic rite this versicle follows "Deus in
+# adjutórium" (rather than preceding it, as in the Roman/secular rite) and
+# is recited three times ("iij" rubric) — see
+# divinum-officium-reference/web/www/horas/Ordinarium/Matutinum.txt.
+# No repeated Gloria Patri is needed here since it was already said with
+# "Deus in adjutórium" immediately before this block.
+opening-domine-labia:
+  text: |
+    V. Dómine, lábia mea apéries.
+    R. Et os meum annuntiábit laudem tuam.
+    V. Dómine, lábia mea apéries.
+    R. Et os meum annuntiábit laudem tuam.
+    V. Dómine, lábia mea apéries.
+    R. Et os meum annuntiábit laudem tuam.
+  status: verified
+
+# Verified against Divinum Officium ("Psalterium/Common/Prayers.txt",
+# [Alleluia] section's 2nd line). Same opening versicle as
+# opening-alleluia.yml, but with "Allelúia" replaced by "Laus tibi,
+# Dómine, Rex ætérnæ glóriæ" — used Septuagesima through Holy Saturday
+# instead of the default. See hours/opening-versicle.ts.
+opening-laus-tibi:
+  text: |
+    V. Deus ✠ in adjutórium meum inténde.
+    R. Dómine, ad adjuvándum me festína.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen. Laus tibi, Dómine, Rex ætérnæ glóriæ.
+  status: verified

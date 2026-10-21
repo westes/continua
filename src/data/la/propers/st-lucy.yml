@@ -1,0 +1,150 @@
+# Read directly from her own source file (Sancti/12-13.txt): [Oratio] is
+# @Commune/C7a (unedited -- unlike collect-c6a.yml's own C7a-derived
+# text, no "Vírginis tuæ" insertion), so her own [Name] section supplies
+# the whole descriptive phrase ("Lúciæ Vírginis et Mártyris tuæ", not
+# just her bare name) that a plain name field would otherwise need the
+# template to supply. Written as her own file rather than a new shared
+# collect-c7a template, since she's currently the only saint on this
+# calendar using the unedited form. No English Oratio in the source at
+# all; translated in the same register as collect-c6a.yml's own English
+# (itself adapted the same way, also draft), so marked draft here too.
+collect:
+  text: |
+    Orémus.
+    Exáudi nos, Deus, salutáris noster: ut sicut de beátæ Lúciæ Vírginis et Mártyris tuæ festivitáte gaudémus; ita piæ devotiónis erudiámur afféctu.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-lucy-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-virgin-martyr (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (st-lucy-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Colúmna es immóbilis, Lúcia, sponsa Christi: quia omnis plebs te exspéctat, ut accípias corónam vitæ, allelúia.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Exáudi nos, Deus, salutáris noster: ut sicut de beátæ Lúciæ Vírginis et Mártyris tuæ festivitáte gaudémus; ita piæ devotiónis erudiámur afféctu.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 1, per the established
+# Prime=Lauds-Ant1 minor-hours-borrow-from-Lauds convention.
+prime-antiphon:
+  text: Oránte sancta Lúcia, * appáruit ei beáta Agatha, et consolabátur ancíllam Christi.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 2, per the established
+# Terce=Lauds-Ant2 minor-hours-borrow-from-Lauds convention.
+terce-antiphon:
+  text: Lúcia virgo, * quid a me petis quod ipsa póteris præstáre contínuo matri tuæ?
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 3, per the established
+# Sext=Lauds-Ant3 minor-hours-borrow-from-Lauds convention.
+sext-antiphon:
+  text: Per te, Lúcia virgo, * cívitas Syracusána decorábitur a Dómino Jesu Christo.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 5, per the established
+# None=Lauds-Ant5 minor-hours-borrow-from-Lauds convention.
+none-antiphon:
+  text: Soror mea, Lúcia, * virgo Deo devóta, quid a me petis, quod ipsa póteris præstáre contínuo matri tuæ?
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Lucy's own day (2027-12-13 -- 2026's own Dec 13 is
+# Advent III Sunday). The Benedictus antiphon. Corrects the previous
+# version of this file, which had been sourced from the Roman/secular
+# rite's Sancti/12-13.txt's own [Ant 1] instead: real but different text
+# from what Monastic 1617 actually renders at Lauds, same mistake as
+# St. Lawrence's earlier fix.
+benedictus-antiphon:
+  text: 'Colúmna es immóbilis, Lúcia, sponsa Christi: quia omnis plebs te exspéctat, ut accípias corónam vitæ, allelúia.'
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/12-13.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast, not a Common
+# substitution. (This feast's own Benedictus antiphon,
+# st-lucy-antiphon.yml, already correctly sourced [Ant 2].)
+magnificat-antiphon:
+  text: Tanto póndere * eam fixit Spíritus Sanctus, ut Virgo Christi immóbilis permanéret.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 12-13
+# st-lucy (saint file = second). First Vespers variant; the default (second Vespers) file is the same id without
+# "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: 'In tua patiéntia * possedísti ánimam tuam, Lúcia, sponsa Christi: odísti quæ in mundo sunt, et coruscas cum Angelis: sánguine proprio inimícum vicisti.'
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/12-13.txt's own [Ant Laudes]
+# ("@:Ant Vespera:s/;;.*//g" -- Lauds reuses the Vespers antiphons
+# verbatim) and English/Sancti/12-13.txt's own translation. Below
+# duplex-majus, so hours/lauds.ts's mergeFerialNumbersWithProperAntiphons
+# only takes this file's antiphon text, not its psalm numbers -- kept the
+# source's own real numbers (109/112/121/126/147) anyway for
+# documentation accuracy, though unused at this rank.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Oránte sancta Lúcia, * appáruit ei beáta Agatha, et consolabátur ancíllam Christi.
+    - psalms:
+        - 112
+      antiphon: Lúcia virgo, * quid a me petis quod ipsa póteris præstáre contínuo matri tuæ?
+    - psalms:
+        - 121
+      antiphon: Per te, Lúcia virgo, * cívitas Syracusána decorábitur a Dómino Jesu Christo.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Benedíco te, * Pater Dómini mei Jesu Christi, quia per Fílium tuum ignis exstínctus est a látere meo.
+  laudate:
+    antiphon: Soror mea, Lúcia, * virgo Deo devóta, quid a me petis, quod ipsa póteris præstáre contínuo matri tuæ?
+
+# Sourced from web/www/horas/Latin/Sancti/12-13.txt's own [Ant Vespera]
+# and English/Sancti/12-13.txt's own translation -- same text as lauds-
+# psalmody-overrides/st-lucy.yml (her Lauds is just this Vespers set
+# reused, per the source's own reference). Below duplex-majus, so hours/
+# vespers.ts's mergeFerialNumbersWithProperAntiphons only takes this
+# file's antiphon text, not its psalm numbers.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Oránte sancta Lúcia, * appáruit ei beáta Agatha, et consolabátur ancíllam Christi.
+    - psalms:
+        - 112
+      antiphon: Lúcia virgo, * quid a me petis quod ipsa póteris præstáre contínuo matri tuæ?
+    - psalms:
+        - 121
+      antiphon: Per te, Lúcia virgo, * cívitas Syracusána decorábitur a Dómino Jesu Christo.
+    - psalms:
+        - 126
+      antiphon: Benedíco te, * Pater Dómini mei Jesu Christi, quia per Fílium tuum ignis exstínctus est a látere meo.
+
+# Matins Nocturn 2 reading for St. Lucy, Virgin, Martyr (Dec 13) —
+# SanctiM/12-13.txt inherits the whole day (`@Sancti/12-13`) with no
+# Nocturn 2 override, so this feast's own proper content is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/12-13.txt, English/Sancti/12-13.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no
+# genuine source break.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Lúcia virgo Syracusana, genere et christiana fide ab infántia nobilis, una cum matre Eutychia, quæ sánguinis fluxu laborabat, Cátanam ad venerándum corpus beátæ Agathæ venit: quæ ad ejus sepúlcrum cum suppliciter orasset, Agathæ intercessióne matri sanitátem impetrávit. Statim vero matrem exorávit, ut quam dotem sibi datura esset, Christi paupéribus tribui paterétur. Ut ígitur Syracusas rediit, omnem pecúniam, quam ex facultátibus venditis redegerat, paupéribus distríbuit.
+
+        Quod ubi rescivísset is, cui eam paréntes contra Vírginis voluntátem desponderant, apud Paschasium præfectum Lúciam, quod christiana esset, accusávit. Quam ille cum nec precibus, nec minis ad cultum idolórum posset perducere; immo tanto magis incensam vidéret ad celebrandas christianæ fidei laudes, quanto magis ipse eam a senténtia avértere conabátur: Cessábunt, inquit, verba, cum ventum erit ad verbera. Cui Virgo: Dei servis verba deésse non possunt, quibus a Christo Dómino dictum est: Cum steteritis ante reges et præsides, nolíte cogitare quómodo aut quid loquámini; dábitur enim vobis in illa hora quid loquámini; non enim vos estis qui loquímini, sed Spíritus Sanctus, qui lóquitur in vobis.
+
+        Quam cum Paschasius interrogasset, Estne in te Spíritus Sanctus? respóndit: Caste et pie vivéntes templum sunt Spíritus Sancti. At ille, Jubébo te ad lupánar duci, ut te Spíritus Sanctus déserat. Cui virgo: Si invitam jusseris violari, castitas mihi duplicábitur ad corónam. Quare Paschasius ira inflammatus, Lúciam eo trahi jussit, ubi ejus virginitas violarétur: sed divinitus factum est, ut firma virgo ita consísteret, ut nulla vi de loco dimoveri posset. Quam ob rem præfectus circum ipsam, pice, resína, ac fervénti oleo perfusam, ignem accéndi imperávit: sed cum ne flamma quidem eam læderet, multis tormentis excruciátæ guttur gládio transfígitur. Quo vulnere accepto, Lúcia prædícens Ecclésiæ tranquillitátem, quæ futura erat Diocletiáno et Maximiáno mórtuis, Idibus Decembris spíritum Deo réddidit. Cujus corpus Syracusis sepúltum, deínde Constantinopolim, postremo Venetias translátum est.
+      status: verified

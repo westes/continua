@@ -1,0 +1,55 @@
+# Read directly from web/www/horas/Latin/Sancti/08-07.txt's own [Oratio]
+# and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beáto Cajetáno Confessóri tuo apostólicam vivéndi formam imitári tribuísti: da
+    nobis, ejus intercessióne et exémplo, in te semper confídere et sola cæléstia desideráre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+
+# `[Versum 2]` from the reference engine's Commune files, same pattern
+# st-anthony-mary-zaccaria-commemoration.yml uses). St. Cajetan has no
+# proper antiphon of his own in the source (his file's [Ant 1] is a
+# cross-reference to a temporal Sunday antiphon this app doesn't model,
+# see st-cajetan.yml's own comment), so this reuses the Common's own
+# text, marked `draft` per this app's "prefer draft over missing"
+# convention. Collect is his own real proper (st-cajetan-collect.yml),
+# unchanged. Needed for the rare case Aug 7 falls on a day that outranks
+# him (e.g. a Sunday), demoting him to a commemoration alongside Donatus.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui beáto Cajetáno Confessóri tuo apostólicam vivéndi formam imitári tribuísti: da
+    nobis, ejus intercessióne et exémplo, in te semper confídere et sola cæléstia desideráre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Cajetan, Confessor (Aug 7). Sourced
+# directly from web/www/horas/Latin/Sancti/08-07.txt, English/Sancti/
+# 08-07.txt. Lectio4-6 combined into one continuous vita, same combining
+# convention st-titus.yml/st-alphonsus-liguori.yml use. Lectio7-8 (Gospel
+# Matt 6:24-33 + Homily of St. Augustine) are a plain @Commune/Pent14-0
+# festal-Gospel cross-reference shared with the temporal cycle, not a
+# proper Gospel of Cajetan's own -- not transcribed here, same treatment
+# as st-titus.yml's own Nocturn 3. (The source's own Lectio94, a shorter
+# 1-lesson variant of the same biography, is an alternate not used here.)
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Cajetanus, nobili Thienæa gente Vicéntiæ ortus, statim a matre Deiparæ Virgini oblátus est. Mira a téneris annis morum innocéntia in eo eluxit, adeo ut Sanctus ab ómnibus nuncuparétur. Juris utriusque lauream Patavii adeptus, Romam profectus est; ubi, inter prælatos a Julio secundo collocatus, et sacerdotio initiatus, tanto divini amoris æstu succénsus est, ut relícta aula se totum Deo mancipaverit. Nosocomiis proprio ære fundatis, étiam morbo pestilénti laborántibus, suis ipse mánibus inserviébat. Proximórum salúti assidua cura incumbebat, dictus proptérea Venator animarum.
+
+        Collapsam ecclesiasticórum disciplínam ad formam apostolicæ vitæ instaurare desiderans, ordinem Clericórum regulárium instituit, qui, abdicáta rerum ómnium terrenárum sollicitúdine, nec réditus possiderent nec vitæ subsidia a fidelibus péterent, sed solis eleemosynis sponte oblátis víverent. Itaque, approbante Cleménte septimo, ad aram maximam basilicæ Vaticanæ una cum Joánne Petro Caráfa, episcopo Theatino, qui póstea Paulus quartus Pontifex maximus fuit, et aliis duobus exímiæ pietátis viris, vota solemnia emisit. In Urbis direptióne a milítibus crudelíssime vexátus ut pecúniam próderet, quam dudum in cælestes thesáuros manus páuperum deportaverant, verbera, torménta et carceres invicta patiéntia sustinuit. In suscepto vitæ instituto constantíssime perseverávit, soli divinæ providéntiæ inhærens, quam sibi numquam defuísse aliquándo miracula comprobarunt.
+
+        Divini cultus studium, nitórem domus Dei, sacrórum rituum observantiam et sanctíssimæ Eucharistiæ frequentiórem usum maxime promovit. Hæresum monstra et látebras non semel detéxit ac profligávit. Oratiónem ad octo passim horas jugibus lácrimis protrahebat: sæpe in éxtasim raptus ac prophetíæ dono illustris Romæ, nocte natalícia, ad præsepe Dómini infántem Jesum accípere meruit a Deípara in ulnas suas. Corpus íntegras noctes intérdum verberatiónibus affligebat; nec umquam adduci pótuit ut vitæ asperitátem emolliret, testátus in cínere velle se mori. Dénique, ex animi dolóre concepto morbo, quod offéndi plebis seditióne Deum vidéret, cælésti visióne recreatus, Neapoli migrávit in cælum; ibique corpus ejus in ecclésia sancti Pauli magna religióne cólitur. Quem, multis miraculis in vita et post mortem gloriosum, Clemens décimus, Pontifex maximus, Sanctórum número adscripsit.
+      status: verified

@@ -1,0 +1,45 @@
+collect:
+  text: |
+    Let us pray.
+    O Lord, we beseech thee, that the observance of this holy fast may avail us both to the increase of godliness in our conversation, and the stablishing upon us of the help of thy mercy.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+collect/~-vespers:
+  text: |
+    Let us pray.
+    O Lord, have mercy upon thy people, and be graciously pleased to grant relief unto the same, who are ever toiling amid the storms of diverse tribulations.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+benedictus-antiphon:
+  text: Why go ye about to kill Me, * a Man that hath told you the truth?
+  status: verified
+
+magnificat-antiphon:
+  text: No man laid hands on Him; * because His hour was not yet come.
+  status: verified
+
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: John 7:14-31
+      text: At that time, when the feast was already half over, Jesus went up into the temple and began to teach. And the Jews marveled, saying, "How does this man come by learning, since He has not studied?" Jesus answered them and said, "My teaching is not My own, but His Who sent Me. If anyone desires to do His will, he will know of the teaching whether it is from God, or whether I speak on My own authority. He who speaks on his own authority seeks his own glory. But he who seeks the glory of the one who sent him is truthful, and there is no injustice in him. Did not Moses give you the Law, and none of you observes the Law? Why do you seek to put Me to death?" The crowd answered and said, "You have a devil. Who seeks to put You to death?" Jesus answered and said to them, "One work I did and you all wonder. For this reason Moses gave you the circumcision -- not that it is from Moses, but from the fathers -- and on a Sabbath you circumcise a man. If a man receives circumcision on a Sabbath, that the Law of Moses may not be broken, are you indignant with me because I made a whole man well on a Sabbath? Judge not by appearances but give just judgment." Some therefore of the people of Jerusalem were saying, "Is not this the man they seek to kill? And behold, He speaks openly and they say nothing to Him. Can it be that the rulers have really come to know that this is the Christ? Yet we know where this man is from; but when the Christ comes, no one will know where He is from." Jesus therefore, while teaching in the temple, cried out and said, "You both know Me, and know where I am from. Yet I have not come of Myself, but He is true Who has sent Me, whom you do not know. I know Him because I am from Him, and He sent Me." They wanted therefore to seize Him, but no one laid hands on Him because His hour had not yet come. Many of the people, however, believed in Him.
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, 29th Tract on John
+      text: |-
+        He Who had gone up unto the Feast, not openly, but as it were in secret, the Same taught, and spake openly, and no man laid hands upon Him. That He had hid Himself, was for example's sake; that He manifested Himself, was to show His power. And when He taught, the Jews marvelled. As seemeth to my mind, they all marvelled, but were not all converted. And wherefore marvelled they? Because many of them knew where He was born, and how He had been brought up. They had never seen Him learn letters; but they heard Him dispute concerning the law, and allege the testimony of the same, as no man could do who had not read it; and no man can read unless he learn; and therefore they marvelled. But their marvelling was unto the Teacher an occasion for the revealing of higher truth.
+
+        For when they marvelled and whispered, the Lord said a certain deep thing, yea, a thing worthy of very careful thought and discussion. And what was this thing which the Lord gave for an answer to such as marvelled that He knew letters, having never learned? Jesus answered them and said: My doctrine is not Mine, but His That sent Me. Here is the first depth, for He seemeth in these few words to enunciate a contradiction. He saith not: This doctrine is not Mine; but: My doctrine is not Mine. O how is it thine? If it be thine, wherefore sayest Thou that it is not thine? For Thou sayest: My doctrine is not Mine.
+
+        Let us then carefully regard what this same holy Evangelist saith in the beginning of his Gospel, and we shall find there wherewith to loose the knot of this difficulty. There it is written: In the beginning was the Word, and the Word was with God, and the Word was God. What is the doctrine of the Father but the Word of the Father? If Christ therefore be the Word of the Father, He is the doctrine of the Father. But a Word cannot be of no one, but must needs, if it be a Word, have some one whose word it is. Christ therefore saith that His doctrine is Himself, and therefore not His, forasmuch as He is the Word of the Father. And what hast thou that is so much thine own as thy self? Or what is there that is so little thine own as thyself, if that which thou art is another's?
+      responsory: |-
+        R. Why go ye about to kill Me, a Man That hath told you the truth? * If I have spoken evil, bear witness of the evil; but if well, why smitest thou Me?
+        V. Many good works have I wrought among you; for which of those works go ye about to kill Me?
+        R. If I have spoken evil, bear witness of the evil; but if well, why smitest thou Me?
+      status: verified

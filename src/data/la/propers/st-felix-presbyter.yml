@@ -1,0 +1,49 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08.
+# Pulled from the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt + M1617.txt, own title
+# "S. Felicis Presbyteri et Mart") and its own source file, not the merged per-date
+# files those tables' fileref points at directly -- see TODO.md.
+collect:
+  text: |
+    Orémus.
+    Concede, quǽsumus, omnípotens Deus: ut ad meliórem vitam Sanctórum tuórum exémpla nos próvocent; quátenus, quorum solémnia ágimus, étiam actus imitémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-martyr (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-felix-presbyter has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-felix-presbyter-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Concede, quǽsumus, omnípotens Deus: ut ad meliórem vitam Sanctórum tuórum exémpla nos próvocent; quátenus, quorum solémnia ágimus, étiam actus imitémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Felix of Nola, Priest and Confessor
+# (Jan 14, sharing the date with St. Hilary — see st-hilary-of-poitiers.yml).
+# No SanctiM/01-14cc*.txt (only the plain SanctiM/01-14.txt exists, and
+# that one bases on Sancti/01-14 i.e. Hilary, not Felix) — same
+# "check every suffix variant, the shared plain file isn't necessarily
+# yours" wrinkle as the pre-1955 pass (memory vu-matins-pre1955-saints).
+# Felix's own content survives only at the suffixed Tridentine file:
+# web/www/horas/Latin/Sancti/01-14cc.txt, English/Sancti/01-14cc.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Felix Nolanus presbyter, cum in idola vehementius inveherétur, ab infidelibus varie vexatus, in carcerem conjícitur. Unde ab Angelo nocte edúctus, quærere jussus est Maximianum Nolæ episcopum: qui cum senio confectus desperáret se ferre posse supplícia persequéntium, se abdíderat in silvam. Quo cum Felix Deo duce pervenísset, sanctum episcopum humi jacéntem pene mortuum videt; quem recreátum ac sublátum in humeros, apud fidélem víduam reficiéndum curávit. Sed cum is íterum idolórum cultores impietátis argúeret, facto in ipsum ímpetu, fúgiens in angusto duórum paríetum intervállo se occultávit; qui áditus cum repénte araneárum telis pertextus visus esset, némini recentis látebræ suspiciónem relíquit. Inde ígitur evádens Felix in ædibus piæ mulíeris tres menses látuit. Cum vero Dei Ecclésia requiéscere cœpísset, Nolam rédiens, multisque ibi vitæ exemplis, et doctrinæ præceptis, miraculisque ad Christi fidem conversis, constanter étiam recusato ejus urbis episcopatu, obdormívit in Dómino, sepultúsque est prope Nolam in loco, quem in Pincis appellábant.'
+      status: verified

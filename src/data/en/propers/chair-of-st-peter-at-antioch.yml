@@ -1,0 +1,175 @@
+collect:
+  text: |
+    Let us pray.
+    O God, Who hast given unto thy Blessed Apostle Peter the keys of the kingdom of heaven, and the power to bind and to loose, loose us, we beseech thee, at his mighty intercession, from all the bands of our sins.
+    Who livest and reignest with God the Father in the unity of the Holy Spirit, God, world without end.
+    R. Amen.
+  status: verified
+
+commemoration:
+  text: |
+    Ant. Thus saith the Lord unto Simon Peter: Whatsoever thou shalt bind on earth, shall be bound in heaven; and whatsoever thou shalt loose on earth, shall be loosed in heaven.
+    V. They have declared the works of God:
+    R. And have wisely considered of his doings.
+    Let us pray.
+    O God, Who hast given unto thy Blessed Apostle Peter the keys of the kingdom of heaven, and the power to bind and to loose, loose us, we beseech thee, at his mighty intercession, from all the bands of our sins.
+    Who livest and reignest with God the Father in the unity of the Holy Spirit, God, world without end.
+    R. Amen.
+  status: draft
+
+matins-invitatory:
+  text: Thou art the Shepherd of the sheep, and the Prince of the Apostles * and unto thee hath God given the keys of the kingdom of heaven.
+  status: verified
+
+lauds-capitulum:
+  text: Behold an high priest, who in his days pleased God, and was found righteous, and in the time of wrath he was made a propitiation.
+  citation: Sir 44:16-17
+  status: verified
+
+lauds-hymn:
+  text: |
+    Peter, blest shepherd, hearken to our cry,
+    And with a word unloose our guilty chain;
+    Thou! who hast power to open the gates on high
+    To men below, and power to shut them fast again.
+
+    Praise, blessing, majesty, through endless days,
+    Be to the Trinity immortal given;
+    Who in pure unity profoundly sways
+    Eternally alike all things in earth and heaven. Amen.
+  status: verified
+
+lauds-responsory:
+  text: |
+    R.br. The Lord loved him, * and beautified him.
+    R. The Lord loved him, * and beautified him.
+    V. He clothed him with a robe of glory.
+    R. And beautified him.
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. The Lord loved him, * and beautified him.
+  status: verified
+
+lauds-versicle:
+  text: |-
+    V. Let them exalt Him in the congregation of the people.
+    R. And praise Him in the assembly of the elders.
+  status: verified
+
+vespers-hymn:
+  text: |
+    Peter, whatever thou shalt bind on earth,
+    The same is bound above the starry sky;
+    What here thy delegated power doth loose,
+    Is loosed in heaven's supremest court on high:
+    To judgement shalt thou come, when the world's end is nigh.
+
+    Praise to the Father, through all ages be;
+    Praise to the consubstantial sovereign Son,
+    And Holy Ghost, one glorious Trinity;
+    To whom all majesty and might belong;
+    So sing we now, and such be our eternal song.
+    Amen.
+  status: verified
+
+vespers-responsory:
+  text: |
+    R.br. The Lord hath chosen him * for a Priest unto Himself.
+    R. The Lord hath chosen him * for a Priest unto Himself.
+    V. To offer up unto Him the sacrifice of praise.
+    R. For a Priest unto Himself.
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. The Lord hath chosen him * for a Priest unto Himself.
+  status: verified
+
+vespers-versicle:
+  text: |-
+    V. You are Peter.
+    R. And on this rock I am going to build my church.
+  status: verified
+
+benedictus-antiphon:
+  text: 'Thus saith the Lord unto Simon Peter: Whatsoever thou shalt bind on earth, shall be bound in heaven; and whatsoever thou shalt loose on earth, shall be loosed in heaven.'
+  status: verified
+
+magnificat-antiphon:
+  text: While he was supreme Pontiff, * he feared not earthly powers, but gloriously went his way to the heavenly kingdom.
+  status: verified
+
+magnificat-antiphon/~-first:
+  text: Thou art the Shepherd * of the sheep, and the Prince of the Apostles, and unto thee are given the keys of the kingdom of heaven.
+  status: verified
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Behold an high priest, * who in his days pleased God, and was found righteous.
+    - psalms:
+        - 99
+      antiphon: None was found like unto him, * to keep the Law of the Most High.
+    - psalms:
+        - 62
+      antiphon: Therefore the Lord assured him * by an oath that He would multiply his seed among His people.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: O all ye Priests of God, * bless ye the Lord O all ye servants of the Lord, sing praises unto our God.
+  laudate:
+    antiphon: Good and faithful servant, * enter thou into the joy of thy Lord.
+
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Behold an high priest, * who in his days pleased God, and was found righteous.
+    - psalms:
+        - 110
+      antiphon: None was found like unto him, * to keep the Law of the Most High.
+    - psalms:
+        - 111
+      antiphon: Therefore the Lord assured him * by an oath that He would multiply his seed among His people.
+    - psalms:
+        - 112
+      antiphon: Good and faithful servant, * enter thou into the joy of thy Lord.
+
+vespers-psalmody/~-second:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Behold an high priest, * who in his days pleased God, and was found righteous.
+    - psalms:
+        - 111
+      antiphon: None was found like unto him, * to keep the Law of the Most High.
+    - psalms:
+        - 112
+      antiphon: Therefore the Lord assured him * by an oath that He would multiply his seed among His people.
+    - psalms:
+        - 131
+      antiphon: Good and faithful servant, * enter thou into the joy of thy Lord.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Sermon 15 on the Saints
+      text: |-
+        The solemn Feast of today received from our forefathers the name of that of St. Peter's Chair, because there is a tradition that it was on this day that Peter, first of the Apostles, was enthroned in a Bishop's Chair. Rightly, therefore, do the Churches observe the anniversary of that Chair, the right to which the Apostle received for the salvation of the Churches from the Lord of the Churches Himself, with the words: Thou art Peter, and upon this rock I will build My Church.
+
+        It was the Lord Himself Who called Peter the foundation of the Church, and therefore it is right that the Church should reverence this foundation whereon her mighty structure riseth. Justly is it written in the Psalm which we have just heard: Let them exalt him in the congregation of the people, and praise him in the assembly of the elders. Blessed be God, Who hath commanded that the Blessed Apostle Peter should be exalted in the congregation! Worthy to be honoured by the Church is that foundation from which her goodly towers rise, pointing to heaven!
+
+        In the honour which is this day paid to the inauguration of the first Bishop's throne, an honour is paid to the office of all Bishops. The Churches testify one to another, that, the greater the Church's dignity, the greater the reverence due to her priests. While I confess how rightly godly custom hath exalted this Feast in the estimation of all the Churches, the more do I wonder at the growth of that unhealthy error which at this day causeth some unbelievers to lay food and wine upon the graves of the dead, as if souls once rid of the body had any longer any need of bodily refreshment.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 16:13-19
+      text: 'At that time, Jesus came into the quarters of Caesarea Philippi: and he asked his disciples, saying, "Whom do men say that the Son of man is?" But they said, "Some John the Baptist, and other some Elias, and others Jeremias, or one of the prophets." Jesus saith to them, "But whom do you say that I am?" Simon Peter answered and said, "Thou art Christ, the Son of the living God." And Jesus answering, said to him, "Blessed art thou, Simon Bar-Jona: because flesh and blood hath not revealed it to thee, but my Father who is in heaven. And I say to thee, that thou art Peter; and upon this rock I will build My Church, and the gates of hell shall not prevail against it. And I will give to thee the keys of the kingdom of heaven. And whatsoever thou shalt bind upon earth, it shall be bound also in heaven: and whatsoever thou shalt loose upon earth, it shall be loosed also in heaven."'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Leo the Great, Sermon 3, on the Anniversary of his own Election (on Matt 16:13-19)
+      text: |-
+        The Lord asked His disciples Who men said that He was, and their answers were human as long as they were the answers of human reason, unilluminated by Divine light. At last, when the glimmerings of earthly conjecture were spoken, he whose Apostleship is the first in dignity, was the first to confess his Lord. And Simon Peter answered and said: Thou art the Christ, the Son of the living God. And Jesus answered and said unto him: Blessed art thou, Simon Bar-Jona, for flesh and blood hath not revealed it unto thee, but My Father Which is in heaven. That is to say, For this cause art thou blessed, because My Father Himself hath taught thee; the opinions of men have not beguiled thee, the voices of angels have not taught thee, not flesh and blood, but He, Whose Only begotten Son I am, hath revealed Me unto thee.
+
+        Thus saith the Lord unto Simon Peter: And I say also unto thee, That thou art Peter. That is to say, Even as My Father hath revealed unto thee concerning Me that I am God, even so now will I also reveal unto thee that thou art Peter; I am the sure Rock of defence, the Corner Stone, Who make both one, I am the Foundation, beside Which other can no man lay, and thou also art a rock, in My Strength made hard, and those things whereof I by right am Lord, into thy hand do I give them, that thou mayst bear rule over them, for Me, and with Me. And upon this rock I will build My Church, and the gates of hell shall not prevail against it. Upon this strength of thine, whereof I am the Strength, I will build My eternal temple, and upon the truth of thy confession of Me I will make to rise My glorious Church whose spires shall pierce to heaven.
+
+        Against this confession the gates of hell shall never prevail, neither shall the bonds of death take hold upon it. Thus saith He That is faithful and true. And as this confession hath power to lift up to heaven them that make it, so is it able to thrust down to hell them that gainsay it. Wherefore it is said unto the most blessed Peter: And I will give unto thee the keys of the kingdom of heaven, and whatsoever thou shalt bind on earth, shall be bound in heaven; and whatsoever thou shalt loose on earth, shall be loosed in heaven. This power passed indeed to the other Apostles also; this the Lord's will had effect in them; but it is not in vain that it is written that that was given to one which passed from him to all. To Peter alone were the keys given, and Peter is set as the pattern for all them that bear rule in the Church to follow. There remaineth therefore the right of Peter, wheresoever his judgment decreeth justice. Neither is there anything too hard, or too lax, where there is nothing bound and nothing loosed, save when Peter bindeth or looseth.
+      status: verified

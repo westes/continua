@@ -1,0 +1,34 @@
+# Matins Nocturn 2 readings for St. Polycarp, Bishop and Martyr (Jan 26)
+# — pre-1955-but-post-1617 (no SanctiM/01-26*.txt at all).
+# web/www/horas/Latin/Sancti/01-26.txt, English/Sancti/01-26.txt.
+# Lectio4 (St. Jerome's biographical note, De Scriptoribus Ecclesiasticis
+# cap. 17) is a genuinely distinct source from Lectio5-6 (a cross-ref,
+# `@Sancti/07-13:Lectio5/6` — St. Ambrose's Exposition on Psalm 118,
+# borrowed from St. Anacletus's own file but proper to this day too) —
+# kept as two separate readings. Lectio5-6 combined into one (continuous,
+# no internal break). Lectio7-9 are Common-of-a-Martyr (skipped, not
+# proper). No responsory given in either source file.
+#
+# Verified 2026-09-05 (Gospel-pairing sweep): confirmed via
+# horas/Latin/Sancti/01-26.txt -- Lectio7-9 there are literally
+# `@Commune/C2:Lectio7/8/9 in 4 loco` (both Nocturn 2 readings here,
+# Jerome's biographical note and Ambrose's Psalm commentary, are proper
+# to Polycarp; Nocturn 3 has no proper homily of his own at all). Common
+# of a Martyr's own Nocturn 3 content is generic, already handled by
+# this store's per-Common-category pool -- no saint-specific Gospel to
+# pair here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Jerome, Priest, On Illustrious Men, ch. 17
+      text: 'Polycárpus, Joánnis Apóstoli discípulus et ab eo Smyrnæ epíscopus ordinátus, totíus Asiæ princeps fuit, quippe qui nonnúllos Apostolórum et eórum qui víderant Dóminum, magístros habúerit et víderit. Hic propter quasdam super die Paschæ quæstiónes, sub imperatóre Antoníno Pio, Ecclésiam in Urbe regénte Anicéto, Romam venit; ubi plúrimos credéntium, Marciónis et Valentíni persuasióne decéptos, redúxit ad fidem. Cumque ei fortúito óbviam fuísset Márcion et díceret: Cognóscis nos? respóndit: Cognósco primogénitum diáboli. Póstea vero, regnánte Marco Antoníno et Lúcio Aurélio Cómmodo, quarta post Nerónem persecutióne, Smyrnæ, sedénte procónsule et univérso pópulo in amphitheátro advérsus eum personánte, igni tráditus est. Scripsit ad Philippénses valde útilem epístolam, quæ usque hódie in Asiæ convéntu légitur.'
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Exposition on Psalm 118, Sermon 21
+      text: |-
+        Principes persecuti sunt me gratis: et a verbis tuis trepidavit cor meum. Bene hoc Martyr dicit, quod injuste persecutionum tormenta sustineat: qui nihil rapuerit, nullum violentus oppresserit, nullius sanguinem fuderit, nullius torum putaverit esse violandum: qui nihil legibus debeat, et graviora latronum sustinere cogatur supplicia: qui loquatur juste, et non audiatur: qui loquatur plena salutis, et impugnetur: ut possit dicere, Cum loquebar illis, impugnabant me gratis. Gratis igitur persecutionem patitur, qui impugnatur sine crimine impugnatur ut noxius, cum sit in tali confessione laudabilis: impugnatur quasi veneficus, qui in nomine Domini gloriatur, cum pietas virtutum omnium fundamentum sit.
+
+        Vere frustra impugnatur, qui apud impios et infidos impietatis arcessitur, cum fidei sit magister. Verum qui gratis impugnatur, fortis debet esse et constans, quomodo ergo subtexuit: Et a verbis tuis trepidavit cor meum? Trepidare infirmitatis est, timoris atque formidinis. Sed est étiam infirmitas ad salutem, est étiam timor sanctorum. Timete Dominum omnes sancti ejus: et, Beatus vir, qui timet Dominum. Qua ratione beatus? Quia in mandatis ejus cupit nimis.
+      status: verified

@@ -1,0 +1,682 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2026-08-10).
+collect:
+  text: |
+    Orémus.
+    Da nobis, quǽsumus, omnípotens Deus: vitiórum nostrórum flammas exstínguere; qui beáto Lauréntio tribuísti tormentórum suórum incéndia superáre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-lawrence-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-martyr (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-lawrence-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. In cratícula * te Deum non negávi, et ad ignem applicátus te Christum conféssus sum: probásti cor meum, et visitásti nocte: igne me examinásti, et non est invénta in me iníquitas.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Da nobis, quǽsumus, omnípotens Deus: vitiórum nostrórum flammas exstínguere; qui beáto Lauréntio tribuísti tormentórum suórum incéndia superáre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Read from web/www/horas/Latin/Sancti/08-10.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: 'Beátus Lauréntius Christi Martyr triúmphat coronátus in cælis: * Veníte, adorémus Dóminum.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Lawrence's own day (2026-08-10) -- "Capitulum
+# Responsorium Hymnus Versus {ex Commune aut Festo}". Was still falling
+# back to the plain weekday default before this (see TODO.md) -- the
+# concrete gap that also turned out to affect every day of his own octave
+# too (see hours/resolve-common.ts's resolveOfficeWinner).
+lauds-capitulum:
+  text: 'Fratres: Qui parce séminat, parce et metet; et qui séminat in benedictiónibus, de benedictiónibus et metet.'
+  citation: 2 Cor 9:6
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Lawrence's own day (2026-08-10). "Martyr Dei" --
+# self-contained, including its own final doxology stanza.
+lauds-hymn:
+  text: |
+    Martyr Dei, qui únicum
+    Patris sequéndo Fílium,
+    Victis triúmphas hóstibus,
+    Victor fruens cæléstibus.
+
+    Tui precátus múnere
+    Nostrum reátum dílue,
+    Arcens mali contágium,
+    Vitæ rémovens tǽdium.
+
+    Solúta sunt jam víncula
+    Tui sacráti córporis:
+    Nos solve vinclis sǽculi,
+    Amóre Fílii Dei.
+
+    Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Lawrence's own day (2026-08-10).
+lauds-responsory:
+  text: |
+    R.br. Glória et honóre * Coronásti eum, Dómine.
+    R. Glória et honóre * Coronásti eum, Dómine.
+    V. Et constituísti eum super ópera mánuum tuárum.
+    R. Coronásti eum, Dómine.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Glória et honóre * Coronásti eum, Dómine.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Lawrence's own day (2026-08-10).
+lauds-versicle:
+  text: |-
+    V. Dispérsit, dedit paupéribus.
+    R. Justítia ejus manet in sǽculum sǽculi.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, St. Lawrence's own day (2026-08-10), also shown on every
+# day of his own octave (see hours/resolve-common.ts's
+# resolveOfficeWinner). Prime's own chapter stays "ex Psalterio secundum
+# diem" even on his own day -- live-verified it's the same text as the
+# existing prime-capitulum-dominica.yml, so no separate override file was
+# needed for that, just the Sunday/feast selection reaching this day too
+# (see hours/resolve-common.ts's isSundayOrFeastOffice).
+prime-antiphon:
+  text: Lauréntius * ingréssus est Martyr, et conféssus est nomen Dómini Jesu Christi.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/08-10.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: 'Potens est autem Deus omnem grátiam abundáre fácere in vobis, ut, in ómnibus semper omnem sufficiéntiam habéntes, abundétis in omne opus bonum, sicut scriptum est: Dispérsit, dedit paupéribus: justítia ejus manet in sǽculum sǽculi.'
+  citation: 2 Cor 9:8-9
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, St. Lawrence's own day (2026-08-10), also shown on every
+# day of his own octave (see hours/resolve-common.ts's
+# resolveOfficeWinner).
+terce-antiphon:
+  text: Lauréntius * bonum opus operátus est, qui per signum crucis cæcos illuminávit.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, St. Lawrence's own day (2026-08-10) -- "Capitulum Versus
+# {ex Proprio Sanctorum}", also shown on every day of his own octave, not
+# just his own day (see hours/resolve-common.ts's resolveOfficeWinner).
+terce-capitulum:
+  text: |
+    Fratres: Qui parce séminat, parce et metet; et qui séminat in benedictiónibus, de benedictiónibus et metet.
+    R. Deo grátias.
+    V. Glória et honóre coronásti eum, Dómine.
+    R. Et constituísti eum super ópera mánuum tuarum.
+  citation: 2 Cor 9:6
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, St. Lawrence's own day (2026-08-10), also shown on every
+# day of his own octave (see hours/resolve-common.ts's
+# resolveOfficeWinner).
+sext-antiphon:
+  text: Adhǽsit * ánima mea post te, quia caro mea igne cremáta est pro te, Deus meus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, St. Lawrence's own day (2026-08-10) -- "Capitulum Versus
+# {ex Proprio Sanctorum}", also shown on every day of his own octave, not
+# just his own day (see hours/resolve-common.ts's resolveOfficeWinner).
+sext-capitulum:
+  text: |
+    Unusquísque prout destinávit in corde suo, non ex tristítia aut ex necessitáte; hílarem enim datórem díligit Deus.
+    R. Deo grátias.
+    V. Posuísti, Dómine, super caput ejus.
+    R. Corónam de lápide pretióso.
+  citation: 2 Cor 9:7
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, St. Lawrence's own day (2026-08-10), also shown on every
+# day of his own octave (see hours/resolve-common.ts's
+# resolveOfficeWinner).
+none-antiphon:
+  text: 'Beátus Lauréntius * orábat, dicens: Grátias tibi ago, Dómine, quia jánuas tuas íngredi mérui.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, St. Lawrence's own day (2026-08-10) -- "Capitulum Versus
+# {ex Proprio Sanctorum}", also shown on every day of his own octave, not
+# just his own day (see hours/resolve-common.ts's resolveOfficeWinner).
+none-capitulum:
+  text: |
+    Potens est autem Deus omnem grátiam abundáre fácere in vobis, ut, in ómnibus semper omnem sufficiéntiam habéntes, abundétis in omne opus bonum, sicut scriptum est: Dispérsit, dedit paupéribus: justítia ejus manet in sǽculum sǽculi.
+    R. Deo grátias.
+    V. Magna est glória ejus in salutári tuo.
+    R. Glóriam et magnum decórem impónes super eum.
+  citation: 2 Cor 9:8-9
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-08-10, the same clean date already used for lauds-capitulum-st-lawrence.yml.
+vespers-hymn:
+  text: |
+    Deus tuórum mílitum
+    Sors, et córona, prǽmium,
+    Laudes canéntes Mártyris
+    Absólve nexu críminis.
+
+    Hic nempe mundi gáudia,
+    Et blandiménta nóxia
+    Cadúca rite députans,
+    Pervénit ad cæléstia.
+
+    Pœnas cucúrrit fórtiter,
+    Et sústulit viríliter,
+    Pro te effúndens sánguinem,
+    Ætérna dona póssidet.
+
+    Ob hoc precátu súpplici
+    Te póscimus, piíssime;
+    In hoc triúmpho Mártyris
+    Dimítte noxam sérvulis.
+
+    Laus et perénnis glória
+    Deo Patri, et Fílio,
+    Sancto simul Paráclito,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-08-10, the same clean date already used for lauds-capitulum-st-lawrence.yml.
+vespers-responsory:
+  text: |
+    R.br. Posuísti, Dómine, * Super caput ejus.
+    R. Posuísti, Dómine, * Super caput ejus.
+    V. Corónam de lápide pretióso.
+    R. Super caput ejus.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Posuísti, Dómine, * Super caput ejus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-08-10, the same clean date already used for lauds-capitulum-st-lawrence.yml.
+vespers-versicle:
+  text: |-
+    V. Levíta Lauréntius bonum opus operátus est.
+    R. Qui per signum crucis cæcos illuminávit.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 08-10
+# st-lawrence (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Glória et honóre coronásti eum, Dómine.
+    R. Et constituísti eum super ópera mánuum tuárum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Lawrence's own day (2026-08-10) -- the Benedictus
+# antiphon. Corrects an earlier version of this file, which had been
+# sourced from the Roman/secular rite's Sancti/08-10.txt's own [Ant 1]
+# instead: real, wrong text for this project's Monastic base (found while
+# building the duplex-majus+ Lauds psalmody override, which needed a real
+# worked example and so needed this checked directly rather than assumed).
+benedictus-antiphon:
+  text: 'In cratícula * te Deum non negávi, et ad ignem applicátus te Christum conféssus sum: probásti cor meum, et visitásti nocte: igne me examinásti, et non est invénta in me iníquitas.'
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/08-10.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast, not a Common
+# substitution. (This feast's own Benedictus antiphon,
+# st-lawrence-antiphon.yml, already correctly sourced [Ant 2].)
+magnificat-antiphon:
+  text: 'Beátus Lauréntius, * dum in cratícula superpósitus urerétur, ad impiíssimum tyránnum dixit: Assátum est jam, versa et mandúca; nam facultátes Ecclésiæ, quas requíris, in cæléstes thesáuros manus páuperum deportavérunt.'
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 08-10
+# st-lawrence (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Levíta Lauréntius * bonum opus operátus est, qui per signum crucis cæcos illuminávit, et thesáuros Ecclésiæ dedit paupéribus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2026-08-17, St. Lawrence's own octave closing day
+# -- "In Octava S. Laurentii Martyris ~ Duplex"). This is the live-
+# verified proof for the Matins-psalmody-override mechanism
+# (hours/matins-psalmody-overrides.ts) -- the general mechanism gap this
+# closes: a Duplex+ weekday feast previously fell through to reusing the
+# literal *Sunday* psalmody (data/hours/matins-sunday-antiphons.yml, Ps
+# 20-31) unconditionally, which is wrong -- a Duplex+ weekday feast has
+# its own real, different psalmody (confirmed against the live engine
+# directly), not the Sunday's.
+#
+# Cross-checked against a second Duplex saint (St. Ignatius of Antioch,
+# Common of a Martyr-Bishop, no proper content of his own, live-queried
+# 2029-02-01): Nocturn 1 is *identical* (Ps 1,2,4,5,8,10); Nocturn 2 is
+# nearly identical (Ps 14,20,23,63,91 match -- only one slot differs,
+# Lawrence has 16 where Ignatius has 64). So the psalm *numbers* are a
+# shared per-Common-category pool, not unique to Lawrence -- only the
+# antiphon *text* is proper to him (each one narrates an episode of his
+# own martyrdom, e.g. "Quo progréderis sine fílio, pater?"). This file is
+# keyed by his own saint id (not yet a Common-category id) since only his
+# own proper antiphons have been authored so far -- see this module's own
+# doc comment for what extending this to a real Common-category key would
+# need.
+#
+# Nocturn 3's first canticle spans two Sirach chapters under one heading
+# in the source ("Eccli 14:22;15:3-4;15:6") -- kept as one canticle with
+# two refs (matins.ts's own `canticles: { refs: [...] }[]` shape), not
+# split into two, matching how the live engine presents it. New scripture
+# chapters authored for this: data/scripture/{sir-14,sir-15,jer-17,sir-31}.yml
+# (all sparse, only the cited verses -- same convention as sir-36.yml's
+# own Sunday-canticle transcription).
+#
+# `category: common-of-a-martyr` links this to
+# data/hours/matins-psalmody-overrides/categories/common-of-a-martyr.yml,
+# the generic Common-of-a-Martyr scheme authored from St. Ignatius of
+# Antioch's own live-verified Matins (2029-02-01 -- his own file has no
+# proper antiphon, "vide C2" i.e. entirely from Common, confirming his
+# psalmody *is* the category default). Lawrence's own file stays fully
+# self-contained (own psalm numbers + antiphons, not merged with the
+# category file at load time) -- the category link is documentation/
+# cross-reference only, not a runtime merge, per this project's "stay on
+# the ferial fallback until proper antiphon text is authored per-saint"
+# decision (2026-08): a saint without an entry here still gets no
+# override, never the category's generic antiphon text. Note one real
+# divergence from the category default worth remembering: Lawrence's own
+# Nocturn 2 has Ps 16 in the slot where the plain Common default (and
+# Ignatius) has Ps 64 -- his own proper psalm selection, not a typo.
+matins-psalmody:
+  category: common-of-a-martyr
+  nocturn1:
+    groups:
+      - psalms:
+          - 1
+        antiphon: Quo progréderis * sine fílio, pater? quo, sacérdos sancte, sine minístro próperas?
+      - psalms:
+          - 2
+        antiphon: Noli me derelínquere, * pater sancte, quia thesáuros tuos jam expéndi, quos tradidísti mihi.
+      - psalms:
+          - 4
+        antiphon: Non ego te désero, * fili, neque derelínquo; sed majóra tibi debéntur pro Christi fide certámina.
+      - psalms:
+          - 5
+        antiphon: 'Beátus Lauréntius * orábat, dicens: Dómine Jesu Christe, Deus de Deo, miserére mihi servo tuo.'
+      - psalms:
+          - 8
+        antiphon: 'Dixit Románus * ad beátum Lauréntium: Vídeo ante te júvenem pulchérrimum, festína me baptizáre.'
+      - psalms:
+          - 10
+        antiphon: 'Beátus Lauréntius * dixit: Mea nox obscúrum non habet, sed ómnia in luce claréscunt.'
+    versicle:
+      v: Glória et honóre coronásti eum, Dómine.
+      r: Et constituísti eum super ópera mánuum tuárum.
+  nocturn2:
+    groups:
+      - psalms:
+          - 14
+        antiphon: 'Strinxérunt * córporis membra pósita super cratículam: subiciéntibus prunas insúltat Levíta Christi.'
+      - psalms:
+          - 16
+        antiphon: Igne me examinásti, * et non est invénta in me iníquitas.
+      - psalms:
+          - 20
+        antiphon: Interrogátus * te Dóminum conféssus sum, assátus grátias ago.
+      - psalms:
+          - 23
+        antiphon: 'Beátus Lauréntius * clamávit et dixit: Deum meum colo, et illi solo sérvio.'
+      - psalms:
+          - 63
+        antiphon: 'Dispérsit * dedit paupéribus: justítia ejus manet in séculum sǽculi.'
+      - psalms:
+          - 91
+        antiphon: 'Protéctor tuus * ego sum noli timére: si transíeris per ignem, flamma non nocébit tibi, et odor ignis non erit in te.'
+    versicle:
+      v: Posuísti, Dómine, super caput ejus.
+      r: Corónam de lápide pretióso.
+  nocturn3:
+    antiphon: Nisi granum fruménti * cadens, in terram mórtuum fúerit, ipsum solum manet.
+    canticles:
+      - refs:
+          - book: sir
+            chapter: 14
+            verses: '22'
+          - book: sir
+            chapter: 15
+            verses: 3-4
+          - book: sir
+            chapter: 15
+            verses: '6'
+      - refs:
+          - book: jer
+            chapter: 17
+            verses: 7-8
+      - refs:
+          - book: sir
+            chapter: 31
+            verses: 8-11
+    versicle:
+      v: Magna est glória ejus in salutári tuo.
+      r: Glóriam et magnum decórem impónes super eum.
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Lawrence's own day (2026-08-10, Duplex II. classis --
+# above the duplex-majus threshold this override mechanism is gated at).
+# Worked example proving the mechanism end to end; the psalm numbers
+# happen to be the same 92/99/62 + the Three Young Men that most Common-
+# of-Martyrs-shaped feasts reuse, but the antiphons are St. Lawrence's own
+# proper text, not the plain Commune's — that's the whole point of
+# authoring per-feast rather than per-Common (explicit choice).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Lauréntius * ingréssus est Martyr, et conféssus est nomen Dómini Jesu Christi.
+    - psalms:
+        - 99
+      antiphon: Lauréntius * bonum opus operátus est, qui per signum crucis cæcos illuminávit.
+    - psalms:
+        - 62
+      antiphon: Adhǽsit * ánima mea post te, quia caro mea igne cremáta est pro te, Deus meus.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Misit Dóminus * Angelum suum, et liberávit me de médio ignis, et non sum æstuátus.
+  laudate:
+    antiphon: 'Beátus Lauréntius * orábat, dicens: Grátias tibi ago, Dómine, quia jánuas tuas íngredi mérui.'
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-08-10, own day). His own proper antiphons,
+# not `common-of-a-martyr`'s generic ones; psalms 109/111/112/115.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Lauréntius * ingréssus est Martyr, et conféssus est nomen Dómini Jesu Christi.
+    - psalms:
+        - 111
+      antiphon: Lauréntius * bonum opus operátus est, qui per signum crucis cæcos illuminávit.
+    - psalms:
+        - 112
+      antiphon: Adhǽsit * ánima mea post te, quia caro mea igne cremáta est pro te, Deus meus.
+    - psalms:
+        - 115
+      antiphon: 'Beátus Lauréntius * orábat, dicens: Grátias tibi ago, Dómine, quia jánuas tuas íngredi mérui.'
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 08-10
+# st-lawrence. First Vespers psalm antiphons; the other evening's set is st-lawrence.yml. See
+# vespers-psalmody-overrides.ts's getVespersSaintOverride.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Lauréntius * ingréssus est Martyr, et conféssus est nomen Dómini Jesu Christi.
+    - psalms:
+        - 110
+      antiphon: Lauréntius * bonum opus operátus est, qui per signum crucis cæcos illuminávit.
+    - psalms:
+        - 111
+      antiphon: Adhǽsit * ánima mea post te, quia caro mea igne cremáta est pro te, Deus meus.
+    - psalms:
+        - 112
+      antiphon: 'Beátus Lauréntius * orábat, dicens: Grátias tibi ago, Dómine, quia jánuas tuas íngredi mérui.'
+
+# Matins Nocturn 2-3 readings for St. Lawrence, Martyr (Aug 10,
+# Duplex I class) — SanctiM/08-10.txt inherits the whole day
+# (`@Sancti/08-10`) with no Nocturn 2/3 override, so this feast's own
+# proper content is sourced from the Tridentine track exactly as for
+# a pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/08-10.txt, English/Sancti/08-10.txt.
+#
+# Nocturn 2: Lectio4-6 (Pope St. Leo the Great's sermon) combined into
+# one reading, one continuous excerpt.
+# Nocturn 3: Lectio7's Gospel citation (John 12:24-26) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so — per
+# the pre-1955 pass's convention of not transcribing bare incipits —
+# only the homily portion is authored (not marked isGospel), combined
+# with Lectio8-9 as one continuous excerpt of St. Augustine's Tract
+# 51 on John — the same homily already used for `st-ignatius-of-antioch.yml`
+# (a different day citing the same pericope; the reference engine
+# reuses this homily across multiple feasts near this text). No
+# responsory given for either reading.
+#
+# Update (2026-09-05): the Gospel pericope itself (John 12:24-26) is
+# now authored too (isGospel: true, immediately before the homily) —
+# St. Lawrence's own Missale [Evangelium] redirects to `@Sancti/02-01`
+# (St. Ignatius of Antioch's Mass Gospel), so the full text is sourced
+# from missa/Latin/Sancti/02-01.txt and missa/English/Sancti/08-10.txt
+# (St. Lawrence's own English Missale, which inlines the text directly
+# rather than redirecting). st-ignatius-of-antioch.yml's own Nocturn 3
+# Gospel (authored independently, in parallel) draws on the same
+# underlying pericope, as expected for a shared Missale redirect.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: Pope St. Leo the Great, Sermon for St. Lawrence's Birthday
+      text: |-
+        Cum furor gentílium potestátum in electíssima quæque Christi membra sævíret, ac præcípue eos qui órdinis erant sacerdotális impéteret, in levítam Lauréntium, qui non solum ministério sacramentórum sed étiam dispensatióne ecclesiásticæ substántiæ præeminébat, ímpius persecútor efférbuit, dúplicem sibi prædam de uníus viri comprehensióne promíttens; quem, si fecísset sacræ pecúniæ traditórem, fáceret étiam veræ religiónis exsórtem. Armátur ítaque gémina face homo pecúniæ cúpidus et veritátis inimícus: avarítia, ut rápiat aurum; impietáte, ut áuferat Christum. Póstulat sibi ab immaculáto sacrárii prǽsule opes ecclesiásticas, quibus avidíssimus inhiábat, inférri. Cui levíta castíssimus, ubi eas repósitas habéret osténdens, numerosíssimos sanctórum páuperum óbtulit greges, in quorum victu atque vestítu inamissíbiles condíderat facultátes, quæ tanto intégrius erant salvæ, quanto sánctius probabántur expénsæ.
+
+        Fremit ergo prædo frustrátus, et in ódium religiónis, quæ talem divitiárum usum instituísset, ardéscens, direptiónem thesáuri potióris aggréditur, apud quem nullam denariórum substántiam reperísset; ut illud depósitum, quo sacrátius erat dives, auférret. Renuntiáre Christo Lauréntium jubet, et solidíssimam illam levítici ánimi fortitúdinem diris parat urgére supplíciis; quorum ubi prima nil óbtinent, vehementióra succédunt. Láceros artus et multa vérberum sectióne conscíssos subjécto prǽcipit igne torréri; ut per cratem férream, quæ jam de fervóre contínuo vim in se habéret uréndi, conversórum altérna mutatióne membrórum, fíeret cruciátus veheméntior et pœna prodúctior.
+
+        Nihil óbtines, nihil próficis, sæva crudélitas. Subtráhitur torméntis tuis matéria mortális, et, Lauréntio in cælos abeúnte, tu déficis flammis tuis. Superári cáritas Christi flamma non pótuit; et ségnior fuit ignis, qui foris ussit, quam qui intus accéndit. Sævísti persecútor in Mártyrem: sævísti, et auxísti palmam, dum ággeras pœnam. Nam quid non ad victóris glóriam ingénium tuum réperit, quando in honórem transiérunt triúmphi étiam instruménta supplícii? Gaudeámus ígitur, dilectíssimi, gáudio spiritáli, et de felicíssimo íncliti viri fine gloriémur in Dómino, qui est mirábilis in Sanctis suis, in quibus nobis et præsídium constítuit et exémplum; atque ita per univérsum mundum claríficat glóriam suam, ut a solis ortu usque ad occásum, leviticórum lúminum coruscánte fulgóre, quam clarificáta est Jerosólyma Stéphano, tam illústris fíeret Roma Lauréntio.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joann 12:24-26
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Amen, amen, dico vobis, nisi granum fruménti cadens in terram, mórtuum fúerit, ipsum solum manet: si autem mórtuum fúerit, multum fructum affert. Qui amat ánimam suam, perdet eam: et qui odit ánimam suam in hoc mundo, in vitam ætérnam custódit eam. Si quis mihi mínistrat, me sequátur: et ubi sum ego, illic et miníster meus erit. Si quis mihi ministráverit, honorificábit eum Pater meus.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Tract 51 on John (on John 12:24-26)
+      text: |-
+        Ipse Dóminus Jesus erat granum mortificándum et multiplicándum; mortificándum infidelitáte Judæórum, multiplicándum fide populórum. Jam vero exhórtans ad passiónis suæ sectánda vestígia, Qui amat, inquit, ánimam suam, perdet eam. Quod duóbus modis intéllegi potest. Qui amat, perdet; id est, si amas, perdes. Si cupis vitam tenére in Christo, noli mortem timére pro Christo. Item álio modo: Qui amat ánimam suam, perdet eam; noli amáre, ne perdas; noli amáre in hac vita, ne perdas in ætérna vita.
+
+        Hoc autem, quod postérius dixi, magis habére vidétur evangélicus sensus; séquitur enim: Et qui odit ánimam suam in hoc mundo, in vitam ætérnam custódit eam. Ergo, quod supra dictum est, Qui amat, subintellégitur in hoc mundo, in vitam ætérnam ipse custódit eam. Magna et mira senténtia, quemádmodum sit hóminis in ánimam suam amor ut péreat, ódium ne péreat. Si male amáveris, tunc odísti; si bene óderis, tunc amásti. Felíces, qui odérunt custodiéndo, ne perdant amándo.
+
+        Sed vide ne tibi subrépat, ut teípsum velis interímere, sic intellegéndo, quod debes odísse in hoc mundo ánimam tuam. Hinc enim quidam malígni atque pervérsi hómines, et in seípsis crudelióres et sceleratióres homicídæ, flammis se donant, aquis se præfócant, præcipítio se collídunt, et péreunt. Hoc Christus non dócuit; immo étiam diábolo præcipítium suggerénti respóndit: Redi retro, sátana: scriptum est, Non tentábis Dóminum, Deum tuum. Petro autem dixit, signíficans qua morte clarificatúrus erat Deum: Cum esses júnior, cingébas te, et ambulábas quo volébas; cum autem senúeris, alter te cinget et feret quo tu non vis. Ubi satis expréssit, non a seípso, sed ab álio debére occídi, qui vestígia séquitur Christi.
+      status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-08-11). Matins reading for day 2 of St. Lawrence's
+# own octave -- the historical 3 Lectios of this lesser-rank office are
+# collapsed into one continuous reading per project convention, not kept
+# broken up. Responsory: the first responsory following the lessons, its own
+# fixed formulaic preamble ("Tu autem, Domine...") stripped -- the same
+# responsory text is reused verbatim across this whole octave, matching St.
+# Lawrence's own Lauds antiphon (propers/common/st-lawrence-antiphon.yml).
+# English "I belive"/"lam come" corrected as clear transcription typos in the
+# source, same judgment call as st-zephyrinus-collect.yml earlier this pull.
+# The source's own English translation is used as-is, including gaps in its
+# own punctuation (some older "oct"/"bmv"-suffixed variant files drop question
+# marks entirely in places) -- not corrected here, since guessing where they
+# belong isn't the same class of fix as an isolated single-character typo.
+#
+# 2026-09-09: both `text.la` and `text.en` had the source citation baked
+# into their opening words, redundant with the `source` field above.
+# Stripped (part of a repo-wide sweep of octave-readings files with the
+# same pattern).
+octave-readings/~-octave-day-2:
+  source: Sermo sancti Augustíni Epíscopi.
+  text: |
+    Beatissimi Laurentii Martyris, cujus natalem hodie celebramus, passionem nosse vos credo: et quanta in persecutione pertulerit, dilectionem vestram scire posse non dubito. Tanta enim ejus martyrii gloria exstitit, ut passione sua mundum illuminaverit universum. Illuminavit mundum plane Laurentius eo lumine, quo ipse accensus est, et flammis quas ipse pertulit, omnium Christianorum corda calefecit.
+
+    Quis nolit ad horam uri Laurentii igne, ut æternum gehennæ non patiatur incendium? Beati igitur Laurentii exemplo provocamur ad martyrium, et accendimur ad fidem, incalescimus ad devotionem: et si in nobis persecutoris flamma deest, fidei tamen flamma non deest. Non ardemus quidem corpore pro Christo, sed ardemus affectu: non subjicit mihi persecutor ignem: sed suggerit mihi ignem desiderium Salvatoris.
+
+    Esse autem Salvatoris ignem legimus in Evangelio, dicente eodem Domino: Nescitis quia veni ignem mittere in terram? Et quid volo, nisi ut accendatur? Quo igne succensi illi duo discipuli dixerunt: Nonne cor nostrum ardens erat in nobis, dum loqueretur in via, et aperiret nobis Scripturas? Hoc igitur igne beatus Laurentius accensus, flammarum non sentit incendium: et dum Christi ardet desiderio, persecutoris pœnam non sentit.
+  responsory: |
+    R. Levíta Lauréntius bonum opus operátus est, qui per signum crucis cæcos illuminávit, * Et thesáuros Ecclésiæ dedit paupéribus. V. Dispérsit, dedit paupéribus: justítia ejus manet in sǽculum sǽculi. R. Et thesáuros Ecclésiæ dedit paupéribus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-08-12). Matins reading for day 3 of St. Lawrence's
+# own octave -- collapsed into one continuous reading per project convention.
+# Same recurring responsory as day 2 (see st-lawrence-octave-day-2.yml).
+#
+# 2026-09-12: no English translation exists in the source at all for this
+# reading -- its own English page falls back to showing the Latin text
+# under the "Reading" header. Since it's prose, this English is a
+# translation done for this project rather than left missing, same
+# precedent already used for assumption-octave-day-4.yml -- draft, not
+# verified against any source.
+#
+# 2026-09-09: `text.la` had the source citation baked into its opening
+# words, redundant with the `source` field above. Stripped (part of a
+# repo-wide sweep of octave-readings files with the same pattern).
+octave-readings/~-octave-day-3:
+  source: De Sermone S. Augustini Episcopi
+  text: |
+    Legimus Ananiam, Azariam et Misaelem beatissimos pueros a rege in camino ignis inclusos in poenarum suarum deambulasse flammis, et igneos globos pedibus conculcasse. Unde et beatus Laurentius non minori gloria est praeferendus; siquidem illi in poenarum suarum flammis ambulant, hic et in ipso supplicii sui igne discumbit; illi vestigiis pedum conculcaverunt incendia, iste laterum suorum diffusione extinxit.
+
+    Iterum beatus Laurentius in dorsum supinus vertitur, et renes ejus ignibus exuruntur; ut impleretur psalmi prophetia quae dicit ex persona Laurentii: Proba me, Domine, et tenta me; ure renes meos, et cor meum. Duplici se utique postulat igne comburi. Nam si de uno et solo mundi igne loqueretur, sufficeret renes tantum exurendos incendiis obtulisse. Cor autem nisi Christi flamma non urit.
+
+    Oremus igitur, fratres, beatum Laurentium, qui dum fide sua persecutoris flammas vicit, ostendit nobis per ignem fidei gehennae incendia superare, et amore Christi diem judicii non timere. Nos vero, fratres dilectissimi, si ad consortium sanctorum martyrum pervenire volumus, de imitatione martyrum cogitemus. Debent enim in nobis aliquid de suis virtutibus recognoscere, ut pro nobis dignentur Dominum supplicare.
+  responsory: |
+    R. Levíta Lauréntius bonum opus operátus est, qui per signum crucis cæcos illuminávit, * Et thesáuros Ecclésiæ dedit paupéribus. V. Dispérsit, dedit paupéribus: justítia ejus manet in sǽculum sǽculi. R. Et thesáuros Ecclésiæ dedit paupéribus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-08-13). Matins reading for day 4 of St. Lawrence's
+# own octave -- collapsed into one continuous reading per project convention.
+# Same recurring responsory as day 2 (see st-lawrence-octave-day-2.yml). The
+# source's own English translation is used as-is, including gaps in its own
+# punctuation (some older "oct"/"bmv"-suffixed variant files drop question
+# marks entirely in places) -- not corrected here, since guessing where they
+# belong isn't the same class of fix as an isolated single-character typo.
+#
+# 2026-09-09: `text.la`'s 1st paragraph had the source citation baked into
+# its opening words, redundant with the `source` field above (`en` was
+# already clean here). Stripped -- kept the "Lib. 2., cap. 28., post
+# medium." sub-citation at the 2nd paragraph's start in both languages,
+# since it names a different chapter of the same work and isn't
+# redundant with anything (part of a repo-wide sweep of octave-readings
+# files with the same pattern).
+octave-readings/~-octave-day-4:
+  source: Ex libro Officiorum S. Ambrósii Epíscopi.
+  text: |
+    Lib. 1., cap. 41., in medio. Non prætereamus sanctum Laurentium, qui cum videret episcopum suum ad martyrium duci, flere cœpit non passionem illius, sed suam remansionem. Itaque his verbis appellare cœpit: Quo progrederis sine filio pater? quo sacerdos sancte sine diacono properas? Numquam sacrificium sine ministro offerre consueveras. Quid in me ergo displicuit pater? Num degenerem me probasti? Experire certe utrum idoneum ministrum elegeris. Cui commisisti Dominici sanguinis dispensationem, cui consumandorum consortium sacramentorum huic consortium tui sanguinis negas?
+
+    Lib. 2., cap. 28., post medium. Aquo cum quærerantur thesauri Ecclesiæ, promisit se demonstraturum. Sequenti die pauperes duxit. Interrogatus ubi essent thesauri quos promiserat, ostendit pauperes, dicens: Hi sunt thesauri Ecclesiæ. Et vere thesauri, in quibus Christus est, in quibus Christi fides est. Denique Apostolus ait: Habemus thesaurum in vasis fictilibus. Quos meliores thesauros habet Christus, quam eos in quibus se esse dixit? Sic enim scriptum est: Esurivi, et dedistis mihi manducare: sitivi, et dedistis mihi bibere: hospes eram, et collegistis me. Et infra: Quod enim uni horum fecistis, mihi fecistis. Hos thesauros demonstravit Laurentius, et vicit, quod eos nec persecutor potuit auferre.
+
+    Numquid dictum est sancto Laurentio: Non debuisti erogare thesauros Ecclesiæ, vasa sacramentorum vendere? Opus est, ut quis fide sincera et perspicaci providentia munus hoc impleat. Sane si in sua quis derivat emolumenta, crimen est: sin vero pauperibus erogat, captivum redimit, misericordia est. Nemo enim potest dicere: Cur pauper vivit? Nemo potest queri, quia captivi redempti sunt. Nemo potest accusare, quia templum Dei ædificatum est. Nemo potest indignari, quia humanis fidelium reliquiis spatia laxata sunt: nemo potest dolere, quia in sepulturis Christianorum requies defunctorum est. In his tribus generibus vasa Ecclesiæ étiam initiata confringere, conflare, vendere licet.
+  responsory: |
+    R. Levíta Lauréntius bonum opus operátus est, qui per signum crucis cæcos illuminávit, * Et thesáuros Ecclésiæ dedit paupéribus. V. Dispérsit, dedit paupéribus: justítia ejus manet in sǽculum sǽculi. R. Et thesáuros Ecclésiæ dedit paupéribus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-08-14). Matins reading for day 5 of St. Lawrence's
+# own octave -- collapsed into one continuous reading per project convention.
+# Same recurring responsory as day 2 (see st-lawrence-octave-day-2.yml). The
+# source's own English translation is used as-is, including gaps in its own
+# punctuation (some older "oct"/"bmv"-suffixed variant files drop question
+# marks entirely in places) -- not corrected here, since guessing where they
+# belong isn't the same class of fix as an isolated single-character typo.
+#
+# 2026-09-09: this reading bundles two distinct occasions (day 5 of St.
+# Lawrence's own octave, and the Eve of the Assumption's own Gospel+
+# homily) into one continuous text -- both `text.la` and `text.en` had
+# each occasion's own source citation baked directly into its opening
+# words with no separating punctuation, redundant with either the
+# `source` field above (for St. Maximus's homily) or with nowhere else to
+# live (the Vigil's own Gospel/homily citations, which have no separate
+# field here). Stripped/re-punctuated, each piece given its own paragraph
+# break; kept the genuine liturgical incipit ("In illo témpore:"/"At that
+# time,") and the "For the Eve of the Assumption" occasion label. Also
+# fixed "StAugustine" -> "St. Augustine" (missing space, a plain
+# transcription typo). Part of a repo-wide sweep of octave-readings files
+# with the same citation-prefix pattern.
+octave-readings/~-octave-day-5:
+  source: Sermo sancti Maximi Epíscopi
+  text: |
+    Sanctum est, fratres, ac Deo placitum, ut natalem beati Laurentii præcipua devotione veneremur: cujus radiantibus flammis victrix in hunc quoque diem toto orbe Christi coruscat Ecclesia. Qui cum in sede gloriosissimi Patriarchæ diaconatus fungeretur officio, puritate innocentis vitæ, fortissimæque mortis triumpho, apostolico se consortio copulavit. Nec immerito eum Apostolorum supparem prædicamus, cui et castitas animi leviticum ministerium dedit, et plenitudo fidei martyrii contulit dignitatem.
+
+    Quem venerabilis Xystus, Romanæ urbis Antistes, cum impietatem sævientis mundi per tormenta superaret, et regnis esset cælestibus jam vicinus, videretque eum paterna de morte tristissimum, ita illum spiritu præscientiæ compellasse narratur: Noli fili mœstus esse: post triduum me sequeris. Unde apparet, carissimi, beatum Laurentium non de sacerdotis sui victoria habuisse tristitiam, sed doluisse, quia non étiam ipse mundum cum suo pariter sacerdote vincebat. Noli, inquit, fili mœstus esse: post triduum me sequeris. Hoc est, Noli tristis esse, velut apud sæculum derelictus: nam nec te fides vítaque tua tali morte privabit.
+
+    In illo témpore: Loquente Jesu ad turbas, extollens vocera quædam mulier de turba, dixit illi: Beatus venter, qui te portavit. Et réliqua.
+
+    Homilía sancti Augustíni Epíscopi. Tract. 10 in Joann., post init. Beata Virgo Maria, quia fecit voluntatem Patris. Hoc in ea magnificavit Dominus, quia fecit voluntatem Patris, non quia caro gonuit carnem. Intendat caritas vestra. Propterea cum Dominus in turba admirabilis videretur, faciens signa et prodigia, et ostendens quid lateret in carne, admiratæ quædam animæ dixerunt: Felix venter, qui te portavit. Et ille: Imo felices, qui audiunt verbum Dei, et custodiunt illud. Hoc est dicere: Et mater mea, quam appellatis felicem, inde felix, quia verbum Dei custodit: non quia in illa Verbum caro factum est, et habitavit in nobis: sed quia custodit ipsum Verbum Dei, per quod facta est, et quod in illa caro factum est.
+  responsory: |
+    R. Levíta Lauréntius bonum opus operátus est, qui per signum crucis cæcos illuminávit, * Et thesáuros Ecclésiæ dedit paupéribus. V. Dispérsit, dedit paupéribus: justítia ejus manet in sǽculum sǽculi. R. Et thesáuros Ecclésiæ dedit paupéribus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2026-08-17). Day 8, "In Octava S. Laurentii," is its
+# own distinct Duplex-rank commemoration of Lawrence (not a plain octave-
+# continuation day), with a fuller 12-lesson office rather than the lesser-
+# rank 3-lesson form the other days use -- all 12 collapsed into one
+# continuous reading per project convention. Days 6 (Aug 15) and 7 (Aug 16)
+# have no Lawrence-specific reading at all: those days belong entirely to the
+# Assumption's own feast and octave instead (see assumption-octave-day-2.yml,
+# sourced from what a naive query for "Lawrence day 7" actually returned). The
+# source's own English translation is used as-is, including gaps in its own
+# punctuation (some older "oct"/"bmv"-suffixed variant files drop question
+# marks entirely in places) -- not corrected here, since guessing where they
+# belong isn't the same class of fix as an isolated single-character typo.
+#
+# 2026-09-09: this reading collapses several distinct source citations
+# into one continuous text (Ecclesiasticus, Augustine's Tract 27, the
+# Gospel of John, Chrysostom's Homily 66). The first (Ecclesiasticus) had
+# its citation baked into `text.la`/`text.en`'s opening words, redundant
+# with the `source` field above -- stripped, keeping the "Sir N:N-N"
+# verse-range markers already used consistently for the rest of that
+# reading. The Gospel/Chrysostom citation, which has nowhere else to
+# live, is now given its own paragraph and proper punctuation instead of
+# running straight into "In illo témpore:"/"At that time:" and into the
+# homily's own opening words. Also fixed two plain transcription typos
+# found in the same pass: `text.en`'s "21th" -> "27th" (matching the
+# Latin's own "Tractatus 27") and "Ilooked" -> "I looked" (missing
+# space). Part of a repo-wide sweep of octave-readings files with the
+# same citation-prefix pattern.
+octave-readings/~-octave-day-8:
+  source: De libro Ecclesiástici
+  text: |
+    Sir 51:1-3 1 Confitébor tibi, Dómine, Rex, et collaudábo te Deum Salvatórem meum. 2 Confitébor nómini tuo: quóniam adjútor et protéctor factus es mihi, 3 Et liberásti corpus meum a perditióne, a láqueo linguæ iníquæ et a lábiis operántium mendácium, et in conspéctu astántium factus es mihi adjútor.
+
+    Sir 51:4-7 4 Et liberásti me secúndum multitúdinem misericórdiæ nóminis tui a rugiéntibus, præparátis ad escam: 5 De mánibus quæréntium ánimam meam, et de portis tribulatiónum, quæ circumdedérunt me; 6 A pressúra flammæ, quæ circúmdedit me, et in médio ignis non sum æstuáta;
+
+    Sir 51:8-13 8 Laudábit usque ad mortem ánima mea Dóminum, 9 Et vita mea appropínquans erat in inférno deórsum. 10 Circumdedérunt me úndique, et non erat qui adjuváret. Respíciens eram ad adjutórium hóminum, et non erat. 11 Memorátus sum misericórdiæ tuæ, Dómine, et operatiónis tuæ, quæ a sǽculo sunt: 12 Quóniam éruis sustinéntes te, Dómine, et líberas eos de mánibus géntium. 13 Exaltásti super terram habitatiónem meam, et pro morte defluénte deprecátus sum.
+
+    Sir 51:14-17 14 Invocávi Dóminum, Patrem Dómini mei, ut non derelínquat me in die tribulatiónis meæ, et in témpore superbórum, sine adjutório. 15 Laudábo nomen tuum assídue, et collaudábo illud in confessióne, et exaudíta est orátio mea. 16 Et liberásti me de perditióne, et eripuísti me de témpore iníquo. 17 Proptérea confitébor, et laudem dicam tibi, et benedícam nómini Dómini.
+
+    Ex Tractatu sancti Augustíni Epíscopi in Joánnem. Tractatus 27. in fine. Certi sumus, fratres, quia omnes, qui sumus in corpore Domini, et manemus in illo, ut et ipse maneat in nobis, in hoc sæculo necesse habemus usque in finem inter malos vivere; non inter illos dico malos, qui blasphemant Christum; raro enim jam inveniuntur, qui lingua blasphemant, sed multi, qui vita. Necesse est ergo, ut inter illos usque in finem vivamus. Sed quid est quod ait, Qui manet in me, et ego in illo? Quid, nisi quod Martyres audiebant: Qui perseveraverit usque in finem, hic salvus erit?
+
+    Quomodo mansit in illo sanctus Laurentius, cujus hodie festum diem celebramus? Mansit usque ad tentationem, mansit usque ad tyrannicam interrogationem, mansit usque ad acerrimam comminationem, mansit usque ad peremptionem. Parum est: usque ad immanem excruciationem mansit. Non enim occisus est cito, sed cruciatus est in igne. Diu vivere permissus est: immo non diu vivere permissus est, sed tarde mori compulsus est.
+
+    In illa ergo longa morte, in illis tormentis, quia bene manducaverat, et bene biberat, tamquam illa esca saginatus, et illo calice ebrius, tormenta non sensit. Dixerat autem illi Xystus Martyr sanctus, cujus diem quinto abhinc retro die celebravimus: Noli merere fili: (episcopus enim erat ille, iste diaconus) noli merere, inquit, sequeris me post triduum.
+
+    Triduum autem dixit medium inter diem passionis sancti Xysti, et diem hodiernam passionis sancti Laurentii. Triduum est medium. Oconsolatio! Non ait, Noli merere fili, desinet persecutio, et securus eris: sed, Noli merere: quo ego præcedo, tu sequeris; nec consecutio tua differtur. Triduum medium erit, et mecum eris. Accepit oraculum, vicit diabolum, pervenit ad triumphum.
+
+    Léctio sancti Evangélii secúndum Joánnem. Joannes 12:24-28.
+
+    In illo témpore: Dixit Jesus discipulis suis: Amen, amen dico vobis, nisi granum frumenti cadens in terram, mortuum fuerit; ipsum solum manet. Et réliqua.
+
+    Homilía sancti Joánnis Chrysóstomi. Homilía 66. in Joánnem. Dulcis præsens vita est, et multæ plena voluptatis, non tamen omnibus, sed iis tantum, qui illi sunt affixi. Quod si quis in cælum suspexerit, et quæ ibi præclara sunt, contemplatus fuerit, statim hanc contemnet, ac nullius pretii existimabit. Nam et corporum pulchritudo, quoad pulchrius non deprehenditur, in admiratione habetur: cum vero aliud præstantius apparuerit, illa prior despicitur.
+
+    Quod si illam pulchritudinem étiam nos intueri voluerimus, et cælestis regni speciem considerare, confestim nos hujus sæculi vinculis dissolvemus. Vinculum namque est terrenarum rerum affectio: ad cujus dissolutionem ut nos induceret Christus, quid dicat, attende. Qui amat animam suam, perdet eam: et qui odit animam suam in hoc mundo, in vitam ætérnam custodit eam.
+
+    Enigmati simile hoc dictum videtur: non tamen ita est, immo vero præcipuæ sapientiæ plenum. Et quomodo qui amat animam suam, perdet eam? Qui absurdis ejus cupiditatibus obtemperat, qui præter debitum ei indulget: quemadmodum e contrario, qui odit eam in hoc mundo, custodit eam: hoc est, qui non paret ei, cum noxia jubet.
+
+    Et non dixit: Qui non paret, sed, Qui odit. Sicuti enim quos odio habemus,'ne vocem quidem audire, nec vultum eorum videre æquo animo patimur: ita et animæ, si quid præter Dei voluntatem nobis imperat, vehementer aversari oportet. Cum enim jam de morte ad eos verba facturus esset, de morte videlicet sua, et prævideret eorum tristitiam et exanimationem, per excessum locutus est, inquiens: Quid dico, si mortem meam generose non feretis? Nisi vos ipsi moriamini, nullum vos sequetur emolumentum.
+  responsory: |
+    R. Levíta Lauréntius bonum opus operátus est, qui per signum crucis cæcos illuminávit, * Et thesáuros Ecclésiæ dedit paupéribus. V. Dispérsit, dedit paupéribus: justítia ejus manet in sǽculum sǽculi. R. Et thesáuros Ecclésiæ dedit paupéribus.
+  status: verified

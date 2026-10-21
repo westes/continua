@@ -1,0 +1,45 @@
+collect:
+  text: |
+    Let us pray.
+    Enable us, O Lord, we beseech thee, to carry to a perfect end this holy and helpful observance, that what we know we have to do by thine ordinance we may be helped to do by thy strength.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+collect/~-vespers:
+  text: |
+    Let us pray.
+    Tend thy merciful ears, O Lord, we beseech thee, unto our supplications, and heal the sickness of our souls, that we, receiving thy pardon, may rejoice for ever in thy blessing.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+benedictus-antiphon:
+  text: For One is your Master, * Which is in heaven, even Christ the Lord.
+  status: verified
+
+magnificat-antiphon:
+  text: And all ye are brethren, * and call no man your father upon earth, for One is your Father, Which is in heaven; neither be ye called masters, for One is your Master, even Christ.
+  status: verified
+
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Matthew 23:1-12
+      text: At that time, Jesus spoke to the crowds and to His disciples, saying, "The Scribes and the Pharisees have sat on the chair of Moses. All things, therefore, that they command you, observe and do. But do not act according to their works; for they talk but do nothing. And they bind together heavy and oppressive burdens, and lay them on men's shoulders; but not with one finger of their own do they choose to move them. In fact, all their works they do in order to be seen by men; for they widen their phylacteries, and enlarge their tassels, and love the first places at suppers and the front seats in the synagogues, and greetings in the market place, and to be called by men 'Rabbi.' But do not you be called 'Rabbi'; for one is your Master, and all you are brothers. And call no one on earth your father; for one is your Father, Who is in heaven. Neither be called masters; for one only is your Master, the Christ. He who is greatest among you shall be your servant. And whoever exalts himself shall be humbled, and whoever humbles himself shall be exalted."
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Jerome, Priest, Book 4, Commentary on Matthew, ch. 23
+      text: |-
+        Was there ever man gentler and kinder than the Lord? The Pharisees tempted Him; their craft was confounded, and, in the words of the Psalmist, "The arrows of babes have pierced them," and nevertheless, because of the dignity of their priesthood and name, He exhorteth the people to be subject to them, by doing according to their words, though not according to their works. By the words "Moses' seat" we are to understand the teaching of the law. Thus also must we mystically take, "Sitteth in the seat of the scornful," and likewise, "overthrew the seats of them that sold doves," to describe doctrine.
+
+        "How they bind heavy burdens, and grievous to be borne, and lay them on men's shoulders, but they themselves will not move them with one of their fingers." This is generally directed against all teachers who command things hard, and themselves do not even things easy. But it is to be remarked that the shoulders, the fingers, and the binding of the burdens, have a spiritual interpretation. "But all their works they do for to be seen of men." Whosoever therefore doth anything for to be seen of men, the same is, so far, a Scribe and a Pharisee.
+
+        "They make broad their phylacteries, and enlarge the borders of their garments. And love the uppermost rooms at feasts, and the chief seats in the synagogues, and greetings in the markets, and to be called of men, Rabbi." Woe to us miserable sinners who have inherited the vices of the Pharisees! When the Lord had given the commandments of the law to Moses He added afterwards, "Thou shalt bind them for a sign upon thine hand, and they shall be as frontlets between thine eyes." The sense of these words is: My Law shall be in thine hand to order whatsoever thou doest, and ever before thine eyes that thou mayest meditate therein day and night. But the Pharisees, by a bad interpretation, were accustomed to write on pieces of parchment the Decalogue of Moses, that is, the Ten Words of the Law, and to tie these pieces of parchment, plaited in a peculiar manner, on their foreheads, so as to make a sort of crown round their heads, which projected in front of their eyes, and always moved before them.
+      responsory: |-
+        R. As Jacob went out from his own land, he saw the glory of God, and said: How dreadful is this place. * This is none other but the house of God and this is the gate of heaven.
+        V. Surely God is in this place, and I knew it not.
+        R. This is none other but the house of God and this is the gate of heaven.
+      status: verified

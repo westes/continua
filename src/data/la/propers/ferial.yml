@@ -1,0 +1,284 @@
+# This is Monday's own plain ferial Matins hymn (Psalterium/Special/
+# Matutinum Special.txt's "Day1 Hymnus" — Day0=Sunday .. Day6=Saturday).
+# The file's original comment mislabeled it as a single fixed
+# "ferial" text and misattributed its live-verification date (2026-12-15)
+# to "a plain ferial Tuesday" — that date is in fact a Tuesday, but the
+# text itself is Monday's (Monastic 1617's own "Day1 HymnusM" swaps
+# "omni témpore" -> "in perpetuum" in the closing line, matching what's
+# below). Fixed 2026-09-04 after the user reported Friday showing this
+# same text instead of Friday's own hymn: `hours/matins.ts`'s
+# `resolveMatinsHymn` now looks up a weekday-specific id
+# (`matins-hymn-ferial-tuesday`/`-wednesday`/`-thursday`/`-friday`/
+# `-saturday`) for those five days; this file (`matins-hymn-ferial`, no
+# day suffix) is still used directly for Monday. Sunday's own gap (turned
+# out simple, not the "genuinely more complex two-hymn mechanism" first
+# suspected — see matins-hymn-sunday.yml's own header) and Saturday's own
+# gap (superseded on nearly every ordinary Saturday by Marian Saturday,
+# not a full Little Office — see matins-hymn-ferial-saturday.yml and
+# calendar/index.ts's applyMarianSaturday) were both closed the same
+# session. See TODO.md's 2026-09-04 entries.
+#
+# The closing doxology stanza is marked with a leading "* " — Divinum
+# Officium's own marker for a hymn's variable doxology (hymni.pl's
+# gethymn(), live-checked 2026-09-03 in Psalterium/Special/Matutinum
+# Special.txt); see hours/resolve-common.ts's substituteDoxology and
+# hours/hymn-doxology.ts.
+matins-hymn:
+  text: |-
+    Somno reféctis ártubus,
+    Spreto cubíli, súrgimus:
+    Nobis, Pater, canéntibus
+    Adésse te depóscimus.
+
+    Te lingua primum cóncinat,
+    Te mentis ardor ámbiat:
+    Ut áctuum sequéntium
+    Tu, Sancte, sis exórdium.
+
+    Cedant tenébræ lúmini,
+    Et nox diúrno síderi,
+    Ut culpa, quam nox íntulit,
+    Lucis labáscat múnere.
+
+    Precámur iídem súpplices,
+    Noxas ut omnes ámputes,
+    Et ore te canéntium
+    Laudéris in perpétuum.
+
+    * Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum. Amen.
+  status: verified
+
+# Friday's own plain ferial Matins hymn (Psalterium/Special/Matutinum
+# Special.txt's "Day5 Hymnus" — Day0=Sunday .. Day6=Saturday). Live-
+# verified 2026-09-04 (today, a plain post-Pentecost Friday) against
+# Monastic Tridentinum 1617 directly via the CGI instance — Monastic's own
+# "Day5 HymnusM" swaps stanza 2's "ómnium"/"vúlnerum" word order and
+# stanza 4's "astet" -> "adsit"; the live page confirms both swaps.
+#
+# Reported by the user: the plain ferial Matins hymn was silently using
+# Monday's own text (`matins-hymn-ferial`, mislabeled in its own comment
+# as a generic "ferial" hymn) for every weekday, including Friday, where
+# the real Monastic 1617 source is this genuinely different hymn.
+#
+# Closing doxology stanza marked with a leading "* " (Divinum Officium's
+# own variable-doxology marker, shared across every weekday — see
+# hours/resolve-common.ts's substituteDoxology and hours/hymn-doxology.ts).
+matins-hymn/~-friday:
+  text: |-
+    Tu, Trinitátis Únitas,
+    Orbem poténter quæ regis,
+    Atténde laudis cánticum,
+    Quod excubántes psállimus.
+
+    Nam léctulo consúrgimus
+    Noctis quiéto témpore,
+    Ut flagitémus vúlnerum
+    A te medélam ómnium.
+
+    Quo fraude quidquid dǽmonum
+    In nóctibus delíquimus,
+    Abstérgat illud cǽlitus
+    Tuæ potéstas glóriæ.
+
+    Ne corpus adsit sórdidum,
+    Nec torpor instet córdium,
+    Ne críminis contágio
+    Tepéscat ardor spíritus.
+
+    Ob hoc, Redémptor, quǽsumus,
+    Reple tuo nos lúmine,
+    Per quod diérum círculis
+    Nullis ruámus áctibus.
+
+    * Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum. Amen.
+  status: verified
+
+# Saturday's own plain ferial Matins hymn ("Summæ Deus cleméntiæ" —
+# Monastic 1617's own "Day6 HymnusM", genuinely distinct text from the
+# secular "Day6 Hymnus"/"Summæ Parens cleméntiæ", not just a word-swap —
+# Psalterium/Special/Matutinum Special.txt, Day0=Sunday..Day6=Saturday).
+# Live-verified 2025-09-20 (a September Ember Saturday winning outright
+# with nothing else in play, `{ex Psalterio secundum tempora}` in the
+# source, i.e. genuinely the plain per-weekday text).
+#
+# Reached whenever a Saturday is neither Marian (see calendar/index.ts's
+# applyMarianSaturday — an active octave, a real winning saint, or any
+# other non-`ordinary-feria` category all suppress it) nor covered by a
+# season's own seasonSuffix hymn (Lent/Advent/Paschaltide's own Saturday
+# already use their season's hymn first) — chiefly September/Pentecost's
+# own Ember Saturday when nothing else wins, same real gap already fixed
+# for Tuesday-Friday (see matins-hymn-ferial.yml's own header) but missed
+# for Saturday at the time: reported by the user 2026-09-04 by asking
+# what actually renders on Ember Saturday and a Saturday where a real
+# saint outranks a merely-commemorated Vigil (Aug 8 2026) -- the second
+# case turned out fine (the winning saint's own Common hymn already
+# applies correctly), but this one was still silently falling to Monday's
+# text via the `matins-hymn-ferial` placeholder.
+#
+# Closing doxology stanza marked with a leading "* " (Divinum Officium's
+# own variable-doxology marker, shared across every weekday — see
+# hours/resolve-common.ts's substituteDoxology and hours/hymn-doxology.ts),
+# same convention as the Tuesday-Friday siblings; the live source's own
+# closing stanza here is byte-identical to that shared text anyway.
+matins-hymn/~-saturday:
+  text: |-
+    Summæ Deus cleméntiæ,
+    Mundíque Factor máchinæ,
+    Unus potentiáliter,
+    Trinúsque personáliter:
+
+    Nostros pius cum cánticis
+    Fletus benígne súscipe:
+    Quo corde puro sórdibus
+    Te perfruámur lárgius.
+
+    Lumbos, jecúrque mórbidum
+    Adúre igni cóngruo,
+    Accíncti ut sint pérpetim,
+    Luxu remóto péssimo.
+
+    Ut quique horas nóctium
+    Nunc concinéndo rúmpimus,
+    Donis beátæ pátriæ
+    Ditémur omnes áffatim.
+
+    * Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum. Amen.
+  status: verified
+
+# Thursday's own plain ferial Matins hymn (Psalterium/Special/Matutinum
+# Special.txt's "Day4 Hymnus" — Day0=Sunday .. Day6=Saturday, live-checked
+# 2026-09-04, 2026-09-03). Monastic 1617's own "Day4 HymnusM" is a bare
+# `@:Day4 Hymnus` cross-reference with no substitution — identical to the
+# secular text below.
+#
+# Closing doxology stanza marked with a leading "* " (Divinum Officium's
+# own variable-doxology marker, shared across every weekday — see
+# hours/resolve-common.ts's substituteDoxology and hours/hymn-doxology.ts).
+matins-hymn/~-thursday:
+  text: |-
+    Nox atra rerum cóntegit
+    Terræ colóres ómnium:
+    Nos confiténtes póscimus
+    Te, juste judex córdium.
+
+    Ut áuferas piácula,
+    Sordésque mentis ábluas:
+    Donésque, Christe, grátiam,
+    Ut arceántur crímina.
+
+    Mens ecce torpet ímpia,
+    Quam culpa mordet nóxia:
+    Obscúra gestit tóllere,
+    Et te, Redémptor, quǽrere.
+
+    Repélle tu calíginem
+    Intrínsecus quam máxime,
+    Ut in beáto gáudeat
+    Se collocári lúmine.
+
+    * Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum. Amen.
+  status: verified
+
+# Tuesday's own plain ferial Matins hymn (Psalterium/Special/Matutinum
+# Special.txt's "Day2 Hymnus" — Day0=Sunday .. Day6=Saturday, live-checked
+# 2026-09-04). Monastic 1617's own "Day2 HymnusM" is a bare `@:Day2
+# Hymnus` cross-reference with no substitution — identical to the secular
+# text below, unlike Wednesday/Friday's own genuine word-swaps.
+#
+# Closing doxology stanza marked with a leading "* " (Divinum Officium's
+# own variable-doxology marker, shared across every weekday — see
+# hours/resolve-common.ts's substituteDoxology and hours/hymn-doxology.ts).
+matins-hymn/~-tuesday:
+  text: |-
+    Consors patérni lúminis,
+    Lux ipse lucis, et dies,
+    Noctem canéndo rúmpimus:
+    Assíste postulántibus.
+
+    Aufer ténebras méntium,
+    Fuga catérvas dǽmonum,
+    Expélle somnoléntiam,
+    Ne pigritántes óbruat.
+
+    Sic, Christe, nobis ómnibus
+    Indúlgeas credéntibus,
+    Ut prosit exorántibus,
+    Quod præcinéntes psállimus.
+
+    * Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum. Amen.
+  status: verified
+
+# Wednesday's own plain ferial Matins hymn (Psalterium/Special/Matutinum
+# Special.txt's "Day3 Hymnus" — Day0=Sunday .. Day6=Saturday, live-checked
+# 2026-09-04, 2026-09-02). Monastic 1617's own "Day3 HymnusM" swaps
+# "culpis ómnibus" -> "tu criminibus" in stanza 2 (both mean "forgive our
+# sins/crimes" — a stylistic variant, not a change of imagery, so the
+# existing secular English translation is reused unchanged, same
+# convention already used elsewhere in this store for minor M-track
+# word-swaps).
+#
+# Closing doxology stanza marked with a leading "* " (Divinum Officium's
+# own variable-doxology marker, shared across every weekday — see
+# hours/resolve-common.ts's substituteDoxology and hours/hymn-doxology.ts).
+matins-hymn/~-wednesday:
+  text: |-
+    Rerum Creátor óptime,
+    Rectórque noster, áspice:
+    Nos a quiéte nóxia
+    Mersos sopóre líbera.
+
+    Te, sancte Christe, póscimus,
+    Ignósce tu criminibus:
+    Ad confiténdum súrgimus,
+    Morásque noctis rúmpimus.
+
+    Mentes manúsque tóllimus,
+    Prophéta sicut nóctibus
+    Nobis geréndum prǽcipit,
+    Paulúsque gestis cénsuit.
+
+    Vides malum, quod fécimus:
+    Occúlta nostra pándimus:
+    Preces geméntes fúndimus,
+    Dimítte quod peccávimus.
+
+    * Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query. Shared Mon-Fri (identical citation and text every day, confirmed).
+lauds-capitulum:
+  text: Nox præcéssit, dies autem appropinquávit. Abiciámus ergo ópera tenebrárum, et induámur arma lucis. Sicut in die honéste ambulémus.
+  citation: Rom 13:12-13
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[Responsory Feria
+# Vespera_]", the non-Cistercian branch "[Responsory Feria Vespera]"
+# resolves to — Psalterium/Special/Major Special.txt). Shared Mon-Fri.
+# Not live-query-verified (see TODO.md) — read directly from source.
+vespers-responsory:
+  text: |
+    R.br. Benedícam Dóminum * In omni témpore.
+    R. Benedícam Dóminum * In omni témpore.
+    V. Semper laus ejus in ore meo.
+    R. In omni témpore.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Benedícam Dóminum * In omni témpore.
+  status: draft

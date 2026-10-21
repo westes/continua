@@ -1,0 +1,70 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Famíliam tuam, quǽsumus, Dómine, contínua pietáte custódi: ut a cunctis adversitátibus te protegénte, sit líbera; et in bonis áctibus tuo nómini sit devóta.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-10-10 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Dixit autem * dóminus servo: Redde quod debes. Prócidens autem servus ille rogábat eum, dicens: Patiéntiam habe in me, et ómnia reddam tibi.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-10-10 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: 'Serve nequam, * omne débitum dimísi tibi, quóniam rogásti me: nonne ergo opórtuit et te miseréri consérvi tui, sicut et ego tui misértus sum, allelúia.'
+  status: verified
+  temporal: true
+
+# Nocturn 3, 21st Sunday after Pentecost. Sourced from Tempora/Pent21-0.txt.
+# See post-pentecost-02.yml/post-pentecost-12.yml for sweep method note (no
+# proper Nocturn 2 in the source). Lectio7 bare incipit (Matt 18:23-35, the
+# unforgiving servant) skipped; Lectio7-9's homily by St. Jerome is one
+# continuous work, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 18:23-35
+      text: 'In illo témpore: Dixit Jesus discípulis suis parábolam hanc: Assimilátum est regnum cœlórum hómini regi, qui vóluit ratiónem pónere cum servis suis. Et cum cœpísset ratiónem pónere, oblátus est ei unus, qui debébat ei decem mília talénta. Cum autem non habéret, unde rédderet, jussit eum dóminus ejus venúmdari et uxórem ejus et fílios et ómnia, quæ habébat, et reddi. Prócidens autem servus ille, orábat eum, dicens: Patiéntiam habe in me, et ómnia reddam tibi. Misértus autem dóminus servi illíus, dimísit eum et débitum dimísit ei. Egréssus autem servus ille, invénit unum de consérvis suis, qui debébat ei centum denários: et tenens suffocábat eum, dicens: Redde, quod debes. Et prócidens consérvus ejus, rogábat eum, dicens: Patiéntiam habe in me, et ómnia reddam tibi. Ille autem nóluit: sed ábiit, et misit eum in cárcerem, donec rédderet débitum. Vidéntes autem consérvi ejus, quæ fiébant, contristáti sunt valde: et venérunt et narravérunt dómino suo ómnia, quæ facta fúerant. Tunc vocávit illum dóminus suus: et ait illi: Serve nequam, omne débitum dimísi tibi, quóniam rogásti me: nonne ergo opórtuit et te miseréri consérvi tui, sicut et ego tui misértus sum? Et irátus dóminus ejus, trádidit eum tortóribus, quoadúsque rédderet univérsum débitum. Sic et Pater meus cœléstis fáciet vobis, si non remiséritis unusquísque fratri suo de córdibus vestris.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Priest, Book 3, Commentary on Matthew 18
+      text: |-
+        Familiáre est Syris, et máxime Palæstínis, ad omnem sermónem suum parábolas júngere: ut quod per simplex præcéptum tenéri ab auditóribus non potest, per similitúdinem exempláque teneátur. Præcépit ítaque Dóminus Petro sub comparatióne regis et dómini, et servi, qui débitor decem míllium talentórum a dómino rogans véniam impetráverat, ut ipse quoque dimíttat consérvis suis minóra peccántibus. Si enim ille rex et dóminus servo debitóri decem míllia talentórum tam fácile dimísit: quanto magis servi consérvis suis debent minóra dimíttere?
+
+        Quod ut maniféstius fiat, dicámus sub exémplo. Si quis nostrum commíserit adultérium, homicídium, sacrilégium; majóra crímina decem míllium talentórum rogántibus dimittúntur, si et ipsi dimíttant minóra peccántibus. Sin autem ob factam contuméliam simus implacábiles, et propter amárum verbum pérpetes habeámus discórdias; nonne nobis vidémur recte redigéndi in cárcerem, et sub exémplo óperis nostri hoc ágere, ut majórum nobis delictórum vénia non relaxétur?
+
+        Sic et Pater meus cæléstis fáciet vobis, si non remiséritis unusquísque fratri suo de córdibus vestris. Formidolósa senténtia, si juxta nostram mentem senténtia Dei fléctitur, atque mutátur: si parva frátribus non dimíttimus, magna nobis a Deo non dimitténtur. Et quia potest unusquísque dícere: Nihil hábeo contra eum, ipse novit, habet Deum júdicem; non mihi curæ est quid velit ágere, ego ignóvi ei: confírmat senténtiam suam, et omnem simulatiónem fictæ pacis evértit, dicens: Si non remiséritis unusquísque fratri suo de córdibus vestris.
+      responsory: |-
+        R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.
+        V. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.
+        R. Plena est omnis terra glória ejus.
+      status: verified

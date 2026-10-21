@@ -1,0 +1,68 @@
+# Sourced from web/www/horas/Latin/Sancti/12-31.txt's own [Ant Vespera],
+# which points wholesale to the same named block as st-thomas-becket.yml
+# (same mechanism, see that file's own header): `@Sancti/12-25:Ant
+# Vespera 3` -- a complete, independently-named alternate 5-antiphon
+# Vespers set on 12-25.txt itself (its own [Ant Vespera 3] header,
+# distinct text from that file's plain [Ant Vespera]). English from
+# horas/English/Sancti/12-25.txt's own [Ant Vespera 3]. Below duplex-
+# majus (rank: duplex, not duplex-majus, same as Becket), so hours/
+# vespers.ts's mergeFerialNumbersWithProperAntiphons only takes this
+# file's antiphon text, not its psalm numbers -- ferial Vespers only ever
+# has 4 groups. The source's own 5th (Ps 131) antiphon is dropped here
+# rather than carried along unused (2026-09-08 simplification, confirmed
+# with the user, same as Becket's own file) -- it never rendered anyway.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Tecum princípium * in die virtútis tuæ, in splendóribus sanctórum, ex útero ante lucíferum génui te.
+    - psalms:
+        - 110
+      antiphon: 'Redemptiónem * misit Dóminus pópulo suo: mandávit in ætérnum testaméntum suum.'
+    - psalms:
+        - 111
+      antiphon: 'Exórtum est * in ténebris lumen rectis corde: miséricors, et miserátor, et justus Dóminus.'
+    - psalms:
+        - 129
+      antiphon: Apud Dóminum * misericórdia, et copiósa apud eum redémptio.
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2029-12-30); Latin and English both taken from the page. First Vespers psalm antiphons.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Tecum princípium * in die virtútis tuæ, in splendóribus sanctórum, ex útero ante lucíferum génui te.
+    - psalms:
+        - 110
+      antiphon: 'Redemptiónem * misit Dóminus pópulo suo: mandávit in ætérnum testaméntum suum.'
+    - psalms:
+        - 111
+      antiphon: 'Exórtum est * in ténebris lumen rectis corde: miséricors, et miserátor, et justus Dóminus.'
+    - psalms:
+        - 131
+      antiphon: De fructu * ventris tui ponam super sedem tuam.
+
+# Matins Nocturn 2 reading for St. Silvester I, Pope, Confessor
+# (Dec 31) — SanctiM/12-31.txt inherits the whole day (`@Sancti/12-31`)
+# with no Nocturn 2 override, so this feast's own proper content is
+# sourced from the Tridentine track exactly as for a pre-1955 saint
+# (see memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/12-31.txt, English/Sancti/12-31.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
+# Nocturn 3 (Lectio7-9) is a bare `@Commune/C5` rubric with no proper
+# Lectio content in either language, so no Nocturn 3 reading is
+# authored here — correctly left unauthored, not a gap (same
+# Common-only pattern as several other saints in this pass; see
+# memory vu-matins-sanctim-saints findings).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Silvéster Románus, patre Rufíno, a prima ætáte óperam dedit Cyríno presbýtero; cujus doctrínam et mores egrégie imitátus est. Hic, sæviénte persecutióne, in Sorácte monte latitáverat; et trigésimum annum agens, présbyter sanctæ Románæ Ecclésiæ a Marcellíno Pontífice creátur. Quo in múnere cum omni laude cléricis áliis antecélleret, in Melchíadis póstea locum succéssit, imperatóre Constantíno, qui ántea pacem Ecclésiæ Christi lege pública déderat. Vix Ecclésiæ gubernácula tractánda suscéperat, Constantínum, jam Crucis signo cǽlitus illustrátum, et de hoste Maxéntio victórem, ad tuéndam propagandámque christiánam religiónem impénse fovit. Quem étiam, uti vetus Ecclésiæ Románæ refert tradítio, Apostolórum imágines recognóscere fecit, sacro baptísmate tinxit, et ab infidelitátis lepra mundávit.
+
+        Itaque, auctóre Silvéstro, pius imperátor quam christifidélibus públice templa exstruéndi tribúerat facultátem, eam exémplo suo confirmávit. Multas enim eréxit Basílicas, scílicet Lateranénsem Christo Servatóri, Vaticánam sancto Petro, Ostiénsem sancto Paulo, sancto Lauréntio in Agro Veráno, sanctæ Cruci in Atrio Sessoriáno, sancto Petro et Marcellíno ac sanctæ Agnéti in viis Lavicána et Nomentána, et álias; quas sacris imagínibus spléndide exornávit, et, munéribus prædiísque attribútis, magnificentíssime locupletávit. Hoc Pontífice hábitum est Concílium Nicǽnum primum, ubi præsidéntibus ejus legátis, præsénteque Constantíno et trecéntis decem et octo epíscopis, sancta et cathólica fides explicáta est, Arío ejúsdem sectatóribus condemnátis; quod étiam Concílium, peténtibus Pátribus, confirmávit in sýnodo Romæ hábita, ubi íterum Aríus condemnátus est. Multa item decréta fecit Ecclésiæ Dei utília, quæ sub ejus nómine recenséntur: id est, ut a solo epíscopo chrisma conficerétur; ut présbyter chrísmate baptizáti summum liníret vérticem; ut diáconi dalmáticis in ecclésia, et palla linóstima ad lævam uteréntur; ut in líneo tantum velo sacrifícium altáris conficerétur.
+
+        Idem præscripsísse tráditur tempus ómnibus, qui ordínibus initiáti essent, exercéndi síngulos órdines in Ecclésia, ántequam quisque ad altiórem gradum ascénderet; ut láicus clérico non inférret crimen, ne cléricus apud profánum júdicem causam díceret. Sábbati et Domínici diéi nómine reténto, réliquos hebdómadæ dies feriárum nómine distínctos, ut jam ante in Ecclésia vocári cœperant, appellári vóluit, quo significarétur, quotídie cléricos, abjécta ceterárum rerum cura, uni Deo prorsus vacáre debére. Huic cælésti prudéntiæ, qua ecclésiam administrábat, insígnis vitæ sánctitas, et benígnitas in páuperes perpétuo respóndit. Quo in génere provídit, ut cléricis copiósis egéntes conjúngeret, et sacris virgínibus, quæ ad victum necessária essent, suppeditaréntur. Vixit in pontificátu annos vigínti unum, menses decem, diem unum. Sepúltus est in cœmeterio Priscíllæ, via Salária. Fecit ordinatiónes septem mense Decémbri, quibus creávit presbýteros quadragínta duos, diáconos vigínti quinque, epíscopos per divérsa loca sexagínta quinque.
+      status: verified

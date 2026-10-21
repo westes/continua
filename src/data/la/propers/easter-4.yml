@@ -1,0 +1,105 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+#
+# A real saint outranks this Sunday on every candidate year checked (2020-
+# 2060), so this was read directly from the Latin/English Tempora source
+# file plus the standard closing-formula macro
+# (Psalterium/Common/Prayers.txt's [Per Dominum]/[Per eumdem]) rather than
+# a live date query.
+collect:
+  text: |
+    Orémus.
+    Deus, qui errántibus, ut in viam possint redíre justítiæ, veritátis tuæ lumen osténdis: da cunctis, qui christiána professióne censéntur, et illa respúere, quæ huic inimíca sunt nómini; et ea, quæ sunt apta, sectári.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-04-18 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Módicum * et non vidébitis me, dicit Dóminus: íterum módicum, et vidébitis me, quia vado ad Patrem, allelúia, allelúia.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-04-18 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: 'Amen dico vobis, * quia plorábitis et flébitis vos: mundus autem gaudébit, vos vero contristabímini, sed tristítia vestra convertétur in gáudium, allelúia.'
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-05-10 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Módicum * et non vidébitis me, dicit Dóminus: íterum módicum, et vidébitis me, quia vado ad Patrem, allelúia, allelúia.'
+  status: verified
+  temporal: true
+
+# Nocturn 2-3, Fourth Sunday after Easter (temporalId easter-4). Sourced
+# from Tempora/Pasc3-0.txt (Latin) / English/Tempora/Pasc3-0.txt. See
+# advent-1.yml/easter-octave.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Augustine's
+# Sermon 147, de Tempore, on the resurrection of the body. Responsory:
+# Lectio4's own (Responsory4, "Locútus est ad me unus ex septem Angelis").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (John 16:16-22, "Et réliqua") - St. Augustine's Tractate
+# 101 on John begins within Lectio7 itself, same pattern used throughout
+# this sweep. Combined Lectio7's homily portion (incipit dropped) with
+# Lectio8-9, using Responsory7 ("Decantábat pópulus Israël") - the first
+# responsory of the group the combined reading spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Sermon 147, de Tempore
+      text: |-
+        Diébus his sanctis resurrectióni Dómini dedicátis, quantum donánte ipso póssumus, de carnis resurrectióne tractémus. Hæc enim est fides nostra: hoc donum in Dómini nostri Jesu Christi nobis carne promíssum est, et in ipso præcéssit exémplum. Vóluit enim nobis, quod promísit in fine, non solum prænuntiáre, sed étiam demonstráre. Illi quidem qui tunc fuérunt, cum illum vidérent, et cum expavéscerent, et spíritum se vidére créderent, soliditátem córporis tenuérunt. Locútus est enim non solum verbis ad aures eórum, sed étiam spécie ad óculos eórum: parúmque erat se præbére cernéndum, nisi étiam offérret pertractándum atque palpándum.
+
+        Ait enim: Quid turbáti estis, et cogitatiónes ascéndunt in cor vestrum? Putavérunt enim se spíritum vidére. Quid turbáti estis, inquit, et cogitatiónes ascéndunt in cor vestrum? Vidéte manus meas, et pedes meos: palpáte, et vidéte: quia spíritus ossa et carnem non habet, sicut me vidétis habére. Contra istam evidéntiam disputábant hómines. Quid enim áliud fácerent hómines, qui ea, quæ sunt hóminum, sápiunt, quam sic disputáre de Deo contra Deum? Ille enim Deus est, isti hómines sunt. Sed Deus novit cogitatiónes hóminum, quóniam vanæ sunt.
+
+        In hómine carnáli tota régula intelligéndi est consuetúdo cernéndi. Quod solent vidére, credunt: quod non solent, non credunt. Præter consuetúdinem facit Deus mirácula, quia Deus est. Majóra quidem mirácula sunt, tot quotídie hómines nasci, qui non erant, quam paucos resurrexísse, qui erant: et tamen ista mirácula non consideratióne comprehénsa sunt, sed assiduitáte viluérunt. Resurréxit Christus: absolúta est res. Corpus erat, caro erat: pepéndit in cruce, emísit ánimam, pósita est caro in sepúlcro. Exhíbuit illam vivam, qui vivébat in illa. Quare mirámur? quare non crédimus? Deus est, qui fecit.
+      responsory: |-
+        R. Locútus est ad me unus ex septem Angelis, dicens: Veni, osténdam tibi novam nuptam, sponsam Agni: * Et vidi Jerúsalem descendéntem de cælo, ornátam monílibus suis, allelúia, allelúia, allelúia.
+        V. Et sústulit me in spíritu in montem magnum et altum.
+        R. Et vidi Jerúsalem descendéntem de cælo, ornátam monílibus suis, allelúia, allelúia, allelúia.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joannes 16:16-22
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Módicum, et jam non vidébitis me: et íterum módicum, et vidébitis me: quia vado ad Patrem. Dixérunt ergo ex discípulis ejus ad ínvicem: Quid est hoc, quod dicit nobis: Módicum, et non vidébitis me: et íterum módicum, et vidébitis me, et quia vado ad Patrem? Dicébant ergo: Quid est hoc, quod dicit: Módicum? nescímus, quid lóquitur. Cognóvit autem Jesus, quia volébant eum interrogáre, et dixit eis: De hoc quǽritis inter vos, quia dixi: Módicum, et non vidébitis me: et íterum módicum, et vidébitis me. Amen, amen, dico vobis: quia plorábitis et flébitis vos, mundus autem gaudébit: vos autem contristabímini, sed tristítia vestra vertétur in gáudium. Múlier cum parit, tristítiam habet, quia venit hora ejus: cum autem pepérerit púerum, jam non méminit pressúræ propter gáudium, quia natus est homo in mundum. Et vos ígitur nunc quidem tristítiam habétis, íterum autem vidébo vos, et gaudébit cor vestrum: et gáudium vestrum nemo tollet a vobis.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Tractate 101 on the Gospel of John
+      text: |-
+        Módicum est hoc totum spátium, quo præsens pérvolat sǽculum. Unde dicit idem ipse Evangelísta in Epístola sua: Novíssima hora est. Ideo namque áddidit: Quia vado ad Patrem: quod ad priórem senténtiam referéndum est, ubi ait: Módicum et jam non vidébitis me: non ad posteriórem, ubi ait: Et íterum módicum, et vidébitis me. Eúndo quippe ad Patrem, factúrus erat ut eum non vidérent. Ac per hoc non ídeo dictum est, quia fúerat moritúrus, et donec resúrgeret, ab eórum aspéctibus recessúrus: sed quod esset itúrus ad Patrem, quod fecit posteáquam resurréxit, et cum eis per quadragínta dies conversátus, ascéndit in cælum.
+
+        Illis ergo ait: Módicum, et jam non vidébitis me; qui eum corporáliter tunc vidébant: quia itúrus erat ad Patrem, et eum deínceps mortálem visúri non erant, qualem, cum ista loquerétur, vidébant. Quod vero áddidit: Et íterum módicum, et vidébitis me: univérsæ promísit Ecclésiæ, sicut univérsæ promísit: Ecce ego vobíscum sum usque ad consummatiónem sǽculi. Non tardat Dóminus promíssum. Módicum et vidébimus eum: ubi jam nihil rogémus, nihil interrogémus, quia nihil desiderándum remanébit, nihil quæréndum latébit.
+
+        Hoc módicum longum nobis vidétur, quóniam adhuc ágitur; cum finítum fúerit, tunc sentiémus quam módicum fúerit. Non ergo sit gáudium nostrum quale habet mundus, de quo dictum est: Mundus autem gaudébit. Nec tamen in hujus desidérii parturitióne sine gáudio tristes simus: sed, sicut ait Apóstolus: Spe gaudéntes: In tribulatióne patiéntes: quia et ipsa partúriens, cui comparáti sumus, plus gaudet de mox futúra prole, quam tristis est de præsénti dolóre. Sed hujus sermónis iste sit finis: habent enim quæstiónem molestíssimam, quæ sequúntur: nec brevitáte coarctánda sunt, ut possint commódius, si Dóminus volúerit, explicári.
+      responsory: |-
+        R. Decantábat pópulus Israël, allelúia: et univérsa multitúdo Jacob canébat legítime: * Et David cum cantóribus cítharam percutiébat in domo Dómini, et laudes Deo canébat, allelúia, allelúia.
+        V. Sanctificáti sunt ergo sacerdótes et levítæ: et univérsus Israël deducébat arcam fœ́deris Dómini in júbilo.
+        R. Et David cum cantóribus cítharam percutiébat in domo Dómini, et laudes Deo canébat, allelúia, allelúia.
+      status: verified

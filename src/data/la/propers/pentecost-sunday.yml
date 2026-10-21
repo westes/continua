@@ -1,0 +1,672 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Deus, qui hodiérna die corda fidélium Sancti Spíritus illustratióne docuísti: da nobis in eódem Spíritu recta sápere; et de ejus semper consolatióne gaudére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte ejúsdem Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Pentecost's own Matins hymn ("Jam Christus astra ascénderat"). Live-
+# verified against Divinum Officium (Monastic Tridentinum 1617), Matins
+# live query, 2026-05-24 (Pentecost Sunday itself). Self-contained with
+# its own closing doxology baked in ("Glória Patri Dómino, Natóque, qui a
+# mórtuis Surréxit, ac Paráclito..." — the source tags this "Doxology:
+# PentT", byte-identical to the already-existing `hymn-doxology-pent.yml`
+# used elsewhere, but baked directly into the body here since this hour's
+# per-feast/octave hymn tiers never run the doxology-split/append
+# mechanism — see matins-hymn-ascension.yml's own header for the
+# identical reasoning).
+#
+# Closes the same real mechanism gap already fixed for Ascension
+# (`pentecost-sunday` is a temporal-feast id, not a saint record, so
+# `resolveOfficeWinner`'s octave-synthesis needed the same fix — see
+# hours/resolve-common.ts's `ALWAYS_OVERRIDE_TEMPORAL_IDS`). Per direct
+# instruction (2026-09-04): Ascension and Pentecost are core content, not
+# to be left half-fixed.
+matins-hymn:
+  text: |-
+    Jam Christus astra ascénderat,
+    Revérsus unde vénerat,
+    Promíssum Patris múnere,
+    Sanctum datúrus Spíritum.
+
+    Solémnis urgébat dies,
+    Quo mýstico septémplici
+    Orbis volútus sépties,
+    Signat beáta témpora.
+
+    Cum lucis hora tértia
+    Repénte mundus íntonat,
+    Orántibus Apóstolis
+    Deum venísse núntiat.
+
+    De Patris ergo lúmine
+    Decórus ignis almus est,
+    Qui fida Christi péctora
+    Calóre Verbi cómpleat.
+
+    Impléta gaudent víscera,
+    Affláta Sancto Spíritu,
+    Voces divérsas íntonant,
+    Fantur Dei magnália.
+
+    Ex omni gente cógniti,
+    Græcis, Latínis, Bárbaris,
+    Cunctísque admirántibus,
+    Linguis loquúntur ómnium.
+
+    Judǽa tunc incrédula,
+    Vesána torvo spíritu,
+    Ructáre musti crápulam,
+    Alúmnos Christi cóncrepat.
+
+    Sed signis et virtútibus
+    Occúrrit, et docet Petrus,
+    Falsa profári pérfidos,
+    Joéle teste cómprobans.
+
+    Glória Patri Dómino,
+    Natóque, qui a mórtuis
+    Surréxit, ac Paráclito,
+    In sæculórum sǽcula. Amen.
+  status: verified
+
+# Pentecost's own Lauds chapter (Acts 2:1-2) — shared with Vespers via
+# lookupPart (Vespers chapter, Lauds sibling)'s own cross-hour fallback (see
+# hours/vespers.ts), not duplicated into a separate vespers-capitulum-
+# pentecost-sunday.yml. Live-verified against Divinum Officium (Monastic
+# Tridentinum 1617), Lauds/Vespers live query, 2026-05-24 (Pentecost
+# Sunday itself).
+lauds-capitulum:
+  text: 'Cum compleréntur dies Pentecóstes, erant omnes discípuli páriter in eódem loco: et factus est repénte de cælo sonus, tamquam adveniéntis spíritus veheméntis, et replévit totam domum, ubi erant sedéntes.'
+  citation: Act 2:1-2
+  status: verified
+
+# Pentecost's own Lauds hymn ("Beáta nobis gáudia") — distinct from
+# Matins' own ("Jam Christus astra ascénderat") and Vespers' own ("Veni
+# Creátor Spíritus"), unlike Ascension where all 3 hours share one text.
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617),
+# Lauds live query, 2026-05-24 (Pentecost Sunday itself). Self-contained
+# — this hour's own resolveOfficeBundle doesn't run a hymn through the
+# doxology-split/append mechanism at all; the closing doxology here is
+# the same shared Pentecost-track text as Matins' own (see
+# matins-hymn-pentecost-sunday.yml's own header on "Doxology: PentT"),
+# baked in directly, but its own distinct English rendering ("To God the
+# Father, laud and praise...") is kept rather than reused from the
+# generic `hymn-doxology-pent.yml` translation, same as everywhere else
+# in this store that keeps each hymn's own historic translator's ending.
+lauds-hymn:
+  text: |-
+    Beáta nobis gáudia
+    Anni redúxit órbita,
+    Cum Spíritus Paráclitus
+    Effúlsit in discípulos.
+
+    Ignis vibránte lúmine
+    Linguæ figúram détulit,
+    Verbis ut essent próflui,
+    Et caritáte férvidi.
+
+    Linguis loquúntur ómnium;
+    Turbæ pavent Gentílium,
+    Musto madére députant
+    Quos Spíritus repléverat.
+
+    Patráta sunt hæc mýstice,
+    Paschæ perácto témpore,
+    Sacro diérum número,
+    Quo lege fit remíssio.
+
+    Te nunc, Deus piíssime,
+    Vultu precámur cérnuo:
+    Illápsa nobis cǽlitus
+    Largíre dona Spíritus.
+
+    Dudum sacráta péctora
+    Tua replésti grátia:
+    Dimítte nostra crímina,
+    Et da quiéta témpora.
+
+    Glória Patri Dómino,
+    Natóque, qui a mórtuis
+    Surréxit, ac Paráclito,
+    In sæculórum sǽcula. Amen.
+  status: verified
+
+# Pentecost's own Lauds responsory ("Spíritus Dómini replévit orbem
+# terrárum") — distinct from Vespers' own ("Spíritus Paráclitus", see
+# vespers-responsory-pentecost-sunday.yml). Live-verified against Divinum
+# Officium (Monastic Tridentinum 1617), Lauds live query, 2026-05-24
+# (Pentecost Sunday itself).
+lauds-responsory:
+  text: |
+    R.br. Spíritus Dómini replévit orbem terrárum, * Allelúia, allelúia.
+    R. Spíritus Dómini replévit orbem terrárum, * Allelúia, allelúia.
+    V. Et hoc quod cóntinet ómnia, sciéntiam habet vocis.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Spíritus Dómini replévit orbem terrárum, * Allelúia, allelúia.
+  status: verified
+
+# Pentecost's own Lauds versicle — distinct from Vespers' own
+# ("Loquebántur váriis linguis Apóstoli", see
+# vespers-versicle-pentecost-sunday.yml). Live-verified against Divinum
+# Officium (Monastic Tridentinum 1617), Lauds live query, 2026-05-24
+# (Pentecost Sunday itself).
+lauds-versicle:
+  text: |-
+    V. Repléti sunt omnes Spíritu Sancto, allelúia.
+    R. Et cœpérunt loqui, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayPrima, 2027-05-16); Latin and English both taken from the page.
+prime-antiphon:
+  text: Cum compleréntur * dies Pentecóstes, erant omnes páriter in eódem loco, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Latin/English "Prima Special.txt").
+# Seasonal variant of prime-chapter-responsory-per-annum.yml — same fixed
+# responsory, with just the "V." verse line swapped for the season.
+prime-chapter/responsory-pent:
+  text: |
+    R.br. Christe, Fili Dei vivi, * Miserére nobis.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+    V. Qui sedes ad déxteram Patris.
+    R. Miserére nobis.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Tempora/Pasc7-0.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: 'Judǽi quoque et Prosélyti, Cretes et Arabes: audívimus eos loquéntes nostris linguis magnália Dei.'
+  citation: Act. 2:11
+  status: verified
+  temporal: true
+
+# New file, 2026-09-15: closes the seasonal-variant gap
+# `prime-lectio-per-annum.yml`'s own header already flagged, wrongly
+# attributed to "milestone 4" (that blocker was stale -- see the dated
+# TODO.md entry this sweep came out of; calendar/temporal.ts's resolveSeason
+# has been a complete, real implementation for a while). Sourced directly
+# from web/www/horas/Latin/Psalterium/Special/Prima Special.txt's own [Pent]
+# tag and its English counterpart.
+prime-lectio/pent:
+  text: 'Judǽi quoque, et Prosélyti, Cretes, et Arabes: audívimus eos loquéntes nostris linguis magnália Dei.'
+  citation: Act. 2:11
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2027-05-16); Latin and English both taken from the page.
+terce-antiphon:
+  text: Spíritus Dómini * replévit orbem terrárum, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2027-05-16); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    Act. 2:1-2 Cum compleréntur dies Pentecóstes, erant omnes discípuli páriter in eódem loco: et factus est repénte de cælo sonus, tamquam adveniéntis spíritus veheméntis, et replévit totam domum, ubi erant sedéntes.
+    R. Deo grátias.
+    V. Spíritus Dómini replévit orbem terrárum, allelúia.
+    R. Et hoc quod cóntinet ómnia, sciéntiam habet vocis, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2027-05-16); Latin and English both taken from the page.
+sext-antiphon:
+  text: Repléti sunt omnes * Spíritu Sancto, et cœpérunt loqui, allelúia, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2027-05-16); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    Act. 2:6 Facta autem hac voce, convénit multitúdo, et mente confúsa est, quóniam audiébat unusquísque lingua sua illos loquéntes.
+    R. Deo grátias.
+    V. Spíritus Paráclitus, allelúia.
+    R. Docébit vos ómnia, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2027-05-16); Latin and English both taken from the page.
+none-antiphon:
+  text: Loquebántur * váriis linguis Apóstoli magnália Dei, allelúia, allelúia, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2027-05-16); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    Act. 2:11 Judǽi quoque et Prosélyti, Cretes et Arabes: audívimus eos loquéntes nostris linguis magnália Dei.
+    R. Deo grátias.
+    V. Repléti sunt omnes Spíritu Sancto, allelúia.
+    R. Et cœpérunt loqui, allelúia.
+  citation: ''
+  status: verified
+
+# Pentecost's own Vespers hymn ("Veni Creátor Spíritus") — the well-known
+# hymn, distinct from Matins' own ("Jam Christus astra ascénderat") and
+# Lauds' own ("Beáta nobis gáudia"). Live-verified against Divinum
+# Officium (Monastic Tridentinum 1617), Vespers live query, 2026-05-24
+# (Pentecost Sunday itself). The source's own rubric ("Prima stropha
+# hymni sequentis dicitur flexibus genibus" — the first verse is said
+# genuflecting) isn't modeled by this app's own rendering, same as other
+# performance-rubric notes elsewhere in this store.
+vespers-hymn:
+  text: |-
+    Veni Creátor Spíritus,
+    Mentes tuórum vísita,
+    Imple supérna grátia,
+    Quæ tu creásti péctora.
+
+    Qui Paráclitus díceris,
+    Donum Dei altíssimi,
+    Fons vivus, ignis, cáritas,
+    Et spiritális únctio.
+
+    Tu septifórmis múnere,
+    Dextræ Dei tu dígitus,
+    Tu rite promíssum Patris,
+    Sermóne ditans gúttura.
+
+    Accénde lumen sénsibus:
+    Infúnde amórem córdibus:
+    Infírma nostri córporis
+    Virtúte firmans pérpeti.
+
+    Hostem repéllas lóngius,
+    Pacémque dones prótinus:
+    Ductóre sic te prǽvio
+    Vitémus omne nóxium.
+
+    Per te sciámus da Patrem,
+    Noscámus atque Fílium,
+    Te utriúsque Spíritum
+    Credámus omni témpore.
+
+    Glória Patri Dómino,
+    Natóque, qui a mórtuis
+    Surréxit, ac Paráclito,
+    In sæculórum sǽcula. Amen.
+  status: verified
+
+# Pentecost's own Vespers responsory ("Spíritus Paráclitus") — distinct
+# from Lauds' own ("Spíritus Dómini replévit orbem terrárum", see
+# lauds-responsory-pentecost-sunday.yml). Live-verified against Divinum
+# Officium (Monastic Tridentinum 1617), Vespers live query, 2026-05-24
+# (Pentecost Sunday itself).
+vespers-responsory:
+  text: |
+    R.br. Spíritus Paráclitus, * Allelúia, allelúia.
+    R. Spíritus Paráclitus, * Allelúia, allelúia.
+    V. Docébit vos ómnia.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Spíritus Paráclitus, * Allelúia, allelúia.
+  status: verified
+
+# Pentecost's own Vespers versicle — distinct from Lauds' own
+# ("Repléti sunt omnes Spíritu Sancto", see
+# lauds-versicle-pentecost-sunday.yml). Live-verified against Divinum
+# Officium (Monastic Tridentinum 1617), Vespers live query, 2026-05-24
+# (Pentecost Sunday itself).
+vespers-versicle:
+  text: |-
+    V. Loquebántur váriis linguis Apóstoli, allelúia.
+    R. Magnália Dei, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-05-15); Latin and English both taken from the page. First Vespers variant.
+vespers-versicle/~-first:
+  text: |
+    V. Repléti sunt omnes Spíritu Sancto, allelúia.
+    R. Et cœpérunt loqui, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-05-16); Latin and English both taken from the page.
+benedictus-antiphon:
+  text: 'Accípite * Spíritum Sanctum: quorum remiséritis peccáta, remittúntur eis, allelúia.'
+  status: verified
+  temporal: true
+
+# Per-day proper of the Pentecost octave's day 2: web/www/horas/Latin/Tempora/Pasc7-1 (Monday in the Pentecost octave, octave day 2)'s [Ant 2] and its English counterpart.
+# Picked by hours/resolve-common.ts's octaveDayProper (`-d<N>` = octave day number, Pentecost = 1); other days use the feast's own.
+benedictus-antiphon/~-d2:
+  text: 'Sic Deus * diléxit mundum, ut Fílium suum unigénitum daret: ut omnis, qui credit in ipsum, non péreat, sed hábeat vitam ætérnam, allelúia.'
+  status: verified
+  temporal: true
+
+# Per-day proper of the Pentecost octave's day 3: web/www/horas/Latin/Tempora/Pasc7-2 (Tuesday, day 3)'s [Ant 2] and its English counterpart.
+# Picked by hours/resolve-common.ts's octaveDayProper (`-d<N>` = octave day number, Pentecost = 1); other days use the feast's own.
+benedictus-antiphon/~-d3:
+  text: 'Ego sum óstium, * dicit Dóminus: per me si quis introíerit, salvábitur, et páscua invéniet, allelúia.'
+  status: verified
+  temporal: true
+
+# Per-day proper of the Pentecost octave's day 5: web/www/horas/Latin/Tempora/Pasc7-4 (Thursday, day 5)'s [Ant 2] and its English counterpart.
+# Picked by hours/resolve-common.ts's octaveDayProper (`-d<N>` = octave day number, Pentecost = 1); other days use the feast's own.
+benedictus-antiphon/~-d5:
+  text: 'Convocátis Jesus * duódecim discípulis suis, dedit illis virtútem et potestátem super ómnia dæmónia, et ut languóres curárent: et misit illos prædicáre regnum Dei, et sanáre infírmos, allelúia.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-05-16 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: 'Hódie * compléti sunt dies Pentecóstes, allelúia: hódie Spíritus Sanctus in igne discípulis appáruit, et tríbuit eis charísmatum dona: misit eos in univérsum mundum prædicáre, et testificári: Qui credíderit et baptizátus fúerit, salvus erit, allelúia.'
+  status: verified
+  temporal: true
+
+# Per-day proper of the Pentecost octave's day 2: web/www/horas/Latin/Tempora/Pasc7-1 (Monday in the Pentecost octave, octave day 2)'s [Ant 3] and its English counterpart.
+# Picked by hours/resolve-common.ts's octaveDayProper (`-d<N>` = octave day number, Pentecost = 1); other days use the feast's own.
+magnificat-antiphon/~-d2:
+  text: Si quis díligit me, * sermónem meum servábit; et Pater meus díliget eum, et ad eum veniémus, et mansiónem apud eum faciémus, allelúia.
+  status: verified
+  temporal: true
+
+# Per-day proper of the Pentecost octave's day 3: web/www/horas/Latin/Tempora/Pasc7-2 (Tuesday, day 3)'s [Ant 3] and its English counterpart.
+# Picked by hours/resolve-common.ts's octaveDayProper (`-d<N>` = octave day number, Pentecost = 1); other days use the feast's own.
+magnificat-antiphon/~-d3:
+  text: 'Pacem * relínquo vobis, pacem meam do vobis: non quómodo mundus dat, ego do vobis, allelúia.'
+  status: verified
+  temporal: true
+
+# Per-day proper of the Pentecost octave's day 5: web/www/horas/Latin/Tempora/Pasc7-4 (Thursday, day 5)'s [Ant 3] and its English counterpart.
+# Picked by hours/resolve-common.ts's octaveDayProper (`-d<N>` = octave day number, Pentecost = 1); other days use the feast's own.
+magnificat-antiphon/~-d5:
+  text: 'Spíritus, * qui a Patre procédit, allelúia: ille me clarificábit, allelúia, allelúia.'
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-05-15); Latin and English both taken from the page. First Vespers variant.
+magnificat-antiphon/~-first:
+  text: 'Non vos relínquam * órphanos, allelúia: vado et vénio ad vos, allelúia: et gaudébit cor vestrum, allelúia.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Latin/English Doxologies.txt, the
+# Monastic "T"-suffixed variant). Seasonal doxology for "Iam lucis orto
+# sidere" and any other hymn ending "* Deo Patri sit gloria..." — see
+# hours/hymn-doxology.ts.
+hymn-doxology/pent:
+  text: |-
+    Glória Patri Dómino,
+    Natóque, qui a mórtuis
+    Surréxit, ac Paráclito,
+    In sæculórum sǽcula. Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-05-16); Latin and English both taken from the page. Antiphons only; the psalm numbers are the Monastic Sunday scheme (92/99/62, canticle, Laudate).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Cum compleréntur * dies Pentecóstes, erant omnes páriter in eódem loco, allelúia.
+    - psalms:
+        - 99
+      antiphon: Spíritus Dómini * replévit orbem terrárum, allelúia.
+    - psalms:
+        - 62
+      antiphon: Repléti sunt omnes * Spíritu Sancto, et cœpérunt loqui, allelúia, allelúia.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Fontes, et ómnia * quæ movéntur in aquis, hymnum dícite Deo, allelúia.
+  laudate:
+    antiphon: Loquebántur * váriis linguis Apóstoli magnália Dei, allelúia, allelúia, allelúia.
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-05-16); Latin and English both taken from the page. Second Vespers psalm antiphons.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Cum compleréntur * dies Pentecóstes, erant omnes páriter in eódem loco, allelúia.
+    - psalms:
+        - 110
+      antiphon: Spíritus Dómini * replévit orbem terrárum, allelúia.
+    - psalms:
+        - 111
+      antiphon: Repléti sunt omnes * Spíritu Sancto, et cœpérunt loqui, allelúia, allelúia.
+    - psalms:
+        - 112
+      antiphon: Loquebántur * váriis linguis Apóstoli magnália Dei, allelúia, allelúia, allelúia.
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-05-15); Latin and English both taken from the page. First Vespers psalm antiphons.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Cum compleréntur * dies Pentecóstes, erant omnes páriter in eódem loco, allelúia.
+    - psalms:
+        - 110
+      antiphon: Spíritus Dómini * replévit orbem terrárum, allelúia.
+    - psalms:
+        - 111
+      antiphon: Repléti sunt omnes * Spíritu Sancto, et cœpérunt loqui, allelúia, allelúia.
+    - psalms:
+        - 112
+      antiphon: Loquebántur * váriis linguis Apóstoli magnália Dei, allelúia, allelúia, allelúia.
+
+# Matins nocturn content for Pentecost Sunday itself (temporalId
+# pentecost-sunday). Sourced from Tempora/Pasc7-0.txt (Latin) /
+# English/Tempora/Pasc7-0.txt.
+#
+# Same structural note as easter-sunday.yml: Pentecost's own [Rule] is
+# also "1 nocturn" (Duplex I classis cum Octava — straight to Te Deum
+# after Lectio3), but Lectio1-3 carry real content, just compressed into
+# one nocturn rather than the usual three. See easter-sunday.yml's header
+# for the full explanation of why this is authored as `nocturn: 1` despite
+# this app's own `threeNocturns` rule still rendering 3 nocturns for every
+# Sunday.
+#
+# Lectio1 carries real homily prose after its bare Gospel incipit (John
+# 14:23-31, "Et réliqua") — St. Gregory the Great's own homily (30th on
+# the Gospels) begins within Lectio1 itself, same pattern used throughout
+# this sweep. Combined Lectio1's homily portion (incipit dropped) with
+# Lectio2-3 into one reading. Responsory: Lectio1's own (Responsory1, "Cum
+# compleréntur dies Pentecóstes") — the only nocturn-proper responsory
+# transcribed in the source (Responsory2 exists but Responsory3 does not;
+# the office runs straight to the Te Deum).
+#
+# Update (2026-09-05): the Gospel pericope itself (John 14:23-31, full
+# text) is now authored too (isGospel: true, immediately before the
+# homily), matching the newer convention set by post-pentecost-16.yml —
+# sourced from missa/Latin/Tempora/Pasc7-0.txt's own [Evangelium] and
+# missa/English/Tempora/Pasc7-0.txt, not left as a bare incipit.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Joann 14:23-31
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Si quis díligit me, sermónem meum servábit, et Pater meus díliget eum, et ad eum veniémus et mansiónem apud eum faciémus: qui non díligit me, sermónes meos non servat. Et sermónem quem audístis, non est meus: sed ejus, qui misit me, Patris. Hæc locútus sum vobis, apud vos manens. Paráclitus autem Spíritus Sanctus, quem mittet Pater in nómine meo, ille vos docébit ómnia et súggeret vobis ómnia, quæcúmque díxero vobis. Pacem relínquo vobis, pacem meam do vobis: non quómodo mundus dat, ego do vobis. Non turbétur cor vestrum neque formídet. Audístis, quia ego dixi vobis: Vado et vénio ad vos. Si diligerétis me, gauderétis útique, quia vado ad Patrem: quia Pater major me est. Et nunc dixi vobis, priúsquam fiat: ut, cum factum fúerit, credátis. Jam non multa loquar vobíscum. Venit enim princeps mundi hujus, et in me non habet quidquam. Sed ut cognóscat mundus, quia díligo Patrem, et sicut mandátum dedit mihi Pater, sic fácio.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 30 on the Gospels
+      text: |-
+        Libet, fratres caríssimi, evangélicæ verba lectiónis sub brevitáte transcúrrere, ut post diútius líceat in contemplatióne tantæ solemnitátis immorári. Hódie namque Spíritus Sanctus repentíno sónitu super discípulos venit, mentésque carnálium in sui amórem permutávit, et foris apparéntibus linguis ígneis, intus facta sunt corda flammántia; quia dum Deum in ignis visióne suscepérunt, per amórem suáviter arsérunt. Ipse namque Spíritus Sanctus amor est: unde et Joánnes dicit Deus cáritas est. Qui ergo mente íntegra Deum desíderat, profécto jam habet, quem amat. Neque enim quisquam posset Deum dilígere, si eum quem díligit, non habéret.
+
+        Sed ecce, si unusquísque vestrum requirátur an díligat Deum: tota fidúcia et secúra mente respóndet, Díligo. In ipso autem lectiónis exórdio audístis quid Véritas dicit: Si quis díligit me, sermónem meum servábit. Probátio ergo dilectiónis, exhibítio est óperis. Hinc in epístola sua idem Joánnes dicit: Qui dicit: Díligo Deum, et mandáta ejus non custódit, mendax est. Vere étenim Deum dilígimus et mandáta ejus custodímus, si nos a nostris voluptátibus coarctámus. Nam qui adhuc per illícita desidéria díffluit, profécto Deum non amat: quia ei in sua voluntáte contradícit.
+
+        Et Pater meus díliget eum, et ad eum veniémus, et mansiónem apud eum faciémus. Pensáte, fratres caríssimi, quanta sit ista dígnitas, habére in cordis hospítio advéntum Dei. Certe, si domum nostram quisquam dives aut prǽpotens amícus intráret, omni festinántia domus tota mundarétur, ne quid fortásse esset, quod óculos amíci intrántis offénderet. Tergat ergo sordes pravi óperis, qui Deo prǽparat domum mentis. Sed vidéte quid Véritas dicat: Veniémus, et mansiónem apud eum faciémus. In quorúmdam étenim corda venit, et mansiónem non facit: quia, per compunctiónem quidem, Dei respéctum percípiunt, sed tentatiónis témpore hoc ipsum quo compúncti fúerant, obliviscúntur; sicque ad perpetránda peccáta rédeunt, ac si hæc mínime planxíssent.
+      responsory: |-
+        R. Cum compleréntur dies Pentecóstes, erant omnes páriter in eódem loco, allelúia: et súbito factus est sonus de cælo, allelúia, * Tamquam spíritus veheméntis, et replévit totam domum, allelúia, allelúia.
+        V. Dum ergo essent in unum discípuli congregáti propter metum Judæórum, sonus repénte de cælo, venit super eos.
+        R. Tamquam spíritus veheméntis, et replévit totam domum, allelúia, allelúia.
+      status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2026-05-25). Matins reading for day 2 of Pentecost's
+# own octave -- a direct Scripture reading (Acts 19:1-9), resolved from
+# data/scripture/act-19.yml. The source's own English page didn't render a
+# translation for this passage; its English is the standard Douay-Rheims
+# wording (a known, recognized translation, not a draft).
+octave-readings/~-octave-day-2:
+  source: De Actibus Apostolórum
+  passages:
+    - book: act
+      chapter: 19
+      verses: 1-3
+    - book: act
+      chapter: 19
+      verses: 4-7
+    - book: act
+      chapter: 19
+      verses: 8-9
+  responsory: |
+    R. Cum compleréntur dies Pentecóstes, erant omnes páriter in eódem loco, allelúia: et súbito factus est sonus de cælo, allelúia, * Tamquam spíritus veheméntis, et replévit totam domum, allelúia, allelúia. V. Dum ergo essent in unum discípuli congregáti propter metum Judæórum, sonus repénte de cælo, venit super eos. R. Tamquam spíritus veheméntis, et replévit totam domum, allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2026-05-26). Matins reading for day 3 of Pentecost's
+# own octave -- a direct Scripture reading (Joel 2:23-28, the same prophecy
+# Pentecost's own feast draws on), resolved from data/scripture/joel-2.yml.
+# The source's own English page didn't render a translation for this passage;
+# its English is the standard Douay-Rheims wording (a known, recognized
+# translation, not a draft).
+octave-readings/~-octave-day-3:
+  source: De Joéle Prophéta
+  passages:
+    - book: joel
+      chapter: 2
+      verses: 23-24
+    - book: joel
+      chapter: 2
+      verses: 25-26
+    - book: joel
+      chapter: 2
+      verses: 27-28
+  responsory: |
+    R. Apparuérunt Apóstolis dispertítæ linguæ tamquam ignis, allelúia: * Sedítque supra síngulos eórum Spíritus Sanctus, allelúia, allelúia. V. Et cœpérunt loqui váriis linguis, prout Spíritus Sanctus dabat éloqui illis. R. Sedítque supra síngulos eórum Spíritus Sanctus, allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2026-05-27). Matins reading for day 4 of Pentecost's
+# own octave -- collapsed into one continuous reading per project convention.
+# The source's own English translation is used as-is, including gaps in its
+# own punctuation (some older "oct"/"bmv"-suffixed variant files drop question
+# marks entirely in places) -- not corrected here, since guessing where they
+# belong isn't the same class of fix as an isolated single-character typo.
+#
+# 2026-09-09: `text.la`/`text.en` had the Gospel citation baked into their
+# opening words, redundant with the `source` field above -- stripped, kept
+# the genuine liturgical incipit ("In illo témpore:"/"At that time,"). The
+# Homily's own citation has nowhere else to live (`source` only names the
+# Gospel half), so it stays inline, given its own paragraph break and
+# proper punctuation instead of running straight into the homily's own
+# opening words (part of a repo-wide sweep of octave-readings files with
+# the same pattern).
+octave-readings/~-octave-day-4:
+  source: Léctio sancti Evangélii secúndum Joánnem
+  text: |
+    In illo témpore: Dixit Jesus turbis Judæórum: Nemo potest veníre ad me, nisi Pater, qui misit me, tráxerit eum. Et réliqua.
+
+    Homilía sancti Augustíni Epíscopi. Tract. 26 in Joann., post init. Noli cogitáre te invítum trahi: tráhitur ánimus et amóre. Nec timére debémus, ne ab homínibus, qui verba perpéndunt, et a rebus máxime divínis intellegéndis longe remóti sunt, in hoc Scripturárum sanctárum evangélico verbo fórsitan reprehendámur, et dicátur nobis: Quómodo voluntáte credo, si trahor? Ego dico: Parum est voluntáte: étiam voluptáte tráheris. Quid est, trahi voluptáte? Delectáre in Dómino: et dabit tibi petitiónes cordis tui. Est quædam volúptas cordis, cui panis dulcis est ille cæléstis. Porro si poétæ dícere lícuit: Trahit sua quemque volúptas: non necéssitas, sed volúptas; non obligátio, sed delectátio: quanto fórtius nos dícere debémus, trahi hóminem ad Christum, qui delectátur veritáte, delectátur beatitúdine, delectátur justítia, delectátur sempitérna vita, quod totum Christus est? An vero habent córporis sensus voluptátes suas, et ánimus deséritur a voluptátibus suis? Si ánimus non habet voluptátes suas, unde dícitur: Fílii autem hóminum sub tégmine alárum tuárum sperábunt: inebriabúntur ab ubertáte domus tuæ, et torrénte voluptátis tuæ potábis eos. Quóniam apud te est fons vitæ: et in lúmine tuo vidébimus lumen.
+
+    Da amántem, et sentit quod dico: da desiderántem, da esuriéntem, da in ista solitúdine peregrinántem, atque sitiéntem, et fontem ætérnæ pátriæ suspirántem: da talem, et scit quid dicam. Si autem frígido loquor, nescit, quid loquor. Tales erant isti, qui ínvicem murmurábant. Pater, inquit, quem tráxerit, venit ad me. Quid est autem, Pater quem tráxerit, cum ipse Christus trahat? Quare vóluit dícere, Pater quem tráxerit? Si trahéndi sumus, ab illo trahámur, cui dicit quædam, quæ díligit: Post odórem unguentórum tuórum currémus. Sed quid intéllegi vóluit, advertámus fratres, et, quantum póssumus, capiámus. Trahit Pater ad Fílium eos, qui proptérea credunt in Fílium, quia eum cógitant Patrem habére Deum. Deus enim Pater æquálem sibi génuit Fílium; et qui cógitat, atque in fide sua sentit et rúminat, æquálem esse Patri eum, in quem credit, ipsum trahit Pater ad Fílium.
+
+    Aríus crédidit creatúram, non eum traxit Pater; quia non consíderat Patrem, qui Fílium non credit æquálem. Quid dicis, o Ari? quid dicis, hærétice? quid loquéris? Quid est Christus? Non, inquit, Deus verus, sed quem fecit Deus verus. Non te traxit Pater; non enim intellexísti Patrem, cujus Fílium negas. Aliud cógitas, non est ipse Fílius: nec a Patre tráheris, nec ad Fílium tráheris. Aliud est enim Fílius, áliud quod tu dicis. Photínus dicit: Homo solum est Christus, non est et Deus. Qui sic credit, non Pater eum traxit. Quem traxit Pater? Illum qui dicit: Tu es Christus Fílius Dei vivi. Ramum víridem osténdis ovi, et trahis illam. Nuces púero demonstrántur, et tráhitur: et quod currit, tráhitur, amándo tráhitur, sine læsióne córporis tráhitur, cordis vínculo tráhitur. Si ergo ista, quæ inter delícias et voluptátes terrénas revelántur amántibus, trahunt, quóniam verum est, Trahit sua quemque volúptas; non trahit revelátus Christus a Patre? Quid enim fórtius desíderat ánima, quam veritátem?
+  responsory: |
+    R. Disciplínam et sapiéntiam dócuit eos Dóminus, allelúia: firmávit in illis grátiam Spíritus sui, * Et intelléctu implévit corda eórum, allelúia. V. Repentíno namque sónitu Spíritus Sanctus super eos venit. R. Et intelléctu implévit corda eórum, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2026-05-28). Matins reading for day 5 of Pentecost's
+# own octave -- collapsed into one continuous reading per project convention.
+# The source's own English translation is used as-is, including gaps in its
+# own punctuation (some older "oct"/"bmv"-suffixed variant files drop question
+# marks entirely in places) -- not corrected here, since guessing where they
+# belong isn't the same class of fix as an isolated single-character typo.
+#
+# 2026-09-09: same fix as pentecost-sunday-octave-day-4.yml -- the Gospel
+# citation baked into `text.la`/`text.en`'s opening words was redundant
+# with the `source` field and stripped, keeping the genuine liturgical
+# incipit; the Homily's own citation stays inline (nowhere else to live)
+# but now has its own paragraph break and proper punctuation (part of a
+# repo-wide sweep of octave-readings files with the same pattern).
+octave-readings/~-octave-day-5:
+  source: Léctio sancti Evangélii secúndum Lucam
+  text: |
+    In illo témpore: Convocátis Jesus duódecim Apóstolis, dedit illis virtútem et potestátem super ómnia dæmónia, et ut languóres curárent. Et réliqua.
+
+    Homilía sancti Ambrósii Epíscopi. Liber 6 in cap. 9 Lucæ. Qualis débeat esse, qui evangelízat regnum Dei, præcéptis evangélicis designátur: ut sine virga, sine pera, sine calceaménto, sine pane, sine pecúnia, hoc est, subsídii sæculáris adminícula non requírens, fidéque tutus, putet sibi quo minus ea requírat, magis posse suppétere. Quæ possunt, qui volunt, ad eum deriváre tractátum, ut spiritálem tantúmmodo locus iste formáre videátur afféctum: qui velut induméntum quoddam videátur córporis exuísse, non solum potestáte rejécta contemptísque divítiis, sed étiam carnis ipsíus illécebris abdicátis. Quibus primo ómnium datur pacis atque constántiæ generále mandátum, ut pacem ferant, constántiam servent, hospitális necessitúdinis jura custódiant: aliénum a prædicatóre regni cæléstis ástruens cursitáre per domos, et inviolábilis hospítii jura mutáre.
+
+    Sed, ut hospítii grátia deferénda censétur: ita étiam, si non recipiántur, excutiéndum púlverem, et egrediéndum de civitáte mandátur. Quo non medíocris boni remunerátio docétur hospítii: ut non solum pacem tribuámus hospítibus, verum étiam, si qua eos terrénæ obúmbrant delícta levitátis, recéptis apostólicæ prædicatiónis vestígiis auferántur. Nec otióse secúndum Matthǽum, domus, quam ingrediántur Apóstoli, eligénda decérnitur: ut mutándi hospítii, necessitudinísque violándæ causa non súppetat. Non tamen éadem cáutio receptóri mandátur hospítii: ne, dum hospes elígitur, hospitálitas ipsa minuátur.
+
+    Sed hæc, ut secúndum lítteram de hospítii religióne venerábilis est forma præcépti: ita étiam de mystério senténtia cæléstis arrídet. Etenim cum domus elígitur, dignus hospes inquíritur. Videámus ígitur, ne forte Ecclésia præferénda designétur, et Christus. Quæ enim dígnior domus apostólicæ prædicatiónis ingréssu, quam sancta Ecclésia? Aut quis præferéndus magis ómnibus vidétur esse quam Christus, qui pedes suis laváre consuévit hospítibus: et quoscúmque sua recéperit domo, pollútis non patiátur habitáre vestígiis; sed maculósos licet vitæ prióris, in réliquum tamen dignétur mundáre procéssus? Hic est ígitur solus, quem nemo debet desérere, nemo mutáre. Cui bene dícitur: Dómine, ad quem íbimus? verba vitæ ætérnæ habes, et nos crédimus.
+  responsory: |
+    R. Advénit ignis divínus, non combúrens sed illúminans, non consúmens sed lucens: et invénit corda discipulórum receptácula munda: * Et tríbuit eis charísmatum dona, allelúia, allelúia. V. Invénit eos concórdes caritáte, et collustrávit eos inúndans grátia Deitátis. R. Et tríbuit eis charísmatum dona, allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2026-05-29). Matins reading for day 6 of Pentecost's
+# own octave -- collapsed into one continuous reading per project convention.
+# The source's own English translation is used as-is, including gaps in its
+# own punctuation (some older "oct"/"bmv"-suffixed variant files drop question
+# marks entirely in places) -- not corrected here, since guessing where they
+# belong isn't the same class of fix as an isolated single-character typo.
+#
+# 2026-09-09: same fix as pentecost-sunday-octave-day-4/5.yml -- the
+# Gospel citation baked into `text.la`/`text.en`'s opening words was
+# redundant with the `source` field and stripped, keeping the genuine
+# liturgical incipit; the Homily's own citation stays inline (nowhere
+# else to live) but now has its own paragraph break and proper
+# punctuation (part of a repo-wide sweep of octave-readings files with
+# the same pattern).
+octave-readings/~-octave-day-6:
+  source: Léctio sancti Evangélii secúndum Lucam
+  text: |
+    In illo témpore: Factum est in una diérum, et Jesus sedébat docens. Et erant pharisǽi sedéntes, et legis doctóres, qui vénerant ex omni castéllo Galilǽæ et Judǽæ, et Jerúsalem: et virtus Dómini erat ad sanándum eos. Et réliqua.
+
+    Homilía sancti Ambrósii Epíscopi. Liber 5 in cap. 5 Lucæ, post initium. Non otiósa hujus paralýtici, nec angústa medicína est, quando Dóminus et orásse præmíttitur; non útique propter suffrágium, sed propter exémplum. Imitándi enim spécimen dedit, non precándi ámbitum requisívit. Et conveniéntibus ex omni Galilǽa, et Judǽa, et Jerúsalem, legis doctóribus, inter ceterórum remédia debílium, paralýtici istíus medicína descríbitur. Primum ómnium, quod ante díximus, unusquísque æger peténdæ precatóres salútis debet adhibére, per quos nostræ vitæ compágo resolúta, actuúmque nostrórum clauda vestígia, verbi cæléstis remédio reforméntur.
+
+    Sint ígitur áliqui monitóres mentis, qui ánimum hóminis, quamvis exterióris córporis debilitáte torpéntem, ad superióra érigant. Quorum rursus adminículis et attóllere et humiliáre se fácilis ante Jesum locétur, Domínico vidéri dignus aspéctu. Humilitátem enim réspicit Dóminus: quia respéxit humilitátem ancíllæ suæ. Quorum fidem ut vidit, dixit: Homo, remittúntur tibi peccáta tua. Magnus Dóminus, qui aliórum mérito ignóscit áliis: et dum álios probat, áliis reláxat erráta. Cur apud te, homo, colléga non váleat, cum apud Deum servus et interveniéndi méritum, et jus hábeat impetrándi?
+
+    Disce, qui júdicas, ignóscere: disce, qui æger es, impetráre. Si grávium peccatórum diffídis véniam, ádhibe precatóres, ádhibe Ecclésiam, quæ pro te precétur, cujus contemplatióne, quod tibi Dóminus negáre posset, ignóscat. Et quamvis históriæ fidem non debeámus omíttere, ut vere paralýtici istíus corpus credámus esse sanátum: cognósce tamen interióris hóminis sanitátem, cui peccáta donántur. Cum Judǽi ásserunt peccáta a solo Deo posse concédi, Deum útique eum confiténtur; suóque judício perfídiam suam produnt, qui opus ástruunt, ut persónam negent.
+  responsory: |
+    R. Non vos me elegístis, sed ego elégi vos, et pósui vos: * Ut eátis, et fructum afferátis, et fructus vester máneat, allelúia, allelúia. V. Sicut misit me Pater, et ego mitto vos. R. Ut eátis, et fructum afferátis, et fructus vester máneat, allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2026-05-30) -- this date is also Pentecost's own Ember
+# Saturday (see calendar/temporal-categories.yml and
+# tests/calendar/transfer.test.ts's St. Felix I case), but Pentecost's own
+# octave content still governs Matins here, confirmed via the day's own
+# Invitatory. Matins reading for day 7 -- collapsed into one continuous
+# reading per project convention. The source's own English translation is used
+# as-is, including gaps in its own punctuation (some older
+# "oct"/"bmv"-suffixed variant files drop question marks entirely in places)
+# -- not corrected here, since guessing where they belong isn't the same class
+# of fix as an isolated single-character typo.
+#
+# 2026-09-09: same citation-prefix fix as pentecost-sunday-octave-day-4/
+# 5/6.yml -- stripped from both languages' opening words, kept the
+# liturgical incipit, gave the Homily's own citation its own paragraph
+# break and punctuation. `text.en`'s 3rd paragraph also had a genuine
+# content corruption: a fragment duplicated from the 2nd paragraph's own
+# end ("which after God is created in righteousness and true holiness:
+# Eph. iv. 22.") was spliced into the middle of an unrelated sentence,
+# breaking it apart ("...then He beginneth [inserted fragment] with
+# things lesser..."). Removed; the Latin has no such interruption at the
+# corresponding point.
+octave-readings/~-octave-day-7:
+  source: Léctio sancti Evangélii secúndum Lucam
+  text: |
+    In illo témpore: Surgens Jesus de synagóga, introívit in domum Simónis. Socrus autem Simónis tenebátur magnis fébribus. Et réliqua.
+
+    Homilía sancti Ambrósii Epíscopi. Liber 4 in cap. 4 Lucæ, circa finem. Vide cleméntiam Dómini Salvatóris: nec indignatióne commótus nec scélere offénsus, nec injúria violátus Judǽam déserit: quin étiam ímmemor injúriæ, memor cleméntiæ, nunc docéndo, nunc liberándo, nunc sanándo, infídæ plebis corda demúlcet. Et bene sanctus Lucas virum ab spíritu nequítiæ liberátum ante præmísit, et subdit féminæ sanitátem. Utrúmque enim sexum Dóminus curatúrus advénerat: sed prior sanári débuit, qui prior creátus est; nec prætermítti illa, quæ mobilitáte magis ánimi, quam pravitáte peccáverat.
+
+    Sábbato medicínæ Domínicæ ópera cœpta signíficat, ut inde nova creatúra cœ́perit, ubi vetus creatúra ante desívit: nec sub lege esse Dei Fílium, sed supra legem in ipso princípio designáret: nec solvi legem, sed impléri. Neque enim per legem, sed verbo factus est mundus, sicut légimus: Verbo Dómini cæli firmáti sunt. Non sólvitur ergo lex, sed implétur: ut fiat renovátio hóminis jam labéntis. Unde et Apóstolus ait: Exspoliántes vos véterem hóminem, indúite novum, qui secúndum Deum creátus est.
+
+    Et bene sábbato cœpit, ut ipsum se osténderet Creatórem, qui ópera opéribus intéxeret, et prosequerétur opus, quod ipse jam cœ́perat: ut si domum faber renováre dispónat, non a fundaméntis, sed a culmínibus íncipit sólvere vetustátem. Itaque ibi prius manum ádmovet, ubi ante desíerat: deínde a minóribus íncipit, ut ad majóra pervéniat. Liberáre a dǽmone et hómines, sed in verbo Dei possunt: resurrectiónem mórtuis imperáre, divínæ solíus est potestátis. Fortássis étiam in typo mulíeris illíus socrus Simónis et Andréæ, váriis críminum fébribus caro nostra languébat, et diversárum cupiditátum immódicis æstuábat illécebris. Nec minórem febrem amóris esse díxerim, quam calóris. Itaque illa ánimum, hæc corpus inflámmat. Febris enim nostra, avarítia est: febris nostra, libído est: febris nostra, luxúria est: febris nostra, ambítio est: febris nostra, iracúndia est.
+  responsory: |
+    R. Repléti sunt omnes Spíritu Sancto: et cœpérunt loqui, prout Spíritus Sanctus dabat éloqui illis: * Et convénit multitúdo dicéntium, allelúia. V. Loquebántur váriis linguis Apóstoli magnália Dei. R. Et convénit multitúdo dicéntium, allelúia.
+  status: verified

@@ -1,0 +1,57 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2033-03-10, a
+# year that date doesn't collide with a Sunday). Same convention as
+# data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, qui gloriósos Mártyres fortes in sua confessióne cognóvimus, pios apud te in nostra intercessióne sentiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (forty-holy-martyrs-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (forty-holy-martyrs-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, qui gloriósos Mártyres fortes in sua confessióne cognóvimus, pios apud te in nostra intercessióne sentiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, the Forty Holy Martyrs' own day (2026-03-10). The
+# Benedictus antiphon.
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Matins Nocturn 2 reading for the Forty Holy Martyrs of Sebaste (Mar
+# 10) — SanctiM/03-10.txt inherits the whole day (`@Sancti/03-10`)
+# with no Nocturn 2/3 override, so this feast's own proper content is
+# sourced from the Tridentine track exactly as for a pre-1955 saint
+# (see memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/03-10.txt, English/Sancti/03-10.txt.
+# Lectio4-6 combined into one reading, one continuous account, no
+# genuine source break. Lectio7-9 fall back to Common of Several
+# Martyrs (`Commune/C3`), not proper text, so not authored here. No
+# responsory given in the source for Lectio4-6.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Licinio imperatore, et Agricolao præside, ad Sebasten Armeniæ urbem, quadraginta militum fides in Jesum Christum, et fortitudo in cruciatibus perferendis enituit. Qui sæpius in horribilem carcerem detrusi, vinculisque constricti, cum ora ipsorum lapidibus contusa fuíssent, hiemis tempore frigidissimo nudi sub aperto aëre supra stagnum rigens pernoctare jussi sunt, ut frigore congelati necarentur. Una autem erat omnium oratio: Quadraginta in stadium ingressi sumus, quadraginta item Domine corona donemur, ne una quidem huic numero desit. Est in honore hic numerus, quem tu quadraginta dierum jejunio decorasti, per quem divina lex ingressa est in orbem terrarum. Elias quadraginta dierum jejunio Deum quærens, ejus visionem consecutus est. Et hæc quidem illorum erat oratio.
+
+        Ceteris autem custodibus somno deditis, solus vigilabat janitor, qui et illos orantes, et luce circumfusos, et quosdam e cælo descendentes Angelos tamquam a Rege missos, qui coronas triginta novem militibus distribuerent intuens ita secum loquebatur: Quadraginta hi sunt: quadragesimi corona ubi est? Quæ dum cogitaret, unus ex illo numero, cui animus ad frigus ferendum defecerat in proximum tepefactum balneum desiliens, sanctos illos summo dolore affecit. Verum Deus illorum preces irritas esse non est passus: nam rei eventum admiratus janitor, mox custodibus e somno excitatis, detractisque sibi vestibus, ac se Christianum esse clara voce professus, Martyribus se adjunxit. Cum vero præsidis satellites janitorem quoque Christianum esse cognovissent bacillis comminuta omnium eorum crura fregerunt.
+
+        In eo supplicio mortui sunt omnes, præter Melithonem natu minimum. Quem cum præsens mater ejus, fractis cruribus, adhuc viventem vidisset, sic cohortata est: Fili, paulisper sustine; ecce Christus ad januam stat adjuvans te. Cum vero reliquorum corpora plaustris imponi cerneret, ut in rogum inférrentur, ac filium suum relinqui, quod speraret impia turba puerum, si vixisset, ad idolorum cultum revocari posse; ipso in humeros sublato, sancta mater vehicula Mártyrum corporibus onusta strenue prosequebatur: in cujus amplexu Melithon spiritum Deo reddidit, ejusque corpus in eumdem illum ceterorum Mártyrum rogum pia mater injecit: ut qui fide et virtute conjunctissimi fuerant, funeris étiam societate copulati, una in cælum pervenirent. Combustis illis, eorum reliquiæ projectæ in profluentem, cum mirabiliter in unum confluxissent locum, salvæ et integræ repertæ, honorifico sepulchro conditæ sunt.
+      status: verified

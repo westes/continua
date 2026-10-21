@@ -1,0 +1,51 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — Latin
+# read from the live prayTertia query's own real-date output (2025-12-02);
+# its English side didn't render an Oratio translation (same gap as All
+# Saints and St. Damasus this pull), so the English was read directly from
+# the raw source file (web/www/horas/English/Sancti/12-02.txt) instead.
+collect:
+  text: |
+    Orémus.
+    Deus, ómnium largítor bonórum, qui in fámula tua Bibiána cum virginitátis flore martýrii palmam conjunxísti: mentes nostras ejus intercessióne tibi caritáte conjúnge; ut, amótis perículis, prǽmia consequámur ætérna.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-virgin-martyr (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags actually used for
+# a mere commemoration, confirmed against this exact category via an
+# independently live-verified precedent elsewhere in this app). st-bibiana has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper. Collect is the saint's own
+# real proper (st-bibiana-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Símile est regnum cælórum * hómini negotiatóri quærénti bonas margarítas: invénta una pretiósa, dedit ómnia sua, et comparávit eam.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Deus, ómnium largítor bonórum, qui in fámula tua Bibiána cum virginitátis flore martýrii palmam conjunxísti: mentes nostras ejus intercessióne tibi caritáte conjúnge; ut, amótis perículis, prǽmia consequámur ætérna.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Bibiana, Virgin, Martyr (Dec 2) —
+# SanctiM/12-02.txt inherits the whole day (`@Sancti/12-02`) with no
+# Nocturn 2 override, so this feast's own proper content is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/12-02.txt, English/Sancti/12-02.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no
+# genuine source break.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Bibiana virgo Romana, nobili genere nata, christiana fide nobilior fuit. Ejus enim pater Flavianus sub Juliano Apostata impiissimo tyranno expræfectus, servilibusque notis compunctus, ad aquas Taurinas deportatus, martyr occubuit. Mater Dafrosa, et filiæ primum conclusæ domi, ut inedia conficerentur; mox relegata mater extra Urbem capite plexa est. Mortuis autem piis parentibus, Bibiana cum sorore sua Demetria bonis omnibus exspoliatur; Apronianus Urbis prætor, pecuniis inhians, sorores persequitur; quas humana prorsus ope destitutas, Deo mirabiliter, qui dat escam esurientibus, enutriente, cum vivaciores vegetioresque conspexisset, vehementer est admiratus.
+
+        Suadet nihilominus Apronianus, ut venerentur deos Gentium, amissas ideo opes, imperatoris gratiam, præclarissimas nuptias consecuturæ. Si secus fecerint, minatur carceres, virgas, secures. At illæ neque blanditiis, neque minis a recta fide declinantes, paratæ potius mori, quam fœdari moribus ethnicorum, prætoris impietatem constantissime detestantur. Quare Demetria ob oculos Bibianæ repente corruens, obiit in Domino: Bibiana Rufinæ mulieri vaferrimæ seducenda traditur, quæ ab incunabulis edocta, christianas leges, et illibatum servare virginitatis florem, se ipsa fortior feminæ superavit insidias, et prætoris astus delusit.
+
+        Nihil autem proficiente Rufina, quæ, præter dolosa verba, illam quotidie verberibus affligebat, ut de sancto proposito dimoveret, spe sua frustratus prætor, accensus ira, quod in Bibiana perdidisset operam, a lictoribus eam denudari, vinctisque manibus columnæ alligari, eamque plumbatis cædi jubet, donec efflaret animam. Cujus sacrum corpus objectum canibus biduo jacuit in foro Tauri, illæsum tamen, et divinitus servatum; quod deínde Joannes presbyter sepelivit noctu juxta sepulcrum sororis et matris ad palatium Licinianum, ubi usque in præsens exstat ecclesia Deo, sanctæ Bibianæ nomine, dicata, quam Urbanus octavus instauravit, sanctarum Bibianæ, Demetriæ, et Dafrosæ corporibus in ea repertis, et sub ara maxima collocatis.
+      status: verified

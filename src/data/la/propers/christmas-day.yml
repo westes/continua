@@ -1,0 +1,514 @@
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-12-25); Latin and English both taken from the page.
+collect:
+  text: |
+    Kýrie, eléison. Christe, eléison. Kýrie, eléison.
+    Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum quotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris:
+    V. Et ne nos indúcas in tentatiónem:
+    R. Sed líbera nos a malo.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+    Orémus.
+    Concéde, quǽsumus, omnípotens Deus: ut nos Unigéniti tui nova per carnem Natívitas líberet; quos sub peccáti jugo vetústa sérvitus tenet.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against the reference engine (Monastic Tridentinum 1617,
+# ../divinum-officium-reference) -- read directly from Sancti/12-25.txt's
+# own [Octava 3] section (Latin/Sancti/12-25.txt:458-468, English/Sancti/
+# 12-25.txt:339-348), the non-Cistercian rubric. This is the "Commemoratio
+# Octavæ Nativitatis" block said on the days within the Christmas Octave
+# where Christmas itself does *not* win the day outright (the Comites
+# Christi stacking days, e.g. Dec 26-31) -- see hours/resolve-common.ts's
+# getDayCollects (kind: 'octave' branch) and TODO.md's "four benedícta
+# octave-day blocks" note. The collect restates Christmas's own [Oratio]
+# from the same file (`@:Octava 3` -> `[Oratio]`) with the "Per eúmdem"
+# doxology form, matching e.g. easter-sunday-collect.yml's own "Through
+# the same..." phrasing for the same macro. The reference engine has
+# three Octava variants (1/2/3, roughly First Vespers/Lauds/Second
+# Vespers) with different antiphon/versicle text each; this app's
+# getDayCollects renders one shared block regardless of hour (matching
+# the existing simplification already flagged on getDayCollects' own doc
+# comment), so Octava 3 -- Second Vespers' own text -- was picked as the
+# single canonical version, for consistency with the same choice made for
+# the other three Comites Christi below.
+commemoration/octave-~:
+  text: |
+    Ant. Hódie Christus natus est: hódie Salvátor appáruit: hódie in terra canunt Angeli, lætántur Archángeli: hódie exsúltant justi, dicéntes: Glória in excélsis Deo, allelúia.
+    V. Notum fecit Dóminus, allelúia.
+    R. Salutáre suum, allelúia.
+    Orémus.
+    Concéde, quǽsumus, omnípotens Deus: ut nos Unigéniti tui nova per carnem Natívitas líberet; quos sub peccáti jugo vetústa sérvitus tenet.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayMatutinum, 2026-12-25); Latin and English both taken from the page.
+matins-hymn:
+  text: |
+    Christe Redémptor ómnium,
+    Ex Patre Patris únice,
+    Solus ante princípium
+    Natus ineffabíliter.
+
+    Tu lumen, tu splendor Patris,
+    Tu spes perénnis ómnium:
+    Inténde quas fundunt preces
+    Tui per orbem fámuli.
+
+    Meménto salútis Auctor,
+    Quod nostri quondam córporis,
+    Ex illibáta Vírgine
+    Nascéndo, formam súmpseris.
+
+    Sic præsens testátur dies,
+    Currens per anni círculum,
+    Quod solus a sede Patris
+    Mundi salus advéneris.
+
+    Hunc cælum, terra, hunc mare,
+    Hunc omne quod in eis est,
+    Auctórem advéntus tui,
+    Laudans exsúltat cántico.
+
+    Nos quoque, qui sancto tuo
+    Redémpti sánguine sumus,
+    Ob diem natális tui,
+    Hymnum novum concínimus.
+
+    * Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayMatutinum, 2026-12-25); Latin and English both taken from the page.
+matins-invitatory:
+  text: 'Christus natus est nobis: * Veníte, adorémus.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-12-25); Latin and English both taken from the page.
+lauds-capitulum:
+  text: 'Heb 1:1-2 Multifáriam, multísque modis olim Deus loquens pátribus in prophétis: novíssime diébus istis locútus est nobis in Fílio, quem constítuit herédem universórum, per quem fecit et sǽcula.'
+  status: verified
+  citation: ''
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-12-25); Latin and English both taken from the page.
+lauds-hymn:
+  text: |
+    A solis ortus cárdine
+    Ad usque terræ límitem,
+    Christum canámus Príncipem,
+    Natum María Vírgine.
+
+    Beátus Auctor sǽculi
+    Servíle corpus índuit:
+    Ut carne carnem líberans,
+    Ne pérderet quos cóndidit.
+
+    Castæ Paréntis víscera
+    Cæléstis intrat grátia:
+    Venter Puéllæ bájulat
+    Secréta, quæ non nóverat.
+
+    Domus pudíci péctoris
+    Templum repénte fit Dei:
+    Intácta nésciens virum,
+    Verbo concépit Fílium.
+
+    Eníxa est puérpera,
+    Quem Gábriel prædíxerat,
+    Quem matris alvo géstiens,
+    Clausus Joánnes sénserat.
+
+    Fœno jacére pértulit:
+    Præsépe non abhórruit:
+    Parvóque lacte pastus est,
+    Per quem nec ales ésurit.
+
+    Gaudet chorus cæléstium,
+    Et Angeli canunt Deo;
+    Palámque fit pastóribus
+    Pastor, Creátor ómnium.
+
+    * Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-12-25); Latin and English both taken from the page.
+lauds-responsory:
+  text: |
+    R.br. Verbum caro factum est, * Allelúia, allelúia.
+    R. Verbum caro factum est, * Allelúia, allelúia.
+    V. Et habitávit in nobis.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Verbum caro factum est, * Allelúia, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-12-25); Latin and English both taken from the page.
+lauds-versicle:
+  text: |
+    V. Notum fecit Dóminus, allelúia.
+    R. Salutáre suum, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayPrima, 2026-12-25); Latin and English both taken from the page.
+prime-antiphon:
+  text: Quem vidístis, * pastóres? dícite, annuntiáte nobis, in terris quis appáruit? Natum vídimus, et choros Angelórum collaudántes Dóminum, allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Latin/English "Prima Special.txt").
+# Seasonal variant of prime-chapter-responsory-per-annum.yml — same fixed
+# responsory, with just the "V." verse line swapped for the season.
+prime-chapter/responsory-nat:
+  text: |
+    R.br. Christe, Fili Dei vivi, * Miserére nobis.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+    V. Qui natus es de María Vírgine.
+    R. Miserére nobis.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/12-25.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: 'Ipsi períbunt, tu autem permanébis; et omnes sicut vestiméntum veteráscent: et velut amíctum mutábis eos, et mutabúntur: tu autem idem ipse es, et anni tui non defícient.'
+  citation: Heb 1:11-12
+  status: verified
+  temporal: true
+
+# New file, 2026-09-15: closes the seasonal-variant gap
+# `prime-lectio-per-annum.yml`'s own header already flagged, wrongly
+# attributed to "milestone 4" (that blocker was stale -- see the dated
+# TODO.md entry this sweep came out of; calendar/temporal.ts's resolveSeason
+# has been a complete, real implementation for a while). Sourced directly
+# from web/www/horas/Latin/Psalterium/Special/Prima Special.txt's own [Nat]
+# tag and its English counterpart.
+prime-lectio/nat:
+  text: 'Ipsi períbunt, tu autem permanébis; et omnes sicut vestiméntum veteráscent: et velut amíctum mutábis eos, et mutabúntur: tu autem idem ipse es, et anni tui non defícient.'
+  citation: Heb 1:11-12
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2026-12-25); Latin and English both taken from the page.
+terce-antiphon:
+  text: 'Génuit puérpera * Regem, cui nomen ætérnum, et gáudia matris habens cum virginitátis honóre: nec primam símilem visa est, nec habére sequéntem, allelúia.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2026-12-25); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    Heb 1:1-2 Multifáriam, multísque modis olim Deus loquens pátribus in prophétis: novíssime diébus istis locútus est nobis in Fílio, quem constítuit herédem universórum, per quem fecit et sǽcula.
+    R. Deo grátias.
+    V. Verbum caro factum est, allelúia.
+    R. Et habitávit in nobis, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2026-12-25); Latin and English both taken from the page.
+sext-antiphon:
+  text: 'Angelus ad pastóres * ait: Annúntio vobis gáudium magnum: quia natus est vobis hódie Salvátor mundi, allelúia.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2026-12-25); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    Heb 1:10 Et: Tu in princípio, Dómine, terram fundásti: et ópera mánuum tuárum sunt cæli.
+    R. Deo grátias.
+    V. Notum fecit Dóminus, allelúia.
+    R. Salutáre suum, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2026-12-25); Latin and English both taken from the page.
+none-antiphon:
+  text: 'Párvulus fílius * hódie natus est nobis: et vocábitur Deus, Fortis, allelúia, allelúia.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2026-12-25); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    Heb 1:11-12 Ipsi períbunt, tu autem permanébis; et omnes sicut vestiméntum veteráscent: et velut amíctum mutábis eos, et mutabúntur: tu autem idem ipse es, et anni tui non defícient.
+    R. Deo grátias.
+    V. Vidérunt omnes fines terræ, allelúia.
+    R. Salutáre Dei nostri, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-12-24); Latin and English both taken from the page. First Vespers variant.
+vespers-capitulum/~-first:
+  text: |
+    Titus 3:4-5 Appáruit benígnitas, et humánitas Salvatóris nostri Dei: non ex opéribus justítiæ, quæ fécimus nos, sed secúndum suam misericórdiam salvos nos fecit.
+  status: verified
+  citation: ''
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-12-25); Latin and English both taken from the page.
+vespers-hymn:
+  text: |
+    Christe Redémptor ómnium,
+    Ex Patre Patris únice,
+    Solus ante princípium
+    Natus ineffabíliter.
+
+    Tu lumen, tu splendor Patris,
+    Tu spes perénnis ómnium:
+    Inténde quas fundunt preces
+    Tui per orbem fámuli.
+
+    Meménto salútis Auctor,
+    Quod nostri quondam córporis,
+    Ex illibáta Vírgine
+    Nascéndo, formam súmpseris.
+
+    Sic præsens testátur dies,
+    Currens per anni círculum,
+    Quod solus a sede Patris
+    Mundi salus advéneris.
+
+    Hunc cælum, terra, hunc mare,
+    Hunc omne quod in eis est,
+    Auctórem advéntus tui,
+    Laudans exsúltat cántico.
+
+    Nos quoque, qui sancto tuo
+    Redémpti sánguine sumus,
+    Ob diem natális tui,
+    Hymnum novum concínimus.
+
+    * Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-12-25); Latin and English both taken from the page.
+vespers-responsory:
+  text: |
+    R.br. Verbum caro factum est, * Allelúia, allelúia.
+    R. Verbum caro factum est, * Allelúia, allelúia.
+    V. Et habitávit in nobis.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Verbum caro factum est, * Allelúia, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-12-24); Latin and English both taken from the page. First Vespers variant.
+vespers-responsory/~-first:
+  text: |
+    R.br. Hódie sciétis * Quia véniet Dóminus.
+    R. Hódie sciétis * Quia véniet Dóminus.
+    V. Et mane vidébitis glóriam ejus.
+    R. Hódie sciétis * Quia véniet Dóminus.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Hódie sciétis * Quia véniet Dóminus.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-12-25); Latin and English both taken from the page.
+vespers-versicle:
+  text: |
+    V. Notum fecit Dóminus, allelúia.
+    R. Salutáre suum, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-12-24); Latin and English both taken from the page. First Vespers variant.
+vespers-versicle/~-first:
+  text: |
+    V. Crástina die delébitur iníquitas terræ.
+    R. Et regnábit super nos Salvátor mundi.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-12-25); Latin and English both taken from the page.
+benedictus-antiphon:
+  text: Glória in excélsis Deo, * et in terra pax homínibus bonæ voluntátis, allelúia, allelúia.
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-12-25); Latin and English both taken from the page.
+magnificat-antiphon:
+  text: 'Hódie * Christus natus est: hódie Salvátor appáruit: hódie in terra canunt Angeli, lætántur Archángeli: hódie exsúltant justi, dicéntes: Glória in excélsis Deo, allelúia.'
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-12-24); Latin and English both taken from the page. First Vespers variant.
+magnificat-antiphon/~-first:
+  text: Cum ortus fúerit * sol de cælo, vidébitis Regem regum procedéntem a Patre, tamquam sponsum de thálamo suo.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Latin/English Doxologies.txt, the
+# Monastic "T"-suffixed variant). Seasonal doxology for "Iam lucis orto
+# sidere" and any other hymn ending "* Deo Patri sit gloria..." — see
+# hours/hymn-doxology.ts.
+hymn-doxology/nat:
+  text: |-
+    Glória tibi, Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-12-25); Latin and English both taken from the page. Antiphons only; the psalm numbers are the Monastic Sunday scheme (92/99/62, canticle, Laudate).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Quem vidístis, * pastóres? dícite, annuntiáte nobis, in terris quis appáruit? Natum vídimus, et choros Angelórum collaudántes Dóminum, allelúia, allelúia.
+    - psalms:
+        - 99
+      antiphon: 'Génuit puérpera * Regem, cui nomen ætérnum, et gáudia matris habens cum virginitátis honóre: nec primam símilem visa est, nec habére sequéntem, allelúia.'
+    - psalms:
+        - 62
+      antiphon: 'Angelus ad pastóres * ait: Annúntio vobis gáudium magnum: quia natus est vobis hódie Salvátor mundi, allelúia.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Facta est cum Angelo * multitúdo cæléstis exércitus laudántium Deum, et dicéntium: Glória in excélsis Deo, et in terra pax homínibus bonæ voluntátis, allelúia.'
+  laudate:
+    antiphon: 'Párvulus fílius * hódie natus est nobis: et vocábitur Deus, Fortis, allelúia, allelúia.'
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-12-25); Latin and English both taken from the page. Second Vespers psalm antiphons.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Tecum princípium * in die virtútis tuæ, in splendóribus sanctórum, ex útero ante lucíferum génui te.
+    - psalms:
+        - 110
+      antiphon: 'Redemptiónem * misit Dóminus pópulo suo: mandávit in ætérnum testaméntum suum.'
+    - psalms:
+        - 111
+      antiphon: 'Exórtum est * in ténebris lumen rectis corde: miséricors, et miserátor, et justus Dóminus.'
+    - psalms:
+        - 129
+      antiphon: Apud Dóminum * misericórdia, et copiósa apud eum redémptio.
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-12-24); Latin and English both taken from the page. First Vespers psalm antiphons.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Rex pacíficus * magnificátus est, cujus vultum desíderat univérsa terra.
+    - psalms:
+        - 110
+      antiphon: Magnificátus est * Rex pacíficus super omnes reges univérsæ terræ.
+    - psalms:
+        - 111
+      antiphon: Compléti sunt * dies Maríæ, ut páreret Fílium suum primogénitum.
+    - psalms:
+        - 112
+      antiphon: 'Leváte cápita vestra: * ecce appropínquat redémptio vestra.'
+
+# Matins Nocturn 2/3 readings for christmas-day, generated from the engine render (Monastic Tridentinum 1617, 2026-12-25); Latin and English both from the page.
+# Nocturn 1's scripture slot is the user's own reading plan (see DESIGN.md), so the Isaiah lessons are not authored here. Contiguous lessons of the source are folded into one reading, with the responsory of the last lesson of the group (the same convention the Rosary and Circumcision files follow).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: From the Sermons of Pope St. Leo (the Great), 1st for Christmas
+      text: |
+        Salvátor noster, dilectíssimi, hódie natus est: gaudeámus. Neque enim fas est locum esse tristítiæ, ubi natális est vitæ: quæ, consúmpto mortalitátis timóre, nobis íngerit de promíssa æternitáte lætítiam. Nemo ab hujus alacritátis participatióne secérnitur. Una cunctis lætítiæ commúnis est rátio: quia Dóminus noster, peccáti mortísque destrúctor, sicut nullum a reátu líberum réperit, ita liberándis ómnibus venit.
+
+        Exsúltet sanctus, quia appropínquat ad palmam: gáudeat peccátor, quia invitátur ad véniam: animétur gentílis, quia vocátur ad vitam. Dei namque Fílius secúndum plenitúdinem témporis, quam divíni consílii inscrutábilis altitúdo dispósuit, reconciliándam auctóri suo natúram géneris assúmpsit humáni, ut invéntor mortis diábolus, per ipsam, quam vícerat, vincerétur.
+
+        In quo conflíctu pro nobis ínito, magno et mirábili æquitátis jure certátum est, dum omnípotens Dóminus cum sævíssimo hoste non in sua majestáte, sed in nostra congréditur humilitáte: obíciens ei eándem formam, eandémque natúram, mortalitátis quidem nostræ partícipem, sed peccáti totíus expértem. Aliénum quippe ab hac nativitáte est, quod de ómnibus légitur: Nemo mundus a sorde, nec infans, cujus est uníus diéi vita super terram. Nihil ergo in istam singulárem nativitátem de carnis concupiscéntia transívit, nihil de peccáti lege manávit. Virgo régia Davídicæ stirpis elígitur, quæ sacro gravidánda fœtu, divínam humanámque prolem prius concíperet mente, quam córpore. Et ne supérni ignára consílii ad inusitátos pavéret affátus, quod in ea operándum erat a Spíritu Sancto, collóquio discit angélico: nec damnum credit pudóris, Dei Génitrix mox futúra.
+
+        Agámus ergo, dilectíssimi, grátias Deo Patri, per Fílium ejus in Spíritu Sancto: qui propter multam caritátem suam, qua diléxit nos, misértus est nostri: et cum essémus mórtui peccátis, convivificávit nos Christo, ut essémus in ipso nova creatúra, novúmque figméntum. Deponámus ergo véterem hóminem cum áctibus suis: et adépti participatiónem generatiónis Christi, carnis renuntiémus opéribus. Agnósce, o Christiáne, dignitátem tuam: et divínæ consors factus natúræ, noli in véterem vilitátem degéneri conversatióne redíre. Meménto, cujus cápitis et cujus córporis sis membrum. Reminíscere, quia érutus de potestáte tenebrárum, translátus es in Dei lumen et regnum.
+      responsory: |-
+        R. Angelus ad pastóres ait: Annúntio vobis gáudium magnum: quod erit omni pópulo: † quia natus est vobis Salvátor, * Qui est Christus Dóminus, in civitáte David.
+        V. Inveniétis infántem pannis involútum et pósitum in præsépio.
+        R. Qui est Christus Dóminus, in civitáte David.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 1:1-6
+      text: Liber generatiónis Jesu Christi, fílii David, fílii Abraham. Abraham génuit Isaac, Isaac autem génuit Jacob. Et réliqua.
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Homily by St. Jerome, Priest at Bethlehem
+      text: |
+        In Isaía légimus: Generatiónem ejus quis enarrábit? Non ergo putémus Evangelístam Prophétæ esse contrárium, ut quod ille impossíbile dixit effátu, hic narráre incípiat: quia ibi de generatióne Divinitátis, hic de incarnatióne est dictum. A carnálibus autem cœpit, ut per hóminem, Deum díscere incipiámus. Fílii David, fílii Abraham. Ordo præpósterus, sed necessário commutátus. Si enim primum posuísset Abraham et póstea David, rursus ei repeténdus fúerat Abraham, ut generatiónis séries texerétur.
+
+        Léctio sancti Evangélii secúndum Lucam Luc 2:1-14 In illo témpore: Exiit edíctum a Cǽsare Augústo, ut describerétur univérsus orbis. Et réliqua. Homilía sancti Gregórii Papæ Homilia 8 in Evangelia Quia, largiénte Dómino, Missárum solémnia ter hódie celebratúri sumus, loqui diu de evangélica lectióne non póssumus: sed nos áliquid vel bréviter dícere, Redemptóris nostri Natívitas ipsa compéllit. Quid est enim, quod nascitúro Dómino mundus descríbitur, nisi hoc, quod apérte monstrátur, quia ille apparébat in carne, qui eléctos suos adscríberet in æternitáte? Quo contra de réprobis per prophétam dícitur: Deleántur de libro vivéntium, et cum justis non scribántur. Qui bene étiam in Béthlehem náscitur: Béthlehem quippe domus panis interpretátur. Ipse namque est, qui ait: Ego sum panis vivus, qui de cælo descéndi. Locus ergo, in quo Dóminus náscitur, domus panis ántea vocátus est; quia futúrum profécto erat, ut ille ibi per matériam carnis apparéret, qui electórum mentes intérna satietáte refíceret. Qui non in paréntum domo, sed in via náscitur: ut profécto osténderet, quia per humanitátem suam, quam assúmpserat, quasi in aliéno nascebátur.
+      responsory: |-
+        R. Beáta víscera Maríæ Vírginis, quæ portavérunt ætérni Patris Fílium: et beáta úbera, quæ lactavérunt Christum Dóminum: * Qui hódie pro salúte mundi de Vírgine nasci dignátus est.
+        V. Dies sanctificátus illúxit nobis: veníte, gentes, et adoráte Dóminum.
+        R. Qui hódie pro salúte mundi de Vírgine nasci dignátus est.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 2:15-20
+      text: 'In illo témpore: Pastóres loquebántur ad ínvicem: Transeámus usque Béthlehem, et videámus hoc verbum, quod factum est, quod Dóminus osténdit nobis. Et réliqua.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Homily by St. Ambrose, Bishop (of Milan), Book II on Luke II
+      text: |
+        Vidéte Ecclésiæ surgéntis exórdium: Christus náscitur, et pastóres vigiláre cœpérunt; qui géntium greges, pécudum modo ante vivéntes, in caulam Dómini congregárent, ne quos spiritálium bestiárum per offúsas nóctium ténebras pateréntur incúrsus. Et bene pastóres vígilant, quos bonus pastor infórmat. Grex ígitur pópulus, nox sǽculum, pastóres sunt sacerdótes. Aut fortásse étiam ille sit pastor, cui dícitur: Esto vígilans, et confírma. Quia non solum epíscopos ad tuéndum gregem Dóminus ordinávit, sed étiam Angelos destinávit.
+      responsory: |-
+        R. In princípio erat Verbum, et Verbum erat apud Deum, † et Deus erat Verbum. * Hoc erat in princípio apud Deum.
+        V. Omnia per ipsum facta sunt, et sine ipso factum est nihil.
+        R. Hoc erat in princípio apud Deum.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joannes 1:1-14
+      text: In princípio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum. Et réliqua.
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Homily by St. Augustine, Bishop (of Hippo), 1st Tract on John
+      text: |
+        Ne vile áliquid putáres quale consuevísti cogitáre, cum verba humána soléres audíre, audi quid cógites: Deus erat Verbum. Exeat nunc néscio quis infidélis Ariánus, et dicat quia Verbum Dei factum est. Quómodo potest fíeri, ut Verbum Dei factum sit, quando Deus per Verbum fecit ómnia? Si et Verbum Dei ipsum factum est: per quod áliud verbum factum est? Si hoc dicis, quia hoc est verbum Verbi, per quod factum est illud; ipsum dico ego únicum Fílium Dei. Si autem non dicis verbum Verbi, concéde non factum, per quod facta sunt ómnia. Non enim per seípsum fíeri pótuit, per quod facta sunt ómnia. Crede ergo Evangelístæ.
+      responsory: |-
+        R. Verbum caro factum est, et habitávit in nobis: * Et vídimus glóriam ejus, glóriam quasi Unigéniti a Patre, plenum grátiæ et veritátis.
+        V. Omnia per ipsum facta sunt, et sine ipso factum est nihil.
+        R. Et vídimus glóriam ejus, glóriam quasi Unigéniti a Patre, plenum grátiæ et veritátis.
+      status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-12-30). Matins reading for day 6 of Christmas's
+# own octave -- the one day in this app's own modeled range (Dec 26-31) with
+# no other saint winning outright, confirmed via its own distinctive Christmas
+# Invitatory ("Christus natus est nobis"). Collapsed into one continuous
+# reading per project convention. St. Stephen, St. John, and the Holy
+# Innocents' own octaves (also active here, stacking, see calendar/octaves.ts)
+# have no separate Matins reading content of their own anywhere in this Dec
+# 26-31 range -- every other day is dominated either by another named saint's
+# own feast or, on this one day, by Christmas's own content directly; their
+# octaves work as commemorations only in this stretch, same as several octaves
+# checked this pull (Immaculate Conception, most of Ss.
+# Stephen/John/Innocents' own continuation days). The source's own English
+# translation is used as-is, including gaps in its own punctuation (some older
+# "oct"/"bmv"-suffixed variant files drop question marks entirely in places)
+# -- not corrected here, since guessing where they belong isn't the same class
+# of fix as an isolated single-character typo.
+#
+# 2026-09-09: `text.la`/`text.en` had the Gospel citation baked into their
+# opening words, redundant with the `source` field above -- stripped, kept
+# the genuine liturgical incipit ("In illo témpore:"/"At that time,").
+# The Homily's own citation ("Homilía sancti Ambrósii...") has nowhere
+# else to live (`source` only names the Gospel half, and this file's
+# format has no separate homily/citation field the way nocturn-readings
+# does), so it stays inline, given its own paragraph break and a period
+# before "Vides"/"We see" instead of running straight into the homily's
+# own opening words.
+octave-readings/~-octave-day-6:
+  source: Léctio sancti Evangélii secúndum Lucam
+  text: |
+    In illo témpore: Erat Joseph, et María mater Jesu, mirántes super his, quæ dicebántur de illo. Et réliqua.
+
+    Homilía sancti Ambrósii Epíscopi. Lib. 2 in cap. 2 Lucæ, prope finem. Vides úberem in omnes grátiam, Dómini generatióne diffúsam, et prophetíam incrédulis negátam esse, non justis. Ecce et Símeon prophétat, in ruínam et resurrectiónem plurimórum venísse Dóminum Jesum Christum, ut justórum, iniquorúmque mérita discérnat; et pro nostrórum qualitáte factórum, judex verus et justus aut supplícia decérnat, aut prǽmia.
+
+    Et tuam ipsíus ánimam pertransíbit gládius. Nec littera, nec historia docet, ex hac vita Mariam corporalis necis passióne migrasse. Non enim anima, sed corpus materiali gládio transverberátur. Et ideo prudéntiam Maríæ haud ignaram mysterii cæléstis osténdit. Vivum enim verbum Dei, et válidum, et acutius omni gládio acutíssimo, pénetrans usque ad divisiónem ánimæ et spíritus, artuum quoque et medullárum, cogitatiónes cordis et secreta scrutátur animórum, quia nuda et apérta sunt ómnia Dei Fílio, quem consciéntiæ secreta non fallunt.
+
+    Prophetávit ítaque Simeon, prophetáverat virgo, prophetáverat copuláta conjugio; prophétare debuit étiam vidua, ne qua aut proféssio deésset, aut sexus. Et ideo Anna et stipendiis viduitátis, et móribus talis inducitur, ut digna plane fuísse credátur, quæ Redemptórem ómnium venisse nuntiáret. Cujus mérita cum álibi descripsérimus, cum víduas hortarémur, hoc loco, quóniam ad ália properámus, non putámus iteránda.
+  responsory: |
+    R. In princípio erat Verbum, et Verbum erat apud Deum, † et Deus erat Verbum. * Hoc erat in princípio apud Deum. V. Omnia per ipsum facta sunt, et sine ipso factum est nihil. R. Hoc erat in princípio apud Deum.
+  status: verified

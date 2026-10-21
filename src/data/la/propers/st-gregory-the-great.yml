@@ -1,0 +1,363 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2033-03-12, a
+# year that date doesn't collide with a Sunday). Same convention as
+# data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui ánimæ fámuli tui Gregórii ætérnæ beatitúdinis prǽmia contulísti: concéde propítius; ut, qui peccatórum nostrórum póndere prémimur, ejus apud te précibus sublevémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-gregory-the-great-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-gregory-the-great-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Gregórius, respíciens Anglórum júvenes, ait: Angélicam habent fáciem, et tales Angelórum in cælis decet esse consórtes.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui ánimæ fámuli tui Gregórii ætérnæ beatitúdinis prǽmia contulísti: concéde propítius; ut, qui peccatórum nostrórum póndere prémimur, ejus apud te précibus sublevémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2033-03-12 (clean year, per st-gregory-the-great.yml's own
+# comment). Own real proper chapter (a common "Ecce sacerdos magnus"
+# formula also used for other Pope/Bishop saints, but distinct wording
+# from Common-of-a-Confessor-Bishop's own Sir 44:16-17) and own hymns at
+# both hours; responsory and versicle turn out byte-identical to Common-
+# of-a-Confessor-Bishop's own (see lauds-responsory-st-gregory-the-
+# great.yml). The reference engine gives no English rendering for this
+# exact chapter wording (unlike the Sir 44:16-17 one) -- own literal
+# translation, marked draft.
+lauds-capitulum:
+  text: Ecce sacérdos magnus, qui in vita sua suffúlsit domum, et in diébus suis corroborávit templum.
+  citation: Eccli 50:1
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2033-03-12 -- "Mella cor obdulcántia," own proper hymn, no
+# English rendering exists in the reference engine at all (checked with
+# lang2=English explicitly) -- own original translation, marked draft.
+# See lauds-capitulum-st-gregory-the-great.yml's header.
+lauds-hymn:
+  text: |-
+    Mella cor obdulcántia
+    Tua distíllant lábia:
+    Fragrántum vim arómatum
+    Tuum vincit elóquium.
+
+    Scriptúræ sacræ mýstica
+    Mire solvis ænígmata:
+    Theórica mystéria
+    Te docet ipsa Véritas.
+
+    Tu nactus apostólicam
+    Vicem simul et glóriam:
+    Nos solve culpæ néxibus,
+    Redde polórum sédibus.
+
+    O Póntifex egrégie,
+    Lux et decus Ecclésiæ,
+    Non sinas in perículis,
+    Quos tot mandátis ínstruis.
+
+    Sit Patri laus ingénito,
+    Sit decus Unigénito:
+    Sit utriúsque párili
+    Majéstas summa Flámini. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2033-03-12 -- byte-identical to Common-of-a-Confessor-
+# Bishop's own Lauds responsory, reused verbatim rather than
+# re-transcribed. See lauds-capitulum-st-gregory-the-great.yml's header.
+lauds-responsory:
+  text: |
+    R.br. Amávit eum Dóminus, * Et ornávit eum.
+    R. Amávit eum Dóminus, * Et ornávit eum.
+    V. Stolam glóriæ índuit eum.
+    R. Et ornávit eum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Amávit eum Dóminus, * Et ornávit eum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2033-03-12 -- byte-identical to Common-of-a-Confessor-
+# Bishop's own versicle. Same versicle as Vespers -- see vespers-
+# versicle-st-gregory-the-great.yml.
+lauds-versicle:
+  text: |
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, St. Gregory the Great's own day (2033-03-12) -- own proper
+# text, not shared with common-of-a-confessor-bishop.yml (unlike most
+# other Doctor-of-the-Church saints on this calendar, whose own [Rule]
+# also says "vide C4a" but whose actual live-rendered P/T/S/N is
+# byte-identical to common-of-a-confessor-bishop's -- see TODO.md's
+# "minor hour content gaps" section). Alludes to his own election as
+# Pope. English translated (the source's own English page didn't render
+# one, same gap as his existing Benedictus-antiphon file), so `draft`.
+prime-antiphon:
+  text: Beátus Gregórius * in cáthedra Petri sublimátus, Vigilántis nomen factis implévit.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, St. Gregory the Great's own day (2033-03-12) -- see
+# prime-antiphon-st-gregory-the-great.yml's header for the full
+# provenance note. Alludes to his "Liber Regulæ Pastoralis." English
+# translated (no source rendering), `draft`.
+terce-antiphon:
+  text: Pastor exímius * pastorális vitæ spécimen trádidit et régulam.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, St. Gregory the Great's own day (2033-03-12) -- see
+# prime-antiphon-st-gregory-the-great.yml's header for the full
+# provenance note. The source's own English page rendered the closing
+# versicles but not the reading itself (silently duplicated the Latin);
+# only the reading is translated here, so `draft`.
+terce-capitulum:
+  text: |
+    Ecce sacérdos magnus, qui in vita sua suffúlsit domum, et in diébus suis corroborávit templum.
+    R. Deo grátias.
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+  citation: Eccl 50:1
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, St. Gregory the Great's own day (2033-03-12) -- see
+# prime-antiphon-st-gregory-the-great.yml's header for the full
+# provenance note. Alludes to the legend of the Holy Spirit inspiring
+# his writings as a dove (the traditional iconography of Gregory
+# dictating with a dove at his ear). English translated (no source
+# rendering), `draft`.
+sext-antiphon:
+  text: Dum páginæ sacræ * mystéria pánderet, colúmba nive candídior appáruit.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, St. Gregory the Great's own day (2033-03-12) -- see
+# prime-antiphon-st-gregory-the-great.yml's header for the full
+# provenance note. The source's own English page rendered the closing
+# versicles but not the reading itself (silently duplicated the Latin);
+# only the reading is translated here, so `draft`.
+sext-capitulum:
+  text: |
+    Stare fecit cantóres contra altáre, et in sono eórum dulces fecit modos. Et dedit in celebratiónibus decus, et ornávit témpora usque ad consummatiónem vitæ.
+    R. Deo grátias.
+    V. Elégit eum Dóminus sacerdótem sibi.
+    R. Ad sacrificándum ei hóstiam laudis.
+  citation: Eccl 47:11-12
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, St. Gregory the Great's own day (2033-03-12) -- see
+# prime-antiphon-st-gregory-the-great.yml's header for the full
+# provenance note. English translated (no source rendering), `draft`.
+none-antiphon:
+  text: Gregórius, * monachórum spéculum, pater Urbis, orbis delíciæ.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, St. Gregory the Great's own day (2033-03-12) -- see
+# prime-antiphon-st-gregory-the-great.yml's header for the full
+# provenance note. The source's own English page rendered the closing
+# versicles but not the reading itself (silently duplicated the Latin);
+# only the reading is translated here, so `draft`.
+none-capitulum:
+  text: |
+    Curávit gentem suam, et liberávit eam a perditióne. Qui prævalúit amplificáre civitátem, qui adéptus est glóriam in conversatióne gentis.
+    R. Deo grátias.
+    V. Tu es sacérdos in ætérnum.
+    R. Secúndum órdinem Melchísedech.
+  citation: Eccl 50:4-5
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2033-03-12 -- "Anglórum jam Apóstolus," own proper hymn
+# recounting Gregory sending Augustine of Canterbury to evangelize
+# England and the "non Angli sed Angeli" almsgiving legend; no English
+# rendering exists in the reference engine at all -- own original
+# translation, marked draft. See lauds-capitulum-st-gregory-the-
+# great.yml's header.
+vespers-hymn:
+  text: |-
+    Anglórum jam Apóstolus,
+    Nunc Angelórum sócius,
+    Ut tunc, Gregóri, Géntibus,
+    Succúrre jam credéntibus.
+
+    Tu largas opum cópias,
+    Omnémque mundi glóriam
+    Spernis, ut inops ínopem
+    Jesum sequáris príncipem.
+
+    Vidétur egens náufragus,
+    Dum stipem petit Ángelus:
+    Tu munus jam post géminum
+    Præbes et vas argénteum.
+
+    Ex hoc te Christus témpore
+    Suæ præfert Ecclésiæ:
+    Sic Petri gradum pércipis,
+    Cujus et normam séqueris.
+
+    O Póntifex egrégie,
+    Lux et decus Ecclésiæ,
+    Non sinas in perículis,
+    Quos tot mandátis ínstruis.
+
+    Sit Patri laus ingénito,
+    Sit decus Unigénito,
+    Sit utriúsque párili
+    Majéstas summa Flámini. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2033-03-12 -- byte-identical to Common-of-a-Confessor-
+# Bishop's own Vespers responsory. See lauds-capitulum-st-gregory-the-
+# great.yml's header.
+vespers-responsory:
+  text: |
+    R.br. Elégit eum Dóminus * Sacerdótem sibi.
+    R. Elégit eum Dóminus * Sacerdótem sibi.
+    V. Ad sacrificándum ei hóstiam laudis.
+    R. Sacerdótem sibi.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Elégit eum Dóminus * Sacerdótem sibi.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2033-03-12 -- same versicle as Lauds (see lauds-versicle-
+# st-gregory-the-great.yml).
+vespers-versicle:
+  text: |
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 03-12
+# st-gregory-the-great (saint file = second). First Vespers variant; the default (second Vespers) file is the
+# same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Gregory the Great's own day (2026-03-12) -- the
+# Benedictus antiphon. The source's own English page didn't render a
+# translation (silently duplicated the Latin); translated here in the
+# same register as the rest of this project's antiphons, so marked
+# `draft` rather than `verified`. Alludes to the well-known "non Angli
+# sed Angeli" episode (Bede, Historia Ecclesiastica II.1).
+benedictus-antiphon:
+  text: 'Gregórius, respíciens Anglórum júvenes, ait: Angélicam habent fáciem, et tales Angelórum in cælis decet esse consórtes.'
+  status: verified
+
+# Sourced from web/www/horas/Latin/SanctiM/03-12.txt's own [Ant Laudes]
+# block (5 antiphons run together, one per line, older un-numbered format
+# -- same as st-benedict.yml's own file). No English rendering exists in
+# the reference engine's data for these at all; translated here directly.
+# Below duplex-majus (semiduplex), so hours/lauds.ts's
+# mergeFerialNumbersWithProperAntiphons only takes this file's antiphon
+# text, not its psalm numbers -- the numbers below are placeholders
+# (the standard 92/99/62 scheme most Confessor-shaped feasts use), not
+# independently confirmed for this feast, since they have no functional
+# effect at this rank.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Beátus Gregórius * in cáthedra Petri sublimátus, Vigilántis nomen factis implévit.
+    - psalms:
+        - 99
+      antiphon: Pastor exímius * pastorális vitæ spécimen trádidit et régulam.
+    - psalms:
+        - 62
+      antiphon: Dum páginæ sacræ * mystéria pánderet, colúmba nive candídior appáruit.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Servi Dómini * benedícite Dóminum: servus vester Gregórius cælos ascéndit.'
+  laudate:
+    antiphon: Gregórius, * monachórum spéculum, pater Urbis, orbis delíciæ.
+
+# Sourced from web/www/horas/Latin/Sancti/03-12.txt's own [Ant Vespera]
+# ("@:Ant Laudes" -- Vespers reuses the Lauds antiphons verbatim), same
+# text as lauds-psalmody-overrides/st-gregory-the-great.yml, whose
+# already-translated English (no source English exists for either) is
+# reused directly. Below duplex-majus, so hours/vespers.ts's
+# mergeFerialNumbersWithProperAntiphons only takes this file's antiphon
+# text, not its psalm numbers.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Beátus Gregórius * in cáthedra Petri sublimátus, Vigilántis nomen factis implévit.
+    - psalms:
+        - 110
+      antiphon: Pastor exímius * pastorális vitæ spécimen trádidit et régulam.
+    - psalms:
+        - 111
+      antiphon: Dum páginæ sacræ * mystéria pánderet, colúmba nive candídior appáruit.
+    - psalms:
+        - 112
+      antiphon: Gregórius, * monachórum spéculum, pater Urbis, orbis delíciæ.
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 03-12
+# st-gregory-the-great. Second Vespers psalm antiphons; the other evening's set is st-gregory-the-great.yml. See
+# vespers-psalmody-overrides.ts's getVespersSaintOverride.
+vespers-psalmody/~-second:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Beátus Gregórius * in cáthedra Petri sublimátus, Vigilántis nomen factis implévit.
+    - psalms:
+        - 111
+      antiphon: Pastor exímius * pastorális vitæ spécimen trádidit et régulam.
+    - psalms:
+        - 112
+      antiphon: Dum páginæ sacræ * mystéria pánderet, colúmba nive candídior appáruit.
+    - psalms:
+        - 131
+      antiphon: Gregórius, * monachórum spéculum, pater Urbis, orbis delíciæ.
+
+# Matins Nocturn 2 reading for St. Gregory the Great, Pope, Confessor,
+# Doctor (Mar 12) — SanctiM/03-12.txt's own Lectio5-12 all resolve back
+# to `@Sancti/03-12:LectioN` (resliced for the Monastic 12-lesson
+# structure), so this saint's own vita is sourced from the Tridentine
+# track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/03-12.txt, English/Sancti/03-12.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. Lectio7-9's Gospel+homily (Matt 16:13-19, St. Leo's
+# sermon on Peter's confession) is generic Chair-of-Peter content
+# unrelated to Gregory himself, not proper to this feast, so not
+# authored here — same judgment as the same lessons appearing verbatim
+# under `chair-of-st-peter-at-rome.yml`'s own sourcing. No responsory
+# given for Lectio4-6.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Gregórius Magnus, Románus, Gordiáni senatóris fílius, adoléscens philosophíæ óperam dedit; et prætório offício functus, patre mórtuo, sex monastéria in Sicília ædificávit, Romæ séptimum sancti Andréæ nómine in suis ǽdibus, prope basílicam sanctórum Joánnis et Pauli ad Clivum Scauri, ubi Hilarióne ac Maximiáno magístris, monáchi vitam proféssus, póstea abbas fuit. Mox diáconus cardinális creátus, Constantinópolim a Pelágio Pontífice ad Tibérium Constantínum imperatórem legátus míttitur: apud quem memorábile étiam illud effécit, quod Eutýchium patriárcham, qui scrípserat contra veram ac tractábilem córporum resurrectiónem, ita convícit, ut ejus librum imperátor in ignem injíceret. Quare Eutýchius paulo post cum in morbum incidísset, instánte morte, pellem manus suæ tenébat, multis præséntibus, dicens: Confíteor quia omnes in hac carne resurgémus.
+
+        Romam rédiens, Pelágio pestiléntia subláto, summo ómnium consénsu Póntifex elígitur: quem honórem ne accíperet, quámdiu pótuit, recusávit; nam aliéno vestítu in spelúnca delítuit: ubi deprehénsus indício ígnæa colúmnæ, ad sanctum Petrum consecrátur. In pontificátu multa successóribus doctrínæ ac sanctitátis exémpla relíquit. Peregrínos quotídie ad mensam adhibébat: in quibus et Ángelum, et Dóminum Angelórum peregríni fácie accépit. Páuperes et urbános et extérnos, quorum númerum descríptum habébat, benígne sustentábat. Cathólicam fidem multis locis labefactátam restítuit. Nam Donatístas in Africa, Ariános in Hispánia représsit: Agnoítas Alexandría ejécit. Pállium Syágrio Augustodunénsi epíscopo dare nóluit, nisi neóphytos hæréticos expélleret ex Gállia. Gothos hǽresim Ariánam relínquere coégit. Missis in Británniam doctis et sanctis viris Augustíno et áliis mónachis, ínsulam ad Jesu Christi fidem convértit, vere a Beda presbýtero Angliæ vocátus Apóstolus. Joánnis patriárchæ Constantinopolitáni audáciam fregit, qui sibi universális Ecclésiæ epíscopi nomen arrogábat. Maurítium imperatórem, eos qui mílites fuíssent, mónachos fíeri prohibéntem, a senténtia detérruit.
+
+        Ecclésiam ornávit sanctíssimis institútis et légibus. Apud sanctum Petrum coácta sýnodo, multa constítuit: in iis, Ut in Missa Kýrie eléison nóvies repeterétur: ut extra id tempus, quod continétur Septuagésima et Pascha, Allelúia dicerétur: ut adderétur in Cánone, Diésque nostros in tua pace dispónas. Litanías, Statiónes, et ecclesiásticum offícium auxit. Quátuor concíliis, Nicǽno, Constantinopolitáno, Ephesíno, Chalcedonénsi, tamquam quátuor Evangéliis honórem habéri vóluit. Epíscopis Sicíliæ, qui ex antíqua ecclesiárum consuetúdine Romam síngulis triénniis conveniébant, quinto quoque anno semel veníre indúlsit. Multos libros confécit: quos cum dictáret, testátus est Petrus diáconus, se Spíritum Sanctum colúmbæ spécie in ejus cápite sæpe vidísse. Admirabília sunt quæ dixit, fecit, scripsit, decrévit, præsértim infírma semper et ægra valetúdine. Qui dénique multis éditis miráculis, pontificátus anno décimo tértio, mense sexto, die décimo, quarto Idus Mártii, qui dies festus a Græcis étiam propter insígnem hujus Pontíficis sapiéntiam ac sanctitátem præcípuo honóre celebrátur, ad cæléstem beatitúdinem evocátus est. Cujus corpus sepúltum est in basílica sancti Petri, prope Secretárium.
+      status: verified

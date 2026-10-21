@@ -46,7 +46,7 @@ export interface SaintRecord {
    * Fallback id for the day collect (`getDayCollect`) when this saint has
    * no proper collect of their own (`propers` may still be non-null —
    * e.g. St. Agatha and St. Lucy both have a proper antiphon but a
-   * Common-sourced collect) — the *full* id of a `data/propers/common/
+   * Common-sourced collect) — the *full* id of a `data/data/<lang>/{commons,propers}/
    * collect-c*.yml` file (e.g. `collect-c2-1`, not `c2-1` — no suffix
    * gets appended), a *template* with a literal `{N}` standing in for
    * the saint's own name, substituted via `collectName` below.

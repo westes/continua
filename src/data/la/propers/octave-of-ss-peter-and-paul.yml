@@ -1,0 +1,113 @@
+# Read directly from web/www/horas/Latin/Sancti/07-06.txt's own
+# [Oratio] and its English counterpart. Doxology "$Qui vivis" spelled
+# out per the convention in st-bibiana-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, cujus déxtera beátum Petrum ambulántem in fluctibus, ne mergerétur, eréxit,
+    et coapóstolum ejus Paulum, tértio naufragántem, de profúndo pélagi liberávit:
+    exáudi nos propítius, et concéde; ut, ambórum meritis, æternitátis glóriam
+    consequámur.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (octave-of-ss-peter-and-paul-antiphon.yml), paired with the standard de-Communi commemoration versicle for common-of-apostles (C1) (not yet independently live-verified for this specific category, marked draft). Collect is the saint's own real proper (octave-of-ss-peter-and-paul-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Petrus Apóstolus, * et Paulus Doctor Géntium, ipsi nos docuérunt legem tuam, Dómine.
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+    Orémus.
+    Deus, cujus déxtera beátum Petrum ambulántem in fluctibus, ne mergerétur, eréxit,
+    et coapóstolum ejus Paulum, tértio naufragántem, de profúndo pélagi liberávit:
+    exáudi nos propítius, et concéde; ut, ambórum meritis, æternitátis glóriam
+    consequámur.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: draft
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-07-06 octave-of-ss-peter-and-paul second (continua had "annuntiaueruntoperadei"). Paschaltide Alleluia is
+# left to hours/paschal-alleluia.ts. See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle:
+  text: |
+    V. Constítues eos príncipes super omnem terram.
+    R. Mémores erunt nóminis tui, Dómine.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-07-05 octave-of-ss-peter-and-paul first (continua had "annuntiaueruntoperadei"). First Vespers variant;
+# the default is the same id without "-first". Paschaltide Alleluia is left to hours/paschal-alleluia.ts. See
+# hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Constítues eos príncipes super omnem terram.
+    R. Mémores erunt nóminis tui, Dómine.
+  status: verified
+
+# Read directly from web/www/horas/Latin/Sancti/07-03oct.txt's own
+# [Ant 1] and its English counterpart -- the real text that
+# `07-06.txt`'s own [Ant 1]/[Ant 2]/[Ant 3] all cross-reference
+# (`@Sancti/07-03oct`).
+benedictus-antiphon:
+  text: Petrus Apóstolus, * et Paulus Doctor Géntium, ipsi nos docuérunt legem tuam, Dómine.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-07-06 octave-of-ss-peter-and-paul second (continua had "estotefortes"). Paschaltide Alleluia is left to
+# hours/paschal-alleluia.ts. See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon:
+  text: Petrus Apostolus, * et Paulus Doctor Gentium, ipsi nos docuerunt legem tuam Domine.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-07-05 octave-of-ss-peter-and-paul first (continua had "tradentenimuos"). First Vespers variant; the
+# default is the same id without "-first". Paschaltide Alleluia is left to hours/paschal-alleluia.ts. See
+# hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Petrus Apostolus, * et Paulus Doctor Gentium, ipsi nos docuerunt legem tuam Domine.
+  status: verified
+
+# Matins Nocturn 2-3 readings for the Octave Day of Ss. Peter and Paul
+# (July 6). Sourced directly from web/www/horas/Latin/Sancti/07-06.txt,
+# English/Sancti/07-06.txt. Nocturn 2: Lectio4-6, St. John Chrysostom's
+# sermon on both Apostles, combined into one reading -- a general
+# panegyric, not tied to a Gospel pericope, so it stays isGospel: false
+# with no pairing. Nocturn 3: the Gospel pericope (Matt 14:22-33, Christ
+# walking on the water -- confirmed by St. Jerome's homily text itself,
+# which directly comments on this passage, not Matt 16:13-19/Tu es
+# Petrus as might be guessed from the Common of Popes) is now authored
+# too (isGospel: true, immediately before St. Jerome's homily,
+# Lectio7-9) -- sourced from missa/Latin/Sancti/07-06.txt's own
+# [Evangelium] and missa/English/Sancti/07-06.txt, matching the
+# convention set by post-pentecost-16.yml (2026-09-05).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. John Chrysostom, quoted by Metaphrastes
+      text: |-
+        Quasnam vobis, o beáti Apóstoli, referémus grátias, qui tantum pro nobis laborastis? Mémini tui, Petre, et obstupesco: recordor tui, Paule, et excédens mente ópprimor lácrimis. Quid enim dicam, aut quid loquar, vestras contemplans afflictiónes, nescio. Quot carceres sanctificastis! quot catenas decorastis! quot torménta sustinuistis! quot maledicta tolerástis! quómodo Christum portastis! quómodo prædicatióne ecclésias lætificastis! Sunt benedicta vestræ linguæ instruménta: sánguine conspersa sunt membra vestra propter Ecclésiam. Vos Christum imitáti estis in omnibus. In omnem terram éxiit vester sonus, et verba vestra in fines orbis terræ.
+
+        Gaudeas, Petre, cui datum est ut ligno crucis Christi fruereris. Et ad Magistri quidem similitúdinem voluísti crucifigi, non recta quidem figura, ut Christus Dóminus; sed cápite in terram verso, tamquam qui a terra in cælum iter fáceres. Beáti clavi, qui sancta illa membra penetrarunt. Tu cum omni fiducia in manus Dómini ánimam tradidísti, qui assidue ei et ejus sponsæ Ecclésiæ servísti, qui fervénti spíritu Dóminum dilexísti, ómnium Apostolórum fidelíssimus.
+
+        Gaudeas et tu, beate Paule, cui caput fuit gládio amputátum, cujus virtútes nullis verbis explicari possunt. Quisnam gládius sanctum guttur tuum pervasit, Dominicum, inquam, instruméntum, quod a cælo habétur in admiratióne, et quod terra reverétur? Quisnam locus tuum sánguinem excepit, lactis spécie in ejus qui te percússit, túnica apparentem? qui ánimam illíus bárbari supra modum dulciórem reddens, fidélem effécit cum sociis. Sit mihi gládius ille pro coróna, et clavi Petri pro gemmis infixis in diadémate.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 14:22-33
+      text: 'In illo témpore: Cómpulit Jesus discípulos ascéndere in navículam, et præcédere eum trans fretum, donec dimítteret turbas. Et dimíssa turba, ascéndit in montem solus oráre. Véspere autem facto, solus erat ibi. Navícula autem in médio mari jactabátur flúctibus: erat enim contrárius ventus. Quarta autem vigília noctis venit ad eos ámbulans super mare. Et vidéntes eum super mare ambulántem, turbáti sunt, dicéntes: Quia phantásma est. Et præ timóre clamavérunt. Statímque Jesus locútus est eis, dicens: Habete fidúciam: ego sum, nolíte timére. Respóndens autem Petrus, dixit: Dómine, si tu es, jube me ad te veníre super aquas. At ipse ait: Veni. Et descéndens Petrus de navícula, ambulábat super aquam, ut veníret ad Jesum. Videns vero ventum válidum, tímuit: et cum cœpísset mergi, clamávit dicens: Dómine, salvum me fac. Et contínuo Jesus exténdens manum, apprehéndit eum, et ait illi: Módicæ fídei, quare dubitásti? Et cum ascendísset in navículam, cessávit ventus. Qui autem in navícula erant, venérunt et adoravérunt eum, dicéntes: Vere Fílius Dei es.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Commentary on Matthew, Bk. II, ch. 14
+      text: |-
+        Discípulis Dóminus præcepit transfretare, et cómpulit ut ascenderent naviculam. Quo sermóne osténditur, invitos eos a Dómino recessisse, dum amóre Præceptoris ne punctum quidem témporis ab eo volunt separari. Et, dimissa turba, ascéndit in montem solus orare. Si fuíssent cum eo discípuli Petrus et Jacobus et Joánnes, qui víderant glóriam transformáti, fórsitan ascendíssent in montem cum eo; sed turba ad sublimia sequi non potest, nisi docúerit eam juxta mare in littore et alúerit in desérto.
+
+        Quod autem ascéndit solus orare, non ad eum réferas, qui de quinque pánibus quinque míllia saturávit hóminum, exceptis párvulis et muliéribus; sed ad eum, qui, audíta morte Joánnis, secessit in solitúdinem: non quod personam Dómini separemus, sed quod ópera ejus inter Deum hominémque divisa sint. Navícula autem in médio mari jactabátur fluctibus. Recte quasi invíti et retractántes Apóstoli a Dómino recesserant, ne, illo absente, naufragia sustinérent.
+
+        Denique, Dómino in montis cacúmine commorante, statim ventus contrarius óritur, et turbat mare, et periclitántur Apóstoli; et tamdiu imminens naufragium persevérat, quámdiu Jesus véniat. Quarta autem vigília noctis venit ad eos ámbulans supra mare. Statiónes et vigíliæ militares in terna horárum spatia dividúntur. Quando ergo dicit, quarta vigília noctis venisse ad eos Dóminum, osténdit tota nocte periclitatos; et extremo noctis, atque in consummatióne mundi, eis auxílium præbiturum.
+      status: verified

@@ -1,0 +1,58 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2029-01-27, a
+# year that date doesn't collide with a Sunday). Same convention as
+# data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Ecclésiam tuam, quǽsumus, Dómine, grátia cæléstis amplíficet: quam beáti Joánnis Chrysóstomi Confessóris tui atque Pontíficis illustráre voluísti gloriósis méritis et doctrínis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-john-chrysostom-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-john-chrysostom-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Ecclésiam tuam, quǽsumus, Dómine, grátia cæléstis amplíficet: quam beáti Joánnis Chrysóstomi Confessóris tui atque Pontíficis illustráre voluísti gloriósis méritis et doctrínis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. John Chrysostom's own day (2026-01-27). The Benedictus
+# antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+  status: verified
+
+# Matins Nocturn 2 reading for St. John Chrysostom, Bishop, Confessor,
+# Doctor (Jan 27) — SanctiM/01-27.txt inherits the whole day
+# (`@Sancti/01-27`) with no Nocturn 2/3 override, so this saint's own
+# vita is sourced from the Tridentine track exactly as for a pre-1955
+# saint (see memory vu-matins-pre1955-saints).
+# web/www/horas/Latin/Sancti/01-27.txt, English/Sancti/01-27.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. Lectio7-9 fall back to Common of a Doctor
+# (`Commune/C4a`), not proper text, so not authored here. No responsory
+# given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Joánnes Antiochénus, propter áureum eloquéntiæ flumen cognoménto Chrysóstomus, a forensibus et sæcularibus stúdiis ad divinas litteras summa cum ingenii et industriæ laude se cóntulit. Itaque sacris initiátus ac presbyter Antiochenæ ecclésiæ factus, mortuo Nectario, Arcadii imperatóris opera, invitus Constantinopolitanæ ecclésiæ præfícitur. Quo suscepto pastorali munere, depravatos mores, et nobiliórum hóminum vivéndi licéntiam vehementius objurgare cœpit: qua ex libertáte magnam multórum subiit invidiam. Apud Eudoxiam etiam, quod eam propter Callítropæ víduæ pecúniam, et alterius víduæ agrum reprehendísset, gráviter offendit.
+
+        Quare aliquot episcopórum acto Chalcédone convéntu, quo ipse vocátus ire nóluit, quod nec legítimum concílium nec publicum esse diceret, niténte in primis ipsa contra Chrysóstomum Eudoxia, ejícitur in exsílium: sed paulo post propter ejus desidérium seditióne pópuli facta, admirábili civitátis plausu ab exsílio revocátur. Verum cum pérditos mores increpare non desísteret, et ad argenteam Eudoxiæ státuam in foro sanctæ Sophíæ ludos fíeri prohibéret; conspiratióne inimicórum episcopórum íterum exsulare cógitur, viduis et egéntibus ómnibus communis parentis ejectiónem lugéntibus. In exsílio Chrysóstomus incredibile est et quanta mala perpéssus sit, et quam multos ad Jesu Christi fidem convérterit.
+
+        Verum dum, concílio Romæ hábito, decreto Innocentii primi Pontificis restitúitur, a milítibus, qui eum custodiébant, miris in itinere malis et calamitátibus affícitur. Cumque per Armeniam ducerétur, sanctus Basiliscus Martyr, in cujus templo antea oraverat, noctu sic eum affátus est: Joánnes frater, crástinus dies nos loco conjunget. Quare postridie sumpto Eucharistiæ sacraménto seque crucis signo muniens, ánimam Deo réddidit, décimo octavo Kalendas Octobris. Quo mortuo, horribilis grando Constantinópoli cécidit, et quatríduo Augusta cessit e vita. Ejus corpus insígni pompa et hóminum multitúdine celebrátum, Theodosius Arcadii fílius Constantinópolim portándum, et honorifice sepeliéndum curávit sexto Kalendas Februarii: cujus étiam relíquias veneratus, paréntum suórum véniam pétiit: quod deínde Romam translátum in basilica Vaticana cónditum est. Multitúdinem, pietátem, ac splendórem conciónum ceterorúmque ejus scriptórum, interpretándi étiam ratiónem, et inhærentem senténtiæ sacrórum librórum explanatiónem omnes admirántur; dignumque existimant, cui Paulus Apóstolus, quem ille mirifice coluit, scribénti et prædicanti multa dictasse videátur. Hunc vero præclaríssimum univérsæ Ecclésiæ Doctórem Pius décimus Pontifex maximus cælestem oratórum sacrórum patronum declarávit atque constítuit.
+      status: verified

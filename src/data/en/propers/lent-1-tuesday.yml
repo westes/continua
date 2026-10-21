@@ -1,0 +1,45 @@
+collect:
+  text: |
+    Let us pray.
+    Look down, O Lord, on this thy family, and grant that our minds, which, by the chastening of the body, we seek to purify, may ever more and more shine in thy sight by strong hungering after thee.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+collect/~-vespers:
+  text: |
+    Let us pray.
+    O Lord, may our prayers come up before thy presence, and do Thou mercifully rid thy Church of all wickedness.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+benedictus-antiphon:
+  text: Jesus went into the temple of God, * and cast out all them that sold and bought, and overthrew the tables of the money-changers, and the seats of them that sold doves.
+  status: verified
+
+magnificat-antiphon:
+  text: For it is written * that My house is the house of prayer * for all nations but ye have made it a den of thieves and He was daily teaching in the temple.
+  status: verified
+
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Matthew 21:10-17
+      text: At that time, when Jesus entered Jerusalem, all the city was thrown into commotion, saying, "Who is this?" But the crowds kept on saying, "This is Jesus the prophet from Nazareth of Galilee." And Jesus entered the temple of God, and cast out all those who were selling and buying in the temple, and He overturned the tables of the money-changers and the seats of those who sold the doves. And He said to them, "It is written, 'My house shall be called a house of prayer'; but you have made it a den of thieves." And the blind and the lame came to Him in the temple, and He healed them. But the chief priests and the Scribes, seeing the wonderful deeds that He did, and the children crying out in the temple, and saying, "Hosanna to the Son of David," were indignant, and said to Him, "Do You hear what these are saying?" And Jesus said to them, "Yes; have you never read, 'Out of the mouth of infants and sucklings You have perfected praise'?" And leaving them, He went out of the city to Bethany and He stayed there.
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: The Venerable Bede, Priest, 11th Homily for Lent
+      text: |-
+        The same thing which the Lord showed in a figure by cursing the barren fig-tree, He afterwards more plainly put before us by casting the desecrators out of the temple. The tree herself had not sinned by bearing no fruit when the Lord was hungry, for the time of figs was not yet come, but those Priests had sinned who were carrying on worldly business in the Lord's house, and who neglected to bring forth that fruit of godliness which they owed, and which the Lord was hungry to find in them. The Lord made the fig-tree to wither away under His curse, that all men who saw it, and all men who hear of it, might know that they will be condemned by the judgment of God, if they content themselves with the talk of godliness, without the solid fruit of good works, even as that barren fig-tree was clothed only with a rustling garb of green leaves.
+
+        But because the buyers and sellers understood not the parable of the barren fig-tree, the Lord brought upon them the stroke of the punishment that they had deserved, and cast out the traffickers in earthly things, from that house, wherein it had been commanded that nothing should be done save the work of God, sacrifices and prayers offered up to Him, and His word read, taught, and sung. And yet it may be believed that nothing was being sold or bought in the temple save such things as were needful for the service thereof, as we read in another place, that when Jesus went into the temple He found those that sold oxen and sheep and doves, and all these things were doubtless there for no other end but to be offered to God in that His holy house, and were sold by the natives to those worshippers who came from a distance, to be so used.
+
+        If, therefore, the Lord would not have to be sold in the temple, even such things as He willed should be offered therein, (On account, that is, of the greed or dishonesty which is often the stain of such transactions,) with what anger, suppose ye, would He visit such as He might find laughing or gossiping there, or yielding to any other sin. If the Lord suffer not to be carried on in His house such worldly business as may be freely done elsewhere, how much more shall such things as ought never to be done anywhere, draw down the anger of God if they be done in His own holy house. Lastly the Holy Ghost came down upon the Lord in the shape of a dove, and by doves therefore may be signified the gifts of that Holy Spirit. They, then, to this day sell doves in the temple of God, who take money in the Church for the laying on of their hands, whereby the Holy Ghost is given from heaven.
+      responsory: |-
+        R. Let us amend for the better in that wherein we have sinned unknowingly, or ever the day of death suddenly prevent us, and we seek a place of repentance, and find none. * Give heed, O Lord, and have mercy upon us, for we have sinned against thee.
+        V. Help us, O God of our salvation, and for the glory of thy Name deliver us, O Lord.
+        R. Give heed, O Lord, and have mercy upon us, for we have sinned against thee.
+      status: verified

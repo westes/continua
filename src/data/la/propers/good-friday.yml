@@ -1,0 +1,75 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Quad6-5.txt.
+# Like Maundy Thursday (see maundy-thursday-collect.yml's note), this day
+# has no ordinary spoken collect -- its [Oratio] is
+# `@Tempora/Quad6-4::s/usque ad mortem/usque ad mortem, mortem autem
+# crucis/`, i.e. Thursday's own Tenebrae-form Oratio with the "Christus
+# factus est" versicle lengthened one clause further, continuing Phil
+# 2:8's own text ("...unto death, even the death of the Cross"). This is
+# the well-known gradual "Christus factus est" that grows a clause longer
+# each day of the Triduum, cadencing at its fullest on Holy Saturday (see
+# holy-saturday-collect.yml). Historically Good Friday has no Mass and no
+# ordinary blessing in the usual form at all (the Missa Præsanctificatorum
+# is a distinct liturgical action, not modeled here as an "hour"); this
+# lengthened Tenebrae Oratio is the real proper text the Office itself
+# gives this day in place of an ordinary collect. Not live-cross-checked
+# (same reason as Thursday's) -- transcribed directly from the raw file.
+collect:
+  text: |
+    V. Christus factus est pro nobis obédiens usque ad mortem, mortem autem crucis.
+    Pater noster (secreto).
+    Psalmus 50 (Miserere).
+    Réspice, quǽsumus, Dómine, super hanc famíliam tuam, pro qua Dóminus noster Jesus Christus non dubitávit mánibus tradi nocéntium, et crucis subíre torméntum:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    (Et sub silentio concluditur.)
+  status: draft
+  temporal: true
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-04-03 good-friday second. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-versicle:
+  text: |
+    V. 
+    R. 
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-04-03 (Good Friday that year). Matches
+# Tempora/Quad6-5.txt's own [Ant 2]. John 19:19, the titulus Pilate had
+# affixed to the Cross.
+benedictus-antiphon:
+  text: 'Posuérunt * super caput ejus causam ipsíus scriptam: Jesus Nazarénus, Rex Judæórum.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-04-03. Matches Tempora/Quad6-5.txt's own [Ant 3]. John
+# 19:30, Christ's last words and death on the Cross -- the file's own note
+# that "Vesperæ ab iis qui solemni Actioni liturgicæ postmeridianæ
+# intersunt, hodie non dicuntur" (Vespers is not said today by those
+# attending the solemn afternoon liturgical Action) is the same kind of
+# rubric as Thursday's, not a suppression of the text itself.
+magnificat-antiphon:
+  text: 'Cum accepísset acétum, * dixit: Consummátum est: et inclináto cápite, emísit spíritum.'
+  status: verified
+  temporal: true
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-04-03 good-friday second. Named temporal feast: the app had no Vespers psalm antiphons for it and fell
+# back to the ferial/Sunday set. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 115
+      antiphon: Cálicem * salutáris accípiam et nomen Dómini invocábo.
+    - psalms:
+        - 119
+      antiphon: 'Cum his, * qui odérunt pacem eram pacíficus: dum loquébar illis, impugnábant me gratis.'
+    - psalms:
+        - 139
+      antiphon: Ab homínibus * iníquis líbera me, Dómine.
+    - psalms:
+        - 140
+      antiphon: Custódi me * a láqueo, quem statuérunt mihi, et a scándalis operántium iniquitátem.
+    - psalms:
+        - 141
+      antiphon: Considerábam * ad déxteram, et vidébam, et non erat qui cognósceret me.

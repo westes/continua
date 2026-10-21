@@ -1,0 +1,60 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2038-05-27).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos beáti Joannis Mártyris tui atque Pontíficis ánnua solemnitáte lætíficas: concéde propítius; ut, cujus natalítia cólimus, de ejúsdem étiam protectióne gaudeámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-john-i-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-martyr-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-john-i-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Deus, qui nos beáti Joannis Mártyris tui atque Pontíficis ánnua solemnitáte lætíficas: concéde propítius; ut, cujus natalítia cólimus, de ejúsdem étiam protectióne gaudeámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. John I's own day (2038-05-27 -- see
+# st-urban-i-antiphon.yml's note on why so late a year was needed). The
+# Benedictus antiphon -- see st-john-before-the-latin-gate-antiphon.yml's
+# note on the shared Eastertide Common text.
+benedictus-antiphon:
+  text: Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.
+  status: verified
+
+# Matins Nocturn 2 reading for St. John I, Pope, Martyr (May 27). No
+# genuine SanctiM match: the plain `Sancti/05-27.txt` is the Venerable
+# Bede (a later saint occupying the general calendar's own May 27
+# slot), and `SanctiM/05-27.txt` bases `@Sancti/05-27` accordingly —
+# John I's own content survives only at the suffixed sibling file —
+# same "don't trust the plain file" wrinkle as the pre-1955 pass
+# (memory vu-matins-pre1955-saints); a missed pre-1955-pool candidate
+# rather than a genuine SanctiM case (see memory
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/05-27o.txt, English/Sancti/05-27o.txt.
+# The file's `Lectio93` itself just re-references its own `Lectio2`/
+# `Lectio3` — combined into one reading, one continuous account, no
+# genuine source break. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Joannes Etruscus, Justino seniore imperatore, rexit Ecclesiam: ad quem profectus est Constantinopolim auxilii causa, quod Theodoricus rex hæreticus divexabat Italiam. Cujus étiam iter Deus miraculis illustravit. Nam, cum ei nobilis vir ad Corinthum, equum, quo ejus uxor mansueto utebatur, itineris causa commodasset, factum est, ut, domino postea remissus equus ita ferox evaderet, ut fremitu et totius corporis agitatione semper deinceps dominam expulerit: tamquam indignaretur mulierem recipere, ex quo sedisset in eo Jesu Christi Vicarius. Quam ob rem illi equum Pontifici donaverunt. Sed illud majus miraculum, quod Constantinopoli, in aditu portæ Aureæ inspectante frequentissimo populo, qui una cum imperatore Pontifici honoris causa occurrerat, cæco lumen restituit. Ad cujus pedes prostratus étiam imperator eum veneratus est.
+
+        Rebus cum imperatore compositis, in Italiam rediit, statimque epistolam scripsit ad omnes Italiæ episcopos, jubens eos Arianorum ecclesias ad catholicum ritum consecrare, illud subjungens: Quia et nos, quando fuimus Constantinopoli tam pro religione catholica quam pro regis Theodorici causa, quascumque illis in partibus eorum ecclesias reperire potuimus, catholicas eas consecravimus. Quod iniquissimo animo ferens Theodoricus, dolo accersitum Pontificem Ravennam in carcerem conjecit; ubi, squalore inediaque afflictus, paucis diebus cessit e vita, cum sedisset annos duos, menses novem, dies quatuordecim, ordinatis eo tempore episcopis quindecim. Paulo post moritur Theodoricus: quem quidam eremita, ut scribit sanctus Gregorius, vidit inter Joánnem Pontificem et Symmachum patricium, quem idem occiderat, demergi in ignem Liparitanum; ut videlicet illi, quibus mortem attulerat, tamquam judices essent ejus interitus. Joannis corpus Ravenna Romam portatum est, et in basilica sancti Petri sepultum.
+      status: verified

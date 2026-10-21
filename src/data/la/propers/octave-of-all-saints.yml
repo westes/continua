@@ -1,0 +1,85 @@
+# Duplicated from all-saints.yml (Vespers psalmody override) — same
+# cross-id reuse already established for this feast's collect
+# (`propers: "all-saints"` in calendar/saints/octave-of-all-saints.yml)
+# and its Matins Nocturn 1 content; the Octave Day keeps All Saints' own
+# real Vespers psalmody rather than falling through to the plain ferial
+# default. Not independently live-queryable on its own date (Nov 8 is
+# contested with ss-four-crowned-martyrs, whose simplex rank the Octave's
+# duplex-majus outranks per the kalendarium's own "In Octava Omnium
+# Sanctorum" primary / "Ss. Quatuor Coronatorum" secondary listing — see
+# that file's header — so a plain live query on Nov 8 doesn't surface a
+# separate real answer to check against; reasoned from the collect's own
+# established precedent instead).
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Vidi turbam magnam, * quam dinumeráre nemo póterat, ex ómnibus géntibus, stantes ante thronum.
+    - psalms:
+        - 111
+      antiphon: Et omnes Ángeli * stabant in circúitu throni, et cecidérunt in conspéctu throni in fácies suas, et adoravérunt Deum.
+    - psalms:
+        - 112
+      antiphon: Redemísti nos, * Dómine Deus, in sánguine tuo ex omni tribu, et lingua, et pópulo, et natióne, et fecísti nos Deo nostro regnum.
+    - psalms:
+        - 115
+      antiphon: 'Hymnus * ómnibus Sanctis ejus: fíliis Israël, pópulo appropinquánti sibi: glória hæc est ómnibus sanctis ejus.'
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-11-07 octave-of-all-saints first. Paschaltide Alleluia is left to hours/paschal-alleluia.ts. See
+# vespers-psalmody-overrides.ts's getVespersSaintOverride.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Vidi turbam magnam, * quam dinumeráre nemo póterat, ex ómnibus géntibus, stantes ante thronum.
+    - psalms:
+        - 110
+      antiphon: Et omnes Ángeli * stabant in circúitu throni, et cecidérunt in conspéctu throni in fácies suas, et adoravérunt Deum.
+    - psalms:
+        - 111
+      antiphon: Redemísti nos, * Dómine Deus, in sánguine tuo ex omni tribu, et lingua, et pópulo, et natióne, et fecísti nos Deo nostro regnum.
+    - psalms:
+        - 112
+      antiphon: 'Hymnus * ómnibus Sanctis ejus: fíliis Israël, pópulo appropinquánti sibi: glória hæc est ómnibus sanctis ejus.'
+
+# Matins Nocturn 2-3 readings for the Octave Day of All Saints (Nov
+# 8). Sourced directly from web/www/horas/Latin/Sancti/11-08.txt,
+# English/Sancti/11-08.txt. Nocturn 2: Lectio4-6, St. Cyprian's "De
+# mortalitate" (in fine), combined into one reading -- a general
+# meditation on death and the communion of saints, not an exegesis of
+# any Gospel pericope, so it stays isGospel: false with no pairing.
+# Nocturn 3: the Gospel pericope (Matt 5:1-12, the Beatitudes, full
+# text) is now authored too (isGospel: true, immediately before St.
+# Augustine's homily, Lectio7-8) -- sourced from All Saints' own Mass
+# Gospel (missa/Latin/Sancti/06-05.txt's own [Evangelium], reached via
+# missa/Latin/Sancti/11-08.txt -> vide Sancti/11-01 -> @Sancti/06-05)
+# and missa/English/Sancti/06-05.txt, matching the convention set by
+# post-pentecost-16.yml (2026-09-05). all-saints.yml itself does not
+# yet carry this pairing either, so it is authored fresh here rather
+# than reused.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Cyprian, On the Mortality (at the end)
+      text: |-
+        Considerandum est, fratres dilectissimi, et identidem cogitandum, renuntiasse nos mundo, et tamquam hospites et peregrinos hic interim degere. Amplectamur diem, qui assignat singulos domicilio suo, qui nos istinc ereptos, et laqueis sæcularibus exsolutos, paradiso restituit, et regno cælesti. Quis non peregre constitutus properaret in patriam regredi? Quis non ad suos navigare festinans, ventum prosperum cupidius optaret, ut velociter caros liceret amplecti?
+
+        Patriam nostram paradisum computamus, parentes Patriarchas habere jam cæpimus: quid non properamus et currimus, ut patriam nostram videre, ut parentes salutare possimus? Magnus illic nos carorum numerus exspectat, parentum, fratrum, filiorum frequens nos et copiosa turba desiderat, jam de sua immortalitate secura, et adhuc de nostra salute sollicita. Ad horum conspectum et complexum venire, quanta et illis et nobis in commune lætitia est! Qualis illic cælestium regnorum voluptas sine timore moriendi, et cum æternitate vivendi! Quam summa et perpetua felicitas!
+
+        Illic Apostolorum gloriosus chorus, illic Prophetarum exsultantium numerus, illic Mártyrum innumerabilis populus, ob certaminis et passionis victoria coronatus. Triumphantes illic Virgines, quæ concupiscentiam carnis et corporis continentiæ robore subegerunt. Remunerati misericordes, qui alimentis et largitionibus pauperum justitiæ opera fecerunt, qui Dominica præcepta servantes ad cælestes thesauros terrena patrimonia transtulerunt. Ad hos, fratres dilectissimi avida cupiditate properemus, et cum his cito esse, ut cito ad Christum venire contingat, optemus.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 5:1-12
+      text: 'In illo témpore: Videns Jesus turbas, ascéndit in montem, et cum sedísset, accessérunt ad eum discípuli ejus, et apériens os suum, docébat eos, dicens: Beáti páuperes spíritu: quóniam ipsórum est regnum cœlórum. Beáti mites: quóniam ipsi possidébunt terram. Beáti, qui lugent: quóniam ipsi consolabúntur. Beáti, qui esúriunt et sítiunt justítiam: quóniam ipsi saturabúntur. Beáti misericórdes: quóniam ipsi misericórdiam consequántur. Beáti mundo corde: quóniam ipsi Deum vidébunt. Beáti pacífici: quóniam fílii Dei vocabúntur. Beáti, qui persecutiónem patiúntur propter justítiam: quóniam ipsórum est regnum cœlórum. Beáti estis, cum maledíxerint vobis et persecúti vos fúerint, et díxerint omne malum advérsum vos, mentiéntes, propter me: gaudete et exsultáte, quóniam merces vestra copiósa est in cœlis.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bk. i. on the Lord's Sermon (Matt 5:1-12)
+      text: |-
+        Beati eritis, inquit, cum vobis maledicent, et persequentur vos, et dicent omne malum adversum vos mentientes, propter me: gaudete et exsultate, quoniam merces vestra multa est in cælis. Animadvertat quisquis delicias hujus sæculi, et facultates rerum temporalium quærit in nomine christiano, intrinsecus esse beatitudinem nostram, sicut de anima ecclesiastica ore prophetico dicitur: Omnis gloria ejus filiæ regis ab intus. Nam extrinsecus maledicta, et persecutiones, et detractiones promittuntur de quibus tamen magna merces est in cælis, quæ sentitur in corde patientium, eorum qui jam possunt dicere: Gloriamur in tribulationibus: scientes quod tribulatio patientiam operatur, patientia autem probationem, probatio vero spem, spes autem non confundit: quia caritas Dei diffúsa est in cordibus nostris per Spiritum sanctum, qui datus est nobis.
+
+        Non enim ista perpeti fructuosum est, sed ista pro Christi nomine non solum æquo animo, sed étiam cum exsultatione tolerare. Nam multi hæretici nomine christiano animas decipientes, multa talia patiuntur: sed ideo excluduntur ab ista mercede, quia non dictum est tantum: Beati qui persecutionem patiuntur, sed additum est: Propter justitiam. Ubi autem sana fides non est, non potest esse justitia: quia justus ex fide vivit. Neque schismatici aliquid sibi ex ista mercede promittant: quia similiter, ubi caritas non est, non potest esse justitia. Dilectio enim proximi malum non operatur: quam si haberent, non dilaniarent corpus Christi, quod est Ecclesia.
+      status: verified

@@ -1,0 +1,101 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
+lauds-hymn:
+  text: |
+    Splendor patérnæ glóriæ,
+    De luce lucem próferens,
+    Lux lucis, et fons lúminis,
+    Diem dies illúminans:
+
+    Verúsque sol illábere,
+    Micans nitóre pérpeti:
+    Jubárque Sancti Spíritus
+    Infúnde nostris sénsibus.
+
+    Votis vocémus et Patrem,
+    Patrem perénnis glóriæ,
+    Patrem poténtis grátiæ,
+    Culpam reléget lúbricam.
+
+    Confírmet actus strénuos:
+    Dentes retúndat ínvidi:
+    Casus secúndet ásperos,
+    Donet geréndi grátiam.
+
+    Mentem gubérnet et regat,
+    Casto, fidéli córpore:
+    Fides calóre férveat,
+    Fraudis venéna nésciat.
+
+    Christúsque nobis sit cibus,
+    Potúsque noster sit fides:
+    Læti bibámus sóbriam
+    Ebrietátem spíritus.
+
+    Lætus dies hic tránseat,
+    Pudor sit ut dilúculum,
+    Fides velut merídies,
+    Crepúsculum mens nésciat.
+
+    Auróra cursus próvehit,
+    Auróra totus pródeat,
+    In Patre totus Fílius,
+    Et totus in Verbo Pater.
+
+    * Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc et in perpétuum.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
+lauds-responsory:
+  text: |
+    R.br. Sana ánimam meam, * Quia peccávi tibi.
+    R. Sana ánimam meam, * Quia peccávi tibi.
+    V. Ego dixi: Dómine, miserére mei
+    R. Quia peccávi tibi.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Sana ánimam meam, * Quia peccávi tibi.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
+lauds-versicle:
+  text: |-
+    V. Repléti sumus mane misericórdia tua.
+    R. Exsultávimus, et delectáti sumus.
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Day1 Vespera]",
+# Psalterium/Special/Major Special.txt): two word substitutions against the
+# base "[Hymnus Day1 Vespera]" text ("adáugeat" -> "invéniat"; "Hæc" ->
+# "Ut", in the 4th stanza), applied by hand here — not live-query-verified
+# (see TODO.md). English has no separate Monastic variant in the source.
+vespers-hymn:
+  text: |
+    Imménse cæli Cónditor,
+    Qui mixta ne confúnderent,
+    Aquæ fluénta dívidens,
+    Cælum dedísti límitem.
+
+    Firmans locum cæléstibus,
+    Simúlque terræ rívulis;
+    Ut unda flammas témperet,
+    Terræ solum ne díssipent.
+
+    Infúnde nunc, piíssime,
+    Donum perénnis grátiæ:
+    Fraudis novæ ne cásibus
+    Nos error átterat vetus.
+
+    Lucem fides invéniat:
+    Sic lúminis jubar ferat:
+    Ut vana cuncta próterat:
+    Hanc falsa nulla cómprimant.
+
+    * Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum.
+    Amen.
+  status: draft

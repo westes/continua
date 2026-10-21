@@ -1,0 +1,54 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-10-14).
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos cónspicis ex nostra infirmitáte defícere: ad amórem tuum nos misericórditer per Sanctórum tuórum exémpla restáura.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-callistus-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-martyr-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-callistus-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Qui odit ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Deus, qui nos cónspicis ex nostra infirmitáte defícere: ad amórem tuum nos misericórditer per Sanctórum tuórum exémpla restáura.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Callistus I's own day (2026-10-14). The Benedictus
+# antiphon.
+benedictus-antiphon:
+  text: Qui odit ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Callistus I, Pope, Martyr (Oct 14)
+# — SanctiM/10-14.txt inherits the whole day (`@Sancti/10-14`) with no
+# Nocturn 2/3 override, so this saint's own vita is sourced from the
+# Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/10-14.txt, English/Sancti/10-14.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Callistus, Romanus, præfuit Ecclésiæ, Antonino Heliogábalo imperatóre. Constítuit quatuor anni Tempora, quibus jejunium, ex apostolica traditióne acceptum, ab ómnibus servarétur. Ædificávit basilicam sanctæ Maríæ trans Tíberim, et in via Appia vetus cœmetérium ampliávit, in quo multi sancti Sacerdótes et Mártyres sepúlti sunt; unde ab eo Callísti cœmetérium appellátur.
+
+        Ejusdem pietátis fuit, quod beáti Calepodii Presbýteri et Mártyris corpus, jactátum in Tíberim, conquiri diligenter curávit, et, invéntum, honorifice sepelívit. Palmatium consulari, Simplícium senatoria dignitate illustres, Felicem et Blandam, qui deínde omnes martyrium subíere, cum baptismo lustrasset, missus est in carcerem, ubi Privátum militem, ulcéribus plenum, admirabíliter sanitáti restitutum, Christo adjunxit; pro quo idem, recens adhuc a fide suscepta, plumbátis usque ad mortem cæsus occubuit.
+
+        Sedit Callistus annos quinque, mensem unum, dies duodecim. Ordinatiónibus quinque, mense Decembri, creávit presbyteros sexdecim, diaconos quatuor, episcopos octo. Post longam famem crebrasque verberatiónes præceps jactus in púteum, atque ita martyrio coronátus sub Alexandro imperatóre, illátus est in cœmetérium Calepodii, via Aurelia, tertio ab Urbe lápide, pridie Idus Octobris. Ejus postmodum corpus in basilicam sanctæ Maríæ trans Tiberim, ab ipso ædificatam, delátum, sub ara majori, maxima veneratióne cólitur.
+      status: verified

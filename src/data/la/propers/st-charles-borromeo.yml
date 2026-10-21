@@ -1,0 +1,52 @@
+# Read directly from web/www/horas/Latin/Sancti/11-04.txt's own
+# [Oratio] and its English counterpart. Doxology "$Per Dominum"
+# spelled out per the convention in st-bibiana-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Da, quǽsumus, Ecclésiæ tuæ, omnípotens Deus: ut sanctum Cárolum,
+    Confessórem tuum atque Pontíficem, et vigilántem custódem habére
+    mereátur, et pium sédulæ sollicitúdinis intercessórem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et
+    regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor-bishop (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-charles-borromeo has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-charles-borromeo-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Da, quǽsumus, Ecclésiæ tuæ, omnípotens Deus: ut sanctum Cárolum,
+    Confessórem tuum atque Pontíficem, et vigilántem custódem habére
+    mereátur, et pium sédulæ sollicitúdinis intercessórem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et
+    regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Charles Borromeo (Nov 4). Sourced
+# directly from web/www/horas/Latin/Sancti/11-04.txt,
+# English/Sancti/11-04.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No [Lectio7] in the source -- no own Nocturn 3.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Cárolus, Mediolani nobili Borromæórum família natus, quanta futurus esset sanctitáte conspicuus, divina lux super pariéntis matris cubiculum noctu coruscans præsignávit. A puerítia clericali milítiæ adscriptus, abbatía postmodum insignítus, patrem admonuit ne réditus in rem familiarem converteréntur; quorum ipse nactus administratiónem, quidquid supérerat, expendebat in páuperes. Adoléscens liberálibus disciplinis Papíæ operam dedit. Castitátem adeo coluit, ut impudícas étiam mulieres, ad labefactándam ejus pudicítiam pluries immissas, invicta constántia fugaverit. Vigesimum tertium ætátis annum agens, a Pio quarto ejus avunculo in sacrum cardinalium collegium cooptatus, insígni pietátis ac virtútum ómnium splendore præluxit. Mox ab eodem Mediolanénsis archiepíscopus creatus, in eo plurimam operam adhibuit, ut, juxta sacrosanctum Tridentinum concílium, quod ejus potíssimum sollicitúdine jam tum fuerat absolutum, ecclésiam sibi commissam compóneret; atque, ut depravatos plebis suæ mores reformaret, præter iteratam sæpius synodórum celebratiónem, seípsum exímiæ sanctitátis præbuit exemplar. In profligandis hæreticis e partibus Rhætórum et Helvetiórum, quorum plurimos ad christianam fidem convértit, maxime laborávit.
+
+        Hujus viri caritas præcipue enituit, cum, Uritano principatu véndito, prétium univérsum, ad quadragínta aureórum millia, una die in páuperes erogávit. Nec minore pietáte viginti millia, quæ sibi fúerant legata, distríbuit. Ecclesiásticos proventus, quibus ab avunculo copiose fuerat cumulátus, dimísit, nonnullis retentis, quibus ad proprios usus et egenórum necessitates utebátur. Quo témpore pestis Mediolani grassabátur, domesticam supellectilem, ne relícto sibi lectulo, in eosdem alendos cóntulit, super nuda in pósterum tábula decumbens; eoque morbo laborántes sédulo invisens, paterno reficiebat afféctu, et Ecclésiæ sacraménta propriis ipse mánibus administrans, mirum in modum solabátur. Humillimis interim precibus reconciliator accédens, publica supplicatióne indicta, fune sibi ad collum alligato, nudis pédibus étiam offendiculo cruentátis, crucem bájulans, semetípsum pro peccátis pópuli hóstiam offerens, divinam indignatiónem avértere satagebat. Ecclesiásticæ libertátis fuit acerrimus propugnator. Disciplinæ vero restituéndæ sollícitus, a seditiosis, dum oratióni insísteret, torménti bellici laxáta rota, igneo glóbulo percússus, divina virtúte servátur illæsus.
+
+        Abstinéntia fuit admirábili; jejunábat sæpíssime, pane tantum et aqua, solis quandoque lupínis contentus. Nocturnis vigiliis, asperrimo cilício, assiduis flagellis corpus domábat. Humilitátis ac mansuetúdinis studiosíssimus fuit. Oratiónem ac verbi Dei prædicatiónem, gravíssimis licet curis occupatus, numquam intermisit. Multas ecclésias, monasteria, collegia ædificávit. Plura scripsit, ad episcopórum præsertim instructiónem utilíssima; cujus étiam ópera parochórum catechismus pródiit. Demum, in solitúdinem Varalli montis, ubi scultpis imagínibus Dominicæ passiónis mysteria ad vivum repræsentántur, secessit; ibique, diébus aliquot voluntária castigatióne asperam, sed Christi dolórum meditatiónibus suavem vitam ducens, in febrim íncidit. Mediolanum reversus, ingravescénte morbo, cínere ac cilício coopertus, et óculis in Crucifixi imáginem defixis, migrávit in cælum, ætátis anno quadragesimo séptimo, Dómini vero millesimo quingentésimo octogesimo quarto, tertio Nonas Novembris. Quem, miraculis clarum, Paulus quintus Pontifex maximus in Sanctórum númerum retulit.
+      status: verified

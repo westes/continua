@@ -1,0 +1,183 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2026-08-03),
+# which auto-expands the raw file's cross-reference to St. Stephen's Dec
+# 26 collect with "natalícia" substituted for "Inventiónem".
+collect:
+  text: |
+    Orémus.
+    Da nobis, quǽsumus, Dómine, imitári quod cólimus: ut discámus et inimícos dilígere; quia ejus Inventiónem celebrámus, qui novit étiam pro persecutóribus exoráre Dóminum nostrum Jesum Christum Fílium tuum:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (finding-of-st-stephen-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-martyr (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (finding-of-st-stephen-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Stéphanus autem * plenus grátia et fortitúdine, faciébat signa magna in pópulo.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Da nobis, quǽsumus, Dómine, imitári quod cólimus: ut discámus et inimícos dilígere; quia ejus Inventiónem celebrámus, qui novit étiam pro persecutóribus exoráre Dóminum nostrum Jesum Christum Fílium tuum:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Reuses St. Stephen Protomartyr's own Dec 26 Lauds antiphon 1
+# (lauds-psalmody-overrides/st-stephen-protomartyr.yml) -- her Vespers
+# already reuses his content wholesale (see vespers-psalmody-overrides/
+# saints/finding-of-st-stephen.yml), per the source's own
+# "@Sancti/12-26:Ant Laudes" reference; Prime=Lauds-Ant1 per the
+# established minor-hours-borrow-from-Lauds convention.
+prime-antiphon:
+  text: 'Lapidavérunt Stéphanum, * et ipse invocábat Dóminum, dicens: Ne státuas illis hoc peccátum.'
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/12-26.txt's own [Lectio Prima] and its
+# English counterpart.
+# Sancti/08-03.txt's [Lectio Prima] is @Sancti/12-26.
+prime-lectio:
+  text: 'Pósitis autem génibus, clamávit voce magna, dicens: Dómine, ne státuas illis hoc peccátum. Et cum hoc dixísset, obdormívit in Dómino.'
+  citation: Act. 7:59
+  status: verified
+
+# Reuses St. Stephen Protomartyr's own Dec 26 Lauds antiphon 2
+# (lauds-psalmody-overrides/st-stephen-protomartyr.yml) -- her Vespers
+# already reuses his content wholesale (see vespers-psalmody-overrides/
+# saints/finding-of-st-stephen.yml), per the source's own
+# "@Sancti/12-26:Ant Laudes" reference; Terce=Lauds-Ant2 per the
+# established minor-hours-borrow-from-Lauds convention.
+terce-antiphon:
+  text: 'Lápides torréntis * illi dulces fuérunt: ipsum sequúntur omnes ánimæ justæ.'
+  status: verified
+
+# Same text as terce-capitulum-st-stephen-protomartyr (Finding of St. Stephen
+# takes Dec 26's office wholesale: Sancti/08-03 `vide Sancti/12-26`).
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, St. Stephen Protomartyr's own day (2029-12-26, clean year).
+terce-capitulum:
+  text: |
+    Stéphanus autem plenus grátia et fortitúdine, faciébat prodígia et signa magna in pópulo.
+    R. Deo grátias.
+    V. Glória et honóre coronásti eum, Dómine.
+    R. Et constituísti eum super ópera mánuum tuárum.
+  citation: Act 6:8
+  status: verified
+
+# Reuses St. Stephen Protomartyr's own Dec 26 Lauds antiphon 3
+# (lauds-psalmody-overrides/st-stephen-protomartyr.yml) -- her Vespers
+# already reuses his content wholesale (see vespers-psalmody-overrides/
+# saints/finding-of-st-stephen.yml), per the source's own
+# "@Sancti/12-26:Ant Laudes" reference; Sext=Lauds-Ant3 per the
+# established minor-hours-borrow-from-Lauds convention.
+sext-antiphon:
+  text: Adhǽsit ánima mea * post te, quia caro mea lapidáta est pro te, Deus meus.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/08-03.txt's own [Capitulum
+# Sexta] ("@Sancti/12-26" -- reuses St. Stephen Protomartyr's own Dec 26
+# chapter) and English/Sancti/12-26.txt's own translation.
+sext-capitulum:
+  text: 'Surrexérunt autem quidam de synagóga, quæ appellátur Libertinórum, et Cyrenénsium, et Alexandrinórum, et eórum qui erant a Cilícia, et Asia, disputántes cum Stéphano: et non póterant resístere sapiéntiæ, et Spirítui qui loquebátur.'
+  citation: Act 6:9-10
+  status: verified
+
+# Reuses St. Stephen Protomartyr's own Dec 26 Lauds antiphon 5
+# (lauds-psalmody-overrides/st-stephen-protomartyr.yml) -- her Vespers
+# already reuses his content wholesale (see vespers-psalmody-overrides/
+# saints/finding-of-st-stephen.yml), per the source's own
+# "@Sancti/12-26:Ant Laudes" reference; None=Lauds-Ant5 per the
+# established minor-hours-borrow-from-Lauds convention.
+none-antiphon:
+  text: Ecce vídeo * cælos apértos, et Jesum stantem a dextris virtútis Dei.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/08-03.txt's own [Capitulum
+# Nona] ("@:Lectio Prima", which itself is "@Sancti/12-26" -- reuses St.
+# Stephen Protomartyr's own Dec 26 [Lectio Prima]) and English/Sancti/
+# 12-26.txt's own translation.
+none-capitulum:
+  text: 'Pósitis autem génibus, clamávit voce magna, dicens: Dómine, ne státuas illis hoc peccátum. Et cum hoc dixísset, obdormívit in Dómino.'
+  citation: Act 7:59
+  status: verified
+
+# Verified against Divinum Officium (Latin/English Sancti/08-03.txt's own
+# [Ant 1] — a deliberate, unmodified cross-reference to St. Stephen's own
+# Dec 26 antiphon. Duplicated content, not a shared reference, matching
+# this project's one-file-per-id convention.
+benedictus-antiphon:
+  text: Stéphanus autem * plenus grátia et fortitúdine, faciébat signa magna in pópulo.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/08-03.txt's own [Ant Vespera]
+# ("@Sancti/12-26:Ant Laudes" -- reuses St. Stephen's own Dec 26 Lauds
+# antiphons wholesale, a fitting thematic reuse for the finding of his
+# relics). Reusing lauds-psalmody-overrides/saints/st-stephen-
+# protomartyr.yml's own antiphons 1/2/3/5 (dropping antiphon 4, the
+# canticle-only one, same convention as elsewhere). Below duplex-majus,
+# so hours/vespers.ts's mergeFerialNumbersWithProperAntiphons only takes
+# this file's antiphon text, not its psalm numbers.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'Lapidavérunt Stéphanum, * et ipse invocábat Dóminum, dicens: Ne státuas illis hoc peccátum.'
+    - psalms:
+        - 110
+      antiphon: 'Lápides torréntis * illi dulces fuérunt: ipsum sequúntur omnes ánimæ justæ.'
+    - psalms:
+        - 111
+      antiphon: Adhǽsit ánima mea * post te, quia caro mea lapidáta est pro te, Deus meus.
+    - psalms:
+        - 112
+      antiphon: Ecce vídeo * cælos apértos, et Jesum stantem a dextris virtútis Dei.
+
+# Matins Nocturn 2 readings for the Finding of St. Stephen, Protomartyr
+# (Aug 3) — pre-1955-but-post-1617 (no SanctiM/08-03*.txt at all).
+# web/www/horas/Latin/Sancti/08-03.txt, English/Sancti/08-03.txt.
+#
+# Lectio1-3 (Acts 7:51-54, 55-58, 59 + 8:1-2) is one continuous
+# scriptural excerpt (Stephen's own martyrdom, from Acts), no internal
+# break, combined into one reading with citation. Lectio4-5 (the finding
+# of the relics under Honorius) is a second continuous account, combined.
+# Lectio6 (St. Augustine, City of God, Bk. 22 ch. 8) is a third, distinct
+# source. Responsories are all `@Sancti/12-26` cross-references (this
+# day's proper is otherwise borrowed wholesale from St. Stephen's Dec 26
+# feast) — not transcribed here since that source file's own responsory
+# text wasn't independently pulled for this pass.
+#
+# Checked 2026-09-05 for a missing Gospel pairing: confirmed via
+# horas/Latin/Sancti/08-03.txt directly — the Augustine excerpt is
+# Lectio6, genuinely Nocturn 2, not Gospel-tied. This feast's own
+# Nocturn 3 (Lectio7-9) is itself a cross-reference to St. Stephen's
+# Dec 26 feast (Matt 23:34-39 + a Jerome homily), a wholly different,
+# unauthored pairing — not this file's own content. No pairing added.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      citation: Act 7:51-54; 55-58; 59; 8:1-2
+      text: |-
+        Dura cervice et incircumcisis córdibus et áuribus, vos semper Spiritui Sancto resístitis: sicut patres vestri, ita et vos. Quem prophetárum non sunt persecúti patres vestri? Et occidérunt eos, qui prænuntiábunt de adventu Justi, cujus vos nunc proditores et homicidæ fuistis, qui accepístis legem in dispositióne Angelórum et non custodistis. Audiéntes autem hæc, disseccabántur córdibus suis, et stridébant déntibus in eum.
+
+        Cum autem esset plenus Spíritu Sancto, inténdens in cælum, vidit glóriam Dei, et Jesum stantem a dextris Dei. Et ait: Ecce video cælos apertos, et Fílium hóminis stantem a dextris Dei. Exclamántes autem voce magna, continuérunt aures suas, et ímpetum fecérunt unanímiter in eum. Et ejiciéntes eum extra civitátem lapidábant: et testes deposuérunt vestiménta sua secus pedes adolescentis, qui vocabátur Saulus. Et lapidábant Stephanum, invocántem et dicéntem: Dómine Jesu, suscipe spíritum meum.
+
+        Positis autem genibus, clamávit voce magna: Dómine, ne statuas illis hoc peccátum. Et cum hoc dixísset, obdormívit in Dómino. Saulus autem erat consentiens neci ejus. Facta est autem in illa die persecútio magna in ecclésia quæ erat Jerosolymis; et omnes dispersi sunt per regiónes Judææ et Samaríæ, præter Apóstolos. Curavérunt autem Stephanum viri timorati, et fecérunt planctum magnum super eum.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Sanctórum córpora Stephani Protomártyris, Gamaliélis, Nicodémi et Abibónis, quæ diu in obscúro ac sórdido loco jacúerant, Honorio imperatóre, Luciáno presbytero divínitus admónito, invénta sunt prope Jerosolymam. Cui Gamaliel cum in somnis apparuísset, gravi quadam et præclára senis spécie, locum jacéntium córporum commonstrávit, imperans ut Joánnem Jerosolymitanum antístitem adíret, agerétque cum eo ut honestius illa córpora sepelirentur.
+
+        Quibus auditis Jerosolymórum antístes, finitimárum urbium epíscopis presbyterisque convocatis, ad locum pergit; defossos lóculos ínvenit, unde suavíssimus odor efflabátur. Cujus rei fama commóta, magna hóminum multitúdo eo convénit, multique ex variis morbis ægroti ac débiles sani et íntegri domum rediérunt. Sacrum autem sancti Stephani corpus, quod summa tunc celebritate in sanctam ecclésiam Sion illátum est, sub Theodosio junióre Constantinópolim, inde Romam, Pelagio primo summo Pontífice, translátum, in agro Verano in sepúlcro sancti Lauréntii Mártyris collocátum est.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, City of God, Book 22, ch. 8
+      text: 'Ad aquas Tibilitanas, episcopo afferénte Projecto relíquias Mártyris gloriosíssimi Stephani, ad ejus memóriam veniebat magnæ multitúdinis concursus et occúrsus. Ibi cæca mulier, ut ad episcopum portántem pígnora sacra ducerétur, orávit: flores, quos ferebat, dedit; recepit, óculis admóvit, prótinus vidit. Stupéntibus qui áderant, præibat exsultans, viam carpens et viæ ducem ulterius non requírens. Memoráti memóriam Mártyris, quæ pósita est in castello Synicénsi, quod Hipponénsi coloniæ vicinum est, ejusdem loci Lucillus epíscopus, pópulo præcedénte atque sequente, portábat; fístula, cujus molestia jamdiu laboraverat, et familiaríssimi sui médici, qui eam secaret, opperiebátur manus, illíus piæ sarcinæ vectatióne repénte sanáta est.'
+      status: verified

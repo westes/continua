@@ -1,0 +1,27 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-11-22 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: Super muros tuos, * Jerúsalem, constítui custódes; tota die et nocte non tacébunt laudáre nomen Dómini.
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "week V of November" (Tempora/115-0.txt), the last
+# November Sunday before Advent — see month-week-081.yml's header for the
+# id scheme. Live-verified (2026-11-22: "Dominica XXIV et Ultima Post
+# Pentecosten V. Novembris"). Responsory reuses 111's own Responsory4
+# (source's own cross-reference).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Basil the Great, Homily on Psalm 33
+      text: |-
+        Cum te appetítus inváserit peccándi, velim cógites horríbile illud et intolerábile Christi tribúnal, in quo præsidébit judex in alto et excélso throno; astábit autem omnis creatúra, ad gloriósum illíus conspéctum contremíscens. Adducéndi étiam nos sumus sínguli, eórum quæ in vita gessérimus ratiónem redditúri. Mox illis qui multa mala in vita perpetrárint, terríbiles quidam et deformes assístent ángeli, ígneos vultus præ se feréntes atque ignem spirántes, ea re propósiti et voluntátis acerbitátem ostendéntes, nocti vultu símiles, propter mærórem et ódium in humánum genus.
+
+        Ad hæc cógites profúndum bárathrum, inextricábiles ténebras, ignem caréntem splendóre, uréndi quidem vim habéntem, sed privátum lúmine: deínde vérmium genus venénum immíttens, et carnem vorans, inexplebíliter edens neque umquam saturitátem sentiens, intolerábiles dolóres corrosióne ipsa infígens: postrémo, quod suppliciórum ómnium graviíssimum est, oppróbrium illud et confusiónem sempitérnam. Hæc time, et hoc timóre correptus ánimam a peccatórum concupiscéntia tamquam freno quodam réprime.
+
+        Hunc timórem Dómini se doctúrum prophéta promísit. Docére autem non simplíciter promísit, sed eos qui eum audíre volúerint: non eos qui longíus prolápsi sunt, sed qui salútem appeténtes accúrrunt: non aliénos a promissiónibus, sed ex baptísmate filiórum adoptiónis verbo ipsi consiliátos atque conjúnctos. Proptérea, Veníte, inquit, hoc est, per bona ópera accédite ad me, fílii, quippe qui per regeneratiónem fílii lucis éffici digni facti estis: audíte, qui aures cordis habétis apértas; timórem Dómini docébo vos: illum scílicet, quem paulo ante oratióne nostra descrípsimus.
+      responsory: |-
+        R. Super muros tuos, Jerúsalem, constítui custódes; * Tota die et nocte non tacébunt laudáre nomen Dómini.
+        V. Prædicábunt pópulis fortitúdinem meam, et annuntiábunt géntibus glóriam meam.
+        R. Tota die et nocte non tacébunt laudáre nomen Dómini.
+      status: verified

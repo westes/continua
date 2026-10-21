@@ -1,0 +1,29 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2028-11-04 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Aspice Dómine, * quia facta est desoláta cívitas plena divítiis, sedet in tristítia dómina Géntium: non est qui consolétur eam, nisi tu, Deus noster.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "week II of November" (Tempora/112-0.txt) — see
+# month-week-081.yml's header for the id scheme. In most years November's
+# own week II is skipped entirely (month-week-id.ts's backward-from-Advent
+# renumbering — live-verified 2026: Nov 8 resolves "III. Novembris", not
+# "II"), so this file will rarely if ever surface for a real date; authored
+# anyway since it has real content and a year could still reach it.
+# Responsory reuses 111's own Responsory4 (source's own cross-reference).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Jerome, Commentary on Ezekiel, Book 7
+      text: |-
+        Quia supra dixerat: Ipsi dicunt ad me: Numquid non per parábolas lóquitur iste? et apertam pópulus flagitábat senténtiam: idcirco id quod Dóminus per metáphoram, sive parábolam, et, ut alii vertére, provérbium, est locútus, nunc manifestius lóquitur: saltus Nageb et Darom et Theman esse Jerúsalem, et templum illíus, sancta sanctórum et omnem terram Judǽæ; flammámque quæ combustúra sit saltum, intelligi gládium devorántem, qui edúctus sit de vagína sua, ut interfíciat justum et ímpium. Hoc est enim lignum víride, et lignum áridum. Unde et Dóminus: si in ligno, ait, víridi tanta fáciunt, in sicco quid fácient?
+
+        Primum díxerat: Vaticináre, vel stilla ad Austrum, Áfricum et Meridiem et ad saltum Meridiánum. Quod quia videbátur obscúrum, et dicta Prophétæ pópulus nesciébat, secúndo pónitur manifestius, saltum Meridiánum esse Jerúsalem; et omnes infructuósas árbores, ad quarum radíces securis pósita sit, intellígi habitatóres ejus, gladiúmque interpretári pro incéndio. Tertio jubétur Prophétæ, ut tacéntibus illis nec interrogántibus cur ista vaticinátus sit, fáciat per quæ interrogétur, et respóndeat quæ Dóminus locútus est.
+
+        Ingemísce, inquit, ejulare non levi voce nec dolóre moderáto, sed in contritióne lumbórum, ut gémitus tuus ex imis viscéribus et amaritúdine ánimi proferátur. Et hoc fácies coram eis, ut cum te interrogáverint, cur tanto gémitu conteráris, et quid tibi mali accíderit, ut sic ingemíscas; tu eis meo sermóne respóndeas: Idcirco plango et dolórem cordis mei dissimuláre non váleo, quia audítus, qui semper meis áuribus insonúerat, ópere complétur et venit, ímminens vidélicet Babylónii furéntis exércitus; qui cum vénerit et vallavérit Jerúsalem, tunc tabéscet omne cor, et dissolvéntur univérsæ manus: ut occupánte pavóre mentes hóminum, nullus áudeat repugnáre.
+      responsory: |-
+        R. Super muros tuos, Jerúsalem, constítui custódes; * Tota die et nocte non tacébunt laudáre nomen Dómini.
+        V. Prædicábunt pópulis fortitúdinem meam, et annuntiábunt géntibus glóriam meam.
+        R. Tota die et nocte non tacébunt laudáre nomen Dómini.
+      status: verified

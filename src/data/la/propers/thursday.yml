@@ -1,0 +1,91 @@
+# Thursday's own plain ferial Matins invitatory antiphon (Psalterium/
+# Special/Matutinum Special.txt's "Invit Trid_" block, `Feria V=`).
+# See matins-invitatory-antiphon-sunday.yml's header for the weekday-cycle
+# mechanism this belongs to; live-verified 2026-09-06.
+matins-invitatory/antiphon-~:
+  text: Dóminum, qui fecit nos, * Veníte, adorémus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
+lauds-hymn:
+  text: |
+    Lux ecce surgit áurea,
+    Pallens facéssat cǽcitas,
+    Quæ nosmet in præceps diu
+    Erróre traxit dévio.
+
+    Hæc lux serénum cónferat,
+    Purósque nos præstet sibi:
+    Nihil loquámur súbdolum:
+    Volvámus obscúrum nihil.
+
+    Sic tota decúrrat dies,
+    Ne lingua mendax, ne manus
+    Oculíve peccent lúbrici,
+    Ne noxa corpus ínquinet.
+
+    Speculátor astat désuper,
+    Qui nos diébus ómnibus,
+    Actúsque nostros próspicit
+    A luce prima in vésperum.
+
+    * Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
+lauds-responsory:
+  text: |
+    R.br. Sana ánimam meam, * Quia peccávi tibi.
+    R. Sana ánimam meam, * Quia peccávi tibi.
+    V. Ego dixi: Dómine, miserére mei
+    R. Quia peccávi tibi.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Sana ánimam meam, * Quia peccávi tibi.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
+lauds-versicle:
+  text: |-
+    V. Repléti sumus mane misericórdia tua.
+    R. Exsultávimus, et delectáti sumus.
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Day4 Vespera]",
+# Psalterium/Special/Major Special.txt): five substitutions against the
+# base "[Hymnus Day4 Vespera]" text ("fértili natos aqua" -> "ex aquis
+# ortum genus"; "relínquis" -> "remíttis"; "érigens" -> "írrigans";
+# "répleant" -> "rápiant"; "éfferat" -> "levet"), applied by hand here —
+# not live-query-verified (see TODO.md). English has no separate Monastic
+# variant in the source.
+vespers-hymn:
+  text: |
+    Magnæ Deus poténtiæ,
+    Qui ex aquis ortum genus
+    Partim remíttis gúrgiti,
+    Partim levas in áëra.
+
+    Demérsa lymphis ímprimens,
+    Subvécta cælis írrigans:
+    Ut stirpe ab una pródita,
+    Divérsa rápiant loca:
+
+    Largíre cunctis sérvulis,
+    Quos mundat unda Sánguinis,
+    Nescíre lapsus críminum,
+    Nec ferre mortis tǽdium.
+
+    Ut culpa nullum déprimat:
+    Nullum levet jactántia:
+    Elísa mens ne cóncidat:
+    Eláta mens ne córruat.
+
+    * Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum.
+    Amen.
+  status: draft

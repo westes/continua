@@ -1,0 +1,267 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Concéde, quǽsumus, omnípotens Deus: ut, qui ex mérito nostræ actiónis afflígimur, tuæ grátiæ consolatióne respirémus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2025-03-30); Latin and English both taken from the page.
+lauds-capitulum:
+  text: 'Fratres: Scriptum est, quóniam Abraham duos fílios hábuit: unum de ancílla, et unum de líbera: sed qui de ancílla, secúndum carnem natus est: qui autem de líbera, per repromissiónem: quæ sunt per allegoríam dicta.'
+  citation: Gal 4:22-24
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2025-03-30); Latin and English both taken from the page.
+lauds-hymn:
+  text: |
+    Jam Christe sol justítiæ,
+    Mentis diéscant ténebræ:
+    Virtútum ut lux rédeat,
+    Terris diem cum réparas.
+
+    Dans tempus acceptábile,
+    Et pǽnitens cor tríbue,
+    Convértat ut benígnitas
+    Quos longa suffert píetas.
+
+    Quiddámque pæniténtiæ
+    Da ferre, quamvis grávium,
+    Majóre tuo múnere,
+    Quo démptio fit críminum.
+
+    Dies venit, dies tua,
+    In qua reflórent ómnia:
+    Lætémur in hac ad tuam
+    Per hanc redúcti grátiam.
+
+    Te rerum univérsitas,
+    Clemens, adóret, Trínitas,
+    Et nos novi per véniam,
+    Novum canámus cánticum.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2025-03-30); Latin and English both taken from the page.
+lauds-responsory:
+  text: |
+    R.br. Ipse liberávit me * de láqueo venántium.
+    R. Ipse liberávit me * de láqueo venántium.
+    V. Et a verbo áspero.
+    R. De láqueo venántium.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ipse liberávit me * de láqueo venántium
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2025-03-30); Latin and English both taken from the page.
+lauds-versicle:
+  text: V. Ángelis suis Deus mandávit de te. R. Ut custódiant te in ómnibus viis tuis.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayPrima, 2025-03-30); Latin and English both taken from the page.
+prime-antiphon:
+  text: Accépit ergo * Jesus panes, et, cum grátias egísset, distríbuit discumbéntibus.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2025-03-30); Latin and English both taken from the page.
+terce-antiphon:
+  text: De quinque pánibus * et duobus píscibus satiávit Dóminus quinque míllia hóminum.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2025-03-30); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    Gal 4:22-24 Fratres: Scriptum est, quóniam Abraham duos fílios hábuit: unum de ancílla, et unum de líbera: sed qui de ancílla, secúndum carnem natus est: qui autem de líbera, per repromissiónem: quæ sunt per allegoríam dicta.
+    R. Deo grátias.
+    V. Ipse liberávit me de láqueo venántium.
+    R. Et a verbo áspero.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2025-03-30); Latin and English both taken from the page.
+sext-antiphon:
+  text: Satiávit Dóminus * quinque míllia hóminum de quinque pánibus et duobus píscibus.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2025-03-30); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    Gal 4:27 Lætáre, stérilis, quæ non paris: erúmpe et clama, quæ non párturis: quia multi fílii desértæ, magis quam ejus, quæ habet virum.
+    R. Deo grátias.
+    V. Scápulis suis obumbrábit tibi.
+    R. Et sub pennis ejus sperábis.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2025-03-30); Latin and English both taken from the page.
+none-antiphon:
+  text: 'Illi ergo * hómines, cum vidíssent quod fécerat Jesus signum, intra se dicébant: quia hic est vere Prophéta, qui ventúrus est in mundum.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2025-03-30); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    Gal 4:31 Itaque, fratres, non sumus ancíllæ fílii, sed líberæ: qua libertáte Christus nos liberávit.
+    R. Deo grátias.
+    V. Scuto circúmdabit te véritas ejus.
+    R. Non timébis a timóre noctúrno.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2025-03-30); Latin and English both taken from the page.
+vespers-hymn:
+  text: |
+    Audi, benígne Cónditor,
+    Nostras preces cum flétibus,
+    In hoc sacro jejúnio
+    Fusas quadragenário.
+
+    Scrutátor alme córdium,
+    Infírma tu scis vírium:
+    Ad te revérsis éxhibe
+    Remissiónis grátiam.
+
+    Multum quidem peccávimus,
+    Sed parce confiténtibus:
+    Ad laudem tui nóminis
+    Confer medélam lánguidis.
+
+    Sic corpus extra cónteri
+    Dona per abstinéntiam,
+    Jejúnet ut mens sóbria
+
+    A labe prorsus críminum.
+
+    Præsta, beáta Trínitas,
+    Concéde, simplex Únitas;
+    Ut fructuósa sint tuis
+    Jejuniórum múnera.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2025-03-30); Latin and English both taken from the page.
+vespers-responsory:
+  text: |
+    R.br. Scápulis suis * obumbrábit tibi.
+    R. Scápulis suis * obumbrábit tibi.
+    V. Et sub pennis ejus sperábis.
+    R. Obumbrábit tibi.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Scápulis suis * obumbrábit tibi.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2025-03-30); Latin and English both taken from the page.
+vespers-versicle:
+  text: V. Ángelis suis Deus mandávit de te. R. Ut custódiant te in ómnibus viis tuis.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-03-07 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Cum sublevásset óculos * Jesus, et vidísset máximam multitúdinem veniéntem ad se, dixit ad Philíppum: Unde emémus panes, ut mandúcent hi? Hoc autem dicébat tentans eum: ipse enim sciébat quid esset factúrus.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-03-07 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: Súbiit ergo, * in montem Jesus, et ibi sedébat cum discípulis suis.
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-03-29 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Nemo te condemnávit, múlier? * Nemo, Dómine. Nec ego te condemnábo: jam ámplius noli peccáre.'
+  status: verified
+  temporal: true
+
+# Engine (Monastic Tridentinum 1617, command=prayLaudes, 2027-03-07); source Tempora/Quad4-0.txt's [Ant Laudes] entries 1,2,7,8,9 in Latin and English. Antiphons for the Sunday's own psalm slots (Ps 66 first, no antiphon). Applies via the numbers-override path for this temporal Sunday (resolve-common.ts getPsalmodyNumbersOverrideId).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 50
+      antiphon: Tunc acceptábis * sacrifícium justítiæ, si avérteris fáciem tuam a peccátis meis.
+    - psalms:
+        - 117
+      antiphon: Bonum est * speráre in Dómino, quam speráre in princípibus.
+    - psalms:
+        - 62
+      antiphon: In matutínis, * Dómine, meditábor in te.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Potens es, Dómine, * erípere nos de manu forti: líbera nos, Deus noster.'
+  laudate:
+    antiphon: Reges terræ * et omnes pópuli, laudáte Deum.
+
+# Nocturn 2-3, Fourth Sunday of Lent (temporalId lent-4). Sourced from
+# Tempora/Quad4-0.txt (Latin) / English/Tempora/Quad4-0.txt. See
+# advent-1.yml/lent-1.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Basil the Great's
+# 1st Homily on Fasting. Responsory: Lectio4's own (Responsory4, "In mare
+# viæ tuæ").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (John 6:1-15, the multiplication of the loaves, "Et
+# réliqua") - St. Augustine's Tractate 24 on John begins within Lectio7
+# itself, same pattern used throughout this sweep. Combined Lectio7's
+# homily portion (incipit dropped) with Lectio8-9, using Responsory7
+# ("Spléndida facta est fácies Móysi") - the first responsory of the group
+# the combined reading spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Basil the Great, Archbishop of Caesarea, Homily 1 on Fasting
+      text: |-
+        Móysen per jejúnium nóvimus in montem ascendísse: neque enim áliter ausus esset vérticem fumántem adíre, atque in calíginem íngredi, nisi jejúnio munítus. Per jejúnium mandáta dígito Dei in tábulis conscrípta suscépit. Item supra montem jejúnium legis latæ conciliátor fuit: inférius vero, gula ad idololatríam pópulum dedúxit, ac contaminávit. Sedit, inquit, pópulus manducáre et bíbere, et surrexérunt lúdere. Quadragínta diérum labórem ac perseverántiam, Dei servo contínuo jejunánte ac oránte, una tantum pópuli ebríetas cassam irritámque réddidit. Quas enim tábulas Dei dígito conscríptas jejúnium accépit, has ebríetas contrívit: Prophéta sanctíssimo indígnum existimánte, vinoléntum pópulum a Deo legem accípere.
+
+        Uno témporis moménto ob gulam pópulus ille per máxima prodígia Dei cultum edóctus, in Ægyptíacam idololatríam turpíssime devolútus est. Ex quo si utrúmque simul cónferas, vidére licet, jejúnium ad Deum dúcere, delícias vero salútem pérdere. Quid Esau inquinávit, servúmque fratris réddidit? nonne esca una, propter quam primogénita véndidit? Samuélem vero nonne per jejúnium orátio largíta est matri? Quid fortíssimum Samsónem inexpugnábilem réddidit? nonne jejúnium, cum quo in matris ventre concéptus est? Jejúnium concépit, jejúnium nutrívit, jejúnium virum effécit. Quod sane Angelus matri præcépit, monens quæcúmque ex vite procéderent, ne attíngeret, non vinum, non síceram bíberet. Jejúnium prophétas génuit, poténtes confírmat atque róborat.
+
+        Jejúnium legislatóres sapiéntes facit: ánimæ óptima custódia, córporis sócius secúrus, fórtibus viris muniméntum et arma, athlétis et certántibus exercitátio. Hoc prætérea tentatiónes propúlsat, ad pietátem armat, cum sobrietáte hábitat, temperántiæ ópifex est: in bellis fortitúdinem affert, in pace quiétem docet: nazarǽum sanctíficat, sacerdótem pérficit: neque enim fas est sine jejúnio sacrifícium attíngere, non solum in mýstica nunc et vera Dei adoratióne, sed nec in illa, in qua sacrifícium secúndum legem in figúra offerebátur. Jejúnium Elíam magnæ visiónis spectatórem fecit: quadragínta namque diérum jejúnio cum ánimam purgásset, in spelúnca méruit, quantum fas est hómini, Deum vidére. Móyses íterum legem accípiens, íterum jejúnia secútus est. Ninivítæ, nisi cum illis et bruta jejunássent, ruínæ minas nequáquam evasíssent. In desérto autem quorúmnam membra cecidérunt? nonne illórum, qui carnes appetivére?
+      responsory: |-
+        R. In mare viæ tuæ, et sémitæ tuæ in aquis multis: * Deduxísti sicut oves pópulum tuum in manu Móysi et Aaron.
+        V. Transtulísti illos per mare Rubrum, et transvexísti eos per aquam nímiam.
+        R. Deduxísti sicut oves pópulum tuum in manu Móysi et Aaron.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joann 6:1-15
+      text: 'In illo témpore: Abiit Jesus trans mare Galilǽæ, quod est Tiberíadis: et sequebátur eum multitúdo magna, quia vidébant signa, quæ faciébat super his, qui infirmabántur. Súbiit ergo in montem Jesus: et ibi sedébat cum discípulis suis. Erat autem próximum Pascha, dies festus Judæórum. Cum sublevásset ergo óculos Jesus et vidísset, quia multitúdo máxima venit ad eum, dixit ad Philíppum: Unde emémus panes, ut mandúcent hi? Hoc autem dicébat tentans eum: ipse enim sciébat, quid esset factúrus. Respóndit ei Philíppus: Ducentórum denariórum panes non suffíciunt eis, ut unusquísque módicum quid accípiat. Dicit ei unus ex discípulis ejus, Andréas, frater Simónis Petri: Est puer unus hic, qui habet quinque panes hordeáceos et duos pisces: sed hæc quid sunt inter tantos? Dixit ergo Jesus: Fácite hómines discúmbere. Erat autem fænum multum in loco. Discubuérunt ergo viri, número quasi quinque míllia. Accépit ergo Jesus panes, et cum grátias egísset, distríbuit discumbéntibus: simíliter et ex píscibus, quantum volébant. Ut autem impléti sunt, dixit discípulis suis: Collígite quæ superavérunt fragménta, ne péreant. Collegérunt ergo, et implevérunt duódecim cóphinos fragmentórum ex quinque pánibus hordeáceis, quæ superfuérunt his, qui manducáverant. Illi ergo hómines cum vidíssent, quod Jesus fécerat signum, dicébant: Quia hic est vere Prophéta, qui ventúrus est in mundum. Jesus ergo cum cognovísset, quia ventúri essent, ut ráperent eum et fácerent eum regem, fugit íterum in montem ipse solus.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Tractate 24 on the Gospel of John
+      text: |-
+        Mirácula, quæ fecit Dóminus noster Jesus Christus, sunt quidem divína ópera, et ad intellegéndum Deum de visibílibus ádmonent humánam mentem. Quia enim ille non est talis substántia, quæ vidéri óculis possit; et mirácula ejus, quibus totum mundum regit, universámque creatúram adminístrat, assiduitáte viluérunt, ita ut pene nemo dignétur atténdere ópera Dei mira et stupénda in quólibet séminis grano: secúndum ipsam suam misericórdiam, servávit sibi quædam, quæ fáceret opportúno témpore præter usitátum cursum ordinémque natúræ; ut non majóra, sed insólita vidéndo stupérent, quibus cotidiána vilúerant.
+
+        Majus enim miráculum est gubernátio totíus mundi, quam saturátio quinque míllium hóminum de quinque pánibus. Et tamen hoc nemo mirátur: illud mirántur hómines, non quia majus est, sed quia rarum est. Quis enim et nunc pascit univérsum mundum, nisi ille, qui de paucis granis ségetes creat? Fecit ergo quo modo Deus. Unde enim multíplicat de paucis granis ségetes, inde in mánibus suis multiplicávit quinque panes: potéstas enim erat in mánibus Christi. Panes autem illi quinque, quasi sémina erant, non quidem terræ mandáta, sed ab eo, qui terram fecit, multiplicáta.
+
+        Hoc ergo admótum est sénsibus, quo erigerétur mens: et exhíbitum óculis, ubi exercerétur intelléctus: ut invisíbilem Deum per visibília ópera mirarémur, et erécti ad fidem, et purgáti per fidem, étiam ipsum invisíbilem vidére cuperémus, quem de rebus visibílibus invisíbilem noscerémus. Nec tamen súfficit hæc intuéri in miráculis Christi. Interrogémus ipsa mirácula, quid nobis loquántur de Christo: habent enim, si intelligántur, linguam suam. Nam quia ipse Christus Verbum Dei est: étiam factum Verbi, verbum nobis est.
+      responsory: |-
+        R. Spléndida facta est fácies Móysi, dum respíceret in eum Dóminus: * Vidéntes senióres claritátem vultus ejus, admirántes timuérunt valde.
+        V. Cumque descendísset de monte Sínai, portábat duas tábulas testimónii, ignórans quod cornúta esset fácies ejus ex consórtio sermónis Dei.
+        R. Vidéntes senióres claritátem vultus ejus, admirántes timuérunt valde.
+      status: verified

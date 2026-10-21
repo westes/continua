@@ -1,0 +1,142 @@
+# Read directly from web/www/horas/Latin/Sancti/07-07.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui Slavóniæ gentes per beátos Confessóres tuos
+    atque Pontífices Cyríllum et Methódium ad agnitiónem tui nóminis veníre
+    tribuísti: præsta; ut, quorum festivitáte gloriámur, eórum consórtio
+    copulémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor-bishop (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). ss-cyril-and-methodius has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (ss-cyril-and-methodius-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Omnípotens sempitérne Deus, qui Slavóniæ gentes per beátos Confessóres tuos
+    atque Pontífices Cyríllum et Methódium ad agnitiónem tui nóminis veníre
+    tribuísti: præsta; ut, quorum festivitáte gloriámur, eórum consórtio
+    copulémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Ss. Cyril and Methodius: proper Lauds hymn, Latin/Sancti/07-07.txt's [Hymnus Laudes]. English from English/Sancti/07-07.txt.
+# Before this file the saint fell to the Common's hymn.
+lauds-hymn:
+  text: |
+    Lux o decóra pátriæ
+    Slavísque amíca géntibus,
+    Salvéte, fratres: ánnuo
+    Vos efferémus cántico.
+
+    Quos Roma plaudens éxcipit,
+    Compléxa mater fílios,
+    Auget coróna prǽsulum
+    Novóque firmat róbore.
+
+    Terras ad usque bárbaras
+    Inférre Christum pérgitis;
+    Quot vanus error lúserat,
+    Almo replétis lúmine.
+
+    Noxis solúta péctora
+    Ardor supérnus ábripit;
+    Mutátur horror véprium
+    In sanctitátis flósculos.
+
+    Et nunc seréna cǽlitum
+    Locáti in aula, súpplici
+    Adéste voto: Slávicas
+    Serváte gentes Númini.
+
+    Erróre mersos únicum
+    Ovíle Christi cóngreget;
+    Factis avítis ǽmula
+    Fides viréscat púlchrior.
+
+    Tu nos, beáta Trínitas,
+    Cælésti amóre cóncita,
+    Patrúmque natos ínclita.
+    Da pérsequi vestígia.
+    Amen.
+  status: verified
+
+# Ss. Cyril and Methodius: proper Vespers hymn, Latin/Sancti/07-07.txt's [Hymnus Vespera]. English from English/Sancti/07-07.txt.
+# Before this file the saint fell to the Common's hymn.
+vespers-hymn:
+  text: |
+    Sédibus cæli nítidis recéptos
+    Dícite athlétas géminos, fidéles;
+    Slávicæ duplex columen decúsque
+    Dícite gentis.
+
+    Hos amor fratres sociávit unus,
+    Unaque abdúxit píetas erémo,
+    Ferre quo multis célerent beátæ
+    Pígnora vitæ.
+
+    Luce, quæ templis súperis renídet,
+    Búlgaros complent, Móravos, Bohémos;
+    Mox feras turmas numerósa Petro
+    Agmina ducunt.
+
+    Débitam cincti méritis corónam,
+    Pérgite o flecti lácrimis precántum;
+    Prisca vos Slavis opus est datóres 
+    Dona túeri.
+
+    Quæque vos clamat generósa tellus
+    Servet ætérnæ fídei nitórem:
+    Quæ dedit princeps, dabit ipsa semper
+    Roma salútem.
+
+    Gentis humánæ Sator et Redémptor,
+    Qui bonus nobis bona cuncta præbes,
+    Sint tibi grates, tibi sit per omne
+    Glória sæclum.
+    Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Cyril and Methodius, Bishops and
+# Confessors (July 7). Sourced directly from
+# web/www/horas/Latin/Sancti/07-07.txt, English/Sancti/07-07.txt --
+# Lectio4-6, an excerpt from Pope Leo XIII's own encyclical letter on
+# the two saints, combined into one reading. No Lectio7-9 in their own
+# file (a direct `@Commune/C1a:LectioN` cross-reference) -- not
+# transcribed, per the bare-cross-reference convention.
+#
+# Checked 2026-09-05 for a Gospel pairing: this reading (Leo XIII's
+# encyclical, Lectio4-6) is Nocturn 2 -- an institutional/historical
+# document about the saints' lives and mission, not an exegesis of any
+# Gospel pericope, so no isGospel pairing applies to it. Its own
+# Nocturn 3 is the pre-existing, already-documented bare
+# `@Commune/C1a` cross-reference (Common of Confessor Bishops), not
+# transcribed by design, not a new finding.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: Pope Leo XIII, Encyclical Letter (Grande Munus)
+      text: |-
+        Cyrillus et Methodius fratres germani, Thessalonícæ amplíssimo loco nati, Constantinopolim mature concessérunt, ut in ipsa urbe Oriéntis príncipe humanitátis artes addíscerent. Uterque plurimum brevi profecérunt; sed maxime Cyrillus, qui tantam scientiárum laudem adeptus est, ut singuláris honoris causa Philósophus appellarétur. Deínde mónachum ágere Methodius cœpit; Cyrillus autem dignus est hábitus, cui Theodora imperátrix, auctore Ignátio patriarcha, negotium daret erudiéndi ad fidem christianam Cházaros, trans Chersonésum incoléntes, quos, præceptis suis edoctos et Dei numine instinctos, multiplici superstitióne deleta, ad Jesum Christum adjunxit. Recénti Christianórum communitáte óptime constituta, Constantinopolim rediit álacer, atque in monastérium Polychrónis, quo se jam Methodius receperat, Cyrillus ipse secessit. Interim cum res trans Chersonésum próspere gestas ad Rastilláum Moraviæ príncipem fama detulísset, is de aliquot operariis evangelicis Constantinopoli arcesséndis cum imperatóre Michaéle tertio egit. Igitur Cyrillus et Methodius illi expeditióni destináti, et in Moraviam celebri lætítia excepti, animos christiánis institutiónibus tanta vi tamque operosa industria excolendos aggrediúntur, ut non longo intervallo ea gens nomen Jesu Christo libentíssime dederit. Ad eam rem non parum sciéntia váluit dictiónis Slavónicæ, quam Cyrillus ante percéperat, multumque potuérunt sacræ utriusque Testaménti litteræ, quas proprio pópuli sermóne reddiderat; nam Cyrillus et Methodius príncipes inveniéndi fuérunt ipsas litteras, quibus est sermo ipsórum Slavórum signátus et expréssus eáque de causa ejusdem sermónis auctores non immérito habentur.
+
+        Cum rerum gestárum glóriam secundus rumor Romam nuntiásset, sanctus Nicoláus primus Pontifex maximus fratres optimos Romam conténdere jussit. Illi Romanum iter ingressi, relíquias sancti Clementis primi Pontificis maximi, quas Cyrillus Chersónæ repérerat, secum ádvehunt. Quo nuntio, Hadrianus secundus, qui Nicoláo demortuo fuerat suffectus, clero populóque comitante, obviam eis magna cum honóre significatióne progréditur. Deínde Cyrillus et Methodius de munere apostolico in quo essent sancte laborioséque versáti ad Pontificem maximum, assidénte clero, réferunt. Cum autem eo nómine ab ínvidis accusaréntur, quod sermónem Slavónicum in perfunctióne munerum sacrórum usurpavissent, causam dixére ratiónibus tam certis tamque illustribus, ut Pontifex et clerus et laudarint hómines et probarint. Tum ambo, juráti se in fide beáti Petri et Pontificum Romanórum permansuros, epíscopi ab Hadriáno consecráti sunt. Sed erat provisum divinitus, ut Cyrillus vitæ cursum Romæ cónderet, virtúte magis quam ætate matúrus. Methodius vero in Moraviam regréssus, ibique factus forma gregis ex animo, rei catholicæ inservire majore in dies studio ínstitit. Quin étiam Pannonios, Búlgaros, Dálmatas in fide christiáni nóminis confirmávit; in Carinthiis autem ad uníus veri Dei cultum traducéndis plurimum elaborávit.
+
+        Apud Joánnem octavum, qui Hadriáno successerat, íterum de suspecta fide vialatoque more majórum accusatus, ac Romam veníre jussus, coram Joánne et epíscopis aliquot cleroque urbano, facile vicit catholicam prorsus fidem et se retinuisse constanter, et ceteros diligenter edocuísse. Quapropter in re præsénti complexus Methódium Pontifex, potestátem ejus archiepiscopálem expeditionémque Slavónicam, datis étiam litteris, ratam esse jussit. Quare Methodius in Moraviam reversus assignátum sibi munus explere vigilantius perseverávit, pro quo et exsílium libenter passus est. Bohemórum príncipem ejusque uxórem ad fidem perdúxit, et in ea gente christianum nomen longe lateque vulgávit. Evangélii lumen in Polóniam invéxit, et, ut nonnulli scriptores tradunt, sede episcopali Leópoli fundata, in Moscóviam proprii nóminis digréssus, thronum pontificalem Kiowensem constítuit. Demum in Moraviam reversus est ad suos; jamque sese ábripi ad humánum éxitum sentiens, ípsemet sibi successórem designávit, clerumque et pópulum supremis præceptis ad virtútem cohortatus, ea vita, quæ sibi via in cælum fuit, placidíssime defunctus est. Uti Cyrillum Roma, sic Methódium Moravia decedentem summo honóre prosecuta est. Illórum vero festum, quod apud Slavoniæ pópulos jamdiu celebrari consueverat, Leo décimus tertius Pontifex maximus cum Officio ac Missa propria in univérsa Ecclésia quotannis agi præcépit.
+      status: verified

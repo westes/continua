@@ -1,0 +1,55 @@
+# Matins Nocturn 2-3 readings for the Dedication of the Basilicas of
+# Ss. Peter and Paul (Nov 18). No genuine SanctiM match: the correct
+# Tridentine file is the suffixed `Sancti/11-18o.txt` (the plain
+# `Sancti/11-18.txt` just redirects there, `@Sancti/11-18o`), and the
+# only SanctiM file for this date, `SanctiM/11-18r.txt`, bases
+# `@Sancti/11-18r`, a Common-only rubric variant (`vide C8`, no proper
+# text) — a missed pre-1955-pool candidate rather than a genuine
+# SanctiM case (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/11-18o.txt, English/Sancti/11-18o.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous
+# account. The reference engine's own English translation leaves the
+# last sentence of Lectio6 untranslated (Latin text left verbatim in
+# the English file) — that one sentence is this project's own
+# translation, marked `draft`; the rest is the source's own
+# translation, `verified`.
+# Nocturn 3: Lectio7's Gospel citation (Luke 19:1-10) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so only the
+# homily portion was originally authored (not marked isGospel), combined
+# with Lectio8-9 as one continuous excerpt of Pope St. Gregory the
+# Great's Moralia.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — same underlying
+# Common of a Dedication Gospel as
+# dedication-of-the-basilica-of-the-most-holy-savior.yml's own Nocturn 3
+# (this feast's own `ex C8` Rule), sourced from horas/Latin/Commune/
+# C8.txt's own [Evangelium], English/Commune/C8.txt, not guessed at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Ex locis sacris quæ olim apud Christiános veneratiónem habuérunt, illa celebérrima et frequentíssima fuérunt, in quibus cóndita Sanctórum córpora, vel áliquod Mártyrum vestígium aut monuméntum esset. In quorum número sanctórum locórum, in primis semper fuit insígnis ea Vaticáni pars, quam sancti Petri Confessiónem appellábant. Nam eo Christiáni ex ómnibus orbis terræ pártibus, tamquam ad fídei petram et Ecclésiæ fundaméntum conveniéntes, locum, Príncipis Apostolórum sepúlcro consecrátum, summa religióne ac pietáte venerabántur.
+
+        Illuc Constantínus Magnus imperátor octávo die post suscéptum baptísmum venit, depositóque diadémate, et humi jacens, vim lacrimárum profúdit. Mox, sumpto ligóne ac bidénte, terram éruit; indéque duódecim terræ cóphinis, honóris causa duódecim Apostolórum, ablátis, ac loco basílicæ Príncipis Apostolórum designáto, ecclésiam ædificávit. Quam sanctus Silvéster Papa décimo quarto Kaléndas Decémbris, eo modo quo Lateranénsem ecclésiam quinto Idus Novémbris consecráverat, dedicávit, et in ea altáre lapídeum, chrísmate delibútum, eréxit; atque ex eo témpore sancívit ne deínceps altária nisi ex lápide fíerent.
+
+        Basílicam item Pauli apóstoli via Ostiénsi ab eódem Constantíno Imp. magnificentíssime ædificátam dedicávit: quas basílicas Imperátor, multis prǽdiis attribútis locupletávit, ac munéribus amplíssimis exornávit. Cujus Imperatóris tantus fuit ardor religiónis, ut delétis idolórum templis multis ubíque terrárum extrúxerit ecclésias, et præcípue Romæ, in quibus fuérunt basílica sanctæ Crucis ad Hierúsalem in agro Sessoriáno, sancti Lauréntii extra muros in agro Veráno, sanctórum Petri et Marcéllini in via Lavicána, áliquæ permúltæ.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 19:1-10
+      text: 'In illo témpore: Ingréssus Jesus perambulábat Jéricho. Et ecce, vir nómine Zachǽus: et hic princeps erat publicanórum, et ipse dives: et quærébat vidére Jesum, quis esset: et non póterat præ turba, quia statúra pusíllus erat. Et præcúrrens ascéndit in árborem sycómorum, ut vidéret eum; quia inde erat transitúrus. Et cum venísset ad locum, suspíciens Jesus vidit illum, et dixit ad eum: Zachǽe, festínans descénde; quia hódie in domo tua opórtet me manére. Et festínans descéndit, et excépit illum gaudens. Et cum vidérent omnes, murmurábant, dicéntes, quod ad hóminem peccatórem divertísset. Stans autem Zachǽus, dixit ad Dóminum: Ecce, dimídium bonórum meórum, Dómine, do paupéribus: et si quid áliquem defraudávi, reddo quádruplum. Ait Jesus ad eum: Quia hódie salus dómui huic facta est: eo quod et ipse fílius sit Abrahæ. Venit enim Fílius hóminis quǽrere et salvum fácere, quod períerat.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Moralia in Job, Bk. 28, ch. 27 (on Luke 19:1-10)
+      text: |-
+        Si veráciter sapiéntes esse, atque ipsam sapiéntiam contemplári appétimus, stultos nos humíliter cognoscámus. Relinquámus nóxiam sapiéntiam, discámus laudábilem fatuitátem. Hinc quippe scriptum est: Stulta mundi elégit Deus, ut confúndat sapiéntes. Hinc rursum dícitur: Si quis vidétur inter vos sápiens esse in hoc sǽculo, stultus fiat, ut sit sápiens. Hinc evangélicæ históriæ verba testántur: quia Zachǽus cum vidére præ turba nihil posset, sycómori árborem ascéndit, ut transeúntem Dóminum cérneret. Sycómorus quippe ficus fátua dícitur.
+
+        Pusíllus ítaque Zachǽus sycómorum súbiit, et Dóminum vidit: quia qui mundi stultítiam humíliter éligunt, ipsi Dei sapiéntiam subtíliter contemplántur. Pusillitátem namque nostram ad vidéndum Dóminum turba prǽpedit: quia infirmitátem humánæ mentis, ne lucem veritátis inténdat, curárum sæculárium tumúltus premit. Sed prudénter sycómorum ascéndimus, si próvide eam quæ divínitus præcípitur, stultítiam mente tenémus. Quid enim in hoc mundo stúltius quam amíssa non quǽrere, posséssa rapiéntibus relaxáre, nullam pro accéptis injúriis injúriam réddere, immo adjúnctis áliis patiéntiam præbére?
+
+        Quasi enim sycómorum nos ascéndere Dóminus prǽcipit, cum dicit: Qui aufert quæ tua sunt, ne répetas. Et rursum: Si quis te percússerit in déxteram maxíllam, præbe illi et álteram. Per sycómorum Dóminus tránsiens cérnitur: quia per hanc sapiéntem stultítiam, etsi necdum, ut est, sólide, jam tamen per contemplatiónis lumen Dei sapiéntia quasi in tránsitu vidétur, quam vidére néqueunt qui sibi sapiéntes esse vidéntur: quia ad conspiciéndum Dóminum, in eláta cogitatiónum suárum turba deprehénsi, adhuc sycómori árborem non invenérunt.
+      status: verified

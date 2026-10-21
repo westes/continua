@@ -1,0 +1,288 @@
+# Read directly from web/www/horas/Latin/Sancti/10-11.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui de beátæ Maríæ Vírginis útero Verbum tuum, Angelo nuntiánte,
+    carnem suscípere voluísti: præsta supplícibus tuis: ut qui vere eam
+    Genetrícem Dei crédimus, ejus apud te intercessiónibus adjuvémur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (maternity-of-the-bvm-antiphon.yml), paired with the standard BVM commemoration versicle already verified elsewhere in this app (propers/common/lauds-suffrage-bvm.yml -- 'V. Ora pro nobis sancta Dei Genitrix'). Collect is the saint's own real proper (maternity-of-the-bvm-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Cum jucunditáte * Maternitátem beátæ Maríæ semper Vírginis celebrémus.
+    V. Ora pro nobis sancta Dei Génitrix.
+    R. Ut digni efficiámur promissiónibus Christi.
+    Orémus.
+    Deus, qui de beátæ Maríæ Vírginis útero Verbum tuum, Angelo nuntiánte,
+    carnem suscípere voluísti: præsta supplícibus tuis: ut qui vere eam
+    Genetrícem Dei crédimus, ejus apud te intercessiónibus adjuvémur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# the Maternity of the BVM: proper Matins hymn, Latin/Sancti/10-11.txt's [Hymnus Matutinum]. English from English/Sancti/10-11.txt.
+# Before this file the saint fell to the Common's hymn.
+matins-hymn:
+  text: |
+    Cælo Redémptor prǽtulit
+    Felícis alvum Vírginis,
+    Ubi futúra víctima
+    Mortále corpus índuit.
+
+    Hæc Virgo nobis édidit
+    Nostræ salútis áuspicem,
+    Qui nos redémit sánguine,
+    Pœnas crucémque pértulit.
+
+    Spes læta nostro e péctore
+    Pellat timóres ánxios:
+    Hæc quippe nostras lácrimas
+    Precésque defert Fílio.
+
+    Voces Paréntis éxcipit,
+    Votísque Natus ánnuit:
+    Hanc quisque semper díligat,
+    Rebúsque in arctis ínvocet.
+
+    Sit Trinitáti glória,
+    Quæ Matris intáctum sinum
+    Ditávit almo gérmine,
+    Laus sit per omne sǽculum.
+    Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/10-11.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: 'Maternitátem beátæ Maríæ Vírginis celebrémus: * Christum ejus Fílium adorémus Dóminum.'
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/10-11.txt's own [Capitulum
+# Laudes] and English/Sancti/10-11.txt's own translation. Authoring this
+# was necessary for the feast's own hymn (lauds-hymn-maternity-of-the-
+# bvm.yml) to actually be reached at all: hours/resolve-common.ts's
+# resolveOfficeBundle is all-or-nothing per id -- her own `common:
+# common-of-the-bvm` field means without a chapter of her own, the whole
+# bundle (hymn included) fell through to that Common's generic text.
+lauds-capitulum:
+  text: 'Qui creávit me, requiévit in tabernáculo meo, et dixit mihi: in Jacob inhábita, et in eléctis meis mitte radíces.'
+  citation: Sir 24:12-13
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/10-11.txt's own [Hymnus Laudes]
+# (first 3 stanzas) and English/Sancti/10-11.txt's own translation; the
+# closing doxology stanza is the standard "Nat" doxology (per this feast's
+# own `Doxology=Nat` rule), reused verbatim from hymn-doxology-nat.yml's
+# Latin, with the reference engine's own (differently-worded but
+# equivalent) English translation for this specific hymn kept instead of
+# that file's own English. No Vespers hymn exists in the source for this
+# feast at all (both the Latin and English files' own [Hymnus Vespera]
+# blocks are empty) -- correctly falls to common-of-the-bvm's Vespers
+# hymn, not a gap.
+lauds-hymn:
+  text: |-
+    Te, Mater alma Núminis,
+    Orámus omnes súpplices,
+    A fraude nos ut dǽmonis
+    Tua sub umbra prótegas.
+
+    Ob pérditum nostrum genus
+    Primi paréntis crimine,
+    Ad ínclitum Matris decus
+    Te rex suprémus éxtulit.
+
+    Cleménter ergo próspice
+    Lapsis Adámi pósteris:
+    A te rogátus Fílius
+    Depónat iram víndicem.
+
+    Glória tibi, Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# No distinct Lauds versicle found for this feast in the reference source
+# beyond her own Matins nocturn versicle (a different slot); reusing
+# common-of-the-bvm's own Lauds versicle, same pattern as her chapter/
+# hymn tiers not needing anything beyond the Common where nothing proper
+# was found. Authored to make the feast's own bundle (needed for her own
+# hymn, see lauds-capitulum-maternity-of-the-bvm.yml) render a real versicle instead of
+# an unconditionally-rendered empty one.
+lauds-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# No distinct Vespers hymn found for this feast in the reference source
+# (both Latin/English [Hymnus Vespera] blocks are empty); reusing
+# common-of-the-bvm's own Vespers hymn ("Ave maris stella") verbatim.
+# Authored to make the feast's own bundle (needed for her own Lauds
+# hymn, see lauds-capitulum-maternity-of-the-bvm.yml -- Vespers falls back to the same
+# Lauds capitulum via lookupPart (Vespers chapter, Lauds sibling)) render a real hymn
+# instead of an unconditionally-rendered empty one.
+vespers-hymn:
+  text: |-
+    Ave maris stella,
+    Dei Mater alma,
+    Atque semper Virgo,
+    Felix cæli porta.
+
+    Sumens illud Ave
+    Gabriélis ore,
+    Funda nos in pace,
+    Mutans Hevæ nomen.
+
+    Solve vincla reis,
+    Profer lumen cæcis,
+    Mala nostra pelle,
+    Bona cuncta posce.
+
+    Monstra te esse matrem,
+    Sumat per te preces,
+    Qui pro nobis natus,
+    Tulit esse tuus.
+
+    Virgo singuláris,
+    Inter omnes mitis,
+    Nos culpis solútos
+    Mites fac et castos.
+
+    Vitam præsta puram,
+    Iter para tutum,
+    Ut vidéntes Jesum,
+    Semper collætémur.
+
+    Sit laus Deo Patri,
+    Summo Christo decus,
+    Spirítui Sancto,
+    Tribus honor unus. Amen.
+  status: verified
+
+# Divino Afflatu 1954 engine render (2026-10-11, second Vespers; post-1617 feast, no Monastic render exists). Replaces a text that was either the Common BVM's versicle or the Apparition of St. Michael's with its Paschal Alleluia baked in. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-versicle:
+  text: |
+    V. Benedícta tu in muliéribus.
+    R. Et benedíctus fructus ventris tui.
+  status: verified
+
+# Divino Afflatu 1954 engine render, 2026-10-10 maternity-of-the-bvm first (DA 1954; second Vespers of the
+# Raphael file borrows the Guardian Angels' same Angel-Common versicle). Paschaltide Alleluia is left to
+# hours/paschal-alleluia.ts.
+vespers-versicle/~-first:
+  text: |
+    V. Benedícta tu in muliéribus.
+    R. Et benedíctus fructus ventris tui.
+  status: verified
+
+# Lauds' Benedictus antiphon, read from web/www/horas/Latin/Sancti/
+# 10-11.txt's own [Ant 2] and its English counterpart -- corrected
+# 2026-09-14: this file previously held [Ant 1] (this feast's own First
+# Vespers Magnificat antiphon, "Cum jucunditáte Maternitátem..."), the
+# same Ant1-for-Benedictus mis-tagging bug already found for several
+# other feasts this same day (TODO.md). [Ant 2] here is itself a
+# substitution rule, `@Commune/C11:Ant 1:s/sanctam festivitátem/
+# admirábilem Maternitátem/` -- Commune/C11.txt's own [Ant 1]
+# ("Sancta María, succúrre míseris...") with that one phrase swapped;
+# applied by hand below rather than left as an unresolved cross-
+# reference, matching the fully-substituted English already given in
+# the source's own English file.
+benedictus-antiphon:
+  text: 'Sancta María, * succúrre míseris, juva pusillánimes, réfove flébiles, ora pro pópulo, intérveni pro clero, intercéde pro devóto femíneo sexu: séntiant omnes tuum juvámen, quicúmque célebrant tuam admirábilem Maternitátem.'
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/10-11.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast, not a Common
+# substitution.
+magnificat-antiphon:
+  text: 'Matérnitas tua, * Dei Génetrix Virgo, gáudium annuntiávit univérso mundo: ex te enim ortus est sol justítiæ, Christus Deus noster.'
+  status: verified
+
+# First Vespers Magnificat antiphon: web/www/horas/Latin/Sancti/10-11.txt's own [Ant 1]
+# and its English counterpart. Second Vespers' [Ant 3] is
+# maternity-of-the-bvm-magnificat-antiphon.yml (the default); see hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Cum jucunditáte * Maternitátem beátæ Maríæ semper Vírginis celebrémus.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/10-11.txt's own [Ant Vespera]
+# block. Maternity of the BVM (instituted 1931) doesn't exist in the
+# Monastic Tridentinum 1617 calendar at all -- a live "Hodie" query for
+# 2026-10-11 under that version just renders the plain 20th Sunday after
+# Pentecost, confirming there's no live-render path to verify this feast
+# against under that version; using the static secular file directly
+# instead, same as Nativity BVM's own Common-of-the-BVM invitatory
+# sourcing. Only the first 4 of the raw file's 5 listed antiphons are
+# used (Monastic Vespers has 4 psalm slots, not 5).
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Beáta es, * Virgo María, quæ ómnium portásti Creatórem.
+    - psalms:
+        - 112
+      antiphon: Genuísti, * qui te fecit, et in ætérnum pérmanes Virgo.
+    - psalms:
+        - 121
+      antiphon: Cum essem párvula, * plácui Altíssimo et de meis viscéribus génui Deum et hóminem.
+    - psalms:
+        - 126
+      antiphon: Benedícta fília * tu a Dómino, quia per te fructum vitæ communicávimus.
+
+# Matins Nocturn 2-3 readings for the Maternity of the Blessed Virgin
+# Mary (Oct 11). Sourced directly from
+# web/www/horas/Latin/Sancti/10-11.txt, English/Sancti/10-11.txt.
+# Nocturn 2: Lectio4-5 (two excerpts from Pope St. Leo the Great's own
+# Nativity sermons) plus Lectio6 (Pius XI's own history of this feast's
+# institution, 1931, for the 1500th anniversary of the Council of
+# Ephesus), combined into one reading, not Gospel-tied. Nocturn 3:
+# Lectio7-9, St. Bernard of Clairvaux's Homily 1 in Praise of the
+# Virgin Mother (on Luke 2:43-51, the Finding in the Temple -- "Fili,
+# quid fecísti nobis sic?" is this homily's own opening line, quoting
+# that pericope directly, not the "Missus est"/Annunciation Bernard
+# series reused elsewhere in this store).
+#
+# Update (2026-09-05): the Gospel pericope itself (Luke 2:43-51) is now
+# authored too (isGospel: true, immediately before the homily) --
+# sourced from missa/Latin/Sancti/10-11.txt's own [Evangelium] (this
+# same feast's own Mass Gospel) and its English parallel, not guessed
+# at, and not the Annunciation pericope (Luke 1:26-38) initially
+# suspected -- this feast's own Nocturn 3 Gospel is genuinely the
+# Finding in the Temple, confirmed via horas/Latin/Sancti/10-11.txt's
+# own Lectio7.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: Pope St. Leo the Great, Sermons 1-2 on the Nativity of the Lord; Acts of Pope Pius XI
+      text: |-
+        Virgo régia Davídicæ stirpis elígitur, quæ sacro gravidánda fetu, divínam humanámque prolem prius concíperet mente quam córpore: et ne supérni ignára consílii ad inusitátos pavéret affátus, quod in ea operándum erat a Spíritu Sancto, collóquio dídicit angélico, nec damnum crédidit pudóris Dei Génetrix mox futúra. Cur enim de conceptiónis novitáte despéret, cui efficiéntia de Altíssimi virtúte promíttitur? Confirmátur credéntis fides étiam præeúntis attestatióne miráculi. Donátur Elísabeth inopináta fecúnditas, ut qui concéptum déderat stérili, datúrus non dubitarétur et Vírgini. Verbum ígitur Dei Fílius, qui in princípio erat apud Deum, per quem facta sunt ómnia, et sine quo factum est nihil, propter liberándum hóminem ab ætérna morte, factus est homo.
+
+        Ingréditur hæc ínfima Jesus Christus Dóminus noster de cæli sede descéndens, et a patérna glória non recédens, novo órdine, nova nativitáte generátus. Novo órdine, quia invisíbilis in suis, visíbilis factus est in nostris: incomprehensíbilis vóluit comprehéndi: ante témpora manens, esse cœpit in témpore. Nova autem nativitáte génitus est: concéptus a Vírgine, natus ex Vírgine, sine patérnæ carnis concupiscéntia, sine matérnæ integritátis injúria: quia futúrum hóminum Salvatórem talis ortus decébat, qui et in se habéret humánæ substántiæ natúram, et humánæ carnis inquinaménta nescíret. Orígo dissímilis, sed natúra consímilis; humáno usu et consuetúdine, quod crédimus, caret: sed divína potestáte subníxum est, quod Virgo concéperit, Virgo pepérerit, Virgo permánserit.
+
+        Cum anno millésimo nongentésimo trigésimo primo, univérso orbe cathólico plaudénte, solémnia celebraréntur expléti sǽculi décimi quinti, postquam in Ephesína sýnodo beáta María Virgo, de qua natus est Jesus, contra Nestórii hǽresim Mater Dei a Pátribus, Cælestíno Papa præeúnte, conclamáta est, Summus Póntifex Pius undécimus faustíssimi evéntus memóriam, perénni suæ pietátis testimónio perpetuándam vóluit. Itaque quod jam in Urbe exstábat nóbile Ephesínæ proclamatiónis monuméntum, triumphálem arcum in Basílica sanctæ Maríæ Majóris in Exquíliis, a decessóre suo Xysto tértio mirábili ópere musívo ornátum, témporis injúria fatiscéntem felíciter restituéndum una cum ala transvérsa Basílicæ munificéntia sua curávit. Lítteris vero encýclicis, Œcuménici Concílii Ephesíni genuínis lineaméntis descríptis, ineffábile divínæ Maternitátis beátæ Maríæ Vírginis privilégium, pie copioséque illustrávit, ut tam excélsi mystérii doctrína áltius fidélium ánimis insidéret. Demum, ut neque litúrgicum deésset monuméntum jussit ut festum divínæ Maternitátis beátæ Maríæ Vírginis cum Missa et Offício própriis die undécima octóbris sub ritu dúplici secúndæ classis quotánnis ab univérsa Ecclésia celebrarétur.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 2:43-51
+      text: 'In illo témpore: Cum redírent, remánsit puer Jesus in Jerúsalem, et non cognovérunt paréntes ejus. Existimántes autem illum esse in comitátu, venérunt iter diei, et requirébant eum inter cognátos, et notos. Et non inveniéntes, regréssi sunt in Jerúsalem, requiréntes eum. Et factum est, post tríduum invenérunt illum in templo sedéntem in médio doctórum, audiéntem illos, et interrogántem eos. Stupébant autem omnes, qui eum audiébant, super prudéntia et respónsis ejus. Et vidéntes admiráti sunt. Et dixit mater ejus ad illum: Fili, quid fecísti nobis sic? ecce pater tuus, et ego doléntes quærebámus te. Et ait ad illos: Quid est quod me quærebátis? nesciebátis quia in his, quæ Patris mei sunt, opórtet me esse? Et ipsi non intellexérunt verbum, quod locútus est ad eos. Et descéndit cum eis, et venit Názareth: et erat súbditus illis.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Bernard of Clairvaux, Homily 1 in Praise of the Virgin Mother
+      text: |-
+        Deum et Dóminum Angelórum María suum fílium appéllat, dicens: Fili, quid fecísti nobis sic? Quis hoc áudeat Angelórum? Súfficit eis, et pro magno habent, quod cum sint spíritus ex conditióne, ex grátia facti sint et vocáti Angeli, testánte David: Qui facit Angelos suos spíritus. María vero matrem se agnóscens, majestátem illam, cui illi cum reveréntia sérviunt, cum fidúcia suum núncupat Fílium: nec dedignátur nuncupári Deus, quod esse dignátus est. Nam paulo post subdit Evangelísta: Et erat súbditus illis. Quis? Quibus? Deus homínibus? Deus, inquam, cui Angeli súbditi sunt, cui Principátus et Potestátes obédiunt, súbditus erat Maríæ.
+
+        Miráre utrúmlibet, et élige quod ámplius miréris, sive Fílii benigníssimam dignatiónem, sive Matris excellentíssimam dignitátem. Utrímque stupor, utrímque miráculum. Et quod Deus féminæ obtémperet, humílitas absque exémplo: et quod Deo fémina principétur, sublímitas sine sócio. In láudibus Vírginum singuláriter cánitur quod sequúntur Agnum quocúmque íerit. Quibus ergo láudibus júdicas dignam, quæ étiam præit? Disce, homo, obedíre: disce, terra, subdi; disce, pulvis, obtemperáre. De Auctóre tuo loquens Evangelísta: Et erat, inquit, súbditus illis. Erubésce, supérbe cinis! Deus se humíliat, et tu te exáltas? Deus se homínibus subdit, et tu, dominári géstiens homínibus, tuo te præpónis Auctóri?
+
+        Felix María, cui nec humílitas défuit, nec virgínitas! Et quidem singuláris virgínitas, quam non temerávit, sed honorávit fecúnditas. Et nihilóminus speciális humílitas, quam non ábstulit, sed éxtulit fecúnda virgínitas: et incomparábilis prorsus fecúnditas, quam virgínitas simul comitátur et humílitas. Quid horum non mirábile? quid non incomparábile? quid non singuláre? Venerámini ergo, cónjuges, in carne corruptíbili carnis integritátem: vos sacræ vírgines in Vírgine fecunditátem. Imitámini, omnes hómines, Dei Matris humilitátem.
+      status: verified

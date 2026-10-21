@@ -265,7 +265,7 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
 }
 
 /** Any sanctoral winner's (or named-temporal feast's) own capitulum/
- * responsory/hymn/versicle (data/propers/common/lauds-{part}-${id}.yml),
+ * responsory/hymn/versicle (the lauds-{part} sections of data/<lang>/{commons,propers}/${id}.yml),
  * else their Common's (`${part}-${common}`), when authored — see
  * resolve-part.ts's lookupPart for the eligibility/fallback
  * rule (deliberately rank-agnostic as of 2026-08-25: a simplex feast's

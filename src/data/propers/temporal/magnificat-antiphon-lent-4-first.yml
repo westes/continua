@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-03-29 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: magnificat-antiphon-lent-4-first
-text:
-  la: "Nemo te condemnávit, múlier? * Nemo, Dómine. Nec ego te condemnábo: jam ámplius noli peccáre."
-  en: "Woman, hath no man condemned thee? * No man, Lord. Neither do I condemn thee; go, and sin no more."
-status:
-  la: verified
-  en: verified

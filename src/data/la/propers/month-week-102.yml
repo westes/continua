@@ -1,0 +1,25 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2027-10-09 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Refúlsit sol * in clípeos áureos, et resplenduérunt montes ab eis: et fortitúdo géntium dissipáta est.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "2nd Sunday of October" (Tempora/102-0.txt) — see
+# month-week-081.yml's header for the id scheme. Responsory reuses 101's
+# own Responsory4 (source's own cross-reference).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, City of God, Book 18, ch. 45
+      text: |-
+        Posteáquam gens Judǽa cœpit non habére prophétas, proculdúbio detérior facta est, eo scílicet témpore, quo se sperábat instauráto templo post captivitátem, quæ fuit in Babylónia, futúram esse meliórem. Sic quippe intelligébat pópulus ille carnális, quod prænuntiátum est per Aggæum prophétam dicéntem: Magna erit glória domus istíus novíssimæ, plus quam primæ. Quod de novo testaménto dictum esse, paulo supérius demonstrávit, ubi ait apérte Christum promíttens: Et movébo omnes gentes, et véniet Desiderátus cunctis Géntibus.
+
+        Tálibus enim eléctis Géntium, domus Dei ædificátur per Testaméntum novum lapídibus vivis, longe gloriósior, quam templum illud fuit, quod a rege Salomóne constrúctum est, et post captivitátem instaurátum. Propter hoc ergo nec prophétas ex illo témpore hábuit illa gens; sed multis cládibus afflícta est ab alienígenis régibus, ipsísque Románis, ne hanc Aggæi prophetíam in illa instauratióne templi opinarétur implétam. Non multo enim post, adveniénte Alexándro, subjugáta est; quando, etsi nulla facta est vastátio, quóniam non sunt ausi ei resístere, et ídeo placátum facíllime súbditi recepérunt; non erat tamen glória tanta domus illíus, quanta fuit in suórum regum líbera potestáte.
+
+        Deínde Ptolemǽus Lagi fílius, post Alexándri mortem captívos inde in Ægýptum tránstulit, quos ejus succéssor Ptolemǽus Philadélphus benevolentíssime inde dimísit: per quem factum est, ut Septuagínta intérpretum Scriptúras haberémus. Deínde contríti sunt bellis, quæ in Machabæórum libris explicántur. Post hæc capti a rege Alexandríæ Ptolemǽo qui est appellátus Epíphanes, inde ab Antíocho rege Sýriæ multis et gravíssimis malis ad idóla colénda compúlsi: templúmque ipsum replétum sacrílegis superstitiónibus Géntium, quod tamen dux eórum strenuíssimus Judas, qui étiam Machabǽus dictus est, Antíochi dúcibus pulsis, ab omni illa idololatríæ contaminatióne mundávit.
+      responsory: |-
+        R. Impetum inimicórum ne timuéritis: mémores estóte, quómodo salvi facti sunt patres nostri: * Et nunc clamémus in cælum et miserébitur nostri Deus noster.
+        V. Mementóte mirabílium ejus, quæ fecit pharaóni et exercítui ejus in Mari Rubro.
+        R. Et nunc clamémus in cælum et miserébitur nostri Deus noster.
+      status: verified

@@ -1,0 +1,82 @@
+# Read directly from web/www/horas/Latin/Tempora/Adv3-3.txt's own [Oratio]
+# and its English counterpart. Standard "Per Dóminum..." closing spelled
+# out in full (the source abbreviates it), matching every other collect
+# in this store.
+collect:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut redemptiónis nostræ ventúra solémnitas et præséntis nobis vitæ subsídia cónferat, et ætérnæ beatitúdinis prǽmia largiátur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-12-16 -- Advent Ember Wednesday, labeled "Antiphona ex
+# Proprio de Tempore". Same text as Tempora/Adv3-3.txt's own [Ant 2].
+# Lauds psalmody itself stays on the plain ferial Wednesday antiphons
+# throughout (confirmed live), same as September's own Ember Wednesday.
+benedictus-antiphon:
+  text: Missus est Gábriel * Angelus ad Maríam Vírginem desponsátam Joseph.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-12-16 -- Advent Ember Wednesday's own Second Vespers,
+# labeled "Antiphona ex Proprio de Tempore" (Dec 16 falls just before the
+# O Antiphons' own Dec 17-23 window, so this really is what's said, unlike
+# Friday's own sibling file below). Distinct text from the Benedictus
+# antiphon this time (Tempora/Adv3-3.txt's own separate [Ant 3]), not a
+# reused cross-reference like September's Wednesday/Friday.
+magnificat-antiphon:
+  text: 'Ecce ancílla Dómini: * fiat mihi secúndum verbum tuum.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Advent Ember Wednesday (Feria IV Quattuor
+# Temporum Adventus) — read directly from
+# web/www/horas/Latin/Tempora/Adv3-3.txt and English/Tempora/Adv3-3.txt.
+# No Monastic-track override file exists for this day (only Adv3-0/1/2/4
+# have one) — confirms the Monastic 1617 track uses this same text.
+#
+# Lectio1-3 here are cross-references (`@Sancti/03-25:Lectio7/8/9`) to
+# the Annunciation's own Common (web/www/horas/Latin/Sancti/03-25.txt) —
+# St. Ambrose's homily on Luke 1:26-38, not a Gospel-pericope-plus-homily
+# pattern of its own.
+#
+# Update (2026-09-05): the Gospel pericope itself (Luke 1:26-38) is now
+# authored too (isGospel: true, immediately before the homily) — this
+# same pericope is already authored verbatim in annunciation.yml (whose
+# own Gospel redirects back to this very Ember Wednesday, per that
+# file's own header), so reused from there rather than re-derived.
+#
+# Recombined into one reading 2026-09-04 (previously kept as 3 separate
+# readings): checked the reference source directly (Sancti/03-25.txt's
+# own Lectio7-9) and confirmed this is one continuous, unbroken Ambrose
+# excerpt, split only to fill the fixed 3-lesson Nocturn slot count —
+# same fix already applied to the other 4 Ember day nocturn-readings
+# files the same day, see ember-september-friday.yml's own header for
+# the fuller rationale. Responsory is Lectio1's own; Lectio2/3's own
+# distinct responsories are dropped, same as every other collapsed-
+# reading case in this store.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Luc 1:26-38
+      text: 'In illo témpore: Missus est Angelus Gábriel a Deo in civitátem Galilǽæ, cui nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, de domo David, et nomen Vírginis María. Et ingréssus Angelus ad eam, dixit: Ave, grátia plena; Dóminus tecum: benedícta tu in muliéribus. Quæ cum audísset, turbáta est in sermóne ejus: et cogitábat, qualis esset ista salutátio. Et ait Angelus ei: Ne tímeas, María, invenísti enim grátiam apud Deum: ecce, concípies in útero, et páries fílium, et vocábis nomen ejus Jesum. Hic erit magnus, et Fílius Altíssimi vocábitur, et dabit illi Dóminus Deus sedem David, patris ejus: et regnábit in domo Jacob in ætérnum, et regni ejus non erit finis. Dixit autem María ad Angelum: Quómodo fiet istud, quóniam virum non cognósco? Et respóndens Angelus, dixit ei: Spíritus Sanctus supervéniet in te, et virtus Altíssimi obumbrábit tibi. Ideóque et quod nascétur ex te Sanctum, vocábitur Fílius Dei. Et ecce, Elísabeth, cognáta tua, et ipsa concépit fílium in senectúte sua: et hic mensis sextus est illi, quæ vocátur stérilis: quia non erit impossíbile apud Deum omne verbum. Dixit autem María: Ecce ancílla Dómini, fiat mihi secúndum verbum tuum.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Commentary on Luke, Book 2 (from the Annunciation's own Common)
+      text: |-
+        Latent quidem divína mystéria, nec fácile, juxta prophéticum dictum, quisquam hóminum potest scire consílium Dei. Sed tamen ex céteris factis, atque præcéptis Dómini Salvatóris póssumus intellégere, et hoc propensióris fuísse consílii, quod ea potíssimum elécta est, ut Dóminum páreret, quæ erat desponsáta viro. Cur autem non ántequam desponsarétur, impléta est? Fortásse ne dicerétur quod concéperat ex adultério.
+
+        Et ingréssus ad eam Angelus. Disce vírginem móribus, disce vírginem verecúndia, disce oráculo, disce mystério. Trepidáre vírginum est, et ad omnes viri ingréssus pavére, omnes viri affátus veréri. Discant mulíeres propósitum pudóris imitári. Sola in penetrálibus, quam nemo virórum víderit, solus Angelus répererit: sola sine cómite, sola sine teste, ne quo degénere depravarétur affátu, ab Angelo salutátur.
+
+        Tanti namque mandáti mystérium non hóminis fuit, sed Angeli ore proméndum. Hódie primum audítur: Spíritus Sanctus supervéniet in te. Et audítur, et créditur. Dénique, Ecce, inquit, ancílla Dómini: contíngat mihi secúndum verbum tuum. Vide humilitátem, vide devotiónem. Ancíllam se dicit Dómini, quæ mater elígitur: nec repentíno exaltáta promísso est.
+      responsory: |-
+        R. Clama in fortitúdine, qui annúntias pacem in Jerúsalem: * Dic civitátibus Judæ, et habitatóribus Sion: Ecce Deus noster, quem exspectabámus, advéniet.
+        V. Supra montem excélsum ascénde tu, qui evangelízas Sion, exálta in fortitúdine vocem tuam.
+        R. Ecce Deus noster, quem exspectabámus, advéniet.
+      status: verified

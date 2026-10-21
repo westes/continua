@@ -1,0 +1,41 @@
+# Matins Nocturn 2 reading for the Vigil of St. Matthew (Sep 20) —
+# pre-1955-but-post-1617. Plain Sancti/09-20.txt is a different feast
+# (Ss. Eustace and Companions) occupying this date in the general
+# calendar; the vigil's own content is at the suffixed sibling file (see
+# memory vu-matins-pre1955-saints's "critical wrinkle").
+# web/www/horas/Latin/Sancti/09-20o.txt, English/Sancti/09-20o.txt.
+#
+# Lectio1's Gospel portion (Luke 5:27-32, the calling of Levi/Matthew)
+# gave only the incipit ("Et réliqua") in the horas file. Fixed
+# 2026-09-05 (live-reported gap): the full pericope is this same
+# Vigil's own Mass Gospel, sourced directly from
+# web/www/missa/Latin/Sancti/09-20o.txt's [Evangelium] (isGospel: true,
+# added immediately before the homily); no parallel English missa file
+# exists for this Vigil's own suffixed sibling, so the English
+# translation is this project's own (standard Douay-Rheims phrasing of
+# the same verses), marked draft. Note this is a *different* citation
+# from Matt 9:9-13, St. Matthew's own main-feast Gospel
+# (st-matthew.yml) -- not to be confused. Lectio1's own homily portion
+# + Lectio2-3 is one continuous excerpt from St. Ambrose's commentary,
+# combined into a single reading. The English source only translates
+# Lectio1's homily portion — Lectio2-3's English below is this
+# project's own translation, not the reference engine's, so that
+# reading is marked draft for English per this project's "prefer text
+# over missing" policy. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: true
+      citation: Luc 5:27-32
+      text: 'In illo témpore: Vidit Jesus publicánum nómine Levi, sedéntem ad telónium, et ait illi: Séquere me. Et relíctis ómnibus, surgens secútus est eum. Et fecit ei convívium magnum Levi in domo sua: et erat turba multa publicanórum et aliórum, qui cum illis erant discumbéntes. Et murmurábant pharisæi et scribæ eórum, dicéntes ad discípulos ejus: Quare cum publicánis et peccatóribus manducátis et bíbitis? Et respóndens Jesus, dixit ad illos: Non egent, qui sani sunt, médice, sed qui male habent. Non veni vocáre justos, sed peccatóres ad pœniténtiam.'
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Commentary on Luke, Book 5
+      text: |-
+        Mystica est hæc vocátio publicani, quem sequi jubet, non corporis gressu, sed mentis afféctu. Itaque ille, prius avara de mercédibus, dura de labóribus periculisque nautárum emoluménta convértens, verbo vocatus, propria derelinquit, qui rapiebat aliena; ac, vile illud sedile destítuens, toto post Dóminum vestigio mentis incedit. Convivii quoque magni éxhibet apparátum; qui enim domicílio Christum récipit interno, maximis delectatiónibus exuberántium páscitur voluptátum.
+
+        Itaque Dominus libenter ingreditur, et in ejus qui crediderit, recumbit affectu. Sed rursus accenditur invidia perfidorum, et futuræ pœnæ species præfiguratur. Epulantibus enim fidelibus, et in illo cœlorum recumbentibus regno, perfidia jejuna torquebitur. Simul ostenditur quantum intersit inter æmulos Legis et gratiæ, quod illi qui legem sequuntur, jejunæ mentis famem patiantur æternam: qui vero verbum in interioribus animæ receperunt, alimenti cœlestis et fontis ubertate recreati esurire et sitire non possunt.
+
+        Et ideo qui animo jejunabant, murmurabant dicentes: Quare cum publicanis et peccatoribus manducat et bibit? Serpentina vox ista est. Denique hanc primam vocem serpens emisit, dicens Evæ: Quid utique dixit Deus: Nolite manducare ex omni ligno? Ergo patris sui venena diffundunt, qui dicunt: Quid utique cum publicanis et peccatoribus manducat et bibit? Unde Dominus cum peccatoribus manducando, etiam cum gentilibus non prohibet nos inire convivium, dicens: Non egent qui sani sunt, medico, sed qui male habent.
+      status: verified

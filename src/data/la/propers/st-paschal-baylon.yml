@@ -1,0 +1,54 @@
+# Read directly from web/www/horas/Latin/Sancti/05-17.txt's own
+# [Oratio] and its English counterpart. Doxology "$Qui vivis" spelled
+# out per the convention in st-bibiana-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátum Paschálem Confessórem tuum mirífica erga Córporis et Sánguinis tui
+    sacra mystéria dilectióne decorásti: concéde propítius; ut, quam ille ex hoc divíno
+    convívio spíritus percépit pinguédinem, eándem et nos percípere mereámur.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-paschal-baylon has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-paschal-baylon-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui beátum Paschálem Confessórem tuum mirífica erga Córporis et Sánguinis tui
+    sacra mystéria dilectióne decorásti: concéde propítius; ut, quam ille ex hoc divíno
+    convívio spíritus percépit pinguédinem, eándem et nos percípere mereámur.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Paschal Baylon, Confessor (May 17).
+# Sourced directly from web/www/horas/Latin/Sancti/05-17.txt,
+# English/Sancti/05-17.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in his own file (his `[Rule]` is `vide
+# C5`) -- defers to the Common of a Confessor's own Nocturn 3, not
+# transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Paschalis Baylon, paupéribus piisque paréntibus in oppido Turris Formosæ, Seguntinæ diœcesis, in Aragónia natus, a téneris annis plura dedit futuræ sanctitátis indicia. Sortítus ánimam bonam ac rerum cæléstium appríme studiosam, puerítiam atque adolescéntiam in gregis custódia transegit; quam ille vivéndi ratiónem ideo præcipue diligebat, quod humilitáti fovendæ ac innocéntiæ conservandæ in primis utilem atque opportunam judicáret. Erat in victu modicus, in oratióne assiduus, tantáque apud coævos et socios florebat auctoritate et grátia, ut eórum lites compónens, erróres corrigens, ignorantiam erudiens ac desidiam éxcitans, velut ómnium parens et magister máximo studio colerétur ac amarétur: beátus étiam tum a plerisque appellatus.
+
+        Qui vero in sæculo, terra nempe desérta et inaquósa, adeo feliciter adoléverat, flos convallium, plantátus in domo Dómini, mirum ubíque sparsit sanctitátis odórem. Igitur Paschalis arrepto vitæ severioris instituto, atque in ordine Minórum strictioris observantiæ Discalceatórum cooptatus, exsultávit ut gigas ad curréndam viam suam; totumque se Dómino excoléndum tradens, dies noctesque cogitabat, qua se ratióne magis ei magisque conformaret. Ita factum est brevi, ut eum, tamquam seraphicæ perfectiónis exemplar, ipsi quoque provectiores imitándum sibi propónerent. Ipse autem in humili serviéntium gradu constitútus, se velut ómnium peripséma réputans, ardua quæque et abjecta domus ministeria, véluti jure quodam peculiari sibi débita, summa cum hilaritate suscipiebat, et exercebat humilitate ac patiéntia pari. Carnem spiritui quandoque reluctari nitentem jugi maceratióne afflictávit, atque in servitútem redégit; spíritum vero assidua sui abnegatióne ferventiórem in dies ad anterióra extendebat.
+
+        Deíparam Vírginem, cujus clientelæ se ab ineunte ætate dicáverat, tamquam matrem quotidiánis colebat obsequiis atque filiali exorábat fiducia. Porro erga sanctíssimum Eucharistiæ sacraméntum difficile dictu est quam ardénti tenerétur devotiónis afféctu; quem defunctus étiam in cadávere retinére visus est, dum, jacens in féretro, ad sacræ Hostiæ elevatiónem bis óculos reserávit et clausit, magna ómnium, qui áderant, admiratióne. Ejusdem veritátem inter hæreticos publice palamque proféssus, multa et gravia ob eam causam perpéssus est; crebro étiam ad necem petítus, sed singulari Dei providéntia ab impiórum mánibus ereptus. Sæpe inter orándum ómnibus destituebátur sensibus, dulcique languebat amoris deliquio: quo témpore cælestem illam sciéntiam hausisse créditus est, qua, homo rudis et illiteratus, de mystériis fidei difficillimis respondére, atque áliquot étiam libros conscríbere pótuit. Denique meritis plenus, eádem qua prædixerat hora, feliciter migrávit ad Dóminum, anno salútis millesimo quingentésimo nonagesimo secundo, sexto décimo Kalendas Junii, eodem, quo natus fuerat, festo Pentecostes recurrente, annum agens secúndum supra quinquagesimum.
+      status: verified

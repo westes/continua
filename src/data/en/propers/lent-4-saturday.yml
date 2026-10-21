@@ -1,0 +1,45 @@
+collect:
+  text: |
+    Let us pray.
+    O Lord, we pray thee, that thy grace may make fruitful the toil of this our godly exercise, since it shall nothing avail us to have fasted, if our Fast be not pleasing in thy most gracious sight.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+collect/~-vespers:
+  text: |
+    Let us pray.
+    We beseech thee, Almighty God, mercifully to look upon this thy family, that by thy great goodness they may be governed and preserved evermore, both in body and soul.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+benedictus-antiphon:
+  text: 'Thus saith the Lord: * He that followeth Me walketh not in darkness, but shall have the Light of life.'
+  status: verified
+
+magnificat-antiphon:
+  text: I am One * That bear witness of Myself, and the Father That sent Me beareth witness of Me.
+  status: verified
+
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: John 8:12-20
+      text: At that time, Jesus spoke to the multitudes of the Jews, saying, "I am the light of the world. He who follows Me does not walk in the darkness, but will have the light of life." The Pharisees therefore said to Him, "You bear witness to Yourself. Your witness is not true." Jesus answered and said to them, "Even if I bear witness to Myself, My witness is true, because I know where I came from and where I go. But you do not know where I came from or where I go. You judge according to the flesh; I judge no one. And even if I do judge, My judgment is true, because I am not alone, but with Me is He Who sent Me, the Father. And in your Law it is written that the witness of two persons is true. It is I Who bear witness to Myself, and He Who sent Me, the Father, bears witness to Me." They therefore said to Him, "Where is your Father?" Jesus answered, "You know neither Me nor My Father. If you knew Me, you would then know My Father also." Jesus spoke these words in the treasury, while teaching in the temple. And no one seized Him, because His hour had not yet come.
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, 34th Tract on John
+      text: |-
+        I take it that these words of the Lord, "I am the Light of the world" are sufficiently clear to all men who have eyes which see that Light. At the same time, such men as have no eyes except those which are in their bodies, are surprised to find our Lord Jesus Christ saying, "I am the Light of the world". And that we might not want somebody to say, "Is our Lord Jesus Christ, then, the same sun that riseth and setteth every day?" There have actually been heretics who did say it. The Manicheans believed that that sun which we see with our bodily eyes, and to see which is plain and common to beasts as well as men, was the Lord Christ.
+
+        But the right faith of the Catholic Church damneth such comment, and recogniseth in it a doctrine of devils. And as it is her practice not only to brand errors by the difference of her own Creed, but also to remove them, if possible, by dint of argument, let us take up arms against this falsehood, which hath from the very beginning been the object of the curse of the Holy Church. God forbid that we should believe that our Lord Jesus Christ is this sun whose apparent movement is to rise every day in the East, and set every day in the West; which when we see no more, night cometh over us; and whose rays are sometimes intercepted by clouds and which hath some law of motion of its own whereby it describeth an orbit. The planet is not the same thing as our Lord Jesus Christ. Our Lord Jesus Christ is not that created sun, but He by Whom that sun was created; for all things were made by Him, and without Him was not anything made that was made.
+
+        He is therefore the Light by Whom the material light was made. Him may we love, Him may we long to know, Him may we thirst after; to Him may His own beams one day lead us, and in Him may we so live that we shall never die! For He, even He, and none other, He is that Light, of Whom the Prophet that was given of old time sang in the Psalms, when he said: "For with thee is the fountain of life, and in thy Light shall we see light." Remember ye likewise what the word of God's ancient saints saith of such Light: "O Lord, Thou preservest man and beast! How excellent is thy loving-kindness, O God!"
+      responsory: |-
+        R. After that the Lord had looked upon him, the face of Moses shone. * And when the elders saw that his face shone, they marvelled and were sore afraid.
+        V. And when he came down from Mount Sinai with the two tables of testimony in his hand, he wist not that his face shone, because that God had spoken with him.
+        R. And when the elders saw that his face shone, they marvelled and were sore afraid.
+      status: verified

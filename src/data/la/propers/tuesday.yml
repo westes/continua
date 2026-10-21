@@ -1,0 +1,91 @@
+# Tuesday's own plain ferial Matins invitatory antiphon (Psalterium/
+# Special/Matutinum Special.txt's "Invit Trid_" block, `Feria III=`).
+# See matins-invitatory-antiphon-sunday.yml's header for the weekday-cycle
+# mechanism this belongs to; live-verified 2026-09-06.
+matins-invitatory/antiphon-~:
+  text: Jubilémus Deo, * Salutári nostro.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
+lauds-hymn:
+  text: |
+    Ales diéi núntius
+    Lucem propínquam prǽcinit:
+    Nos excitátor méntium
+    Jam Christus ad vitam vocat.
+
+    Auférte, clamat, léctulos,
+    Ægro sopóre désides:
+    Castíque, recti, ac sóbrii
+    Vigiláte, jam sum próximus.
+
+    Jesum ciámus vócibus,
+    Flentes, precántes, sóbrii:
+    Inténta supplicátio
+    Dormíre cor mundum vetat.
+
+    Tu, Christe, somnum díscute:
+    Tu rumpe noctis víncula:
+    Tu solve peccátum vetus,
+    Novúmque lumen íngere.
+
+    * Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
+lauds-responsory:
+  text: |
+    R.br. Sana ánimam meam, * Quia peccávi tibi.
+    R. Sana ánimam meam, * Quia peccávi tibi.
+    V. Ego dixi: Dómine, miserére mei
+    R. Quia peccávi tibi.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Sana ánimam meam, * Quia peccávi tibi.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
+lauds-versicle:
+  text: |-
+    V. Repléti sumus mane misericórdia tua.
+    R. Exsultávimus, et delectáti sumus.
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Day2 Vespera]",
+# Psalterium/Special/Major Special.txt): four word substitutions against
+# the base "[Hymnus Day2 Vespera]" text ("alme" -> "ingens"; "séparans" ->
+# "éruens"; "dedísti" -> "dedíst[i]" — the source's own bracket notation,
+# kept as-is; "ictum" -> "actum"), applied by hand here — not
+# live-query-verified (see TODO.md). English has no separate Monastic
+# variant in the source.
+vespers-hymn:
+  text: |
+    Tellúris ingens Cónditor,
+    Mundi solum qui éruens,
+    Pulsis aquæ moléstiis,
+    Terram dedíst[i] immóbilem:
+
+    Ut germen aptum próferens,
+    Fulvis decóra flóribus,
+    Fecúnda fructu sísteret,
+    Pastúmque gratum rédderet.
+
+    Mentis perústæ vúlnera
+    Munda viróre grátiæ:
+    Ut facta fletu díluat,
+    Motúsque pravos átterat.
+
+    Jussis tuis obtémperet:
+    Nullis malis appróximet:
+    Bonis repléri gáudeat,
+    Et mortis actum nésciat.
+
+    * Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum.
+    Amen.
+  status: draft

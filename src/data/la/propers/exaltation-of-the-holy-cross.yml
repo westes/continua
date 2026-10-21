@@ -1,0 +1,263 @@
+# The Exaltation of the Holy Cross's own real, distinct Oratio -- read
+# directly from web/www/horas/Latin/Sancti/09-14.txt's own [Oratio] and
+# its English counterpart (English/Sancti/09-14.txt). Textually distinct
+# from finding-of-the-holy-cross-collect.yml's own ("Deus, qui in
+# præclára salutíferæ Crucis Inventióne...") -- previously
+# exaltation-of-the-holy-cross.yml pointed its `propers` straight at
+# `finding-of-the-holy-cross`, which meant this feast's real, separately-
+# authored collect was never used. Corrected 2026-09-14: her `[Rule]`'s
+# `ex Sancti/05-03` line governs the untagged/default parts of the
+# Monastic office (versicles, Ant 1, Ant Vespera, Lauds capitulum -- see
+# exaltation-of-the-holy-cross.yml's own header), not literally every
+# category; the collect is one of the parts genuinely her own.
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos hodiérna die Exaltatiónis sanctæ Crucis ánnua solemnitáte lætíficas:
+    præsta, quǽsumus; ut, cujus mystérium in terra cognóvimus, ejus redemptiónis prǽmia
+    in cælo mereámur.
+    Per eúmdem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in
+    unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Fully proper feast's commemoration bundle -- own real [Ant 2]/[Versum
+# 2] (shared with Finding of the Holy Cross, genuinely, per the Monastic
+# reference file's own directive -- see exaltation-of-the-holy-cross-
+# antiphon.yml), but the Exaltation's own distinct collect
+# (exaltation-of-the-holy-cross-collect.yml), not Finding's. Split off
+# 2026-09-14 from the old shared `finding-of-the-holy-cross-commemoration`
+# bundle for the same reason as the collect itself.
+#
+# KNOWN CAVEAT (carried over from finding-of-the-holy-cross-
+# commemoration.yml, not fixed here): this file's own hardcoded
+# "Allelúia" is only correct when this commemoration is rendering within
+# Paschaltide, which Sept 14 never is -- so this feast's own bundle
+# should almost certainly drop the Allelúia outright rather than inherit
+# a Paschaltide-only convention that can never apply on her own date.
+# Left as inherited text pending a real fix to `sanctoralCommemorationPart`
+# (resolve-common.ts) threading a `day`/season parameter through, same
+# as the caller-side gap already documented on the May 3 file.
+commemoration:
+  text: |
+    Ant. Super ómnia * ligna cedrórum tu sola excélsior, in qua Vita mundi pepéndit, in qua Christus triumphávit, et mors mortem superávit in ætérnum.
+    V. Adorámus te, Christe, et benedícimus tibi.
+    R. Quia per Crucem tuam redemísti mundum.
+    Orémus.
+    Deus, qui nos hodiérna die Exaltatiónis sanctæ Crucis ánnua solemnitáte lætíficas:
+    præsta, quǽsumus; ut, cujus mystérium in terra cognóvimus, ejus redemptiónis prǽmia
+    in cælo mereámur.
+    Per eúmdem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in
+    unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/09-14.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Christum Regem pro nobis in Cruce exaltátum, * Veníte, adorémus.
+  status: verified
+
+# Lauds' Benedictus antiphon for the Exaltation of the Holy Cross (Sept
+# 14) -- genuinely identical to finding-of-the-holy-cross-antiphon.yml
+# (May 3): the Monastic reference file's own [Ant Laudes]/[Ant 2]
+# directive for Sept 14 is `@Sancti/05-03:Ant Vespera`/`@:Ant Laudes`,
+# a real shared-text rule (unlike the collect, which genuinely differs --
+# see exaltation-of-the-holy-cross-collect.yml). Duplicated verbatim
+# rather than cross-referenced because `propers` now points at this
+# feast's own id (`exaltation-of-the-holy-cross`, split off 2026-09-14 so
+# the collect could diverge), and the antiphon/magnificat-antiphon/
+# commemoration lookup mechanism has no cross-id fallback (same
+# constraint already documented on the Matins psalmody/nocturn-readings
+# files). Text sourced from web/www/horas/Latin/Sancti/05-03.txt's own
+# [Ant 2] and its English counterpart.
+benedictus-antiphon:
+  text: Super ómnia * ligna cedrórum tu sola excélsior, in qua Vita mundi pepéndit, in qua Christus triumphávit, et mors mortem superávit in ætérnum.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 09-14
+# exaltation-of-the-holy-cross (OVERWRITE: stored file held the first-Vespers antiphon). See
+# hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon:
+  text: O Crux benedícta, * quæ sola fuísti digna portáre Regem cælórum et Dóminum, allelúia.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 09-14
+# exaltation-of-the-holy-cross (saint file = second). First Vespers variant; the default (second Vespers) file
+# is the same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: 'O Crux, * splendídior cunctis astris, mundo célebris, homínibus multum amábilis, sánctior univérsis: quæ sola fuísti digna portáre taléntum mundi, dulce lignum, dulces clavos, dúlcia ferens póndera; salva præséntem catérvam in tuis hódie láudibus congregátam. '
+  status: verified
+
+# CORRECTED 2026-09-14 (user: "exaltation is not the same feast as
+# finding" -- see exaltation-of-the-holy-cross.yml's own header for the
+# full story). The previous version of this file (commit 7757ade)
+# duplicated finding-of-the-holy-cross.yml's own antiphons verbatim,
+# sourced from `SanctiM/05-03.txt` -- wrong file for this feast. The
+# reference engine's own Monastic file for Sept 14,
+# `../divinum-officium-reference/web/www/horas/Latin/SanctiM/09-14.txt`,
+# carries its own distinct `[AntMatutinumM]` block (3 real proper
+# antiphons) plus a separately-tagged `[Ant Matutinum 3N]` -- the source
+# itself marks that one as the Nocturn 3 antiphon, so no guesswork on
+# placement there. Nocturn 1/2 antiphons assigned in the source file's
+# own listed order (AntMatutinumM:1 then :2); both fall within the psalm
+# ranges continua already uses for those nocturns (tag 8 -> psalm 8,
+# within nocturn1's [1,2,4,5,8,14]; tag 22 -> psalm 22, nocturn2's own
+# first psalm in [22,26,75,95,96,97]), consistent with the existing
+# one-shared-antiphon-per-nocturn structure. English from the parallel
+# `English/SanctiM/09-14.txt`.
+#
+# The overall *structure* (one antiphon shared across all six psalms of
+# each of Nocturn 1 and Nocturn 2, Nocturn 3 replaced by three Old
+# Testament canticles) is unchanged from the previous version and is
+# still correctly Monastic-sourced -- only the antiphon/versicle *text*
+# was wrong. Versicles are untouched: the Monastic file's own [Versum 1]/
+# [Versum 2]/[Nocturn 3 Versum] genuinely are `@Sancti/05-03` (shared with
+# Finding by the source's own rule, not a duplication error).
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 1
+          - 2
+          - 4
+          - 5
+          - 8
+          - 14
+        antiphon: Dulce lignum, dulces clavos, dulce pondus sustínuit, quæ sola digna fuit portáre prétium hujus sǽculi.
+    versicle:
+      v: Hoc signum Crucis erit in cælo.
+      r: Cum Dóminus ad judicándum vénerit.
+  nocturn2:
+    groups:
+      - psalms:
+          - 22
+          - 26
+          - 75
+          - 95
+          - 96
+          - 97
+        antiphon: 'Virga tua, et báculus tuus: ipsa me consoláta sunt, Dómine, Deus meus.'
+    versicle:
+      v: Adorámus te, Christe, et benedícimus tibi.
+      r: Quia per Crucem tuam redemísti mundum.
+  nocturn3:
+    antiphon: 'Mihi autem absit gloriári, nisi in cruce Dómini nostri Jesu Christi: per quem mihi mundus crucifíxus est, et ego mundo.'
+    canticles:
+      - refs:
+          - book: hab
+            chapter: 3
+            verses: 1-6
+      - refs:
+          - book: hab
+            chapter: 3
+            verses: 7-12
+      - refs:
+          - book: hab
+            chapter: 3
+            verses: 13-19
+    versicle:
+      v: Omnis terra adóret te, et psallat tibi.
+      r: Psalmum dicat nómini tuo, Dómine.
+
+# Sancti/09-14.txt [Ant Laudes] (both languages), the five Lauds antiphons by position: three psalm groups, the canticle, Laudate. Psalmody is the 'Psalmi Dominica' scheme these feasts' [Rule] names (Ps 92 / 99 / 62, the Three Young Men, Ps 148-150), the same shape as apparition-of-st-michael.yml. Before this file the psalm antiphons fell to the ferial ones.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: 'O magnum pietátis opus: * mors mórtua tunc est, in ligno quando mórtua Vita fuit.'
+    - psalms:
+        - 99
+      antiphon: 'Salva nos, * Christe Salvátor, per virtútem Crucis: qui salvásti Petrum in mari, miserére nobis.'
+    - psalms:
+        - 62
+      antiphon: Ecce Crucem Dómini, * fúgite, partes advérsæ, vicit leo de tribu Juda, radix David, allelúia.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Nos autem gloriári * opórtet in Cruce Dómini nostri Jesu Christi.
+  laudate:
+    antiphon: Per signum Crucis * de inimícis nostris líbera nos, Deus noster.
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-09-14, own day -- never falls in Paschaltide,
+# so no seasonal-alleluia contamination risk the way finding-of-the-holy-
+# cross.yml's own May 3 date has). `common: proper-to-the-finding-of-the-
+# holy-cross` has no Vespers Common category (fully proper), so without
+# this file the feast fell to the plain ferial default. Psalms
+# 109/110/111/112, same Cross antiphons as finding-of-the-holy-cross.yml;
+# only antiphon 3 carries "allelúia" unconditionally, baked into its own
+# proper text.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'O magnum pietátis opus: * mors mórtua tunc est, in ligno quando mórtua Vita fuit.'
+    - psalms:
+        - 110
+      antiphon: 'Salva nos, * Christe Salvátor, per virtútem Crucis: qui salvásti Petrum in mari, miserére nobis.'
+    - psalms:
+        - 111
+      antiphon: Ecce Crucem Dómini, * fúgite, partes advérsæ, vicit leo de tribu Juda, radix David, allelúia.
+    - psalms:
+        - 112
+      antiphon: Per signum Crucis * de inimícis nostris líbera nos, Deus noster.
+
+# Matins Nocturn 2-3 readings for the Exaltation of the Holy Cross (Sep
+# 14).
+#
+# CORRECTED 2026-09-14 (user: "exaltation is not the same feast as
+# finding" -- see exaltation-of-the-holy-cross.yml's own header). This
+# file previously duplicated finding-of-the-holy-cross.yml's Nocturn 2
+# reading verbatim (the legend of St. Helena finding the True Cross,
+# May 3's own story) -- wrong: the reference engine's own Monastic file
+# for this feast (`SanctiM/09-14.txt`) directs its own Lectio4-6 at
+# `Sancti/09-14:Lectio4-6`, i.e. this feast's *own* distinct secular
+# Sancti file, not Finding's. Sourced from
+# web/www/horas/Latin/Sancti/09-14.txt's Lectio4-6 (Latin),
+# English/Sancti/09-14.txt (English) -- the historical narrative of the
+# Emperor Heraclius recovering the Cross from Chosroes, King of Persia,
+# and restoring it to Calvary (614-629 AD), a genuinely different story
+# from Finding's 4th-century St. Helena narrative.
+#
+# Nocturn 2's responsory is likewise this feast's own real, distinct
+# text (SanctiM/09-14.txt's own Responsory4, "O crux benedícta...",
+# English/SanctiM/09-14.txt's parallel) rather than Finding's.
+#
+# Nocturn 3 is unchanged and correctly still shared with Finding: the
+# Monastic file's own Lectio9-12 directives resolve back to
+# `Sancti/09-14:Lectio7` -- and that feast's own secular Lectio7 cites
+# the *same* Gospel pericope (John 3:1-15, Nicodemus) and the same
+# Augustine homily (Tractate 11 on John) that Finding's Lectio7 does --
+# genuinely identical source content on both feasts, not a duplication
+# error. (Lectio1-3, this feast's own proper Numbers 21:1-9 -- the
+# brazen-serpent narrative that Nocturn 3's Gospel itself quotes -- is
+# left to the bible-plan store as usual, same convention already used
+# for Finding's own Nocturn 1.)
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Chósroas, Persárum rex, extrémis Phocæ impérii tempóribus, Ægýpto et Africa occupáta ac Jerosólyma capta multísque ibi cæsis Christianórum míllibus, Christi Dómini Crucem, quam Hélena in monte Calváriæ collocárat, in Pérsidem ábstulit. Itaque Heraclíus, qui Phocæ succésserat, multis belli incómmodis et calamitátibus afféctus, pacem petébat; quam a Chósroa, victóriis insolénte, ne iníquis quidem conditiónibus impetráre póterat. Quare in summo discrímine se assíduis jejúniis et oratiónibus exércens, opem a Deo veheménter implorábat; cujus mónitu exércitu comparáto, signa cum hoste cóntulit, ac tres duces Chósroæ cum tribus exercítibus superávit.
+
+        Quibus cládibus fractus Chósroas, in fuga, qua traícere Tigrim parábat, Medársen fílium sócium regni desígnat. Sed eam contuméliam cum Síroës, Chósroæ major natu fílius, ferret atróciter, patri simul et fratri necem machinátur; quam paulo post utríque ex fuga retrácto áttulit, regnúmque ab Heraclío impetrávit quibúsdam accéptis conditiónibus, quarum ea prima fuit, ut Crucem Christi Dómini restitúeret. Ergo Crux, quatuórdecim annis postquam vénerat in potestátem Persárum, recépta est. Quam rédiens Jerosólymam Heraclíus solémni celebritáte suis húmeris rétulit in eum montem, quo eam Salvátor túlerat.
+
+        Quod factum illústri miráculo commendátum est. Nam Heraclíus, ut erat auro et gemmis ornátus, insístere coáctus est in porta, quæ ad Calváriæ montem ducébat. Quo enim magis prógredi conabátur, eo magis retinéri videbátur. Cumque ea re et ipse Heraclíus et réliqui omnes obstupéscerent; Zacharías, Jerosolymórum antístes, Vide, inquit, imperátor, ne isto triumpháli ornátu, in Cruce ferénda parum Jesu Christi paupertátem et humilitátem imitére. Tum Heraclíus, abjécto amplíssimo vestítu detractísque cálceis ac plebéjo amíctu indútus, réliquum viæ fácile confécit, et in eódem Calváriæ loco Crucem státuit, unde fúerat a Persis asportáta. Itaque Exaltatiónis sanctæ Crucis solémnitas, quæ hac die quotánnis celebrabátur, illústrior habéri cœpit ob ejus rei memóriam, quod ibídem fúerit repósita ab Heraclío, ubi Salvatóri primum fúerat constitúta.
+      responsory: |-
+        R. O crux benedícta, * Quæ sola fuísti digna portáre Regem cælórum et Dóminum!
+        V. O crux gloriósa et admirábilis o crux veneránda!
+        R. Quæ sola fuísti digna portáre Regem cælórum et Dóminum!
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joannes 3:1-15
+      text: 'In illo témpore: Erat homo ex pharisǽis, Nicodémus nómine, princeps Judæórum. Hic venit ad Jesum nocte et dixit ei: Rabbi, scimus, quia a Deo venísti magíster; nemo enim potest hæc signa fácere, quæ tu facis, nisi fúerit Deus cum eo. Respóndit Jesus et dixit ei: Amen, amen, dico tibi, nisi quis renátus fúerit dénuo, non potest vidére regnum Dei. Dicit ad eum Nicodémus: Quómodo potest homo nasci, cum sit senex? Numquid potest in ventrem matris suæ iteráto introíre et renásci? Respóndit Jesus: Amen, amen, dico tibi, nisi quis renátus fúerit ex aqua et Spíritu Sancto, non potest introíre in regnum Dei. Quod natum est ex carne, caro est: et quod natum est ex spíritu, spíritus est. Non míreris, quia dixi tibi: opórtet vos nasci dénuo. Spíritus, ubi vult, spirat, et vocem ejus audis, sed nescis, unde véniat aut quo vadat: sic est omnis, qui natus est ex spíritu. Respóndit Nicodémus et dixit ei: Quómodo possunt hæc fíeri? Respóndit Jesus et dixit ei: Tu es magíster in Israël, et hæc ignóras? Amen, amen, dico tibi, quia, quod scimus, lóquimur, et quod vídimus, testámur, et testimónium nostrum non accípitis. Si terréna dixi vobis et non créditis: quómodo, si díxero vobis cœléstia, credétis? Et nemo ascéndit in cœlum, nisi qui descéndit de cœlo, Fílius hóminis, qui est in cœlo. Et sicut Móyses exaltávit serpéntem in desérto: ita exaltári opórtet Fílium hóminis, ut omnis, qui credit in ipsum, non péreat, sed hábeat vitam ætérnam.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine of Hippo, Tractate 11 on John (on John 3:1-15)
+      text: |-
+        Nicodémus ex his erat, qui credíderant in nómine Jesu, vidéntes signa et prodígia quæ faciébat. Supérius enim hoc dixit: Cum autem esset Jerosólymis in Pascha in die festo, multi credidérunt in nómine ejus. Quare credidérunt in nómine ejus? Séquitur, et dicit: Vidéntes signa ejus, quæ faciébat. Et de Nicodémo quid dicit? Erat princeps Judæórum, nómine Nicodémus. Hic venit ad eum nocte, et ait illi: Rabbi, scimus quia a Deo venísti magíster. Et iste ergo credíderat in nómine ejus. Et ipse unde credíderat? Séquitur: Nemo enim potest hæc signa fácere, quæ tu facis, nisi fúerit Deus cum eo.
+
+        Si ergo Nicodémus de illis multis erat, qui credíderant in nómine ejus, jam in isto Nicodémo attendámus, quare Jesus non se credébat eis. Respóndit Jesus et dixit ei: Amen, amen dico tibi, nisi quis renátus fúerit dénuo, non potest vidére regnum Dei. Ipsis ergo se credit Jesus, qui nati fúerint dénuo. Ecce illi credíderant in eum, et Jesus non se credébat eis. Tales sunt omnes catechúmeni: ipsi jam credunt in nómine Christi, sed Jesus non se credit eis. Inténdat et intélligat cáritas vestra. Si dixérimus catechúmeno: Credis in Christum? respóndet, Credo, et signat se Cruce Christi: portat in fronte, et non erubéscit de Cruce Dómini sui. Ecce credit in nómine ejus. Interrogémus eum: Mandúcas carnem Fílii hóminis, et bibis sánguinem Fílii hóminis? nescit quid dícimus, quia Jesus non se crédidit ei.
+      status: verified

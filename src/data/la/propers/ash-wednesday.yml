@@ -1,0 +1,77 @@
+# Lauds collect ([Oratio 2] in the source) — read from
+# web/www/horas/{Latin,English}/Tempora/Quadp3-3.txt. See
+# ash-wednesday-collect-vespers.yml for the distinct Vespers text
+# ([Oratio 3]) and hours/resolve-common.ts's getDayCollect for the
+# per-hour mechanism this pair now plugs into.
+collect:
+  text: |
+    Orémus.
+    Præsta, Dómine, fidélibus tuis: ut jejuniórum veneránda solémnia, et cóngrua pietáte suscípiant, et secúra devotióne percúrrant.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Vespers collect ([Oratio 3] in the source), distinct from Lauds' own
+# ([Oratio 2], see ash-wednesday-collect.yml) — read from
+# web/www/horas/{Latin,English}/Tempora/Quadp3-3.txt. First file of this
+# new `-collect-vespers` kind (hours/resolve-common.ts's getDayCollect,
+# built 2026-09-19 specifically because this app previously had no
+# per-hour collect-variation mechanism at all).
+collect/~-vespers:
+  text: |
+    Orémus.
+    Inclinántes se, Dómine, majestáti tuæ, propitiátus inténde: ut, qui divíno múnere sunt refécti, cæléstibus semper nutriántur auxíliis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quadp3-3.txt's own
+# [Ant 2] and its English counterpart.
+benedictus-antiphon:
+  text: Cum jejunátis, * nolíte fíeri sicut hypócritæ, tristes.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quadp3-3.txt's own
+# [Ant 3] and its English counterpart.
+magnificat-antiphon:
+  text: Thesaurizáte vobis * thesáuros in cælo, ubi nec ærúgo, nec tínea demolítur.
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Ash Wednesday — read from
+# web/www/horas/{Latin,English}/Tempora/Quadp3-3.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quadp3-3.txt's own [Evangelium]
+# (the missa track carries full Mass-Gospel text where the Office file
+# only gives an incipit — same convention as the Ember-day pulls).
+#
+# Recombined into one reading (Lectio1-3 are one continuous, unbroken
+# Augustine homily split only to fill the fixed 3-lesson slot count — this
+# store's established default, see post-pentecost-15.yml/ember-september-
+# wednesday.yml). Responsory is Lectio1's own (Responsory1, cross-
+# referenced from Tempora/Quadp3-0.txt's own Responsory7) per the "the
+# first one, when several collapse" convention.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Matt 6:16-21
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Cum jejunátis, nolíte fíeri, sicut hypócritæ, tristes. Extérminant enim fácies suas, ut appáreant homínibus jejunántes. Amen, dico vobis, quia recepérunt mercédem suam. Tu autem, cum jejúnas, unge caput tuum, et fáciem tuam lava, ne videáris homínibus jejúnans, sed Patri tuo, qui est in abscóndito: et Pater tuus, qui videt in abscóndito, reddet tibi. Nolíte thesaurizáre vobis thesáuros in terra: ubi ærúgo et tínea demolítur: et ubi fures effódiunt et furántur. Thesaurizáte autem vobis thesáuros in coelo: ubi neque ærúgo neque tínea demolítur; et ubi fures non effódiunt nec furántur. Ubi enim est thesáurus tuus, ibi est et cor tuum.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Book 2 on the Lord's Sermon on the Mount, ch. 12
+      text: |-
+        Maniféstum est, his præcéptis omnem nostram intentiónem in interióra gáudia dírigi: ne foris quæréntes mercédem, huic sǽculo conformémur, et amittámus promissiónem tanto solidióris atque firmióris, quanto interióris beatitúdinis, qua nos elégit Deus confórmes fíeri imáginis Fílii sui. In hoc autem capítulo máxime adverténdum est, non in solo rerum corporeárum nitóre atque pompa, sed étiam in ipsis sórdibus luctuósis esse posse jactántiam et eo periculosiórem, quo sub nómine servitútis Dei décipit.
+
+        Qui ergo immoderáto cultu córporis atque vestítu, vel ceterárum rerum nitóre præfúlget, fácile convíncitur rebus ipsis, pompárum sǽculi esse sectátor, nec quemquam fallit dolósa imágine sanctitátis. Qui autem in professióne christianitátis, inusitáto squalóre ac sórdibus inténtos in se óculos hóminum facit, cum id voluntáte fáciat, non necessitáte patiátur: ex céteris ejus opéribus potest cónici, utrum hoc contémptu supérflui cultus, an ambitióne áliqua fáciat: quia et sub ovína pelle cavéndos lupos Dóminus præcépit: Sed ex frúctibus, inquit, eórum cognoscétis eos.
+
+        Cum enim cœ́perint alíquibus tentatiónibus ea ipsa scílicet illis súbtrahi, vel negári, quæ isto velámine vel consecúti sunt, vel cónsequi cúpiunt: tunc necésse est ut appáreat, utrum lupus in ovína pelle sit, an ovis in sua. Non tamen proptérea ornátu supérfluo debet aspéctus hóminum mulcére Christiánus, quia illum parcum hábitum ac necessárium étiam simulatóres sǽpius usúrpant, ut incáutos decípiant: quia et illæ oves non debent pelles suas depónere, si aliquándo eis lupi se cóntegant.
+      responsory: |-
+        R. Veni hódie ad fontem aquæ, et orávi Dóminum, dicens: * Dómine, Deus Abraham, tu prósperum fecísti desidérium meum.
+        V. Igitur puélla, cui díxero, Da mihi aquam de hýdria tua, ut bibam: et illa díxerit, Bibe, dómine, et camélis tuis potum tríbuam: ipsa est, quam præparávit Dóminus fílio dómini mei.
+        R. Dómine, Deus Abraham, tu prósperum fecísti desidérium meum.
+      status: verified

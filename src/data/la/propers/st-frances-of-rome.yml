@@ -1,0 +1,56 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2038-03-09, a
+# year that date doesn't collide with a Sunday). Same convention as
+# data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátam Francíscam fámulam tuam, inter cétera grátiæ tuæ dona, familiári Angeli consuetúdine decorásti: concéde, quǽsumus; ut, intercessiónis ejus auxílio, Angelórum consórtium cónsequi mereámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-widow (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags actually used for
+# a mere commemoration, confirmed against this exact category via an
+# independently live-verified precedent elsewhere in this app). st-frances-of-rome has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper. Collect is the saint's own
+# real proper (st-frances-of-rome-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Date ei de frúctu mánuum suárum, et laudent eam in portis ópera ejus.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Deus, qui beátam Francíscam fámulam tuam, inter cétera grátiæ tuæ dona, familiári Angeli consuetúdine decorásti: concéde, quǽsumus; ut, intercessiónis ejus auxílio, Angelórum consórtium cónsequi mereámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/03-09.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Laudémus Deum nostrum, * In confessióne beátæ Francíscæ.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Frances of Rome, Widow (Mar 9) —
+# SanctiM/03-09.txt inherits the whole day (`@Sancti/03-09`) with no
+# Nocturn 2/3 override, so this saint's own vita is sourced from the
+# Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/03-09.txt, English/Sancti/03-09.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Francisca nobilis matrona Romana, ab ineunte ætate illustria dedit virtutum exempla: etenim pueriles ludos et illecebras mundi respuens, solitudine et oratione magnopere delectabatur. Undecim annos nata, virginitatem suam Deo consecrare, et monasterium ingredi proposuit: parentum tamen voluntati humiliter obtemperans, Laurentio de Pontianis, juveni æque diviti ac nobili nupsit. In matrimonio arctioris vitæ propositum, quantum licuit, semper retinuit: a spectaculis, conviviis, aliisque hujusmodi oblectamentis abhorrens, lanea ac vulgari veste utens, et quidquid a domesticis curis supererat temporis, orationi aut proximorum utilitati tribuens: in id vero maxima sollicitudine incumbens, ut matronas Romanas a pompis sæculi et ornatus vanitate revocaret. Quapropter domum Oblatarum, sub regula sancti Benedicti, congregationis Montis Oliveti, adhuc viro alligata, in Urbe instituit. Viri exsilium, bonorum jacturam, ac universæ domus mœrorem non modo constantissime toleravit: sed gratias agens cum beato Job, illud frequenter usurpabat: Dominus dedit, Dominus abstulit: sit nomen Domini benedictum.
+
+        Viro defuncto, ad prædictam Oblatarum domum convolans, nudis pedibus, fune ad collum alligato, humi prostrata, multis cum lacrimis earum numero adscribi suppliciter postulavit. Voti compos facta, licet esset omnium mater, non alio tamen quam ancillæ, vilissimæque feminæ, et immunditiæ vasculi titulo gloriabatur. Quam vilem sui existimationem et verbo declaravit et exemplo: sæpe enim e suburbana vinea revertens, et lignorum fascem proprio capiti impositum deferens, vel eisdem onustum agens per Urbem asellum, pauperibus subveniebat, in quos étiam largas eleemosynas erogabat: ægrotantesque in xenodochiis visitans, non corporali tantum cibo, sed salutaribus monitis recreabat. Corpus suum vigiliis, jejuniis, cilicio, ferreo cingulo, crebrisque flagellis in servitutem redigere jugiter satagebat. Cibum illi semel in die herbæ et legumina, aqua potum præbuit. Hos tamen corporis cruciatus aliquando confessarii mandato, a cujus ore nutuque pendebat, modice temperavit.
+
+        Divina mysteria, præsertim vero Christi Domini passionem, tanto mentis ardore, tantaque lacrimarum vi contemplabatur, ut præ doloris magnitudine pene confici videretur. Sæpe étiam cum oraret, maxime sumpto sanctissimæ Eucharistiæ sacramento, spiritu in Deum elevata, ac cælestium contemplatione rapta, immobilis permanebat. Quapropter humani generis hostis variis eam contumeliis ac verberibus a proposito dimovere conabatur: quem tamen illa imperterrita semper elusit; Angeli præsertim præsidio, cujus familiari consuetudine gloriosum de eo triumphum reportavit. Gratia curationum et prophetiæ dono enituit, quo et futura prædixit, et cordium secreta penetravit. Denique meritis et miraculis clara, migravit ad Dominum, anno ætatis suæ quinquagesimo sexto. Quam Paulus quintus Pontifex Maximus in Sanctorum numerum retulit.
+      status: verified

@@ -1,0 +1,49 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2026-07-30).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui sanctis tuis Abdon et Sennen ad hanc glóriam veniéndi copiósum munus grátiæ contulísti: da fámulis tuis suórum véniam peccatórum; ut, Sanctórum tuórum intercedéntibus méritis, ab ómnibus mereántur adversitátibus liberári.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-abdon-and-sennen-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (ss-abdon-and-sennen-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Deus, qui sanctis tuis Abdon et Sennen ad hanc glóriam veniéndi copiósum munus grátiæ contulísti: da fámulis tuis suórum véniam peccatórum; ut, Sanctórum tuórum intercedéntibus méritis, ab ómnibus mereántur adversitátibus liberári.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Abdon and Sennen's own day (2026-07-30). The Benedictus
+# antiphon.
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Abdon and Sennen, Martyrs (Jul 30)
+# — SanctiM/07-30.txt inherits the whole day (`@Sancti/07-30`) with no
+# Nocturn 2/3 override, so this feast's own proper content is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/07-30.txt, English/Sancti/07-30.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Abdon et Sennen Persæ, Decio imperatóre, accusáti quod córpora Christianórum, quæ inhumáta projiciebántur, in suo prædio sepelissent, jussu imperatóris comprehendúntur, et diis jubéntur sacrificare. Quod cum fácere neglígerent, et Jesum Christum Deum constantíssime prædicarent, tráditos in arctam custódiam, Romam póstea rédiens Decius vinctos duxit in triumpho. Qui cum in Urbe ad simulacra attracti essent, ea detestáti conspuérunt. Quam ob rem ursis ac leónibus objecti sunt; quos feræ non audébant attingere. Demum, gládiis trucidati, colligátis pédibus tracti sunt ante solis simulacrum. Quorum corpora, clam inde asportata, Quirínus diaconus sepelívit in suis ædibus.
+      status: verified

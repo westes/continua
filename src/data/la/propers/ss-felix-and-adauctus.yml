@@ -1,0 +1,49 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08.
+# Pulled from the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt + M1617.txt, own title
+# "Ss. Felicis et Soc. Mart.") and its own source file, not the merged per-date
+# files those tables' fileref points at directly -- see TODO.md.
+collect:
+  text: |
+    Orémus.
+    Majestátem tuam, Dómine, súpplices exorámus: ut, sicut nos júgiter Sanctórum tuórum commemoratióne lætíficas; ita semper supplicatióne deféndas.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-30 (a real Sunday, the exact case where this
+# renders as a commemoration -- Ss. Felix and Adauctus, Simplex, cede to
+# the Sunday, per calendar/commemorations.ts's ordinary-sunday rule).
+# Antiphon + versicle/response + full collect, same combined-bundle shape
+# as st-clare-commemoration.yml -- see hours/resolve-common.ts's
+# sanctoralCommemorationPart for how this renders, falling back to the
+# bare collect (ss-felix-and-adauctus-collect.yml) when this file didn't
+# exist.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Majestátem tuam, Dómine, súpplices exorámus: ut, sicut nos júgiter Sanctórum tuórum commemoratióne lætíficas; ita semper supplicatióne deféndas.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Felix and Adauctus, Martyrs (Aug 30)
+# — pre-1955-but-post-1617. Plain Sancti/08-30.txt is a different, later
+# saint (St. Rose of Lima, canonized 1671) who displaced Felix and
+# Adauctus on the general calendar's own Aug 30 slot; their content
+# survives at the suffixed sibling file (see memory
+# vu-matins-pre1955-saints's "critical wrinkle").
+# web/www/horas/Latin/Sancti/08-30o.txt, English/Sancti/08-30o.txt.
+# Single lesson (simplex-feast Lectio93), no responsory in the source.
+# English source has a stray-character artifact ("Him-who-was-added x
+# that is") — transcribed here with the stray "x" dropped.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Felix, Diocletiano et Maximiano imperatoribus, propter susceptam Christi religionem comprehensus, in Serapidis templum adductus est. Cui sacrificare cum juberetur, os simulacri conspuit. Quo facto, statim serea statua corruit. Quod cum iterum ac tertio in sede Mercurii Dianæque factum esset, impietatis et magicæ artis accusatus, equuleo torquetur. Mox ad secundum ab Urbe lapidem via Ostiensi ducitur, ut securi feriretur. Cui inter viam oblatus quidam Christianus, cum Felicem agnoscens ad martyrium duci videret, Ego quoque, clara voce inquit, eadem, qua iste, lege vivo; ego eumdem Jesum Christum colo. Itaque Felicem osculatus, cum eo securi percutitur, tertio Kalendas Septembris. Cujus nomen cum ignotum esset Christianis, is Adaucti nomine nobilitatus est, quod sancto Martyri Felici adauctus sit ad coronam.
+      status: verified

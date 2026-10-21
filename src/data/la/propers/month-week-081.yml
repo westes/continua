@@ -1,0 +1,46 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-08-02 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: Sapiéntia * ædificávit sibi domum, excídit colúmnas septem, súbdidit sibi gentes, superbórum et sublímium colla própria virtúte calcávit.
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for the reference engine's "1st Sunday of August"
+# (Tempora/081-0.txt) — this app's own calendar-month/week reading cycle
+# (calendar/month-week-id.ts's monthWeekId, distinct from the Easter-offset
+# post-pentecost-NN ids), pooled alongside them by hours/matins.ts's
+# buildReadingPool. See that function's header and month-week-id.ts's own
+# header for why this id exists at all: which month/week governs a given
+# Sunday shifts with Easter's date, so there's no fixed post-pentecost-NN
+# correspondence to author against — this id is computed straight from the
+# calendar date instead. Live-verified (2026-08-02, Monastic Tridentinum
+# 1617): "Dominica X Post Pentecosten I. Augusti", homily is St. Ambrose on
+# Ps. 118, matching this file's own Lectio4-6.
+#
+# Nocturn 1 deliberately not imported here — the user's own bible-plan
+# store already owns that slot (see propers/bible-plan.ts).
+#
+# Combined per the recombine rule: Lectio4-6 are one continuous excerpt
+# from the same sermon, no real source break between them.
+#
+# Checked 2026-09-05 for a missing Gospel pairing: confirmed via
+# horas/Latin/Tempora/081-0.txt directly — this source file has only
+# Lectio1-6 (no Lectio7-9 at all), so there is no Nocturn 3/Gospel slot
+# in this particular ordinary week's own office to pair against. Same
+# for month-week-082/083/084/085.yml (each checked individually against
+# its own Tempora/08N-0.txt). No pairing added to any of the five.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Enarrationes in Psalmum CXVIII, Sermon 5
+      text: |-
+        Inítium esse sapiéntiæ timórem Dómini, dicit prophéta. Quid est autem inítium sapiéntiæ, nisi sǽculo renuntiáre? Quia sápere sæculária, stultítia est. Dénique sapiéntiam hujus mundi, stultítiam esse apud Deum, Apóstolus dicit. Sed et ipse timor Dómini, nisi secúndum sciéntiam sit, nihil prodest, immo obest plúrimum. Síquidem Judǽi habent zelum Dei; sed quia non habent secúndum sciéntiam, in ipso zelo et timóre majórem cóntrahunt divinitátis offénsam. Quod circumcídunt infántulos suos, quod sábbata custódiunt, timórem Dei habent; sed quia nesciunt legem spiritálem esse, circumcídunt corpus, non cor suum.
+
+        Et quid de Judǽis dico? Sunt étiam in nobis qui habent timórem Dei, sed non secúndum sciéntiam, statuéntes durióra præcépta, quæ non possit humána condítio sustinére. Timor in eo est, quia vidéntur sibi consúlere disciplínæ, opus virtútis exígere; sed inscítia in eo est, quia non compatiúntur natúræ, non ǽstimant possibilitátem. Non sit ergo irrationábilis timor. Etenim vera sapiéntia a timóre Dei íncipit, nec est sapiéntia spiritális sine timóre Dei; ita timor sine sapiéntia esse non debet.
+
+        Basis quædam verbi est timor sanctus. Sicut enim simulácrum áliquod in basi statúitur, et tunc majórem habet grátiam, cum in basi státua fúerit collocáta, standíque áccipit firmitátem: ita verbum Dei in timóre sancto mélius statúitur, fórtius radicátur in péctore timéntis Dóminum; ne labátur verbum de corde viri, ne véniant vólucres et áuferant illud de incuriósi et dissimulántis afféctu.
+      responsory: |-
+        R. Da mihi, Dómine, sédium tuárum assistrícem sapiéntiam, et noli me reprobáre a púeris tuis: * Quóniam servus tuus sum ego, et fílius ancíllæ tuæ.
+        V. Mitte illam de sede magnitúdinis tuæ, ut mecum sit et mecum labóret.
+        R. Quóniam servus tuus sum ego, et fílius ancíllæ tuæ.
+      status: verified

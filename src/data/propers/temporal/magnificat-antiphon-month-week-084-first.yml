@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2029-08-18 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: magnificat-antiphon-month-week-084-first
-text:
-  la: "Sapiéntia * clámitat in platéis: Si quis díligit sapiéntiam, ad me declínet, et eam invéniet: et, cum invénerit, beátus erit si tenúerit eam."
-  en: "Wisdom * crieth in the streets: If any man love wisdom, let him come unto me, and he shall find her and when once he hath found her, blessed shall he be if he hold her."
-status:
-  la: verified
-  en: verified

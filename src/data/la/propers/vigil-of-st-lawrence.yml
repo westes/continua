@@ -1,0 +1,56 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08.
+# Pulled from the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt + M1617.txt, own title
+# "Vigilia S. Laurentii Martyris") and its own source file, not the merged per-date
+# files those tables' fileref points at directly -- see TODO.md.
+collect:
+  text: |
+    Orémus.
+    Adésto, Dómine, supplicatiónibus nostris: et intercessióne beáti Lauréntii Mártyris tui, cujus prævenímus festivitátem; perpétuam nobis misericórdiam benígnus impénde.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins reading for the Vigil of St. Lawrence (Aug 9) —
+# `Sancti/08-09t.txt` ("In Vigilia S. Laurentii Mart.", the suffixed
+# file — the plain `08-09.txt` belongs to St. John Mary Vianney
+# instead). A Vigil's own office is a single, simpler nocturn of just
+# 3 lessons (`Lectio1-3`), not the usual 9-lesson ferial/feast
+# structure — earlier characterized as "Nocturn 1 only, nothing to
+# source" (see TODO.md/memory vu-matins-sanctim-saints), which
+# undersold it: `Lectio1-3` genuinely *is* homiletic content here (a
+# bare Gospel incipit + a real patristic homily), just filling the
+# Vigil's only lesson slot rather than the Nocturn-2/3 slot a full
+# feast would use. Per direct instruction (2026-08), pool it in rather
+# than treat "only 3 lessons" as "no content" — same treatment as
+# vigil-of-st-john-the-baptist.yml.
+# web/www/horas/Latin/Sancti/08-09t.txt, English/Sancti/08-09t.txt.
+#
+# Lectio1's Gospel citation (Matt 16:24-27) was a bare incipit ("Et
+# réliqua") with no full pericope text given; the full pericope is now
+# authored too (isGospel: true, immediately before the homily) — this
+# Vigil's own Missale [Evangelium] redirect (`@Commune/C2-1`, a
+# breviary-Common-style index that doesn't resolve to a live Missa
+# Commune file in this reference copy) was resolved by matching the
+# citation directly: `obsolete/missa/Latin/Commune/C2b.txt`'s own
+# [Evangelium] is this same Matt 16:24-27 pericope — sourced from
+# there, English/Commune/C2b.txt (2026-09-05 update). The homily
+# portion remains Pope St. Gregory the Great's homily on self-denial
+# (Lectio1's homily + Lectio2-3 combined, one continuous piece).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: true
+      citation: Matt 16:24-27
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Si quis vult post me veníre, ábneget semetípsum, et tollat crucem suam, et sequátur me. Qui enim volúerit ánimam suam salvam fácere, perdet eam: qui autem perdíderit ánimam suam propter me, invéniet eam. Quid enim prodest hómini, si mundum univérsum lucrétur, ánimæ vero suæ detriméntum patiátur? Aut quam dabit homo commutatiónem pro ánima sua? Fílius enim hóminis ventúrus est in glória Patris sui cum Angelis suis: et tunc reddet unicuíque secúndum ópera ejus.'
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 32 on the Gospels (on Matt 16:24-27)
+      text: |-
+        Quia Dóminus ac Redémptor noster novus homo veni in mundum, nova præcépta dedit mundo. Vitæ étenim nostræ véteri, in vítiis enutrítæ, contrarietátem oppósuit novitátis suæ. Quid enim vetus, quid carnális homo nóverat, nisi sua retinére, aliéna rápere, si posset; concupíscere, si non posset? Sed cæléstis médicus síngulis quibúsque vítiis obviántia ádhibet medicaménta. Nam, sicut arte medicínæ cálida frígidis, frígida cálidis curántur; ita Dóminus noster contrária oppósuit medicaménta peccátis, ut lúbricis continéntiam, tenácibus largitátem, iracúndis mansuetúdinem, elátis præcíperet humilitátem.
+
+        Certe, cum se sequéntibus nova mandáta propóneret, dixit: Nisi quis renuntiáverit ómnibus quæ póssidet, non potest meus esse discípulus. Ac si apérte dicat: Qui per vitam véterem aliéna concupíscitis, per novæ conversatiónis stúdium et vestra largímini. Quid vero in hac lectióne dicat, audiámus: Qui vult post me veníre, ábneget semetípsum. Ibi dícitur ut abnegémus nostra: hic dícitur ut abnegémus nos. Et fortásse laboriósum non est hómini relínquere sua; sed valde laboriósum est relínquere semetípsum. Minus quippe est abnegáre quod habet; valde autem multum est abnegáre quod est.
+
+        Ad se autem nobis veniéntibus Dóminus præcépit, ut renuntiémus nostris: quia, quicúmque ad fídei agónem venímus, luctámen contra malígnos spíritus súmimus. Nihil autem malígni spíritus in hoc mundo próprium póssident: nudi ergo cum nudis luctári debémus. Nam si vestítus quisque cum nudo luctátur, cítius ad terram deícitur, quia habet unde teneátur. Quid enim sunt terréna ómnia, nisi quædam córporis induménta? Qui ergo contra diábolum ad certámen próperat, vestiménta abíciat, ne succúmbat.
+      status: verified

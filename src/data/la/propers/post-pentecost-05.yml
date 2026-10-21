@@ -1,0 +1,92 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Deus, qui diligéntibus te bona invisibília præparásti: infúnde córdibus nostris tui amóris afféctum; ut te in ómnibus et super ómnia diligéntes, promissiónes tuas, quæ omne desidérium súperant, consequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-06-20 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Audístis * quia dictum est antíquis: Non occídes; qui autem occíderit, reus erit judício.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-06-20 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: Si offers * munus tuum ad altáre et recordátus fúeris quia frater tuus habet áliquid advérsus te, relínque ibi munus tuum ante altáre, et vade prius reconciliári fratri tuo, et tunc véniens ófferes munus tuum, allelúia.
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2027-06-19 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Montes Gélboë, * nec ros nec plúvia véniant super vos: quia in te abjéctus est clípeus fórtium, clípeus Saul, quasi non esset unctus óleo. Quómodo cecidérunt fortes in bello? Jónathas in excélsis interféctus est: Saul et Jónathas, amábiles et decóri valde in vita sua, in morte quoque non sunt divísi.'
+  status: verified
+  temporal: true
+
+# Nocturn 2-3, 5th Sunday after Pentecost. Sourced from Tempora/Pent05-0.txt.
+# See post-pentecost-02.yml for sweep method/responsory-reuse note.
+# Nocturn 2: St. Gregory the Great, Moralia in Job Bk 4, on David's curse
+# against the mountains of Gilboa as a type of the Jews' unbelief - one
+# continuous excerpt (Lectio4-6). Nocturn 3: Lectio7 bare incipit (Matt
+# 5:20-24, on anger) skipped; Lectio8-9 one continuous excerpt from St.
+# Augustine's Sermon on the Mount commentary, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: Pope St. Gregory the Great, Moralia in Job, Book 4, ch. 3-4
+      text: |-
+        Quid est quod David, qui retribuéntibus sibi mala non réddidit, cum Saul et Jónathas bello occúmberent, Gélboë móntibus maledíxit, dicens: Montes Gélboë, nec ros nec plúvia véniant super vos: neque sint agri primitiárum: quia ibi abjéctus est clýpeus fórtius, clýpeus Saul, quasi non esset unctus óleo? Quid est quod Jeremías, cum prædicatiónem suam cérneret audiéntium difficultáte præpedíri, maledíxit dicens: Maledíctus vir, qui annuntiávit patri meo, dicens: Natus est tibi puer másculus?
+
+        Quid ergo montes Gélboë, Saul moriénte, deliquérunt, quátenus in eos nec ros nec plúvia cáderet et ab omni eos viriditátis gérmine senténtiæ sermo siccáret? Sed quia Gélboë interpretátur decúrsus, per Saul autem unctum et mórtuum mors nostri mediatóris exprímitur; non immérito per Gélboë montes supérba Judæórum corda signántur, quæ dum in hujus mundi desidériis défluunt, in Christi, id est, uncti se morte miscuérunt: et quia in eis unctus rex corporáliter móritur, ipsi ab omni grátiæ rore siccántur.
+
+        De quibus et bene dícitur, ut agri primitiárum esse non possint. Supérbæ quippe Hebræórum mentes primitívos fructus non ferunt: quia in Redemptóris advéntu ex parte máxima in perfídia remanéntes, primórdia fídei sequi noluérunt. Sancta namque Ecclésia in primítiis suis multitúdine Géntium fœcundáta, vix in mundi fine Judǽos quos invénerit, súscipit, et extréma cólligens, eos quasi relíquias frugum ponit.
+      responsory: |-
+        R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.
+        V. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?
+        R. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 5:20-24
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Nisi abundáverit justítia vestra plus quam scribárum et pharisæórum, non intrábitis in regnum cœlórum. Audístis, quia dictum est antíquis: Non occídes: qui autem occíderit, reus erit judício. Ego autem dico vobis: quia omnis, qui iráscitur fratri suo, reus erit judício. Qui autem díxerit fratri suo, raca: reus erit concílio. Qui autem díxerit, fátue: reus erit gehénnæ ignis. Si ergo offers munus tuum ad altáre, et ibi recordátus fúeris, quia frater tuus habet áliquid advérsum te: relínque ibi munus tuum ante altáre et vade prius reconciliári fratri tuo: et tunc véniens ófferes munus tuum.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, on the Lord's Sermon on the Mount, Book 1, ch. 9
+      text: |-
+        Justítia pharisæórum est, ut non occídant: justítia eórum, qui intratúri sunt in regnum cælórum, ut non irascántur sine causa. Mínimum est ergo, non occídere; et qui illud sólverit, mínimus vocábitur in regno cælórum. Qui autem illud impléverit, ut non occídat, non contínuo magnus erit, et idóneus regno cælórum; sed tamen ascéndit áliquem gradum: perficiétur autem, si nec irascátur sine causa; quod si perfécerit, multo remótior erit ab homicídio. Quaprópter qui docet ut non irascámur, non solvit legem ne occidámus, et in corde, dum non iráscimur, innocéntiam custodiámus.
+
+        Gradus ítaque sunt in istis peccátis: ut primo quisque irascátur, et eum motum retíneat corde concéptum. Jam si extórserit vocem indignántis ipsa commótio, non significántem áliquid, sed illum ánimi motum ipsa eruptióne testántem, qua feriátur ille, cui iráscitur; plus est útique, quam si surgens ira siléntio premerétur. Si vero non solum vox indignántis audiátur, sed étiam verbum, quo jam certam ejus vituperatiónem, in quem profértur, desígnet et notet; quis dúbitet, ámplius hoc esse, quam si solus indignatiónis sonus ederétur?
+
+        Vide nunc étiam tres reátus, judícii, concílii, et gehénnæ ignis. Nam in judício adhuc defensióni datur locus. In concílio autem, quamquam et judícium esse sóleat, tamen quia interésse áliquid hoc loco fatéri cogit ipsa distínctio, vidétur ad concílium pertinére senténtiæ prolátio; quando non jam cum ipso reo ágitur, utrum damnándus sit; sed inter se, qui júdicant, cónferunt quo supplício damnári opórteat, quem constat esse damnándum. Gehénna vero ignis, nec damnatiónem habet dúbiam, sicut judícium, nec damnáti pœnam, sicut concílium: in gehénna quippe ignis, certa est damnátio, et pœna damnáti.
+      responsory: |-
+        R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.
+        V. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.
+        R. Plena est omnis terra glória ejus.
+      status: verified

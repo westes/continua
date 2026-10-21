@@ -1,0 +1,88 @@
+# Verified against Divinum Officium (Latin/English Mariaant.txt, [Nativiti]).
+# Used from Christmas through Purification (Feb 2), covering Epiphanytide
+# too — same antiphon text as Advent's form, different versicle/collect.
+marian-antiphon-alma-redemptoris-nativity:
+  text: |
+    Alma Redemptóris Mater, quæ pérvia cæli
+    Porta manes, et stella maris, succúrre cadénti,
+    Súrgere qui curat, pópulo: tu quæ genuísti,
+    Natúra miránte, tuum sanctum Genitórem,
+    Virgo prius ac postérius, Gabriélis ab ore
+    Sumens illud Ave, peccatórum miserére.
+
+    V. Post partum, Virgo, invioláta permansísti.
+    R. Dei Génetrix, intercéde pro nobis.
+
+    Orémus.
+    Deus, qui salútis ætérnæ, beátæ Maríæ virginitáte fecúnda, humáno géneri prǽmia præstitísti: tríbue, quǽsumus; ut ipsam pro nobis intercédere sentiámus, per quam merúimus auctórem vitæ suscípere, Dóminum nostrum Jesum Christum Fílium tuum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Latin/English Mariaant.txt,
+# [Quadragesimae]). Real boundary is Purification (Feb 2) through Wednesday
+# of Holy Week — *not* the same start as the Alleluia-suppression boundary
+# (Septuagesima) used elsewhere (see prime-opening-by-season.yml). Filed
+# under the same "lent" season key for now since neither is exercisable
+# until milestone 4 anyway, but don't assume they're the same cutover once
+# real season resolution exists.
+marian-antiphon-ave-regina-caelorum:
+  text: |
+    Ave, Regína cælórum,
+    Ave, Dómina Angelórum:
+    Salve radix, salve porta,
+    Ex qua mundo lux est orta:
+
+    Gaude, Virgo gloriósa,
+    Super omnes speciósa,
+    Vale, o valde decóra,
+    Et pro nobis Christum exóra.
+
+    V. Dignáre me laudáre te, Virgo sacráta.
+    R. Da mihi virtútem contra hostes tuos.
+
+    Orémus.
+    Concéde, miséricors Deus, fragilitáti nostræ præsídium; ut, qui sanctæ Dei Genetrícis memóriam ágimus; intercessiónis ejus auxílio, a nostris iniquitátibus resurgámus. Per eúmdem Christum Dóminum nostrum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Latin/English Mariaant.txt,
+# [Paschalis]). Covers Eastertide, Ascensiontide, and Pentecost together as
+# one span (unlike the chapter-responsory/hymn-doxology tables, which treat
+# those three as distinct sub-seasons) — real practice doesn't switch the
+# Marian antiphon again until Trinity Sunday.
+marian-antiphon-regina-caeli:
+  text: |
+    Regína cæli, lætáre, allelúia:
+    Quia quem meruísti portáre, allelúia,
+    Resurréxit, sicut dixit, allelúia:
+    Ora pro nobis Deum, allelúia.
+
+    V. Gaude et lætáre, Virgo María, allelúia.
+    R. Quia surréxit Dóminus vere, allelúia.
+
+    Orémus.
+    Deus, qui per resurrectiónem Fílii tui, Dómini nostri Jesu Christi, mundum lætificáre dignátus es: præsta, quǽsumus; ut, per ejus Genetrícem Vírginem Maríam, perpétuæ capiámus gáudia vitæ. Per eúmdem Christum Dóminum nostrum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Latin/English Mariaant.txt,
+# [Postpentecost]). This is the per-annum default — "Postpentecost" is
+# exactly what this codebase's placeholder default season ("trinitytide")
+# refers to (see calendar/index.ts), so Salve Regina is the correct
+# fallback, not an arbitrary pick.
+marian-antiphon-salve-regina:
+  text: |
+    Salve, Regína, mater misericórdiæ,
+    vita, dulcédo, et spes nostra, salve.
+    Ad te clamámus éxsules fílii Hevæ.
+    Ad te suspirámus, geméntes et flentes
+    in hac lacrimárum valle.
+    Eja ergo, advocáta nostra,
+    illos tuos misericórdes óculos ad nos convérte.
+    Et Jesum, benedíctum fructum ventris tui,
+    nobis, post hoc exsílium, osténde.
+    O clemens, O pia, O dulcis Virgo María.
+
+    V. Ora pro nobis, sancta Dei Génetrix.
+    R. Ut digni efficiámur promissiónibus Christi.
+
+    Orémus.
+    Omnípotens sempitérne Deus, qui gloriósæ Vírginis Matris Maríæ corpus et ánimam, ut dignum Fílii tui habitáculum éffici mererétur, Spíritu Sancto cooperánte, præparásti: da, ut, cujus commemoratióne lætámur, ejus pia intercessióne, ab instántibus malis et a morte perpétua liberémur. Per eúmdem Christum Dóminum nostrum. Amen.
+  status: verified

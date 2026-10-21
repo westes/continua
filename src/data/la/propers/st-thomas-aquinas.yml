@@ -1,0 +1,58 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2033-03-07, a
+# year that date doesn't collide with a Sunday). Same convention as
+# data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui Ecclésiam tuam beáti Thomæ Confessóris tui mira eruditióne claríficas, et sancta operatióne fœcúndas: da nobis, quǽsumus; et quæ dócuit, intelléctu conspícere, et quæ egit, imitatióne complére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-thomas-aquinas-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-thomas-aquinas-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui Ecclésiam tuam beáti Thomæ Confessóris tui mira eruditióne claríficas, et sancta operatióne fœcúndas: da nobis, quǽsumus; et quæ dócuit, intelléctu conspícere, et quæ egit, imitatióne complére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Thomas Aquinas's own day (2026-03-07). The Benedictus
+# antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Thomas Aquinas, Confessor, Doctor
+# (Mar 7) — SanctiM/03-07.txt inherits the whole day (`@Sancti/03-07`)
+# with no Nocturn 2/3 override, so this saint's own vita is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/03-07.txt, English/Sancti/03-07.txt —
+# Lectio4/5 are themselves `@:Lectio4_`/`@:Lectio5_` self-references
+# (a same-file rubric-variant indirection, not a genuine split); the
+# underlying `Lectio4_`/`Lectio5_`/`Lectio6` text is combined into one
+# reading, one continuous vita. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Præclárum christiáni orbis decus et Ecclésiæ lumen, beatíssimus vir Thomas, Landulpho comite Aquinate et Theodora Neapolitana, nobílibus paréntibus natus, futuræ in Deiparam devotiónis afféctum adhuc infantulus osténdit. Nam chártulam ab eo invéntam, in qua salutátio Angelica scripta erat, frustra adniténte nutrice, compressa manu valide retinuit, et a matre per vim abreptam, ploratu et gestu repétiit, ac mox redditam deglutívit. Quintum annum agens, monachis sancti Benedicti Cassinátibus custodiendus traditur. Inde Neapolim studiórum causa missus, jam adoléscens Fratrum Prædicatórum Ordinem suscépit. Sed matre ac frátribus id indigne feréntibus, Lutétiam Parisiórum mittitur. Quem fratres in itinere per vim raptum, in arcem castri sancti Joánnis perducunt: ubi varie exagitatus, ut sanctum proponsitum mutaret, mulierem etiam, quæ ad labefactándam ejus constantiam introducta fuerat, titióne fugávit. Mox beátus juvenis, flexis genibus ante signum crucis orans, ibique somno correptus, per quietem sentire visus est sibi ab Angelis constringi lumbos; quo ex témpore omni póstea libidinis sensu cáruit. Soróribus, quæ ut eum a pio consílio removerent, in castrum venerant, persuasit, ut, contemptis curis sæcularibus, ad exercitatiónem cæléstis vitæ se conferrent.
+
+        Emissus e castro per fenestram, Neapolim redúcitur; unde Romam, póstea Parisium a fratre Joánne Theutónico, ordinis Prædicatórum generali magistro, ductus, Alberto Magno doctore, philosophíæ ac theologíæ operam dedit. Viginti quinque annos natus, magister est appellatus, publiceque philósophos ac Theólogos summa cum laude est interpretatus. Numquam se lectióni aut scriptióni dedit, nisi post oratiónem. In difficultátibus locórum sacræ Scripturæ, ad oratiónem jejunium adhibebat. Quin étiam sodali suo fratri Regínaldo dicere solebat, quidquid sciret non tam studio aut labóre suo peperisse, quam divínitus tráditum accepisse. Neapoli cum ad imáginem Crucifixi vehementius oraret, hanc vocem audívit: Bene scripsísti de me, Thoma; quam ergo mercedem accípies? Cui ille: Non aliam, Dómine, nisi teípsum.
+
+        A summo Pontifice Urbano quarto Romam vocatus, ejus jussu ecclesiásticum lucubrávit Offícium in Corporis Christi solemnitate celebrándum: oblatos vero honores et Neapolitanum archiepiscopátum, étiam deferénte Cleménte quarto, recusávit. A prædicatióne divini verbi non desistebat; quod cum fáceret per octavam Paschæ in basilica sancti Petri, mulierem, quæ ejus fimbriam tetígerat, a fluxu sánguinis liberávit. Missus a beato Gregório décimo ad concílium Lugdunense, in monasterio Fossæ Novæ in morbum íncidit, ubi ægrotus Cantica canticórum explanávit. Ibidem obiit quinquagenarius, anno salútis millesimo ducentésimo septuagesimo quarto, Nonis Martii.
+      status: verified

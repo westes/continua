@@ -1,0 +1,93 @@
+collect:
+  text: |
+    Let us pray.
+    Grant, we beseech thee, O Lord God, unto all thy servants, that they may remain continually in the enjoyment of soundness both of mind and body, and by the glorious intercession of the Blessed Mary, always a Virgin, may be delivered from present sadness, and enter into the joy of thine eternal gladness.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+matins-hymn:
+  text: |-
+    The God whom earth, and sea, and sky
+    Adore, and laud, and magnify,
+    Who o'er their threefold fabric reigns,
+    The Virgin's spotless womb contains.
+
+    The God, whose will by moon and sun
+    And all things in due course is done,
+    Is borne upon a maiden's breast,
+    By fullest heavenly grace possest.
+
+    How blest that mother, in whose shrine
+    The great artificer divine,
+    Whose hand contains the earth and sky,
+    Vouchsafed, as in his ark, to lie.
+
+    Blest, in the message Gabriel brought;
+    Blest, by the work the Spirit wrought;
+    From whom the great desire of earth
+    Took human flesh and human birth.
+
+    All honour, praise and glory be,
+    O Jesu, Virgin-Born, to thee;
+    All glory, as is ever meet,
+    To Father, and to Paraclete. Amen.
+  status: verified
+
+lauds-capitulum:
+  text: From the beginning, and before the world, was I created, and unto the world to come I shall not cease to be, and in the holy dwelling place I have ministered before him.
+  citation: Sir 24:14
+  status: verified
+
+lauds-hymn:
+  text: |
+    O glorious lady! throned on high
+    Above the star-illumined sky;
+    Thereto ordained, thy bosom lent
+    To thy Creator nourishment.
+
+    Through thy sweet offspring we receive
+    The bliss once lost through hapless Eve;
+    And heaven to mortals open lies
+    Now thou art portal of the skies.
+
+    Thou art the door of heaven's high King,
+    Light's gateway fair and glistering;
+    Life through a Virgin is restored;
+    Ye ransomed nations, praise the Lord!
+  status: verified
+
+lauds-responsory:
+  text: |
+    R.br. Hail Mary full of grace, * the Lord is with thee.
+    R. Hail Mary full of grace, * the Lord is with thee.
+    V. Blessed art thou among women, and blessed is the fruit of thy womb.
+    R. The Lord is with thee.
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. Hail Mary full of grace, * the Lord is with thee.
+  status: verified
+
+lauds-versicle:
+  text: |-
+    V. Blessed art thou among women.
+    R. And blessed is the fruit of thy womb.
+  status: verified
+
+benedictus-antiphon:
+  text: 'Blessed Mother of God, * Mary, ever Virgin, temple of the Lord, shrine of the Holy Ghost, thou alone without example hast pleased our Lord Jesus Christ: pray for the people, plead for the clergy, make intercession for all women vowed to God.'
+  status: verified
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 50
+      antiphon: While the King was at his repose, * my spikenard sent forth the odour thereof.
+    - psalms:
+        - 142
+      antiphon: His left hand is under my head, * and his right hand shall embrace me.
+  canticle:
+    id: canticum-moysis-deuteronomii
+    split: 32
+    antiphon: 'For winter is now past, * the rain is over and gone: arise, my love, and come.'
+  laudate:
+    antiphon: Beautiful and sweet * thou art become in thy delights, O holy Mother of God.

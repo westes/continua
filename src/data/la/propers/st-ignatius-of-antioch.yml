@@ -1,0 +1,48 @@
+# Matins Nocturn 2-3 readings for St. Ignatius of Antioch, Bishop and
+# Martyr (Feb 1) — SanctiM/02-01.txt inherits the whole day
+# (`@Sancti/02-01`) with no Nocturn 2/3 override, so this feast's own
+# proper content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/02-01.txt, English/Sancti/02-01.txt.
+#
+# Nocturn 2: Lectio4-6 (St. Jerome's account of Ignatius's life and
+# epistles) combined into one reading, one continuous excerpt.
+# Nocturn 3: Lectio7's Gospel citation (John 12:24-26) is a bare
+# incipit ("Et réliqua") in the horas file, but this same feast's own
+# Missale Evangelium (web/www/missa/Latin+English/Sancti/02-01.txt)
+# carries the full pericope verbatim, so it is authored in full below
+# (isGospel: true, immediately before the homily), combined with
+# Lectio8-9 as one continuous excerpt of St. Augustine's tract. No
+# responsory given for either.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored
+# (previously left unauthored per the "bare incipit, skip it"
+# convention) — sourced from the day's own Missale Gospel above, not
+# guessed at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Jerome, Priest, On Illustrious Men, ch. 16
+      text: |-
+        Ignátius, Antiochénæ ecclésiæ tértius post Petrum Apóstolum epíscopus, commovénte persecutiónem Trajáno, damnátus ad béstias, Romam vinctus míttitur. Cumque návigans Smyrnam venísset, ubi Polycárpus, audítor Joánnis, epíscopus erat, scripsit unam epístolam ad Ephésios, álteram ad Magnesiános, tértiam ad Trallénses, quartam ad Romános. Et inde egrédiens scripsit ad Philadélphios, et ad Smyrnǽos, et própriam ad Polycárpum, comméndans illi Antiochénsem ecclésiam; in qua et de Evangélio, quod nuper a me translátum est, super persóna Christi ponit testimónium.
+
+        Dignum autem vidétur, quia tanti viri fécimus mentiónem, et de epístola ejus, quam ad Romános scribit, pauca pónere: De Sýria usque ad Romam pugno ad béstias in mari et in terra, nocte diéque ligátus cum decem leopárdis, hoc est milítibus, qui me custódiunt; quibus et cum beneféceris, pejóres fiunt. Iníquitas autem eórum mea doctrína est; sed non idcírco justificátus sum. Utinam fruar béstiis, quæ mihi sunt præparátæ; quas et oro mihi velóces esse ad intéritum et ad supplícia, et állici ad comedéndum me, ne, sicut et aliórum Mártyrum, non áudiant corpus attíngere. Quod si veníre nolúerint, ego vim fáciam, ego me urgébo, ut dévorer. Ignóscite mihi, filíoli; quid mihi prosit, ego scio.
+
+        Nunc incípio Christi esse discípulus, nihil de his quæ vidéntur, desíderans, ut Jesum Christum invéniam. Ignis, crux, béstiæ, confráctio ossium, membrórum divísio, et totíus córporis contrítio, et tota torménta diáboli in me véniant; tantum ut Christo fruar. Cumque jam damnátus esset ad béstias, et ardóre patiéndi rugiéntes audíret leónes, ait: Fruméntum Christi sum; déntibus bestiárum molar, ut panis mundus invéniar. Passus est anno undécimo Trajáni. Relíquiæ córporis ejus Antiochíæ jacent extra portam Daphníticam, in cœmetério.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joann 12:24-26
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Amen, amen, dico vobis, nisi granum fruménti cadens in terram, mórtuum fúerit, ipsum solum manet: si autem mórtuum fúerit, multum fructum affert. Qui amat ánimam suam, perdet eam: et qui odit ánimam suam in hoc mundo, in vitam ætérnam custódit eam. Si quis mihi mínistrat, me sequátur: et ubi sum ego, illic et miníster meus erit. Si quis mihi ministráverit, honorificábit eum Pater meus.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Tract 51 on John (on John 12:24-26)
+      text: |-
+        Ipse Dóminus Jesus erat granum mortificándum et multiplicándum; mortificándum infidelitate Judæórum, multiplicándum fide populórum. Jam vero exhortans ad passiónis suæ sectanda vestígia, Qui amat, inquit, ánimam suam, perdet eam. Quod duobus modis intelligi potest. Qui amat, perdet; id est, si amas, perdes. Si cupis vitam tenére in Christo, noli mortem timére pro Christo. Item alio modo: Qui amat ánimam suam, perdet eam; noli amare, ne perdas; noli amare in hac vita, ne perdas in æterna vita.
+
+        Hoc autem, quod posterius dixi, magis habére vidétur evangélicus sensus; séquitur enim: Et qui odit ánimam suam in hoc mundo, in vitam ætérnam custódit eam. Ergo, quod supra dictum est, Qui amat, subintellígitur in hoc mundo, ipse útique perdet; qui autem odit, útique in hoc mundo, in vitam ætérnam ipse custódit eam. Magna et mira senténtia, quemádmodum sit hóminis in ánimam suam amor ut pereat, ódium ne pereat. Si male amáveris, tunc odísti; si bene óderis, tunc amásti. Felices, qui odérunt custodiéndo, ne perdant amándo.
+
+        Sed vide ne tibi subrépat ut teípsum velis interímere, sic intelligendo, quod debes odisse in hoc mundo ánimam tuam. Hinc enim quidam malígni atque perversi hómines, et in seipsis crudeliores et sceleratiores homicídæ flammis se donant, aquis se præfócant, præcipítio se collídunt et pereunt. Hoc Christus non docuit; immo étiam diabolo præcipitium suggerénti respóndit: Redi retro, sátana: scriptum est, Non tentábis Dóminum, Deum tuum. Petro autem dixit, signíficans qua morte clarificatúrus erat Deum: cum esses júnior, cingébas te, et ambulabas quo volébas; cum autem senúeris, alter te cinget et feret quo tu non vis. Ubi satis expressit, non a seipso, sed ab alio debére occídi, qui vestígia sequitur Christi.
+      status: verified

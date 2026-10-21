@@ -1,0 +1,46 @@
+# Live-verified (Monastic Tridentinum 1617, 2026-12-15, a plain ferial
+# Tuesday) — closes ferial (1-nocturn) Matins, same fixed per-annum
+# chapter regardless of weekday (confirmed by the source's own rubric:
+# "in the Ferial Office of either three or one lesson, [this] is always
+# said as follows" — i.e. the same closing chapter whether the day got
+# its full 3 lessons or the summer-contracted single short reading this
+# app doesn't reproduce anyway, see hours/matins.ts).
+matins-capitulum-ferial:
+  text: Vigiláte, state in fide, viríliter ágite, et confortámini. Ómnia vestra in caritáte fiant.
+  status: verified
+  citation: 1 Cor 16:13-14
+
+# This is Monday's own plain ferial Matins invitatory antiphon
+# (Psalterium/Special/Matutinum Special.txt's "Invit Trid_" block, `Feria
+# II=`). Its original comment claimed this text was "live-verified...
+# 2026-09-06" as the year-round default — wrong: that date query actually
+# returns Sunday's own distinct text ("Adorémus Dóminum, * Qui fecit
+# nos.", matins-invitatory-antiphon-sunday.yml), not this one. The real
+# `{Antiphona ex Psalterio secundum tempora}` cycle genuinely varies
+# Sunday-Saturday, same shape as the Matins hymn's own weekday cycle (see
+# matins-hymn-ferial.yml's own header) — user flagged today's rendering
+# as suspect 2026-09-06, traced to this file standing in for every
+# weekday including Sunday. `hours/matins.ts`'s
+# `resolveMatinsInvitatoryText` now looks up a weekday-specific id
+# (matins-invitatory-antiphon-sunday/-tuesday/-wednesday/-thursday/
+# -friday/-saturday) for those six days; this file (no day suffix) is
+# still used directly for Monday, same convention as matins-hymn-ferial.
+#
+# Real practice repeats this antiphon as an interspersed refrain between
+# verse groups of Psalm 94 (the historical "Venite" invitatory shape) —
+# deliberately not modeled that way here, per direct instruction: this app
+# frames it like any other psalm antiphon instead, one opening
+# (incipit-or-full, same rank rule as everywhere else) and one full
+# repeat after, via hours/matins.ts's plain 'psalm' + 'antiphon' parts.
+matins-invitatory-antiphon:
+  text: Veníte, * Exsultémus Dómino.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25
+# run. Closing dialogue after any short reading — shared across hours
+# (Prime's Regula reading and Lectio Brevis, Compline's own Lectio Brevis).
+lesson-close:
+  text: |
+    V. Tu autem, Dómine, miserére nobis.
+    R. Deo grátias.
+  status: verified

@@ -1,0 +1,39 @@
+# Read directly from web/www/horas/Latin/Sancti/11-08r.txt's own [Oratio]
+# and English/Sancti/11-08r.txt's own translation.
+collect:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, qui gloriósos Mártyres fortes in sua confessióne
+    cognóvimus, pios apud te in nostra intercessióne sentiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus
+    Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle, same combined-bundle shape as
+# ss-marius-martha-audifax-and-abachum-commemoration.yml -- Ant 2/Versum 2
+# are the standard de-Communi pairing for the Common of Several Martyrs
+# (C3/C3a, their own real common per [Rule]), already-verified Common
+# text, not proper to these five.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, qui gloriósos Mártyres fortes in sua confessióne cognóvimus, pios apud te in nostra intercessióne sentiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Four Crowned Martyrs (Nov 8). Sourced
+# from web/www/horas/Latin/Sancti/11-08r.txt, English/Sancti/11-08r.txt.
+# The source carries only a single short lesson (Lectio93), transcribed
+# whole as one Nocturn 2 reading, same "short/single source lesson"
+# handling as st-gorgonius.yml/st-nicomedes.yml.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Sevérus, Severiánus, Carpóphorus et Victorínus fratres, in persecutióne Diocletiáni, deórum cultum líbere detestántes, plumbátis cæsi, in verbéribus vitam pro Christi nómine profudérunt. Quorum córpora, cánibus objécta, cum ab illis intácta diu fuíssent, subláta a Christiánis, via Lavicána tértio ab Urbe lápide, in arenária sepeliúntur, prope sepúlcrum sanctórum Mártyrum Cláudii, Nicóstrati, Symphoriáni, Castórii et Simplícii, qui eódem imperatóre pássi erant; quod, cum essent summi sculptóres, nullo modo addúci potúerant ut idolórum státuas fácerent, et, ad solis simulácrum ducti, ut illud venerarétur, numquam commissúros se dixérunt ut adorárent ópera mánuum hóminum. Quaprópter in cárcerem conjécti, cum ibi multos dies in eódem propósito perstitíssent, primum scorpiónibus cæsi, deínde, vivi pluméis lóculis inclúsi, in flúmen dejiciúntur. Exstat in Urbe ecclésia sub nómine sanctórum Quatuor Coronatórum, quorum diu ignóta nómina, divínitus póstea patefácta sunt; ubi non solum illórum quatuor, sed étiam horum quinque Mártyrum córpora honorífice sepúlta sunt, et eórum festívitas sexto Idus Novémbris celebrátur.
+      status: verified

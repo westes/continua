@@ -1,0 +1,80 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Quad6-4.txt.
+# This day's Office has no ordinary "Oremus...Per Dominum" collect at all
+# -- its [Rule] explicitly omits the usual "Oratio" conclusion formula
+# ("Omit ... Conclusion ..."), and its real [Oratio] section is instead
+# the distinctive Holy Week Tenebrae form: the versicle "Christus factus
+# est pro nobis obédiens usque ad mortem" (Phil 2:8), said aloud, followed
+# by the Pater Noster recited silently, Psalm 50, and then this same
+# day's own "Oratio Matutinum" prayer -- concluded "sub silentio" (in
+# silence), not with the ordinary spoken "Amen." This whole sequence is
+# reused verbatim (via the file's own `@:Oratio Matutinum` reference) at
+# both Vespers and Matins for this one day, so it stands as the day's
+# single real collect here. The closing prayer itself
+# ("Réspice, quǽsumus...") is the same text Spy Wednesday's own Vespers
+# uses (see spy-wednesday-collect.yml's note) -- not independently
+# authored for Thursday, but genuinely this day's own text per the source.
+# Not live-cross-checked (the live engine's HTML doesn't surface this
+# unusual silent-conclusion form cleanly for a scripted query) --
+# transcribed directly from the raw file instead, hence `draft`.
+collect:
+  text: |
+    V. Christus factus est pro nobis obédiens usque ad mortem.
+    Pater noster (secreto).
+    Psalmus 50 (Miserere).
+    Réspice, quǽsumus, Dómine, super hanc famíliam tuam, pro qua Dóminus noster Jesus Christus non dubitávit mánibus tradi nocéntium, et crucis subíre torméntum:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    (Et sub silentio concluditur.)
+  status: draft
+  temporal: true
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-04-02 maundy-thursday second. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-versicle:
+  text: |
+    V. 
+    R. 
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-04-02 (Maundy Thursday that year). Matches
+# Tempora/Quad6-4.txt's own [Ant 2]. Matthew 26:48, Judas's sign to the
+# arresting party in Gethsemane.
+benedictus-antiphon:
+  text: 'Tráditor autem * dedit eis signum, dicens: Quem osculátus fúero, ipse est, tenéte eum.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-04-02. Matches Tempora/Quad6-4.txt's own [Ant 3].
+# Matthew 26:26, the institution of the Eucharist at the Last Supper --
+# fittingly this day's own Vespers antiphon, since Maundy Thursday's
+# Vespers historically commemorates the institution most directly (the
+# source's own rubric note that ordinary Vespers is "not said today" by
+# those attending the evening Mass of the Lord's Supper, since that Mass
+# itself liturgically incorporates Vespers, doesn't remove this text from
+# the Office for anyone praying the Hours on their own).
+magnificat-antiphon:
+  text: Cenántibus autem illis * accépit Jesus panem, et benedíxit, ac fregit, dedítque discípulis suis.
+  status: verified
+  temporal: true
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-04-02 maundy-thursday second. Named temporal feast: the app had no Vespers psalm antiphons for it and
+# fell back to the ferial/Sunday set. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 115
+      antiphon: Cálicem * salutáris accípiam et nomen Dómini invocábo.
+    - psalms:
+        - 119
+      antiphon: 'Cum his, * qui odérunt pacem eram pacíficus: dum loquébar illis, impugnábant me gratis.'
+    - psalms:
+        - 139
+      antiphon: Ab homínibus * iníquis líbera me, Dómine.
+    - psalms:
+        - 140
+      antiphon: Custódi me * a láqueo, quem statuérunt mihi, et a scándalis operántium iniquitátem.
+    - psalms:
+        - 141
+      antiphon: Considerábam * ad déxteram, et vidébam, et non erat qui cognósceret me.

@@ -1,0 +1,68 @@
+# Read directly from web/www/horas/Latin/Sancti/05-10.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Sancti Antoníni, Dómine, Confessóris tui atque Pontíficis méritis adjuvémur: ut,
+    sicut te in illo mirábilem prædicámus, ita in nos misericórdem fuísse gloriémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor-bishop (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-antoninus has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-antoninus-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Sancti Antoníni, Dómine, Confessóris tui atque Pontíficis méritis adjuvémur: ut,
+    sicut te in illo mirábilem prædicámus, ita in nos misericórdem fuísse gloriémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 05-10
+# st-antoninus (new saint-level second). See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle:
+  text: |
+    V. Pretiósa in conspéctu Dómini.
+    R. Mors Sanctórum ejus.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 05-10
+# st-antoninus (new saint-level first). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Sancti et justi in Dómino gaudéte.
+    R. Vos elégit Deus in hereditátem sibi.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Antoninus, Bishop and Confessor
+# (May 10). Sourced directly from web/www/horas/Latin/Sancti/05-10.txt,
+# English/Sancti/05-10.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in his own file (his `[Rule]` is `vide
+# C4`) -- defers to the Common of a Confessor Bishop's own Nocturn 3,
+# not transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Antoninus, Florentiæ honestis parentibus natus, ab ipsa jam pueritia egregium futuræ sanctitatis specimen exhibuit. Annum agens sextum decimum, religionem Prædicatorum amplexus, cœpit exinde maximis clarere virtutibus. Otio perpetuum bellum indixit. Post nocturnum brevem somnum primus matutinis precibus aderat; quibus persolutis, reliquum tempus noctis orationibus, aut certe lectioni, et scriptioni librorum tribuebat; et si quando importunior fessis membris somnus obreperet, ad parietem paululum declinato capite, ac tantisper discusso somno mox sacras vigilias avidius repetebat.
+
+        Disciplinæ regularis sui ipsius severissimus exactor, carnes, nisi in gravi ægritudine, numquam edit. Humi, aut in nudo tabulato cubabat. Cilicio semper usus, et interdum zona ferrea ad vivam cutem incinctus, virginitatem integerrime semper coluit. In explicandis consiliis tantæ dexteritatis fuit, ut communi elogio Antoninus consiliorum diceretur. Adeo autem in eo humilitas enituit, ut étiam cœnobiis, ac provinciis præfectus abjectissima monasterii officia demississime obiret. Ab Eugenio quarto Florentinus archiepiscopus renuntiatus, ægerrime tandem nec nisi apostolicis minis perterrefactus ut episcopatum acciperet, acquievit.
+
+        In eo munere vix dici potest, quantum prudentia, pietate, caritate, mansuetudine, et sacerdotali zelo excelluerit. Illud mirandum, tantum ingenio valuisse, ut omnes ferme scientias per se nullo adhibito præceptore, absolutissime didicerit. Tandem post multos labores, multis étiam editis insignis doctrinæ libris, sacra Eucharistia et Unctione percepta, complexus Crucifixi imaginem, mortem lætus aspexit sexto Nonas Maji, anno millesimo quadringentesimo quinquagesimo nono. Miraculis vivens et post mortem conspicuus, Sanctorum numero adscriptus est ab Hadriano sexto, anno Domini millesimo quingentesimo vigesimo tertio.
+      status: verified

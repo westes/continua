@@ -1,0 +1,297 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-11-11).
+collect:
+  text: |
+    Orémus.
+    Deus, qui cónspicis, quia ex nulla nostra virtúte subsístimus: concéde propítius; ut, intercessióne beáti Martíni Confessóris tui atque Pontíficis, contra ómnia advérsa muniámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-martin-of-tours-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-martin-of-tours-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. O beátum virum, * cujus ánima paradísum póssidet! Unde exsúltant Ángeli, lætántur Archángeli, chorus Sanctórum proclámat, turba Vírginum invítat: Mane nobíscum in ætérnum.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui cónspicis, quia ex nulla nostra virtúte subsístimus: concéde propítius; ut, intercessióne beáti Martíni Confessóris tui atque Pontíficis, contra ómnia advérsa muniámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Read from web/www/horas/Latin/Sancti/11-11.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Laudémus Deum nostrum * In confessióne beáti Martíni.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-11-11, clean year.
+lauds-capitulum:
+  text: 'Ecce sacérdos magnus, qui in diébus suis plácuit Deo, et invéntus est justus: et in témpore iracúndiæ factus est reconciliátio.'
+  citation: Sir 44:16-17
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-11-11, clean year.
+lauds-hymn:
+  text: |
+    Jesu Redémptor ómnium,
+    Perpes coróna Prǽsulum,
+    In hac die cleméntius
+    Nostris favéto précibus.
+
+    Tui sacri qua nóminis
+    Conféssor almus cláruit:
+    Hujus celébrat ánnua
+    Devóta plebs solémnia.
+
+    Qui rite mundi gáudia
+    Hujus cadúca réspuens,
+    Cum Ángelis cæléstibus
+    Lætus potítur prǽmiis.
+
+    Hujus benígnus ánnue
+    Nobis sequi vestígia:
+    Hujus precátu, sérvulis
+    Dimítte noxam críminis.
+
+    * Sit Christe, Rex piíssime,
+    Tibi, Patríque glória,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-11-11, clean year.
+lauds-responsory:
+  text: |
+    R.br. Amávit eum Dóminus, * Et ornávit eum.
+    R. Amávit eum Dóminus, * Et ornávit eum.
+    V. Stolam glóriæ índuit eum.
+    R. Et ornávit eum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Amávit eum Dóminus, * Et ornávit eum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-11-11, clean year.
+lauds-versicle:
+  text: |-
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, St. Martin of Tours's own day (2026-11-11, clean year).
+prime-antiphon:
+  text: 'Dixérunt discípuli * ad beátum Martínum: Cur nos, pater, déseris, aut cui nos desolátos relínquis? Invádent enim gregem tuum lupi rapáces.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, St. Martin of Tours's own day (2026-11-11, clean year).
+terce-antiphon:
+  text: 'Dómine, * si adhuc pópulo tuo sum necessárius, non recúso labórem: fiat volúntas tua.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, St. Martin of Tours's own day (2026-11-11, clean year).
+sext-antiphon:
+  text: O virum ineffábilem, * nec labóre victum, nec morte vincéndum, qui nec mori tímuit, nec vívere recusávit!
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, St. Martin of Tours's own day (2026-11-11, clean year).
+none-antiphon:
+  text: 'Martínus * Ábrahæ sinu lætus excípitur: Martínus, hic pauper et módicus, cælum dives ingréditur, hymnis cæléstibus honorátur.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-11-11, the same clean date already used for lauds-capitulum-st-martin-of-tours.yml.
+vespers-hymn:
+  text: |
+    Iste Conféssor Dómini sacrátus,
+    Festa plebs cujus celébrat per orbem,
+    Hódie lætus méruit secréta
+    Scándere cæli.
+
+    Qui pius, prudens, húmilis, pudícus,
+    Sóbrius, castus fuit et quiétus,
+    Vita dum præsens vegetávit ejus
+    Córporis artus.
+
+    Ob sacrum cujus túmulum frequénter
+    Membra languéntum modo sanitáti,
+    Quólibet morbo fúerint graváta,
+    Restituúntur.
+
+    Unde nunc noster chorus in honórem
+    Ipsius, hymnum canit hunc libénter:
+    Ut piis ejus méritis juvémur
+    Omne per ævum.
+
+    Sit salus illi, decus atque virtus,
+    Qui supra cæli résidens cacúmen,
+    Tótius mundi máchinam gubérnat
+    Trinus et unus.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-11-11, the same clean date already used for lauds-capitulum-st-martin-of-tours.yml.
+vespers-responsory:
+  text: |
+    R.br. Elégit eum Dóminus * Sacerdótem sibi.
+    R. Elégit eum Dóminus * Sacerdótem sibi.
+    V. Ad sacrificándum ei hóstiam laudis.
+    R. Sacerdótem sibi.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Elégit eum Dóminus * Sacerdótem sibi.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-11-11, the same clean date already used for lauds-capitulum-st-martin-of-tours.yml.
+vespers-versicle:
+  text: |-
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 11-11
+# st-martin-of-tours (saint file = second). First Vespers variant; the default (second Vespers) file is the same
+# id without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+  status: verified
+
+# Verified against Divinum Officium (Latin/English Sancti/11-11.txt's own
+# [Ant 1] — the Lauds-hour antiphon, not Terce's.
+benedictus-antiphon:
+  text: 'O beátum virum, * cujus ánima paradísum póssidet! Unde exsúltant Ángeli, lætántur Archángeli, chorus Sanctórum proclámat, turba Vírginum invítat: Mane nobíscum in ætérnum.'
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/11-11.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast, not a Common
+# substitution. (This feast's own Benedictus antiphon,
+# st-martin-of-tours-antiphon.yml, already correctly sources [Ant 1] --
+# [Ant 2] there is a bare `@:Ant 1` cross-reference, same text reused
+# for both, not a mis-tagging.)
+magnificat-antiphon:
+  text: O beátum Pontíficem, * qui totis viscéribus diligébat Christum Regem, et non formidábat impérii principátum! o sanctíssima ánima, quam etsi gládius persecutóris non ábstulit, palmam tamen martýrii non amísit!
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 11-11
+# st-martin-of-tours (saint file = second). First Vespers variant; the default (second Vespers) file is the same
+# id without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: 'O beátum virum, * cujus ánima paradísum póssidet! Unde exsúltant Ángeli, lætántur Archángeli, chorus Sanctórum proclámat, turba Vírginum invítat: Mane nobíscum in ætérnum.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-11-11, clean year.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: 'Dixérunt discípuli * ad beátum Martínum: Cur nos, pater, déseris, aut cui nos desolátos relínquis? Invádent enim gregem tuum lupi rapáces.'
+    - psalms:
+        - 99
+      antiphon: 'Dómine, * si adhuc pópulo tuo sum necessárius, non recúso labórem: fiat volúntas tua.'
+    - psalms:
+        - 62
+      antiphon: O virum ineffábilem, * nec labóre victum, nec morte vincéndum, qui nec mori tímuit, nec vívere recusávit!
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Oculis ac mánibus * in cælum semper inténtus, invíctum ab oratióne spíritum non relaxábat, allelúia.
+  laudate:
+    antiphon: 'Martínus * Ábrahæ sinu lætus excípitur: Martínus, hic pauper et módicus, cælum dives ingréditur, hymnis cæléstibus honorátur.'
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-11-11, own day). His own proper antiphons,
+# not `common-of-a-confessor-bishop`'s generic ones; psalms 109/111/112/131.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'Dixérunt discípuli * ad beátum Martínum: Cur nos, pater, déseris, aut cui nos desolátos relínquis? Invádent enim gregem tuum lupi rapáces.'
+    - psalms:
+        - 111
+      antiphon: 'Dómine, * si adhuc pópulo tuo sum necessárius, non recúso labórem: fiat volúntas tua.'
+    - psalms:
+        - 112
+      antiphon: O virum ineffábilem, * nec labóre victum, nec morte vincéndum, qui nec mori tímuit, nec vívere recusávit!
+    - psalms:
+        - 131
+      antiphon: 'Martínus * Ábrahæ sinu lætus excípitur: Martínus, hic pauper et módicus, cælum dives ingréditur, hymnis cæléstibus honorátur.'
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 11-11
+# st-martin-of-tours. First Vespers psalm antiphons; the other evening's set is st-martin-of-tours.yml. See
+# vespers-psalmody-overrides.ts's getVespersSaintOverride.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Ecce sacérdos magnus, * qui in diébus suis plácuit Deo, et invéntus est justus.
+    - psalms:
+        - 110
+      antiphon: Non est invéntus * símilis illi, qui conserváret legem Excélsi.
+    - psalms:
+        - 111
+      antiphon: Ideo jurejurándo * fecit illum Dóminus créscere in plebem suam.
+    - psalms:
+        - 112
+      antiphon: Serve bone * et fidélis, intra in gáudium Dómini tui.
+
+# Matins Nocturn 2-3 readings for St. Martin of Tours, Bishop,
+# Confessor (Nov 11, sharing the date with St. Menna — see
+# st-menna.yml) — SanctiM/11-11.txt inherits the whole day
+# (`@Sancti/11-11`) with no Nocturn 2/3 override, so this saint's own
+# vita is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/11-11.txt, English/Sancti/11-11.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita
+# (the famous cloak-sharing and death narratives).
+# Nocturn 3: Lectio7's Gospel citation (Luke 11:33-36) was a bare
+# incipit ("Et réliqua") with no full pericope text given; the full
+# pericope is now authored too (isGospel: true, immediately before the
+# homily) — sourced from this same day's own Missale [Evangelium]
+# (`web/www/missa/Latin/Sancti/11-11.txt`, English/Sancti/11-11.txt),
+# not guessed at (2026-09-05 update). The homily portion remains a
+# single excerpt of St. Ambrose's commentary. No responsory given for
+# either reading.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Martínus, Sabáriæ in Pannónia natus, cum décimum attigísset annum, invítis paréntibus ad ecclésiam confúgiens, in catechumenórum númerum adscríbi vóluit. Quíndecim annos natus in milítiam proféctus, primum in Constántii, deínde Juliáni exércitu militávit. Qui, cum nihil habéret præter arma et vestiméntum quo tegebátur, Ambiáni, páuperi ac nudo, ab eo peténti ut Christi nómine sibi eleemósynam tribúeret, partem chlámydis dedit. Cui sequénti nocte Christus, dimidiáta illa veste indútus, appáruit, hanc mittens vocem: Martínus catechúmenus hac me veste contéxit.
+
+        Decem et octo annos cum habéret, baptizátus est. Quare, relícta militári vita, ad Hilárium Pictaviénsem epíscopum se cóntulit, a quo in acolythórum númerum redáctus est. Post, factus epíscopus Turonénsis, monastérium ædificávit, ubi cum octogínta mónachis sanctíssime aliquámdiu vixit. Qui, cum póstea ad Candacénsem vicum suæ diœcésis in gravem febrim incidísset, assídua Deum oratióne precabátur, ut se ex illo mortáli cárcere liberáret. Quem audiéntes discípuli, sic rogábant: Cur nos, pater déseris? cui nos míseros derelínquis? Quorum voce commótus Martínus, ita Deum orábat: Dómine, si adhuc pópulo tuo sum necessárius, non recúso labórem.
+
+        Sed, cum eum in illa veheménti febre supínum orántem vidérent discípuli, supplíciter ab eo petiérunt, ut, convérso córpore, tantísper, dum remítteret morbi vis, pronus conquiésceret. Quibus Martínus, Sínite me, inquit, cælum pótius quam terram aspícere, ut, suo jam itínere itúrus ad Dóminum, spíritus dirigátur. Instánte jam morte, viso humáni géneris hoste, Quid, inquit, astas, cruénta béstia? nihil in me funéste repéries. Ea in voce, unum et octogínta annos natus, ánimam Deo réddidit; quam Angelórum chorus excépit, eósque divínas canéntes laudes multi, in primísque sanctus Severínus Coloniénsis epíscopus, audiérunt.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 11:33-36
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Nemo lucérnam accéndit, et in abscóndito ponit, neque sub módio: sed supra candelábrum, ut, qui ingrediúntur, lumen vídeant. Lucérna córporis tui est óculus tuus. Si óculus tuus fúerit simplex, totum corpus tuum lúcidum erit: si autem nequam fúerit, étiam corpus tuum tenebrósum erit. Vide ergo, ne lumen, quod in te est, ténebræ sint. Si ergo corpus tuum totum lúcidum fúerit, non habens áliquam partem tenebrárum, erit lúcidum totum, et sicut lucérna fulgóris illuminábit te.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Commentary on Luke, Bk. 7 (on Luke 11:33-36)
+      text: |-
+        Quia in superióribus Ecclésiam Synagógæ prǽtulit, hortátur nos ut fidem pótius nostram ad Ecclésiam transferámus. Lucérna enim fides est, juxta quod scriptum est: Lucérna pédibus meis verbum tuum, Dómine. Verbum enim Dei fides nostra est; Verbum Dei lux est; Lucérna est fides: Erat Lux vera, quæ illúminat omnem hóminem veniéntem in hunc mundum. Lucérna autem lucére non potest, nisi aliúnde lumen accéperit.
+
+        Hæc est Lucérna quæ accénditur, virtus scílicet nostræ mentis et sensus, ut drachma illa possit, quæ períerat, reperíri. Nemo ergo fidem sub lege constítuat; lex enim intra mensúram est, ultra mensúram grátia; lex obúmbrat, grátia claríficat. Et ídeo nemo fidem suam intra mensúram legis inclúdat, sed ad Ecclésiam cónferat, in qua septifórmis Spíritus relúcet grátia, quam Princeps ille sacerdótum fulgóre supérnæ divinitátis illúminat, ne eam legis umbra restínguat. Dénique lucérna illa, quam matutínis vespertinísque tempóribus, ritu véteri Judæórum, princeps sacerdótum solébat accéndere, velut sub módio sita legis, evánuit; et cívitas illa Jerúsalem quæ in terris est, quæ occídit prophétas, quasi in conválle fletus pósita delitéscit. Illa autem Jerúsalem quæ in cælo est, in qua mílitat fides nostra, in illo altíssimo ómnium locáta monte, hoc est Christo, non potest ténebris et ruínis hujus mundi abscóndi; sed fulgens candóre Solis ætérni, luce nos grátiæ spiritális illúminat.
+      status: verified

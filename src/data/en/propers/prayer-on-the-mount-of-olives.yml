@@ -1,0 +1,299 @@
+collect:
+  text: |
+    Let us pray.
+    O Lord Jesus Christ, who in the garden didst teach us by word and example to pray, that we may overcome the dangers of temptation: mercifully grant that, ever intent upon prayer, we may deserve to obtain its abundant fruit:
+    Who livest and reignest with God the Father, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: draft
+
+matins-hymn:
+  text: |
+    Behold how the Word of the Father,
+    from the heavenly seats, merciful and burning with love,
+    goes forth to heal the offspring of Adam
+    lost by guilt.
+
+    Pitying the world's lamentable ruin,
+    and wishing to repair our falls,
+    he prays, and with brow bowed down
+    the Master begs pardon.
+
+    He wavers, turning over so many bitter things:
+    This chalice of sorrow, he says in supplication,
+    my Father, take away; but thy will,
+    not mine, be done.
+
+    While sad dread presses the depths of his heart,
+    the Lord faints, languishing; through his limbs
+    a sweat of blood flows, and with drops
+    the earth is wetted.
+
+    But swiftly an Angel, coming from highest heaven,
+    refreshes the prostrate Jesus:
+    strength returns to his body, and with new
+    vigour he rises.
+
+    Praise and honour to the Father and to the begotten Son,
+    to whom was given the name above every name,
+    and to the Paraclete glory and power,
+    through all ages. Amen.
+  status: draft
+
+matins-invitatory:
+  text: Christ Jesus praying on the Mount of Olives, * O come, let us adore.
+  status: draft
+
+lauds-capitulum:
+  text: 'Jesus cometh to his disciples, and findeth them asleep, and saith to Peter: What, could you not watch one hour with me? Watch ye, and pray that ye enter not into temptation.'
+  citation: Matthew 26:40-41
+  status: draft
+
+lauds-hymn:
+  text: |
+    The Mediator has come from high heaven,
+    whom the holy prophets long ago sang:
+    spare thy grief and thy bitter tears,
+    daughter of Sion.
+
+    The old garden brought death, whence
+    guilt came forth: this new garden brings life,
+    behold, where by night Jesus
+    remains praying.
+
+    He appeases the avenging wrath of the Father:
+    with strong right hand he checks the thunderbolts
+    about to be hurled: the Redeemer of his own will
+    goes to meet the crime to be expiated.
+
+    So shall he crush the hard snares of hell,
+    and unlock the court long shut,
+    calling us back to the blessed joys
+    of the eternal kingdom.
+
+    Praise and honour to the Father and to the begotten Son,
+    to whom was given the name above every name,
+    and to the Paraclete glory and power,
+    through all ages. Amen.
+  status: draft
+
+lauds-versicle:
+  text: |
+    V. Teach us to pray.
+    R. Thus therefore shall you pray.
+  status: draft
+
+prime-lectio:
+  text: Pray for them that persecute and calumniate you, that you may be the children of your Father who is in heaven.
+  citation: Matthew 5:44-45
+  status: draft
+
+terce-capitulum:
+  text: |
+    Jesus cometh to his disciples, and findeth them asleep, and saith to Peter: What, could you not watch one hour with me? Watch ye, and pray that ye enter not into temptation.
+    R. Thanks be to God.
+    V. My Father, if it be possible.
+    R. Let this chalice pass from me.
+  citation: Matthew 26:40-41
+  status: draft
+
+sext-capitulum:
+  text: |
+    Watch ye, therefore, praying at all times, that you may be accounted worthy to escape all these things that are to come, and to stand before the Son of man.
+    R. Thanks be to God.
+    V. Watch and pray.
+    R. That ye enter not into temptation.
+  citation: Luke 21:36
+  status: draft
+
+none-capitulum:
+  text: |
+    Pray for them that persecute and calumniate you, that you may be the children of your Father who is in heaven.
+    R. Thanks be to God.
+    V. His sweat became.
+    R. As drops of blood.
+  citation: Matthew 5:44-45
+  status: draft
+
+vespers-hymn:
+  text: |
+    Behold how the Word of the Father,
+    from the heavenly seats, merciful and burning with love,
+    goes forth to heal the offspring of Adam
+    lost by guilt.
+
+    Pitying the world's lamentable ruin,
+    and wishing to repair our falls,
+    he prays, and with brow bowed down
+    the Master begs pardon.
+
+    He wavers, turning over so many bitter things:
+    This chalice of sorrow, he says in supplication,
+    my Father, take away; but thy will,
+    not mine, be done.
+
+    While sad dread presses the depths of his heart,
+    the Lord faints, languishing; through his limbs
+    a sweat of blood flows, and with drops
+    the earth is wetted.
+
+    But swiftly an Angel, coming from highest heaven,
+    refreshes the prostrate Jesus:
+    strength returns to his body, and with new
+    vigour he rises.
+
+    Praise and honour to the Father and to the begotten Son,
+    to whom was given the name above every name,
+    and to the Paraclete glory and power,
+    through all ages. Amen.
+  status: draft
+
+vespers-versicle:
+  text: |
+    V. His sweat became.
+    R. As drops of blood.
+  status: draft
+
+vespers-versicle/~-first:
+  text: |
+    V. My soul is sorrowful.
+    R. Even unto death.
+  status: draft
+
+benedictus-antiphon:
+  text: Being in an agony, he prayed the longer; and his sweat became as drops of blood trickling down upon the ground.
+  status: draft
+
+magnificat-antiphon:
+  text: Behold, the hour is at hand, and the Son of man shall be betrayed into the hands of sinners.
+  status: draft
+
+magnificat-antiphon/~-first:
+  text: 'Kneeling down, he prayed, saying: Father, if thou wilt, remove this chalice from me: but yet not my will, but thine be done.'
+  status: draft
+
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 16
+        antiphon: Before prayer prepare thy soul, and be not as a man that tempteth God.
+      - psalms:
+          - 27
+        antiphon: Be not hindered from praying always, and be not afraid to be justified even to death.
+      - psalms:
+          - 141
+        antiphon: All things whatsoever you shall ask in prayer, believing, you shall receive.
+    versicle:
+      v: My soul is sorrowful.
+      r: Even unto death.
+  nocturn2:
+    groups:
+      - psalms:
+          - 42
+        antiphon: When you pray, you shall not be as the hypocrites, that love to stand and pray in the synagogues and corners of the streets, that they may be seen by men.
+      - psalms:
+          - 63
+        antiphon: But thou, when thou shalt pray, enter into thy chamber, and having shut the door, pray to thy Father in secret.
+      - psalms:
+          - 120
+        antiphon: And it came to pass in those days, that he went out into a mountain to pray, and he passed the whole night in the prayer of God.
+    versicle:
+      v: My Father, if it be possible.
+      r: Let this chalice pass from me.
+  nocturn3:
+    groups:
+      - psalms:
+          - 3
+        antiphon: Trouble and anguish have found me; thy commandments are my meditation.
+      - psalms:
+          - 12
+        antiphon: I looked for one that would grieve together with me, and there was none; and for one that would comfort me, and I found none.
+      - psalms:
+          - 87
+        antiphon: 'My soul hath cleaved to the pavement: quicken thou me according to thy word.'
+    versicle:
+      v: Watch and pray.
+      r: That ye enter not into temptation.
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: 'Jesus came * with his disciples into a country place which is called Gethsemani, and he said to them: Sit you here, till I go yonder and pray.'
+    - psalms:
+        - 99
+      antiphon: And taking with him Peter * and the two sons of Zebedee, he began to grow sorrowful and to be sad.
+    - psalms:
+        - 62
+      antiphon: 'Then he saith to them: * My soul is sorrowful even unto death: stay you here, and watch with me.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'And going a little further, * he fell upon his face, praying, and saying: My Father, if it be possible, let this chalice pass from me.'
+  laudate:
+    antiphon: My Father, * if this chalice may not pass away, but I must drink it, thy will be done.
+
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'Jesus came * with his disciples into a country place which is called Gethsemani, and he said to them: Sit you here, till I go yonder and pray.'
+    - psalms:
+        - 110
+      antiphon: And taking with him Peter * and the two sons of Zebedee, he began to grow sorrowful and to be sad.
+    - psalms:
+        - 111
+      antiphon: 'Then he saith to them: * My soul is sorrowful even unto death: stay you here, and watch with me.'
+    - psalms:
+        - 112
+      antiphon: My Father, * if this chalice may not pass away, but I must drink it, thy will be done.
+
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'Jesus came * with his disciples into a country place which is called Gethsemani, and he said to them: Sit you here, till I go yonder and pray.'
+    - psalms:
+        - 110
+      antiphon: And taking with him Peter * and the two sons of Zebedee, he began to grow sorrowful and to be sad.
+    - psalms:
+        - 111
+      antiphon: 'Then he saith to them: * My soul is sorrowful even unto death: stay you here, and watch with me.'
+    - psalms:
+        - 112
+      antiphon: My Father, * if this chalice may not pass away, but I must drink it, thy will be done.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Cyprian, On the Lord's Prayer; St. Anselm, Commentary on the Epistle to the Hebrews, ch. 5
+      text: |
+        Not only by words but also by deeds did the Lord teach us to pray, himself praying frequently and making supplication, and showing by the witness of his own example what we ought to do, as it is written: But he retired into the wilderness, and prayed. And again: He went out into a mountain to pray, and he passed the whole night in the prayer of God. But if he prayed who was without sin, how much more ought sinners to pray! And if he, continually watching through the whole night, prayed with unceasing prayers, how much more ought we to watch by night in frequenting prayer! Now the Lord prayed and made request not for himself: for what would the innocent pray for himself? but for our sins, as he himself declares when he says to Peter: Behold, Satan hath desired to have you, that he may sift you as wheat: but I have prayed for thee, that thy faith fail not. And afterwards he beseeches the Father for all, saying: And not for them only do I pray, but for them also who through their word shall believe in me: that they all may be one, as thou, Father, in me, and I in thee; that they also may be one in us.
+
+        As a true High Priest he offered prayers: for in the Gospel it is often read that he prayed, and especially in Luke, who described in him the person of a priest. But whatever he himself did in the flesh was prayers and supplications for men. All his life he prayed to the Father for the resurrection of his flesh and for our salvation, and when the passion was now at hand he offered supplications, that is, most humble and most urgent prayers with the highest devotion and affection of heart, when, being in an agony, he prayed the longer, and his sweat became as drops of blood trickling down upon the ground. And these prayers and supplications he offered, that is, he carried to meet the Father, by being heard as the Father met him. He offered them to him that was able to save him from death, that is, to raise him up, to him whom he knew to be sufficient to save him, that is, to make him immortal and impassible by snatching him from death; so that neither should his soul remain in hell, nor his flesh rot in the sepulchre.
+
+        And he offered these with a strong cry, that is, with the most vehement and most efficacious intention of pious devotion, as when he prayed the longer, and also with tears; because in that long prayer he is to be believed to have shed tears, since drops of blood also ran down from his body for sweat; and he was heard, because what he had asked he received in the resurrection. He was heard, that is, he was heard beyond the number of all others, since after the warfare of his labour he was exalted by the Father above every creature, and this for his reverence, that is, according to this, that he himself as Son of God is worthy of reverence and veneration. Or for his reverence toward God, that is, because he himself revered and honoured the Father above all things. Or for his reverence, that is, as his godliness deserved. The shedding of his blood also can be understood as the strong cry, in which he was heard for the reverence of that same passion. It is reverence, that he suffered without sin, by charity alone.
+      responsory: |
+        R. Let thine ears be attentive, and thine eyes open: * That thou mayest hear the prayer of thy servant.
+        V. Which I pray before thee this day, night and day.
+        R. That thou mayest hear the prayer of thy servant.
+      status: draft
+    - nocturn: 3
+      isGospel: true
+      citation: Luke 22:39-44
+      text: 'At that time: Jesus went, according to his custom, to the Mount of Olives. And his disciples also followed him. And when he was come to the place, he said to them: Pray, lest ye enter into temptation. And he was withdrawn away from them a stone''s cast; and kneeling down, he prayed, saying: Father, if thou wilt, remove this chalice from me: but yet not my will, but thine be done. And there appeared to him an angel from heaven, strengthening him. And being in an agony, he prayed the longer. And his sweat became as drops of blood, trickling down upon the ground.'
+      status: draft
+    - nocturn: 3
+      isGospel: false
+      source: St. Ambrose, Commentary on Luke, Bk. 10, on ch. 22
+      text: |
+        Remove this chalice from me: as a man refusing death, as God keeping his own sentence. For it behoves us to die to the world that we may rise to God, that, according to the divine sentence, the law of the curse being loosed, it may be dissolved into the clay of the earth at the end of nature. And when he says: Not my will, but thine be done; he refers his own to the man, the Father's to the divinity. For the will of man is temporal, the will of the divinity eternal. It is not one will of the Father, another of the Son. For there is one will where there is one divinity. Learn, however, to be subject to God, so that thou choose not what thou thyself wilt, but what thou knowest will be pleasing to God.
+
+        Next let us consider the propriety of the very words. My soul, he says, is sorrowful. And elsewhere: Now is my soul troubled. It is not then he who assumes but she who is assumed that is troubled. For the soul is subject to passions, the divinity free. Finally, the spirit indeed is willing, but the flesh weak. Now it is not he himself that is sorrowful but the soul. Wisdom is not sorrowful, nor the divine substance, but the soul. For he took my soul, he took my body. He did not deceive me by being one thing and seeming another. He seemed sorrowful, and was sorrowful, not for his own passion, but for our dispersion.
+
+        Finally he says: I will strike the shepherd, and the sheep of the flock shall be dispersed. He was sorrowful because he was leaving us little ones. Moreover how steadfastly he offered himself to death the sequel declares: since he went to meet those who sought him, confirmed the troubled, roused the fearful, received the betrayer's kiss with condescension. Nor is it far from the truth if he was sorrowful for his persecutors, whom he knew would pay the penalty of a monstrous sacrilege. And therefore he said: Remove this chalice from me. Not that God, the Son of God, feared death; but because he would not that even the wicked should perish on his account.
+      responsory: |
+        R. Let my prayer come in before thy sight: * Incline thy ear to my petition.
+        V. For my soul is filled with evils, and my life hath drawn nigh to hell.
+        R. Incline thy ear to my petition.
+      status: draft

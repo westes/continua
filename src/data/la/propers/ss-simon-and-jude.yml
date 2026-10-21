@@ -1,0 +1,224 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-10-28).
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos per beátos Apóstolos tuos Simónem et Judam ad agnitiónem tui nóminis veníre tribuísti: da nobis eórum glóriam sempitérnam et proficiéndo celebráre, et celebrándo profícere.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-simon-and-jude-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-apostle (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (ss-simon-and-jude-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vos qui reliquístis ómnia, et secúti estis me, céntuplum accipiétis, et vitam ætérnam possidébitis.
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+    Orémus.
+    Deus, qui nos per beátos Apóstolos tuos Simónem et Judam ad agnitiónem tui nóminis veníre tribuísti: da nobis eórum glóriam sempitérnam et proficiéndo celebráre, et celebrándo profícere.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2025-10-28, clean year.
+lauds-capitulum:
+  text: 'Fratres: Jam non estis hóspites et ádvenæ: sed estis cives Sanctórum et doméstici Dei: superædificáti super fundaméntum Apostolórum, et Prophetárum, ipso summo angulári lápide Christo Jesu.'
+  citation: Eph 2:19-20
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2025-10-28, clean year.
+lauds-hymn:
+  text: |
+    Exsúltet cælum láudibus,
+    Resúltet terra gáudiis:
+    Apostolórum glóriam
+    Sacra canunt solémnia.
+
+    Vos sæcli justi júdices,
+    Et vera mundi lúmina,
+    Votis precámur córdium,
+    Audíte preces súpplicum.
+
+    Qui cælum verbo cláuditis,
+    Serásque ejus sólvitis:
+    Nos a peccátis ómnibus
+    Sólvite jussu, quǽsumus.
+
+    Quorum præcépto súbditur,
+    Salus, et languor ómnium:
+    Sanáte ægros móribus,
+    Nos reddéntes virtútibus.
+
+    Ut, cum Judex advénerit
+    Christus in fine sǽculi,
+    Nos sempitérni gáudii
+    Fáciat esse cómpotes.
+
+    Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2025-10-28, clean year.
+lauds-responsory:
+  text: |
+    R.br. In omnem terram * Exívit sonus eórum.
+    R. In omnem terram * Exívit sonus eórum.
+    V. Et in fines orbis terræ verba eórum.
+    R. Exívit sonus eórum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. In omnem terram * Exívit sonus eórum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2025-10-28, clean year.
+lauds-versicle:
+  text: |-
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2025-10-28, the same clean date already used for lauds-capitulum-ss-simon-and-jude.yml.
+vespers-hymn:
+  text: |
+    Exsúltet cælum láudibus,
+    Resúltet terra gáudiis:
+    Apostolórum glóriam
+    Sacra canunt solémnia.
+
+    Vos sæcli justi júdices,
+    Et vera mundi lúmina,
+    Votis precámur córdium,
+    Audíte preces súpplicum.
+
+    Qui cælum verbo cláuditis,
+    Serásque ejus sólvitis:
+    Nos a peccátis ómnibus
+    Sólvite jussu, quǽsumus.
+
+    Quorum præcépto súbditur,
+    Salus, et languor ómnium:
+    Sanáte ægros móribus,
+    Nos reddéntes virtútibus.
+
+    Ut, cum Judex advénerit
+    Christus in fine sǽculi,
+    Nos sempitérni gáudii
+    Fáciat esse cómpotes.
+
+    Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2025-10-28, the same clean date already used for lauds-capitulum-ss-simon-and-jude.yml.
+vespers-responsory:
+  text: |
+    R.br. Constítues eos príncipes * Super omnem terram.
+    R. Constítues eos príncipes * Super omnem terram.
+    V. Mémores erunt nóminis tui, Dómine.
+    R. Super omnem terram.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Constítues eos príncipes * Super omnem terram.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2025-10-28, the same clean date already used for lauds-capitulum-ss-simon-and-jude.yml.
+vespers-versicle:
+  text: |-
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 10-28
+# ss-simon-and-jude (saint file = second). First Vespers variant; the default (second Vespers) file is the same
+# id without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. In omnem terram exívit sonus eórum.
+    R. Et in fines orbis terræ verba eórum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Simon and Jude's own day (2026-10-28) -- the Benedictus
+# antiphon (Matt 19:27ff, same verse as St. Matthias/Barnabas/James the
+# Greater/Bartholomew/Matthew/Luke's own). The source's own English
+# existed but was jarringly modern next to every other antiphon's archaic
+# register -- reworded to match (the underlying verse's standard
+# Douay-Rheims wording, same fix as those six), marked draft rather than
+# a straight source transcription.
+benedictus-antiphon:
+  text: Vos qui reliquístis ómnia, et secúti estis me, céntuplum accipiétis, et vitam ætérnam possidébitis.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2025-10-28, clean year.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Hoc est præcéptum meum, * ut diligátis ínvicem, sicut diléxi vos.
+    - psalms:
+        - 99
+      antiphon: Majórem caritátem * nemo habet, ut ánimam suam ponat quis pro amícis suis.
+    - psalms:
+        - 62
+      antiphon: Vos amíci mei estis, * si fecéritis quæ præcípio vobis, dicit Dóminus.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Beáti pacífici, * beáti mundo corde: quóniam ipsi Deum vidébunt.'
+  laudate:
+    antiphon: In patiéntia vestra * possidébitis ánimas vestras.
+
+# Matins Nocturn 2-3 readings for Ss. Simon and Jude, Apostles (Oct
+# 28) — SanctiM/10-28.txt inherits the whole day (`@Sancti/10-28`)
+# with no Nocturn 2/3 override, so this feast's own proper content is
+# sourced from the Tridentine track exactly as for a pre-1955 saint
+# (see memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/10-28.txt, English/Sancti/10-28.txt.
+#
+# Nocturn 2: Lectio4 (both Apostles' vita, single lesson — Lectio5-6
+# fall back to Common of Apostles, not proper text, so not authored
+# here).
+# Nocturn 3: Lectio7's Gospel citation (John 15:17-25) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so — per
+# the pre-1955 pass's convention of not transcribing bare incipits —
+# only the homily portion was originally authored (not marked
+# isGospel), a single excerpt of St. Augustine's Tract 87 on John. No
+# responsory given for either reading.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Augustine's homily) — sourced
+# from the day's own Missale [Evangelium] in
+# web/www/missa/Latin/Sancti/10-28.txt (full text given there, not a
+# redirect).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Simon Chananǽus, qui et Zelótes, et Thaddǽus, qui et Judas Jacóbi appellátur in Evangélio, uníus ex cathólicis Epístolis scriptor; hic Mesopotámiam, ille Ægýptum evangélica prædicatióne peragrávit. Póstea in Pérsidem conveniéntes, cum innumerábiles fílios Jesu Christo peperíssent fidémque in vastíssimis illis regiónibus et efferátis géntibus disseminássent, doctrína et miráculis, ac dénique glorióso martýrio, simul sanctíssimum Jesu Christi nomen illustrárunt.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joann 15:17-25
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Hæc mando vobis, ut diligátis ínvicem. Si mundus vos odit: scitóte, quia me priórem vobis odio hábuit. Si de mundo fuissétis, mundus quod suum erat dilígeret; quia vero de mundo non estis, sed ego elégi vos de mundo, proptérea odit vos mundus. Mementóte sermónis mei, quem ego dixi vobis: Non est servus major dómino suo. Si me persecúti sunt, et vos persequántur: si sermónem meum servavérunt, et vestrum servábunt. Sed hæc ómnia fácient vobis propter nomen meum: quia nésciunt eum, qui misit me. Si non veníssem et locútus fuíssem eis, peccátum non háberent: nunc autem excusatiónem non habent de peccáto suo. Qui me odit: et Patrem meum odit. Si ópera non fecíssem in eis, quæ nemo álius fecit, peccátum non háberent: nunc autem et vidérunt et odérunt et me et Patrem meum. Sed ut adimpleátur sermo, qui in lege eórum scriptus est: Quia ódio habuérunt me gratis.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Tract 87 on John (on John 15:17-25)
+      text: 'In lectióne evangélica quæ hanc antecédit, díxerat Dóminus: Non vos me elegístis; sed ego elégi vos et pósui vos, ut eátis, et fructum afferátis, et fructus vester máneat: ut quodcúmque petiéritis Patrem in nómine meo, det vobis. Hic autem dicit: Hæc mando vobis, ut diligátis ínvicem. Ac per hoc intellégere debémus hunc esse fructum nostrum, de quo ait: Ego vos elégi, ut eátis, et fructum afferátis, et fructus vester máneat. Et quod adjúnxit, Ut quodcúmque petiéritis Patrem in nómine meo, det vobis, tunc útique dabit nobis, si diligámus ínvicem; cum et hoc ipsum ipse déderit nobis, qui nos elégit non habéntes fructum, quia non eum nos elegerámus, et pósuit nos ut fructum afferámus, hoc est, ínvicem diligámus.'
+      status: verified

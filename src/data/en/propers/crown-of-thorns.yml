@@ -1,0 +1,291 @@
+collect:
+  text: |
+    Let us pray.
+    Grant, we beseech thee, almighty God, that we who on earth venerate the crown of thorns of our Lord Jesus Christ in memory of his passion, may deserve to be crowned by him with glory and honour in heaven:
+    Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: draft
+
+matins-hymn:
+  text: |
+    Come forth, daughters of Sion,
+    chaste virgins of the King,
+    behold the Crown of Christ,
+    which his own mother wove.
+
+    The head, bloodied with thorns,
+    bristles with its torn-out hair;
+    and that pallid countenance
+    looks upon death near at hand.
+
+    What land, impassable with furrows,
+    stiff with briars and brambles,
+    brought forth this mournful gift?
+    What cruel hand reaped it?
+
+    Reddening with the blood of Christ,
+    the thorn changes its prickles into roses,
+    and, surpassing the palm in its fruits,
+    the thorn is fitter for triumphs.
+
+    Sown by the sins of mortals,
+    the thorns wound thee, O Christ:
+    pluck them from our hearts,
+    and plant thine own in us.
+
+    Might, honour, praise, glory
+    to God the Father with the Son,
+    and likewise to the Holy Paraclete,
+    for ever and ever. Amen.
+  status: draft
+
+matins-invitatory:
+  text: Christ the King, crowned with thorns, * O come, let us adore.
+  status: draft
+
+lauds-capitulum:
+  text: Go forth, and see, ye daughters of Sion, king Solomon in the diadem wherewith his mother crowned him.
+  citation: Canticle of Canticles 3:11
+  status: draft
+
+lauds-hymn:
+  text: |
+    The noble Crown of Christ is pictured
+    in figures of the law:
+    the victim entangled in thorns,
+    and the burning bush bear witness.
+
+    A crown had girded the ark, and, going round,
+    twines a crown about the sacred rim of the table
+    and the altar smoking with incense.
+
+    Hail, Crown of glory,
+    witness of the sorrows of Christ.
+    More beautiful than gems and gold,
+    thou shalt surpass the crowns of the stars.
+
+    Might, honour, praise, glory
+    to God the Father with the Son,
+    and likewise to the Holy Paraclete,
+    for ever and ever. Amen.
+  status: draft
+
+lauds-versicle:
+  text: |
+    V. Thou shalt be a crown of glory in the hand of the Lord.
+    R. And a royal diadem in the hand of thy God.
+  status: draft
+
+prime-lectio:
+  text: In that day the Lord of hosts shall be a crown of glory, and a garland of joy to the residue of his people.
+  citation: Isaiah 28:5
+  status: draft
+
+terce-capitulum:
+  text: |
+    Go forth, and see, ye daughters of Sion, king Solomon in the diadem wherewith his mother crowned him.
+    R. Thanks be to God.
+    V. Thou hast crowned him, O Lord, with glory and honour.
+    R. And hast set him over the works of thy hands.
+  citation: Canticle of Canticles 3:11
+  status: draft
+
+sext-capitulum:
+  text: |
+    And I saw, and behold a white horse, and he that sat on him had a bow, and there was a crown given him, and he went forth conquering that he might conquer.
+    R. Thanks be to God.
+    V. We adore thy crown, O Lord.
+    R. We recall thy glorious passion.
+  citation: Apocalypse 6:2
+  status: draft
+
+none-capitulum:
+  text: |
+    In that day the Lord of hosts shall be a crown of glory, and a garland of joy to the residue of his people.
+    R. Thanks be to God.
+    V. Plaiting a crown of thorns,
+    R. They put it upon his head.
+  citation: Isaiah 28:5
+  status: draft
+
+vespers-hymn:
+  text: |
+    Come forth, daughters of Sion,
+    chaste virgins of the King,
+    behold the Crown of Christ,
+    which his own mother wove.
+
+    The head, bloodied with thorns,
+    bristles with its torn-out hair;
+    and that pallid countenance
+    looks upon death near at hand.
+
+    What land, impassable with furrows,
+    stiff with briars and brambles,
+    brought forth this mournful gift?
+    What cruel hand reaped it?
+
+    Reddening with the blood of Christ,
+    the thorn changes its prickles into roses,
+    and, surpassing the palm in its fruits,
+    the thorn is fitter for triumphs.
+
+    Sown by the sins of mortals,
+    the thorns wound thee, O Christ:
+    pluck them from our hearts,
+    and plant thine own in us.
+
+    Might, honour, praise, glory
+    to God the Father with the Son,
+    and likewise to the Holy Paraclete,
+    for ever and ever. Amen.
+  status: draft
+
+vespers-versicle:
+  text: |
+    V. Plaiting a crown of thorns,
+    R. They put it upon his head.
+  status: draft
+
+vespers-versicle/~-first:
+  text: |
+    V. Plaiting a crown of thorns,
+    R. They put it upon his head.
+  status: draft
+
+benedictus-antiphon:
+  text: Jesus went forth, bearing the crown of thorns and the purple garment.
+  status: draft
+
+magnificat-antiphon:
+  text: 'And bowing the knee before him, they mocked him, saying: Hail, King of the Jews; and spitting upon him, they took the reed, and struck his head.'
+  status: draft
+
+magnificat-antiphon/~-first:
+  text: Go forth, and see, ye daughters of Sion, king Solomon in the diadem wherewith his mother crowned him, preparing a cross for her Saviour.
+  status: draft
+
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 1
+        antiphon: He shall be like a tree which is planted near the running waters, which shall bring forth its fruit in due season.
+      - psalms:
+          - 2
+        antiphon: They met together against the Lord, and against his Christ.
+      - psalms:
+          - 4
+        antiphon: In tribulation thou hast enlarged me.
+    versicle:
+      v: Thou hast crowned him, O Lord, with glory and honour.
+      r: And hast set him over the works of thy hands.
+  nocturn2:
+    groups:
+      - psalms:
+          - 5
+        antiphon: O Lord, thou hast crowned him as with a shield of thy good will.
+      - psalms:
+          - 8
+        antiphon: Thou hast made him a little less than the angels, thou hast crowned him with glory and honour.
+      - psalms:
+          - 10
+        antiphon: The sinners have bent their bow, they have prepared their arrows in the quiver, to shoot the just.
+    versicle:
+      v: Thou hast set, O Lord, upon his head.
+      r: A crown of precious stone.
+  nocturn3:
+    groups:
+      - psalms:
+          - 14
+        antiphon: He that walketh without blemish, and worketh justice, hath been crowned on thy holy mountain.
+      - psalms:
+          - 20
+        antiphon: Thou hast set on his head, O Lord, a crown of precious stones.
+      - psalms:
+          - 22
+        antiphon: Against them that trouble me, thou hast made my head fat with oil.
+    versicle:
+      v: A crown of gold upon his head.
+      r: Expressed with the sign of holiness.
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: 'My beloved is white * and ruddy: the locks of his head are as the purple of a king bound in the channels.'
+    - psalms:
+        - 99
+      antiphon: 'The spirit of the fear of the Lord * hath rested upon him: a crown of wisdom and of rejoicing hath adorned him.'
+    - psalms:
+        - 62
+      antiphon: The Lord hath clothed him * with the garments of salvation, and with the robe of justice, as a bridegroom decked with a crown.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: A bundle of myrrh * is my beloved to me, he shall abide between my breasts.
+  laudate:
+    antiphon: The King of eternal glory, * crowned for us, shall bless the crown of the year of his goodness.
+
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'My beloved is white * and ruddy: the locks of his head are as the purple of a king bound in the channels.'
+    - psalms:
+        - 110
+      antiphon: 'The spirit of the fear of the Lord * hath rested upon him: a crown of wisdom and of rejoicing hath adorned him.'
+    - psalms:
+        - 111
+      antiphon: The Lord hath clothed him * with the garments of salvation, and with the robe of justice, as a bridegroom decked with a crown.
+    - psalms:
+        - 112
+      antiphon: The King of eternal glory, * crowned for us, shall bless the crown of the year of his goodness.
+
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'My beloved is white * and ruddy: the locks of his head are as the purple of a king bound in the channels.'
+    - psalms:
+        - 110
+      antiphon: 'The spirit of the fear of the Lord * hath rested upon him: a crown of wisdom and of rejoicing hath adorned him.'
+    - psalms:
+        - 111
+      antiphon: The Lord hath clothed him * with the garments of salvation, and with the robe of justice, as a bridegroom decked with a crown.
+    - psalms:
+        - 112
+      antiphon: The King of eternal glory, * crowned for us, shall bless the crown of the year of his goodness.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Bernard of Clairvaux, Sermon 2 on the Epiphany and Sermon 41 on the Song of Songs
+      text: |
+        Go forth, ye daughters of Sion; to you we speak, daughters of Sion, worldly souls, weak and delicate; daughters, and not sons, in whom there is nothing of fortitude, nothing of manly spirit. Go forth from the sense of the flesh to the understanding of the mind, from the servitude of carnal desire to the liberty of spiritual understanding. Go forth from your land, and from your kindred, and from your father's house, and see king Solomon in the diadem wherewith his mother crowned him, in the crown of poverty, in the crown of misery; since he was crowned also by his stepmother with a crown of thorns, a crown of misery, and is to be crowned by his household with the crown of justice, when the Angels shall go out, and shall take out of his kingdom all scandals, when he shall come to judgment with the ancients of his people, when the whole world shall fight for him against the senseless. His Father also crowns him with the crown of glory, as the Psalmist saith: Thou hast crowned him, O Lord, with glory and honour. See him, daughters of Sion, in the diadem wherewith his mother crowned him.
+
+        I, brethren, from the beginning of my conversion, in place of the heap of merits which I knew were wanting to me, took care to gather for myself a little bundle of all the anxieties and bitternesses of my Lord, and to lay it between my breasts. The memory of the abundance of their sweetness I will pour forth as long as I live: for ever I will not forget these mercies, because in them I have been quickened. This saving bundle has been kept for me here; no one shall take it from me: it shall abide between my breasts. These things I have said to be wisdom to meditate: in these I have set the perfection of justice for myself, in these the fullness of knowledge, in these the riches of salvation, in these the abundance of merits. From these I have at times a saving cup of bitterness; from these again a sweet taste of consolation. These raise me up in adversity, they restrain me in prosperity, and between the joys and sorrows of this present life they give me safe guidance on both sides as I walk the king's highway, driving off imminent evils on either hand. These reconcile to me the Judge of the world, while they present him, terrible to the powers, as gentle and humble; while they show him not only as appeasable but also as imitable, who is inaccessible to principalities, terrible among the kings of the earth.
+
+        These things, therefore, are frequently in my mouth, as you know: these ever in my heart, as God knows: these quite familiar to my pen, as appears: this is my sublimer philosophy in the meantime, to know Jesus, and him crucified. I do not seek, like the bride, where he lies at noon, whom I joyfully embrace abiding between my breasts. I do not seek where he feeds at noon, whom I behold as Saviour on the cross. That is more sublime, this more sweet: that is bread, this milk: this refreshes the bowels of little ones; this fills the breasts of mothers; and therefore he shall abide between my breasts. This bundle, so beloved, gather for yourselves also, most beloved; plant it in the marrow of your heart, fortify with it the entrance of your breast, that he may abide between your breasts too. For if you have before your eyes him whom you carry, seeing for certain the straits of the Lord, you will bear your own more lightly, with the help of the Spouse of the Church, who is over all things God blessed for ever. Amen.
+      responsory: |
+        R. Thou shalt overlay the ark of shittim wood with the purest gold within and without: * And thou shalt make over it a crown of gold round about.
+        V. And thou shalt put into the ark the testimony which I shall give thee.
+        R. And thou shalt make over it a crown of gold round about.
+      status: draft
+    - nocturn: 3
+      isGospel: true
+      citation: John 19:1-5
+      text: 'At that time: Pilate therefore took Jesus, and scourged him. And the soldiers platting a crown of thorns, put it upon his head: and they put on him a purple garment. And they came to him, and said: Hail, King of the Jews; and they gave him blows. Pilate therefore went forth again, and saith to them: Behold, I bring him forth unto you, that you may know that I find no cause in him. Jesus therefore came forth, bearing the crown of thorns and the purple garment.'
+      status: draft
+    - nocturn: 3
+      isGospel: false
+      source: St. Bernard of Clairvaux, Sermon 50 on Various Subjects
+      text: |
+        See, daughters of Sion, king Solomon. He does not say Ecclesiastes, or Jedidiah. For that king too was called by these names, and he signifies Jesus Christ, our true Solomon, who is Solomon, that is, peaceable, in exile; Ecclesiastes, that is, preacher, in judgment; Jedidiah, that is, beloved of the Lord, in the kingdom, and there king. In exile gentle, in judgment just, in the kingdom glorious. In exile lovable, in judgment terrible, in the kingdom admirable. In the diadem wherewith his mother crowned him. This is the crown of mercy, and in this he is imitable. His stepmother also crowned him with a crown of misery, and in this he is contemptible. I speak of the Synagogue, which showed herself to him not as a mother but as a stepmother.
+
+        His household shall crown him with the crown of justice, and in this he is terrible: his Father crowns him with the crown of glory, and in this he is desirable. Let sinners therefore see him in the crown of misery, that is, of thorns, and be pierced with compunction: let the daughters of Sion, affectionate souls, see him in the crown of mercy, and imitate him. The wicked shall see him in the crown of justice, and shall perish: the saints shall see him in the crown of glory, and shall rejoice for ever. Others also, his imitators, are crowned; but this by industry, helped by grace. He alone was crowned by his mother, because he alone, with ordered affections, like a bridegroom from his chamber, came forth from his mother's womb.
+      responsory: |
+        R. Christ, knowing sorrow and infirmity, crowned with thorns, * He it is who crowneth you in mercy and compassion.
+        V. Wounded for our iniquities, bruised for our sins, by whose bruises we are healed.
+        R. He it is who crowneth you in mercy and compassion.
+      status: draft

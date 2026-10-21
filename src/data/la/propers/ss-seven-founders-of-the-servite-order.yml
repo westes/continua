@@ -1,0 +1,275 @@
+# Read directly from web/www/horas/Latin/Sancti/02-12.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Dómine Jesu Christe, qui ad recoléndam memóriam dolórum sanctíssimæ Genetrícis tuæ,
+    per septem beátos Patres nova Servórum ejus família Ecclésiam tuam fecundásti: concéde
+    propítius; ita nos eórum consociári flétibus, ut perfruámur et gáudiis.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-seven-founders-of-the-servite-order-antiphon.yml), paired with the standard de-Communi commemoration versicle for common-of-several-confessors (C5c -- inherits C5's own Ant2/Versum2 with no override) (not yet independently live-verified for this specific category, marked draft). Collect is the saint's own real proper (ss-seven-founders-of-the-servite-order-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Non recédet * laus tua, Virgo María, de ore hóminum, qui mémores fúerint virtútis Dómini in ætérnum, pro quibus non pepercísti ánimæ tuæ.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Dómine Jesu Christe, qui ad recoléndam memóriam dolórum sanctíssimæ Genetrícis tuæ,
+    per septem beátos Patres nova Servórum ejus família Ecclésiam tuam fecundásti: concéde
+    propítius; ita nos eórum consociári flétibus, ut perfruámur et gáudiis.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: draft
+
+# Sourced from web/www/horas/Latin/Sancti/02-12.txt's own [Capitulum
+# Laudes] and English/Sancti/02-12.txt's own translation.
+lauds-capitulum:
+  text: 'Caríssimi: Communicántes Christi passiónibus gaudéte, ut et in revelatióne glóriæ ejus gaudeátis exsultántes.'
+  citation: 1 Pet 4:13
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/02-12.txt's own [Hymnus
+# Laudes] and English/Sancti/02-12.txt's own translation.
+lauds-hymn:
+  text: |-
+    Sic patres vitam péragunt in umbra,
+    Lília ut septem nívei decóris,
+    Vírgini excélsæ bene grata, Petro
+    Visa nitére.
+
+    Jamque divína rapiénte flamma,
+    Cúrsitant urbes, loca quæque obérrant,
+    Si queant cunctis ánimis dolóres,
+    Fígere Matris.
+
+    Hinc valent iras domuísse cæcas,
+    Néscia et pacis fera corda jungunt,
+    Erigunt mæstos, révocant nocéntes
+    Dicta piórum.
+
+    At suos Virgo comitáta Servos
+    Evehit tandem súperas ad oras;
+    Gémmeis sertis décorat per ævum
+    Omne beátos.
+
+    Eja nunc cœtus gémitum precántis
+    Audiant, duros vídeant labóres:
+    Semper et nostris fáveant benígno
+    Lúmine votis.
+
+    Sit decus Patri, genitǽque Proli,
+    Et tibi, compar utriúsque virtus
+    Spíritus semper, Deus unus omni
+    Témporis ævo. Amen.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/02-12.txt's own [Versum 2]
+# (positioned directly after [Hymnus Laudes]) and English/Sancti/02-12
+# .txt's own translation.
+lauds-versicle:
+  text: |
+    V. Sit memória illórum in benedictióne.
+    R. Et ossa eórum púllulent de loco suo.
+  status: verified
+
+# No distinct plain [Hymnus Vespera] exists in the reference source for
+# this feast (only a [Hymnus Vespera 3], a different slot); reusing
+# common-of-several-confessors' own Vespers hymn. Authored to make their
+# own bundle (needed for their genuinely proper Lauds hymn, see lauds-
+# hymn-ss-seven-founders-of-the-servite-order.yml -- Vespers falls back
+# to the same Lauds capitulum via lookupPart (Vespers chapter, Lauds sibling)) render a
+# real hymn instead of an unconditionally-rendered empty one.
+vespers-hymn:
+  text: |-
+    Iste Conféssor Dómini sacrátus,
+    Festa plebs cujus celébrat per orbem,
+    Hódie lætus méruit secréta
+    Scándere cæli.
+
+    Qui pius, prudens, húmilis, pudícus,
+    Sóbrius, castus fuit et quiétus,
+    Vita dum præsens vegetávit ejus
+    Córporis artus.
+
+    Ob sacrum cujus túmulum frequénter
+    Membra languéntum modo sanitáti,
+    Quólibet morbo fúerint graváta,
+    Restituúntur.
+
+    Unde nunc noster chorus in honórem
+    Ipsius, hymnum canit hunc libénter:
+    Ut piis ejus méritis juvémur
+    Omne per ævum.
+
+    Sit salus illi, decus atque virtus,
+    Qui supra cæli résidens cacúmen,
+    Tótius mundi máchinam gubérnat
+    Trinus et unus. Amen.
+  status: verified
+
+# Second Vespers hymn: web/www/horas/Latin/Sancti/02-12.txt's own [Hymnus
+# Vespera 3] ("Matris sub almæ númine") and English/Sancti/02-12.txt's
+# translation, whose last stanza is a fixed Trinitarian ending (no
+# swappable doxology). First Vespers has no own hymn in the source, so
+# vespers-hymn-ss-seven-founders-of-the-servite-order.yml (common-of-
+# several-confessors') stays the default; see hours/resolve-common.ts's
+# withVespersVariant.
+vespers-hymn/~-second:
+  text: |
+    Matris sub almæ númine
+    Septéna proles náscitur:
+    Ipsa vocánte, ad árduum
+    Tendit Senári vérticem.
+
+    Quos terra fructus próferet
+    Dum sacra proles gérminat,
+    Uvis repénte túrgidis
+    Onústa vitis prǽmonet.
+
+    Virtúte claros nóbili
+    Mors sancta cælo cónsecrat:
+    Tenent olýmpi límina
+    Servi fidéles Vírginis.
+
+    Cohors beáta, Núminis
+    Regno potíta, réspice
+    Quos hinc recédens fráudibus
+    Cinctos relínquis hóstium.
+
+    Ergo, per almæ vúlnera
+    Matris rogámus súpplices,
+    Mentis ténebras dísice,
+    Cordis procéllas cómprime.
+
+    Tu nos, beáta Trínitas,
+    Perfúnde sancto róbore,
+    Póssimus ut felíciter
+    Exémpla patrum súbsequi.
+    Amen.
+  status: verified
+
+# Divino Afflatu 1954 engine render (2026-02-12, second Vespers; post-1617 feast, no Monastic render exists). Replaces a text that was either the Common BVM's versicle or the Apparition of St. Michael's with its Paschal Alleluia baked in. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-versicle:
+  text: |
+    V. Hi viri misericórdiæ sunt, quorum pietátes non defuérunt.
+    R. Semen eórum et glória eórum non derelinquétur.
+  status: verified
+
+# Divino Afflatu 1954 engine render, 2026-02-12 ss-seven-founders-of-the-servite-order first. Paschaltide
+# Alleluia is left to hours/paschal-alleluia.ts.
+vespers-versicle/~-first:
+  text: |
+    V. Hi viri misericórdiæ sunt, quorum pietátes non defuérunt.
+    R. Semen eórum et glória eórum non derelinquétur.
+  status: verified
+
+# Read directly from web/www/horas/Latin/Sancti/02-12.txt's own [Ant 1]
+# and its English counterpart.
+benedictus-antiphon:
+  text: Non recédet * laus tua, Virgo María, de ore hóminum, qui mémores fúerint virtútis Dómini in ætérnum, pro quibus non pepercísti ánimæ tuæ.
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/02-12.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast (own First Vespers
+# [Ant 1] already covers ss-seven-founders-of-the-servite-order-
+# antiphon.yml, used for the Benedictus), not a Common substitution.
+magnificat-antiphon:
+  text: Nomen eórum * pérmanet in ætérnum, pérmanens ad fílios eórum, sanctórum virórum glória.
+  status: verified
+
+# First Vespers Magnificat antiphon: web/www/horas/Latin/Sancti/02-12.txt's own [Ant 1]
+# and its English counterpart. Second Vespers' [Ant 3] is
+# ss-seven-founders-of-the-servite-order-magnificat-antiphon.yml (the default); see hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Non recédet * laus tua, Virgo María, de ore hóminum, qui mémores fúerint virtútis Dómini in ætérnum, pro quibus non pepercísti ánimæ tuæ.
+  status: verified
+
+# Post-1617 feast: no Monastic render exists, so this is the Divino Afflatu 1954 engine render (2026-02-12
+# ss-seven-founders-of-the-servite-order second (Divino Afflatu 1954 engine render; Monastic reduction
+# 1,2,3,5)), Sunday-style psalm numbers. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Ecce quam bonum * et quam jucúndum habitáre fratres in unum. ‡
+    - psalms:
+        - 110
+      antiphon: Confitémini Dómino * quóniam in ætérnum misericórdia ejus.
+    - psalms:
+        - 111
+      antiphon: Confitémini Dómino * quia in humilitáte nostra memor fuit nostri.
+    - psalms:
+        - 112
+      antiphon: Confitébor * nómini tuo, Dómine, super misericórdia et veritáte tua.
+
+# Post-1617 feast: no Monastic render exists, so this is the Divino Afflatu 1954 engine render (2026-02-12
+# ss-seven-founders-of-the-servite-order first (Divino Afflatu 1954 engine render; Monastic reduction 1,2,3,5)),
+# Sunday-style psalm numbers. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Ecce quam bonum * et quam jucúndum habitáre fratres in unum. ‡
+    - psalms:
+        - 110
+      antiphon: Confitémini Dómino * quóniam in ætérnum misericórdia ejus.
+    - psalms:
+        - 111
+      antiphon: Confitémini Dómino * quia in humilitáte nostra memor fuit nostri.
+    - psalms:
+        - 112
+      antiphon: Confitébor * nómini tuo, Dómine, super misericórdia et veritáte tua.
+
+# Matins Nocturn 2-3 readings for Ss. Seven Founders of the Servite
+# Order (Feb 12). Sourced from web/www/horas/Latin/Sancti/02-12.txt
+# (Nocturn 2) and Commune/C1.txt ("Commune Apostolorum" — Nocturn 3,
+# per that file's own `@Commune/C1:LectioN` cross-reference).
+#
+# Nocturn 2: Lectio4-6 combined into one reading, the founding
+# narrative — one continuous piece.
+# Nocturn 3: Lectio7's Gospel citation (Matt 19:27-29) is a bare
+# incipit ("Et réliqua"), so only the homily was originally authored
+# (not marked isGospel), St. Jerome's homily (Lectio7's homily +
+# Lectio8-9 combined) — the Common of Apostles' "we have forsaken all
+# and followed thee" text, fitting for a group of founders even though
+# not these saints' own proper text.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Jerome's homily) — the day's own
+# Missale [Evangelium] in web/www/missa/Latin/Sancti/02-12.txt redirects
+# to `@Commune/C5b` (Common of a Confessor Not a Bishop), whose own
+# [Evangelium] gives the full Matt 19:27-29 pericope (same text quoted
+# in the Nocturn 3 homily above), sourced from there.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Sǽculo tértio décimo cum Frideríci secúndi diro schísmate cruentísque factiónibus cultióres Itáliæ pópuli scinderéntur, próvidens Dei misericórdia, præter álios sanctitáte illústres, septem e Florentína nobilitáte viros suscitávit, qui in caritáte conjúncti, præclárum fratérnæ dilectiónis præbérent exémplum. Hi, nimírum Bonfílius Monáldius, Bonajúncta Manéttus, Manéttus Antellénsis, Amidéus de Amidéis, Ugúccio Ugucciónum, Sostenéus de Sostenéis et Aléxius Falconérius, cum, anno trigésimo tértio ejus sǽculi, die sacra Vírgini cælo recéptæ, in quodam piórum hóminum convéntu, Laudántium nuncupáto, fervéntius orárent; ab eádem Deípara síngulis apparénte sunt admóniti, ut sánctius perfectiúsque vitæ genus amplecteréntur. Re ítaque prius cum Florentíno prǽsule colláta, hi septem viri, géneris nobilitáte divitiísque posthábitis, sub vilíssimis detritísque véstibus cilício indúti, octáva die Septémbris in rurálem quamdam ædículam secessére, ut ea die primórdia vitæ sanctióris auspicaréntur, qua ipsa Dei Génetrix mortálibus orta sanctíssimam vitam incéperat.
+
+        Hoc vitæ institútum quam sibi foret accéptum Deus miráculo osténdit. Nam cum paulo deínceps hi septem viri per Florentínam urbem ostiátim eleemósynam emendicárent, áccidit, ut repénte infántium voce, quos inter fuit sanctus Philíppus Benítius quintum ætátis mensem vix ingréssus, beátæ Maríæ Servi acclamaréntur: quo deínde nómine semper appelláti sunt. Quare, vitándi pópuli occúrsus ac solitúdinis amóre ducti, in Senárii montis recéssu omnes convenére, ibíque cæléste quoddam vitæ genus aggréssi sunt. Victitábant enim in spelúncis, sola aqua herbísque conténti; vigíliis aliísque asperitátibus corpus atterébant, Christi passiónem ac mæstíssimæ ejúsdem Genitrícis dolóres assídue meditántes. Quod cum olim sacra Parascéves die impénsius exsequeréntur, ipsa beáta Virgo illis iteráto appárens, lúgubrem vestem, quam indúerent, osténdit; sibíque acceptíssimum fore significávit, ut novum in Ecclésia regulárem órdinem excitárent, qui jugem recóleret ac promovéret memóriam dolórum, quos ipsa pértulit sub cruce Dómini. Hæc sanctus Petrus, ínclytus órdinis Prædicatórum Martyr, ex familiári cum sanctis illis viris consuetúdine ac peculiári étiam Deíparæ visióne cum didicísset; iis auctor fuit, ut órdinem regulárem sub appellatióne Servórum beátæ Vírginis institúerent: qui póstea ab Innocéntio quarto Pontífice máximo approbátus fuit.
+
+        Porro sancti illi viri, cum plures sibi sócios adjunxíssent, Itáliæ civitátes atque óppida, præsértim Etrúriæ excúrrere cœpérunt, prædicántes ubíque Christum crucifíxum, civíles discórdias compescéntes et innúmeros fere dévios ad virtútis sémitam revocántes. Neque Itáliam modo, sed et Gálliam, Germániam ac Polóniam suis evangélicis labóribus excoluérunt. Dénique cum bonum Christi odórem longe latéque diffudíssent, portentórum quoque glória illústres, migrárunt ad Dóminum. Sed quos unus veræ fraternitátis ac religiónis amor in vita sociáverat, unum páriter demórtuos contéxit sepúlcrum, únaque pópuli venerátio prosecúta est. Quaprópter Clemens undécimus et Benedíctus décimus tértius Pontífices máximi delátum iísdem a plúribus sǽculis indivíduum cultum confírmarunt; ac Leo décimus tértius, approbátis ántea miráculis, post indúltam veneratiónem ad collectívam eorúmdem invocatiónem a Deo patrátis, eósdem anno quinquagésimo sacerdótii sui Sanctórum honóribus cumulávit, eorúmque memóriam Offício et Missa in univérsa Ecclésia quotánnis recoléndam instítuit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 19:27-29
+      text: 'In illo témpore: Dixit Petrus ad Jesum: Ecce, nos relíquimus ómnia, et secúti sumus te: quid ergo erit nobis? Jesus autem dixit illis: Amen, dico vobis, quod vos, qui secúti estis me, in regeneratióne, cum séderit Fílius hóminis in sede majestátis suæ, sedébitis et vos super sedes duódecim, judicántes duódecim tribus Israël. Et omnis, qui relíquerit domum, vel fratres, aut soróres, aut patrem, aut matrem, aut uxórem, aut fílios, aut agros, propter nomen meum, céntuplum accípiet, et vitam ætérnam possidébit.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Commentary on Matthew, Book III (on Matt 19:27-29)
+      text: |-
+        Grandis fidúcia! Petrus piscátor erat, dives non fúerat, cibos manu et arte quærébat: et tamen lóquitur confidénter: Relíquimus ómnia. Et quia non súfficit tantum relínquere, jungit quod perféctum est: Et secúti sumus te. Fécimus quod jussísti: quid ígitur nobis dabis prǽmii? Jesus autem dixit illis: Amen dico vobis, quod vos qui secúti estis me, in regeneratióne, cum séderit Fílius hóminis in sede majestátis suæ, sedébitis et vos super sedes duódecim, judicántes duódecim tribus Ísraël. Non dixit: Qui reliquístis ómnia; hoc enim et Crates fecit philósophus, et multi álii divítias contempsérunt: sed, Qui secúti estis me: quod próprie Apostolórum est, atque credéntium.
+
+        In regeneratióne, cum séderit Fílius hóminis in sede majestátis suæ (quando et mórtui de corruptióne resúrgent incorrúpti) sedébitis et vos in sóliis judicántium, condemnántes duódecim tribus Ísraël: quia vobis credéntibus, illi crédere noluérunt. Et omnis qui relíquerit domum, vel fratres, aut soróres, aut patrem, aut matrem, aut uxórem, aut fílios, aut agros propter nomen meum, céntuplum accípiet, et vitam ætérnam possidébit. Locus iste cum illa senténtia cóngruit, in qua Salvátor lóquitur: Non veni pacem míttere, sed gládium. Veni enim separáre hóminem a patre suo, et matrem a fília, et nurum a socru: et inimíci hóminis doméstici ejus. Qui ergo propter fidem Christi, et prædicatiónem Evangélii, omnes afféctus contémpserint, atque divítias et sǽculi voluptátes: isti céntuplum recípient, et vitam ætérnam possidébunt.
+
+        Ex occasióne hujus senténtiæ quidam introdúcunt mille annos post resurrectiónem, dicéntes, tunc nobis céntuplum ómnium rerum quas dimísimus, et vitam ætérnam esse reddéndam: non intelligéntes, quod, si in céteris digna sit repromíssio, in uxóribus appáreat turpitúdo: ut qui unam pro Dómino dimíserit centum recípiat in futúro. Sensus ergo iste est: Qui carnália pro Salvatóre dimíserit, spirituália recípiet: quæ comparatióne et mérito sui ita erunt, quasi si parvo número centenárius númerus comparétur.
+      status: verified

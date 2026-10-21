@@ -1112,7 +1112,7 @@ function temporalCommemorationPart(
  * Simplification, not yet corrected: real practice compresses this into
  * one "Orémus" and lets only the *last* collect close with the full
  * doxology, with earlier ones trailing straight into the next ("And:").
- * Each collect file (data/propers/temporal/*-collect.yml, the per-saint
+ * Each collect file (the collect sections of data/<lang>/propers/*.yml, the per-saint
  * *-collect.yml files) already bakes in its own "Orémus."/"Per Dóminum...
  * Amen." for the single-collect case every other hour uses today, and
  * stripping that back out per-collect to chain them properly would need

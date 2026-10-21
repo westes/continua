@@ -1,0 +1,17 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-10-31).
+collect:
+  text: |
+    Orémus.
+    Dómine, Deus noster, multíplica super nos grátiam tuam: et, quorum prævenimus gloriósa solemnia, tríbue subsequi in sancta professióne lætítiam.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, the Vigil of All Saints's own day (2026-10-31). The
+# Benedictus antiphon (Luke 1:79, part of the Benedictus canticle's own
+# closing verse -- a vigil-appropriate anticipatory choice).
+benedictus-antiphon:
+  text: 'Illumináre, Dómine, * his qui in ténebris sedent: et dírige pedes nostros in viam pacis, Deus Israël.'
+  status: verified

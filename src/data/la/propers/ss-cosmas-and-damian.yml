@@ -1,0 +1,52 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-09-27).
+collect:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, qui sanctórum Mártyrum tuórum Cosmæ et Damiáni natalícia cólimus, a cunctis malis imminéntibus, eórum intercessiónibus, liberémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-cosmas-and-damian-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (ss-cosmas-and-damian-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, qui sanctórum Mártyrum tuórum Cosmæ et Damiáni natalícia cólimus, a cunctis malis imminéntibus, eórum intercessiónibus, liberémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Cosmas and Damian's own day (2027-09-27 -- 2026 is an
+# ordinary Sunday). The Benedictus antiphon.
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Cosmas and Damian, Martyrs (Sep 27)
+# — SanctiM/09-27.txt inherits the whole day (`@Sancti/09-27`) with no
+# Nocturn 2/3 override, so this feast's own proper content is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/09-27.txt, English/Sancti/09-27.txt.
+# Lectio4-5 combined into one reading, one continuous vita — Lectio6
+# falls back to Common of Several Martyrs, not proper text, so not
+# authored here. No responsory given in the source for Lectio4-5.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Cosmas et Damiánus, fratres Arabes, in Ægéa urbe nati, nóbiles médici, imperatóribus Diocletiáno et Maximiáno, non magis medicínæ sciéntia quam Christi virtúte, morbis étiam insanabílibus medebántur. Quorum religiónem cum Lysias præféctus cognovísset, addúci eos ad se jubet, ac de vivéndi institúto et de fídei professióne interrogátos, cum se et Christiános esse, et christiánam fidem esse ad salútem necessáriam, líbere prædicárent, deos venerári ímperat; et, si id recúsent, minátur cruciátus et necem acerbíssimam.
+
+        Verum, ut se frustra hæc illis propónere intélligit: Colligáte, inquit, manus et pedes istórum, eósque exquisítis torquéte supplíciis. Quibus jussa exsequéntibus, nihilóminus Cosmas et Damiánus in senténtia persistébant. Quare, ut erant vincti, in profúndum mare jaciúntur. Unde cum salvi ac solúti essent egréssi, mágicis ártibus præféctus factum assígnans, in cárcerem tradit, ac postrídie edúctos in ardéntem rogum ínjici jubet; ubi, cum ab ipsis flamma refúgeret, várie et crudéliter tortos secúri pércuti vóluit. Itaque, in Jesu Christi confessióne, martýrii palmam accepérunt.
+      status: verified

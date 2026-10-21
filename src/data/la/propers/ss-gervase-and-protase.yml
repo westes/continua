@@ -1,0 +1,49 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2035-06-19).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos ánnua sanctórum Mártyrum tuórum Gervásii et Protásii sollemnitáte lætíficas: concéde propítius; ut, quorum gaudémus méritis, accendámur exémplis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-gervase-and-protase-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (ss-gervase-and-protase-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Deus, qui nos ánnua sanctórum Mártyrum tuórum Gervásii et Protásii sollemnitáte lætíficas: concéde propítius; ut, quorum gaudémus méritis, accendámur exémplis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Gervase and Protase's own day (2026-06-19). The
+# Benedictus antiphon.
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Gervase and Protase, Martyrs (June 19)
+# — pre-1955-but-post-1617. Plain Sancti/06-19.txt is a different, later
+# saint (St. Juliana Falconieri, canonized 1737) who displaced Gervase
+# and Protase on the general calendar's own June 19 slot; their content
+# survives at the suffixed sibling file (see memory
+# vu-matins-pre1955-saints's "critical wrinkle").
+# web/www/horas/Latin/Sancti/06-19o.txt, English/Sancti/06-19o.txt.
+# Single lesson (simplex-feast Lectio93), no responsory in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Gervasius et Protasius, Vitalis et Valériæ fílii, quorum pater Ravennæ, mater Mediolani pro Christi Dómini fide martyrium subiérunt, distributo paupéribus patrimonio, domesticos servos libertáte donarunt. Quo facto Gentílium sacerdótes immane in illos conceptum ódium habebant. Quare, cum Astasius comes in bellum proficisci vellet, hanc occasiónem perdéndi pios fratres se nactos esse putavérunt. Itaque Astasio persuadent se a diis admonitos esse, nullo modo eum in bello victórem futurum, nisi Gervasio et Protasio coactis Christum negare, eosdem ad sacra diis facienda compélleret. Quod cum illi detestaréntur, Astasius imperávit Gervasium tamdiu cædi, dum inter verbera exspiraret; Protasium fustibus contusum secúri pércuti jubet. Quorum córpora Philippus Christi servus clam sústulit et in suis ædibus sepelívit: quæ póstea sanctus Ambrosius, Dei mónitu invénta, in loco sacro et insígni collocanda curávit. Passi sunt Mediolani décimo tertio Kalendas Julii.'
+      status: verified

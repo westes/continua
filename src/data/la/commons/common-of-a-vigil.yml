@@ -1,0 +1,101 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C1v.txt ("Vigilia Apostolorum"), 2026-08. A
+# Common-collect template for an Apostle's Vigil — `{N}` stands for the
+# saint's own name, substituted by getDayCollect (hours/resolve-common.ts)
+# via SaintRecord.collectCommon/collectName. No English rendering exists
+# in the reference engine's data for this one — translated here,
+# status: draft.
+collect/c1v:
+  text: |
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut beáti {N} Apóstoli tui, quam prævénimus, veneránda solémnitas, et devotiónem nobis áugeat et salútem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Vigil of St. Andrew, 11-29-2025) -- common-of-a-vigil.
+# Shared by all 6 vigils on this app's calendar (Andrew, Bartholomew,
+# James, Matthew, Matthias, Thomas) -- cross-checked against the
+# Vigil of St. Bartholomew.
+prime-antiphon:
+  text: Vivit Dóminus, * et benedíctus Deus salútis meæ.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Vigil of St. Andrew, 11-29-2025) -- common-of-a-vigil.
+# Shared by all 6 vigils on this app's calendar (Andrew, Bartholomew,
+# James, Matthew, Matthias, Thomas) -- cross-checked against the
+# Vigil of St. Bartholomew.
+terce-antiphon:
+  text: Clamávi, * et exaudívit me.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Vigil of St. Andrew, 11-29-2025) -- common-of-a-vigil.
+# Shared by all 6 vigils on this app's calendar (Andrew, Bartholomew,
+# James, Matthew, Matthias, Thomas) -- cross-checked against the
+# Vigil of St. Bartholomew.
+terce-capitulum:
+  text: |
+    Sana me, Dómine, et sanábor: salvum me fac, et salvus ero: quóniam laus mea tu es.
+    R. Deo grátias.
+    V. Adjútor meus, esto, ne derelínquas me.
+    R. Neque despícias me, Deus, salutáris meus.
+  citation: Jer 17:14
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Vigil of St. Andrew, 11-29-2025) -- common-of-a-vigil.
+# Shared by all 6 vigils on this app's calendar (Andrew, Bartholomew,
+# James, Matthew, Matthias, Thomas) -- cross-checked against the
+# Vigil of St. Bartholomew.
+sext-antiphon:
+  text: Qui hábitas * in cælis, miserére nobis.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Vigil of St. Andrew, 11-29-2025) -- common-of-a-vigil.
+# Shared by all 6 vigils on this app's calendar (Andrew, Bartholomew,
+# James, Matthew, Matthias, Thomas) -- cross-checked against the
+# Vigil of St. Bartholomew.
+sext-capitulum:
+  text: |
+    Alter altérius ónera portáte, et sic adimplébitis legem Christi.
+    R. Deo grátias.
+    V. Dóminus regit me, et nihil mihi déerit.
+    R. In loco páscuæ ibi me collocávit.
+  citation: Gal 6:2
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Vigil of St. Andrew, 11-29-2025) -- common-of-a-vigil.
+# Shared by all 6 vigils on this app's calendar (Andrew, Bartholomew,
+# James, Matthew, Matthias, Thomas) -- cross-checked against the
+# Vigil of St. Bartholomew.
+none-antiphon:
+  text: Beáti omnes, * qui timent Dóminum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Vigil of St. Andrew, 11-29-2025) -- common-of-a-vigil.
+# Shared by all 6 vigils on this app's calendar (Andrew, Bartholomew,
+# James, Matthew, Matthias, Thomas) -- cross-checked against the
+# Vigil of St. Bartholomew.
+none-capitulum:
+  text: |
+    Empti enim estis prétio magno. Glorificáte et portáte Deum in córpore vestro.
+    R. Deo grátias.
+    V. Ab occúltis meis munda me, Dómine.
+    R. Et ab aliénis parce servo tuo.
+  citation: 1 Cor 6:20
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Vigil of St. Andrew, 11-29-2025) -- common-of-a-vigil.
+# Shared by all 6 vigils on this app's calendar (Andrew, Bartholomew,
+# James, Matthew, Matthias, Thomas) -- cross-checked against the
+# Vigil of St. Bartholomew.
+benedictus-antiphon:
+  text: 'Illumináre, Dómine, * his qui in ténebris sedent: et dírige pedes nostros in viam pacis, Deus Israël.'
+  status: verified

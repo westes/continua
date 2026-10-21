@@ -1,0 +1,227 @@
+collect:
+  text: |
+    Let us pray.
+    O Lord, we beseech thee, mercifully incline thine ears unto our prayers, and lighten the darkness of our minds by the grace of thy heavenly visitation.
+    Who livest and reignest with God the Father in the unity of the Holy Spirit, God, world without end.
+    R. Amen.
+  status: verified
+
+lauds-capitulum:
+  text: 'Brothers: Rejoice in the Lord always; again, I say, rejoice. Let your modesty be known to all men. The Lord is nigh.'
+  citation: Phil 4:4-5
+  status: verified
+
+lauds-hymn:
+  text: |
+    Hark, a herald voice is calling;
+    “Christ is nigh,” it seems to say;
+    “Cast away the dreams of darkness,
+
+    Oye children of the day.”
+
+    Startled at the solemn warning,
+    Let the earth-bound soul arise;
+    Christ, her sun, all sloth dispelling,
+    Shines upon the morning skies.
+
+    Lo, the Lamb, so long expected,
+    Comes with pardon down from heaven;
+    Let us haste, with tears of sorrow,
+    One and all to be forgiven.
+
+    So when next he comes with glory,
+    Wrapping all the earth in fear,
+    May he then as our defender
+    On the clouds of heaven appear.
+
+    Honour, glory, virtue, merit,
+    To the Father and the Son,
+    With the co-eternal Spirit,
+    While eternal ages run.
+    Amen.
+  status: verified
+
+lauds-responsory:
+  text: |
+    R.br. Come to my rescue, * O God, Lord of hosts.
+    R. Come to my rescue, * O God, Lord of hosts.
+    V. show us thy face, and we shall be saved.
+    R. O God Lord of hosts.
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. Come to my rescue, * O God, Lord of hosts.
+  status: verified
+
+lauds-versicle:
+  text: 'V. A voice of one crying in the wilderness: Prepare the way of the Lord. R. Make straight his paths.'
+  status: verified
+
+prime-antiphon:
+  text: The Lord shall come, * and he will not delay; he will bring to light the hidden things of darkness, and will manifest himself to all peoples, alleluia.
+  status: verified
+
+terce-antiphon:
+  text: Rejoice Jerusalem, * with great joy, for a Saviour shall come to thee, alleluia.
+  status: verified
+
+terce-capitulum:
+  text: |
+    Phil 4:4-5 Brothers: Rejoice in the Lord always; again, I say, rejoice. Let your modesty be known to all men. The Lord is nigh.
+    R. Thanks be to God.
+    V. Come to my rescue, O God, Lord of hosts.
+    R. Show us thy face, and we shall be saved.
+  citation: ''
+  status: verified
+
+sext-antiphon:
+  text: I will give salvation in Zion, * and unto Jerusalem my glory, alleluia.
+  status: verified
+
+sext-capitulum:
+  text: |
+    Phil 4:6 Be nothing solicitous; but in every thing, by prayer and supplication, with thanksgiving, let your petitions be made known to God.
+    R. Thanks be to God.
+    V. Show us, O Lord, thy mercy.
+    R. And grant us thy salvation.
+  citation: ''
+  status: verified
+
+none-antiphon:
+  text: Let us live in justice and godliness, * looking for the blessed hope and coming of the Lord, alleluia.
+  status: verified
+
+none-capitulum:
+  text: |
+    Phil 4:7 And the peace of God, which surpasseth all understanding, keep your hearts and minds in Christ Jesus.
+    R. Thanks be to God.
+    V. The Lord shall arise upon thee, Jerusalem.
+    R. And his glory shall be seen upon thee.
+  citation: ''
+  status: verified
+
+vespers-hymn:
+  text: |
+    Bright builder of the heavenly poles,
+    Eternal light of faithful souls,
+    Jesus, Redeemer of mankind,
+    Our humble prayers vouchsafe to mind.
+
+    Who, lest the fraud of hell’s black king
+    Should all men to destruction bring,
+    Didst, by an act of generous love,
+    The fainting world’s physician prove.
+
+    Who, that thou mightst our ransom pay
+    And wash the stains of sin away,
+    Wouldst from a Virgin’s womb proceed
+    And on the cross a victim bleed.
+
+    Whose glorious power, whose saving name
+    No sooner any voice can frame,
+    But heaven and earth and hell agree
+    To honour them with trembling knee.
+
+    Thee, Christ, who at the latter day
+    Shalt be our Judge, we humbly pray
+    Such arms of heavenly grace to send
+    As may thy Church from foes defend.
+
+    Be glory given and honour done
+    To God the Father and the Son
+    And to the Holy Ghost on high,
+    From age to age eternally.
+    Amen.
+  status: verified
+
+vespers-responsory:
+  text: |
+    R.br. Show us, O Lord, * thy mercy;
+    R. Show us, O Lord, * thy mercy;
+    V. And grant us thy salvation.
+    R. thy mercy
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. Show us, O Lord, * thy mercy;
+  status: verified
+
+vespers-versicle:
+  text: V. Drop down dew, ye heavens, from above, and let the clouds rain the Just. R. Let the earth be opened, and bud forth the Saviour.
+  status: verified
+
+benedictus-antiphon:
+  text: He shall sit * upon the throne of David, and upon his kingdom for ever. Alleluia.
+  status: verified
+
+magnificat-antiphon:
+  text: Blessed art thou, * O Mary, who hast believed the Lord, for there shall be a performance of those things which were told thee from the Lord. Alleluia.
+  status: verified
+
+magnificat-antiphon/~-first:
+  text: Before Me * there was no god formed, neither shall there be after Me; for unto Me every knee shall bow, and every tongue shall swear.
+  status: verified
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 50
+      antiphon: The Lord will come, * and will not tarry; He both will bring to light the hidden things of darkness, and will make Himself manifest to all people. Alleluia.
+    - psalms:
+        - 117
+      antiphon: Rejoice greatly, O Jerusalem, * for thy Saviour cometh unto thee. Alleluia.
+    - psalms:
+        - 62
+      antiphon: I will place salvation in Zion, * and My glory in Jerusalem. Alleluia.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Every mountain and hill * shall be made low, and the crooked shall be made straight, and the rough places plain; O Lord, come and make no tarrying. Alleluia.
+  laudate:
+    antiphon: We should live * righteously and godly, looking for that blessed hope and the coming of the Lord.
+
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: The Lord will come, * and will not tarry; He both will bring to light the hidden things of darkness, and will make Himself manifest to all people. Alleluia.
+    - psalms:
+        - 110
+      antiphon: Rejoice greatly, O Jerusalem, * for thy Saviour cometh unto thee. Alleluia.
+    - psalms:
+        - 111
+      antiphon: I will place salvation in Zion, * and My glory in Jerusalem. Alleluia.
+    - psalms:
+        - 112
+      antiphon: We should live * righteously and godly, looking for that blessed hope and the coming of the Lord.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Leo the Great, Sermon 2 on the December Fast and Almsgiving
+      text: |-
+        Dearly beloved brethren, with the care which becometh us as the shepherd of your souls, we urge upon you the rigid observance of this December Fast. The month of December hath come round again, and with it this devout custom of the Church. The fruits of the year, which is drawing to a close, are now all gathered in, and we most meetly offer our abstinence to God as a sacrifice of thanksgiving. And what can be more useful than fasting, that exercise by which we draw nigh to God, make a stand against the devil, and overcome the softer enticements of sin?
+
+        Fasting hath ever been the bread of strength. From abstinence proceed pure thoughts, reasonable desires, and healthy counsels. By voluntary mortifications the flesh dieth to lust, and the soul is renewed in might. But since fasting is not the only mean whereby we get health for our souls, let us add to our fasting works of mercy. Let us spend in good deeds what we take from indulgence. Let our fast become the banquet of the poor.
+
+        Let us defend the widow and serve the orphan; let us comfort the afflicted and reconcile the estranged; let us take in the wanderer and succour the oppressed; let us clothe the naked and cherish the sick. And may every one of us that shall offer to the God of all goodness this Advent sacrifice of fasting and alms be by Him fitted to receive an eternal reward in His heavenly kingdom! We fast on Wednesday and Friday; and there is likewise a Vigil on Saturday at the Church of St. Peter, that by his good prayers we may the more effectually obtain what we ask for, through our Lord Jesus Christ, Who with the Father and the Holy Ghost, liveth and reigneth, God, world without end. Amen.
+      responsory: |-
+        R. Weep not, O Egypt, for the Ruler cometh unto thee, and the depths shall be moved at His presence. * To deliver His people out of the hand of the mighty.
+        V. Behold, the Lord of hosts, thy God, cometh with great power.
+        R. To deliver His people out of the hand of the mighty.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: John 1:19-28
+      text: At that time, the Jews sent to John from Jerusalem priests and Levites to ask him, Who are you? And he acknowledged and did not deny; and he acknowledged, I am not the Christ. And they asked him, What then? Are you Elias? And he said, I am not. Are you the Prophet? And he answered, No. They therefore said to him, Who are you? that we may give an answer to those who sent us. What have you to say of yourself? He said, I am the voice of one crying in the desert, 'Make straight the way of the Lord,' as said Isaias the prophet. And they who had been sent were from among the Pharisees. And they asked him, and said to him, Why, then, do you baptize, if you are not the Christ, nor Elias, nor the Prophet? John said to them in answer, I baptize with water; but in the midst of you there has stood One Whom you do not know. He it is Who is to come after me, Who has been set above me, the strap of Whose sandal I am not worthy to loose. These things took place at Bethany, beyond the Jordan, where John was baptizing.
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 7 on the Gospels
+      text: |-
+        Dearly beloved brethren, the first thing which striketh us in today's Gospel is the lowly-mindedness of John. He was so great that it was thought he might be the Christ; yet he soberly chose rather to seem only what he really was, than to let the belief of men invest him with a dignity which did not belong to him; for he confessed, and denied not, but confessed, I am not the Christ, at the same time he would not deny what he was in reality; and thus his very truth-speaking made him a member of Him Whose title he would not by falsehood take. In that he arrogated not to himself the name of Christ, he became a member of Christ. While he humbly strove to confess his own weakness, he earned by his simplicity a part in the grandeur of his Master.
+
+        In considering this subject we find an apparent contradiction between one of John's statements, and the saying of our Redeemer recorded in another part of the Gospel. When His disciples asked our Lord regarding the coming of Elias, He answered: Elias is come already, and they knew him not, but have done unto him whatsoever they listed. And if ye will receive it, this (that is, John) is Elias. But when John was asked if he was Elias, he answered: I am not. How comes it then, dearly beloved brethren, that we find the Truth Itself asserting what the prophet of the Truth denied? It must evidently be that our Lord meant one thing and John another, when the Lord said, This is, and John, I am not. For how can he be the prophet of truth, if he speak not according to the word of Him Who is the Eternal Truth?
+
+        Let us then more minutely examine these words, and we shall find that there is no real contradiction. When the Angel announced to Zacharias the coming birth of John he said: He shall go before Him in the spirit and power of Elias. As the old Elias will come again before the Second Advent of the Lord, so did John, as the new Elias, go before the First Advent, in the spirit and power of Elias. As the old Elias will be the Fore-runner of the Judge, so the new Elias was the Forerunner of the Saviour. John then was Elias in spirit, but not in person; and our Lord asserteth of the spirit what John denieth of the person.
+      responsory: |-
+        R. O Lord, come and make no tarrying; loosen the bonds of thy people. * And gather again into their own land them that are scattered abroad.
+        V. O Lord, stir up thy strength, and come and save us.
+        R. And gather again into their own land them that are scattered abroad.
+      status: verified

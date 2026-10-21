@@ -1,0 +1,56 @@
+# Read directly from web/www/horas/Latin/Sancti/08-30.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Bonórum ómnium largítor, omnípotens Deus, qui beátam Rosam, cæléstis
+    grátiæ rore prævéntam, virginitátis et patiéntiæ decóre Indis
+    floréscere voluísti: da nobis fámulis tuis; ut, in odórem suavitátis
+    ejus curréntes, Christi bonus odor éffici mereámur:
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et
+    regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-virgin (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags actually used for
+# a mere commemoration, confirmed against this exact category via an
+# independently live-verified precedent elsewhere in this app). St. Rose
+# has no proper antiphon of her own in the source (a plain "vide C6a"
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper. Collect is her own real
+# proper (st-rose-of-lima-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Símile est regnum cælórum * hómini negotiatóri quærénti bonas margarítas: invénta una pretiósa, dedit ómnia sua, et comparávit eam.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Bonórum ómnium largítor, omnípotens Deus, qui beátam Rosam, cæléstis
+    grátiæ rore prævéntam, virginitátis et patiéntiæ decóre Indis
+    floréscere voluísti: da nobis fámulis tuis; ut, in odórem suavitátis
+    ejus curréntes, Christi bonus odor éffici mereámur:
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et
+    regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Rose of Lima, Virgin (Aug 30).
+# Sourced directly from web/www/horas/Latin/Sancti/08-30.txt,
+# English/Sancti/08-30.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in her own file (her `[Rule]` is `vide
+# C6a`) -- defers to the Common of a Virgin's own Nocturn 3, not
+# transcribed here. (The source's own Lectio94, a shorter 3-lesson
+# variant of the same biography, and the regional Brasilia file's
+# fuller 9-lesson patronal office, are both alternates not used here.)
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Primus Americæ Meridionalis flos sanctitatis, virgo Rosa, christianis parentibus Limæ progenita, mox ab incunabulis claruit futuræ sanctimoniæ indiciis. Nam vultus infantis mirabiliter in rosæ effugiem transfiguratus, huic nomini occasionem dedit: cui postea Virgo Deipara cognomen adjecit, jubens vocari deinceps Rosam a sancta Maria. Quinquennis votum perpetuæ virginitatis emisit. Adultior, ne a parentibus ad nuptias cogeretur, clam sibimet venustissimam capitis cæsariem præscidit. Jejuniis supra humánum modum addicta, integras Quadragesimas transegit, pane abstinens, ac dietim solis quinque granulis mali citrini victitans.
+
+        Habitu tertii ordinis sancti Dominici assumpto, pristinas vitæ austeritates duplicavit: oblongo asperrimoque cilicio sparsim mimisculas acus innexuit: sub velo coronam densis aculeis introrsus obarmatam interdiu noctuque gestavit. Sanctæ Catharinæ Senensis ardua premens vestigia, catena ferrea, triplici nexu circumducta, lumbos cinxit. Lectulum sibi e truncis nodosis composuit, horumque vacuas commissuras fragminibus testarum implevit. Cellulam sibi angustissimam struxit in extremo horti angulo, ubi cælestium contemplationi dedita, crebris disciplinis, inedia, vigiliis corpusculum extenuans, at spiritu vegetata, larvas dæmonum, frequenti certamine victrix, impavide protrivit ac superavit.
+
+        Aegritudinum tormentis, domesticorum insultibus, linguarum morsibus dire agitata, nondum satis pro merito se affligi quærebatur. Per quindecim annos ad plusculas horas desolatione spiritus et ariditate miserrime contabescens, forti animo tulit agones omni morte amariores. Exinde cœpit supernis abundare deliciis, illustrari visionibus, colliquescere seraphicis ardoribus. Angelo tutelori, sanctæ Catharinæ Senensi, Virgini Deiparæ inter assiduas apparitiones mire familiaris, a Christo has voces audire meruit: Rosa cordis mei, tu mihi sponsa esto. Denique Sponsi hujus paradiso feliciter invectam, plurimisque ante et post obitum miraculis coruscam, Clemens decimus Pontifex Maximus sanctarum Virginum catalogo ritu solemni adscripsit.
+      status: verified

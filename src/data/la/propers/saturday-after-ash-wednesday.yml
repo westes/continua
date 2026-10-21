@@ -1,0 +1,57 @@
+# Lauds collect ([Oratio 2] in the source) — read from
+# web/www/horas/{Latin,English}/Tempora/Quadp3-6.txt. No [Oratio 3] in
+# the source for this day (unlike its five siblings this week), so no
+# `-collect-vespers` file exists for this id — Vespers falls back to this
+# same collect via getDayCollect's own missing-status fallback.
+collect:
+  text: |
+    Orémus.
+    Adésto, Dómine, supplicatiónibus nostris: et concéde; ut hoc solémne jejúnium, quod animábus corporibúsque curándis salúbriter institútum est, devóto servítio celebrémus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quadp3-6.txt's own
+# [Ant 2] and its English counterpart. No [Ant 3] in the source for this
+# day (unlike its five siblings this week), so no `-magnificat-antiphon`
+# file exists for this id.
+benedictus-antiphon:
+  text: Me étenim * de die in diem quærunt, et scire vias meas volunt.
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for the Saturday after Ash Wednesday — read from
+# web/www/horas/{Latin,English}/Tempora/Quadp3-6.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quadp3-6.txt's own [Evangelium].
+# Recombined into one reading (Lectio1-3 are one continuous Bede homily
+# split only to fill the fixed 3-lesson slot count). Responsory1 is a
+# cross-reference (@Tempora/Quadp3-0:Responsory7 — the same text Ash
+# Wednesday's own combined reading uses, reused here per the source's own
+# cross-reference, not an error) per the "the first one, when several
+# collapse" convention. This day has no [Ant 3]/[Oratio 3] in the source
+# at all (no Vespers-distinct content), unlike its five siblings this
+# week — so no `-collect-vespers`/`-magnificat-antiphon` files exist for
+# this id.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Marc 6:47-56
+      text: 'In illo témpore: Cum sero esset, erat navis in médio mari, et Jesus solus in terra. Et videns discípulos suos laborántes in remigándo - erat enim ventus contrárius eis, - et circa quartam vigíliam noctis venit ad eos ámbulans supra mare: et volébat præteríre eos. At illi, ut vidérunt eum ambulántem supra mare, putavérunt phantásma esse, et exclamavérunt. Omnes enim vidérunt eum, et conturbáti sunt. Et statim locútus est cum eis, et dixit eis: Confídite, ego sum, nolíte timére. Et ascéndit ad illos in navim, et cessávit ventus. Et plus magis intra se stupébant: non enim intellexérunt de pánibus: erat enim cor eórum obcæcátum. Et cum transfretássent, venérunt in terram Genésareth, et applicuérunt. Cumque egréssi essent de navi, contínuo cognovérunt eum: et percurréntes univérsam regiónem illam, cœpérunt in grabátis eos, qui se male habébant, circumférre ubi audiébant eum esse. Et quocúmque introíbat, in vicos vel in villas aut civitátes, in platéis ponébant infírmos, et deprecabántur eum, ut vel fímbriam vestiménti ejus tángerent: et quotquot tangébant eum, salvi fiébant.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: The Venerable Bede, Priest, Book 2, ch. 28, on Mark 6:45
+      text: |-
+        Labor discipulórum in remigándo, et contrárius eis ventus, labóres sanctæ Ecclésiæ varios desígnat: quæ inter undas sǽculi adversántis, et immundórum flatus spirítuum, ad quiétem pátriæ cæléstis, quasi ad fidam líttoris statiónem, perveníre conátur. Ubi bene dícitur, quia navis erat in médio mari, et ipse solus in terra: quia nonnúnquam Ecclésia tantis gentílium pressúris non solum afflícta, sed et fœdáta est, ut, si fíeri posset, Redémptor ipsíus eam prorsus deseruísse ad tempus viderétur.
+
+        Unde est illa vox ejus inter undas procellásque tentatiónum irruéntium deprehénsæ, atque auxílium protectiónis illíus gemebúndo clamóre quæréntis: Ut quid, Dómine, recessísti longe, déspicis in opportunitátibus, in tribulatióne? Quæ páriter vocem inimíci persequéntibus expónit, in sequéntibus Psalmi subíciens: Dixit enim in corde suo: Oblítus est Deus, avértit fáciem suam, ne vídeat usque in finem.
+
+        Verum ille non oblivíscitur oratiónem páuperum, neque avértit fáciem suam a sperántibus in se: quin pótius et certántes cum hóstibus, ut vincant, ádjuvat, et victóres in ætérnum corónat. Unde hic quoque apérte dícitur, quia vidit eos laborántes in remigándo. Videt quippe Dóminus laborántes in mari, quamvis ipse pósitus in terra: quia etsi ad horam différre videátur auxílium tribulátis impéndere, nihilóminus eos, ne in tribulatiónibus defíciant, suæ respéctu pietátis corróborat: et aliquándo étiam manifésto adjutório, victis adversitátibus, quasi calcátis sedatísque flúctuum volumínibus líberat.
+      responsory: |-
+        R. Veni hódie ad fontem aquæ, et orávi Dóminum, dicens: * Dómine, Deus Abraham, tu prósperum fecísti desidérium meum.
+        V. Igitur puélla, cui díxero, Da mihi aquam de hýdria tua, ut bibam: et illa díxerit, Bibe, dómine, et camélis tuis potum tríbuam: ipsa est, quam præparávit Dóminus fílio dómini mei.
+        R. Dómine, Deus Abraham, tu prósperum fecísti desidérium meum.
+      status: verified

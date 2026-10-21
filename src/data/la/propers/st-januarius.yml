@@ -1,0 +1,45 @@
+# Matins Nocturn 2-3 readings for St. Januarius, Bishop, and Companions,
+# Martyrs (Sep 19) — pre-1955-but-post-1617 (no SanctiM/09-19*.txt at
+# all). web/www/horas/Latin/Sancti/09-19.txt,
+# English/Sancti/09-19.txt.
+#
+# Lectio4-6 is this saint's own proper vita, one continuous account, no
+# internal break, combined into a single reading.
+#
+# Lectio7's own homily portion + Lectio8-9 is one continuous excerpt
+# from St. Hilary's commentary, combined into a single reading. No
+# responsory given for either reading in the source.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope, previously left
+# unauthored because Lectio7 gives only the incipit ("Et réliqua"), is
+# now authored too (isGospel: true, immediately before the homily) --
+# the citation (Matt 24:3-13) comes from that same Lectio7 line, and the
+# full text is sourced from missa/Latin/Sancti/01-19.txt's own
+# [Evangelium] (the same pericope, reused there for St. Canute), not
+# guessed at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Januarius, Benevénti epíscopus, Diocletiáno et Maximiáno in Christiános sæviéntibus, ad Timotheum Campaniæ præsidem ob christianæ fidei professiónem Nolam perducitur. Ibi, ejus constántia varie tentata, in ardentem fornacem conjéctus, ita illæsus evasit, ut ne vestiméntum aut capillum quidem flamma violáverit. Hinc præses, accénsus iracúndia, Mártyris corpus imperat usque eo dístrahi, quoad nervórum compages artuumque solvántur. Festus interea ejus diaconus et Desiderius lector, comprehénsi vinctique, una cum episcopo ante rhedam præsidis Puteleos pertrahúntur, et in eumdem carcerem, in quo Sosius Misenas et Próculus Puteolánus diáconus, Eutyches et Acutius láici, ad bestias damnati, detinebántur, simul conjiciúntur.
+
+        Postero die omnes in amphitheatro feris objecti sunt; quæ, naturalis oblitæ feritátis, ad Januarii pedes se prostravére. Id Timótheus mágicis cantiónibus tribuens, cum senténtiam cápitis in Christi Mártyres pronuntiásset, óculis repénte captus, orante mox beato Januario, lumen recepit; quo miraculo hóminum míllia fere quinque Christi fidem suscepérunt. Verum ingrátus judex, níhilo placatior factus beneficio, sed conversióne tantæ multitúdinis actus in rábiem; véritus maxime príncipum decreta, sanctum Episcopum cum sociis gládio pércuti jussit.
+
+        Horum córpora finítimæ urbes, pro suo quæque studio certum sibi patronum ex iis apud Deum adoptándi, sepelienda curarunt. Januarii corpus Neapolitani divino admónitu extulére; quod, primo Benevéntum, inde ad monastérium montis Vírginis, postremo Neapolim translátum et in majori ecclésia cónditum, multis miraculis cláruit. Sed illud in primis memorándum, quod erumpéntes olim e monte Vesuvio flammárum globos, nec vicínis modo sed longinquis étiam regiónibus vastitátis metum afferéntes, exstinxit. Præclárum illud quoque, quod ejus sanguis, qui in ampulla vitrea concretus asservátur, cum in conspéctu cápitis ejusdem Mártyris pónitur, admirándum in modum colliquefíeri et ebullire, perinde atque recens effúsus, ad hæc usque témpora cernitur.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 24:3-13
+      text: 'In illo témpore: Sedénte Jesu super montem Olivéti, accessérunt ad eum discípuli secréto, dicéntes: Dic nobis, quando hæc erunt? et quod signum advéntus tui et consummatiónis sǽculi? Et respóndens Jesus, dixit eis: Vidéte, ne quis vos sedúcat. Multi enim vénient in nómine meo, dicéntes: Ego sum Christus: et multos sedúcent. Auditúri enim estis prælia et opiniónes prœliórum. Vidéte, ne turbémini. Opórtet enim hæc fíeri, sed nondum est finis. Consúrget enim gens in gentem, et regnum in regnum, et erunt pestiléntiæ et fames et terræmótus per loca. Hæc autem ómnia inítia sunt dolórum. Tunc tradent vos in tribulatiónem et occídent vos: et éritis odio ómnibus géntibus propter nomen meum. Et tunc scandalizabúntur multi, et ínvicem tradent, et odio habébunt ínvicem. Et multi pseudoprophétæ surgent, et sedúcent multos. Et quóniam abundávit iníquitas, refrigéscet cáritas multórum. Qui autem perseveráverit usque in finem, hic salvus erit.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Hilary, Bishop of Poitiers, Commentary on Matthew, ch. 25
+      text: |-
+        Discipuli Dóminum intérrogant quando hæc fíerent, quodve signum et adventus sui et consummatiónis sæculi nóscerent. Et, quia tria hæc in unum quæsíta sunt, distinctis et témporis et intelligéntiæ significatiónibus separántur. Respondétur ígitur primum de civitátis occasu, et confirmántur veritáte doctrinæ, ne quis fallax ignorántibus posset obrépere; venturi enim erant étiam eórum témpore, qui se Christum essent nuncupatúri. Ut ígitur fides pestífero mendácio détrahi posset, admonítio præcessit.
+
+        Confírmat ígitur eos ad tolerántiam passiónum, fugæ, verberatiónis, intéritus et publici in eos odii propter nomen ejus. Atque his quidem vexatiónibus multi turbabúntur, et, tantis insurgéntibus malis scandalizabúntur, et usque in mutuum ódium excitabúntur. Et falsi prophetæ erunt, multosque ementíta veritáte pervertent; et, abundante nequitia, caritas refrigéscet.
+
+        Sed usque in finem perseverántibus salus reserváta est; ac tum, per omnes orbis partes viris apostolicis dispersis, Evangélii véritas prædicábitur. Et, cum univérsis fúerit cognítio sacraménti cæléstis invecta, tum Jerúsalem occasus et finis incumbet; ut prædicatiónis fidem, et infidelium pœna et metus civitátis érutæ consequátur. Hæc ígitur in eam, ut fuerant prædicta, perfécta sunt; et, lapidatis, fugatis, peremptis Apóstolis, fame, bello, captivitáte consumpta est. Ac tum fuit digna non esse, cum, ejectis prædicatóribus Christi, indignam Dei prædicatióne se præbuit.
+      status: verified

@@ -1,0 +1,17 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-10-27).
+collect:
+  text: |
+    Orémus.
+    Concede, quǽsumus, omnípotens Deus: ut, sicut Apostolórum tuórum Simónis et Judæ gloriósa natalícia prævenimus; sic ad tua benefícia promerenda, majestátem tuam pro nobis ipsi præveniant.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, the Vigil of Ss. Simon and Jude's own day (2026-10-27). The
+# Benedictus antiphon (Luke 1:69, part of the Benedictus canticle's own
+# text -- a vigil-appropriate anticipatory choice).
+benedictus-antiphon:
+  text: Eréxit nobis * Dóminus cornu salútis in domo David púeri sui.
+  status: verified

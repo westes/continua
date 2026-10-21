@@ -1,0 +1,39 @@
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 02-07
+# st-romuald (new saint-level second). See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle:
+  text: |
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 02-07
+# st-romuald (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Romuald, Abbot (Feb 7) —
+# SanctiM/02-07.txt inherits the whole day (`@Sancti/02-07`) with no
+# Nocturn 2/3 override, so this saint's own vita is sourced from the
+# Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/02-07.txt, English/Sancti/02-07.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. Lectio7-9 reference `@Sancti/01-25:Lectio7-9` (the
+# Conversion of St. Paul's own Common-of-Apostle-flavoured closing
+# lessons) — not proper to Romuald at all, so not authored here. No
+# responsory given in the source for Lectio4-6.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Romuáldus, Ravénnæ, Sérgio patre, nóbili génere natus, adoléscens in propínquum monastérium Classénse pœniténtiæ causa secéssit: ubi religiósi hóminis sermóne ad pietátis stúdium veheméntius incénsus, viso étiam semel et íterum per noctem in ecclésia beáto Apollinári, quod Dei servus illi futúrum promíserat, mónachus effícitur. Mox ad Marínum, vitæ sanctitáte ac severióre disciplína in fínibus Venetórum eo témpore célebrem, se cóntulit, ut ad arctam et sublímem perfectiónis viam eo magístro ac duce uterétur.
+
+        Multis sátanæ insídiis et hóminum invídia oppugnátus, tanto humílior se assídue jejúniis et oratiónibus exercébat, et rerum cæléstium meditatióne, vim lacrimárum profúndens, fruebátur: vultu tamen ádeo læto semper erat, ut intuéntes exhilaráret. Magno apud príncipes et reges in honóre fuit; multíque ejus consílio, mundi illécebris abjéctis, solitúdinem petiérunt. Martýrii quoque cupiditáte flagrávit, cujus causa dum in Pannóniam proficíscitur, morbo, quo afflictabátur cum progrederétur, levabátur cum recéderet, revérti cógitur.
+
+        In vita et post mortem miráculis clarus, spíritu étiam prophetíæ non cáruit. Scalam a terra cælum pertingéntem, in similitúdinem Jacob Patriárchæ, per quam hómines in veste cándida ascendébant et descendébant, per visum conspéxit; eóque Camaldulénses mónachos, quorum institúti auctor fuit, designári mirabíliter agnóvit. Dénique cum annos centum et vigínti ágeret, et centum ipsos in summa vitæ asperitáte Deo servísset, ad eum migrávit, anno salútis millésimo vigésimo séptimo. Ejus corpus quinquénnio postquam sepúltum fúerat, íntegrum repértum, Fabriáni in ecclésia sui órdinis honorífice cónditum est.
+      status: verified

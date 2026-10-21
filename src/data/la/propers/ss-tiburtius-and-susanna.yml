@@ -1,0 +1,47 @@
+# Read directly from web/www/horas/Latin/Sancti/08-11.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Sanctórum Mártyrum tuórum Tibúrtii et Susánnæ nos, Dómine, fóveant continuáta
+    præsídia: quia non désinis propítius intuéri; quos tálibus auxíliis
+    concésseris adjuvári.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-several-martyrs (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags actually used for
+# a mere commemoration, confirmed against this exact category via an
+# independently live-verified precedent elsewhere in this app). ss-tiburtius-and-susanna has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper. Collect is the saint's own
+# real proper (ss-tiburtius-and-susanna-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Sanctórum Mártyrum tuórum Tibúrtii et Susánnæ nos, Dómine, fóveant continuáta
+    præsídia: quia non désinis propítius intuéri; quos tálibus auxíliis
+    concésseris adjuvári.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins reading for Ss. Tiburtius and Susanna, Martyrs (Aug 11).
+# Sourced directly from web/www/horas/Latin/Sancti/08-11.txt,
+# English/Sancti/08-11.txt. Single simplex-feast lesson (Lectio93),
+# one continuous account covering both martyrs, pooled into the
+# nocturn: 2 slot per the established vigil/simplex convention (see
+# vigil-of-st-lawrence.yml's own note).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Tiburtius, Chromátii præfecti Urbis fílius, sancti Sebastiáni ópera Christianus, cum ob eam causam ad Fabianum judicem adductus esset múltaque apud illum de Christi fide prædicáret, excandéscens judex paviméntum candéntibus carbónibus sterni jubet. Mox, Tiburti, inquit, vel diis nostris sacrífices oportet, vel per istos carbónes nudis pédibus tibi incedéndum est. At ille, crucis signo se muniens fidentérque ámbulans in pruna, Disce, inquit, ex hoc solum esse Deum, quem Christiáni colunt; prunæ enim mihi flores vidéntur. Quod cum magicis artibus tribuerétur, extra Urbem ductus Tiburtius, ac via Lavicana tertio ab Urbe lápide gládio percússus, ibi a Christiánis sepelítur. Quo die Susanna virgo nobilíssima, quod Galerii Maximiáni, fílii Diocletiáni imperatóris, conjúgium recusaret, ut quæ virginitátem Deo vóverat; post multa tormentórum genera, quibus varie tentátum est sanctum Vírginis propositum, domi suæ, jussu imperatóris, gládio percússa, ad duplex virginitátis et martyrii præmium migrávit in cælum.
+      status: verified

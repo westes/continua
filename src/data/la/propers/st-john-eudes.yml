@@ -1,0 +1,54 @@
+# Read directly from web/www/horas/Latin/Sancti/08-19.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátum Joánnem, Confessórem tuum, ad cultum sacrórum Córdium Jesu
+    et Maríæ rite promovéndum, mirabíliter inflammásti, et per eum novas in
+    Ecclésia tua famílias congregáre voluísti: præsta, quǽsumus; ut, cujus pia
+    mérita venerámur, virtútum quoque instruámur exémplis.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-john-eudes has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-john-eudes-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui beátum Joánnem, Confessórem tuum, ad cultum sacrórum Córdium Jesu
+    et Maríæ rite promovéndum, mirabíliter inflammásti, et per eum novas in
+    Ecclésia tua famílias congregáre voluísti: præsta, quǽsumus; ut, cujus pia
+    mérita venerámur, virtútum quoque instruámur exémplis.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. John Eudes, Confessor (Aug 19).
+# Sourced directly from web/www/horas/Latin/Sancti/08-19.txt,
+# English/Sancti/08-19.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in his own file (his `[Rule]` is `vide
+# C5`) -- defers to the Common's own Nocturn 3, not transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Joannes, anno millesimo sexcentesimo primo, in pago vulgo Ri, Sagiensis diœcesis, e piis honestisque parentibus ortus est. Adhuc puer, Angelorum pane refectus, perpetuam castitatem alacriter vovit. In Cadomense collegium a patribus Societatis Jesu directum exceptus, singulari pietate emicuit; et Mariæ Virginis tutelæ sese committens, speciale fœdus initum cum ea vix adolescens suo sanguine signavit. Litterarum ac philosophiæ curriculo multa cum laude peracto, spretisque sibi oblatis nuptiis, Berulliani Oratorii congregationi nomen dedit, et sacerdotio Parisiis auctus est. Mira caritate erga proximum flagravit: nam apud plura loca, corporibus, asiatica lue perculsis, animisque curandis sedulam operam dedit. Domus Oratorianæ Cadomi rector factus, quum diu cogitaret ad Ecclesiæ ministerium juvenes idoneos instituere, a sodalibus, quibuscum viginti annos vixerat, divina ope implorata, licet ægre, forti animo discessit.
+
+        Quinque igitur sacerdotes sibi consocians, anno millesimo sexcentesimo quadragesimo tertio, die festo Annuntiationis beatæ Mariæ Virginis, congregationem presbyterorum instituit, cui sanctissima Jesu et Mariæ nomina dedit, et Cadomi primum seminarium aperuit, quod in Normannia et Britannia minori complura, eodem auctore, subsecuta sunt. Pro peccatricibus feminis, ad christianam vitam revocandis, ordinem Dominæ nostræ a Caritate fundavit; cujus nobilissimæ arboris ramus est congregatio Andegavensis a Bono Pastore. Insuper societatem a Matris Dei Corde admirabili, et alia caritatis opera condidit. Scripta plura præclare edidit, et missionarius Apostolicus tot pagos, oppida et urbes ipsamque regiam aulam usque ad extremam ætatem, evangelizavit.
+
+        Singulare ejus studium emicuit in salutari devotione promovenda erga sacratissima Corda Jesu et Mariæ, quorum liturgicum cultum eisdem præstandum non sine aliquo divino afflatu, primus omnium excogitavit ideoque ejusdem cultus pater, doctor et apostolus habitus est. Jansenistarum doctrinis fortiter resistens, immutatum erga Petri cathedram obsequium servavit, et pro suis inimicis, tamquam pro fratribus, assidue Deum precatus est. Tot laboribus, potius quam annis fractus, cupiens dissolvi et esse cum Christo, die decima nona Augusti, anno millesimo sexcentesimo octogesimo, suavia Jesu et Mariæ nomina sæpius repetens, placide exspiravit. Quem pluribus miraculis clarum Pius Papa decimus Beatorum albo adscripsit eumque novis signis fulgentem Pius Papa undecimus, anno sacro, in die dominica Pentecostes inter Sanctos retulit ejusque Officium ac Missam ad universam Ecclesiam exendit.
+      status: verified

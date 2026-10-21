@@ -1,0 +1,38 @@
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 07-12
+# st-john-gualbert (new saint-level second). See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle:
+  text: |
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 07-12
+# st-john-gualbert (saint file = second). First Vespers variant; the default (second Vespers) file is the same
+# id without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+  status: verified
+
+# Matins Nocturn 2 reading for St. John Gualbert, Abbot (Jul 12). No
+# genuine SanctiM match: the only SanctiM file for this date,
+# `SanctiM/07-12Moct.txt`, belongs to the Octave of St. Benedict (Jul
+# 11-18 is the Monastic calendar's own octave of its patron's Mar 21
+# feast) — a missed pre-1955-pool candidate rather than a genuine
+# SanctiM case (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/07-12.txt, English/Sancti/07-12.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Joánnes Gualbertus, Floréntiæ nobili genere ortus, dum patri óbsequens rem militarem sequitur, Ugo, únicus ejus frater, occíditur a consanguíneo. Quem cum solum et inérmem sancto Parasceves die Joánnes, armis ac milítibus stipatus, óbvium haberet, ubi néuter álterum poterat declináre, ob sanctæ crucis reveréntiam, quam homicida supplex, mortem jamjam subiturus, brácchiis signabat, vitam ei clementer indulget. Hoste in fratrem recepto, próximum sancti Miniátis templum oratúrus ingréditur, ubi adoratam Crucifixi imáginem caput sibi fléctere cónspicit. Quo mirábili facto permotus Joánnes, Deo exínde, étiam invíto patre, militare decernit, atque ibidem propriis sibi mánibus comam totondit, ac monasticum hábitum índuit: adeoque piis ac religiosis virtútibus brevi coruscat, ut multis se perfectiónis specimen ac normam præbéret; ita ut, ejusdem loci abbate defuncto, communi ómnium voto in superiórem eligerétur. At Dei famulus, cupiens subesse potius quam præesse, ad majora divina voluntáte servatus, ad Camaldulénsis eremi íncolam Romualdum proficíscitur, a quo cælicum sui institúti vaticinium áccipit; tum suum ordinem sub regula sancti Benedicti apud Umbrosam vallem instituit.
+
+        Deínde, plurimis ad eum ob ejus sanctitátis famam undique convolántibus, una cum iis in socios adscitis, ad hæreticam et simoníacam pravitátem exstirpandam et apostolicam fidem propagandam sédulo incumbit, innumera proptérea in se et suis incommoda expertus. Nam, ut eum ejusque socios adversarii perdant, noctu sancti Salvii cœnóbium repénte aggrediúntur, templum incendunt, ædes demoliúntur, et mónachos omnes lethali vulnere sauciant; quos vir Dei único crucis signo incólumes prótinus reddit, et, Petro ejus mónacho per immensum ardentissimúmque ignem illæso mirabíliter transeúnte, optatam sibi et suis tranquillitátem óbtinet. Inde simoníacam labem ab Etruria éxpulit, ac in tota Italia fidem prístinæ integritáti restituit.
+
+        Multa fúnditus eréxit monasteria, eademque et alia ædificiis ac regulari observántia instaurata, sanctis légibus communívit. Ad egénos alendos sacram supelléctilem véndidit: ad ímprobos coërcendos eleménta sibi famulari conspéxit: ad dæmones comprimendos crucem quasi ensem adhibuit. Demum abstinentiis, vigiliis, jejuniis, oratiónibus, carnis maceratiónibus ac senio confectus, dum infirma valetúdine gravarétur, Davídica illa verba persæpe repetebat: Sitívit ánima mea ad Deum fortem vivum: quando véniam et apparébo ante fáciem Dei? Jamque morti próximus, convocatos discipulos ad fraternam concordiam cohortátur, et in brevículo, cui consepeliri vóluit, jussit hæc scribi: Ego Joánnes credo et confiteor fidem, quam sancti Apóstoli prædicavérunt, et sancti Patres in quatuor conciliis confirmavérunt. Tandem, triduano Angelórum obsequio dignátus, septuagesimum octavum annum agens, apud Passinianum, ubi summa veneratióne cólitur, migrávit ad Dóminum, anno salútis millesimo septuagesimo tertio, quarto Idus Julii. Quem Cælestinus tertius, innumeris miraculis clarum, in Sanctórum númerum rétulit.
+      status: verified

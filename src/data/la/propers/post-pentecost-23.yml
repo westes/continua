@@ -1,0 +1,76 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+#
+# A real saint outranks this Sunday on every candidate year checked (2020-
+# 2060), so this was read directly from the Latin/English Tempora source
+# file plus the standard closing-formula macro
+# (Psalterium/Common/Prayers.txt's [Per Dominum]/[Per eumdem]) rather than
+# a live date query.
+collect:
+  text: |
+    Orémus.
+    Absólve, quǽsumus, Dómine, tuórum delícta populórum: ut a peccatórum néxibus, quæ pro nostra fragilitáte contráximus, tua benignitáte liberémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-10-24 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Dicébat enim * intra se: Si tetígero fímbriam vestiménti ejus tantum, salva ero.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-10-24 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: 'At Jesus convérsus * et videns eam dixit: Confíde, fília, fides tua te salvam fecit, allelúia.'
+  status: verified
+  temporal: true
+
+# Nocturn 3, 23rd Sunday after Pentecost. Sourced from Tempora/Pent23-0.txt.
+# See post-pentecost-02.yml/post-pentecost-12.yml for sweep method note (no
+# proper Nocturn 2 in the source). Lectio7 bare incipit (Matt 9:18-26, the
+# ruler's daughter and the woman with an issue of blood) skipped;
+# Lectio7-9's homily by St. Jerome is one continuous work, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 9:18-26
+      text: 'In illo témpore: Loquénte Jesu ad turbas, ecce, princeps unus accéssit et adorábat eum, dicens: Dómine, fília mea modo defúncta est: sed veni, impóne manum tuam super eam, et vivet. Et surgens Jesus sequebátur eum et discípuli ejus. Et ecce múlier, quæ sánguinis fluxum patiebátur duódecim annis, accéssit retro et tétigit fímbriam vestiménti ejus. Dicébat enim intra se: Si tetígero tantum vestiméntum ejus, salva ero. At Jesus convérsus et videns eam, dixit: Confíde, fília, fides tua te salvam fecit. Et salva facta est múlier ex illa hora. Et cum venísset Jesus in domum príncipis, et vidísset tibícines et turbam tumultuántem, dicebat: Recédite: non est enim mórtua puélla, sed dormit. Et deridébant eum. Et cum ejécta esset turba, intrávit et ténuit manum ejus. Et surréxit puélla. Et éxiit fama hæc in univérsam terram illam.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Priest, Book 1, Commentary on Matthew 9
+      text: |-
+        Octávum signum est, in quo princeps suscitári póstulat fíliam suam, nolens de mystério veræ circumcisiónis exclúdi: sed subíntrat múlier sánguine fluens, et octávo sanátur loco; ut príncipis fília de hoc exclúsa número, véniat ad nonum, juxta illud quod in Psalmis dícitur: Æthiópia prævéniet manus ejus Deo; et, Cum intráverit plenitúdo géntium, tunc omnis Israël salvus fiet.
+
+        Et ecce múlier, quæ sánguinis fluxum patiebátur duódecim annis, accéssit retro, et tétigit fímbriam vestiménti ejus. In Evangélio secúndum Lucam scríbitur, quod príncipis fília duódecim annos habéret ætátis. Nota ergo, quod eo témpore hæc múlier, id est, Géntium pópulus cœ́perit ægrotáre, quo genus Judæórum credíderat. Nisi enim ex comparatióne virtútum, vítium non osténditur.
+
+        Hæc autem múlier sánguine fluens, non in domo, non in urbe accédit ad Dóminum, quia juxta legem úrbibus excludebátur; sed in itínere, ambulánte Dómino; ut, dum pergit ad áliam, ália curarétur. Unde dicunt et Apóstoli: Vobis quidem oportébat prædicári verbum Dei: sed quóniam vos judicástis indígnos salúte, transgrédimur ad gentes.
+      responsory: |-
+        R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.
+        V. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.
+        R. Plena est omnis terra glória ejus.
+      status: verified

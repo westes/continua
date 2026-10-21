@@ -1,0 +1,25 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-09-27 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: Adapériat Dóminus * cor vestrum in lege sua et in præcéptis suis et fáciat pacem Dóminus Deus noster.
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "1st Sunday of October" (Tempora/101-0.txt) — see
+# month-week-081.yml's header for the id scheme. Own Responsory4 (not a
+# cross-reference).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, On the Duties of the Clergy, Book 1, ch. 40
+      text: |-
+        Fortásse áliquos béllica defíxos glória tenet, ut putent solam esse præliárem fortitúdinem; et ídeo me ad ista deflexísse, quia illa nostris déforet. Quam fortis Jesus Nave, ut uno prǽlio quinque reges captos stérneret cum pópulis suis! Deínde cum advérsum Gabaonítas urgéret prǽlium, et vererétur ne nox impedíret victóriam, magnitúdine mentis et fídei clamávit: Stet sol, et stetit, donec victória consummarétur. Gédeon in trecéntis viris de ingénti pópulo et acérbo hoste revéxit triúmphum. Jónathas adoléscens virtútem magnam fecit in prǽlio.
+
+        Quid de Machabǽis loquar? Sed prius de pópulo dicam patrum; qui cum essent paráti ad repugnándum pro templo Dei et pro legítimis suis, dolo hóstium die lacessíti sábbati, maluérunt vulnéribus offérre nuda córpora, quam repugnáre, ne violárent sábbatum. Itaque omnes læti se obtulérunt morti. Sed Machabǽi considerántes quod hoc exémplo gens omnis posset períre, sábbato étiam, cum ipsi in bellum provocaréntur, ulti sunt innocéntium necem fratrum suórum. Unde póstea stimulátus rex Antíochus, cum bellum accénderet per duces suos Lýsiam, Nicánorem, Górgiam, ita cum Orientálibus suis et Assýriis attrítus est cópiis, ut quadragínta et octo míllia in médio campi a tribus míllibus prosterneréntur.
+
+        Virtútem ducis Judæ Machabǽi de uno ejus mílite consideráte. Namque Eleázarus, cum supereminéntem céteris elephántem loríca vestítum régia advérteret, arbitrátus quod in eo esset rex, cursu cóncito in médium legiónis se prorúpit: et, abjécto clýpeo, utráque manu interficiébat, donec perveníret ad béstiam, atque intrávit sub eam, et subjécto gládio interémit eam. Itaque cadens béstia oppréssit Eleázarum, atque ita mórtuus est. Quanta ígitur virtus ánimi! primo, ut mortem non timéret; deínde, ut circumfúsus legiónibus inimicórum, in confértos raperétur hostes, médium penetráret agmen, et contémpta morte ferócior, abjécto clýpeo, utráque manu vulnerátæ molem béstiæ subíret ac sustinéret: post infra ipsam succéderet, quo plenióri feríret ictu; cujus ruína inclúsus magis quam oppréssus, suo est sepúltus triúmpho.
+      responsory: |-
+        R. Impetum inimicórum ne timuéritis: mémores estóte, quómodo salvi facti sunt patres nostri: * Et nunc clamémus in cælum et miserébitur nostri Deus noster.
+        V. Mementóte mirabílium ejus, quæ fecit pharaóni et exercítui ejus in Mari Rubro.
+        R. Et nunc clamémus in cælum et miserébitur nostri Deus noster.
+      status: verified

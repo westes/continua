@@ -1,0 +1,358 @@
+# Verified against Divinum Officium ("Monastic Divino 1930"), Lauds live
+# query, the last Sunday of October (2026-10-25).
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui in dilécto Fílio tuo, universórum Rege, ómnia instauráre voluísti: concéde propítius; ut cunctæ famíliæ géntium, peccáti vúlnere disgregátæ, ejus suavíssimo subdántur império:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium ("Monastic Divino 1930"), Lauds live
+# query, the last Sunday of October (2026-10-25).
+lauds-capitulum:
+  text: 'Fratres: Grátias ágimus Deo Patri, qui dignos nos fecit in partem sortis sanctórum in lúmine, qui erípuit nos de potestáte tenebrárum, et tránstulit in regnum Fílii dilectiónis suæ.'
+  citation: Col 1:12-13
+  status: verified
+
+# Verified against Divinum Officium ("Monastic Divino 1930"), Lauds live
+# query, the last Sunday of October (2026-10-25). "Vexilla Christus
+# inclita" -- self-contained, including its own final doxology stanza.
+lauds-hymn:
+  text: |
+    Vexílla Christus ínclita
+    Late triúmphans éxplicat:
+    Gentes adéste súpplices,
+    Regíque regum pláudite.
+
+    Non Ille regna cládibus:
+    Non vi metúque súbdidit
+    Alto levátus stípite,
+    Amóre traxit ómnia.
+
+    O ter beáta cívitas
+    Cui rite Christus ímperat,
+    Quæ jussa pergit éxsequi
+    Edícta mundo cǽlitus!
+
+    Non arma flagrant ímpia,
+    Pax usque firmat fœ́dera,
+    Arrídet et concórdia,
+    Tutus stat ordo cívicus.
+
+    Servat fides connúbia,
+    Juvénta pubet íntegra,
+    Pudíca florent límina
+    Domésticis virtútibus.
+
+    Optáta nobis spléndeat
+    Lux ista, Rex dulcíssime:
+    Te, pace adépta cándida,
+    Adóret orbis súbditus.
+
+    Glória tibi, Dómine,
+    Qui sceptra mundi témperas,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium ("Monastic Divino 1930"), Lauds live
+# query, the last Sunday of October (2026-10-25).
+lauds-responsory:
+  text: |
+    R.br. Data est mihi * Omnis potéstas.
+    R. Data est mihi * Omnis potéstas.
+    V. In cælo et in terra.
+    R. Omnis potéstas.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Data est mihi * Omnis potéstas.
+  status: verified
+
+# Verified against Divinum Officium ("Monastic Divino 1930"), Lauds live
+# query, the last Sunday of October (2026-10-25).
+lauds-versicle:
+  text: |-
+    V. Multiplicábitur ejus impérium.
+    R. Et pacis non erit finis.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayPrima, 2026-10-25); Latin and English both taken from the page.
+prime-antiphon:
+  text: Suscitábit * Deus cæli regnum quod commínuet et consúmet univérsa regna, et ipsum stabit in ætérnum.
+  status: verified
+
+# New file, 2026-09-15: per-feast variant of prime-chapter-responsory-
+# per-annum.yml -- same fixed responsory, with just the "V." verse line
+# swapped for the feast's own [Versum Prima] (web/www/horas/Latin/Sancti/
+# 10-DU.txt), found while checking whether the by-feast responsory table
+# (prime-chapter-responsory-by-feast.yml) needed real content -- see
+# prime-chapter-responsory-most-precious-blood.yml's own header for the
+# fuller context (only 2 of 36 Lectio-Prima-bearing saints/feasts turned
+# out to have a real [Versum Prima] of their own).
+prime-chapter/responsory-~:
+  text: |
+    R.br. Christe, Fili Dei vivi, * Miserére nobis.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+    V. Qui primátum in ómnibus tenes.
+    R. Miserére nobis.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+  status: verified
+
+# New file, 2026-09-15: part of the same Prime Lectio Brevis sweep that
+# built getPrimeLectioBrevis (see TODO.md's dated Work Log entry) --
+# christ-the-king is a temporal id (ALWAYS_OVERRIDE_TEMPORAL_IDS in
+# resolve-common.ts), reached via getTemporalProperWithFallback the same
+# way as her other propers (collect, Benedictus/Magnificat antiphons).
+# Sourced directly from web/www/horas/Latin/Sancti/10-DU.txt's own
+# [Lectio Prima] tag and its English counterpart.
+prime-lectio:
+  text: In ipso complácuit omnem plenitúdinem inhabitáre, et per eum reconciliáre ómnia in ipsum, pacíficans per sánguinem crucis ejus sive quæ in terris, sive quæ in cælis sunt, in Christo Jesu Dómino nostro.
+  citation: Col 1:19-20
+  status: verified
+  temporal: true
+
+# Engine render (Divino Afflatu - 1954, command=prayTertia, 2026-10-25); Latin and English both taken from the page.
+terce-antiphon:
+  text: Dedit ei Dóminus * potestátem et honórem et regnum; et omnes pópuli, tribus et linguæ ipsi sérvient.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayTertia, 2026-10-25); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    Col 1:12-13 Fratres: Grátias ágimus Deo Patri, qui dignos nos fecit in partem sortis sanctórum in lúmine, qui erípuit nos de potestáte tenebrárum, et tránstulit in regnum Fílii dilectiónis suæ.
+    R. Deo grátias.
+    V. Afférte Dómino, famíliæ populórum.
+    R. Afférte Dómino glóriam et impérium.
+  citation: ''
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=praySexta, 2026-10-25); Latin and English both taken from the page.
+sext-antiphon:
+  text: Exíbunt aquæ vivæ * de Jerúsalem; et erit Dóminus Rex super omnem terram.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=praySexta, 2026-10-25); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    Col 1;16-18 Omnia per ipsum et in ipso creáta sunt, et ipse est ante omnes, et ómnia in ipso constant. Et ipse est caput córporis Ecclésiæ, qui est princípium, primogénitus ex mórtuis, ut sit in ómnibus ipse primátum tenens.
+    R. Deo grátias.
+    V. Adorábunt eum omnes reges terræ.
+    R. Omnes gentes sérvient ei.
+  citation: ''
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayNona, 2026-10-25); Latin and English both taken from the page.
+none-antiphon:
+  text: 'Gens et regnum * quod non servíerit tibi, períbit: et gentes solitúdine vastabúntur.'
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayNona, 2026-10-25); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    Col 1:19-20 In ipso complácuit omnem plenitúdinem inhabitáre, et per eum reconciliáre ómnia in ipsum, pacíficans per sánguinem crucis ejus sive quæ in terris, sive quæ in cælis sunt, in Christo Jesu Dómino nostro.
+    R. Deo grátias.
+    V. Multiplicábitur ejus impérium.
+    R. Et pacis non erit finis.
+  citation: ''
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-10-25, the same clean date already used for lauds-capitulum-christ-the-king.yml (version `Monastic Divino 1930`, not 1617 -- see lauds-capitulum-christ-the-king.yml's own header for why).
+vespers-hymn:
+  text: |
+    Te sæculórum Príncipem,
+    Te, Christe, Regem géntium,
+    Te méntium, te córdium
+    Unum fatémur árbitrum.
+
+    Scelésta turba clámitat:
+    Regnáre Christum nólumus:
+    Te nos ovántes ómnium
+    Regem suprémum dícimus.
+
+    O Christe, Princeps Pácifer,
+    Mentes rebélles súbice:
+    Tuóque amóre dévios,
+    Ovíle in unum cóngrega.
+
+    Ad hoc cruénta ab árbore
+    Pendes apértis brácchiis,
+    Diráque fossum cúspide
+    Cor igne flagrans éxhibes.
+
+    Ad hoc in aris ábderis
+    Vini dapísque imágine,
+    Fundens salútem fíliis
+    Transverberáto péctore.
+
+    Te natiónum Prǽsides
+    Honóre tollant público,
+    Colant magístri, júdices,
+    Leges et artes éxprimant.
+
+    Submíssa regum fúlgeant
+    Tibi dicáta insígnia:
+    Mitíque sceptro pátriam
+    Domósque subde cívium.
+
+    Glória tibi, Dómine,
+    Qui sceptra mundi témperas,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-10-25, the same clean date already used for lauds-capitulum-christ-the-king.yml (version `Monastic Divino 1930`, not 1617 -- see lauds-capitulum-christ-the-king.yml's own header for why).
+vespers-responsory:
+  text: |
+    R.br. Afférte Dómino, * Famíliæ populórum.
+    R. Afférte Dómino, * Famíliæ populórum.
+    V. Afférte Dómino glóriam et impérium.
+    R. Famíliæ populórum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Afférte Dómino, * Famíliæ populórum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-10-25, the same clean date already used for lauds-capitulum-christ-the-king.yml (version `Monastic Divino 1930`, not 1617 -- see lauds-capitulum-christ-the-king.yml's own header for why).
+vespers-versicle:
+  text: |-
+    V. Multiplicábitur ejus impérium.
+    R. Et pacis non erit finis.
+  status: verified
+
+# Divino Afflatu 1954 engine render, 2026-10-24 christ-the-king first. Paschaltide Alleluia is left to
+# hours/paschal-alleluia.ts.
+vespers-versicle/~-first:
+  text: |
+    V. Data est mihi omnis potéstas.
+    R. In cælo et in terra.
+  status: verified
+
+# Verified against Divinum Officium ("Monastic Divino 1930"), Lauds live
+# query, the last Sunday of October (2026-10-25).
+benedictus-antiphon:
+  text: Fecit nos Deo * et Patri suo regnum, primogénitus mortuórum, et Princeps regum terræ, allelúia.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium ("Monastic Divino 1930"), Vespers live
+# query, the last Sunday of October (2026-10-25).
+magnificat-antiphon:
+  text: 'Habet in vestiménto * et in fémore suo scriptum: Rex regum, et Dóminus dominántium. Ipsi glória et impérium, in sǽcula sæculórum.'
+  status: verified
+  temporal: true
+
+# Divino Afflatu 1954 engine render, 2026-10-24 christ-the-king first (post-1617 feast; no Monastic render
+# exists).
+magnificat-antiphon/~-first:
+  text: 'Dabit illi * Dóminus Deus sedem David, patris ejus: et regnábit in domo Jacob in ætérnum, et regni ejus non erit finis.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium ("Monastic Divino 1930" -- see
+# data/calendar/temporal-feasts/christ-the-king.yml on why not Monastic
+# Tridentinum 1617), Lauds live query, the last Sunday of October
+# (2026-10-25).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Suscitábit * Deus cæli regnum quod commínuet et consúmet univérsa regna, et ipsum stabit in ætérnum.
+    - psalms:
+        - 99
+      antiphon: Dedit ei Dóminus * potestátem et honórem et regnum; et omnes pópuli, tribus et linguæ ipsi sérvient.
+    - psalms:
+        - 62
+      antiphon: Exíbunt aquæ vivæ * de Jerúsalem; et erit Dóminus Rex super omnem terram.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Magnificábitur * usque ad términos terræ, et erit iste pax.
+  laudate:
+    antiphon: 'Gens et regnum * quod non servíerit tibi, períbit: et gentes solitúdine vastabúntur.'
+
+# Post-1617 feast: no Monastic render exists, so this is the Divino Afflatu 1954 engine render (2026-10-25
+# christ-the-king second (Divino Afflatu 1954 engine render; Monastic reduction 1,2,3,5)), Sunday-style psalm
+# numbers. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Pacíficus * vocábitur, et thronus ejus erit firmíssimus in perpétuum.
+    - psalms:
+        - 110
+      antiphon: Regnum ejus * regnum sempitérnum est, et omnes reges sérvient ei et obédient.
+    - psalms:
+        - 111
+      antiphon: 'Ecce Vir Oriens * nomen ejus: sedébit et dominábitur, et loquétur pacem géntibus.'
+    - psalms:
+        - 112
+      antiphon: Ecce dedi te * in lucem géntium, ut sis salus mea usque ad extrémum terræ.
+
+# Post-1617 feast: no Monastic render exists, so this is the Divino Afflatu 1954 engine render (2026-10-24
+# christ-the-king first (Divino Afflatu 1954 engine render; Monastic reduction 1,2,3,5)), Sunday-style psalm
+# numbers. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Pacíficus * vocábitur, et thronus ejus erit firmíssimus in perpétuum.
+    - psalms:
+        - 110
+      antiphon: Regnum ejus * regnum sempitérnum est, et omnes reges sérvient ei et obédient.
+    - psalms:
+        - 111
+      antiphon: 'Ecce Vir Oriens * nomen ejus: sedébit et dominábitur, et loquétur pacem géntibus.'
+    - psalms:
+        - 112
+      antiphon: Ecce dedi te * in lucem géntium, ut sis salus mea usque ad extrémum terræ.
+
+# Matins nocturn content for Christ the King (temporalId christ-the-king,
+# Duplex I classis, a 1925 addition -- Pius XI's "Quas Primas"). Sourced
+# from Sancti/10-DU.txt (Latin) / English/Sancti/10-DU.txt (this feast's
+# own real, dedicated reference-engine file, found and confirmed present
+# despite being a later addition), and the Gospel pericope's full text
+# from missa/Latin+English/Sancti/10-DU.txt's own [Evangelium] (the
+# Matins file itself only gives the incipit + "Et réliqua" for Lectio7,
+# per this project's Gospel/homily-split convention).
+#
+# The audit found this id registered in ALWAYS_OVERRIDE_TEMPORAL_IDS,
+# with a real collect/antiphons already authored, but no Matins reading.
+# Real source content for this feast's Matins was in fact found in the
+# reference tree (contrary to the audit's own expectation that it might
+# not exist in a pre-1955-focused reference tree) -- no draft/invented
+# content was needed. Nocturn 1-2 (Lectio1-6: Col 1:3-23, then Pius XI's
+# encyclical "Quas Primas" itself) left unauthored here per this
+# project's convention of leaving Nocturn 1 scripture to the bible-plan
+# store; Nocturn 2's own content (the encyclical excerpt) is left for a
+# later pass rather than folded in here, to keep this file's Gospel+
+# homily structure consistent with the other temporal solemnities closed
+# in this same sweep.
+#
+# Nocturn 3: the Gospel pericope (John 18:33-37) authored in full
+# (isGospel: true), followed by Lectio7's homily portion (incipit
+# dropped) combined with Lectio8 as one continuous excerpt of St.
+# Augustine's own Tractates 51 and 115 on John.
+nocturn-readings:
+  readings:
+    - nocturn: 3
+      isGospel: true
+      citation: Joann 18:33-37
+      text: 'In illo témpore: Dixit Pilátus ad Jesum: Tu es Rex Judæórum? Respóndit Jesus: A temetípso hoc dicis, an álii dixérunt tibi de me? Respóndit Pilátus: Numquid ego Judǽus sum? Gens tua et pontífices tradidérunt te mihi: quid fecísti? Respóndit Jesus: Regnum meum non est de hoc mundo. Si ex hoc mundo esset regnum meum, minístri mei útique decertárent, ut non tráderer Judǽis: nunc autem regnum meum non est hinc. Dixit ítaque ei Pilátus: Ergo Rex es tu? Respóndit Jesus: Tu dicis, quia Rex sum ego. Ego in hoc natus sum et ad hoc veni in mundum, ut testimónium perhíbeam veritáti: omnis, qui est ex veritáte, audit vocem meam.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Tractates 51 and 115 on John
+      text: |-
+        Quid magnum fuit Regi sæculórum Regem fíeri hóminum? Non enim Rex Israël Christus ad exigéndum tribútum vel exércitum ferro armándum hostésque visibíliter debellándos; sed Rex Israël, quod mentes regat, quod in ætérnum cónsulat, quod in regnum cælórum credéntes, sperántes amantésque perdúcat. Dei ergo Fílius æquális Patri, Verbum per quod facta sunt ómnia, quod Rex esse vóluit Israël, dignátio est, non promótio; miseratiónis indícium est, non potestátis augméntum. Qui enim appellátus est in terra Rex Judæórum, in cælis est Dóminus Angelórum. Sed Judæórum tantum Rex est Christus, an et géntium? Immo et géntium. Cum enim dixísset in prophetía: Ego autem sum constitútus Rex ab eo super Sion montem sanctum ejus, prǽdicans præcéptum Dómini: ne propter montem Sion solis Judǽis eum regem quisquam díceret constitútum, contínuo subjécit: Dóminus dixit ad me: Fílius meus es tu, ego hódie génui te; póstula a me et dabo tibi gentes hereditátem tuam et possessiónem tuam términos terræ.
+
+        Respóndit Jesus: Regnum meum non est de hoc mundo. Si ex hoc mundo esset regnum meum, minístri mei útique decertárent, ut non tráderer Judǽis; nunc autem regnum meum non est hinc. Hoc est quod bonus Magíster scire nos vóluit; sed prius nobis demonstránda fúerat vana hóminum de regno ejus opínio, sive géntium, sive Judæórum a quibus id Pilátus audíerat: quasi proptérea morte fuísset plecténdus, quod illícitum affectáverit regnum, vel quóniam solent regnatúris invidére regnántes, et vidélicet cavéndum erat ne ejus regnum sive Románis, sive Judǽis esset advérsum. Póterat autem Dóminus quod ait, Regnum meum non est de hoc mundo, ad primam interrogatiónem prǽsidis respondére, ubi ei dixit, Tu es rex Judæórum? sed eum vicíssim intérrogans, utrum hoc a semetípso díceret, an audísset ab áliis, illo respondénte osténdere vóluit hoc sibi apud illum fuísse a Judǽis velut crimen objéctum: patefáciens nobis cogitatiónes hóminum, quas ipse nóverat, quóniam vanæ sunt; eísque post responsiónem Piláti, jam Judǽis et géntibus opportúnius aptiúsque respóndens, Regnum meum non est de hoc mundo.
+      responsory: |-
+        R. Factum est regnum hujus mundi Dómini nostri et Christi ejus: * Et regnábit in sǽcula sæculórum.
+        V. Adorábunt in conspéctu ejus univérsæ famíliæ géntium; quóniam Dómini est regnum.
+        R. Et regnábit in sǽcula sæculórum.
+      status: verified

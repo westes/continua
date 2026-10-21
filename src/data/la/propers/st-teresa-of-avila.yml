@@ -1,0 +1,130 @@
+# Read directly from web/www/horas/Latin/Sancti/10-15.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Exáudi nos, Deus, salutáris noster: ut sicut de beátæ Terésiæ Vírginis
+    tuæ festivitáte gaudémus; ita cæléstis ejus doctrínæ pábulo
+    nutriámur, et piæ devotiónis erudiámur afféctu.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-virgin (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags actually used for
+# a mere commemoration, confirmed against this exact category via an
+# independently live-verified precedent elsewhere in this app). st-teresa-of-avila has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper. Collect is the saint's own
+# real proper (st-teresa-of-avila-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Símile est regnum cælórum * hómini negotiatóri quærénti bonas margarítas: invénta una pretiósa, dedit ómnia sua, et comparávit eam.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Exáudi nos, Deus, salutáris noster: ut sicut de beátæ Terésiæ Vírginis
+    tuæ festivitáte gaudémus; ita cæléstis ejus doctrínæ pábulo
+    nutriámur, et piæ devotiónis erudiámur afféctu.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/10-15.txt's own [Capitulum
+# Laudes] ("@Commune/C6" -- byte-identical to common-of-a-virgin's own,
+# no name substitution needed for this particular text). Authored as her
+# own file (not left to the Common fallback) so her genuinely proper
+# Lauds hymn (lauds-hymn-st-teresa-of-avila.yml) becomes reachable —
+# hours/resolve-common.ts's resolveOfficeBundle is all-or-nothing per id,
+# gated on the chapter.
+lauds-capitulum:
+  text: 'Fratres: Qui gloriátur, in Dómino gloriétur. Non enim qui seípsum comméndat, ille probátus est; sed quem Deus comméndat.'
+  citation: 2 Cor 10:17-18
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/10-15.txt's own [Hymnus
+# Laudes] and English/Sancti/10-15.txt's own translation.
+lauds-hymn:
+  text: |-
+    Hæc est dies, qua cándidæ
+    Instar colúmbæ, cǽlitum
+    Ad sacra templa spíritus
+    Se tránstulit Terésiæ.
+
+    Sponsíque voces áudiit:
+    Veni, soror, de vértice
+    Carméli ad Agni núptias;
+    Veni ad corónam glóriæ.
+
+    Te, Sponse Jesu Vírginum,
+    Beáti adórent órdines,
+    Et nuptiáli cántico
+    Laudent per omne sǽculum. Amen.
+  status: verified
+
+# No distinct Lauds versicle exists in the reference source for this
+# feast; reusing common-of-a-virgin's own Lauds versicle. Authored to
+# make her own bundle (needed for her genuinely proper Lauds hymn) render
+# a real versicle instead of an unconditionally-rendered empty one.
+lauds-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/10-15.txt's own [Hymnus
+# Vespera] and English/Sancti/10-15.txt's own translation.
+vespers-hymn:
+  text: |-
+    Regis supérni núntia,
+    Domum patérnam déseris,
+    Terris, Terésa, bárbaris
+    Christum datúra aut sánguinem.
+
+    Sed te manet suávior
+    Mors, pœna poscit dúlcior:
+    Divíni amóris cúspide
+    In vulnus icta cóncides.
+
+    O caritátis víctima!
+    Tu corda nostra cóncrema,
+    Tibíque gentes créditas
+    Avérni ab igne líbera.
+
+    Sit laus Patri cum Fílio
+    Et Spíritu Paráclito,
+    Tibíque, sancta Trínitas,
+    Nunc et per omne sǽculum. Amen.
+  status: verified
+
+# No distinct Vespers versicle exists in the reference source for this
+# feast (her own [Hymnus Vespera] has no following [Versum] at all);
+# reusing common-of-a-virgin's own Vespers versicle. Authored to make
+# her own bundle (needed for her genuinely proper Vespers hymn, see
+# vespers-hymn-st-teresa-of-avila.yml) render a real versicle instead of
+# an unconditionally-rendered empty one.
+vespers-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Teresa of Avila, Virgin (Oct 15).
+# Sourced directly from web/www/horas/Latin/Sancti/10-15.txt,
+# English/Sancti/10-15.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in her own file (her `[Rule]` is `vide
+# C6a`) -- defers to the Common's own Nocturn 3, not transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Teresia Virgo, nata est Abulæ in Hispánia paréntibus tum genere tum pietáte præcláris. Ab iis divini timoris lacte educata, admirándum futuræ sanctitátis in tenerrima adhuc ætate specimen dedit. Nam, cum sanctórum Mártyrum acta perlegeret, adeo in ejus meditatióne Sancti Spíritus ignis exársit, ut, domo aufúgiens, in Africam trajiceret, ubi vitam pro glória Jesu Christi et animárum salúte profúnderet. A patruo revocata, ardens martyrii desidérium eleemosynis aliisque piis opéribus compensávit, jugibus lácrimis deplorans optimam sibi sortem fuísse præreptam. Mortua matre, cum a beatíssima Vírgine peteret ut se matrem esse monstraret, pii voti compos effecta est; semper perinde ac fília patrocinio Deiparæ pérfruens. Vigesimum ætátis annum agens, ad moniáles sanctæ Maríæ de Monte Carmelo se cóntulit. Ibi, per duodeviginti annos gravíssimis morbis et variis tentatiónibus vexata, constantíssime meruit in castris christianæ pœniténtiæ, nullo refecta pabulo cæléstium eárum consolatiónum quibus solet étiam in terris sanctitas abundare.
+
+        Angelicis ditáta virtútibus, non modo propriam, sed publicam étiam salútem sollicita caritate curávit. Quare severiórem veterum Carmelitárum regulam, Deo afflante et Pio quarto approbante, primum muliéribus, deínde viris observandam propósuit. Efflóruit in eo consílio omnípotens miserentis Dómini benedíctio; nam duo supra trigínta monasteria inops virgo pótuit ædificare, ómnibus humanis destituta auxíliis, quinimmo adversántibus plerumque sæculi princípibus. Infidelium et hæreticórum ténebras perpetuis deflebat lácrimis, atque, ad placandam divinæ ultiónis iram, voluntarios proprii corporis cruciátus Deo pro eórum salúte dicábat. Tanto autem divini amoris incendio cor ejus conflagrávit, ut mérito víderit Angelum igníto jáculo sibi præcordia transverberántem, et audíerit Christum, data déxtera, dicéntem sibi: Deinceps, ut vera sponsa, meum zelábis honórem. Eo consiliante, maxime arduum votum emisit efficiéndi semper quidquid perfectius esse intellígeret. Multa cæléstis sapiéntiæ documénta conscripsit, quibus fidelium mentes ad supernæ pátriæ desidérium maxime excitántur.
+
+        Cum autem assidua ederet exempla virtútum, tam anxio castigándi corporis desidério æstuabat, ut, quamvis secus suadérent morbi quibus afflictabátur, corpus ciliciis, catenis, urticárum manípulis aliisque asperrimis flagellis sæpe cruciaret, et aliquándo inter spinas volutaret, sic Deum álloqui sólita: Dómine, aut pati aut mori; se semper miserrima morte pereuntem existimans, quámdiu a cælésti ætérnæ vitæ fonte abesset. Prophetíæ dono excelluit, eamque divinis charismátibus tam liberáliter locupletábat Dóminus, ut sæpius exclámans péterent beneficiis in se divinis modum imponi. Intolerábili ígitur divini amoris incendio potius quam vi morbi, Albæ cum decúmberet, prænuntiáto suæ mortis die, ecclesiásticis sacramentis muníta, alumnos ad pacem, caritátem et regularem observantiam adhortata, sub colúmbæ specie puríssimam ánimam Deo réddidit, annos nata sexagínta septem annos millesimo quingentésimo octogesimo secundo, Idibus Octobris, juxta Kalendarii Romani emendatiónem. Ei moriénti adesse visus est inter Angelórum ágmina Christus Jesus; et arbor árida, cellæ próxima, statim efflóruit. Ejus corpus, usque ad hanc diem incorruptum, odorato liquore circumfusum, pia veneratióne cólitur. Miraculis cláruit ante et post óbitum, eamque Gregórius décimus quintus in Sanctórum númerum rétulit.
+      status: verified

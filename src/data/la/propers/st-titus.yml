@@ -1,0 +1,58 @@
+# Read directly from web/www/horas/Latin/Sancti/02-06.txt's own [Oratio]
+# and its English counterpart (the reference engine's own English is
+# already an idiomatic, non-literal rendering -- lightly polished here,
+# not machine-translated).
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátum Titum Confessórem tuum atque Pontíficem apostólicis virtútibus
+    decorásti: ejus méritis et intercessióne concéde; ut juste et pie vivéntes in hoc
+    sǽculo, ad cæléstem pátriam perveníre mereámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor-bishop
+# (`[Ant 2]`+`[Versum 2]` from the reference engine's Commune files, same
+# pattern st-alphonsus-liguori-commemoration.yml/st-francis-de-sales-
+# commemoration.yml use). St. Titus has no proper antiphon of his own in
+# the source (a plain "vide C4" reference), so this reuses the Common's
+# own text, marked `draft` per this app's "prefer draft over missing"
+# convention. Collect is his own real proper (st-titus-collect.yml),
+# unchanged. Needed for the rare case Feb 6 falls on a day that outranks
+# him (e.g. a Sunday), demoting him to a commemoration alongside Dorothea.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui beátum Titum Confessórem tuum atque Pontíficem apostólicis virtútibus
+    decorásti: ejus méritis et intercessióne concéde; ut juste et pie vivéntes in hoc
+    sǽculo, ad cæléstem pátriam perveníre mereámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Titus, Bishop and Confessor (Feb 6).
+# Sourced directly from web/www/horas/Latin/Sancti/02-06.txt,
+# English/Sancti/02-06.txt. Lectio4-6 combined into one reading, one
+# continuous vita -- same combining convention st-rose-of-lima.yml/
+# st-alphonsus-liguori.yml use. No Lectio7-9 of his own in the source
+# (`[Lectio7]`/`[Lectio8]` are plain `@Commune/C1a` cross-references) --
+# defers to the Common of a Confessor Bishop's own Nocturn 3, not
+# transcribed here. (The source's own Lectio94, a shorter 1-lesson
+# variant of the same biography, is an alternate not used here.)
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Titus Cretensium episcopum, vix Pauli Apóstoli verbo christianæ fidei sacramentis mysteriísque excultum, ea sanctitátis luce Ecclésiæ tunc vagiénti effulsisse compertum est, ut inter ejusdem Doctoris Géntium discipulos merúerit cooptari. Ascitus in partem óneris prædicatiónis, ádeo evangelizándi ardore, et fidelitate Paulo éxstitit carus, ut ipse, cum venísset Tróadem propter Evangélium Christi, testátus sit non habuísse requiem spiritui suo, eo quod Titum fratrem suum ibi non invenerit. Et paulo post Macedóniam petens, rursus suam in eum caritátem ita éxprimit: Sed qui consolátur húmiles, consolátus est nos Deus in adventu Titi.
+
+        Quam ob rem Corinthum ab Apóstolo missus, ea sapiéntia et lenitate legatiónis hujus munere functus est, quæ præsertim de fidelium pietáte eleemosynas colligendas ad sublevandam Ecclésiæ Hebræórum inópiam spectabat, ut Corinthios non solum in Christi fide continúerit, sed étiam desidérium, fletum, æmulatiónem inter eos pro Paulo, qui illos primus instituit, excitaverit. Ad effundéndum interim inter gentes linguis locisque distinctas divini verbi semen, plúribus terra marique itinéribus reléctis, magnaque animi firmitáte pro crucis trophæo curis laboribúsque exantlátis, una cum duce Paulo Cretæ insulam áppulit. Cum porro huic ecclésiæ epíscopus ab ipso Apóstolo deléctus esset, dubitándum non est quin in eo munere ita versátus sit, ut, juxta ipsíus Pauli præcéptoris mónita, seípsum præbúerit exemplum bonórum operum in doctrina, in integritate, in gravitáte.
+
+        Itaque tamquam lucérna inter eos, qui in idololatríæ et mendaciórum ténebris véluti in umbra mortis sedébant, religiónis jubar diffudit. Traditur eum inter Dálmatas, ut crucis vexíllum explicaret, strenue consudasse. Tandem meritórum et diérum plenus, quarto supra nonagesimum anno, pridie Nonas Januarii, pretiósa justórum morte obdormívit in Dómino, et sepúltus est in ecclésia ubi ab Apóstolo minister fuerat constitútus. Hujus nomen, a sancto Joánne Chrysostomo et a sancto Hieronymo præcipue commendátum, Martyrologio Romano eadem die inscriptum legitur: ejus autem festum summus Pontifex Pius nonus ab univérsa Ecclésia celebrari præcepit.
+      status: verified

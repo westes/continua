@@ -1,0 +1,45 @@
+collect:
+  text: |
+    Let us pray.
+    Graciously hear us, O Almighty and merciful God, and in thy goodness enable us to reap the fruit of this our healthful Fasting.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+collect/~-vespers:
+  text: |
+    Let us pray.
+    O Lord, shield us by thy protection, and keep us ever from all iniquity.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+benedictus-antiphon:
+  text: If two of you shall agree on earth * as touching anything that they shall ask, it shall be done for them of My Father, saith the Lord.
+  status: verified
+
+magnificat-antiphon:
+  text: Where two or three are gathered together in My Name, * there am I in the midst of them, saith the Lord.
+  status: verified
+
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Matthew 18:15-22
+      text: At that time, Jesus said to His disciples, "If your brother sin against you, go and show him his fault, between you and him alone. If he listen to you, you have won your brother. But if he do not listen to you, take with you one or two more so that on the word of two or three witnesses every word may be confirmed. And if he refuse to hear them, appeal to the Church, but if he refuse to hear even the Church, let him be to you as the heathen and the publican. Amen I say to you, whatever you bind on earth shall be bound also in heaven; and whatever you loose on earth shall be loosed also in heaven. I say to you further, that if two of you shall agree on earth about anything at all for which they ask, it shall be done for them by My Father in heaven. For where two or three are gathered together for My sake, there am I in the midst of them." Then Peter came up to Him and said, "Lord, how often shall my brother sin against me, and I forgive him? Up to seven times?" Jesus said to him, "I do not say to you seven times, but seventy times seven."
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Sermon 16 on the Words of the Lord
+      text: |-
+        Why tell him his fault? Because he hath made thee smart by trespassing against thee? God forbid. If thou tell him his fault because thou lovest thyself, thou dost nothing. But if thou tell it him because thou lovest him, then dost thou do exceeding well. Hear now, in the words of the Gospel itself, for love of whom, thou oughtest to do it, of thyself, or of him. The Lord saith: If he shall hear thee, thou hast gained thy brother. Therefore it behoveth thee to do it for his sake, that thou mayest gain him; since, if thou so do, haply thou mayest gain him; whereas, if thou do it not, he may haply perish. Why then are there so many who reckon lightly of a trespass against their brother, and say I have done no great offence, for I have trespassed only against my fellow man? Deem it not light; thou hast trespassed, though it be against thy fellow man.
+
+        Wouldest thou know that thy trespass against thy brother hath destroyed thee? If he against whom thou hast trespassed tell thee thy fault between himself and thee alone, and thou hear him, he hath gained thee. Gained thee! And what signify those words, if it be not that thou, if thou be not gained, shalt perish? For if thou shouldest not otherwise perish, in what sense can he be said to gain thee? Therefore let no man deem it a light thing when he trespasseth against his brother. For the Apostle Paul saith in a certain place: When ye sin so against the brethren, and wound their weak conscience, ye sin against Christ. We are all members of Christ. How dost thou not trespass against Christ, which trespassest against one of His members?
+
+        Let no man therefore say I have not trespassed against God, but only against my brother; that is, I have trespassed against my fellowman; and so the sin is light, if any at all. And perchance thou wilt argue that it is light, because it is quickly mended; thou hast trespassed against thy brother, but thou canst make satisfaction, and be right again; thou hast done the deadly thing quickly, and quickly canst thou find a remedy. O my brethren, which of us can hope for the kingdom of heaven, when we remember that the Gospel saith, "Whosoever shall say to his brother, Thou fool, shall be in danger of hell fire"? It is a thought full of dread; but, lo! the remedy: If thou bring thy gift to the altar, and there rememberest that thy brother hath aught against thee, leave there thy gift before the altar, and go thy way; first be reconciled to thy brother, and then come and offer thy gift. God is not wroth that thou tarry or ever thou offer thy gift; for God seeketh thyself more than thy gift.
+      responsory: |-
+        R. They told Jacob, saying, Thy son Joseph is yet alive, and he is governor over all the land of Egypt; and, when he heard it, his spirit revived, and he said: * It is enough; I will go, and see him before I die.
+        V. And when Jacob heard that his son yet lived, he was as one that awakeneth from a deep sleep, and said.
+        R. It is enough; I will go, and see him before I die.
+      status: verified

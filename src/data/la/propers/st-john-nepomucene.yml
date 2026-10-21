@@ -1,0 +1,44 @@
+# Read directly from web/www/horas/Latin/Sancti/05-16n.txt's own [Oratio].
+# The reference engine's English/Sancti/05-16n.txt is entirely empty -- no
+# translation of anything -- so the English below is this project's own
+# translation, marked draft.
+collect:
+  text: |
+    Orémus.
+    Deus, qui ob invíctum beáti Joánnis sacramentále siléntium, nova Ecclésiam tuam martýrii
+    coróna decorásti: da nobis, ejus intercessióne et exémplo, línguam caute custodíre; ac
+    ómnia pótius mala, quam ánimæ detriméntum, in hoc sǽculo toleráre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle, same shape as st-canute-
+# commemoration.yml. Ant 2/Versum 2 are the standard de-Communi pairing
+# for the Common of a Martyr not a Pontiff (C2a, per [Rule]) --
+# common-of-a-martyr-commemoration-antiphon.yml / lauds-versicle-common-of-
+# a-martyr.yml, both already verified elsewhere (Common text, not proper
+# to Nepomucene). Collect's English half is this project's own translation
+# (see st-john-nepomucene-collect.yml).
+commemoration:
+  text: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Deus, qui ob invíctum beáti Joánnis sacramentále siléntium, nova Ecclésiam tuam martýrii coróna decorásti: da nobis, ejus intercessióne et exémplo, línguam caute custodíre; ac ómnia pótius mala, quam ánimæ detriméntum, in hoc sǽculo toleráre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. John Nepomucene, Martyr (May 16).
+# Sourced from web/www/horas/Latin/Sancti/05-16n.txt's own [Lectio93]
+# (verified Latin). The reference engine's English/Sancti/05-16n.txt is
+# entirely empty -- no translation at all -- so the English below is this
+# project's own translation, marked draft.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Joánnes, Nepomúci Bohémiæ in óppido natus, unde Nepomucéni cognómen duxit, post suscéptas philosóphiæ, theológiæ sacrorúmque canónum lauréas sacerdótio initiátus, inter canónicos metropolitánæ ecclésiæ Pragénsis coóptátus fuit, et Evangélii coram rege Wenceláo quarto prædicándi provínciam demandátam hábuit. Régiis illum eleemósynis in páuperes erogándis præféctum, Joánna regína consciéntiæ sibi moderatórem ascívit. Cum autem Wencesláus in vítia præceps abriperétur, piæ autem conjúgis obtestatiónes ægre ferret, conténdere ausus est, ut in sacramentáli judício sacerdóti crédítæ regínæ arcána sibi a Joánne panderéntur. At Dei miníster blandítiis, torméntis et cárceris squalóre tentátus, nefáriæ regis cupiditáti fórtiter obstítit, et cum Wencesláus próximam in aquis, si obluctári pérgeret, submersiónem inténtaret, Joánnes invícta constántia terróres minásque refutávit. Itaque regis império in Moldávam flumen Pragam interflúens noctu dejéctus, illústrem martýrii palmam est consecútus. Benedíctus décimus tértius primum hunc sacramentális sigílli assertórem, arcáni fidem sánguine obsignántem, sanctórum Mártyrum catálogo adscrípsit.
+      status: verified

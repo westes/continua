@@ -1,0 +1,285 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Excita, Dómine, corda nostra ad præparándas Unigéniti tui vias: ut, per ejus advéntum, purificátis tibi méntibus servíre mereámur:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-12-05); Latin and English both taken from the page.
+lauds-capitulum:
+  text: 'Fratres: Quæcúmque scripta sunt, ad nostram doctrínam scripta sunt: ut per patiéntiam, et consolatiónem Scripturárum spem habeámus.'
+  citation: Rom 15:4
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-12-05); Latin and English both taken from the page.
+lauds-hymn:
+  text: |
+    Vox clara ecce íntonat,
+    Obscúra quæque íncrepat:
+    Pellántur éminus sómnia;
+    Ab æthre Christus prómicat.
+
+    Mens jam resúrgat tórpida
+    Quæ sorde exstat sáucia;
+    Sidus refúlget jam novum,
+    Ut tollat omne nóxium.
+
+    E sursum Agnus míttitur
+    Laxáre gratis débitum:
+    Omnes pro indulgéntia
+    Vocem demus cum lácrimis,
+
+    Secúndo ut cum fúlserit,
+    Mundúmque horror cínxerit,
+    Non pro reátu púniat,
+    Sed nos pius tunc prótegat.
+
+    Laus, honor, virtus, glória,
+    Deo Patri, et Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-12-05); Latin and English both taken from the page.
+lauds-responsory:
+  text: |
+    R.br. Veni ad liberándum nos * Dómine Deus virtútum.
+    R. Veni ad liberándum nos * Dómine Deus virtútum.
+    V. Osténde fáciem tuam et salvi érimus.
+    R. Dómine Deus virtútum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Veni ad liberándum nos * Dómine Deus virtútum.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-12-05); Latin and English both taken from the page.
+lauds-versicle:
+  text: 'V. Vox clamántis in desérto: Paráte viam Dómini. R. Rectas fácite sémitas ejus.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayPrima, 2027-12-05); Latin and English both taken from the page.
+prime-antiphon:
+  text: Ecce in núbibus cæli * Dóminus véniet cum potestáte magna, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2027-12-05); Latin and English both taken from the page.
+terce-antiphon:
+  text: 'Urbs fortitúdinis * nostræ Sion, Salvátor ponétur in ea murus et antemurále: aperíte portas, quia nobíscum Deus, allelúia.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2027-12-05); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    Rom 15:4 Fratres: Quæcúmque scripta sunt, ad nostram doctrínam scripta sunt: ut per patiéntiam, et consolatiónem Scripturárum spem habeámus.
+    R. Deo grátias.
+    V. Veni ad liberándum nos, Dómine, Deus virtútum.
+    R. Osténde fáciem tuam, et salvi érimus.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2027-12-05); Latin and English both taken from the page.
+sext-antiphon:
+  text: 'Ecce apparébit * Dóminus, et non mentiétur: si moram fécerit, exspécta eum, quia véniet, et non tardábit, allelúia.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2027-12-05); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    Rom 15:5-6 Deus autem patiéntiæ, et solácii det vobis idípsum sápere in altérutrum secúndum Jesum Christum: ut unánimes uno ore honorificétis Deum, et Patrem Dómini nostri Jesu Christi.
+    R. Deo grátias.
+    V. Osténde nobis, Dómine, misericórdiam tuam.
+    R. Et salutáre tuum da nobis.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2027-12-05); Latin and English both taken from the page.
+none-antiphon:
+  text: Ecce Dóminus * noster cum virtúte véniet, et illuminábit óculos servórum suórum, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2027-12-05); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    Rom 15:13 Deus autem spei répleat vos omni gáudio et pace in credéndo: ut abundétis in spe, et in virtúte Spíritus Sancti.
+    R. Deo grátias.
+    V. Super te, Jerúsalem, oriétur Dóminus.
+    R. Et glória ejus in te vidébitur.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-12-05); Latin and English both taken from the page.
+vespers-hymn:
+  text: |
+    Cónditor alme síderum,
+    Ætérna lux credéntium,
+    Christe, Redémptor ómnium,
+    Exáudi preces súpplicum.
+
+    Qui cóndolens intéritu
+    Mortis períre sǽculum,
+    Salvásti mundum lánguidum,
+    Donans reis remédium,
+
+    Vergénte mundi véspere,
+    Uti sponsus de thálamo,
+    Egréssus honestíssima
+    Vírginis matris cláusula.
+
+    Cujus forti poténtiæ
+    Genu curvántur ómnia;
+    Cæléstia, terréstria
+    Nutu faténtur súbdita.
+
+    Te deprecámur, hágie,
+    Ventúre judex sǽculi,
+    Consérva nos in témpore
+    Hostis a telo pérfidi.
+
+    Laus, honor, virtus, glória,
+    Deo Patri, et Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-12-05); Latin and English both taken from the page.
+vespers-responsory:
+  text: |
+    R.br. Osténde nobis Dómine * Misericórdiam tuam.
+    R. Osténde nobis Dómine * Misericórdiam tuam.
+    V. Et salutáre tuum da nobis.
+    R. Misericórdiam tuam.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Osténde nobis Dómine * Misericórdiam tuam.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-12-05); Latin and English both taken from the page.
+vespers-versicle:
+  text: V. Roráte, cæli, désuper, et nubes pluant justum. R. Aperiátur terra, et gérminet Salvatórem.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-12-05 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Joánnes autem * cum audísset in vínculis ópera Christi, mittens duos ex discípulis suis, ait illi: Tu es qui ventúrus es, an álium exspectámus?'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-12-05 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: 'Tu es, qui ventúrus es, * an álium exspectámus? Dícite Joánni quæ vidístis: Ad lumen rédeunt cæci, mórtui resúrgunt, páuperes evangelizántur, allelúia.'
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2026-12-05 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: Veni, Dómine, * visitáre nos in pace, ut lætémur coram te corde perfécto.
+  status: verified
+  temporal: true
+
+# Engine (Monastic Tridentinum 1617, command=prayLaudes, 2026-12-06); source Tempora/Adv2-0.txt's [Ant Laudes] entries 1,2,3,4,5 in Latin and English. Antiphons for the Sunday's own psalm slots (Ps 66 first, no antiphon). Applies via the numbers-override path for this temporal Sunday (resolve-common.ts getPsalmodyNumbersOverrideId).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 50
+      antiphon: Ecce in núbibus cæli * Dóminus véniet cum potestáte magna, allelúia.
+    - psalms:
+        - 117
+      antiphon: 'Urbs fortitúdinis * nostræ Sion, Salvátor ponétur in ea murus et antemurále: aperíte portas, quia nobíscum Deus, allelúia.'
+    - psalms:
+        - 62
+      antiphon: 'Ecce apparébit * Dóminus, et non mentiétur: si moram fécerit, exspécta eum, quia véniet, et non tardábit, allelúia.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Montes et colles * cantábunt coram Deo laudem, et ómnia ligna silvárum plaudent mánibus: quóniam véniet Dominátor Dóminus in regnum ætérnum, allelúia, allelúia.'
+  laudate:
+    antiphon: Ecce Dóminus * noster cum virtúte véniet, et illuminábit óculos servórum suórum, allelúia.
+
+# Engine (Monastic Tridentinum 1617, command=prayVespera, 2027-12-05). The Sunday's own Second Vespers psalm antiphons; First Vespers (Saturday evening) keeps the ferial Saturday psalmody (hours/vespers.ts).
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Ecce in núbibus cæli * Dóminus véniet cum potestáte magna, allelúia.
+    - psalms:
+        - 110
+      antiphon: 'Urbs fortitúdinis * nostræ Sion, Salvátor ponétur in ea murus et antemurále: aperíte portas, quia nobíscum Deus, allelúia.'
+    - psalms:
+        - 111
+      antiphon: 'Ecce apparébit * Dóminus, et non mentiétur: si moram fécerit, exspécta eum, quia véniet, et non tardábit, allelúia.'
+    - psalms:
+        - 112
+      antiphon: Ecce Dóminus * noster cum virtúte véniet, et illuminábit óculos servórum suórum, allelúia.
+
+# Nocturn 2-3, Second Sunday of Advent (temporalId advent-2). Sourced from
+# Tempora/Adv2-0.txt (Latin) / English/Tempora/Adv2-0.txt. See
+# advent-1.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Jerome's
+# Commentary on Isaiah, Book 4, on Isaiah 11 - combined into one reading.
+# Responsory: Lectio4's own (Responsory4, "Ecce veniet Dominus").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Matt 11:2-10, "Et réliqua") - Pope St. Gregory the
+# Great's Homily 6 on the Gospels begins within Lectio7 itself, same
+# pattern as advent-1. Combined Lectio7's homily portion (incipit dropped)
+# with Lectio8-9, using Responsory7 ("Egrediétur Dóminus de Samaría").
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Jerome, Commentary on Isaiah, Book 4
+      text: |-
+        Et egrediétur virga de radíce Jesse. Usque ad principium visiónis, vel pónderis Babylónis, quod vidit Isaías, fílius Amos, omnis hæc prophetía de Christo est: quam per partes vólumus explanare, ne simul propósita atque disserta lectóris confundat memóriam. Virgam et florem de radíce Jesse ipsum Dóminum Judæi interpretántur: quod scilicet in virga regnántis poténtia, in flore pulchritúdo monstrétur.
+
+        Nos autem virgam de radíce Jesse sanctam Mariam Vírginem intelligámus, quæ nullum hábuit sibi frúticem cohæréntem, de qua et supra légimus: Ecce virgo concípiet et pariet fílium. Et florem, Dóminum Salvatórem, qui dicit in Cántico canticórum: Ego flos campi, et lílium convallium.
+
+        Super hunc ígitur florem, qui de trunco et radíce Jesse per Mariam Vírginem repénte consúrget, requiéscet Spíritus Dómini: quia in ipso complácuit omnem plenitúdinem divinitátis habitáre corporáliter: nequáquam per partes, ut in ceteris Sanctis: sed juxta Evangélium eórum, quod Hebræo sermóne conscríptum legunt Nazaræi: Descéndet super eum omnis fons Spíritus Sancti. Dóminus autem Spíritus est: et ubi Spíritus Dómini, ibi libertas.
+      responsory: |-
+        R. Ecce véniet Dóminus, protéctor noster, Sanctus Israël, * Corónam regni habens in cápite suo.
+        V. Et dominábitur a mari usque ad mare, et a flúmine usque ad términos orbis terrárum.
+        R. Corónam regni habens in cápite suo.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 11:2-10
+      text: 'In illo témpore: Cum audísset Joánnes in vínculis ópera Christi, mittens duos de discípulis suis, ait illi: Tu es, qui ventúrus es, an alium exspectámus? Et respóndens Jesus, ait illis: Eúntes renuntiáte Joánni, quæ audístis et vidístis. Cæci vident, claudi ámbulant, leprósi mundántur, surdi áudiunt, mórtui resúrgunt, páuperes evangelizántur: et beátus est, qui non fúerit scandalizátus in me. Illis autem abeúntibus, cœpit Jesus dícere ad turbas de Joánne: Quid exístis in desértum vidére? arúndinem vento agitátam? Sed quid exístis vidére? hóminem móllibus vestitum? Ecce, qui móllibus vestiúntur, in dómibus regum sunt. Sed quid exístis vidére? Prophétam? Etiam dico vobis, et plus quam Prophétam. Hic est enim, de quo scriptum est: Ecce, ego mitto Angelum meum ante fáciem tuam, qui præparábit viam tuam ante te.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 6 on the Gospels
+      text: |-
+        Visis tot signis tantísque virtútibus, non scandalizári quisque pótuit, sed admirári. Sed infidélium mens grave in illo scándalum pértulit, cum eum post tot mirácula moriéntem vidit. Unde et Paulus dicit: Nos autem prædicámus Christum crucifíxum, Judǽis quidem scándalum, géntibus autem stultítiam. Stultum quippe homínibus visum est, ut pro homínibus Auctor vitæ morerétur: et inde contra eum homo scándalum sumpsit, unde ei ámplius débitor fíeri débuit. Nam tanto Deus ab homínibus dígnius honorándus est, quanto pro homínibus et indígna suscépit.
+
+        Quid est ergo dicere: Beátus qui non fúerit scandalizátus in me; nisi apérta voce abjectiónem mortis suæ humilitátemque signare? Ac si patenter dicat: Mira quidem facio, sed abjecta pérpeti non dedignor. Quia ergo moriéndo te súbsequor, cavéndum valde est homínibus, ne in me mortem despíciant, qui signa venerántur.
+
+        Sed dimissis Joánnis discípulis, quid de eodem Joánne turbis dicat, audiámus: Quid exístis in desértum vidére? Arúndinem vento agitatam? Quod videlicet non asseréndo, sed negando intulit. Arúndinem quippe mox ut aura contígerit, in partem álteram inflectit. Et quid per arúndinem, nisi carnalis animus designátur? Qui mox ut favore vel detractióne tangitur, statim in partem quámlibet inclinátur?
+      responsory: |-
+        R. Egrediétur Dóminus de Samaría ad portam, quæ réspicit ad Oriéntem: et véniet in Béthlehem ámbulans super aquas redemptiónis Judæ: * Tunc salvus erit omnis homo: quia ecce véniet.
+        V. Et præparábitur in misericórdia sólium ejus, et sedébit super illud in veritáte.
+        R. Tunc salvus erit omnis homo: quia ecce véniet.
+      status: verified

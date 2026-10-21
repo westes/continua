@@ -1,0 +1,49 @@
+# Read directly from web/www/horas/Latin/Sancti/09-09.txt's own [Oratio]
+# and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Sanctus tuus, Dómine, Gorgónius sua nos intercessióne lætíficet: et pia fáciat
+    solemnitáte gaudére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle, same combined-bundle shape as
+# ss-felix-and-adauctus-commemoration.yml -- see hours/resolve-common.ts's
+# sanctoralCommemorationPart for how this renders, falling back to the
+# bare collect (st-gorgonius-collect.yml) when this file didn't exist.
+# Reachable in practice: on Sep 9, the Nativity of the BVM's own octave
+# (`wins: duplex`) outranks Gorgonius's real Simplex rank outright, so he
+# is demoted to a commemoration every year, not just an edge case (see
+# calendar/saints/st-gorgonius.yml's own header). Ant 2/Versum 2 are the
+# standard de-Communi pairing for the Common of a Martyr (C2a-1, his own
+# source common) -- common-of-a-martyr-commemoration-antiphon.yml /
+# lauds-versicle-common-of-a-martyr.yml, both already verified elsewhere.
+commemoration:
+  text: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Sanctus tuus, Dómine, Gorgónius sua nos intercessióne lætíficet: et pia fáciat solemnitáte gaudére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Gorgonius, Martyr (Sep 9). Sourced
+# from web/www/horas/Latin/Sancti/09-09.txt, English/Sancti/09-09.txt.
+# The source carries only a single short lesson (Lectio93, itself headed
+# "Commemoratio S. Gorgonii Martyris" -- he never had a full proper
+# 9-lesson Matins of his own even historically), transcribed whole as
+# one Nocturn 2 reading, same "short/single source lesson" handling as
+# other minor-rank saints. No Nocturn 3 of his own -- defers to the
+# Common of a Martyr's own, not transcribed here, same convention as
+# st-rose-of-lima.yml/st-hadrian.yml.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Gorgónius, Nicomedíæ natus, Diocletiáni imperatóris cubiculárius, Dorothéo collega suo adjutóre, réliquos omnes cubículi minístros ad Christi fidem perdúxit. Uterque autem, cum vidísset quodam die Mártyrem coram Diocletiáno acerbíssime cruciári, ejus exémplo martýrii amóre incénsus est. Itaque ambórum hæc vox erúpit: Quid est, imperátor, quod hujus condemnáta senténtia, quæ nobis cum eo commúnis est, unum illum punis? istíus nostra étiam est fides, idem propósitum. Eos ígitur vinctos imperátor flagéllis cóncidi jubet, ita ut toto córpore cutis dirumperétur, et in plagas acétum infúndi sale permíxtum; mox revínctis in cratícula subjíci ímperat vim candéntium carbónum. Deníque, varie torti, suspéndio necáti sunt. Ac sancti Gorgónii corpus aliquándo Romam portátum, inter duas Lauros via Latína sepúltum, póstea a Gregório quarto summo Póntifice in basílicam Príncipis Apostolórum translátum est.'
+      status: verified

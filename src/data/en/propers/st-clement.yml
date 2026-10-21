@@ -1,0 +1,90 @@
+collect:
+  text: |
+    Let us pray.
+    O God, Who dost gladden us by the yearly Feast-day of thine holy Martyr, Clement mercifully grant unto us who keep their birthday, the strength to imitate their patience under suffering.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+commemoration:
+  text: |
+    Ant. As he began to move toward the sea * the people cried out with a loud voice: O Lord Jesus Christ, deliver him! And Clement wept, and said: Father, receive my spirit!
+    V. The righteous shall flourish like the palm tree:
+    R. He shall grow up like the cedar of Libanus.
+    Let us pray.
+    O God, Who dost gladden us by the yearly Feast-day of thine holy Martyr, Clement mercifully grant unto us who keep their birthday, the strength to imitate their patience under suffering.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: draft
+
+prime-antiphon:
+  text: While St. Clement prayed, * there appeared unto him the Lamb of God.
+  status: verified
+
+terce-antiphon:
+  text: Not for my own merits * hath the Lord sent me unto you, that I may share your crowns.
+  status: verified
+
+sext-antiphon:
+  text: I saw on the mountain * the Lamb standing, from beneath whose foot flowed a fountain of living waters.
+  status: verified
+
+none-antiphon:
+  text: All the nations * round about believed in Christ the Lord.
+  status: verified
+
+benedictus-antiphon:
+  text: 'As he began to move toward the sea * the people cried out with a loud voice: O Lord Jesus Christ, deliver him! And Clement wept, and said: Father, receive my spirit!'
+  status: verified
+
+magnificat-antiphon:
+  text: Lord, * Thou hast given unto thy Martyr Clement a tabernacle in the sea, after the fashion of a temple of marble, builded by the hands of Angels. And Thou givest a way thither unto the people on the land, that they may tell of thy marvellous works.
+  status: verified
+
+magnificat-antiphon/~-first:
+  text: Let us all pray Our Lord Jesus Christ * to open a spring for those that own His Name.
+  status: verified
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: While St. Clement prayed, * there appeared unto him the Lamb of God.
+    - psalms:
+        - 110
+      antiphon: Not for my own merits * hath the Lord sent me unto you, that I may share your crowns.
+    - psalms:
+        - 111
+      antiphon: I saw on the mountain * the Lamb standing, from beneath whose foot flowed a fountain of living waters.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'From beneath whose foot * a fountain of living waters flowed forth: the stream of the river that maketh glad the city of God.'
+  laudate:
+    antiphon: All the nations * round about believed in Christ the Lord.
+
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: While St. Clement prayed, * there appeared unto him the Lamb of God.
+    - psalms:
+        - 110
+      antiphon: Not for my own merits * hath the Lord sent me unto you, that I may share your crowns.
+    - psalms:
+        - 111
+      antiphon: I saw on the mountain * the Lamb standing, from beneath whose foot flowed a fountain of living waters.
+    - psalms:
+        - 116
+      antiphon: All the nations * round about believed in Christ the Lord.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Clement, the son of Faustinus, was a Roman, from the quarter of the Coelian Mount. He was a disciple of the blessed Peter, and is the same concerning whom Paul saith, writing to the Philippians: And I entreat thee also, true yokefellow, help those women which laboured with me in the Gospel, with Clement also, and with other my fellow-labourers, whose names are written in the book of life. He it was who divided the seven quarters of the city among seven scribes, one to each, whose duty it was to search out most carefully, and record in writing the sufferings and acts of the Martyrs. He himself also wrote much, and that most orthodox and healthy, whereby he clearly explained the Christian Religion.
+
+        His teaching and the holiness of his life brought many to believe in Christ, and he was therefore exiled by the Emperor Trajan to Kherson, in the Crimea, where he found two thousand Christians, who had been condemned by the same Trajan. There they all worked in the marble quarries. During their labour they suffered for want of water, and Clement prayed, and then went up an hill hard by, on the top whereof he saw a Lamb standing, touching with its right foot a flowing spring of sweet waters. Therewith they all quenched their thirst, and by this miracle many unbelievers were brought to believe in Christ, and began to honour the holiness of Clement.
+
+        These things moved Trajan to send a messenger to the Crimea, who tied an anchor about Clement's neck, and cast him into the deep of the sea. After it had been done, while the Christians were praying on the shore, the sea went back three miles, and when they followed it, they found a grotto of marble, in form like a temple, and therein a stone coffin wherein was laid the body of the Martyr. A Church was also built in the place where God had made the water to break forth. Clement lived as Pope nine years, six months, and six days. He held two Ordinations in the month of December, wherein he made ten Priests, two Deacons, and fifteen Bishops for diverse places.
+      status: verified

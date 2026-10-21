@@ -1,0 +1,64 @@
+# St. Anselm: proper Vespers hymn, Latin/SanctiM/04-21.txt's [Hymnus Vespera]. The reference has no English for it, so the English is a fresh translation, marked draft.
+# Before this file the saint fell to the Common's hymn.
+vespers-hymn:
+  text: |
+    Fortis en præsul, monachus fidélis,
+    Láurea doctor redimítus astat:
+    Festus Ansélmo chorus æmulétur
+    Dícere carmen.
+
+    Ante matúros sápiens hic annos,
+    Sǽculi florem pereúntis horret;
+    Atque Lanfránci documénta quærens,
+    Intrat erémum.
+
+    Intímum pulsans penetrále Verbi,
+    Fertur immótæ fidei volátu:
+    Dógmatum puros látices an ullus
+    Altius hausit?
+
+    Munus abbátis, pater alme, sumens,
+    Te voves caræ sóboli: benígnis
+    Débiles portas húmeris, alácres
+    Prǽvius hortans.
+
+    Prǽsulum defert tibi rex cáthedram;
+    Quid times luctam? próperant triúmphi;
+    Exteras gentes, generósus exsul,
+    Lúmine reples.
+
+    Sacra libértas, óvibus redémptis
+    Parta, cui Christus nihil antepónit,
+    Urget Ansélmum: stúdio quis æquo
+    Víndicat ipsam?
+
+    Clara fit Romæ tua fama, Præsul:
+    Póntifex summus tibi fert honóres;
+    Te fides poscit: siluére Patres:
+    Dogma tuere.
+
+    Sis memor sancti gregis, et patrónus
+    Sis ad ætérnam Tríadem, precámur,
+    Cuncta cui dignas résonent per orbem
+    Sǽcula laudes.
+    Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Anselm, Bishop, Confessor, Doctor
+# of the Church (Apr 21). Sourced directly from
+# web/www/horas/Latin/Sancti/04-21.txt, English/Sancti/04-21.txt.
+# Lectio4-6 combined into one reading, one continuous vita. Nocturn 3
+# (Lectio7-9) is a direct `@Commune/C4a:LectioN in 2 loco`
+# cross-reference to the Common of a Confessor Bishop Doctor, not
+# transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Ansélmus, Augustæ Prætoriæ in finibus Itáliæ, Gundulpho et Ermemberga, nobílibus et catholicis parentibus natus, a teneris annis assiduo litterarum studio, atque perfectióris vitæ desiderio, non obscurum futuræ sanctitatis et doctrinæ specimen dedit. Et licet juvenili ardore aliquando ad sæculi illecebras traheretur, brevi tamen in pristinam viam revocatus, patria et bonis omnibus derelictis, ad monasterium Beccense ordinis sancti Benedicti se contulit: ubi emissa regulari professione sub Herluino abbate observantissimo, et Lanfranco viro doctissimo, tanto animi fervore, et jugi studio in litteris et virtutibus assequendis profecit, ut mirum in modum tamquam sanctitatis et doctrinæ exemplar ab omnibus haberetur.
+
+        Abstinentiæ et continentiæ tantæ fuit, ut assiduitate jejunii omnis pene ciborum sensus in eo videretur exstinctus. Diurno enim tempore in exercitiis monasticis docendo, et respondendo variis de religione quæsitis, emenso, quod reliquum erat noctis, somno subtrahebat, ut divinis meditationibus, quas perenni lacrimarum imbre fovebat, mentem recrearet. Electus in priorem monasterii invidos fratres ita caritate, humilitate, et prudentia lenivit, ut quos æmulos acceperat, sibi et Deo amicos, maximo cum regularis observantiæ emolumento redderet. Mortuo abbate, et in ejus locum (licet invitus) suffectus, tanta doctrinæ et sanctitatis fama ubique refulsit, ut non modo regibus et episcopis venerationi esset, sed sancto Gregorio septimo étiam acceptus, qui tunc magnis persecutionibus agitatus, litteras amoris plenas ad eum dedit, quibus se et Ecclesiam catholicam ejus orationibus commendabat.
+
+        Defuncto Lanfranco archiepiscopo Cantuariensi, ejus olim præceptore, Anselmus, urgente Willelmo Angliæ rege, et instantibus clero ac populo, ipso tamen repugnante, ad ejusdem ecclesiæ regimen vocatus, statim (ut corruptos populi mores reformaret) verbo et exemplo prius, dein scriptis, et conciliis celebratis, pristinam pietatem, et ecclesiasticam disciplinam reduxit. Sed cum mox idem Willelmus rex vi et minis Ecclesiæ jura usurpare tentasset, ipse sacerdotali constantia restitit; bonorumque direptionem, et exsilium passus, Romam ad Urbanum secundum se contulit: a quo honorifice exceptus, et summis laudibus ornatus est, cum in Barensi concilio Spiritum Sanctum étiam a Filio procedentem contra Græcorum errorem innumeris Scripturarum, et sanctorum Patrum testimoniis propugnasset. E vivis Willelmo sublato, ab Henrico rege ejus fratre in Angliam revocatus, obdormivit in Domino, famam non solum miraculorum, et sanctitatis (præcipue ob insignem devotionem erga Domini nostri passionem, et beatam Virginem ejus Matrem) assecutus, sed étiam doctrinæ, quam ad defensionem christianæ religionis, animarum profectum, et omnium theologorum, qui sacras litteras scholastica methodo tradiderunt, normam cælitus hausisse ex ejus libris omnibus apparet.
+      status: verified

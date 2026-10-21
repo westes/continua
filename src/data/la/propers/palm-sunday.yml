@@ -1,0 +1,295 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui humáno géneri, ad imitándum humilitátis exémplum, Salvatórem nostrum carnem súmere, et crucem subíre fecísti: concéde propítius; ut et patiéntiæ ipsíus habére documénta, et resurrectiónis consórtia mereámur.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-03-29); Latin and English both taken from the page.
+lauds-capitulum:
+  text: 'Fratres: Hoc enim sentíte in vobis, quod et in Christo Jesu: qui, cum in forma Dei esset, non rapínam arbitrátus est esse se æquálem Deo: sed semetípsum exinanívit, formam servi accípiens, in similitúdinem hóminum factus, et hábitu invéntus ut homo.'
+  citation: Phil 2:5-7
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-03-29); Latin and English both taken from the page.
+lauds-hymn:
+  text: |
+    Lustris sex qui jam peráctis,
+    Tempus implens córporis,
+    Se volénte natus ad hoc,
+    Passióni déditus,
+    Agnus in Crucis levátur
+    Immolándus stípite.
+
+    Hic acétum, fel, arúndo,
+    Sputa, clavi, láncea:
+    Mite corpus perforátur,
+    Sanguis, unda prófluit:
+    Terra, pontus, astra, mundus,
+    Quo lavántur flúmine!
+
+    Crux fidélis, inter omnes
+    Arbor una nóbilis:
+    Nulla silva talem profert
+    Fronde, flore, gérmine:
+    Dulce lignum, dulces clavos,
+    Dulce pondus sústinet.
+
+    Flecte ramos, arbor alta,
+    Tensa laxa víscera,
+    Et rigor lentéscat ille,
+    Quem dedit natívitas:
+    Ut supérni membra Regis
+    Miti tendas stípite.
+
+    Sola digna tu fuísti
+    Ferre sæcli prétium,
+    Atque portum præparáre
+    Nauta mundo náufrago,
+    Quem sacer cruor perúnxit,
+    Fusus Agni córpore.
+
+    Glória et honor Deo
+    Usquequáqu e altíssimo:
+    Una Patri, Filióque,
+    Inclyto Paráclito:
+    Cui laus est et potéstas
+    Per ætérna sǽcula.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-03-29); Latin and English both taken from the page.
+lauds-responsory:
+  text: |
+    R.br. Érue a frámea * Deus ánimam meam.
+    R. Érue a frámea * Deus ánimam meam
+    V. Et de manu canis únicam meam.
+    R. Deus ánimam meam.
+    R. Érue a frámea * Deus ánimam meam.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-03-29); Latin and English both taken from the page.
+lauds-versicle:
+  text: V. Éripe me de inimícis meis, Deus meus. R. Et ab insurgéntibus in me líbera me.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayPrima, 2026-03-29); Latin and English both taken from the page.
+prime-antiphon:
+  text: 'Púeri Hebræórum * tolléntes ramos olivárum, obviavérunt Dómino clamántes et dicéntes: Hosánna in excélsis.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2026-03-29); Latin and English both taken from the page.
+terce-antiphon:
+  text: 'Púeri Hebræórum * vestiménta prosternébant in via, et clamábant, dicéntes: Hosánna Fílio David: benedíctus qui venit in nómine Dómini.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2026-03-29); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    Phil 2:5-7 Fratres: Hoc enim sentíte in vobis, quod et in Christo Jesu: qui, cum in forma Dei esset, non rapínam arbitrátus est esse se æquálem Deo: sed semetípsum exinanívit, formam servi accípiens, in similitúdinem hóminum factus, et hábitu invéntus ut homo.
+    R. Deo grátias.
+    V. Érue a frámea, Deus, ánimam meam.
+    R. Et de manu canis únicam meam.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2026-03-29); Latin and English both taken from the page.
+sext-antiphon:
+  text: Tibi revelávi * causam meam, defénsor vitæ meæ, Dómine, Deus meus.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2026-03-29); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    Phil 2:8-9 Humiliávit semetípsum factus obédiens usque ad mortem, mortem autem crucis. Propter quod et Deus exaltávit illum, et donávit illi nomen, quod est super omne nomen.
+    R. Deo grátias.
+    V. De ore leónis líbera me, Dómine.
+    R. Et a córnibus unicórnium humilitátem meam.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2026-03-29); Latin and English both taken from the page.
+none-antiphon:
+  text: 'Invocábo * nomen tuum, Dómine: ne avértas fáciem tuam a clamóre meo.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2026-03-29); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    Phil 2:10-11 In nómine Jesu omne genu flectátur cæléstium, terréstrium, et infernórum: et omnis lingua confiteátur, quia Dóminus Jesus Christus in glória est Dei Patris.
+    R. Deo grátias.
+    V. Ne perdas cum ímpiis, Deus, ánimam meam.
+    R. Et cum viris sánguinum vitam meam.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-03-29); Latin and English both taken from the page.
+vespers-hymn:
+  text: |
+    Vexílla Regis pródeunt:
+    Fulget Crucis mystérium,
+    Quo carne carnis Cónditor
+    Suspénsus est patíbulo.
+
+    Quo vulnerátus ínsuper
+    Mucróne diro lánceæ,
+    Ut nos laváret crímine,
+    Manávit und a et sánguine.
+
+    Impléta sunt quæ cóncinit
+    David fidéli cármine,
+    Dicens: In natiónibus
+    Regnávit a ligno Deus.
+
+    Arbor decór a et fúlgida,
+    Ornáta Regis púrpura,
+    Elécta digno stípite
+    Tam sancta membra tángere.
+
+    Beáta, cujus bráchiis
+    Sæcli pepéndit prétium,
+    Statéra facta córporis,
+    Prædámque tulit tártari.
+    Sequens stropha dicitur flexis genibus.
+    O Crux, ave, spes única,
+    Hoc Passiónis témpore
+    Auge piis justítiam,
+    Reísque dona véniam.
+
+    Te summa, Deus, Trínitas,
+    Colláudet omnis spíritus:
+    Quos per Crucis mystérium
+    Salvas, rege per sǽcula.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-03-29); Latin and English both taken from the page.
+vespers-responsory:
+  text: |
+    R.br. De ore leónis * líbera me, Dómine.
+    R. De ore leónis * líbera me, Dómine.
+    V. Et a córnibus unicórnium humilitátem meam.
+    R. Líbera me, Dómine.
+    R. De ore leónis * líbera me, Dómine.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2026-03-29); Latin and English both taken from the page.
+vespers-versicle:
+  text: V. Éripe me, Dómine, ab hómine malo. R. A viro iníquo éripe me.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-03-21 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Turba multa, * quæ convénerat ad diem festum, clamábat Dómino: Benedíctus qui venit in nómine Dómini: Hosánna in excélsis.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-03-21 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: 'Scriptum est enim: * Percútiam pastórem, et dispergéntur oves gregis: postquam autem resurréxero, præcédam vos in Galilǽam: ibi me vidébitis, dicit Dóminus.'
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-04-12 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Pater juste, * mundus te non cognóvit: ego autem novi te, quia tu me misísti.'
+  status: verified
+  temporal: true
+
+# Engine (Monastic Tridentinum 1617, command=prayLaudes, 2027-03-21); source Tempora/Quad6-0.txt's [Ant Laudes] entries 1,2,3,4,5 in Latin and English. Antiphons for the Sunday's own psalm slots (Ps 66 first, no antiphon). Applies via the numbers-override path for this temporal Sunday (resolve-common.ts getPsalmodyNumbersOverrideId).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 50
+      antiphon: 'Dóminus Deus * auxiliátor meus: et ídeo non sum confúsus.'
+    - psalms:
+        - 117
+      antiphon: 'Circumdántes * circumdedérunt me: et in nómine Dómini vindicábor in eis.'
+    - psalms:
+        - 62
+      antiphon: 'Júdica causam meam: * defénde, quia potens es, Dómine.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Cum Angelis * et púeris fidéles inveniámur, triumphatóri mortis clamántes: Hosánna in excélsis.'
+  laudate:
+    antiphon: Confundántur * qui me persequúntur, et non confúndar ego, Dómine, Deus meus.
+
+# Nocturn 2-3, Palm Sunday (temporalId palm-sunday). Sourced from
+# Tempora/Quad6-0.txt (Latin) / English/Tempora/Quad6-0.txt. See
+# advent-1.yml/lent-1.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Leo the Great's
+# Sermon on the Passion of the Lord. Responsory: Lectio4's own
+# (Responsory4, "Conclúsit vias meas inimícus").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Matt 21:1-9, the entry into Jerusalem, "Et réliqua") -
+# St. Ambrose's Commentary on Luke, Book 9, begins within Lectio7 itself,
+# same pattern used throughout this sweep. Combined Lectio7's homily
+# portion (incipit dropped) with Lectio8-9, using Responsory7 ("Dóminus
+# mecum est tamquam bellátor fortis") - the first responsory of the group
+# the combined reading spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily). Unlike
+# every other Sunday in this sweep, Palm Sunday's Missale [Evangelium] tag
+# is the Passion narrative (Matt 26-27), read at Mass itself - Matt 21:1-9,
+# the entry into Jerusalem this Nocturn 3 homily is actually about, is a
+# second, separate Gospel proclaimed earlier at the Blessing of Palms
+# (Tempora/Quad6-0.txt's own Benedictio Palmorum section, not its
+# [Evangelium] tag) - sourced from there instead. Matins now shows the
+# full Gospel, then the homily on it, matching post-pentecost-15's
+# original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Leo the Great, Sermon on the Passion of the Lord
+      text: |-
+        Desideráta nobis, dilectíssimi, et univérso optábilis mundo adest festívitas Domínicæ passiónis, quæ nos inter exsultatiónes spirituálium gaudiórum silére non pátitur. Quia etsi diffícile est, de eádem solemnitáte sǽpius digne aptéque dissérere: non est tamen líberum sacerdóti in tanto divínæ misericórdiæ sacraménto fidélibus pópulis subtráhere sermónis offícium: cum ipsa matéria ex eo quod est ineffábilis, fandi tríbuat facultátem: nec possit defícere quod dicátur, dum numquam potest satis esse quod dícitur. Succúmbat ergo humána infírmitas glóriæ Dei, et in explicándis opéribus misericórdiæ ejus, ímparem se semper invéniat. Laborémus sensu, hæreámus ingénio, deficiámus elóquio: bonum est ut nobis parum sit, quod étiam recte de Dómini majestáte sentímus.
+
+        Dicénte enim prophéta: Quǽrite Dóminum, et confirmámini, quǽrite fáciem ejus semper: némini præsuméndum est, quod totum quod quærit, invénerit, ne désinat propinquáre, qui cessárit accédere. Quid autem inter ómnia ópera Dei, in quibus humánæ admiratiónis fatigátur inténtio, ita contemplatiónem mentis nostræ et obléctat et súperat, sicut pássio Salvatóris? Qui ut humánum genus vínculis mortíferæ prævaricatiónis absólveret, et sæviénti diábolo poténtiam suæ majestátis occúluit, et infirmitátem nostræ humilitátis objécit. Si enim crudélis et supérbus inimícus consílium misericórdiæ Dei nosse potuísset, Judæórum ánimos mansuetúdine pótius temperáre, quam injústis ódiis studuísset accéndere: ne ómnium captivórum amítteret servitútem, dum nihil sibi debéntis perséquitur libertátem.
+
+        Feféllit ergo illum malígnitas sua, íntulit supplícium Fílio Dei, quod cunctis fíliis hóminum in remédium verterétur. Fudit sánguinem justum, qui reconciliándo mundo et prétium esset, et póculum. Suscépit Dóminus, quod secúndum propósitum suæ voluntátis elégit. Admísit in se ímpias manus furéntium: quæ dum próprio incúmbunt scéleri, famulátæ sunt Redemptóri. Cujus étiam circa interfectóres suos tanta erat pietátis afféctio, ut de cruce súpplicans Patri, non se vindicári, sed illis postuláret ignósci.
+      responsory: |-
+        R. Conclúsit vias meas inimícus, insidiátor factus est mihi sicut leo in abscóndito, replévit et inebriávit me amaritúdine: deduxérunt in lacum mortis vitam meam, et posuérunt lápidem contra me. * Vide, Dómine, iniquitátes illórum: et júdica causam ánimæ meæ, defénsor vitæ meæ.
+        V. Factus sum in derísum omni pópulo meo, cánticum eórum tota die.
+        R. Vide, Dómine, iniquitátes illórum: et júdica causam ánimæ meæ, defénsor vitæ meæ.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 21:1-9
+      text: 'In illo témpore: Cum appropinquásset Jesus Jerosólymis, et venísset Béthphage ad montem Olivéti: tunc misit duos discípulos suos, dicens eis: Ite in castéllum, quod contra vos est, et statim inveniétis ásinam alligátam et pullum cum ea: sólvite et addúcite mihi: et si quis vobis áliquid díxerit, dícite, quia Dóminus his opus habet, et conféstim dimíttet eos. Hoc autem totum factum est, ut adimplerétur, quod dictum est per Prophétam, dicéntem: Dícite fíliæ Sion: Ecce, Rex tuus venit tibi mansuétus, sedens super ásinam et pullum, fílium subjugális. Eúntes autem discípuli, fecérunt, sicut præcépit illis Jesus. Et adduxérunt ásinam et pullum: et imposuérunt super eos vestiménta sua, et eum désuper sedére fecérunt. Plúrima autem turba stravérunt vestiménta sua in via: álii autem cædébant ramos de arbóribus, et sternébant in via: turbæ autem, quæ præcedébant et quæ sequebántur, clamábant, dicéntes: Hosánna fílio David: benedíctus, qui venit in nómine Dómini.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Commentary on Luke, Book 9
+      text: |-
+        Pulchre relíctis Judǽis, habitatúrus in afféctibus géntium, templum Dóminus ascéndit. Hoc enim templum est verum, in quo non in líttera, sed in spíritu Dóminus adorátur. Hoc Dei templum est, quod fídei séries, non lápidum structúra fundávit. Deserúntur ergo qui óderant: eligúntur qui amatúri erant. Et ídeo ad montem venit Olivéti, ut novéllas óleas in sublími virtúte plantáret, quarum mater est illa, quæ sursum est, Jerúsalem. In hoc monte est ille cæléstis agrícola: ut plantáti omnes in domo Dei, possint virítim dícere: Ego autem sicut olíva fructífera in domo Dómini.
+
+        Et fortásse ipse mons Christus est. Quis enim álius tales fructus ferret oleárum, non curvescéntium ubertáte baccárum, sed spíritus plenitúdine géntium fœcundárum? Ipse est per quem ascéndimus, et ad quem ascéndimus. Ipse est jánua, ipse est via, qui aperítur, et qui áperit: qui pulsátur ab ingrediéntibus, et ab eméritis adorátur. Ergo in castéllo erat, et ligátus erat pullus cum ásina: non póterat solvi nisi jussu Dómini. Solvit eum manus apostólica. Talis actus, talis vita, talis grátia. Esto talis et tu, ut possis ligátos sólvere.
+
+        Nunc considerémus qui fúerint illi, qui erróre detécto, de paradíso ejécti, in castéllum sint relegáti. Et vides, quemádmodum quos mors expúlerat, vita revocáverit. Et ídeo secúndum Matthǽum, et ásinam et pullum légimus: ut quia in duóbus homínibus utérque fúerat sexus expúlsus, in duóbus animálibus sexus utérque revocétur. Ergo illic in ásina matre quasi Hevam figurávit erróris: hic autem in pullo generalitátem pópuli Gentílis expréssit: et ídeo pullo sedétur ásinæ. Et bene, in quo nemo sedit: quia nullus, ántequam Christus, natiónum pópulos vocávit ad Ecclésiam. Dénique secúndum Marcum sic habes: Quem nemo adhuc sedit hóminum.
+      responsory: |-
+        R. Dóminus mecum est tamquam bellátor fortis: proptérea persecúti sunt me, et intellégere non potuérunt: Dómine, probas renes et corda: * Tibi revelávi causam meam.
+        V. Vidísti, Dómine, iniquitátes eórum advérsum me: júdica judícium meum.
+        R. Tibi revelávi causam meam.
+      status: verified

@@ -1,0 +1,220 @@
+# Lent's own Matins hymn ("Ex more docti mýstico"), used throughout Lent
+# up to (not including) Passiontide, which has its own separate hymn
+# (`matins-hymn-passiontide.yml`). Live-verified against both a plain
+# Lenten Sunday (2026-03-01) and a plain Lenten feria (2026-03-03, a
+# Tuesday) — byte-identical, so this season doesn't vary its Matins hymn
+# by weekday. Self-contained with its own closing doxology stanza baked
+# in (a fixed, unique ending, "Præsta, beáta Trínitas..." — not the
+# shared weekday doxology).
+matins-hymn:
+  text: |-
+    Ex more docti mýstico
+    Servémus hoc jejúnium,
+    Deno diérum círculo
+    Ducto quater notíssimo.
+
+    Lex et prophétæ prímitus
+    Hoc prætulérunt, póstmodum
+    Christus sacrávit, ómnium
+    Rex atque factor témporum.
+
+    Utámur ergo párcius
+    Verbis, cibis et pótibus,
+    Somno, jocis, et árctius
+    Perstémus in custódia.
+
+    Vitémus autem péssima,
+    Quæ súbruunt mentes vagas:
+    Nullúmque demus cállidi
+    Hostis locum tyránnidi.
+
+    Dicámus omnes cérnui:
+    Clamémus atque sínguli,
+    Plorémus ante Júdicem,
+    Flectámus iram víndicem,
+
+    Nostris malis offéndimus
+    Tuam, Deus, cleméntiam:
+    Effúnde nobis désuper,
+    Remíssor, indulgéntiam.
+
+    Meménto quod sumus tui,
+    Licet cadúci, plásmatis:
+    Ne des honórem nóminis
+    Tui, precámur, álteri.
+
+    Laxa malum, quod fécimus,
+    Auge bonum, quod póscimus:
+    Placére quo tandem tibi
+    Possímus hic, et pérpetim.
+
+    Præsta, beáta Trínitas,
+    Concéde, simplex Únitas,
+    Ut fructuósa sint tuis
+    Jejuniórum múnera. Amen.
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[Quad Laudes_]",
+# Psalterium/Special/Major Special.txt). Live-verified 2026-09-04 against
+# both a Lenten Ember Saturday (2026-02-28) and a plain Lenten Wednesday
+# (2026-03-04) — identical, so this is genuinely season-wide content, not
+# weekday-varying, matching this file's own single (no-weekday-suffix)
+# id. (An earlier pass had mistakenly called this same content "homeless"
+# — it already had a real home here all along, just never marked
+# verified; see TODO.md.)
+lauds-capitulum:
+  text: Clama, ne cesses, quasi tuba exálta vocem tuam, et annúntia pópulo meo scélera eórum, et dómui Jacob peccáta eórum.
+  citation: Isa 58:1
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Quad
+# Laudes]", Psalterium/Special/Major Special.txt) — full separate
+# Monastic text ("Jam Christe sol justítiæ"), not a substitution against
+# the Roman "O sol salútis, íntimis". Live-verified 2026-09-04 (already
+# seen live against a Lenten Ember Saturday, 2026-02-28, while checking
+# lauds-hymn-saturday.yml's own real content earlier the same session —
+# byte-identical).
+lauds-hymn:
+  text: |
+    Jam Christe sol justítiæ,
+    Mentis diéscant ténebræ:
+    Virtútum ut lux rédeat,
+    Terris diem cum réparas.
+
+    Dans tempus acceptábile,
+    Et pǽnitens cor tríbue,
+    Convértat ut benígnitas
+    Quos longa suffert píetas.
+
+    Quiddámque pæniténtiæ
+    Da ferre, quamvis grávium,
+    Majóre tuo múnere,
+    Quo démptio fit críminum.
+
+    Dies venit, dies tua,
+    In qua reflórent ómnia:
+    Lætémur in hac ad tuam
+    Per hanc redúcti grátiam.
+
+    * Te rerum univérsitas,
+    Clemens, adóret, Trínitas,
+    Et nos novi per véniam,
+    Novum canámus cánticum.
+    Amen.
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[Responsory Quad
+# Laudes]", Psalterium/Special/Major Special.txt). Live-verified
+# 2026-09-04 — see lauds-capitulum-lent.yml's own header.
+lauds-responsory:
+  text: |
+    R.br. Ipse liberávit me * de láqueo venántium.
+    R. Ipse liberávit me * de láqueo venántium.
+    V. Et a verbo áspero.
+    R. De láqueo venántium.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ipse liberávit me * de láqueo venántium.
+  status: verified
+
+# The versicle right before the Benedictus, in Lent. Sourced from Divinum
+# Officium's Monastic block: "[Quad Versum 2] = @:Quad Versum 3" — a bare
+# alias to the same text used at Vespers (see vespers-versicle-lent.yml).
+# Live-verified 2026-09-04 — see lauds-capitulum-lent.yml's own header.
+lauds-versicle:
+  text: |
+    V. Ángelis suis Deus mandávit de te.
+    R. Ut custódiant te in ómnibus viis tuis.
+  status: verified
+
+# New file, 2026-09-15: closes the seasonal-variant gap
+# `prime-lectio-per-annum.yml`'s own header already flagged, wrongly
+# attributed to "milestone 4" (that blocker was stale -- see the dated
+# TODO.md entry this sweep came out of; calendar/temporal.ts's resolveSeason
+# has been a complete, real implementation for a while). Sourced directly
+# from web/www/horas/Latin/Psalterium/Special/Prima Special.txt's own [Quad]
+# tag and its English counterpart.
+prime-lectio/quad:
+  text: 'Quǽrite Dóminum dum inveníri potest: invocáte eum, dum prope est.'
+  citation: Isa 55:6
+  status: verified
+
+# New file, 2026-09-15: closes the seasonal-variant gap
+# `prime-lectio-per-annum.yml`'s own header already flagged, wrongly
+# attributed to "milestone 4" (that blocker was stale -- see the dated
+# TODO.md entry this sweep came out of; calendar/temporal.ts's resolveSeason
+# has been a complete, real implementation for a while). Sourced directly
+# from web/www/horas/Latin/Psalterium/Special/Prima Special.txt's own [Quad5]
+# tag and its English counterpart.
+prime-lectio/quad5:
+  text: Fáciem meam non avérti ab increpántibus, et conspuéntibus in me. Dóminus Deus auxiliátor meus, et ídeo non sum confúsus.
+  citation: Isa 50:6-7
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[Quad Vespera_]",
+# Psalterium/Special/Major Special.txt). Live-verified 2026-09-04 against
+# a plain Lenten Wednesday (2026-03-04).
+vespers-capitulum:
+  text: 'Inter vestíbulum et altáre plorábunt sacerdótes, minístri Dómini, et dicent: Parce, Dómine, parce pópulo tuo: et ne des hereditátem tuam in oppróbrium, ut dominéntur eis natiónes.'
+  citation: Joel 2:17
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Quad
+# Vespera]", Psalterium/Special/Major Special.txt): two substitutions
+# against the base "[Hymnus Quad Vespera]" text — a word-order swap in
+# stanza 3 ("Ad nóminis laudem tui" -> "Ad laudem tui nóminis") and a full
+# replacement of stanza 4 — applied by hand here. Live-verified 2026-09-04
+# against a plain Lenten Wednesday (2026-03-04), including the Monastic
+# swap. English has no separate Monastic variant in the source.
+vespers-hymn:
+  text: |
+    Audi, benígne Cónditor,
+    Nostras preces cum flétibus,
+    In hoc sacro jejúnio
+    Fusas quadragenário.
+
+    Scrutátor alme córdium,
+    Infírma tu scis vírium:
+    Ad te revérsis éxhibe
+    Remissiónis grátiam.
+
+    Multum quidem peccávimus,
+    Sed parce confiténtibus:
+    Ad laudem tui nóminis
+    Confer medélam lánguidis.
+
+    Sic corpus extra cónteri
+    Dona per abstinéntiam,
+    Jejúnet ut mens sóbria
+    A labe prorsus críminum.
+
+    * Præsta, beáta Trínitas,
+    Concéde, simplex Únitas;
+    Ut fructuósa sint tuis
+    Jejuniórum múnera.
+    Amen.
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[Responsory Quad
+# Vespera]", Psalterium/Special/Major Special.txt). Live-verified
+# 2026-09-04 against a plain Lenten Wednesday (2026-03-04).
+vespers-responsory:
+  text: |
+    R.br. Scápulis suis * obumbrábit tibi.
+    R. Scápulis suis * obumbrábit tibi.
+    V. Et sub pennis ejus sperábis.
+    R. Obumbrábit tibi.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Scápulis suis * obumbrábit tibi.
+  status: verified
+
+# The versicle right before the Magnificat, in Lent. Sourced from Divinum
+# Officium's Monastic block ("[Quad Versum 3]", Psalterium/Special/Major
+# Special.txt) — "[Quad Versum 2]" (Lauds' own) is a bare alias to this
+# same text, so Lauds and Vespers share it here too (see
+# lauds-versicle-lent.yml). Live-verified 2026-09-04 against a plain
+# Lenten Wednesday (2026-03-04).
+vespers-versicle:
+  text: |
+    V. Ángelis suis Deus mandávit de te.
+    R. Ut custódiant te in ómnibus viis tuis.
+  status: verified

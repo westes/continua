@@ -1,0 +1,49 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08.
+# Pulled from the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt + M1617.txt, own title
+# "S Priscae Virginis") and its own source file, not the merged per-date
+# files those tables' fileref points at directly -- see TODO.md.
+collect:
+  text: |
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut, qui beátæ Priscæ Vírginis et Mártyris tuæ natalícia cólimus; et ánnua solemnitáte lætémur, et tantæ fídei proficiámus exémplo.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-virgin-martyr (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags actually used for
+# a mere commemoration, confirmed against this exact category via an
+# independently live-verified precedent elsewhere in this app). st-prisca has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper. Collect is the saint's own
+# real proper (st-prisca-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Símile est regnum cælórum * hómini negotiatóri quærénti bonas margarítas: invénta una pretiósa, dedit ómnia sua, et comparávit eam.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut, qui beátæ Priscæ Vírginis et Mártyris tuæ natalícia cólimus; et ánnua solemnitáte lætémur, et tantæ fídei proficiámus exémplo.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Prisca, Virgin and Martyr (Jan 18,
+# sharing the date with the Chair of St. Peter at Rome — see
+# chair-of-st-peter-at-rome.yml). No SanctiM/01-18r*.txt at all (only
+# the plain SanctiM/01-18.txt exists, and that one bases on Sancti/01-18,
+# i.e. the Chair of St. Peter, not Prisca) — same "the shared plain
+# file isn't necessarily yours" wrinkle as the pre-1955 pass (memory
+# vu-matins-pre1955-saints); Prisca is in fact pre-1955-but-post-1617
+# too, just missed in that earlier pass's date-collision handling.
+# web/www/horas/Latin/Sancti/01-18r.txt, English/Sancti/01-18r.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Prisca, nobilis virgo Romana, trédecim annos nata, Cláudio imperatóre, christianæ fidei accusata, ejusdem jussu ducta ad Apóllinis templum, ut idolis immolaret, cum rem detestarétur, cólaphis cæsa, in carcerem traditur: atque inde emissa, cum in fidei constántia perseveraret, affecta verbéribus, ferventíque ádipe delibuta, rursus in carcerem includitur. Post triduum in amphitheatrum producta, leoni objícitur; qui suæ feritátis oblítus, humíliter se ad ejus pedes abjecit. Quæ póstea in ergastulo triduum inedia afflicta, in equuleo suspénditur, et ungulis férreis excarnificáta in rogum injícitur, unde étiam mirabíliter evasit incólumis. Dénique extra Urbem cápite abscisso, virginitátis palmam martyrii coróna cumulávit. Cujus corpus via Ostiénsi, décimo ab Urbe milliário, a Christiánis décimo quinto Kalendas Februarii sepelítur.'
+      status: verified

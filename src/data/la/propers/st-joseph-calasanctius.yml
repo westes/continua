@@ -1,0 +1,77 @@
+# Read directly from web/www/horas/Latin/Sancti/08-27.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui per sanctum Joséphum Confessórem tuum, ad erudiéndam spíritu
+    intellegéntiæ ac pietátis juventútem, novum Ecclésiæ tuæ subsídium
+    providére dignátus es: præsta, quǽsumus; nos, ejus exémplo et
+    intercessióne, ita fácere et docére, ut prǽmia consequámur ætérna.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-joseph-calasanctius has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-joseph-calasanctius-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui per sanctum Joséphum Confessórem tuum, ad erudiéndam spíritu
+    intellegéntiæ ac pietátis juventútem, novum Ecclésiæ tuæ subsídium
+    providére dignátus es: præsta, quǽsumus; nos, ejus exémplo et
+    intercessióne, ita fácere et docére, ut prǽmia consequámur ætérna.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2-3 readings for St. Joseph Calasanctius, Confessor
+# (Aug 27). Sourced directly from web/www/horas/Latin/Sancti/08-27.txt,
+# English/Sancti/08-27.txt. Nocturn 2: Lectio4-6 combined into one
+# reading, one continuous vita.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope is now authored too
+# (isGospel: true, immediately before Chrysostom's homily). The homily
+# itself directly quotes Matt 18:10 ("Vidéte, ne contemnátis unum ex his
+# pusíllis... Angeli eórum in cœlis semper vident fáciem Patris mei"),
+# placing it within the same Matt 18:1-10 pericope already authored for
+# `st-michael.yml` (via that feast's own `@Sancti/05-08` Missale
+# redirect) — reused verbatim rather than re-deriving, since Chrysostom's
+# Homily 60 on Matthew covers this same passage.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Josephus Calasanctius a Matre Dei, Petraltæ in Aragonia nobili genere natus, a teneris annis futuræ in pueros caritatis et eorum institutionis indicia præbuit. Nam adhuc parvulus eos ad se convocatos in mysteriis fidei et sacris precibus erudiebat. Humanis divinisque litteris egregie doctus cum studiis theologicis Valentiæ operam daret, nobilis potentisque feminæ illecebris fortiter superatis, virginitatem, quam Deo voverat, inoffensam insigni victoria servavit. Sacerdos ex voto factus, a compluribus episcopis in Castellæ Novæ, Aragoniæ et Catalauniæ regnis in partem laboris ascitus, exspectationem omnium vicit, pravis ubique moribus emendatis, ecclesiastica disciplina restituta, inimicitiis cruentisque factionibus mirifice exstinctis. At cælesti visione et Dei voce frequenter admonitus, Romam profectus est.
+
+        In Urbe summa vitæ asperitate, vigiliis et jejuniis corpus affligens, in orationibus et cælestium rerum contemplatione dies noctesque versabatur, septem ejusdem Urbis ecclesias singulis fere noctibus obire solitus: quem inde morem complures annos servavit. Dato piis sodalitatibus nomine, mirum quanto ardore pauperes, infirmos potissimum, aut carceribus detentos eleemosynis omnique pietatis officio sublevaret. Lue Urbem depopulante, una cum sancto Camillo, tanto fuit actus impetu caritatis, ut præter subsidia ægrotis pauperibus large collata, ipsa étiam defunctorum cadavera suis humeris tumulanda transferret. Verum cum divinitus accepisset, se ad informandos intelligentiæ ac pietatis spiritu adolescentulos præcipue pauperes, destinari, ordinem Clericorum regularium pauperum Matris Dei scholarum piarum fundavit, qui peculiarem curam circa puerorum eruditionem ex proprio instituto profiterentur: ipsumque ordinem a Clemente octavo, a Paulo quinto aliusque summis Pontificibus magnopere probatum, brevi tempore per plurimas Europæ provincias et regna mirabiliter propagavit.
+
+        Quamvis ordini universo præesset, totisque viribus ad animarum salutem incumberet, numquam tamen intermisit pueros, præsertim pauperiores, erudire, quorum scholas verrere, eosque domum comitari consuevit. In eo summæ patientiæ et humilitatis munere, valetudine étiam infirma, duos et quinquaginta annos perseveravit: dignus propterea, quem crebris Deus miraculis coram discipulis illustraret, et cui beatissima Virgo cum puero Jesu, illis orantibus benedicente, appareret. Cum obitus sui diem, et ordinis tunc prope eversi restitutionem atque incrementum prænuntiasset, secundum et nonagesimum annum agens, Romæ obdormivit in Domino, octavo Kalendas Septembris, anno millesimo sexcentesimo quadragesimo octavo. Ejus cor et lingua post sæculum integra et incorrupta reperta sunt. Ipse vero multis post obitum quoque signis a Deo illustratus, primum a Benedicto decimo quarto beatorum cultu decoratus fuit, ac deínde a Clemente decimo tertio inter sanctos solemniter est relatus.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 18:1-10
+      text: 'In illo témpore: Accessérunt discípuli ad Jesum, dicéntes: Quis, putas, major est in regno cœlórum? Et ádvocans Jesus párvulum, státuit eum in médio eórum et dixit: Amen, dico vobis, nisi convérsi fuéritis et efficiámini sicut párvuli, non intrábitis in regnum cœlórum. Quicúmque ergo humiliáverit se sicut párvulus iste, hic est major in regno cœlórum. Et qui suscéperit unum párvulum talem in nómine meo, me súscipit. Qui autem scandalizáverit unum de pusíllis istis, qui in me credunt, expédit ei, ut suspendátur mola asinária in collo ejus, et demergátur in profúndum maris. Væ mundo a scándalis! Necésse est enim, ut véniant scándala: verúmtamen væ hómini illi, per quem scándalum venit! Si autem manus tua vel pes tuus scandalízat te, abscíde eum et projíce abs te: bonum tibi est ad vitam ingrédi débilem vel claudum, quam duas manus vel duos pedes habéntem mitti in ignem ætérnum. Et si óculus tuus scandalízat te, érue eum et projice abs te: bonum tibi est cum uno óculo in vitam intráre, quam duos óculos habéntem mitti in gehénnam ignis. Vidéte, ne contemnátis unum ex his pusíllis: dico enim vobis, quia Angeli eórum in cœlis semper vident fáciem Patris mei, qui in cœlis est.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. John Chrysostom, Homily 60 on Matthew, ch. 18
+      text: |-
+        Videte ne aliquem istorum contempseritis parvulorum, quia eorum Angeli Patris mei faciem semper aspiciunt, et quia ego propter eos veni, et hæc Patris mei voluntas est. Ad tuendos conservandosque pusilios diligentiores nos reddit. Perspicis quam ingentia in tutelam tenujum mœnia erexerit, et quantum studium curamque habeat, ne perdantur tum quia supremas despicientibus eos pœnas statuit, tum quia summam pollicetur mercedem his, qui curam eorum suscipiunt; idque tam suo, quam Patris exemplo corroborat.
+
+        Dominum igitur étiam nos imitemur, et nihil pro fratribus omittamus, étiam eorum quæ humilia viliaque nimium videntur; sed si administratione nostra étiam opus fuerit, quamvis tenuis atque abjectus quidem, cui administrandum sit, fuerit, quamvis ardua nobis res atque laboris plena esse videatur, omnia hæc pro fratris salute tolerabiliora facilioraque, oro, videantur: tanto enim studio tantaque cura Deus dignam esse animam ostendit, ut neque Filio suo pepercerit.
+
+        Si non est nobis satis ad salutem, quod virtuose ipsi vivamus, sed oportet aliorum salutem re ipsa desiderare; cum neque nos recte vivamus, neque alios hortemur, quid respondebimus? Quæ nobis spes salutis reliqua erit? Quid majus, quam animis moderari, quam adolescentulorum fingere mores? Omni certe pictore, omni certe statuario, ceterisque hujusmodi omnibus excellentiorem hunc duco, qui juvenum animos fingere non ignoret.
+      status: verified

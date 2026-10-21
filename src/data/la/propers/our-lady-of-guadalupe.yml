@@ -1,0 +1,53 @@
+# Read directly from web/www/horas/Latin/Sancti/12-12n.txt's own [Oratio]
+# and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui sub beatíssimæ Vírginis Maríæ singulári patrocínio constitútos perpétuis
+    benefíciis nos cumulári voluísti: præsta supplícibus tuis; ut, cujus hódie
+    commemoratióne lætámur in terris, ejus conspéctu perfruámur in cælis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in
+    unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (our-lady-of-guadalupe-antiphon.yml), paired with
+# the standard BVM commemoration versicle already verified elsewhere in
+# this app (propers/common/lauds-suffrage-bvm.yml -- 'V. Ora pro nobis
+# sancta Dei Genitrix'). Collect is the saint's own real proper
+# (our-lady-of-guadalupe-collect.yml), unchanged. Same pattern as
+# apparition-of-the-immaculate-bvm-commemoration.yml.
+commemoration:
+  text: |
+    Ant. Elégi et sanctificávi locum istum; * Ut sit ibi nomen meum, et permáneant óculi
+    mei, et cor meum ibi cunctis diébus.
+    V. Ora pro nobis sancta Dei Génitrix.
+    R. Ut digni efficiámur promissiónibus Christi.
+    Orémus.
+    Deus, qui sub beatíssimæ Vírginis Maríæ singulári patrocínio constitútos perpétuis
+    benefíciis nos cumulári voluísti: præsta supplícibus tuis; ut, cujus hódie
+    commemoratióne lætámur in terris, ejus conspéctu perfruámur in cælis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in
+    unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Read directly from web/www/horas/Latin/Sancti/12-12n.txt's own [Ant 1]
+# and its English counterpart.
+benedictus-antiphon:
+  text: Elégi et sanctificávi locum istum; * Ut sit ibi nomen meum, et permáneant óculi mei, et cor meum ibi cunctis diébus.
+  status: verified
+
+# Matins Nocturn 2 reading for Our Lady of Guadalupe, Dec 12. Sourced
+# from web/www/horas/Latin/Sancti/12-12n.txt's single Lectio94 (the
+# apparition narrative, one continuous piece before &teDeum) and its
+# English counterpart. No Nocturn 3 in the source at all (unlike Our
+# Lady of Lourdes' 12-10bmv cross-reference) -- defers to the Common of
+# the BVM's own Nocturn 3, not transcribed here, same pattern as
+# st-hyacinth.yml's "No Lectio7-9" note.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Méxici, in colle Tepeiacénsi, anno millésimo quingentésimo trigésimo primo Deípara Virgo María Joánni Dídaco neóphyto, uti pie tráditur, sese vidéndam prǽbuit, eíque ad antístitem Joánnem de Zumárraga mandátum dedit, quod et instánter iterávit, de æde síbimet ínibi construénda. Epíscopus vero signum expétiit. Mox neóphytum pátruo moritúro sacraménta longínquius ab apparitiónis loco quæréntem, tértio visu dignátur alma Mater, de pátrui sanitáte serénat, rosásque extra tempus obórtas, in ejus pállio compósitas, ad epíscopum deférri jubet. Cujus in conspéctu rosis effúsis, Maríæ imágo, ipsi pállio impréssa, uti tráditur, mirum in modum præséntibus appáruit. Quæ in sacéllo episcopáli primum asserváta, dein ad exstrúctam ædem in colle Tepeiacénsi transláta, dénique in magnífico templo excépta est, quo turmátim plebes Mexicánæ magis magísque conveníre cœpérunt, veneratiónis grátia et frequéntiæ miraculórum. Ideóque tamquam præsentíssimum præsídium Mexicáni antístites, univérso pópulo plaudénte, beatam Vírginem Maríam de Guadalúpe in primáriam Patrónam gentis Mexicánæ elegérunt, quod Benedíctus décimus quartus apostólica auctoritáte rite confirmávit. Leo tértius décimus sacram effígiem áurea coróna, Colúmbi recurrénte die, anno millésimo octingentésimo nonagésimo quinto per Mexicánum archiepíscopum decorávit. Sanctus vero Pius décimus beátam Vírginem Guadalupénsem univérsæ Américæ Latínæ Patrónam declarávit.
+      status: verified

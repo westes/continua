@@ -1,0 +1,160 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-08-20).
+collect:
+  text: |
+    Orémus.
+    Intercéssio nos, quǽsumus, Dómine, beáti Bernárdi Abbátis comméndet: ut, quod nostris méritis non valémus, ejus patrocínio assequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-bernard-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-abbot (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-bernard-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Intercéssio nos, quǽsumus, Dómine, beáti Bernárdi Abbátis comméndet: ut, quod nostris méritis non valémus, ejus patrocínio assequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# St. Bernard: proper Lauds hymn, Latin/SanctiM/08-20.txt's [Hymnus Laudes]. The reference has no English for it, so the English is a fresh translation, marked draft.
+# Before this file the saint fell to the Common's hymn.
+lauds-hymn:
+  text: |
+    Lacte quondam profluéntes,
+    Ite, montes vos procul:
+    Ite, colles, fusa quondam
+    Unde mellis flúmina;
+    Israël, jactáre late
+    Manna priscum désine.
+
+    Ecce cujus corde sudant,
+    Cujus ore prófluunt
+    Dulcióres lacte fontes,
+    Mellis amnes ǽmuli:
+    Ore tanto, corde tanto
+    Manna nullum dúlcius.
+
+    Quæris unde duxit ortum
+    Tanta lactis cópia;
+    Unde favus, unde prompta
+    Tanta mellis suávitas;
+    Unde tantum manna fluxit,
+    Unde tot dulcédines.
+
+    Lactis imbres Virgo fudit
+    Cǽlitus puérpera:
+    Mellis amnes os leónis
+    Excitávit mórtui:
+    Manna sylvæ, cælitúmque
+    Solitúdo próxima.
+
+    Doctor o Bernárde, tantis
+    Aucte cæli dótibus,
+    Lactis hujus, mellis hujus,
+    Funde rores désuper;
+    Funde stillas, plenióre
+    Jam potítus gúrgite.
+
+    Summa summo laus Parénti,
+    Summa laus et Fílio:
+    Far tibi sit, sancte, manans
+    Ex utróque, Spíritus;
+    Ut fuit, nunc et per ævum
+    Compar semper glória.
+    Amen.
+  status: verified
+
+# St. Bernard: proper Vespers hymn, Latin/SanctiM/08-20.txt's [Hymnus Vespera]. The reference has no English for it, so the English is a fresh translation, marked draft.
+# Before this file the saint fell to the Common's hymn.
+vespers-hymn:
+  text: |
+    Jam Regína discúbuit,
+    Sedens post Unigénitum:
+    Nardus odórem tríbuit,
+    Bernárdus tradens spíritum.
+
+    Dulcis Regínæ gústui
+    Fructus sui suávitas:
+    Dulcis ejus olfáctui
+    Nardi Bernárdi sánctitas.
+
+    Veni sponsa de Líbano,
+    Coronánda divínitus,
+    Ut Bernárdus de clíbano
+    Veníret Sancti Spíritus.
+
+    Quæ est ista progrédiens
+    Velut auróra rútilans?
+    Quis est iste transíliens
+    Colles, sanctis conjúbilans?
+
+    Hæc glória terríbilis,
+    Sicut castrórum ácies:
+    Hic grátia mirábilis,
+    Ut Assuéri fácies.
+
+    Ora pro nobis Dóminum,
+    Prædúlcis fumi vírgula:
+    Inclína Patrem lúminum,
+    Pastor, ardens ut fácula.
+
+    Sit Trinitáti glória,
+    Per quam triúmphus Vírginis
+    Et Bernárdi felícitas
+    Manent in cæli cúria.
+    Amen.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 08-20
+# st-bernard (new saint-level second). See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle:
+  text: |
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 08-20
+# st-bernard (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Bernard's own day (2026-08-20). The Benedictus
+# antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Bernard, Abbot, Doctor (Aug 20) —
+# SanctiM/08-20.txt inherits the whole day (`@Sancti/08-20`) with no
+# Nocturn 2/3 override, so this saint's own vita is sourced from the
+# Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/08-20.txt, English/Sancti/08-20.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Bernárdus, Fóntanis in Burgúndia honésto loco natus, adolescéns propter egrégiam formam veheménter sollicitátus a muliéribus, numquam de senténtia coléndæ castitátis dimovéri pótuit. Quas diáboli tentatiónes ut effúgeret, duos et vigínti annos natus, monastérium Cisterciensé, unde hic ordo incépit, et quod tum sanctitáte florébat, íngredi constítuit. Quo Bernárdi consílio cógnito, fratres summópere conáti sunt eum a propósito deterrére: in quo ipse eloquéntior ac felícior fuit. Nam sic eos aliósque multos in suam perdúxit senténtiam, ut cum eo trigínta júvenes eámdem religiónem suscéperint. Mónachus jejúnio ita déditus erat, ut quóties suméndus esset cibus, tóties torméntum subíre viderétur. In vigíliis étiam et oratiónibus mirífice se exercébat: et christiánam paupertátem colens, quasi cæléstem vitam agébat in terris, ab omni caducárum rerum cura et cupiditáte aliénam.
+
+        Elucébat in eo humílitas, misericórdia, benígnitas: contemplatióni autem sic addíctus erat, ut vix sénsibus, nisi ad offícia pietátis, uterétur: in quibus tamen prudéntiæ laude excellébat. Quo in stúdio occupátus, Genuénsem, ac Mediolanénsem, aliósque episcopátus oblátos recusávit, proféssus se tanti offícii múnere indígnum esse. Abbas factus Claravallénsis, multis in locis ædificávit monastéria, in quibus præclára Bernárdi institútio ac disciplína diu viguit. Romæ, sanctórum Vincéntii et Anastásii monastério ab Innocéntio secúndo Papa restitúto præfécit abbátem illum, qui póstea Eugénius tértius Summus Póntifex fuit, ad quem étiam librum misit de Consideratióne.
+
+        Multa prætérea scripsit, in quibus appáret, eum doctrína pótius divínitus trádita, quam labóre comparáta, instrúctum fuísse. In summa virtútum laude exorátus a máximis princípibus de eórum componéndis controvérsiis, et de ecclesiásticis rebus constituéndis, sǽpius in Itáliam venit. Innocéntium item secúndum Pontíficem Máximum in confutándo schísmate Petri Leónis, cum apud imperatórem et Henrícum Angliæ regem, tum in concílio Pisis coácto, egrégie adjúvit. Dénique tres et sexagínta annos natus, obdormívit in Dómino, ac miráculis illústris, ab Alexándro tértio Papa inter sanctos relátus est. Pius vero octávus Póntifex Máximus ex sacrórum Rítuum Congregatiónis consílio sanctum Bernárdum universális Ecclésiæ Doctórem declarávit et confirmávit, nec non Missam et Offícium de Doctóribus ab ómnibus recitári jussit, atque indulgéntias plenárias quotánnis in perpétuum órdinis Cisterciénsium ecclésias visitántibus die hujus sancti festo concéssit.
+      status: verified

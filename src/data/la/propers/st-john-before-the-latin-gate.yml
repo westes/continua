@@ -1,0 +1,241 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2029-05-06).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui conspicis, quia nos undique mala nostra perturbant: præsta, quǽsumus; ut beáti Joánnis Apóstoli tui et Evangelistæ intercéssio gloriósa nos prótegat.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-john-before-the-latin-gate-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-apostle (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-john-before-the-latin-gate-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Fíliæ Jerúsalem, veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+    Orémus.
+    Deus, qui conspicis, quia nos undique mala nostra perturbant: præsta, quǽsumus; ut beáti Joánnis Apóstoli tui et Evangelistæ intercéssio gloriósa nos prótegat.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-05-06, clean year.
+lauds-capitulum:
+  text: Stabunt justi in magna constántia advérsus eos qui se angustiavérunt et qui abstulérunt labóres eórum.
+  citation: Sap 5:1
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-05-06, clean year.
+lauds-hymn:
+  text: |
+    Claro pascháli gáudio
+    Sol mundo nitet rádio,
+    Cum Christum jam Apóstoli
+    Visu cernunt corpóreo.
+
+    Osténsa sibi vúlnera
+    In Christi carne fúlgida,
+    Resurrexísse Dóminum
+    Voce faténtur pública.
+
+    Rex Christe clementíssime,
+    Tu corda nostra pósside,
+    Ut tibi laudes débitas
+    Reddámus omni témpore.
+
+    Quǽsumus, Auctor ómnium,
+    In hoc pascháli gáudio,
+    Ab omni mortis ímpetu
+    Tuum defénde pópulum.
+
+    * Glória tibi Dómine,
+    Qui surrexísti a mórtuis,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-05-06, clean year.
+lauds-responsory:
+  text: |
+    R.br. Sancti et justi in Dómino gaudéte, * Allelúia, allelúia.
+    R. Sancti et justi in Dómino gaudéte, * Allelúia, allelúia.
+    V. Vos elégit Deus in hereditátem sibi.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Sancti et justi in Dómino gaudéte, * Allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-05-06, clean year.
+lauds-versicle:
+  text: |-
+    V. Pretiósa in conspéctu Dómini, allelúia.
+    R. Mors Sanctórum ejus, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2029-05-06, the same clean date already used for lauds-capitulum-st-john-before-the-latin-gate.yml. This hymn's closing doxology stanza is seasonally variable in the source (tagged `{Doxology: PaschT}`); what's captured here is whatever rendered live on the query date above, not a season-aware substitution -- same known-not-modeled gap as the Paschaltide alleluia suffix elsewhere (see TODO.md).
+vespers-hymn:
+  text: |
+    Tristes erant Apóstoli
+    De nece sui Dómini,
+    Quem pœna mortis crudéli
+    Servi damnárant ímpii.
+
+    Sermóne blando Angelus
+    Prædíxit muliéribus:
+    In Galilǽa Dóminus
+    Vidéndus est quantócius.
+
+    Illæ dum pergunt cóncitæ,
+    Apóstolis hoc dícere,
+    Vidéntes eum vívere,
+    Osculántur pedes Dómini.
+
+    Quo ágnito, discípuli
+    In Galilǽam própere
+    Pergunt vidére fáciem
+    Desiderátam Dómini.
+
+    Quǽsumus, Auctor ómnium,
+    In hoc pascháli gáudio,
+    Ab omni mortis ímpetu
+    Tuum defénde pópulum.
+
+    * Glória tibi Dómine,
+    Qui surrexísti a mórtuis,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2029-05-06, the same clean date already used for lauds-capitulum-st-john-before-the-latin-gate.yml.
+vespers-responsory:
+  text: |
+    R.br. Lux perpétua lucébit Sanctis tuis, Dómine, * Allelúia, allelúia.
+    R. Lux perpétua lucébit Sanctis tuis, Dómine, * Allelúia, allelúia.
+    V. Et ætérnitas témporum.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Lux perpétua lucébit Sanctis tuis, Dómine, * Allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2029-05-06, the same clean date already used for lauds-capitulum-st-john-before-the-latin-gate.yml.
+vespers-versicle:
+  text: |-
+    V. Pretiósa in conspéctu Dómini, allelúia.
+    R. Mors Sanctórum ejus, allelúia.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 05-06
+# st-john-before-the-latin-gate (saint file = second). First Vespers variant; the default (second Vespers) file
+# is the same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Sancti et justi in Dómino gaudéte, allelúia.
+    R. Vos elégit Deus in hereditátem sibi, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. John Before the Latin Gate's own day (2026-05-06) --
+# the Benedictus antiphon. Corrects the previous version of this file,
+# which had been sourced from the Roman/secular rite's Sancti/05-06.txt's
+# own [Ant 1] instead: real but different text from what Monastic 1617
+# actually renders at Lauds, same mistake as St. Lawrence's earlier fix
+# -- shares the Eastertide Common-of-Several-Martyrs text several other
+# May saints this pass also use.
+benedictus-antiphon:
+  text: Fíliæ Jerúsalem, veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-05-06 st-john-before-the-latin-gate second (continua had "estotefortes"). Paschaltide Alleluia is left to
+# hours/paschal-alleluia.ts. See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon:
+  text: In ferventis * ólei dolium missus beátus Joánnes Apóstolus, divina se protegénte grátia, illæsus exívit.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-05-05 st-john-before-the-latin-gate first (continua had "tradentenimuos"). First Vespers variant; the
+# default is the same id without "-first". Paschaltide Alleluia is left to hours/paschal-alleluia.ts. See
+# hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: In ferventis * ólei dolium missus beátus Joánnes Apóstolus, divina se protegénte grátia, illæsus exívit.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-05-06, clean year.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: 'Sancti tui, * Dómine, florébunt sicut lílium, allelúia: et sicut odor bálsami erunt ante te, allelúia.'
+    - psalms:
+        - 99
+      antiphon: 'In cæléstibus regnis * Sanctórum habitátio est, allelúia: et in ætérnum réquies eórum, allelúia.'
+    - psalms:
+        - 62
+      antiphon: In velaménto * clamábant Sancti tui, Dómine, allelúia, allelúia, allelúia.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Spíritus et ánimæ * justórum hymnum dícite Deo nostro, allelúia, allelúia.
+  laudate:
+    antiphon: Fulgébunt justi * sicut sol in conspéctu Dei, allelúia.
+
+# Matins Nocturn 2-3 readings for St. John before the Latin Gate (May
+# 6) — SanctiM/05-06.txt's own Lectio5-9 all resolve back to
+# `@Sancti/05-06:LectioN` (resliced), so this feast's own proper
+# content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/05-06.txt, English/Sancti/05-06.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous
+# excerpt from St. Jerome.
+# Nocturn 3: Lectio7's Gospel citation (Matt 20:20-23) was previously a
+# bare incipit ("Et réliqua") with only the homily authored, a single
+# excerpt of St. Jerome's own commentary. No responsory given for
+# either reading.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — sourced from this
+# feast's own Missale Evangelium, given in full (missa/Latin+English/
+# Sancti/05-06.txt), not guessed at. (St. James the Greater's own
+# Missale Gospel — a separate feast, Jul 25 — is this same pericope
+# reused verbatim via its own `@Sancti/05-06` redirect; authored there
+# independently, not copy-pasted from this file.)
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Jerome, Priest, Against Jovinian, Bk. 1
+      text: |-
+        Joánnes Apóstolus, unus ex discípulis Dómini, qui mínimus natu tráditur fuísse inter Apóstolos, et quem fides Christi vírginem repérerat, virgo permánsit; et ídeo plus amátur a Dómino, et recúmbit super pectus Jesu; et, quod Petrus, qui uxórem habúerat, interrogáre non audet, illum rogat, ut intérroget; et post resurrectiónem, nuntiánte María Magdaléne quod Dóminus resurrexísset, utérque cucúrrit ad sepúlcrum, sed ille prævénit; cumque essent in navi, et piscaréntur in lacu Genésareth, Jesus stabat in líttore, nec sciébant Apóstoli quem vidérent; solus virgo Vírginem agnóscit, et dicit Petro: Dóminus est.
+
+        Fuit autem Joánnes et Apóstolus, et Evangelísta, et Prophéta: Apóstolus, quia scripsit ad ecclésias ut magíster; Evangelísta, quia librum Evangélii cóndidit, quod, excépto Matthǽo, álii ex duódecim Apóstoli non fecérunt; Prophéta, vidit enim in Patmos ínsula, in qua fúerat a Domitiáno príncipe ob Dómini martýrium relegátus, Apocalýpsim, infiníta futurórum mystéria continéntem. Refert autem Tertulliánus, quod Romæ missus in fervéntis ólei dólium, púrior et vegétior exíverit, quam intráverit.
+
+        Sed et ipsum ejus Evangélium multum distat a céteris. Matthǽus quasi de hómine íncipit scríbere: Liber generatiónis Jesu Christi, fílii David, fílii Abraham; Lucas a sacerdótio Zacharíæ; Marcus a prophetía Malachíæ et Isaíæ. Primus habet fáciem hóminis, propter genealogíam; secúndus fáciem vítuli, propter sacerdótium; tértius fáciem leónis, propter vocem clamántis in desérto, Paráte viam Dómini, rectas fácite sémitas ejus. Joánnes vero noster quasi áquila ad supérna volat, et ad ipsum Patrem pervénit, dicens: In princípio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 20:20-23
+      text: 'In illo témpore: Accéssit ad Jesum mater filiórum Zebedǽi cum fíliis suis, adórans et petens áliquid ab eo. Qui dixit ei: Quid vis? Ait illi: Dic, ut sédeant hi duo fílii mei, unus ad déxteram tuam, et unus ad sinístram in regno tuo. Respóndens autem Jesus, dixit: Néscitis, quid petátis. Potéstis bíbere cálicem, quem ego bibitúrus sum? Dicunt ei: Póssumus. Ait illis: Cálicem quidem meum bibétis: sedére autem ad déxteram meam vel sinístram, non est meum dare vobis, sed quibus parátum est a Patre meo.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Priest, Commentary on Matthew, Bk. 3 (on Matt 20:20-23)
+      text: 'Unde opiniónem regni habet mater filiórum Zebedǽi, ut cum Dóminus díxerit: Fílius hóminis tradétur princípibus sacerdótum et scribis, et condemnábunt eum morte, et tradent Géntibus ad illudéndum et flagellándum et crucifigéndum; et ignomíniam passiónis timéntibus discípulis nuntiáret, illa glóriam póstulet triumphántis? Hac, ut reor, ex causa, quia post ómnia díxerat Dóminus, Et tértia die resúrget; putávit eum múlier post resurrectiónem íllico regnatúrum, et hoc, quod in secúndo advéntu promíttitur, in primo esse compléndum; et, aviditáte femínea præséntia cupit, ímmemor futurórum.'
+      status: verified

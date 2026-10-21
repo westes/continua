@@ -1,0 +1,51 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2027-10-25).
+collect:
+  text: |
+    Orémus.
+    Beatórum Mártyrum tuórum, Dómine, Chrysánthi et Daríæ, quǽsumus, adsit nobis orátio: ut, quos venerámur obséquio, eórum pium júgiter experiámur auxílium.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-chrysanthus-and-daria-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (ss-chrysanthus-and-daria-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Beatórum Mártyrum tuórum, Dómine, Chrysánthi et Daríæ, quǽsumus, adsit nobis orátio: ut, quos venerámur obséquio, eórum pium júgiter experiámur auxílium.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Chrysanthus and Daria's own day (2027-10-25 -- 2026's
+# own Oct 25 is the last Sunday of October, Christ the King in this
+# app's own calendar; the base Monastic 1617 version queried here
+# predates that 1925 feast and just shows the plain Sunday underneath).
+# The Benedictus antiphon.
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Chrysanthus and Daria, Martyrs
+# (Oct 25) — SanctiM/10-25.txt inherits the whole day (`@Sancti/10-25`)
+# with no Nocturn 2/3 override, so this feast's own proper content is
+# sourced from the Tridentine track exactly as for a pre-1955 saint
+# (see memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/10-25.txt, English/Sancti/10-25.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Chrysanthus et Daría cónjuges, nobili genere nati, fide étiam clariores, quam Daría, maríti opera, cum baptismo susceperat; Romæ innumerábilem hóminum multitúdinem, hæc mulíerum, ille virórum, ad Christum convertérunt. Quare Celerinus præfectus comprehensos trádidit Cláudio tribuno, qui jussit a milítibus Chrysanthum vinctum cruciátibus torqueri; sed víncula ómnia resoluta sunt, mox cómpedes, in quos conjéctus fuerat, confracti. Deínde, bovis corio inclusum, in ardentíssimo sole constituunt. Tum, pédibus ac mánibus catena constrictis, in obscurum carcerem detrudunt; ubi, solutis catenis, claríssima lux locum illustrávit. Daría veri in lupánar compulsa, leónis tutela, dum in oratióne defixa est, a contumelia divinitus defensa est. Denique in arenariam, quæ est via Salaria, uterque ductus, effossa terra, lapidibus óbruti, parem martyrii corónam adepti sunt.
+      status: verified

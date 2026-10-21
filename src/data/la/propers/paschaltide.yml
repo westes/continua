@@ -1,0 +1,273 @@
+# Paschaltide's own Matins hymn ("Rex sempitérne Dómine"), live-verified
+# against a plain post-Easter-Octave feria (2026-04-20, a Monday, "Feria
+# Secunda infra Hebdomadam II post Octavam Paschæ"). Covers vu's whole
+# `PASCHALTIDE_SEASONS` cluster (eastertide/ascensiontide/pentecost) per
+# `seasonalOfficeSuffix`'s existing collapse — but the Ascension octave
+# itself is live-verified to actually use a real, different, not-yet-
+# authored proper hymn of its own ("...Qui scandis super sídera",
+# 2026-05-15) that this app doesn't model yet; this generic Paschaltide
+# text will incorrectly apply there for now — a known simplification
+# matching a same-shape, pre-existing gap in Lauds' own
+# `lauds-hymn-paschaltide.yml`, not a new regression. Flagged in TODO.md.
+#
+# Self-contained with its own closing doxology stanza baked in ("Glória
+# tibi Dómine, Qui surrexísti a mórtuis..." — byte-identical to the
+# already-existing `hymn-doxology-pasch.yml` used by Lauds/Vespers, but
+# baked directly into the body here rather than split out/reattached,
+# since this hour doesn't need the seasonal doxology-override mechanism
+# for its own sub-season variants (Ascension/Pentecost/etc.) to matter —
+# those days don't reach this file's own generic content at all until the
+# proper-hymn gap above is closed).
+matins-hymn:
+  text: |-
+    Rex sempitérne Dómine,
+    Rerum Creátor ómnium,
+    Qui eras ante sǽcula
+    Semper cum Patre Fílius:
+
+    Qui mundi in primórdio
+    Adam plásmasti hóminem:
+    Cui tuæ imágini
+    Vultum dedísti símilem.
+
+    Quem diábolus decéperat,
+    Hostis humáni géneris,
+    Cujus tu formam córporis
+    Assúmere dignátus es:
+
+    Ut hóminem redímeres,
+    Quem ante jam plasmáveras:
+    Et nos Deo conjúngeres,
+    Per carnis contubérnium.
+
+    Quem éditum ex Vírgine
+    Pavéscit omnis ánima:
+    Per quem et nos resúrgere
+    Devóta mente crédimus.
+
+    Qui nobis in Baptísmate
+    Donásti indulgéntiam,
+    Qui tenebámur vínculis
+    Ligáti consciéntiæ.
+
+    Qui Crucem propter hóminem
+    Suscípere dignátus es:
+    Dedísti tuum sánguinem
+    Nostræ salútis prétium.
+
+    Quǽsumus Auctor ómnium,
+    In hoc Pascháli gáudio,
+    Ab omni mortis ímpetu
+    Tuum defénde pópulum.
+
+    Glória tibi Dómine,
+    Qui surrexísti a mórtuis,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[Pasch Laudes]",
+# Psalterium/Special/Major Special.txt) — Vespers shares this exact text
+# (see vespers-capitulum-paschaltide.yml, "[Pasch Vespera] = @:Pasch
+# Laudes" in the source). Covers the whole Easter-to-Pentecost span
+# uniformly. Not live-query-verified (see TODO.md) — read directly from
+# source.
+lauds-capitulum:
+  text: 'Christus resúrgens ex mórtuis jam non móritur, mors illi ultra non dominábitur. Quod enim mórtuus est peccáto, mórtuus est semel: quod autem vivit, vivit Deo.'
+  citation: Rom 6:9-10
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Pasch
+# Laudes_]", the non-Dominican branch "[HymnusM Pasch Laudes]" resolves
+# to — Psalterium/Special/Major Special.txt) — "Auróra lucis rútilat",
+# full separate Monastic text (not a substitution against the Roman
+# "Auróra cælum púrpurat"). Not live-query-verified (see TODO.md).
+lauds-hymn:
+  text: |
+    Auróra lucis rútilat,
+    Cælum láudibus íntonat,
+    Mundus exsúltans júbilat,
+    Gemens inférnus úlulat:
+
+    Cum Rex ille fortíssimus,
+    Mortis confráctis víribus,
+    Pede concúlcans tártara,
+    Solvit a pœna míseros.
+
+    Ille qui clausus lápide
+    Custodítur sub mílite,
+    Triúmphans pompa nóbili,
+    Victor surgit de fúnere.
+
+    Solútis jam gemítibus,
+    Et inférni dolóribus,
+    Quia surréxit Dóminus,
+    Respléndens clamat Ángelus.
+
+    Quǽsumus, Auctor ómnium,
+    In hoc pascháli gáudio,
+    Ab omni mortis ímpetu
+    Tuum defénde pópulum.
+
+    * Glória tibi Dómine,
+    Qui surrexísti a mórtuis,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block: "[Responsory Pasch
+# Laudes]" resolves (non-Cistercian branch) to "@Psalterium/Special/Minor
+# Special:Responsory breve Pasch Tertia" -> "[Responsory breve Pasch
+# Tertia_]" (Psalterium/Special/Minor Special.txt) — distinct from
+# Vespers' own Paschaltide responsory (see
+# vespers-responsory-paschaltide.yml). Not live-query-verified (see
+# TODO.md) — read directly from source.
+lauds-responsory:
+  text: |
+    R.br. Surréxit Dóminus de sepúlcro, * Allelúia, allelúia.
+    R. Surréxit Dóminus de sepúlcro, * Allelúia, allelúia.
+    V. Qui pro nobis pepéndit in ligno.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Surréxit Dóminus de sepúlcro, * Allelúia, allelúia.
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block ("[Pasch Versum 2_]",
+# the non-Cistercian/non-Dominican branch "[Pasch Versum 2]" resolves to
+# — Psalterium/Special/Major Special.txt). Distinct from Vespers' own
+# Paschaltide versicle (see vespers-versicle-paschaltide.yml). Not
+# live-query-verified (see TODO.md) — read directly from source.
+lauds-versicle:
+  text: |
+    V. In resurrectióne tua, Christe, allelúia.
+    R. Cæli et terra læténtur, allelúia.
+  status: draft
+
+# Verified against Divinum Officium (Latin/English "Prima Special.txt").
+# Seasonal variant of prime-chapter-responsory-per-annum.yml — same fixed
+# responsory, with just the "V." verse line swapped for the season.
+prime-chapter/responsory-pasch:
+  text: |
+    R.br. Christe, Fili Dei vivi, * Miserére nobis.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+    V. Qui surrexísti a mórtuis.
+    R. Miserére nobis.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+  status: verified
+
+# New file, 2026-09-15: closes the seasonal-variant gap
+# `prime-lectio-per-annum.yml`'s own header already flagged, wrongly
+# attributed to "milestone 4" (that blocker was stale -- see the dated
+# TODO.md entry this sweep came out of; calendar/temporal.ts's resolveSeason
+# has been a complete, real implementation for a while). Sourced directly
+# from web/www/horas/Latin/Psalterium/Special/Prima Special.txt's own [Pasch]
+# tag and its English counterpart.
+prime-lectio/pasch:
+  text: 'Si consurrexístis cum Christo, quæ sursum sunt quǽrite, ubi Christus est in déxtera Dei sedens: quæ sursum sunt sápite, non quæ super terram.'
+  citation: Col 3:1-2
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block: "[Pasch Vespera] =
+# @:Pasch Laudes" — a bare alias, so Paschaltide Vespers shares its
+# chapter with Paschaltide Lauds (see lauds-capitulum-paschaltide.yml).
+# Covers the whole Easter-to-Pentecost span uniformly — no separate
+# Ascensiontide/Pentecost-specific chapter exists in the source. Not
+# live-query-verified (see TODO.md) — read directly from source.
+vespers-capitulum:
+  text: 'Christus resúrgens ex mórtuis jam non móritur, mors illi ultra non dominábitur. Quod enim mórtuus est peccáto, mórtuus est semel: quod autem vivit, vivit Deo.'
+  citation: Rom 6:9-10
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Pasch
+# Vespera]", Psalterium/Special/Major Special.txt) — "Ad cenam Agni
+# próvidi", the older Monastic form, full separate text (not a
+# substitution against the Roman Urban VIII revision, "Ad régias Agni
+# dapes", which differs substantially stanza by stanza, not just in
+# wording). English is the given translation of that Roman revision —
+# conventionally paired with this older Latin in many hymnals despite the
+# textual differences, but a real mismatch worth flagging, same caution
+# as the Sunday Vespers hymn. Not live-query-verified (see TODO.md).
+vespers-hymn:
+  text: |
+    Ad cenam Agni próvidi,
+    Et stolis albis cándidi,
+    Post tránsitum maris Rubri,
+    Christo canámus Príncipi.
+
+    Cujus corpus sanctíssimum,
+    In ara crucis tórridum,
+    Cruóre ejus róseo
+    Gustándo vívimus Deo.
+
+    Protécti Paschæ véspere
+    A devastánte Angelo,
+    Erépti de duríssimo
+    Pharaónis império.
+
+    Jam Pascha nostrum Christus est,
+    Qui immolátus agnus est:
+    Sinceritátis ázyma,
+    Caro ejus obláta est.
+
+    O vere digna hóstia,
+    Per quam fracta sunt tártara,
+    Redémpta plebs captiváta,
+    Réddita vitæ prǽmia.
+
+    Consúrgit Christus túmulo,
+    Victor redit de bárathro,
+    Tyránnum trudens vínculo,
+    Et Paradísum réserans.
+
+    Quǽsumus, Auctor ómnium,
+    In hoc pascháli gáudio,
+    Ab omni mortis ímpetu
+    Tuum defénde pópulum.
+
+    * Glória tibi Dómine,
+    Qui surrexísti a mórtuis,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block: "[Responsory Pasch
+# Vespera]" resolves (non-Cistercian branch) to "@Psalterium/Special/
+# Minor Special:Responsory breve Pasch Sexta" (Psalterium/Special/Minor
+# Special.txt) — distinct from Lauds' own Paschaltide responsory (see
+# lauds-responsory-paschaltide.yml). Not live-query-verified (see
+# TODO.md) — read directly from source.
+vespers-responsory:
+  text: |
+    R.br. Surréxit Dóminus vere, * Allelúia, allelúia.
+    R. Surréxit Dóminus vere, * Allelúia, allelúia.
+    V. Et appáruit Simóni.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Surréxit Dóminus vere, * Allelúia, allelúia.
+  status: draft
+
+# The versicle right before the Magnificat, in Paschaltide. Sourced from
+# Divinum Officium's Monastic block ("[Pasch Versum 3]", Psalterium/
+# Special/Major Special.txt). Distinct from Lauds' own Paschaltide
+# versicle (see lauds-versicle-paschaltide.yml). Not live-query-verified
+# (see TODO.md) — read directly from source.
+vespers-versicle:
+  text: |
+    V. Mane nobíscum, Dómine, allelúia.
+    R. Quóniam advesperáscit, allelúia.
+  status: draft
+
+# Verified against Divinum Officium (Latin/English Doxologies.txt, the
+# Monastic "T"-suffixed variant). Seasonal doxology for "Iam lucis orto
+# sidere" and any other hymn ending "* Deo Patri sit gloria..." — see
+# hours/hymn-doxology.ts.
+hymn-doxology/pasch:
+  text: |-
+    Glória tibi Dómine,
+    Qui surrexísti a mórtuis,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified

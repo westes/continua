@@ -1,0 +1,51 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08.
+# Pulled from the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt + M1617.txt, own title
+# "S. Marci Papae Confessoris") and its own source file, not the merged per-date
+# files those tables' fileref points at directly -- see TODO.md.
+collect:
+  text: |
+    Orémus.
+    Exáudi, Dómine, preces nostras: et, interveniénte beáto Marco, Confessóre tuo atque Pontífice, indulgéntiam nobis tríbue placátus et pacem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor-bishop (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-marcus has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-marcus-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Exáudi, Dómine, preces nostras: et, interveniénte beáto Marco, Confessóre tuo atque Pontífice, indulgéntiam nobis tríbue placátus et pacem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Marcus, Pope, Confessor (Oct 7). No
+# genuine SanctiM match: the correct Tridentine file is the suffixed
+# `Sancti/10-07t.txt` (the plain `Sancti/10-07.txt` has no proper
+# content of its own, and `Sancti/10-07cc.txt` is Ss. Sergius, Bacchus,
+# Marcellus, and Apuleius instead), and the only SanctiM files for
+# this date base `@Sancti/10-07` (the plain, contentless file) or are
+# unrelated own content — a missed pre-1955-pool candidate rather
+# than a genuine SanctiM case (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/10-07t.txt, English/Sancti/10-07t.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Marcus, Romanus, Constantino Magno imperatóre Pontifex, instituit ut epíscopus Ostiénsis, a quo Romanus Pontifex consecrátur, pallio uterétur. Duas Romæ basilicas ædificávit, álteram in Urbe, álteram via Ardeatina; quas Constantinus, auctas, magnis munéribus exornávit. Vixit in pontificatu menses octo, sepultúsque est in cœmeterio Balbinæ.
+      status: verified

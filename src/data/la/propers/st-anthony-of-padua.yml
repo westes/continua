@@ -1,0 +1,55 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2035-06-13).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Ecclésiam tuam, Deus, beáti Antónii Confessóris tui solémnitas votíva lætíficet: ut spirituálibus semper muniátur auxíliis et gáudiis pérfrui mereátur ætérnis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-anthony-of-padua-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-anthony-of-padua-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Ecclésiam tuam, Deus, beáti Antónii Confessóris tui solémnitas votíva lætíficet: ut spirituálibus semper muniátur auxíliis et gáudiis pérfrui mereátur ætérnis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Anthony of Padua's own day (2026-06-13). The Benedictus
+# antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Anthony of Padua, Confessor and
+# Doctor of the Church (June 13) — pre-1955-but-post-1617 (no
+# SanctiM/06-13*.txt at all).
+# web/www/horas/Latin/Sancti/06-13.txt, English/Sancti/06-13.txt.
+# Lectio4-6 is this saint's own proper text, one continuous vita account,
+# no internal break, combined into a single reading. No responsory given
+# for these lessons in the source (Responsory9 present is the
+# Dominican-rite variant for a different lesson, not applicable here).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Antónius, Ulyssipóne in Lusitánia honéstis ortus paréntibus, et ab iis pie educátus, adoléscens, institútum canonicórum regulárium suscépit. Sed, cum córpora beatórum quinque Mártyrum fratrum Minórum Conímbriam transferéntur, qui paulo ante apud Marróchium pro Christi fide passi erant, martýrii desidério incénsus ad Franciscánum órdinem transívit. Mox eódem ardóre impúlsus, ad Saracénos ire perréxit; sed, advérsa valetúdine afflíctus et redíre coáctus, cum navi ad Hispániæ líttora ténderet, ventórum vi in Sicíliam delátus est.
+
+        Assísium e Sicília ad capítulum generále venit: inde in erémum montis Pauli in Æmília secéssit, ubi divínis contemplatiónibus, jejúniis et vigíliis diu vacávit. Póstea, sacris ordínibus initiátus et ad prædicándum Evangélium missus, dicéndi sapiéntia et cópia tantum profécit, tantámque sui admiratiónem commóvit, ut eum summus Póntifex aliquándo concionántem áudiens, arcam Testaménti appellárit. In primis vero hǽreses summa vi profligávit, ideóque perpétuus hæreticórum málleus est vocátus.
+
+        Primus ex suo ordine, ob doctrínæ præstántiam, Bonóniæ et álibi sacras lítteras est interpretátus, fratrúmque suórum stúdiis præfuit. Multis vero peragrátis provínciis, anno ante óbitum Patávium venit, ubi illústria sanctitátis suæ monuménta relíquit. Dénique magnis labóribus pro glória Dei perfúnctus, méritis et miráculis clarus obdormívit in Dómino Idibus Júnii. Quem Gregórius nonus, Póntifex máximus, sanctórum Confessórum número adscrípsit, et Pius duodécimus, ex Sacrórum Rítuum Congregatiónis consúlto, universális Ecclésiæ Doctórem declarávit.
+      status: verified

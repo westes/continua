@@ -1,0 +1,367 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2026-08-01).
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátum Petrum Apóstolum, a vínculis absolútum, illǽsum abíre fecísti: nostrórum, quæsumus, absólve víncula peccatórum; et ómnia mala a nobis propitiátus exclúde.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-peter-ad-vincula-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-apostle (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-peter-ad-vincula-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Quodcúmque ligáveris super terram, erit ligátum et in cælis; et quodcúmque sólveris super terram, erit solútum et in cælis: dicit Dóminus Simóni Petro.
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+    Orémus.
+    Deus, qui beátum Petrum Apóstolum, a vínculis absolútum, illǽsum abíre fecísti: nostrórum, quæsumus, absólve víncula peccatórum; et ómnia mala a nobis propitiátus exclúde.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# St. Peter's Chains: proper Matins hymn, "Quodcumque vinclis super terram strinxeris" (Sancti/08-01.txt's Matins hymn; the same text as the Chair at Antioch's Vespers hymn).
+# Latin and English as rendered by the local reference engine (Monastic
+# Tridentinum 1617, command=prayMatutinum, 08-01-2027); before this file the saint
+# fell to the Common's Matins hymn.
+matins-hymn:
+  text: |
+    Quodcúmque vinclis super terram strínxeris,
+    Erit in astris religátum fórtiter:
+    Et quod resólvis in terris arbítrio,
+    Erit solútum super cæli rádium:
+    In fine mundi judex eris sǽculi.
+
+    Glória Patri per imménsa sǽcula,
+    Sit tibi Nate decus et impérium,
+    Honor, potéstas, Sanctóque Spirítui:
+    Sit Trinitáti salus indivídua,
+    Per infiníta sæculórum sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-01, clean year.
+lauds-capitulum:
+  text: Misit Heródes rex manus ut afflígeret quosdam de Ecclésia. Occídit autem Jacóbum fratrem Joánnis gládio. Videns autem quia placéret Judǽis, appósuit ut apprehénderet et Petrum.
+  citation: Act 12:1-3
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-01, clean year.
+lauds-hymn:
+  text: |
+    Jam bone Pastor Petre, clemens áccipe
+    Vota precántum, et peccáti víncula
+    Resólve tibi potestáte trádita,
+    Qua cunctis cælum verbo claudis, áperis.
+
+    Sit Trinitáti sempitérna glória,
+    Honor, potéstas, atque jubilátio,
+    In unitáte, cui manet impérium,
+    Ex tunc et modo, per ætérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-01, clean year.
+lauds-responsory:
+  text: |
+    R.br. In omnem terram * Exívit sonus eórum.
+    R. In omnem terram * Exívit sonus eórum.
+    V. Et in fines orbis terræ verba eórum.
+    R. Exívit sonus eórum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. In omnem terram * Exívit sonus eórum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-01, clean year.
+lauds-versicle:
+  text: |-
+    V. Tu es Petrus.
+    R. Et super hanc petram ædificábo Ecclésiam meam.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, St. Peter ad Vincula's own day (2026-08-01, clean year).
+# Latin asterisk confirmed against source data file
+# web/www/horas/Latin/Sancti/08-01.txt.
+prime-antiphon:
+  text: Heródes rex * appósuit ut apprehénderet et Petrum; quem, cum apprehendísset, misit in cárcerem, volens post Pascha prodúcere eum pópulo.
+  status: verified
+
+# St. Peter's own minor-hour text, shared by Ss. Peter and Paul and St. Peter
+# ad Vincula (both feasts are about Peter himself; extracted from their
+# independently-authored files and confirmed identical). Previously held in
+# prime-lectio-prima-common-of-st-peter.yml as a pseudo-Common; now each feast's own proper.
+# Sourced from web/www/horas/Latin/Sancti/06-29.txt's own [Lectio Prima] and its
+# English counterpart.
+# Used by Peter in Chains: Sancti/08-01.txt's [Lectio Prima] is @Sancti/06-29.
+prime-lectio:
+  text: 'Et Petrus ad se revérsus dixit: Nunc scio vere quia misit Dóminus Angelum suum, et erípuit me de manu Heródis et de omni exspectatióne plebis Judæórum.'
+  citation: Act 12:11
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, St. Peter ad Vincula's own day (2026-08-01, clean year).
+# Latin asterisk confirmed against source data file
+# web/www/horas/Latin/Sancti/08-01.txt.
+terce-antiphon:
+  text: Petrus quidem * servabátur in cárcere; orátio autem fiébat sine intermissióne ab Ecclésia ad Deum pro eo.
+  status: verified
+
+# St. Peter's own minor-hour text, shared by Ss. Peter and Paul and St. Peter
+# ad Vincula (both feasts are about Peter himself; extracted from their
+# independently-authored files and confirmed identical). Previously held in
+# terce-capitulum-common-of-st-peter.yml as a pseudo-Common; now each feast's own proper.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce.
+# Extracted (2026-08) from St. Peter ad Vincula and Ss. Peter and Paul's
+# independently-authored content, confirmed identical via diff — see
+# none-antiphon-common-of-st-peter.yml's header.
+terce-capitulum:
+  text: |
+    Misit Heródes rex manus ut afflígeret quosdam de Ecclésia. Occídit autem Jacóbum fratrem Joánnis gládio. Videns autem quia placéret Judǽis, appósuit ut apprehénderet et Petrum.
+    R. Deo grátias.
+    V. In omnem terram exívit sonus eórum.
+    R. Et in fines orbis terræ verba eórum.
+  citation: Act 12:1-3
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, St. Peter ad Vincula's own day (2026-08-01, clean year).
+# Latin asterisk confirmed against source data file
+# web/www/horas/Latin/Sancti/08-01.txt.
+sext-antiphon:
+  text: 'Dixit Angelus * ad Petrum: Circúmda tibi vestiméntum tuum, et séquere me.'
+  status: verified
+
+# St. Peter's own minor-hour text, shared by Ss. Peter and Paul and St. Peter
+# ad Vincula (both feasts are about Peter himself; extracted from their
+# independently-authored files and confirmed identical). Previously held in
+# sext-capitulum-common-of-st-peter.yml as a pseudo-Common; now each feast's own proper.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext.
+# Extracted (2026-08) from St. Peter ad Vincula and Ss. Peter and Paul's
+# independently-authored content, confirmed identical via diff — see
+# none-antiphon-common-of-st-peter.yml's header.
+sext-capitulum:
+  text: |
+    Petrus quidem servabátur in cárcere; orátio autem fiébat sine intermissióne ab Ecclésia ad Deum pro eo.
+    R. Deo grátias.
+    V. Constítues eos príncipes super omnem terram.
+    R. Mémores erunt nóminis tui, Dómine.
+  citation: Act 12:5
+  status: verified
+
+# St. Peter's own minor-hour text, shared by Ss. Peter and Paul and St. Peter
+# ad Vincula (both feasts are about Peter himself; extracted from their
+# independently-authored files and confirmed identical). Previously held in
+# none-antiphon-common-of-st-peter.yml as a pseudo-Common; now each feast's own proper.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None.
+# Extracted (2026-08) from St. Peter ad Vincula and Ss. Peter and Paul's
+# independently-authored content, confirmed identical via diff (their own
+# per-saint files differed only by a stray missing comma in one of the
+# two English transcriptions, reconciled here to match the Latin's own
+# punctuation). Not a generic liturgical "Common" category — both feasts
+# are specifically about St. Peter himself, so his own proper texts get
+# reused directly rather than drawing from an actual Common of Saints.
+# See SaintRecord.common (calendar/feasts.ts).
+none-antiphon:
+  text: Tu es Petrus, * et super hanc petram ædificábo Ecclésiam meam.
+  status: verified
+
+# St. Peter's own minor-hour text, shared by Ss. Peter and Paul and St. Peter
+# ad Vincula (both feasts are about Peter himself; extracted from their
+# independently-authored files and confirmed identical). Previously held in
+# none-capitulum-common-of-st-peter.yml as a pseudo-Common; now each feast's own proper.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None.
+# Extracted (2026-08) from St. Peter ad Vincula and Ss. Peter and Paul's
+# independently-authored content, confirmed identical via diff — see
+# none-antiphon-common-of-st-peter.yml's header (their own per-saint files
+# differed only by a stray missing colon in one of the two English
+# transcriptions, reconciled here to match the Latin's own punctuation).
+none-capitulum:
+  text: |
+    Et Petrus ad se revérsus dixit: Nunc scio vere quia misit Dóminus Angelum suum, et erípuit me de manu Heródis et de omni exspectatióne plebis Judæórum.
+    R. Deo grátias.
+    V. Nimis honoráti sunt amíci tui, Deus.
+    R. Nimis confortátus est principátus eórum.
+  citation: Act 12:11
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-08-01, the same clean date already used for lauds-capitulum-st-peter-ad-vincula.yml.
+vespers-hymn:
+  text: |
+    Petrus beátus catenárum láqueos,
+    Christo jubénte, rupit mirabíliter:
+    Custos ovílis et Doctor Ecclésiæ,
+    Pastórque gregis, conservátor óvium,
+    Arcet lupórum truculéntam rábiem.
+
+    Glória Patri per imménsa sǽcula,
+    Sit tibi Nate decus et impérium,
+    Honor, potéstas, Sanctóque Spirítui:
+    Sit Trinitáti salus indivídua,
+    Per infiníta sæculórum sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-08-01, the same clean date already used for lauds-capitulum-st-peter-ad-vincula.yml.
+vespers-responsory:
+  text: |
+    R.br. Constítues eos príncipes * Super omnem terram.
+    R. Constítues eos príncipes * Super omnem terram.
+    V. Mémores erunt nóminis tui, Dómine.
+    R. Super omnem terram.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Constítues eos príncipes * Super omnem terram.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-08-01, the same clean date already used for lauds-capitulum-st-peter-ad-vincula.yml.
+vespers-versicle:
+  text: |-
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 08-01
+# st-peter-ad-vincula (saint file = second). First Vespers variant; the default (second Vespers) file is the
+# same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Tu es Petrus.
+    R. Et super hanc petram ædificábo Ecclésiam meam.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Peter's Chains's own day (2026-08-01) -- the Benedictus
+# antiphon. Corrects the previous version of this file, which had been
+# sourced from the Roman/secular rite's Sancti/08-01.txt's own [Ant 1]
+# instead: real but different text from what Monastic 1617 actually
+# renders at Lauds, same mistake as St. Lawrence's earlier fix -- shares
+# the same text as the two Chair-of-Peter feasts' and Ss. Peter and
+# Paul's own (all already corrected), confirmed independently rather
+# than assumed.
+benedictus-antiphon:
+  text: 'Quodcúmque ligáveris super terram, erit ligátum et in cælis; et quodcúmque sólveris super terram, erit solútum et in cælis: dicit Dóminus Simóni Petro.'
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 08-01
+# st-peter-ad-vincula (new saint-level second; continua had "estotefortes"). See hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon:
+  text: Solve, * jubénte Deo, terrárum, Petre, caténas, qui facis ut páteant cæléstia regna beátis.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 08-01
+# st-peter-ad-vincula (saint file = second). First Vespers variant; the default (second Vespers) file is the
+# same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Tu es pastor óvium, * Princeps Apostolórum, tibi tráditæ sunt claves regni cælórum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-01, clean year.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Heródes rex * appósuit ut apprehénderet et Petrum; quem, cum apprehendísset, misit in cárcerem, volens post Pascha prodúcere eum pópulo.
+    - psalms:
+        - 99
+      antiphon: Petrus quidem * servabátur in cárcere; orátio autem fiébat sine intermissióne ab Ecclésia ad Deum pro eo.
+    - psalms:
+        - 62
+      antiphon: 'Dixit Angelus * ad Petrum: Circúmda tibi vestiméntum tuum, et séquere me.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Misit Dóminus * Angelum suum, et liberávit me de manu Heródis, allelúia.
+  laudate:
+    antiphon: Tu es Petrus, * et super hanc petram ædificábo Ecclésiam meam.
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-08-01, own day). His own proper antiphons,
+# not `common-of-an-apostle`'s generic ones; psalms 109/112/115/125.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Heródes rex * appósuit ut apprehénderet et Petrum; quem, cum apprehendísset, misit in cárcerem, volens post Pascha prodúcere eum pópulo.
+    - psalms:
+        - 112
+      antiphon: Petrus quidem * servabátur in cárcere; orátio autem fiébat sine intermissióne ab Ecclésia ad Deum pro eo.
+    - psalms:
+        - 115
+      antiphon: 'Dixit Angelus * ad Petrum: Circúmda tibi vestiméntum tuum, et séquere me.'
+    - psalms:
+        - 125
+      antiphon: Tu es Petrus, * et super hanc petram ædificábo Ecclésiam meam.
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 08-01
+# st-peter-ad-vincula. First Vespers psalm antiphons; the other evening's set is st-peter-ad-vincula.yml. See
+# vespers-psalmody-overrides.ts's getVespersSaintOverride.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Heródes rex * appósuit ut apprehénderet et Petrum; quem, cum apprehendísset, misit in cárcerem, volens post Pascha prodúcere eum pópulo.
+    - psalms:
+        - 110
+      antiphon: Petrus quidem * servabátur in cárcere; orátio autem fiébat sine intermissióne ab Ecclésia ad Deum pro eo.
+    - psalms:
+        - 111
+      antiphon: 'Dixit Angelus * ad Petrum: Circúmda tibi vestiméntum tuum, et séquere me.'
+    - psalms:
+        - 112
+      antiphon: Tu es Petrus, * et super hanc petram ædificábo Ecclésiam meam.
+
+# Matins Nocturn 2-3 readings for St. Peter's Chains (Jul... Aug 1) —
+# SanctiM/08-01.txt inherits the whole day (`@Sancti/08-01`) with no
+# Nocturn 2/3 override, so this feast's own proper content is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/08-01.txt, English/Sancti/08-01.txt.
+#
+# Nocturn 2: Lectio4-6 (the legend of the two chains) combined into
+# one reading, one continuous account.
+# Nocturn 3: Lectio7's Gospel citation (Matt 16:13-19) was a bare
+# incipit ("Et réliqua") with no full pericope text given; the full
+# pericope is now authored too (isGospel: true, immediately before the
+# homily) — sourced from the Missale's own Common of a Pope/Martyr
+# Gospel (`web/www/missa/Latin/Commune/Coronatio.txt`'s `[Evangelium]`,
+# English/Commune/Coronatio.txt), the same text used for this same
+# pericope in `chair-of-st-peter-at-rome.yml` and `st-martin-i.yml`
+# (2026-09-05 update). The homily portion remains St. Augustine's
+# sermon, combined with Lectio8 as one continuous excerpt. No
+# responsory given for either reading.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Theodósio junióre imperánte, cum Eudócia ejus uxor Jerosólymam solvéndi voti causa venísset, ibi multis est affécta munéribus. Præ céteris insígne donum accépit férreæ caténæ, auro gemmísque ornátæ, quam illam esse affirmábant, qua Petrus Apóstolus ab Heróde vinctus fúerat. Eudócia, caténam pie veneráta, eam póstea Romam ad fíliam Eudóxiam misit; quæ illam Pontífici máximo détulit. Isque vicíssim illi monstrávit álteram caténam, qua, Neróne imperatóre, idem Apóstolus constríctus fúerat.
+
+        Cum ígitur Póntifex Románam caténam cum ea, quæ Jerosólymis alláta fúerat, contulísset, factum est ut illæ inter se sic connecteréntur, ut non duæ, sed una caténa ab eódem artífice confécta esse viderétur. Quo miráculo tantus honor sacris illis vínculis habéri cœpit, ut proptérea hoc nómine sancti Petri ad víncula ecclésia, título Eudóxiæ, dedicáta sit in Exquíliis, ejúsque memóriæ dies festus institútus Kaléndis Augústi.
+
+        Quo ex témpore honos, qui eo die profánis Gentílium celebritátibus tríbui sólitus erat, Petri vínculis habéri cœpit, quæ tacta ægros sanábant et dǽmones ejiciébant. Quo in génere, anno salútis humánæ nongentésimo sexagésimo nono áccidit, ut quidam comes, Ottónis imperatóris familiáris, occupátus ab immúndo spíritu, seípsum déntibus dilaniáret. Quare is jussu imperatóris ad Joánnem Pontíficem dúcitur, qui ut sacra caténa cómitis collum áttigit, erúmpens nefárius spíritus hóminem líberum reliquit; ac deínceps in Urbe sanctórum vinculórum relígio propagáta est.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 16:13-19
+      text: 'In illo témpore: Venit Jesus in partes Cæsaréæ Philíppi, et interrogábat discípulos suos, dicens: Quem dicunt hómines esse Fílium hóminis? At illi dixérunt: Alii Joánnem Baptístam, alii autem Elíam, álii vero Jeremíam, aut unum ex prophétis. Dicit illis Jesus: Vos autem quem me esse dícitis? Respóndens Simon Petrus, dixit: Tu es Christus, Fílius Dei vivi. Respóndens autem Jesus, dixit ei: Beátus es, Simon Bar Jona: quia caro et sanguis non revelávit tibi, sed Pater meus, qui in cœlis est. Et ego dico tibi, quia tu es Petrus, et super hanc petram ædificábo Ecclésiam meam, et portæ ínferi non prævalébunt advérsus eam. Et tibi dabo claves regni cœlórum. Et quodcúmque ligáveris super terram, erit ligátum et in cœlis: et quodcúmque sólveris super terram, erit solútum et in cœlis.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Sermon 29 on the Saints (on Matt 16:13-19)
+      text: |-
+        Solus Petrus inter Apóstolos méruit audíre: Amen dico tibi, quia tu es Petrus, et super hanc petram ædificábo Ecclésiam meam; dignus certe, qui ædificándis in domo Dei pópulis lapis esset ad fundaméntum, colúmna ad sustentáculum, clavis ad regnum. De hoc ait sermo divínus: Et ponébant, inquit, infírmos suos, ut umbra saltem transeúntis Petri obumbráret eos. Si tunc opem ferre póterat umbra córporis, quanto magis nunc plenitúdo virtútis? si tunc supplicántibus próderat aura quædam pertranseúntis, quanto magis grátia nunc permanéntis? Mérito per omnes Christi ecclésias auro pretiósius habétur ferrum illud pœnálium vinculórum.
+
+        Si tam medicábilis fuit obumbrátio visitántis, quanto magis caténa vinciéntis? Si inánis quædam spécies vácuæ imáginis habére pótuit in se vim salútis, quanto plus de córpore meruérunt attráhere salubritátis, férreo póndere sacris impréssa membris, víncula passiónis? Si ad præsídia supplicántium tam potens fuit ante martýrium, quanto magis éfficax post triúmphum? Felíces illi nexus, qui, de mánicis et compédibus in corónam mutándi, Apóstolum contingéntes, Mártyrem reddidérunt! Felícia víncula, quæ reum suum usque ad Christi crucem, non tam condemnatúra quam consecratúra, misérunt!
+      status: verified

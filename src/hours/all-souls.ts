@@ -98,8 +98,8 @@ const CORINTHIANS_LESSONS: LessonText[] = [
   },
 ];
 
-/** An active octave's own Matins reading (`data/propers/octave-readings/
- * *.yml`) — same `activeOctavesFor`/`getOctaveReading` pool contribution
+/** An active octave's own Matins reading (an octave-readings section of
+ * `data/<lang>/propers/*.yml`) — same `activeOctavesFor`/`getOctaveReading` pool contribution
  * every ordinary day's Matins reading pool already gives an active
  * octave (see this file's Lauds/Vespers header and matins.ts's own
  * `buildReadingPool`), generously kept here too despite the historical

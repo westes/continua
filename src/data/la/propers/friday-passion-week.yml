@@ -1,0 +1,50 @@
+# Transcribed from the reference engine's Mass propers -- specifically the
+# plain-ferial Mass, web/www/missa/Latin/Tempora/Quad5-5Feria.txt's
+# [Oratio] (English: web/www/missa/English/Tempora/Quad5-5Feria.txt), NOT
+# web/www/missa/Latin/Tempora/Quad5-5.txt (the alternate, Seven-Sorrows-
+# commemorating Mass formulary for this same date -- see
+# friday-passion-week.yml's own note on that naming overlap). This app's
+# structural source, Monastic Tridentinum 1617, shows this day as a plain
+# ferial with no Seven Sorrows commemoration when live-queried, so the
+# plain-ferial Mass text is the correct match here. Marked `draft`, not
+# `verified` -- see monday-passion-week-collect.yml's own note for why
+# (direct Missal transcription, standard closing formula expanded, no
+# live Office cross-check).
+collect:
+  text: |
+    Orémus.
+    Córdibus nostris, quǽsumus, Dómine, grátiam tuam benígnus infúnde: ut peccáta nostra castigatióne voluntária cohibéntes, temporáliter pótius macerémur, quam supplíciis deputémur ætérnis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+  temporal: true
+
+# Sourced from web/www/horas/Latin/Tempora/Quad5-5.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: Generatiónem ejus quis enarrábit, quia abscíssus est de terra vivéntium; propter scelus pópuli mei percússi eum.
+  citation: Isa 53:8
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2028-04-07 (a real Friday-of-Passion-week date confirmed
+# clean of any sanctoral collision -- title rendered exactly "Feria Sexta
+# infra Hebdomadam Passionis ~ Feria major", no commemoration, and
+# critically, no Seven Sorrows text either -- see friday-passion-week.yml
+# for the reference-file-level naming overlap this confirms Monastic 1617
+# doesn't carry).
+benedictus-antiphon:
+  text: 'Appropinquábat autem * dies festus Judæórum: et quærébant príncipes sacerdótum quómodo Jesum interfícerent, sed timébant plebem.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2028-04-07 (same clean date as the sibling
+# -benedictus-antiphon.yml; title tag confirmed "Vespera de Tempore
+# occurente" -- this day's own, non-anticipated Second Vespers, and
+# again no Seven Sorrows text -- see friday-passion-week.yml).
+magnificat-antiphon:
+  text: 'Príncipes sacerdótum * consílium fecérunt ut Jesum occíderent: dicébant autem: Non in die festo, ne forte tumúltus fíeret in pópulo.'
+  status: verified
+  temporal: true

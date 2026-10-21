@@ -1,0 +1,311 @@
+# Read directly from web/www/horas/Latin/Sancti/09-15.txt's own
+# [Oratio] and its English counterpart. Doxology "$Qui vivis" spelled
+# out per the convention in st-bibiana-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, in cujus passióne, secúndum Simeónis prophetíam, dulcíssimam
+    ánimam gloriósæ Vírginis et Matris Maríæ dolóris gládius pertransívit:
+    concéde propítius; ut, qui dolóres ejus venerándo recólimus, passiónis
+    tuæ efféctum felícem consequámur.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (seven-sorrows-of-the-bvm-antiphon.yml), paired with the standard BVM commemoration versicle already verified elsewhere in this app (propers/common/lauds-suffrage-bvm.yml -- 'V. Ora pro nobis sancta Dei Genitrix'). Collect is the saint's own real proper (seven-sorrows-of-the-bvm-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Nolíte me consideráre * quod fusca sim, quia decolorávit me sol: fílii matris meæ pugnavérunt contra me.
+    V. Ora pro nobis sancta Dei Génitrix.
+    R. Ut digni efficiámur promissiónibus Christi.
+    Orémus.
+    Deus, in cujus passióne, secúndum Simeónis prophetíam, dulcíssimam
+    ánimam gloriósæ Vírginis et Matris Maríæ dolóris gládius pertransívit:
+    concéde propítius; ut, qui dolóres ejus venerándo recólimus, passiónis
+    tuæ efféctum felícem consequámur.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: verified
+
+# the Seven Sorrows of the BVM: proper Matins hymn, Latin/Sancti/09-15.txt's [Hymnus Matutinum]. English from English/Sancti/09-15.txt.
+# Before this file the saint fell to the Common's hymn.
+matins-hymn:
+  text: |
+    O quot undis lacrimárum,
+    Quo dolóre vólvitur,
+    Luctuósa de cruénto
+    Dum revúlsum stípite,
+    Cernit ulnis incubántem
+    Virgo Mater Fílium!
+
+    Os suáve, mite pectus
+    Et latus dulcíssimum,
+    Dexterámque vulnerátam
+    Et sinístram sáuciam,
+    Et rubras cruóre plantas
+    Ægra tingit lácrimis.
+
+    Centiésque milliésque
+    Stringit arctis néxibus
+    Pectus illud, et lacértos,
+    Illa figit vúlnera:
+    Sicque tota colliquéscit
+    In dolóris ósculis.
+
+    Eja, Mater, obsecrámus 
+    Per tuas has lácrimas,
+    Filiíque triste funus,
+    Vulnerúmque púrpuram,
+    Hunc tui cordis dolórem
+    Conde nostris córdibus.
+
+    Esto Patri, Filióque,
+    Et coǽvo Flámini,
+    Esto summæ Trinitáti 
+    Sempitérna glória,
+    Et perénnis laus honórque
+    Hoc et omni sǽculo.
+    Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/09-15.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Stemus juxta crucem cum María Matre Jesu, * Cujus ánimam dolóris gládius pertransívit.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/09-15.txt's own [Capitulum
+# Laudes] and English/Sancti/09-15.txt's own translation. Authoring this
+# was necessary for the feast's own hymn (lauds-hymn-seven-sorrows-of-
+# the-bvm.yml) to actually be reached at all: hours/resolve-common.ts's
+# resolveOfficeBundle is all-or-nothing per id -- her own `common:
+# common-of-the-bvm` field means without a chapter of her own, the whole
+# bundle (hymn included) fell through to that Common's generic text.
+lauds-capitulum:
+  text: Cui comparábo te? vel cui assimilábo te, fília Jerúsalem? cui exæquábo te, et consolábor te, virgo fília Sion? Magna est velut mare contrítio tua.
+  citation: Lam 2:13
+  status: verified
+
+# Corrected 2026-09-10: this file was missing its 4th (closing doxology)
+# stanza entirely, and its English was a self-translated draft despite a
+# real, complete rhymed English translation existing in the reference
+# engine all along (English/Sancti/09-15.txt's own `[Hymnus Laudes]`) --
+# both found while auditing hymn-doxology markers. Body sourced from
+# `web/www/horas/Latin/SanctiM/09-15.txt`'s own Lauds hymn (the first 15
+# lines of Sancti/09-15.txt's own `[Hymnus Laudes]`, per its own
+# "@Sancti/09-15:Hymnus Laudes:1-15" reference); the 4th stanza is
+# `Tempora/Quad5-5.txt`'s own `[Doxology]` block with the Monastic
+# substitution SanctiM/09-15.txt applies to it ("Jesu, tibi sit glória"
+# -> "Glória tibi, Dómine"). No `*` marker anywhere in this doxology
+# block -- it's this feast's own fixed ending, not a seasonally-swappable
+# one.
+lauds-hymn:
+  text: |-
+    Summæ Deus cleméntiæ,
+    Septem dolóres Vírginis
+    Plagásque Jesu Fílii
+    Fac rite nos revólvere.
+
+    Nobis salútem cónferant
+    Deíparæ tot lácrimæ
+    Quibus laváre súfficis
+    Totíus orbis crímina.
+
+    Sit quinque Jesu vúlnerum
+    Amára contemplátio,
+    Sint et dolóres Vírginis
+    Ætérna cunctis gáudia.
+
+    Glória tibi, Dómine,
+    Qui passus es pro sérvulis,
+    Cum Patre et almo Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# No distinct Lauds versicle found for this feast in the reference source
+# beyond her own Matins nocturn versicle (a different slot); reusing
+# common-of-the-bvm's own Lauds versicle, same pattern as her chapter/
+# hymn tiers not needing anything beyond the Common where nothing proper
+# was found. Authored to make the feast's own bundle (needed for her own
+# hymn, see lauds-capitulum-seven-sorrows-of-the-bvm.yml) render a real versicle instead of
+# an unconditionally-rendered empty one.
+lauds-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# New file, 2026-09-15: closes a real gap found live -- Prime's Lectio
+# Brevis had no per-feast override mechanism at all until today (see
+# hours/resolve-common.ts's getPrimeLectioBrevis), always showing the
+# generic ordinary-time default even on a real Duplex+ feast with her own
+# proper reading. Sourced directly from web/www/horas/Latin/Sancti/09-15.txt
+# / English/Sancti/09-15.txt's own [Lectio Prima] (Lam 2:18) -- the
+# Seven Sorrows' proper Prime short reading, positioned between the
+# [Ant 2]/[Lectio Prima] block and [Capitulum Sexta] in the source, i.e.
+# genuinely a Prime-specific proper text, not reused from elsewhere.
+prime-lectio:
+  text: Deduc quasi torréntem lácrimas per diem et noctem; non des réquiem tibi, neque táceat pupílla óculi tui.
+  citation: Lam. 2:18
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/09-15.txt's own [Hymnus Laudes]
+# block (SanctiM/09-15.txt's own "[HymnusM Vespera]" tag is itself just
+# "@:HymnusM Laudes", i.e. "reuse whatever this file's own Lauds hymn
+# resolves to" -- but the raw secular file gives this Sapphic-meter text
+# as the *Vespers* hymn specifically, distinct from the Lauds hymn above).
+# Corrected 2026-09-11: an earlier version of this file claimed no English
+# rendering existed in the reference engine and supplied a self-translated
+# draft -- wrong; English/Sancti/09-15.txt's own [Hymnus Vespera] carries a
+# real, complete rhymed English translation all along (same class of miss
+# as lauds-hymn-seven-sorrows-of-the-bvm.yml's own 2026-09-10 fix). Now
+# sourced directly from there.
+vespers-hymn:
+  text: |-
+    Jam toto súbitus vesper eat polo,
+    Et sol attónitum præcípitet diem,
+    Dum sævæ récolo ludíbrium necis,
+    Divinámque catástrophen.
+
+    Spectátrix áderas supplício, Parens,
+    Malis uda, gerens cor adamántinum;
+    Natus funérea péndulus in cruce
+    Altos dum gémitus dabat.
+
+    Pendens ante óculos Natus, atrócibus
+    Sectus verbéribus, Natus hiántibus
+    Fossus vulnéribus, quot penetrántibus
+    Te confíxit acúleis!
+
+    Eheu! Sputa, álapæ, vérbera, vúlnera,
+    Clavi, fel, áloë, spóngia, láncea,
+    Sitis, spina, cruor, quam vária pium
+    Cor pressére tyránnide!
+
+    Cunctis intérea stas generósior,
+    Virgo, Martýribus: prodígio novo,
+    In tantis móriens non móreris, Parens,
+    Diris fixa dolóribus.
+
+    Sit summæ Tríadi glória, laus, honor,
+    A qua supplíciter, sollícita prece,
+    Posco virgínei róboris ǽmulas
+    Vires rebus in ásperis. Amen.
+  status: verified
+
+# Divino Afflatu 1954 engine render (2026-09-15, second Vespers; post-1617 feast, no Monastic render exists). Replaces a text that was either the Common BVM's versicle or the Apparition of St. Michael's with its Paschal Alleluia baked in. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-versicle:
+  text: |
+    V. Regína Mártyrum, ora pro nobis.
+    R. Quæ juxta crucem Jesu constitísti.
+  status: verified
+
+# Divino Afflatu 1954 engine render, 2026-09-14 seven-sorrows-of-the-bvm first (DA 1954; second Vespers of the
+# Raphael file borrows the Guardian Angels' same Angel-Common versicle). Paschaltide Alleluia is left to
+# hours/paschal-alleluia.ts.
+vespers-versicle/~-first:
+  text: |
+    V. Regína Mártyrum, ora pro nobis.
+    R. Quæ juxta crucem Jesu constitísti.
+  status: verified
+
+# Lauds' Benedictus antiphon, read from web/www/horas/Latin/Sancti/
+# 09-15.txt's own [Ant 2] and its English counterpart -- corrected
+# 2026-09-14 (found while chasing a "ferial-antiphon"-looking Magnificat
+# antiphon report): this file previously held [Ant 1] instead, which is
+# this feast's own *First Vespers* Magnificat antiphon, not its
+# Benedictus -- same mis-tagging bug already found and fixed for the
+# Exaltation of the Holy Cross (TODO.md, 2026-09-13). [Ant 1] itself
+# ("Nolíte me consideráre * quod fusca sim...") is consequently unused
+# by this app (no First-vs-Second-Vespers distinction in
+# getMagnificatAntiphon), same as every other Common-category file here
+# only ever storing [Ant 2]/[Ant 3].
+benedictus-antiphon:
+  text: Veníte, * ascendámus ad montem Dómini, et vidéte, si est dolor, sicut dolor meus.
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/09-15.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast, not the generic
+# Common-of-the-BVM fallback text this feast rendered before 2026-09-14
+# (found via a "this reads like the ferial antiphon" report: it wasn't
+# literally ferial, but it was a needlessly generic Common substitution
+# for a feast whose own source file has real Ant 2/Ant 3 content, missed
+# during the same-day sweep that first wired this feast's
+# `common` fallback without checking for her own proper text
+# first).
+magnificat-antiphon:
+  text: Oppréssit me dolor, * et fácies mea intúmuit a fletu, et pálpebræ meæ caligavérunt.
+  status: verified
+
+# First Vespers Magnificat antiphon: web/www/horas/Latin/Sancti/09-15.txt's own [Ant 1]
+# and its English counterpart. Second Vespers' [Ant 3] is
+# seven-sorrows-of-the-bvm-magnificat-antiphon.yml (the default); see hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon/~-first:
+  text: 'Nolíte me consideráre * quod fusca sim, quia decolorávit me sol: fílii matris meæ pugnavérunt contra me.'
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/09-15.txt's own [Ant Vespera]
+# block (SanctiM/09-15.txt says "Psalmi Dominica" and inherits the whole
+# office via "@Sancti/09-15" at its own top -- same Sunday-psalm-numbers-
+# but-real-proper-antiphons shape as Immaculate Conception/Assumption).
+# NOT sourced from a live "Hodie" query: that returned Nativity BVM's own
+# text instead (Sept 15 falls inside Nativity's own octave, and the
+# reference engine's stock default calendar apparently resolves the
+# office winner there differently than vu's own calendar does) -- a real
+# pitfall of trusting "today's automatic winner" queries on a date where
+# vu's blended calendar diverges from the reference engine's own. Only
+# the first 4 of the raw file's 5 listed antiphons are used (Monastic
+# Vespers has 4 psalm slots, not 5 -- same convention already confirmed
+# for nativity-of-st-john-the-baptist.yml).
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Quo ábiit * diléctus tuus, o pulchérrima mulíerum? quo declinávit diléctus tuus, et quærémus eum tecum?
+    - psalms:
+        - 112
+      antiphon: Recédite a me, * amáre flebo, nolíte incúmbere, ut consolémini me.
+    - psalms:
+        - 121
+      antiphon: Non est ei * spécies neque decor, et vídimus eum, et non erat aspéctus.
+    - psalms:
+        - 126
+      antiphon: A planta pedis * usque ad vérticem cápitis non est in eo sánitas.
+
+# Matins Nocturn 3 reading for the Seven Sorrows of the Blessed Virgin
+# Mary (Sep 15). Sourced directly from
+# web/www/horas/Latin/Sancti/09-15.txt, English/Sancti/09-15.txt --
+# Lectio7-9, St. Ambrose's homily on John 19:25-27 (On Virgins, 7) and
+# his own Epistle 25 to the Church of Vercelli, combined into one
+# reading. Nocturn 2 (Lectio4-6) is a direct `@Tempora/Quad5-5`
+# cross-reference (Friday of Passion Week), not this feast's own
+# content -- not transcribed here.
+#
+# Update (2026-09-05): the Gospel pericope itself (John 19:25-27,
+# "Stabant juxta Crucem" -- confirmed by St. Ambrose's own homily text,
+# which opens by quoting and glossing this exact passage) is now
+# authored too (isGospel: true, immediately before the homily), matching
+# the newer convention set by post-pentecost-16.yml -- sourced from
+# missa/Latin/Sancti/09-15.txt's own [Evangelium] and
+# missa/English/Sancti/09-15.txt.
+nocturn-readings:
+  readings:
+    - nocturn: 3
+      isGospel: true
+      citation: Joann 19:25-27
+      text: 'In illo témpore: Stabant juxta Crucem Jesu Mater ejus, et soror Matris ejus, María Cléophæ, et María Magdaléne. Cum vidísset ergo Jesus Matrem, et discípulum stantem, quem diligébat, dicit Matri suæ: Múlier, ecce fílius tuus. Deinde dicit discípulo: Ecce Mater tua. Et ex illa hora accépit eam discípulus in sua.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Ambrose, On Virgins, Bk. 7; Epistle 25 to the Church of Vercelli
+      text: |-
+        Stabat juxta crucem Mater, et, fugiéntibus viris, stabat intrépida. Vidéte utrum pudórem mutáre potúerit Mater Jesu, quæ ánimum non mutávit. Spectábat piis óculis Fílii vúlnera, per quæ sciébat ómnibus futúram redemptiónem. Spectábat non degéneri mater spectáculo, quæ non metúerat peremptórem. Pendébat in cruce Fílius, Mater se persecutóribus offerébat.
+
+        María Mater Dómini ante crucem Fílii stabat. Nullus me hoc dócuit, nisi sanctus Joánnes Evangelísta. Mundum álii concússum in passióne Dómini conscripsérunt, cælum ténebris obdúctum, refugísse solem, in paradísum latrónem, sed post piam confessiónem, recéptum. Joánnes dócuit, quod álii non docuérunt, quemádmodum in cruce pósitus Matrem appelláverit. Pluris putátur quod victor suppliciórum pietátis offícia Matri exhibébat, quam quod regnum cæléste donábat. Nam si religiósum est quod latróni donátur vénia, multo uberióris pietátis est quod a Fílio Mater tanto afféctu honorátur.
+
+        Ecce, inquit, fílius tuus: ecce mater tua. Testabátur de cruce Christus, et inter matrem atque discípulum dividébat pietátis offícia. Condébat Dóminus non solum públicum, sed étiam domésticum testaméntum: et hoc ejus testaméntum signábat Joánnes, dignus tanto testatóre testis. Bonum testaméntum, non pecúniæ, sed vitæ ætérnæ; quod non atraménto scriptum est, sed Spíritu Dei vivi, qui ait: Lingua mea cálamus scribæ velóciter scribéntis.
+      status: verified

@@ -1,0 +1,42 @@
+# Read directly from web/www/horas/Latin/Sancti/09-09n.txt's own [Oratio]
+# and English/Sancti/09-09n.txt's own translation.
+collect:
+  text: |
+    Orémus.
+    Deus, qui, abréptos in servitútem Nigrítas ad agnitiónem tui nóminis vocatúrus, beátum Petrum mira in
+    eis juvándis caritáte et patiéntia roborásti: ejus nobis intercessióne concéde; ut, quæ Jesu Christi
+    sunt quæréntes, próximos ópere et veritáte diligámus.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus
+    Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle, same combined-bundle shape as
+# st-canute-commemoration.yml. Ant 2/Versum 2 are the standard de-Communi
+# pairing for the Common of a Confessor Not a Pontiff (C5, his own real
+# common per [Rank]/[Rule]) -- common-of-a-confessor-commemoration-
+# antiphon.yml / lauds-versicle-common-of-a-confessor.yml, both already
+# verified elsewhere (Common text, not proper to Peter Claver).
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui, abréptos in servitútem Nigrítas ad agnitiónem tui nóminis vocatúrus, beátum Petrum mira in eis juvándis caritáte et patiéntia roborásti: ejus nobis intercessióne concéde; ut, quæ Jesu Christi sunt quæréntes, próximos ópere et veritáte diligámus.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Peter Claver, Confessor (Sep 9).
+# Sourced from web/www/horas/Latin/Sancti/09-09n.txt's [Lectio94] (its own
+# alternate/shorter numbered lesson, the only vita content the source
+# carries for this entry -- no Lectio4-6 of the usual kind exists here),
+# and English/Sancti/09-09n.txt's own translation of the same. Both
+# Latin and English are the source's own verified text.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Petrus Claver, Hispánus Verdúni natus, Societáti Jesu nomen dedit adoléscens móribus innocentíssimis. In Baleárium máxima a sancto Alfónso Rodríguez, qui multa de futúro ejus apostolátu divínitus accéperat, parátos sibi labóres edóctus est. Carthágine Nova in América Meridionáli sacerdótio auctus, Nigrítis turpi mercátu illuc abdúctis vitam suam, interpósita sacraménti fide, plane devóvit. In his autem fovéndis, nutriéndis, curándis, doctrína christiána imbuéndis et baptizándis dici vix potest quanta patiéntia et caritáte annos ámplius quadragínta insudáverit. Quamplúres a médicis desperátos súbito sanitáti restítuit, multis oculórum lúmine captis visum réddidit, tres a mórtuis excitávit. His excéllens méritis atque virtútibus heróicis annos expléverat quátuor et septuagínta, cum die natáli Deíparæ, quam tenérrimo colúerat afféctu, ad Cǽlites migrávit. Eum Leo décimus tértius cǽlitum Sanctórum fastis adscrípsit atque patrónum cæléstem peculiárem sacrárum ad Nigrítas missiónum constítuit.
+      status: verified

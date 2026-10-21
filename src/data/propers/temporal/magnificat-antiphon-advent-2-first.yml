@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2026-12-05 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: magnificat-antiphon-advent-2-first
-text:
-  la: "Veni, Dómine, * visitáre nos in pace, ut lætémur coram te corde perfécto."
-  en: "Come, O Lord, * visit us in peace, that we may rejoice before thee with all our heart."
-status:
-  la: verified
-  en: verified

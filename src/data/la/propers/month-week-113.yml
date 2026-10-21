@@ -1,0 +1,26 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2027-11-06 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: Muro tuo * inexpugnábili circumcínge nos, Dómine, et armis tuæ poténtiæ prótege nos semper.
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "week III of November" (Tempora/113-0.txt) — see
+# month-week-081.yml's header for the id scheme. Live-verified (2026-11-08:
+# "Dominica V Post Epiphaniam III. Novembris"). Responsory reuses 111's
+# own Responsory4 (source's own cross-reference).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Athanasius, On Virginity
+      text: |-
+        Si accédant áliqui, e dicant tibi: Ne frequénter jejúnes, ne imbecíllior fias; ne credas illis, neque auscúltes: per istos enim inimícus hæc súggerit. Reminíscere ejus quod scriptum est, quod, cum tres púeri, et Dániel, et álii adolescéntuli, captívi ducti essent a Nabuchodónosor rege Babylónis, jussúmque esset ut de ipsíus mensa régia coméderent et de vino bíberent; Dániel et tres púeri illi noluérunt póllui ex mensa regis, sed dixérunt eunúcho qui eos curándos suscéperat: Da nobis de semínibus terræ, et vescémur. Quibus ait eunúchus: Tímeo ego regem, qui constítuit vobis cibum et potum, ne forte fácies vestræ appáreant regi squalidióres præ céteris púeris qui régia mensa alúntur, et púniat me.
+
+        Cui dixérunt illi: Tenta servos tuos dies decem, et da nobis de semínibus. Et dedit eis legúmina ad vescéndum, et aquam ad bibéndum; et introdúxit eos in conspéctu regis, et visæ sunt fácies ipsórum speciosióres præter céteros púeros, qui régiæ mensæ cibis nutriebántur. Vidésne quid fáciat jejúnium? Morbos sanat, distillatiónes córporis exsíccat, dǽmones fugat, pravas cogitatiónes expéllit, mentem clariórem reddit, cor mundum éfficit, corpus sanctíficat, dénique ad thronum Dei hóminem sistit. Et ne putes hæc témere dici; habes hujus rei testimónium in Evangéliis a Salvatóre prolátum. Cum enim quæsivíssent discípuli quonam modo immúndi spíritus ejiceréntur, respóndit Dóminus: Hoc genus non ejícitur, nisi in oratióne et jejúnio.
+
+        Quisquis ígitur ab immúndo spíritu vexátur, si hoc animadvértat, et hoc phármaco utátur, jejúnio inquam, statim spíritus malus oppréssus abscédet, vim jejúnii métuens. Valde enim dǽmones oblectántur crápula et ebrietáte et córporis cómmodis. Magna vis in jejúnio, et magna ac præclára fiunt per illud. Alióquin unde hómines tam mirífica præstárent, et signa per eos fíerent, et sanitátem infírmis per ipsos largirétur Deus, nisi plane ob exercitatiónes spirituáles, et humilitátem ánimi, et conversatiónem bonam? Jejúnium enim Angelórum cibus est: et qui eo útitur, órdinis angélici censéndus est.
+      responsory: |-
+        R. Super muros tuos, Jerúsalem, constítui custódes; * Tota die et nocte non tacébunt laudáre nomen Dómini.
+        V. Prædicábunt pópulis fortitúdinem meam, et annuntiábunt géntibus glóriam meam.
+        R. Tota die et nocte non tacébunt laudáre nomen Dómini.
+      status: verified

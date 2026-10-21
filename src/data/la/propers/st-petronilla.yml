@@ -1,0 +1,20 @@
+# Matins Nocturn 2 reading for St. Petronilla, Virgin (May 31). Sourced
+# from web/www/horas/Latin/Sancti/05-31o.txt (Lectio2-3, its only two
+# lessons -- "1 et 2 lectiones", no Lectio1 of her own), combined into one
+# continuous vita. Latin lightly normalized from the source's own OCR
+# typos/orthographic slips (e.g. "furgere"->"súrgere", "conuiuis"->
+# "convíviis", "recides"->"récidit", "adamauit"->"adamávit",
+# "subuenic"->"subvénit") but otherwise the source's own text, so kept
+# `verified`. English/Sancti/05-31o.txt carries only the bare [Officium]
+# name -- no vita translation at all -- so the English below is this
+# project's own translation of the Latin, marked `draft` accordingly, same
+# convention as st-canute.yml's nocturn reading.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Petronílla, sancti Petri fília, virgo forma córporis exímia, sed ánimi pulchritúdine multo præstántior fuit: quæ ægróta cum esset, a beáto Petro quæsítum est, cur, qui aliénos sanáret, fíliæ suæ sanitátem non restitúeret? Respóndit: quia sic éxpedit ei. Verúmtamen, ut némini de sua potestáte dubitándi locum relínqueret, eam súrgere jussit e lecto, et convíviis ministráre. Quæ paulo post in eúndem morbum récidit; ex eo cum áliquando conváluisset, ejus fama commótus, ne visam quidem, Fláccus Comes adamávit, eníxeque conténdit, ut sibi darétur in matrimónium.
+
+        Petronílla autem intéllegens virginitáti suæ, quam Jesu Christo dicáverat, ab acérrimo humáni géneris hoste parári insídias; sumpto sibi tridui spátio ad deliberándum, totum illud tempus in jejúniis et oratióne consúmpsit, allídue petens a cælésti sponso, ne sancto propósito suo vim afférri paterétur: itaque subvénit die tértio vírgini Deus: nam eam divíni sponsi amóre flagrántem, ubi Eucharístiam sumpsísset, ad cæléstes núptias evocávit. Cujus corpus in via Ardeatína sepúltum, póstea a Paulo primo pontífice in basílicam Príncipis Apostolórum translátum est.
+      status: verified

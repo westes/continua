@@ -1,0 +1,288 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Preces nostras, quǽsumus, Dómine, cleménter exáudi: atque, a peccatórum vínculis absolútos, ab omni nos adversitáte custódi.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2025-03-02); Latin and English both taken from the page.
+lauds-capitulum:
+  text: 'Fratres: Si linguis hóminum loquar, et Angelórum, caritátem autem non hábeam, factus sum velut æs sonans, aut cýmbalum tínniens.'
+  citation: 1 Cor 13:1
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2025-03-02); Latin and English both taken from the page.
+lauds-hymn:
+  text: |
+    Ætérne rerum Cónditor,
+    Noctem diémque qui regis,
+    Et témporum das témpora,
+    Ut álleves fastídium.
+
+    Præco diéi jam sonat,
+    Noctis profúndæ pérvigil,
+    Noctúrna lux viántibus,
+
+    A nocte noctem ségregans.
+
+    Hoc excitátus Lúcifer
+    Solvit polum calígine,
+    Hoc omnis errónum cohors
+    Viam nocéndi déserit.
+
+    Hoc nauta vires cólligit,
+    Pontíque mitéscunt freta:
+    Hoc, ipsa Petr a Ecclésiæ,
+    Canénte, culpam díluit.
+
+    Surgámus ergo strénue,
+    Gallus jacéntes éxcitat,
+    Et somnoléntos íncrepat,
+    Gallus negántes árguit.
+
+    Gallo canénte spes redit,
+    Ægris salus refúnditur,
+    Mucro latrónis cónditur,
+    Lapsis fides revértitur.
+
+    Jesu labéntes réspice,
+    Et nos vidéndo córrige:
+    Si réspicis, lapsus cadunt,
+    Fletúque culpa sólvitur.
+
+    Tu lux refúlge sénsibus,
+    Mentísque somnum díscute:
+    Te nostra vox primum sonet,
+    Et vota solvámus tibi.
+
+    Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc et in perpétuum.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2025-03-02); Latin and English both taken from the page.
+lauds-responsory:
+  text: |
+    R.br. Inclína cor meum, Deus, * In testimónia tua.
+    R. Inclína cor meum, Deus, * In testimónia tua.
+    V. Avérte óculos meos, ne vídeant vanitátem: in via tua vivífica me.
+    R. In testimónia tua.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Inclína cor meum, Deus, * in testimónia tua.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2025-03-02); Latin and English both taken from the page.
+lauds-versicle:
+  text: V. Dómine, refúgium factus es nobis. R. A generatióne et progénie.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayPrima, 2025-03-02); Latin and English both taken from the page.
+prime-antiphon:
+  text: Iter faciénte * Jesu, dum appropinquáret Jericho, cæcus clamábat ad eum, ut lumen recípere mererétur.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2025-03-02); Latin and English both taken from the page.
+terce-antiphon:
+  text: 'Transeúnte * Dómino, clamábat cæcus ad eum: Miserére mei, Fili David.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2025-03-02); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    1 Cor 13:1 Fratres: Si linguis hóminum loquar, et Angelórum, caritátem autem non hábeam, factus sum velut æs sonans, aut cýmbalum tínniens.
+    R. Deo grátias.
+    V. Ego dixi: Dómine, miserére mei.
+    R. Sana ánimam meam, quia peccávi tibi.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2025-03-02); Latin and English both taken from the page.
+sext-antiphon:
+  text: 'Et qui præíbant, * increpábant eum ut tacéret: ipse vero multo magis clamábat: Miserére mei, Fili David.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2025-03-02); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    1 Cor 13:8-9 Cáritas nunquam éxcidit: sive prophetíæ evacuabúntur, sive linguæ cessábunt, sive sciéntia destruétur. Ex parte enim cognóscimus, et ex parte prophetámus.
+    R. Deo grátias.
+    V. Dóminus regit me, et nihil mihi déerit.
+    R. In loco páscuæ ibi me collocávit.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2025-03-02); Latin and English both taken from the page.
+none-antiphon:
+  text: Cæcus magis * ac magis clamábat, ut eum Dóminus illumináret.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2025-03-02); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    1 Cor 13:13 Nunc autem manent fides, spes, cáritas, tria hæc: major autem horum est cáritas.
+    R. Deo grátias.
+    V. Ab occúltis meis munda me, Dómine.
+    R. Et ab aliénis parce servo tuo.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2025-03-02); Latin and English both taken from the page.
+vespers-hymn:
+  text: |
+    Lucis Creátor óptime,
+    Lucem diérum próferens,
+    Primórdiis lucis novæ,
+    Mundi parans oríginem:
+
+    Qui mane junctum vésperi
+    Diem vocári prǽcipis:
+    Tetrum chaos illábitur,
+    Audi preces cum flétibus.
+
+    Ne mens graváta crímine,
+    Vitæ sit exsul múnere,
+    Dum nil perénne cógitat,
+    Seséque culpis ílligat.
+
+    Cælórum pulset íntimum,
+    Vitále tollat prǽmium:
+    Vitémus omne nóxium:
+    Purgémus omne péssimum.
+
+    Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2025-03-02); Latin and English both taken from the page.
+vespers-responsory:
+  text: |
+    R.br. Quam magnificáta sunt * ópera tua, Dómine.
+    R. Quam magnificáta sunt * ópera tua, Dómine.
+    V. Ómnia in sapiéntia fecísti.
+    R. Ópera tua Dómine.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Quam magnificáta sunt * ópera tua, Dómine.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2025-03-02); Latin and English both taken from the page.
+vespers-versicle:
+  text: V. Dirigátur, Dómine, orátio mea. R. Sicut incénsum in conspéctu tuo.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-02-07 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Ecce ascéndimus * Jerosólymam, et consummabúntur ómnia quæ scripta sunt de Fílio hóminis: tradétur enim géntibus, et illudétur, et conspuétur: et postquam flagelláverint, occídent eum, et tértia die resúrget.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-02-07 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: 'Stans autem Jesus, * jussit cæcum addúci ad se, et ait illi: Quid vis ut fáciam tibi? Dómine, ut vídeam. Et Jesus ait illi: Réspice, fides tua te salvum fecit. Et conféstim vidit, et sequebátur illum, magníficans Deum.'
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-03-01 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: Pater fídei nostræ * Abraham summus, óbtulit holocáustum super altáre pro fílio.
+  status: verified
+  temporal: true
+
+# Engine (Monastic Tridentinum 1617, command=prayLaudes, 2027-02-07); source Tempora/Quadp3-0.txt's [Ant Laudes] entries 1,2,3,4,5 in Latin and English. Antiphons for the Sunday's own psalm slots (Ps 66 first, no antiphon). Applies via the numbers-override path for this temporal Sunday (resolve-common.ts getPsalmodyNumbersOverrideId).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 50
+      antiphon: Secúndum multitúdinem * miseratiónum tuárum, Dómine, dele iniquitátem meam.
+    - psalms:
+        - 117
+      antiphon: 'Deus meus es tu, * et confitébor tibi: Deus meus es tu, et exaltábo te.'
+    - psalms:
+        - 62
+      antiphon: Ad te de luce * vígilo, Deus, ut vídeam virtútem tuam.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Hymnum dícite, * et superexaltáte eum in sǽcula.
+  laudate:
+    antiphon: Omnes Angeli * ejus laudáte Dóminum de cælis.
+
+# Nocturn 2-3, Quinquagesima Sunday (temporalId quinquagesima). Sourced
+# from Tempora/Quadp3-0.txt (Latin) / English/Tempora/Quadp3-0.txt. See
+# advent-1.yml/septuagesima.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Ambrose's book On
+# the Patriarch Abraham, Book 1, chapter 2 (the Genesis/Fall-to-Abraham
+# Nocturn 1 cycle continues here from Sexagesima). Responsory: Lectio4's
+# own (Responsory4, "Angelus Dómini vocávit Abraham").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Luke 18:31-43, the healing of the blind man near
+# Jericho, "Et réliqua") - Pope St. Gregory the Great's Homily 2 on the
+# Gospels begins within Lectio7 itself, same pattern used throughout this
+# sweep. Combined Lectio7's homily portion (incipit dropped) with
+# Lectio8-9, using Responsory7 ("Veni hódie ad fontem aquæ") - the first
+# responsory of the group the combined reading spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, On the Patriarch Abraham, Book 1
+      text: |-
+        Magnus plane vir Abraham, et multárum virtútum clarus insígnibus, quem votis suis philosophía non pótuit æquare. Dénique minus est quod illa finxit, quam quod iste gessit: majórque ambitióso eloquéntiæ mendácio simplex veritátis fides. Itaque cujúsmodi fúerit in eo viro devótio, considerémus. Ea enim virtus órdine prima est, quæ est fundaméntum ceterárum: meritóque hanc ab eo primam exégit Deus, dicens: Exi de terra tua, et de cognatióne tua, et de domo patris tui. Satis fúerat dixísse: De terra tua. Ibi enim erat exíre de cognatióne, exíre de patérna domo.
+
+        Sed ideo áddidit síngula, ut ejus afféctum probáret: ne forte aut imprudénter cœpísse viderétur, aut fraus áliqua mandátis cæléstibus pararétur. Sed sicut coacervánda fuérunt præcépta, ne quid latéret: ita étiam proponénda præmia, ne forte desperáret. Tentátur ut fortis, incitátur ut fidélis, provocátur ut justus: meritóque exívit, quemádmodum locútus est illi Dóminus. Et exívit cum eo Lot. Hoc autem, quod pro magno inter septem sapiéntum dicta celebrátur: Séquere Deum; perfécit Abraham, factóque sapiéntum dicta prævénit, et secútus Deum exívit de terra sua.
+
+        Sed quia ante terra ei fúerat ália, hoc est, régio Chaldæórum, de qua exívit Thare pater Abrahæ, et in Charran demigrávit: et quia secum edúxit nepótem suum, cui dictum fúerat, Exi de cognatióne tua: considerémus, ne forte hoc sit exíre de terra sua, de hujus terræ, hoc est, de córporis nostri quadam commemoratióne égredi, de qua exívit Paulus, qui dixit: Nostra autem conversátio in cælis est.
+      responsory: |-
+        R. Angelus Dómini vocávit Abraham, dicens: * Ne exténdas manum tuam super púerum, eo quod tímeas Dóminum.
+        V. Cumque extendísset manum ut immoláret fílium, ecce Angelus Dómini de cælo clamávit, dicens.
+        R. Ne exténdas manum tuam super púerum, eo quod tímeas Dóminum.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 18:31-43
+      text: 'In illo témpore: Assúmpsit Jesus duódecim, et ait illis: Ecce, ascéndimus Jerosólymam, et consummabúntur ómnia, quæ scripta sunt per Prophétas de Fílio hominis. Tradétur enim Géntibus, et illudétur, et flagellábitur, et conspuétur: et postquam flagelláverint, occídent eum, et tértia die resúrget. Et ipsi nihil horum intellexérunt, et erat verbum istud abscónditum ab eis, et non intellegébant quæ dicebántur. Factum est autem, cum appropinquáret Jéricho, cæcus quidam sedébat secus viam, mendícans. Et cum audíret turbam prætereúntem, interrogábat, quid hoc esset. Dixérunt autem ei, quod Jesus Nazarénus transíret. Et clamávit, dicens: Jesu, fili David, miserére mei. Et qui præíbant, increpábant eum, ut tacéret. Ipse vero multo magis clamábat: Fili David, miserére mei. Stans autem Jesus, jussit illum addúci ad se. Et cum appropinquásset, interrogávit illum, dicens: Quid tibi vis fáciam? At ille dixit: Dómine, ut vídeam. Et Jesus dixit illi: Réspice, fides tua te salvum fecit. Et conféstim vidit, et sequebátur illum, magníficans Deum. Et omnis plebs ut vidit, dedit laudem Deo.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 2 on the Gospels
+      text: |-
+        Redémptor noster, prǽvidens ex passióne sua discipulórum ánimos perturbándos, eis longe ante et ejúsdem passiónis pœnam, et resurrectiónis suæ glóriam prædíxit: ut cum eum moriéntem, sicut prædíctum est, cérnerent; étiam resurrectúrum non dubitárent. Sed quia carnáles adhuc discípuli nullo modo valébant cápere verba mystérii, venítur ad miráculum. Ante eórum óculos cæcus lumen recépit: ut qui cæléstis mystérii verba non cáperent, eos ad fidem cæléstia facta solidárent.
+
+        Sed mirácula Dómini et Salvatóris nostri sic accipiénda sunt, fratres caríssimi, ut et in veritáte credántur facta, et tamen per significatiónem nobis aliquid ínnuant. Opera quippe ejus et per poténtiam áliud osténdunt, et per mystérium áliud loquúntur. Ecce enim, quis juxta históriam cæcus iste fúerit, ignorámus: sed tamen quid per mystérium signíficet, nóvimus. Cæcum quippe est genus humánum, quod in parénte primo a paradísi gáudiis expúlsum, claritátem supérnæ lucis ignórans, damnatiónis suæ ténebras pátitur. Sed tamen per Redemptóris sui præséntiam illuminátur: ut intérnæ lucis gáudia jam per desidérium vídeat, atque in via vitæ boni óperis gressus ponat.
+
+        Notándum vero est, quod cum Jesus Jéricho appropinquáre dícitur, cæcus illuminátur. Jéricho quippe luna interpretátur: luna autem in sacro elóquio pro deféctu carnis pónitur: quia dum ménstruis moméntis decréscit, deféctum nostræ mortalitátis desígnat. Dum ígitur Cónditor noster appropínquat Jéricho, cæcus ad lumen redit: quia dum divínitas deféctum nostræ carnis suscépit, humánum genus lumen, quod amíserat, recépit. Unde enim Deus humána pátitur, inde homo ad divína sublevátur. Qui vidélicet cæcus recte et juxta viam sedére, et mendícans esse descríbitur. Ipsa enim Véritas dicit: Ego sum via.
+      responsory: |-
+        R. Veni hódie ad fontem aquæ, et orávi Dóminum, dicens: * Dómine, Deus Abraham, tu prósperum fecísti desidérium meum.
+        V. Igitur puélla, cui díxero, Da mihi aquam de hýdria tua, ut bibam: et illa díxerit, Bibe, dómine, et camélis tuis potum tríbuam: ipsa est, quam præparávit Dóminus fílio dómini mei.
+        R. Dómine, Deus Abraham, tu prósperum fecísti desidérium meum.
+      status: verified

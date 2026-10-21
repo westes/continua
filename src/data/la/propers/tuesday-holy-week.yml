@@ -1,0 +1,35 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Quad6-2.txt,
+# [Oratio 2]. Cross-checked live against Divinum Officium (Monastic
+# Tridentinum 1617), Lauds, real date 2026-03-31 (Tuesday of Holy Week
+# that year) -- confirmed as the actual Lauds/ordinary-hours collect. As
+# with Monday, this day's own Vespers uses a different, distinct collect
+# ([Oratio 3], "Tua nos misericórdia, Deus...", also live-confirmed) not
+# modeled separately -- see monday-holy-week-collect.yml's note on this
+# app's single-collect-per-day design.
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus: da nobis ita Domínicæ passiónis sacraménta perágere; ut indulgéntiam percípere mereámur.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-03-31. Matches Tempora/Quad6-2.txt's own [Ant 2]
+# (Monastic form -- the file's "(rubrica praedicatorum)" variant, "Nemo
+# tollit a me ánimam meam...", is a Dominican-use alternative not followed
+# here). John 13:1, opening words of the Johannine Passion narrative,
+# the famous Mandatum antiphon.
+benedictus-antiphon:
+  text: Ante diem festum * Paschæ, sciens Jesus quia venit hora ejus, cum dilexísset suos, in finem diléxit eos.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-03-31. Matches Tempora/Quad6-2.txt's own [Ant 3]. John
+# 10:18, Christ's own words on laying down His life freely.
+magnificat-antiphon:
+  text: Potestátem hábeo * ponéndi ánimam meam, et íterum suméndi eam.
+  status: verified
+  temporal: true

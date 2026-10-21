@@ -1,0 +1,26 @@
+# Matins Nocturn 2 reading for St. Telesphorus, Pope and Martyr (Jan 5,
+# commemorated -- the day itself is the Vigil of the Epiphany). The main
+# Sancti/01-05.txt has no vita for him at all (its Nocturn 2/3 is the
+# Christmas octave's own homiletic content, now carried by
+# vigil-of-epiphany.yml), which is why this file used to pool that
+# homily in. The Rome-city calendar has a real proper vita:
+# web/www/horas/Latin/Sancti/Urbis/01-05cc.txt (Duplex, nine lessons;
+# also reused for the combined Ss. Telesphorus and Hyginus office of
+# Urbis/01-19). Lectio4-6 combined into one reading, one continuous
+# vita, no genuine source break. No responsory given in the source.
+#
+# Latin typos in the Urbis file corrected here: "tortia" -> "tertia",
+# "sacrificiumter" -> "sacrificium ter", "quas ... attinent" -> "quae".
+# English/Sancti has no regional subdirectory, so there is no English
+# source; the English is this project's own translation, marked draft.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Telesphorus, natióne Græcus, pátria Thuriensis in magna Græcia, ex presbytero Románæ Ecclésiæ (cujus dignum minístrum egerat) Póntifex Máximus creátus est. Hoc suprémum munus ita óbiit, ut exímius Petri successor lectus esse viderétur. In ejus cáthedra sedit sub imperatóre Antoníno Pio, fervente persecutionis æstu. Qui tamen non óbstitit, ne sedulam óperam regendæ Christi Ecclésiæ sollícitus navarit.
+
+        Hinc novis decrétis multa illum egrégie sancivisse legimus, quæ ad fidélium mores, Ecclesiasticórum libertatem, et sacros ritus attinent: scílicet quadragesimale jejúnium, jam olim ab Apóstolis traditum, novo edícto restaurasse; ac mandasse ut in Natali Dómini sanctum Missæ sacrificium ter celebraretur, média nocte, illucescénte aurora, hora demum tertia post solis ortum; et constituisse ut sacræ Liturgiæ hymnus angélicus, Glória in excélsis Deo, adderetur.
+
+        Edixisse quoque ne sacerdótes a pópulo arguerentur, ut sublimis órdinis dignitati consuleret. Ordinatióne quadruplici, mense Decémbri, creávit presbyteros duódecim, diáconos octo, epíscopos trédecim per divérsa loca. Cum autem in propagánda fide ardentissimus esset, ac proínde idolórum sacerdótibus invisus, captus tandem cápitis abscissione martyrium consummávit Nonis Januárii, et ejus corpus in Vaticáno sepúltum est.
+      status: verified

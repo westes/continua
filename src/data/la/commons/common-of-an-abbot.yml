@@ -1,0 +1,408 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C5b.txt ("Commune Abbatis") and its English
+# counterpart, 2026-08. A Common-collect template — `{N}` stands for the
+# saint's own name, substituted by getDayCollect (hours/resolve-common.ts)
+# via SaintRecord.collectCommon/collectName. Source's own English has a
+# stray leading "v. " before the prayer (a formatting artifact) — dropped
+# here.
+collect/c5b:
+  text: |
+    Orémus.
+    Intercéssio nos, quǽsumus, Dómine, beáti {N} Abbátis comméndet: ut, quod nostris méritis non valémus, ejus patrocínio assequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Commune Abbatis aliases Commune Confessoris (C5/C4 family, no own [Ant 2] override) -- same text already verified elsewhere (magnificat-antiphon-common-of-an-abbot.yml uses this family's Ant 3), matching the shared lauds-versicle-common-of-an-abbot.yml.
+commemoration-antiphon:
+  text: |
+    Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+  status: verified
+
+# The Common-of-a-Confessor's Matins hymn ("Iste Conféssor Dómini sacrátus" /
+# "This is the Lord's own hallowed confessor"). Latin is the Monastic-track
+# textual variant (reference engine's Commune/C4.txt [HymnusM Vespera] block,
+# live-verified for St. Louis, 2026-08-25, version=Monastic Tridentinum
+# 1617) — distinct from the secular breviary's later Urban VIII revision
+# ("...coléntes... Hac die lætus méruit beátas Scándere sedes"), which vu's
+# Monastic-structured Matins does not use. English is an original
+# translation (the reference engine's own English/Commune/C4.txt reuses one
+# translation for both Latin textual variants — mismatched here: its tomb
+# imagery and "merits" wording actually belong to this sacrátus form, not
+# the secular one it's nominally paired with there — so it wasn't trusted
+# and re-translated fresh instead), hence status.en: draft while
+# status.la: verified (transcribed as-is from the reference engine).
+#
+# Duplicated verbatim under this `common-of-an-abbot` id (2026-08-26):
+# live-verified `votive=C5` byte-identical, matching this session's
+# earlier Lauds/Vespers finding that Common-of-an-Abbot is really
+# Common-of-a-Confessor-Not-Bishop's content under a different label.
+matins-hymn:
+  text: |-
+    Iste Conféssor Dómini sacrátus,
+    Festa plebs cujus celébrat per orbem,
+    Hódie lætus méruit secréta
+    Scándere cæli.
+
+    Qui pius, prudens, húmilis, pudícus,
+    Sóbrius, castus fuit et quiétus,
+    Vita dum præsens vegetávit ejus
+    Córporis artus.
+
+    Ob sacrum cujus túmulum frequénter
+    Membra languéntum modo sanitáti,
+    Quólibet morbo fúerint graváta,
+    Restituúntur.
+
+    Unde nunc noster chorus in honórem
+    Ipsius, hymnum canit hunc libénter:
+    Ut piis ejus méritis juvémur
+    Omne per ævum.
+
+    Sit salus illi, decus atque virtus,
+    Qui supra cæli résidens cacúmen,
+    Tótius mundi máchinam gubérnat
+    Trinus et unus. Amen.
+  status: verified
+
+# Abbots (Sancti 'vide C5/C5a/C5b') inherit Commune/C4's invitatory; C5* have no own [Invit]. Same text as matins-invitatory-common-of-a-confessor.yml.
+matins-invitatory:
+  text: Regem Confessórum Dóminum, * Veníte, adorémus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query -- St. Louis's own day (2026-08-25) and St. Nicholas of
+# Tolentino's own day (2026-09-10, `propers: null`) cross-checked
+# byte-identical, confirming this is genuine shared Common content, not
+# either saint's own proper. Was falling all the way through to the
+# plain ferial default before this (see resolve-common.ts's
+# resolveOfficeBundle) -- Lauds' chapter/responsory/hymn/versicle bundle
+# was previously gated at duplex-majus+ like the psalmody-override table
+# it piggybacked eligibility on, wrongly excluding every lower-ranked
+# Common-of-a-Confessor-Not-Bishop saint (e.g. St. Louis, Simplex) from
+# their own Common's real content.
+#
+# Duplicated verbatim under this `common-of-an-abbot` id (2026-08-26):
+# live-verified (St. Maurus, Jan 15; St. Odo, Feb 7) that this app's own
+# "Abbot" category is real content-wise identical to Common-of-a-
+# Confessor-Not-Bishop, same finding as `common-of-a-confessor`'s own
+# header -- Abbots aren't necessarily bishops, so the traditional rite
+# genuinely reuses the plain Confessor common for them. Duplicated
+# rather than an alias redirect for the same no-alias-mechanism reason
+# recorded there.
+lauds-capitulum:
+  text: Beátus vir, qui invéntus est sine mácula, et qui post aurum non ábiit, nec sperávit in pecúnia et thesáuris. Quis est hic, et laudábimus eum? fecit enim mirabília in vita sua.
+  citation: Sir 31:8-9
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query -- St. Louis's own day (2026-08-25) and St. Nicholas of
+# Tolentino's own day (2026-09-10, `propers: null`) cross-checked
+# byte-identical -- see lauds-capitulum-common-of-a-confessor-not-
+# bishop.yml's header for the fuller note on this bundle's gap. "Jesu
+# coróna célsior" -- self-contained, including its own final doxology
+# stanza; distinct from the Common-of-a-Confessor-Bishop's own Lauds hymn
+# ("Jesu Redémptor ómnium") -- the reference engine's votive-office
+# dropdown separates the two categories as C4 ("Confessoris Pontificis")
+# and C5 ("Confessoris non Pontificis"), each with its own full Office
+# bundle, not (as CommuneM/C4a.txt's file-inheritance structure might
+# suggest at a skim) one category layered as a thin override of the
+# other -- C4a.txt is actually "Doctoris Pontificis", unrelated to this
+# category despite the superficially similar filename.
+lauds-hymn:
+  text: |
+    Jesu coróna célsior,
+    Et véritas sublímior,
+    Qui confiténti sérvulo
+    Reddis perénne prǽmium:
+
+    Da supplicánti cœ́tui,
+    Obténtu hujus óptimi,
+    Remissiónem críminum
+    Rumpéndo nexum vínculi.
+
+    Anni recúrso témpore,
+    Dies illúxit lúmine,
+    Quo Sanctus hic de córpore
+    Polum migrávit prǽpotens.
+
+    Hic vana terræ gáudia
+    Et luculénta prǽdia,
+    Pollúta sorde députans,
+    Ovans tenet cæléstia.
+
+    Te, Christe Rex piíssime,
+    Hic confiténdo júgiter,
+    Calcávit hostem fórtiter,
+    Supérbum ac satéllitem.
+
+    Virtútum actu et fide,
+    Confessiónis órdine,
+    Jejúna membra déferens,
+    Dapes supérnas óbtinet.
+
+    Proínde te, piíssime,
+    Precámur omnes súpplices,
+    Ut hujus almi grátia
+    Nobis remíttas débita.
+
+    Glória Patri Dómino,
+    Glória Unigénito,
+    Una cum Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query -- St. Louis's own day (2026-08-25) and St. Nicholas of
+# Tolentino's own day (2026-09-10, `propers: null`) cross-checked
+# byte-identical -- see lauds-capitulum-common-of-a-confessor-not-
+# bishop.yml's header for the fuller note on this bundle's gap.
+lauds-responsory:
+  text: |
+    R.br. Amávit eum Dóminus, * Et ornávit eum.
+    R. Amávit eum Dóminus, * Et ornávit eum.
+    V. Stolam glóriæ índuit eum.
+    R. Et ornávit eum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Amávit eum Dóminus, * Et ornávit eum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query -- St. Louis's own day (2026-08-25) and St. Nicholas of
+# Tolentino's own day (2026-09-10, `propers: null`) cross-checked
+# byte-identical -- see lauds-capitulum-common-of-a-confessor-not-
+# bishop.yml's header for the fuller note on this bundle's gap.
+lauds-versicle:
+  text: |-
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Odo, 11-19-2025) -- common-of-an-abbot.
+# Covers `common-of-an-abbot`, `common-of-a-confessor-not-bishop`, and
+# `common-of-a-confessor` saints (SaintRecord.common) -- live-verified
+# identical P/T/S/N across all three (an Abbot is himself a Confessor;
+# the "faithful servant" antiphons apply generically), cross-checked
+# against St. John Gualbert/St. Nicholas of Tolentino/St. Alexius.
+prime-antiphon:
+  text: Dómine, quinque talénta * tradidísti mihi, ecce ália quinque superlucrátus sum.
+  status: verified
+
+# New file, 2026-10-04: the Common-category tier of Prime's Lectio
+# Brevis override (see hours/resolve-common.ts's getPrimeLectioBrevis) --
+# a saint with no proper Lectio Prima of her own, but who belongs to a
+# Common category, uses that category's own text rather than falling all
+# the way to the generic per-annum default. Sourced directly from
+# web/www/horas/Latin/Commune/C5.txt's own [Lectio Prima] tag and its
+# English counterpart.
+prime-lectio:
+  text: 'Justum dedúxit Dóminus per vias rectas, et osténdit illi regnum Dei, et dedit illi sciéntiam sanctórum: honestávit illum in labóribus, et complévit labóres illíus.'
+  citation: Sap 10:10
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Odo, 11-19-2025) -- common-of-an-abbot.
+# Covers `common-of-an-abbot`, `common-of-a-confessor-not-bishop`, and
+# `common-of-a-confessor` saints (SaintRecord.common) -- live-verified
+# identical P/T/S/N across all three (an Abbot is himself a Confessor;
+# the "faithful servant" antiphons apply generically), cross-checked
+# against St. John Gualbert/St. Nicholas of Tolentino/St. Alexius.
+terce-antiphon:
+  text: Euge, serve bone * in módico fidélis, intra in gáudium Dómini tui.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Odo, 11-19-2025) -- common-of-an-abbot.
+# Covers `common-of-an-abbot`, `common-of-a-confessor-not-bishop`, and
+# `common-of-a-confessor` saints (SaintRecord.common) -- live-verified
+# identical P/T/S/N across all three (an Abbot is himself a Confessor;
+# the "faithful servant" antiphons apply generically), cross-checked
+# against St. John Gualbert/St. Nicholas of Tolentino/St. Alexius.
+terce-capitulum:
+  text: |
+    Beátus vir, qui invéntus est sine mácula, et qui post aurum non ábiit, nec sperávit in pecúnia et thesáuris. Quis est hic, et laudábimus eum? fecit enim mirabília in vita sua.
+    R. Deo grátias.
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+  citation: Sir 31:8-9
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Odo, 11-19-2025) -- common-of-an-abbot.
+# Covers `common-of-an-abbot`, `common-of-a-confessor-not-bishop`, and
+# `common-of-a-confessor` saints (SaintRecord.common) -- live-verified
+# identical P/T/S/N across all three (an Abbot is himself a Confessor;
+# the "faithful servant" antiphons apply generically), cross-checked
+# against St. John Gualbert/St. Nicholas of Tolentino/St. Alexius.
+sext-antiphon:
+  text: Fidélis servus * et prudens, quem constítuit Dóminus super famíliam suam.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Odo, 11-19-2025) -- common-of-an-abbot.
+# Covers `common-of-an-abbot`, `common-of-a-confessor-not-bishop`, and
+# `common-of-a-confessor` saints (SaintRecord.common) -- live-verified
+# identical P/T/S/N across all three (an Abbot is himself a Confessor;
+# the "faithful servant" antiphons apply generically), cross-checked
+# against St. John Gualbert/St. Nicholas of Tolentino/St. Alexius.
+sext-capitulum:
+  text: |
+    Justus cor suum trádidit ad vigilándum dilúculo ad Dóminum, qui fecit illum, et in conspéctu Altíssimi deprecábitur.
+    R. Deo grátias.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+  citation: Sir 39:6
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Odo, 11-19-2025) -- common-of-an-abbot.
+# Covers `common-of-an-abbot`, `common-of-a-confessor-not-bishop`, and
+# `common-of-a-confessor` saints (SaintRecord.common) -- live-verified
+# identical P/T/S/N across all three (an Abbot is himself a Confessor;
+# the "faithful servant" antiphons apply generically), cross-checked
+# against St. John Gualbert/St. Nicholas of Tolentino/St. Alexius.
+none-antiphon:
+  text: Serve bone * et fidélis, intra in gáudium Dómini tui.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Odo, 11-19-2025) -- common-of-an-abbot.
+# Covers `common-of-an-abbot`, `common-of-a-confessor-not-bishop`, and
+# `common-of-a-confessor` saints (SaintRecord.common) -- live-verified
+# identical P/T/S/N across all three (an Abbot is himself a Confessor;
+# the "faithful servant" antiphons apply generically), cross-checked
+# against St. John Gualbert/St. Nicholas of Tolentino/St. Alexius.
+none-capitulum:
+  text: |
+    Justum dedúxit Dóminus per vias rectas, et osténdit illi regnum Dei, et dedit illi sciéntiam sanctórum: honestávit illum in labóribus, et complévit labóres illíus.
+    R. Deo grátias.
+    V. Lex Dei ejus in corde ipsíus.
+    R. Et non supplantabúntur gressus ejus.
+  citation: Sap 10:10
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers,
+# `votive=C5` live query, 2026-08 -- see vespers-responsory-common-of-a-
+# confessor-not-bishop.yml's header for why the votive-office view was
+# used instead of a real saint's own (outranked) Second Vespers. Same
+# "Iste Conféssor Dómini sacrátus" hymn (Monastic-track pre-Urban VIII
+# text) already authored for this Common's Matins hymn -- see matins-
+# hymn-common-of-an-abbot.yml's header for the Monastic-
+# vs-secular textual-variant note -- so its Latin and English (an
+# original translation, not the reference engine's own, for the same
+# reason recorded there) are reused verbatim here rather than
+# re-translated, for consistency across hours.
+vespers-hymn:
+  text: |-
+    Iste Conféssor Dómini sacrátus,
+    Festa plebs cujus celébrat per orbem,
+    Hódie lætus méruit secréta
+    Scándere cæli.
+
+    Qui pius, prudens, húmilis, pudícus,
+    Sóbrius, castus fuit et quiétus,
+    Vita dum præsens vegetávit ejus
+    Córporis artus.
+
+    Ob sacrum cujus túmulum frequénter
+    Membra languéntum modo sanitáti,
+    Quólibet morbo fúerint graváta,
+    Restituúntur.
+
+    Unde nunc noster chorus in honórem
+    Ipsius, hymnum canit hunc libénter:
+    Ut piis ejus méritis juvémur
+    Omne per ævum.
+
+    Sit salus illi, decus atque virtus,
+    Qui supra cæli résidens cacúmen,
+    Tótius mundi máchinam gubérnat
+    Trinus et unus. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers,
+# `votive=C5` ("Commune Confessoris non Pontificis") live query, 2026-08 --
+# bypasses calendar concurrence entirely (every real confessor-not-bishop
+# saint's Second Vespers turned out to be outranked by an adjacent fixed
+# feast in 2026: St. Louis by St. Zephyrinus's First Vespers, St. Francis
+# by SS. Placid and Companions', St. Dominic by Our Lady of the Snows',
+# St. Nicholas of Tolentino by the Nativity-of-the-BVM octave's -- a
+# structural pattern across this Common category, not a query mistake),
+# so the votive-office view was used instead to get the category's true
+# content directly. See lauds-capitulum-common-of-a-confessor-not-
+# bishop.yml's header for the fuller note on this bundle's gap; the
+# chapter itself is byte-identical to the Lauds one (same Sir 31:8-9),
+# which is why no separate vespers-capitulum-<id> file was authored --
+# see vespers.ts's lookupPart (Vespers chapter, Lauds sibling), which falls through to
+# the Lauds file automatically, same as St. Lawrence's own precedent.
+vespers-responsory:
+  text: |
+    R.br. Os justi * Meditábitur sapiéntiam.
+    R. Os justi * Meditábitur sapiéntiam.
+    V. Et lingua ejus loquétur judícium.
+    R. Meditábitur sapiéntiam.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Os justi * Meditábitur sapiéntiam.
+  status: verified
+
+# Second Vespers versicle of the Common of Confessors. Latin/Commune/C4.txt (and
+# C5/C5b/C5c, which inherit it): [Versum 3] is "@:Versum 2", i.e. "Justum
+# deduxit" (also the Lauds versicle); [Versum 1], First Vespers, is "Amavit eum"
+# -- see the matching -first file. Confirmed against the local reference engine
+# (Monastic Tridentinum 1617, command=prayVespera) on St. Francis (2024-10-03
+# First Vespers "Amavit eum", 2024-10-04 Second Vespers "Justum deduxit"),
+# St. Romuald and St. Bernard. The earlier `votive=` queries behind this file
+# showed the First Vespers versicle, because a votive Vespers is said as one.
+vespers-versicle:
+  text: |-
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+  status: verified
+
+# First Vespers versicle of the Common of Confessors: Latin/Commune/C4.txt
+# [Versum 1] ("Amavit eum"; C5, C5b and C5c inherit it). Second Vespers uses
+# [Versum 3] = "Justum deduxit" -- see the default file; see
+# hours/resolve-common.ts's withVespersVariant. Confirmed against the local
+# reference engine (2024-10-03 St. Francis, 2025-02-06 St. Romuald).
+vespers-versicle/~-first:
+  text: |-
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Odo, 11-19-2025) -- common-of-an-abbot.
+# Covers `common-of-an-abbot`, `common-of-a-confessor-not-bishop`, and
+# `common-of-a-confessor` saints (SaintRecord.common) -- live-verified
+# identical P/T/S/N across all three (an Abbot is himself a Confessor;
+# the "faithful servant" antiphons apply generically), cross-checked
+# against St. John Gualbert/St. Nicholas of Tolentino/St. Alexius.
+# Text taken from St. Alexius/St. Nicholas of Tolentino's own rendering,
+# not St. Odo's: Odo is Duplex (double-or-higher), so his own query shows
+# this antiphon in full at both open and close with no separate incipit
+# marker -- Alexius/Nicholas (Simplex/Semiduplex) render the same
+# underlying text with the incipit/full split visible, which is what
+# splitAntiphon (hours/antiphon.ts) needs to find via the embedded "*".
+benedictus-antiphon:
+  text: Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+  status: verified
+
+# Second Vespers Magnificat antiphon for `common-of-an-abbot` -- same
+# underlying Commune file as `common-of-a-confessor` (Latin/Commune/C5.txt,
+# via the C5-1/C5b sub-variants which don't override the Ant tags -- see
+# benedictus-antiphon-common-of-an-abbot.yml's own header). Its own
+# [Ant 3], live-verified directly against St. John Gualbert's real Second
+# Vespers (07-12-2026, no "Vespera de sequenti").
+magnificat-antiphon:
+  text: Hic vir despíciens mundum * et terréna, triúmphans, divítias cælo cóndidit ore, manu.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# Common-level: 02-07 st-romuald, 04-29 st-robert, 07-12 st-john-gualbert, 08-20 st-bernard. First Vespers
+# variant; the default (second Vespers) file is the same id without "-first". See hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Similábo eum * viro sapiénti, qui ædificávit domum suam supra petram.
+  status: verified

@@ -1,0 +1,83 @@
+# Read directly from web/www/horas/Latin/Tempora/Adv3-5.txt's own [Oratio]
+# and its English counterpart. Standard "Qui vivis..." closing spelled
+# out in full (the source abbreviates it), matching the closing formula
+# already used in other collects in this store.
+collect:
+  text: |
+    Orémus.
+    Excita, quǽsumus, Dómine, poténtiam tuam, et veni: ut hi, qui in tua pietáte confídunt, ab omni cítius adversitáte liberéntur.
+    Qui vivis et regnas cum Deo Patre in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-12-18 -- Advent Ember Friday, labeled "Antiphona ex
+# Proprio de Tempore". Same text as Tempora/Adv3-5.txt's own [Ant 2].
+benedictus-antiphon:
+  text: Ex quo facta est * vox salutatiónis tuæ in áuribus meis, exsultávit in gáudio infans in útero meo, allelúia.
+  status: verified
+  temporal: true
+
+# Real content from Tempora/Adv3-5.txt's own [Ant 3], authored per this
+# project's "import available content even if it may not survive the
+# current calendar" default -- but currently unreachable in practice:
+# Advent Ember Friday always falls on Dec 18 (the Wednesday after the 3rd
+# Sunday of Advent is always Dec 17-23's own week), which the O Antiphons
+# mechanism (calendar/index.ts, unconditional date-keyed override, see
+# TODO.md 2026-08-30) always wins for the Vespers Magnificat antiphon
+# instead -- live-verified 2026-12-18 renders "O Adonái," not this text.
+# Kept for completeness/correctness of the id space, same as any other
+# real proper text this store authors ahead of its own reachability.
+magnificat-antiphon:
+  text: 'Hoc est testimónium, * quod perhíbuit Joánnes: Qui post me venit, ante me factus est.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Advent Ember Friday (Feria VI Quattuor
+# Temporum Adventus) — read directly from
+# web/www/horas/Latin/Tempora/Adv3-5.txt and English/Tempora/Adv3-5.txt.
+# No Monastic-track override file exists for this day — confirms the
+# Monastic 1617 track uses this same text.
+#
+# Lectio1's Gospel citation (Luke 1:39-47, the Visitation) is a bare
+# incipit with no full pericope text given in this day's own file, so
+# only the homily portion was originally authored, same convention as
+# the September Ember days.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily), matching the
+# convention set by ember-september-friday.yml — this day's own
+# [Evangelium] carries the full pericope directly (not a redirect),
+# sourced from missa/Latin/Tempora/Adv3-5.txt, English/Tempora/
+# Adv3-5.txt, not guessed at.
+#
+# Recombined into one reading 2026-09-04 (previously kept as 3 separate
+# readings): Lectio1-3 are one continuous, unbroken Ambrose excerpt,
+# split only to fill the fixed 3-lesson Nocturn slot count — same fix
+# already applied to the other 4 Ember day nocturn-readings files the
+# same day, see ember-september-friday.yml's own header for the fuller
+# rationale. Responsory is Lectio1's own; Lectio2/3's own distinct
+# responsories are dropped, same as every other collapsed-reading case
+# in this store.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Luc 1:39-47
+      text: 'In illo témpore: Exsúrgens María ábiit in montána cum festinatióne in civitátem Juda: et intrávit in domum Zacharíæ et salutávit Elísabeth. Et factum est, ut audivit salutatiónem Maríæ Elísabeth, exsultávit infans in útero ejus: et repléta est Spíritu Sancto Elísabeth, et exclamávit voce magna et dixit: Benedícta tu inter mulíeres, et benedíctus fructus ventris tui. Et unde hoc mihi, ut véniat Mater Dómini mei ad me? Ecce enim, ut facta est vox salutatiónis tuæ in áuribus meis, exsultávit in gáudio infans in útero meo. Et beáta, quæ credidísti, quóniam perficiéntur ea, quæ dicta sunt tibi a Dómino. Et ait María: Magníficat ánima mea Dóminum: et exsultávit spíritus meus in Deo, salutári meo.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Commentary on Luke, Book 2, on Luke 1:39-47
+      text: |-
+        Morále est ómnibus, ut qui fidem éxigunt, fidem ástruant. Et ídeo Angelus, cum abscóndita nuntiáret, ut fidem astrúeret exémplo, senióris féminæ sterilísque concéptum Vírgini Maríæ nuntiávit: ut possíbile Deo omne, quod ei placúerit, asséreret. Ubi audívit hoc María, non quasi incrédula de oráculo, nec quasi incérta de núntio, nec quasi dúbitans de exémplo, sed quasi læta pro voto, religiósa pro offício, festína pro gáudio, in montána perréxit. Quo enim jam Deo plena, nisi ad superióra cum festinatióne conténderet? Nescit tarda molímina Sancti Spíritus grátia.
+
+        Díscite et vos, sanctæ mulíeres, sedulitátem, quam prægnántibus debeátis exhibére cognátis. Maríam, quæ ante sola in íntimis penetrálibus versabátur, non a público virginitátis pudor, non ab stúdio aspéritas móntium, non ab offício prolíxitas itíneris retardávit. In montána Virgo cum festinatióne, Virgo offícii memor, injúriæ ímmemor, afféctu urgénte non sexu, relícta perréxit domo. Díscite, vírgines, non circumcursáre per aliénas ædes, non demorári in platéis, non áliquos in público miscére sermónes. María in domo sera, festína in público, mansit apud cognátam suam tribus ménsibus.
+
+        Didicístis, vírgines, pudórem Maríæ: díscite humilitátem. Venit propínqua ad próximam, júnior ad seniórem: nec solum venit, sed étiam prior salutávit. Decet enim, ut quanto cástior virgo, tanto humílior sit. Nóverit deférre senióribus. Sit magístra humilitátis, in qua est proféssio castitátis. Est et causa pietátis, est étiam norma doctrínæ. Contuéndum est enim, quia supérior venit ad inferiórem, ut inférior adjuvétur: María ad Elísabeth, Christus ad Joánnem.
+      responsory: |-
+        R. Emítte Agnum, Dómine, Dominatórem terræ, * De Petra desérti ad montem fíliæ Sion.
+        V. Osténde nobis, Dómine, misericórdiam tuam, et salutáre tuum da nobis.
+        R. De Petra desérti ad montem fíliæ Sion.
+      status: verified

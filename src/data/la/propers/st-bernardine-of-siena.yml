@@ -1,0 +1,54 @@
+# Read directly from web/www/horas/Latin/Sancti/05-20.txt's own
+# [Oratio] and its English counterpart. Doxology "$Qui vivis" spelled
+# out per the convention in st-bibiana-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Dómine Jesu, qui beáto Bernardíno Confessóri tuo exímium sancti nóminis tui amórem
+    tribuísti: ejus, quǽsumus, méritis et intercessióne, spíritum nobis tuæ dilectiónis
+    benígnus infúnde.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-bernardine-of-siena has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-bernardine-of-siena-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Dómine Jesu, qui beáto Bernardíno Confessóri tuo exímium sancti nóminis tui amórem
+    tribuísti: ejus, quǽsumus, méritis et intercessióne, spíritum nobis tuæ dilectiónis
+    benígnus infúnde.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Bernardine of Siena, Confessor
+# (May 20). Sourced directly from web/www/horas/Latin/Sancti/05-20.txt,
+# English/Sancti/05-20.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in his own file (his `[Rule]` is `vide
+# C5`) -- defers to the Common of a Confessor's own Nocturn 3, not
+# transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Bernardinus Albizesca, nobili Senénsi família ortus, ab ineunte ætate non obscura sanctitátis dedit indícia; nam a piis paréntibus honeste educatus, neglectis puerílibus ludis, inter prima grammaticæ stúdia pietátis opéribus ánimum inténdit, jejuniis, oratióni, et beatíssimæ Vírginis cultui præcipue addictus. Misericórdia vero in páuperes fuit insígnis. Quæ quidem ómnia procedénte témpore quo mélius posset excólere, eórum número adscribi vóluit, qui Senis in hospitali domo beátæ Maríæ de Scala Deo inserviunt, unde complures sanctitáte celebres viri prodiérunt. Ibi corporis afflictatióne et ægrotántium cura, dum atrox pestiléntia grassarétur, incredibili caritate sese exercuit. Inter ceteras autem virtútes castitátem, egregia forma repugnante, sanctíssime custodívit adeo ut eo præsénte nemo umquam, ne impudentíssimus quidem, verbum minus honestum proferre auderet.
+
+        Gravi morbo tentatus, eoque ad quatuor menses patientíssime toleráto, demum incolumis, de religiosæ vitæ instituto capesséndo deliberare cœpit. Quo ut sibi viam muniret, ædiculam in extrema urbe conduxit; in quam cum sese abdidísset, asperrimam omni ex parte vitam trahebat, Deum assidue orans, ut, quid sibi sequéndum esset, osténderet. Quare divinitus factus est, ut beáti Francisci ordinem præ ceteris optaret, in quo humilitate, patiéntia aliisque religiosi hóminis virtútibus excelluit. Id cum cœnobii rector animadverteret, jamque antea Bernardini doctrinam et sacrárum litterárum perítiam perspectam haberet, prædicándi onus eidem impósuit: quo humillime suscepto, cum se minus idoneum agnosceret ob vocis exilitátem ac raucitátem, Dei ope implorata, non sine miraculo ejusmodi impediménto liberátus est.
+
+        Cumque ea témpora vitiis criminibúsque redundarent, et cruentis factiónibus in Italia, divina humanaque ómnia permixta essent, Bernardinus urbes atque oppida concursans, in nómine Jesu, quem semper in ore et in péctore gerebat, collapsam pietátem moresque verbo et exemplo magna ex parte restituit. Quo factum est, ut præcláræ civitátes eum sibi episcopum a summo Pontifice postularent; quod ille munus invicta humilitate constantíssime rejécit. Denique vir Dei imménsis labóribus exhaustus, multis magnisque editis miraculis, libris étiam pie docteque conscriptis, cum vixísset annos sex ac sexagínta, in urbe Aquila in Vestinis beato fine quiévit. Quem novis in dies coruscántem signis, anno post obitum sexto, Nicolaus quintus Pontifex maximus in Sanctórum númerum retulit.
+      status: verified

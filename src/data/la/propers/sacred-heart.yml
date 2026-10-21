@@ -1,0 +1,635 @@
+# Read directly from the reference engine's own static file:
+# web/www/horas/Latin/Tempora/Pent02-5.txt's [Oratio] / English/Tempora/Pent02-5.txt's
+# [Oratio] -- Sacred Heart's real, own collect (the feast's [Officium] proper
+# collect, embedded again verbatim inside that same file's own [Octava 2]
+# commemoration block, confirming it as the feast's real one). That same
+# file also carries a second, distinct [Oratio3]/"Protéctor in te
+# sperántium" text at Second Vespers -- this is the standard post-Pentecost
+# Sunday collect (a concurring Sunday's own commemoration merged into the
+# CGI's rendered page, not a second real Sacred-Heart collect), so it is
+# deliberately not used here; per this project's own precedent
+# (vu-assumption-collect-do-inconsistency: "vu correctly uses the old
+# collect uniformly throughout" when a source file carries two candidate
+# collects for one feast), this file uses [Oratio] alone, consistently.
+#
+# Audit note: this id is registered in ALWAYS_OVERRIDE_TEMPORAL_IDS but
+# had never actually been authored, so the day was silently falling back
+# to Trinity-week feria content despite sacred-heart.yml's own record
+# already existing.
+collect:
+  text: |
+    Orémus.
+    Deus, qui nobis in Corde Fílii tui, nostris vulneráto peccátis, infinítos dilectiónis thesáuros misericórditer largíri dignáris: concéde, quǽsumus, ut illi devótum pietátis nostræ præstántes obséquium, dignæ quoque satisfactiónis exhibeámus offícium.
+    Per eúmdem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against the reference engine (Monastic Tridentinum 1617,
+# ../divinum-officium-reference) -- read directly from Tempora/
+# Pent02-5.txt's own [Octava 2] section (Latin/Tempora/Pent02-5.txt:308-316,
+# English/Tempora/Pent02-5.txt:274-282), the Lauds-slot Octava variant (the
+# same "middle" Octava-2 choice already made for christmas-day-octave-
+# commemoration.yml). The collect there is the feast's own real [Oratio],
+# already authored verbatim in sacred-heart-collect.yml -- reused here
+# rather than retyped, "Per eúmdem" doxology included. Source formats the
+# antiphon's opening as lowercase "v." (a scraping artifact of that file,
+# not a rubric) -- normalized to "Ant." here, matching this app's own
+# convention.
+commemoration/octave-~:
+  text: |
+    Ant. Facta sunt * enim hæc ut Scriptúra implerétur quæ dicit: Vidébunt in quem transfixérunt.
+    V. Hauriétis aquas in gáudio.
+    R. De fóntibus Salvatóris.
+    Orémus.
+    Deus, qui nobis in Corde Fílii tui, nostris vulneráto peccátis, infinítos dilectiónis thesáuros misericórditer largíri dignáris: concéde, quǽsumus, ut illi devótum pietátis nostræ præstántes obséquium, dignæ quoque satisfactiónis exhibeámus offícium.
+    Per eúmdem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# The Sacred Heart's own Matins hymn ("Auctor beáte sǽculi"). Live-
+# verified against Divinum Officium (Divino Afflatu - 1954, 2026-06-12,
+# the Sacred Heart itself) — not the Monastic Tridentinum 1617 track,
+# which doesn't observe this feast on the same date at all (live-
+# checked: shows St. Barnabas instead, unaffected). This project's own
+# rubric/precedence track is Divino Afflatu anyway (see the repo's
+# this project's design notes), so this is a real, consistent source choice, not a
+# deviation. Self-contained — its own final stanza is the hymn's natural
+# theological close, not a separate swappable doxology.
+#
+# Closes the same real mechanism gap already fixed for Ascension/
+# Pentecost/Corpus Christi (`sacred-heart` is a temporal-feast id, not a
+# saint record — see hours/resolve-common.ts's
+# `ALWAYS_OVERRIDE_TEMPORAL_IDS`).
+matins-hymn:
+  text: |-
+    Auctor beáte sǽculi,
+    Christe, Redémptor ómnium,
+    Lumen Patris de lúmine,
+    Deúsque verus de Deo.
+
+    Amor coégit te tuus
+    Mortále corpus súmere,
+    Ut novus Adam rédderes,
+    Quod vetus ille abstúlerat.
+
+    Ille amor, almus ártifex
+    Terræ marísque, et síderum,
+    Erráta patrum míserans,
+    Et nostra rumpens víncula.
+
+    Non Corde discédat tuo
+    Vis illa amóris íncliti:
+    Hoc fonte gentes háuriant
+    Remissiónis grátiam.
+
+    Percússum ad hoc est láncea,
+    Passúmque ad hoc est vúlnera:
+    Ut nos laváret sórdibus,
+    Unda fluénte, et sánguine.
+
+    Jesu, tibi sit glória,
+    Qui Corde fundis grátiam,
+    Cum Patre, et almo Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# The Sacred Heart's own Lauds chapter (Eph 3:8-9) — shared with Vespers
+# via lookupPart (Vespers chapter, Lauds sibling)'s own cross-hour fallback (see
+# hours/vespers.ts), not duplicated into a separate vespers-capitulum-
+# sacred-heart.yml. Live-verified against Divinum Officium (Divino
+# Afflatu - 1954), Lauds/Vespers live query, 2026-06-12 (the Sacred
+# Heart itself) — see matins-hymn-sacred-heart.yml's own header on why
+# this track, not Monastic Tridentinum 1617.
+lauds-capitulum:
+  text: 'Fratres: Mihi ómnium sanctórum mínimo data est grátia hæc, in géntibus evangelizáre investigábiles divítias Christi; et illumináre omnes, quæ sit dispensátio sacraménti abscónditi a sǽculis in Deo.'
+  citation: Eph 3:8-9
+  status: verified
+
+# The Sacred Heart's own Lauds hymn ("Cor, arca legem cóntinens") —
+# distinct from Matins' own ("Auctor beáte sǽculi") and Vespers' own
+# ("En, ut supérba críminum"). Live-verified against Divinum Officium
+# (Divino Afflatu - 1954), Lauds live query, 2026-06-12 (the Sacred
+# Heart itself) — see matins-hymn-sacred-heart.yml's own header on why
+# this track. Self-contained — its own final stanza is the hymn's
+# natural theological close, not a separate swappable doxology.
+#
+# This day's own Lauds genuinely has no responsory in the source at all
+# (straight from chapter to hymn) — see lauds-capitulum-sacred-heart.yml
+# and hours/lauds.ts's own resolveOffice, which omits the responsory
+# part entirely rather than rendering an empty one.
+lauds-hymn:
+  text: |-
+    Cor, arca legem cóntinens
+    Non servitútis véteris,
+    Sed grátiæ, sed véniæ,
+    Sed et misericórdiæ.
+
+    Cor, sanctuárium novi
+    Intemerátum fœ́deris,
+    Templum vetústo sánctius,
+    Velúmque scisso utílius.
+
+    Te vulnerátum cáritas
+    Ictu paténti vóluit,
+    Amóris invisíbilis
+    Ut venerémur vúlnera.
+
+    Hoc sub amóris sýmbolo
+    Passus cruénta et mýstica,
+    Utrúmque sacrifícium
+    Christus sacérdos óbtulit.
+
+    Quis non amántem rédamet?
+    Quis non redémptus díligat,
+    Et Corde in isto séligat
+    Ætérna tabernácula?
+
+    Jesu, tibi sit glória,
+    Qui Corde fundis grátiam,
+    Cum Patre, et almo Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayLaudes, 2026-06-12); Latin and English both taken from the page.
+lauds-responsory:
+  text: ''
+  status: verified
+
+# The Sacred Heart's own versicle — identical at both Lauds and Vespers
+# (see vespers-versicle-sacred-heart.yml). Live-verified against Divinum
+# Officium (Divino Afflatu - 1954), Lauds/Vespers live query, 2026-06-12
+# (the Sacred Heart itself).
+lauds-versicle:
+  text: |-
+    V. Hauriétis aquas in gáudio.
+    R. De fóntibus Salvatóris.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayPrima, 2026-06-12); Latin and English both taken from the page.
+prime-antiphon:
+  text: Unus mílitum * láncea latus ejus apéruit et contínuo exívit sanguis et aqua.
+  status: verified
+
+# Verified against Divinum Officium (Latin/English "Prima Special.txt").
+# Seasonal variant of prime-chapter-responsory-per-annum.yml — same fixed
+# responsory, with just the "V." verse line swapped for the season.
+prime-chapter/responsory-heart:
+  text: |
+    R.br. Christe, Fili Dei vivi, * Miserére nobis.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+    V. Qui corde fundis grátiam.
+    R. Miserére nobis.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Tempora/Pent02-5.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: In caritáte radicáti et fundáti, ut possítis comprehéndere cum ómnibus sanctis, quæ sit latitúdo et longitúdo, et sublímitas et profúndum; scire étiam supereminéntem sciéntiæ caritátem Christi, ut impleámini in omnem plenitúdinem Dei.
+  citation: Eph 3:17-19
+  status: verified
+  temporal: true
+
+# Engine render (Divino Afflatu - 1954, command=prayTertia, 2026-06-12); Latin and English both taken from the page.
+terce-antiphon:
+  text: 'Stans Jesus * clamábat dicens: Si quis sitit, véniat ad me et bibat.'
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayTertia, 2026-06-12); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    Eph 3:8-9 Fratres: Mihi ómnium sanctórum mínimo data est grátia hæc, in géntibus evangelizáre investigábiles divítias Christi; et illumináre omnes, quæ sit dispensátio sacraménti abscónditi a sǽculis in Deo.
+    R. Deo grátias.
+    V. Ego dixi, Dómine, miserére mei.
+    R. Sana ánimam meam quia peccávi tibi.
+  citation: ''
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=praySexta, 2026-06-12); Latin and English both taken from the page.
+sext-antiphon:
+  text: In caritáte perpétua * diléxit nos Deus, ídeo, exaltátus a terra, attráxit nos ad Cor suum, míserans.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=praySexta, 2026-06-12); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    Eph 3:14-17 Hujus rei grátia flecto génua mea ad Patrem Dómini nostri Jesu Christi, ut det vobis secúndum divítias glóriæ suæ virtúte corroborári per Spíritum ejus in interiórem hóminem: Christum habitáre per fidem in córdibus vestris.
+    R. Deo grátias.
+    V. Memóriam fecit mirabílium suórum miserátor Dóminus.
+    R. Escam dedit timéntibus se.
+  citation: ''
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayNona, 2026-06-12); Latin and English both taken from the page.
+none-antiphon:
+  text: Fili, * præbe mihi cor tuum, et óculi tui custódiant vias meas.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayNona, 2026-06-12); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    Eph 3:17-19 In caritáte radicáti et fundáti, ut possítis comprehéndere cum ómnibus sanctis, quæ sit latitúdo et longitúdo, et sublímitas et profúndum; scire étiam supereminéntem sciéntiæ caritátem Christi, ut impleámini in omnem plenitúdinem Dei.
+    R. Deo grátias.
+    V. Hauriétis aquas in gáudio.
+    R. De fóntibus Salvatóris.
+  citation: ''
+  status: verified
+
+# The Sacred Heart's own Vespers hymn ("En, ut supérba críminum") —
+# distinct from Matins' own ("Auctor beáte sǽculi") and Lauds' own
+# ("Cor, arca legem cóntinens"). Live-verified against Divinum Officium
+# (Divino Afflatu - 1954), Vespers live query, 2026-06-12 (the Sacred
+# Heart itself) — see matins-hymn-sacred-heart.yml's own header on why
+# this track. Self-contained — its own final stanza is the hymn's
+# natural theological close, not a separate swappable doxology.
+#
+# This day's own Vespers genuinely has no responsory in the source at
+# all (straight from chapter to hymn), same as its own Lauds — see
+# hours/vespers.ts's own resolveOffice, which omits the responsory part
+# entirely rather than rendering an empty one.
+vespers-hymn:
+  text: |-
+    En, ut supérba críminum
+    Et sæva nostrórum cohors
+    Cor sauciávit ínnocens
+    Meréntis haud tale Dei!
+
+    Vibrántis hastam mílitis
+    Peccáta nostra dírigunt,
+    Ferrúmque diræ cúspidis
+    Mortále crimen ácuit.
+
+    Ex Corde scisso Ecclésia,
+    Christo jugáta, náscitur:
+    Hoc óstium arcæ in látere est
+    Genti ad salútem pósitum.
+
+    Ex hoc perénnis grátia,
+    Ceu septifórmis flúvius,
+    Stolas ut illic sórdidas
+    Lavémus Agni in sánguine.
+
+    Turpe est redíre ad crímina,
+    Quæ Cor beátum lácerent:
+    Sed æmulémur córdibus
+    Flammas amóris índices.
+
+    Jesu, tibi sit glória,
+    Qui Corde fundis grátiam,
+    Cum Patre, et almo Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayVespera, 2026-06-12); Latin and English both taken from the page.
+vespers-responsory:
+  text: ''
+  status: verified
+
+# The Sacred Heart's own versicle — identical at both Vespers and Lauds
+# (see lauds-versicle-sacred-heart.yml). Live-verified against Divinum
+# Officium (Divino Afflatu - 1954), Vespers live query, 2026-06-12 (the
+# Sacred Heart itself).
+vespers-versicle:
+  text: |-
+    V. Hauriétis aquas in gáudio.
+    R. De fóntibus Salvatóris.
+  status: verified
+
+# Divino Afflatu 1954 engine render, 2026-06-11 sacred-heart first. Paschaltide Alleluia is left to
+# hours/paschal-alleluia.ts.
+vespers-versicle/~-first:
+  text: |
+    V. Tóllite jugum meum super vos et díscite a me.
+    R. Quia mitis sum et húmilis Corde.
+  status: verified
+
+# Read directly from the reference engine's own static file:
+# web/www/horas/Latin/Tempora/Pent02-5.txt's [Ant 2] (the Lauds/Benedictus
+# antiphon, per this project's Ant1=Vespers1/Ant2=Lauds/Ant3=Vespers2
+# convention) / English/Tempora/Pent02-5.txt's own [Ant 2].
+benedictus-antiphon:
+  text: 'Facta sunt * enim hæc ut Scriptúra implerétur quæ dicit: Vidébunt in quem transfixérunt.'
+  status: verified
+  temporal: true
+
+# Read directly from the reference engine's own static file:
+# web/www/horas/Latin/Tempora/Pent02-5.txt's [Ant 3] (the Second Vespers/
+# Magnificat antiphon, per this project's Ant1=Vespers1/Ant2=Lauds/
+# Ant3=Vespers2 convention) / English/Tempora/Pent02-5.txt's own [Ant 3].
+magnificat-antiphon:
+  text: Ad Jesum autem * cum veníssent, ut vidérunt eum jam mórtuum, non fregérunt ejus crura, sed unus mílitum láncea latus ejus apéruit et contínuo exívit sanguis et aqua.
+  status: verified
+  temporal: true
+
+# Divino Afflatu 1954 engine render, 2026-06-11 sacred-heart first (post-1617 feast; no Monastic render
+# exists).
+magnificat-antiphon/~-first:
+  text: Ignem * veni míttere in terram, et quid volo nisi ut accendátur?
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Latin/English Doxologies.txt, the
+# Monastic "T"-suffixed variant). Seasonal doxology for "Iam lucis orto
+# sidere" and any other hymn ending "* Deo Patri sit gloria..." — see
+# hours/hymn-doxology.ts.
+hymn-doxology/heart:
+  text: |-
+    Glória tibi, Dómine,
+    Qui Corde fundis grátiam,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayLaudes, 2026-06-12); Latin and English both taken from the page. Antiphons only; the psalm numbers are the Monastic Sunday scheme (92/99/62, canticle, Laudate).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Unus mílitum * láncea latus ejus apéruit et contínuo exívit sanguis et aqua.
+    - psalms:
+        - 99
+      antiphon: 'Stans Jesus * clamábat dicens: Si quis sitit, véniat ad me et bibat.'
+    - psalms:
+        - 62
+      antiphon: In caritáte perpétua * diléxit nos Deus, ídeo, exaltátus a terra, attráxit nos ad Cor suum, míserans.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Veníte ad me * omnes qui laborátis et oneráti estis et ego refíciam vos.
+  laudate:
+    antiphon: Fili, * præbe mihi cor tuum, et óculi tui custódiant vias meas.
+
+# Post-1617 feast: no Monastic render exists, so this is the Divino Afflatu 1954 engine render (2026-06-12
+# sacred-heart second (Divino Afflatu 1954 engine render; Monastic reduction 1,2,3,5)), Sunday-style psalm
+# numbers. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Unus mílitum * láncea latus ejus apéruit et contínuo exívit sanguis et aqua.
+    - psalms:
+        - 110
+      antiphon: 'Stans Jesus * clamábat dicens: Si quis sitit, véniat ad me et bibat.'
+    - psalms:
+        - 111
+      antiphon: In caritáte perpétua * diléxit nos Deus, ídeo, exaltátus a terra, attráxit nos ad Cor suum, míserans.
+    - psalms:
+        - 112
+      antiphon: Fili, * præbe mihi cor tuum, et óculi tui custódiant vias meas.
+
+# Post-1617 feast: no Monastic render exists, so this is the Divino Afflatu 1954 engine render (2026-06-11
+# sacred-heart first (Divino Afflatu 1954 engine render; Monastic reduction 1,2,3,5)), Sunday-style psalm
+# numbers. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Suávi jugo tuo * domináre, Dómine, in médio inimicórum tuórum.
+    - psalms:
+        - 110
+      antiphon: 'Miséricors * et miserátor Dóminus: escam dedit timéntibus se.'
+    - psalms:
+        - 111
+      antiphon: Exórtum est * in ténebris lumen rectis; miséricors et miserátor Dóminus.
+    - psalms:
+        - 112
+      antiphon: Apud Dóminum * propitiátio est et copiósa apud eum redémptio.
+
+# Matins nocturn content for the Most Sacred Heart of Jesus (temporalId
+# sacred-heart, Duplex I classis cum Octava). Sourced from
+# Tempora/Pent02-5.txt (Latin) / English/Tempora/Pent02-5.txt, and the
+# Gospel pericope's full text from missa/Latin+English/Tempora/Pent02-5.txt's
+# own [Evangelium] (the Matins file itself only gives the incipit + "Et
+# réliqua" for Lectio7, per this project's Gospel/homily-split convention).
+#
+# No separate Divino Afflatu-era text was found in the reference tree for
+# this feast's Matins content -- only this one secular/Tridentine
+# Tempora/Pent02-5.txt (9-lesson, matching the "(rubrica 196)" 1955/1960
+# reduction already noted in sacred-heart.yml's own header) and a
+# Monastic TemporaM/Pent02-5.txt, which is a 12-lesson remix of this same
+# secular file's own lessons (via @-references and regex substitutions),
+# not independently-sourced content. Used the secular file directly,
+# consistent with the collect/antiphons already authored from it.
+#
+# The audit found this id registered in ALWAYS_OVERRIDE_TEMPORAL_IDS but
+# never authored at all. Nocturn 1 (Lectio1-3, Jeremiah) left unauthored
+# here per this project's convention of leaving Nocturn 1 scripture to
+# the bible-plan store.
+#
+# Nocturn 2: Lectio4-6 (the feast's own historical lections, on the
+# devotion's growth through St. John Eudes, St. Margaret Mary Alacoque,
+# and its papal approval/extension) combined into one continuous excerpt.
+# Nocturn 3: the Gospel pericope (John 19:31-37, the piercing of Christ's
+# side) authored in full (isGospel: true), followed by Lectio7's homily
+# portion (incipit dropped) combined with Lectio8-9 as one continuous
+# excerpt of St. Bonaventure's own writing on the pierced Heart.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: Matins Lesson (historical), Feast of the Most Sacred Heart
+      text: |-
+        Inter mira sacræ doctrínæ pietatísque increménta, quibus divínæ Sapiéntiæ consília clárius in dies Ecclésiæ manifestántur, vix áliud magis conspícuum est quam triumphális progréssio cultus sacratíssimi Cordis Jesu. Sǽpius quidem, priórum decúrsu témporum, Patres, Doctóres, Sancti, Redemptóris nostri amórem celebrárunt: vulnus in látere Christi apértum ómnium gratiárum arcánum dixérunt fontem. At inde a médio ævo, cum tenerióre quadam erga sanctíssimam Salvatóris Humanitátem religióne fidéles áffici cœpti sunt, ánimæ contemplatívæ per plagam illam ad ipsum Cor, amóre hóminum vulnerátum, penetráre fere solébant. Atque ex eo témpore hæc contemplátio sanctíssimis quibúsque ita familiáris evásit, ut neque régio neque ordo religiósus sit, in quibus non insígnia, hac ætáte, ejus reperiántur testimónia. Próximis demum sǽculis, eóque potíssimum témpore quo hærétici, sub falsæ pietátis título, a sanctíssima Eucharístia Christiános detérrere conabántur, cultus sacratíssimo Cordi públice exhibéri cœptus est, ópera imprímis sancti Joánnis Eudes, qui auctor litúrgici cultus sacrórum Córdium Jesu et Maríæ haud immérito nuncupátur.
+
+        Verum, ad cultum sacratíssimi Cordis Jesu plene perfectéque constituéndum, eundémque per totum orbem propagándum, Deus ipse sibi instruméntum elégit humíllimam ex órdine Visitatiónis vírginem, sanctam Margarítam Maríam Alacóque, cui, a prima quidem ætáte jam in Eucharístiæ Sacraméntum amóre flagránti, Christus Dóminus sæpenúmero appárens, divíni Cordis sui et divítias et optáta significáre dignátus est. Quarum apparitiónum celebérrima illa est, qua ei ante Eucharístiam oránti Jesus conspiciéndum se dedit, sacratíssimum Cor osténdit et conquéstus quod, pro imménsa sua caritáte, nihil nisi ingratórum hóminum contumélias recíperet, ipsi præcépit ut novum festum, féria sexta post Octávam Córporis Christi, instituéndum curáret, quo Cor suum honóre débito colerétur, atque injúriæ sibi in Sacraménto amóris a peccatóribus illátæ dignis expiaréntur obséquiis. Quot autem quantásque Dei fámula in Christi mandátis exsequéndis expérta sit difficultátes, nemo est qui ignóret; sed ab ipso Dómino confirmáta, atque a religiósis ánimæ suæ moderatóribus, qui incredíbili quodam ardóre ad hunc cultum promovéndum laborárunt, strénue adjúta, múnere sibi cǽlitus commísso fidéliter fungi ad mortem usque non déstitit.
+
+        Anno tandem millésimo septingentésimo sexagésimo quinto, Clemens décimus tértius Póntifex Máximus offícium et missam in honórem sacratíssimi Cordis Jesu approbávit; Pius vero nonus festum ad univérsam Ecclésiam exténdit. Exínde, cultus sacratíssimi Cordis, quasi flumen exúndans, prolútis impediméntis ómnibus, per totum se orbem effúdit, et, novo illucescénte sǽculo, jubilǽo indícto, Leo décimus tértius humánum genus univérsum sacratíssimo Cordi devótum vóluit. Quæ consecrátio, in ómnibus quidem cathólici orbis ecclésiis, solémni ritu perácta, ingens áttulit devotiónis hujus increméntum, et ad eam non solum pópulos, verum étiam singuláres famílias addúxit, quæ Divíno Cordi innumerábiles se dévovent, regióque ejus império subíciunt. Dénique, Pius undécimus Póntifex Máximus, quo plénius festi solémnitas pópuli christiáni devotióni tam late paténti respondéret, sacratíssimi Cordis Jesu festum ad ritum dúplicem primæ classis cum octáva evéxit; ac prætérea, ut violáta jura Christi summi Regis ac Dómini amantíssimi resarciréntur, populorúmque peccáta defleréntur, eódem festo die piaculárem precatiónem in ómnibus christiáni orbis templis quotánnis recitándam mandávit.
+      responsory: |-
+        R. Omnes gentes quascúmque fecísti, vénient * Et adorábunt coram te, Dómine.
+        V. Et glorificábunt nomen tuum, quóniam magnus es tu, et fáciens mirabília.
+        R. Et adorábunt coram te, Dómine.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joann 19:31-37
+      text: 'In illo témpore: Judǽi, quóniam Parascéve erat, ut non remanérent in cruce córpora sábbato (erat enim magnus dies ille sábbati), rogavérunt Pilátum, ut frangeréntur eórum crura, et tolleréntur. Venérunt ergo mílites: et primi quidem fregérunt crura et alteríus, qui crucifíxus est cum eo. Ad Jesum autem cum veníssent, ut vidérunt eum jam mórtuum, non fregérunt ejus crura, sed unus mílitum láncea latus ejus apéruit, et contínuo exívit sanguis et aqua. Et qui vidit, testimónium perhíbuit: et verum est testimónium ejus. Et ille scit quia vera dicit, ut et vos credátis. Facta sunt enim hæc ut Scriptúra implerétur: Os non comminuétis ex eo. Et íterum alia Scriptúra dicit: Vidébunt in quem transfixérunt.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Bonaventure, Bishop, The Tree of Life, n. 30, and On the Mystical Vine, ch. 3
+      text: |-
+        Ut de látere Christi dormiéntis in cruce formarétur Ecclésia, et Scriptúra implerétur quæ dicit: Vidébunt in quem transfixérunt: divína est ordinatióne indúltum ut unus mílitum láncea latus illud sacrum aperiéndo perfóderet, quátenus sánguine cum aqua manánte, prétium effunderétur nostræ salútis quod a fonte scílicet Cordis arcáno profúsum, vim daret sacraméntis Ecclésiæ ad vitam grátiæ conferéndam, essétque jam in Christo vivéntibus póculum fontis vivi, saliéntis in vitam ætérnam. Surge ígitur, ánima amíca Christi, vigiláre non cesses, ibi os appóne, ut háurias aquas de fóntibus salvatóris.
+
+        Quia semel vénimus ad Cor Dómini Jesu dulcíssimi, et bonum est nos hic esse, non fácile evellámur ab eo. O quam bonum et jucúndum habitáre in Corde hoc. Bonus thesáurus, pretiósa margaríta Cor tuum, óptime Jesu, quam, fosso agro córporis tui, invenímus. Quis hanc margarítam abíciat? Quin pótius, dabo omnes margarítas, cogitatiónes et affectiónes meas commutábo et comparábo illam mihi, jactans omnem cogitátum meum in Cor boni Jesu, et sine fallácia illud me enútriet. Hoc ígitur tuo et meo Corde, dulcíssime Jesu, invénto, orábo te Deum meum: admítte in sacrárium exauditiónis preces meas: immo me totum trahe in Cor tuum.
+
+        Ad hoc enim perforátum est latus tuum, ut nobis páteat intróitus. Ad hoc vulnerátum est Cor tuum, ut in illo ab exterióribus turbatiónibus absolúti habitáre possímus. Nihilóminus et proptérea vulnerátum est, ut per vulnus visíbile, vulnus amóris invisíbile videámus. Quómodo hic ardor mélius posset osténdi, nisi quod non solum corpus, verum étiam ipsum Cor láncea vulnerári permísit? Carnále ergo vulnus, vulnus spirituále osténdit. Quis illud Cor tam vulnerátum non díligat? quis tam amántem non rédamet? quis tam castum non amplectátur? Nos ígitur adhuc in carne manéntes, quantum póssumus, amántem redamémus, amplectámur vulnerátum nostrum, cujus ímpii agrícolæ fodérunt manus et pedes, latus et Cor; oremúsque ut cor nostrum, adhuc durum et impœ́nitens, amóris sui vínculo constríngere et jáculo vulneráre dignétur.
+      responsory: |-
+        R. Ego si exaltátus fúero a terra * Omnia traham ad meípsum.
+        V. Hoc autem dicébat signíficans qua morte esset moritúrus.
+        R. Omnia traham ad meípsum.
+      status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pent02-6.txt) -- day 2 of the Sacred Heart's own movable octave
+# (per user direction 2026-08-28: movable-feast octave content lives in the
+# Tempora/TemporaM directories, keyed by liturgical offset, not a calendar
+# date -- Sacred Heart itself is Pent02-5.txt, sacred-heart.yml's own
+# reference; its octave runs Pent02-6 through Pent03-5, one week further
+# out than an earlier miscalculation in this project's own working notes
+# had assumed -- confirmed by checking each day's own `[Officium]` line
+# for "infra Octavam SSmi Cordis," not by offset arithmetic alone). Joins
+# an excerpt from Pope Pius XI's encyclical "Miserentissimus Redemptor"
+# (Lectio4-6) with a homily of St. John Chrysostom on John 19:31-37
+# (Lectio7-9, the Gospel's bare incipit dropped). Responsory now sourced --
+# the feast's own Responsory1 (Tempora/Pent02-5.txt, Sacred Heart's own
+# feast-day file), reused across the octave's combined-lesson readings the
+# same way Nativity-BVM's and Immaculate Conception's octaves reuse their
+# own feast-day Responsory1, rather than left missing as before.
+octave-readings/~-octave-day-2:
+  source: Ex lítteris Encýclicis Pii Papæ undécimi; Homilía sancti Joánnis Chrysóstomi
+  text: |
+    Inter cétera infinítæ Redemptóris nostri benignitátis documénta, illud potíssimum elúcet, quod, defervescénte christifidélium caritáte, ipsa Dei cáritas ad honorándum peculiári cultu propósita est, ejúsque bonitátis divítiæ late patefáctæ sunt per eam religiónis formam qua sacratíssimum Cor Jesu cólitur, « in quo sunt omnes thesáuri sapiéntiæ et sciéntiæ abscónditi ». Nam, ut quondam humánæ genti a Noética arca exeúnti, amíci fœ́deris signum illucéscere Deus vóluit « arcum apparéntem in núbibus », sic turbulentíssimis recentióris ævi tempóribus, cum vaférrima ómnium sérperet hǽresis illa janseniána, amóri in Deum pietatíque inimíca, quæ Deum non tam diligéndum ut patrem quam extimescéndum ut implacábilem júdicem prædicábat, benigníssimus Jesus Cor suum sacratíssimum, quasi pacis et caritátis vexíllum elátum géntibus osténdit, haud dúbiam porténdens in certámine victóriam.
+
+    Síquidem appósite felícis recordatiónis decéssor Noster Leo décimus tértius in Lítteris Encyclicis « Annum Sacrum », tantam cultus sacratíssimi Cordis Jesu opportunitátem admirátus, edícere non dubitávit: « Cum Ecclésia per próxima origínibus témpora cæsáreo jugo premerétur, conspécta sublíme adolescénti imperatóri crux, amplíssimæ victóriæ, quæ mox est consecúta, auspex simul atque efféctrix. En álterum hódie oblátum óculis auspicatíssimum divinissimúmque signum: vidélicet Cor Jesu Sacratíssimum, superimpósita cruce, splendidíssimo candóre inter flammas elúcens. In eo omnes collocándæ spes; ex eo hóminum peténda atque exspectánda salus ».
+
+    Ac jure id quidem; in illo enim auspicatíssimo signo atque in ea, quæ exínde conséquitur, pietátis forma nonne totíus religiónis summa atque ádeo perfectióris vitæ norma continétur, quippe quæ et ad Christum Dóminum pénitus cognoscéndum mentes condúcat expedítius et ad eúndem veheméntius diligéndum pressiúsque imitándum ánimos infléctat efficácius? Nemo ígitur mirétur, hanc probatíssimam religiónis formam decessóres Nostros continénter et a calumniatórum criminatiónibus vindicásse et summis láudibus extulísse et veheménti provexísse stúdio, prout témporum rerúmque ratiónes postulárent. Dei autem adspiránte númine factum est ut pia christifidélium erga sacratíssimum Cor Jesu volúntas majóra in dies increménta cáperet.
+
+    Viden, quam fortis sit véritas? Per Judæórum stúdia implétur prophetía. Alia quoque prædíctio finem áccipit. Veniéntes enim mílites aliórum fregérunt crura, Christi non item. Attamen hi, in grátiam Judæórum, ejus latus láncea pérforant, et mórtuo córpori contuméliam ínferunt. O sceléstum et exsecrándum fácinus! Sed ne turbéris, ne dejiciáris, dilécte. Nam quæ mala illi voluntáte faciébant, veritátem propugnábant; prophetía namque erat: Vidébunt in quem transfixérunt. Neque hoc tantum; sed étiam iis qui infidéles futúri erant, hoc fácinus demonstratióni fuit, ut Thomæ et ipsi simílibus. Ad hæc étiam mystérium ineffábile consummabátur. Exívit enim sanguis et aqua. Non sine causa vel casu hi fontes manárunt, sed quia ex hoc utróque Ecclésia constitúta est.
+
+    Hoc sciunt initiáti, qui per aquam regenerántur, ac per sánguinem et carnem nutriúntur. Hinc inítium mystéria sumunt, ut, cum ad treméndum póculum accésseris, sic vénias ac si ex hoc látere potatúrus esses. Et qui vidit testimónium perhíbuit, et verum est testimónium ejus. Hoc est: Non ab áliis audívi, sed ipse præsens vidi, et verum est testimónium. Mérito sane. Contuméliam narrat, non magnum quid et mirábile, ut possis contra suspicári; verum ille hæreticórum ora cómprimens et futúra prænúntians mystéria, atque conténtum in ipsis thesáurum consíderans, minutátim recénset et quæ gesta sunt. Impléta est autem prophetía illa: Os ejus non commínuent. Etiámsi enim hoc de Judæórum agno dictum sit, tamen propter veritátem figúra præcéssit, et in hoc magis complétum est. Ideo prophétam in médium addúcit.
+
+    Cum sese testem áfferens ubíque non viderétur fide dignum habéri, addúcit Móysen, ut ínnuat hoc non casu factum esse, sed jam olim scripto fuísse prænuntiátum. Hoc illud dictum est: Os ejus non comminuétur. Rursúmque ex seípso Prophétæ fidem facit. Hæc dixi, inquit, ut discátis magnam esse affinitátem inter figúram et veritátem. Viden, quantam curam adhíbeat, ut credátur illud quod turpe et ignominiósum vidétur? Nam corpus a mílite contumélia áffici, longe pejus erat quam crucifígi. Attamen et hæc dixi, inquit, et cum magna diligéntia dixi, ut credátis. Nemo ítaque fidem neget, neque præ pudóre nostris nóceat. Nam quæ máxime contumeliósa vidéntur, hæc sunt bonórum nostrórum honestíssima.
+  responsory: |
+    R. Fériam eis pactum sempitérnum et non désinam eis benefácere et timórem meum dabo in corde eórum * Ut non recédant a me. V. Et lætábor super eis cum bene eis fécero in toto Corde meo. R. Ut non recédant a me.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pent03-1.txt) -- day 4 of the Sacred Heart's own movable octave,
+# same shape/rationale as sacred-heart-octave-day-2.yml. Joins a third
+# excerpt from Pope Pius XI's encyclical "Miserentissimus Redemptor"
+# (Lectio4-6, distinct from days 2-3's own excerpts, on the redemptive
+# value of Christ's own sacrifice and its participation by the faithful)
+# with a homily of St. Lawrence Justinian on John 19:31-37 (Lectio7-9, same
+# Gospel pericope as day 2, a different homily on the water and blood as
+# types of the Church's own sacraments; bare incipit dropped). Responsory
+# now sourced -- the feast's own Responsory1 (Tempora/Pent02-5.txt), same
+# as day 2.
+octave-readings/~-octave-day-4:
+  source: Ex lítteris Encyclicis Pii Papæ undécimi; Homilía sancti Lauréntii Justiniáni Epíscopi
+  text: |
+    At nulla creáta vis hóminum sceléribus expiándis erat satis, nisi humánam natúram Dei Fílius reparándam assumpsísset. Quod quidem ipse hóminum Salvátor sacri Psaltis ore nuntiávit: Hóstiam et oblatiónem noluísti, corpus autem aptásti mihi: holocautómata pro peccáto non tibi placuérunt: tunc dixi: Ecce vénio. Et reápse vere languóres nostros ipse tulit et dolóres nostros ipse portávit; vulnerátus est propter iniquitátes nostras et peccáta nostra ipse pértulit in córpore suo super lignum; delens quod advérsus nos erat chirógraphum decréti, quod erat contrárium nobis, et ipsum tulit de médio affígens illud cruci, ut peccátis mórtui justítiæ vivámus. Quamquam vero copiósa Christi redémptio abúnde nobis ómnia delícta donávit; ob miram tamen illam divínæ Sapiéntiæ dispensatiónem, qua in carne nostra adimplénda sunt quæ desunt passiónum Christi pro córpore ejus quod est Ecclésia, étiam láudibus et satisfactiónibus, quas Christus in nómine peccatórum Deo persólvit, nostras quoque laudes et satisfactiónes adjícere póssumus, immo étiam debémus.
+
+    At semper meminérimus opórtet, totam expiatiónis virtútem ab uno Christi cruénto sacrifício pendére, quod sine témporis intermissióne in nostris altáribus incruénto modo renovátur; síquidem una eadémque est Hóstia, idem nunc ófferens sacerdótum ministério, qui seípsum tunc in cruce óbtulit, sola offeréndi ratióne divérsa; quamóbrem cum hoc augustíssimo Eucharístico sacrifício et ministrórum et aliórum fidélium immolátio conjúngi debet, ut ipsi quoque hóstias vivéntes, sanctas, Deo placéntes sese exhibeant. Quin immo, sanctus Cypriánus affirmáre non dúbitat sacrifícium domínicum legítima sanctificatióne non celebrári, nisi oblátio et sacrifícium nostrum respónderit passióni. Quaprópter nos monet Apóstolus, ut mortificatiónem Jesu in córpore nostro circumferéntes, atque cum Christo consepúlti et complantáti similitúdini mortis ejus, non modo carnem nostram crucifigámus cum vítiis et concupiscéntiis, fugiéntes ejus quæ in mundo est concupiscéntiæ corruptiónem, sed et vita Jesu manifestétur in corpóribus nostris et, ætérni ejus sacerdótii partícipes effécti, offerámus dona et sacrifícia pro peccátis.
+
+    Neque enim arcáni hujus sacerdótii et satisfaciéndi sacrificandíque múneris participatióne ii soli fruúntur, quibus Póntifex noster Christus Jesus adminístris útitur ad oblatiónem mundam divíno Nómini ab ortu solis usque ad occásum omni loco offeréndam; sed étiam christianórum gens univérsa, ab Apostolórum Príncipe genus eléctum, regále sacerdótium jure appelláta, debet cum pro se, tum pro toto humáno génere offérre pro peccátis, haud áliter propémodum quam sacérdos omnis ac póntifex ex homínibus assúmptus, pro homínibus constitúitur in iis quæ sunt ad Deum.
+
+    Ad Jesum ígitur cum veníssent, illúmque jam mórtuum conspexíssent, ipsíus mínime crura fregérunt, verum astántium unus, vibráta láncea, latus ejus apéruit, et contínuo exívit sanguis et aqua. Grande prorsus et inaudítum prodígium, ut de exanimáto córpore sanguis exíret et aqua. Verúmtamen, máximum, in re hac gesta, nobis vóluit Dei sapiéntia commendáre sacraméntum, sui vidélicet, et Ecclésiæ unitátem. Hujus enim spirituális cópulæ figúra præcéssit, quando de látere Adæ dormiéntis una ex costis ipsíus subtrácta narrátur, atque de eádem Eva cunctórum parens formáta est, quæ typum gerébat Ecclésiæ. Significábat tunc Spíritus Sanctus, verum et spirituálem Adam esse futúrum, qui Paracléti virtúte plasmátus, dum dormíret in cruce, de ipsíus látere, profluéntibus aqua et sánguine, speciósa sponsa sine ruga et mácula, formarétur Ecclésia.
+
+    Hæc quippe sunt sacraménta ecclesiástica per quæ totum corpus Ecclésiæ ablúitur atque sanctificátur. In lavácro útique aquæ regeneratiónis, quod Christi morte sacrátur, ab origináli contagióne mundátur. In Redemptóris vero sánguine nedum ab omni culpa purgátur, verum étiam regni cæléstis illi aperítur intróitus. Ambo hæc in unum efféctum convéniunt nec unum sine áltero valet ad salútem prodésse: non enim absque baptísmi sacraménto et peccatórum remissióne, potest quis futúræ beatitúdinis hereditátem percípere. Hoc ubíque in orbe terrárum sancta mater confitétur Ecclésia, et multiplícibus Scripturárum divinárum testimóniis roborátur. Insuper et qui vidit de Christo aquam emanáre et sánguinem, testimónium perhíbuit, et verum est testimónium ejus. Nempe iste est Joánnes Apóstolus et Evangelísta, qui præcípuo amóre diléctus est a Dómino.
+
+    Profécto hæc facta sunt ut Scriptúra implerétur quæ ait: Os non comminuétis ex eo. A Dómino quippe Móysi fúerat imperátum ne in sacrifícii phase, in celebratióne immoláti agni, ullum comminuerétur os. In Dómino autem Jesu innocentíssimo agno, figúræ véritas est compléta. Nequáquam crura illíus sunt fracta, quemádmodum duórum nequam cum eo pendéntium; sed tantum illíus latus apértum, quátenus ália Scriptúra perficerétur quæ dicit: Vidébunt in quem transfixérunt. Porro vúlnerum cicatríces in suo vóluit Dóminus córpore retinére, ut, sicut eléctis incentívum devotiónis, ita et réprobis irrefragábile fíeret testimónium damnatiónis. Ita ómnia consummáta in Christo, longe ante Prophetárum oráculis promulgáta fuére, quátenus cathólica fides tam pro se quam advérsus hæreticórum munirétur erróres.
+  responsory: |
+    R. Fériam eis pactum sempitérnum et non désinam eis benefácere et timórem meum dabo in corde eórum * Ut non recédant a me. V. Et lætábor super eis cum bene eis fécero in toto Corde meo. R. Ut non recédant a me.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pent03-2.txt) -- day 5 of the Sacred Heart's own movable octave,
+# same shape/rationale as sacred-heart-octave-day-2.yml. Joins a fourth
+# excerpt from Pope Pius XI's encyclical "Miserentissimus Redemptor"
+# (Lectio4-6, distinct from days 2-4's own excerpts, on the Communion of
+# Saints and St. Margaret Mary's own revelation) with a homily of St.
+# Bernardine of Siena on John 19:31-37 (Lectio7-9, same Gospel pericope as
+# every other day in this octave; bare incipit dropped). Responsory now
+# sourced -- the feast's own Responsory1 (Tempora/Pent02-5.txt), same as
+# day 2.
+octave-readings/~-octave-day-5:
+  source: Ex lítteris Encyclicis Pii Papæ undécimi; Homilía sancti Bernardíni Senénsis
+  text: |
+    Quo autem perféctius oblátio nostra nostrúmque sacrifícium sacrifício domínico respónderit, idest amórem nostri cupiditatésque nostras immolavérimus et carnem crucifixérimus crucifixióne ea mýstica, de qua lóquitur Apóstolus, eo uberióres propitiatiónis atque expiatiónis pro nobis aliísque percipiémus fructus. Mirífica enim viget fidélium ómnium cum Christo necessitúdo, qualis inter caput et cétera córporis membra intercédit, itémque arcána illa, quam fide cathólica profitémur, Sanctórum communióne, cum sínguli hómines tum pópuli non modo conjungúntur inter se, sed étiam cum eódem qui est caput Christus, ex quo totum corpus compáctum et connéxum per omnem junctúram subministratiónis, secúndum operatiónem in mensúram uniuscujúsque membri augméntum córporis sui facit in ædificatiónem sui in caritáte. Quod quidem Mediátor ipse Dei et hóminum Christus Jesus, morti próximus, a Patre postulárat: Ego in eis et tu in me ut sint consummáti in unum.
+
+    Quemádmodum ígitur uniónem cum Christo profitétur ac firmat consecrátio, ita expiátio eámdem uniónem, et culpas detergéndo ínchoat, et Christi passiónes participándo pérficit, et víctimas pro frátribus offeréndo consúmmat. Atque id sane miseréntis Jesu consílium fuit, cum Cor nobis suum, insígnia passiónis prǽferens ac flammas amóris osténtans, patére vóluit, scílicet ut hinc infinítam peccáti malítiam conjectántes, illinc Reparatiónis caritátem infinítam admiráti, et peccátum veheméntius detestarémur et caritátis ardéntius vicem redderémus. Et vere expiatiónis potíssimum seu reparatiónis spíritus primas semper potiorésque partes hábuit in cultu Sacratíssimo Cordi Jesu exhibéndo, nihílque eo congruéntius orígini, índoli, virtúti, indústriis quæ huic religiónis formæ sunt própriæ, ut rerum memória et usus, sacra item litúrgia atque Summórum Pontíficum acta confírmant.
+
+    Síquidem cum se conspiciéndum Margarítæ Maríæ exhibéret Christus, caritátis suæ infinitátem prǽdicans, simul, mæréntis instar, tot tantásque sibi inústas ab ingrátis homínibus injúrias in hæc verba conquéstus est, quæ útinam in piórum ánimis insidérent nulláque unquam oblivióne deleréntur: « En Cor illud, inquit, quod tantópere hómines amávit beneficiísque ómnibus cumulávit, quodque amóri suo infiníto non tantum rédditam grátiam nullam invénit, at contra, obliviónem, negléctum, contumélias, eásque ab iis étiam illátas nonnúnquam, qui amóris peculiáris débito officióque teneréntur ».
+
+    Joánnes subdit: Unus mílitum láncea latus ejus apéruit et contínuo exívit sanguis et aqua. O amor qui ómnia liquas! quómodo pro redemptióne nostra reliquísti dilectórem nostrum? Nam, ut úndique inundáret amóris dilúvium, super nos ruptæ sunt abýssi magnæ; scílicet, penetrália Cordis Jesu, quibus, ad íntima progrédiens, dira láncea non pepércit. Sanguis exívit et aqua. Sanguis in redemptiónem, sed étiam in ablutiónem aqua deflúxit; unde formáta est Ecclésia ex látere Christi, ut ætérne únicam atque diléctam a Christo se discat, et ut recognóscat quam displícuit culpa pro qua sanguis divínus ex hómine Deo vivo et mórtuo ita deflúxit. Non enim parva quantitáte constámus, si pro nobis sanguis divínus effúnditur.
+
+    Aqua ad lítteram non cum sánguine indistíncta deflúxit. Neque enim potuísset ab insipiéntibus comprehéndi, si mixta cum sánguine defluxísset. Et forte totus sanguis deflúxit ex illo divíno córpore in signum totíus amóris effúsi, post quem humor áqueus egréssus est. Quod quidem est alto mystério factum, ut prius egrederétur ex eódem córpore rédimens prétium, deínde aqua in qua multitúdo populórum redémpta significátur. Sunt enim aquæ multæ, pópuli multi; tamen qui ad christiánam fidem pértinent unus fidélis pópulus sunt, ut non sint aquæ, sed aqua quæ manávit ex látere Christi, sicut prima Corinthiórum cápite décimo Apóstolus ait: Unus panis, et unum corpus multi sumus omnes, qui de uno pane et de uno cálice participámus. Et íterum ad Ephésios, cápite quarto, inquit: Unus Deus, una fides, unum baptísma.
+
+    Notánter tamen adverténdum est quod latus Christi apértum dícitur, non vulnerátum; quóniam próprie vulnus prætérquam in vivo córpore fíeri nequit. Ait enim Evangelísta Joánnes: Unus mílitum láncea latus ejus apéruit; ut, apérto látere, cognoscámus dilectiónem Cordis sui usque ad mortem, et ad illum ineffábilem amórem ejus ingrediámur quo ille ad nos procéssit. Accedámus ergo ad Cor ejus, Cor altum, Cor secrétum, Cor ómnia cógitans, Cor ómnia sciens, Cor díligens, immo amóre ardens; et apértam portam intelligámus saltem in amóris veheméntia; cordifórmes ingrediámur ad secrétum ab ætérno abscónditum, nunc vero in morte quasi apérto látere revelátum; quóniam apértio láteris ætérni templi apertiónem demónstrat, ubi ómnium exsisténtium consummáta est felícitas ætérna.
+  responsory: |
+    R. Fériam eis pactum sempitérnum et non désinam eis benefácere et timórem meum dabo in corde eórum * Ut non recédant a me. V. Et lætábor super eis cum bene eis fécero in toto Corde meo. R. Ut non recédant a me.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pent03-3.txt) -- day 6 of the Sacred Heart's own movable octave,
+# same shape/rationale as sacred-heart-octave-day-2.yml. Joins a fifth
+# excerpt from Pope Pius XI's encyclical "Miserentissimus Redemptor"
+# (Lectio4-6, distinct from days 2-5's own excerpts, on how Christ's
+# mystical passion continues in His Church) with a homily of St. Peter
+# Canisius on John 19:31-37 (Lectio7-9, same Gospel pericope as every other
+# day in this octave; bare incipit dropped). Responsory now sourced -- the
+# feast's own Responsory1 (Tempora/Pent02-5.txt), same as day 2.
+octave-readings/~-octave-day-6:
+  source: Ex lítteris Encyclicis Pii Papæ undécimi; Homilía sancti Petri Canísii Presbýteri
+  text: |
+    At enim beáte regnántem Christum in cælis qui piaculáres ritus consolári queant? Scílicet « da amántem et sentit quod dico » repónimus, Augustíni verbis usi, quæ in hunc locum aptíssime cadunt. Dei enim amantíssimus quisque, si prætériti témporis spátium respíciat, videt meditándo intuetúrque Christum pro hómine laborántem, doléntem, duríssima quæque perpetiéntem, « propter nos hómines et propter nostram salútem » tristítia, angóribus, oppróbriis pæne conféctum, immo « attrítum propter scélera nostra » ac suo nos livóre sanántem. Atque hæc ómnia eo vérius piórum meditántur ánimi, quod peccáta hóminum ac flagítia quovis témpore perpetráta in causa fuérunt cur Dei Fílius morti traderétur, eadémque nunc étiam mortem ipsam per se essent Christo illatúra, iísdem cum dolóribus mæroribúsque conjúnctam, quippe síngula passiónem Dómini, suo quodam modo renováre censeántur: « Rursus crucifigéntes sibimetípsis Fílium Dei et osténtui habéntes ».
+
+    Quodsi propter peccáta quoque nostra, quæ futúra quidem erant at prævísa, ánima Christi tristis facta est usque ad mortem, haud dúbium quin solátii nonníhil jam tum céperit étiam e nostra item prævísa reparatióne, cum « appáruit illi Angelus de cælo » ut Cor ejus tædio et angóribus oppréssum consolarétur. Atque ita Cor illud sacratíssimum, quod ingratórum hóminum peccátis continénter sauciátur, étiam nunc mira quidem sed vera ratióne solári póssumus ac debémus, quandóquidem, ut in sacra quoque liturgía légitur, ex ore Psaltis, Christus ipse se ab amícis suis derelíctum conquéritur: « Impropérium exspectávit Cor meum et misériam, et sustínui qui simul contristarétur et non fuit, et qui consolarétur et non invéni ».
+
+    Accedit quod pássio Christi expiátrix renovátur et quodámmodo continuátur et adimplétur in córpore suo mystico, quod est Ecclésia. Etenim, ut rursus sancti Augustíni verbis utámur, « passus est Christus quidquid pati debúerat; jam de mensúra passiónum nihil deest. Ergo implétæ sunt passiónes, sed in cápite; restábant adhuc Christi passiónes in córpore ». Quod quidem Dóminus ipse Jesus declaráre dignátus est, cum ad Saulum « adhuc spirántem minárum et cædis in discípulos » loquens: « Ego sum, inquit, Jesus quem tu persequéris », haud obscúre signíficans, commótis in Ecclésiam insectatiónibus, ipsum divínum oppugnári ac vexári Ecclésiæ Caput. Jure ígitur meritóque Christus in córpore suo mystico adhuc pátiens, nos expiatiónis suæ sócios habére exóptat, idque étiam ipsa nostra cum eo necessitúdo póstulat; nam cum simus « corpus Christi et membra de membro », quidquid pátitur caput, ómnia cum eo membra patiántur opórtet.
+
+    Diligénter tecum ánimo versa, quam ineffábilis fúerit illa cáritas qua Deus summus, in máximis Cordis angústiis et totíus mundi oppróbriis, pro te vilíssimo vermículo illam crucis acerbíssimam mortem perpéssus fúerat. Advérte ut summam Christus Servátor suis liberalitátem ómnibus exhíbuit. Aliquándo enim in médio pópuli stans, ita clamábat: Si quis sitit véniat ad me et bibat: parátum se osténdens ómnibus ómnium necessitátibus subveníre. Consideráto ut liberalíssime tibi Cordis sui pretiósum sánguinem propinávit, quando, sacro látere apérto, quidquid réliquum erat in córpore sánguinis profúdit.
+
+    Quare, ne prorsus ingrátus sim, hos perénnes fontes donórum ac bonórum ómnium mihi ob óculos sæpe propónam, cum de illis dulcíssima exstet promíssio: Hauriétis aquas in gáudio de fóntibus Salvatóris et dicétis in die illa: Confitémini Dómino. Ad hæc ipsa ter beáta petræ non diruéndæ forámina confúgiam; in illis meum nidum firmíssimum ponam, nihil habens antíquius, prætérquam ut in meis angóribus atque perículis vúlnerum Dómini memorándo respírem.
+
+    Et tu in omni tentatióne fuge diligénter in amábile Christi Cor, ejúsque bonitátem et caritátem tibi propóne, et cum illa confer tuam vilitátem, malítiam, infidelitátem, arrogántiam. Quanta enim cáritas Christi omnes ad se convocántis: Veníte ad me omnes qui laborátis et oneráti estis, et ego refíciam vos, et sic parátum se offert et cupit, amóre nostri, ómnium et singulórum ónera sustinére! Unde magna cum fidúcia in caritátis ejus abyssum prójice peccáta tua et mox te invénies exonerátum.
+  responsory: |
+    R. Fériam eis pactum sempitérnum et non désinam eis benefácere et timórem meum dabo in corde eórum * Ut non recédant a me. V. Et lætábor super eis cum bene eis fécero in toto Corde meo. R. Ut non recédant a me.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pent03-4.txt) -- day 7 of the Sacred Heart's own movable octave,
+# same shape/rationale as sacred-heart-octave-day-2.yml. Joins a sixth
+# excerpt from Pope Pius XI's encyclical "Miserentissimus Redemptor"
+# (Lectio4-6, distinct from days 2-6's own excerpts, on the urgency of
+# reparation in the modern world) with St. Cyril of Alexandria's commentary
+# on John 19:31-37 (Lectio7-9, same Gospel pericope as every other day in
+# this octave; bare incipit dropped). A handful of isolated OCR artifacts
+# in the source's own English corrected as clear transcription typos (a
+# stray HTML entity, a dropped word, a stray accent mark) -- not marked
+# `draft` for this alone. Responsory now sourced -- the feast's own
+# Responsory1 (Tempora/Pent02-5.txt), same as day 2.
+octave-readings/~-octave-day-7:
+  source: Ex lítteris Encyclicis Pii Papæ undécimi; Homilía sancti Cyrílli Alexandríni
+  text: |
+    Quantópere autem hujúsmodi expiatiónis seu reparatiónis necéssitas hac nostra potíssimum ætáte úrgeat, némini non maniféstum erit, qui, ut inítio díximus, hunc mundum in malígno pósitum, óculis animóque perlustráverit. Undique enim geméntium ad Nos populórum clamor adscéndit, quorum príncipes vel rectóres vere adstitérunt et convenérunt in unum advérsus Dóminum et advérsus Ecclésiam ejus. At étiam doléndum, quod inter ipsos fidéles, sánguine Agni immaculáti in baptísmo ablútos, gratiáque locupletátos, tot inveniántur cujúsvis órdinis hómines, qui incredíbili rerum divinárum ignorántia laborántes et falsis doctrínis infécti, vítiis irretítam, procul a domo Patris, vitam tradúcant, quam nec veræ fídei lumen collústrat, nec spes futúræ beatitátis deléctat, nec ardor réficit fovétque caritátis, ut sedére in ténebris et in umbra mortis vere videántur.
+
+    Hisce vero malis véluti in cúmulum accédit cum eórum ignávia atque socórdia, qui, dormitántium et fugiéntium instar discipulórum, nutántes in fide, Christum angóribus oppréssum vel Sátanæ satellítibus circumvéntum mísere derelínquunt, tum eórum perfídia, qui, Judæ proditóris exémplum secúti, aut témere et sacrílege de altári libant, aut ad hóstium castra transfúgiunt. Atque ita vel invítum subit cogitátio ánimum, jam própius adventáre témpora de quibus Dóminus Noster vaticinátus est: Et quóniam abundávit iníquitas, refrigéscet cáritas multórum. Quæ quidem ómnia quotquot pie commentáti erunt fidéles, fácere non póterunt, quin, Christi perdoléntis incénsi caritáte, vehementióre stúdio suas aliorúmque culpas éxpient, Christi honórem resárciant, æternámque próvehant animárum salútem.
+
+    Et sane illud Apóstoli: Ubi abundávit delíctum, superabundávit grátia, áliquo pacto ad hanc quoque ætátem nostram describéndam accommodáre licet: nam, aucta ádmodum perversitáte hóminum, mirífice item, Spíritu Sancto afflánte, númerus fidélium utriúsque sexus augétur, qui alacrióre ánimo pro tot illátis injúriis divíno Cordi satisfácere student, immo étiam se ipsos Christo víctimas offérre non dúbitant. Etenim quæ usque adhuc memorávimus si quis secum ánimo réputet amánter eadémque véluti in medúllis defíxa hábeat, fíeri profécto non potest quin is non tam ab omni peccáto tamquam summo malo abhórreat atque abstíneat, quam se totum Dei voluntáti permíttat, et læsum divínæ Majestátis honórem, cum continénter orándo, tum afflictatiónibus sponte suscéptis ærumnísque, si quæ incíderint, patiénter tolerátis, tum tota demum vita hoc expiatiónis stúdio exigénda, resarcíre conténdat.
+
+    Non hæc ait beátus Evangelísta, quasi pietátem ullam efferátis et crudélibus Judǽis tríbuat, sed ut osténdat stulte eos et imperíte excoláre cúlicem, et camélum deglutíre sicut a Christo dictum est. Gravíssima enim et immánia scélera pro níhilo dúcere comperiúntur: mínima vero et exília caute ádmodum ac sollícite obsérvant, suam utrobíque pandéntes inscítiam. Quod in promptu est osténdere. Ecce enim Christo interfécto sábbati honórem magni fáciunt, et incredíbili audácia, violáto legis auctóre, pietátem erga legem præ se ferunt.
+
+    Magnum autem illíus præcípue sábbati diem cólere símulant, qui magnæ diéi Dóminum interemérunt, et grátiam se solis dignam flágitant, ut eórum nempe crura frangántur, intolerábili dolóre acerbiórem morte ipsa perníciem prope jam mórtuis moliéntes. Venérunt ergo mílites, et primi quidem fregérunt crura, et altérius qui crucifíxus est cum eo. Judæórum petitióni mílites obsecúti, qui símili crudelitátis furóre laborábant, duórum quidem latrónum, quippe qui vivi adhuc repérti essent, crura confríngunt. Sed, cum Jesum inclinásse caput comperíssent, et jam exspirásse putárent, frustra ejus crura confríngi exístimant, sed, cum adhuc mórtuum esse nonníhil diffidérent, láncea latus ejus perfódiunt, unde cruor aqua mixtus scatúriit, quod eulógiæ mýsticæ et sancti baptísmatis imágo quædam erat atque primítiæ.
+
+    Ex iis autem quæ contigérunt, sapientíssimus Evangelísta confírmat auditóribus eum esse Christum, qui per sanctas olim prædíctus est Scriptúras; consentánea enim divínis de eo oráculis evenérunt: nec enim os ejus confráctum est, et mílitum láncea transfíxus est, secúndum Scriptúras. Spectatórem vero ejus rei ait exstitísse discípulum ipsum qui testimónium pérhibet de his, et scire se vera testári, seípsum his verbis, non álium dénotans.
+  responsory: |
+    R. Fériam eis pactum sempitérnum et non désinam eis benefácere et timórem meum dabo in corde eórum * Ut non recédant a me. V. Et lætábor super eis cum bene eis fécero in toto Corde meo. R. Ut non recédant a me.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pent03-5.txt) -- day 8, "In Octava," the Sacred Heart's own
+# octave closing day, same shape/rationale as sacred-heart-octave-day-2.yml.
+# Joins St. Bernard's own sermon on the wounds of Christ (Lectio4-6, from
+# his commentary on the Song of Songs) with St. Augustine's Tractate 120 on
+# John (Lectio7-9, same Gospel pericope as every other day in this octave;
+# bare incipit dropped). Responsory now sourced -- the feast's own
+# Responsory1 (Tempora/Pent02-5.txt), same as day 2.
+octave-readings/~-octave-day-8:
+  source: Sermo sancti Bernárdi Abbátis; Homilía sancti Augustíni Epíscopi
+  text: |
+    Revéra ubi tuta firmáque infírmis secúritas et réquies, nisi in vulnéribus Salvatóris? Tanto illic secúrior hábito, quanto ille poténtior est ad salvándum. Fremit mundus, premit corpus, diábolus insidiátur: non cado; fundátus enim sum supra firmam petram. Peccávi peccátum grande: turbábitur consciéntia, sed non perturbábitur, quóniam vúlnerum Dómini recordábor. Nempe vulnerátus est propter iniquitátes nostras. Quid tam ad mortem, quod non Christi morte solvátur? Si ergo in mentem vénerit tam potens tamque éfficax medicaméntum, nulla jam possum morbi malignitáte terréri.
+
+    Ego vero fidénter quod ex me mihi deest, usúrpo mihi ex viscéribus Dómini, quóniam misericórdiæ áffluunt; nec desunt forámina, per quæ éffluant. Fodérunt manus ejus et pedes, latúsque láncea foravérunt; et per has rimas licet mihi súgere mel de petra, oleúmque de saxo duríssimo; id est gustáre et vidére quóniam suávis est Dóminus. Cogitábat cogitatiónes pacis, et ego nesciébam. Quis enim cognóvit sensum Dómini? aut quis consiliárius ejus fuit? At clavis réserans, clavus pénetrans factus est mihi ut vídeam voluntátem Dómini. Quidni vídeam per forámen? Clamat clavus, clamat vulnus, quod vere Deus sit in Christo mundum reconcílians sibi.
+
+    Ferrum pertránsiit ánimam ejus, et appropinquávit Cor illíus, ut non jam non sciat cómpati infirmitátibus meis. Patet arcánum Cordis per forámina córporis: patet magnum illud pietátis sacraméntum, patent víscera misericórdiæ Dei nostri, in quibus visitávit nos Oriens ex alto. Quidni víscera per vúlnera páteant? In quo enim clárius quam in vulnéribus tuis eluxísset, quod tu, Dómine, suávis et mitis, et multæ misericórdiæ? Majórem enim miseratiónem nemo habet, quam ut ánimam suam ponat quis pro addíctis morti et damnátis. Meum proínde méritum, miserátio Dómini. Non plane sum mériti inops, quámdiu ille miseratiónum non fúerit. Et si misericórdiæ Dómini ab ætérno et usque in ætérnum, ego quoque misericórdias Dómini in ætérnum cantábo.
+
+    Ad Jesum autem cum veníssent, ut vidérunt eum jam mórtuum, non fregérunt ejus crura, sed unus mílitum láncea latus ejus apéruit, et contínuo exívit sanguis et aqua. Vigilánti verbo Evangelísta usus est, ut non díceret: latus ejus percússit, aut vulnerávit, aut quid áliud, sed apéruit, ut illic quodámmodo vitæ óstium panderétur, unde Sacraménta Ecclésiæ manavérunt, sine quibus ad vitam, quæ vera vita est, non intrátur. Ille sanguis in remissiónem fusus est peccatórum. Aqua illa salutáre témperat póculum, hæc et lavácrum præstat et potum. Hoc prænuntiábat quod Noë in látere arcæ óstium fácere jussus est, qua intrárent animália quæ non erant dilúvio peritúra, quibus præfigurabátur Ecclésia.
+
+    Propter hoc prima múlier facta est de látere viri dormiéntis, et appelláta est vita matérque vivórum. Magnum quippe significávit bonum, ante magnum prævaricatiónis malum. Hic secúndus Adam, inclináto cápite, in cruce dormívit, ut inde formarétur ejus conjux, quæ de látere dormiéntis efflúxit. O mors unde mórtui revivíscunt! Quid isto sánguine múndius? Quid vúlnere isto salúbrius? Et qui vidit, inquit, testimónium perhíbuit, et verum est testimónium ejus; et ille scit quia vera dicit, ut et vos credátis. Non dixit: ut et vos sciátis, sed ut credátis. Scit enim qui vidit, cujus credat testimónio qui non vidit. Magis autem ad fidem pértinet crédere quam vidére.
+
+    Duo testimónia de Scriptúris réddidit síngulis rebus quas factas fuísse narrávit. Nam quia díxerat: Ad Jesum autem cum veníssent, ut vidérunt eum jam mórtuum, non fregérunt ejus crura, ad hoc pértinet testimónium: Os non comminuétis ex eo: quod præcéptum erat eis qui celebráre Pascha jussi sunt ovis immolatióne in véteri lege, quæ Domínicæ Passiónis umbra præcésserat; unde Pascha nostrum immolátus est Christus; de quo et Isaías prophéta prædíxerat: Sicut ovis ad immolándum ductus est. Item quia subjúnxerat dicens: Sed unus mílitum láncea latus ejus apéruit, ad hoc pértinet álterum testimónium: Vidébunt in quem transfixérunt, ubi promíssus est Christus, in ea qua crucifíxus est carne ventúrus.
+  responsory: |
+    R. Fériam eis pactum sempitérnum et non désinam eis benefácere et timórem meum dabo in corde eórum * Ut non recédant a me. V. Et lætábor super eis cum bene eis fécero in toto Corde meo. R. Ut non recédant a me.
+  status: verified

@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2027-06-19 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: magnificat-antiphon-post-pentecost-05-first
-text:
-  la: "Montes Gélboë, * nec ros nec plúvia véniant super vos: quia in te abjéctus est clípeus fórtium, clípeus Saul, quasi non esset unctus óleo. Quómodo cecidérunt fortes in bello? Jónathas in excélsis interféctus est: Saul et Jónathas, amábiles et decóri valde in vita sua, in morte quoque non sunt divísi."
-  en: "Ye mountains of Gilboa, * let there be no dew, neither let there be rain upon you; for there the shield of the mighty is vilely cast away, the shield of Saul, as though he had not been anointed with oil. How are the mighty fallen in the midst of the battle! Jonathan is slain upon the high places; Saul and Jonathan were lovely and pleasant in their lives, and in their death they were not divided."
-status:
-  la: verified
-  en: verified

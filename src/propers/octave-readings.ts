@@ -9,6 +9,7 @@
 // simplification, not how these are actually prayed historically.
 import type { LanguageCode, TranslationStatus } from '../psalter/types';
 import { getScriptureVerses } from '../scripture';
+import { octaveReadingRecords } from './store';
 
 /** A citation into scripture/index.ts's own store — `verses` e.g. "1-13",
  * omitted for a whole (authored) chapter. */
@@ -45,7 +46,7 @@ export interface OctaveReadingText {
 }
 
 /**
- * The shape actually authored in data/propers/octave-readings/*.yml: either
+ * The shape actually authored in the octave-readings sections of data/<lang>/propers/*.yml: either
  * `text` directly (patristic prose that isn't scripture itself, embedded
  * per this project's usual duplication convention — 2026-08 decision: "we
  * actually want the scripture there in the way those readings cite it" for
@@ -98,14 +99,9 @@ function resolveReading(record: OctaveReadingRecord): OctaveReadingText {
   return { ...rest, text: text ?? (passages ? resolvePassages(passages) : {}), isScripture: !!passages };
 }
 
-const octaveReadingModules = import.meta.glob<{ default: OctaveReadingRecord }>(
-  '../data/propers/octave-readings/*.yml',
-  { eager: true },
-);
-
 const octaveReadingsById = new Map<string, OctaveReadingText>();
-for (const mod of Object.values(octaveReadingModules)) {
-  octaveReadingsById.set(mod.default.id, resolveReading(mod.default));
+for (const [id, record] of octaveReadingRecords) {
+  octaveReadingsById.set(id, resolveReading(record as unknown as OctaveReadingRecord));
 }
 
 /** Undefined, not a "missing" placeholder, when this octave day has no

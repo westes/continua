@@ -1,0 +1,86 @@
+# Read directly from web/www/horas/Latin/Tempora/093-6.txt's own [Oratio]
+# and its English counterpart. Standard "Per Dóminum..." closing spelled
+# out in full (the source abbreviates it), matching every other collect
+# in this store.
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui per continéntiam salutárem corpóribus medéris et méntibus: majestátem tuam súpplices exorámus; ut pia jejunántium deprecatióne placátus, et præséntia nobis subsídia tríbuas, et futúra.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2025-09-20 -- the clean year in range where September Ember
+# Saturday itself wins outright, labeled "Antiphona ex Proprio de
+# Tempore". Uses the Monastic track's own override text
+# (Latin/TemporaM/093-6.txt's [Ant 2], "Illumináre... Deus Israël") in
+# place of the secular Tempora/093-6.txt's plain "Illúmina... in viam
+# pacis" (no "Deus Israël"), per this project's Monastic-1617-first
+# structure preference -- same choice already made for this day's Matins
+# responsories. The English/Tempora/093-6.txt translation already carries
+# "O Thou the God of Israel," confirming it was translated from the
+# Monastic Latin, not the secular.
+#
+# No Magnificat antiphon file for this id: Ember Saturday's own Second
+# Vespers is always ceded outright to the following Sunday ("Vespera de
+# sequenti; nihil de præcedenti," live-verified 2025-09-20) -- the source
+# file itself has no [Ant 3] for this day, correctly reflecting that the
+# text would never be said.
+benedictus-antiphon:
+  text: 'Illumináre, Dómine, * his, qui in ténebris sedent: et dírige pedes nostros in viam pacis, Deus Israël.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for September Ember Saturday (Sabbato Quattuor
+# Temporum Septembris) — read directly from
+# web/www/horas/Latin/Tempora/093-6.txt, English/Tempora/093-6.txt, and
+# their Monastic-track override web/www/horas/Latin/TemporaM/093-6.txt
+# (substitutes its own Responsory2/3, same Tobias-sermon texts as
+# ember-september-wednesday.yml's own Monastic override — used here per
+# this project's Monastic 1617-first structure preference; Responsory1 is
+# identical in both tracks, and is itself the same text as
+# ember-september-wednesday.yml's Responsory1).
+#
+# Lectio1's Gospel citation (Luke 13:6-17) is a bare incipit with no full
+# pericope text given in this day's own file, so only the homily portion
+# was originally authored, same convention as the other two September
+# Ember days.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily), matching the
+# convention set by ember-september-friday.yml — this day's own
+# [Evangelium] carries the full pericope directly (not a redirect),
+# sourced from missa/Latin/Tempora/093-6.txt, English/Tempora/093-6.txt,
+# not guessed at.
+#
+# Recombined into one reading 2026-09-04 (previously kept as 3 separate
+# readings): Lectio1-3 are one continuous, unbroken Gregory homily, split
+# only to fill the fixed 3-lesson Nocturn slot count — same fix already
+# applied to ember-september-friday.yml/ember-september-wednesday.yml the
+# same day, see either file's own header for the fuller rationale.
+# Responsory is Lectio1's own; Lectio2/3's own distinct responsories
+# (drawn from TemporaM/093-0's own Tobias-sermon texts) are dropped, same
+# as every other collapsed-reading case in this store.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Luc 13:6-17
+      text: 'In illo témpore: Dicébat Jesus turbis hanc similitúdinem: Arbórem fici habébat quidam plantátam in vínea sua, et venit quærens fructum in illa, et non invénit. Dixit autem ad cultórem víneæ: Ecce, anni tres sunt, ex quo vénio quærens fructum in ficúlnea hac, et non invénio: succíde ergo illam: ut quid étiam terram óccupat? At ille respóndens, dicit illi: Dómine, dimítte illam et hoc anno, usque dum fódiam circa illam et mittam stércora: et si quidem fécerit fructum: sin autem, in futúrum succídes eam. Erat autem docens in synagóga eórum sábbatis. Et ecce múlier, quæ habébat spíritum infirmitátis annis decem et octo: et erat inclináta, nec omníno póterat sursum respícere. Quam cum vidéret Jesus, vocávit eam ad se, et ait illi: Múlier, dimíssa es ab infirmitáte tua. Et impósuit illi manus, et conféstim erécta est, et glorificábat Deum. Respóndens autem archisynagógus, indígnans quia sábbato curásset Jesus, dicébat turbæ: Sex dies sunt, in quibus opórtet operári: in his ergo veníte, et curámini, et non in die sábbati. Respóndens autem ad illum Dóminus, dixit: Hypócritæ, unusquísque vestrum sábbato non solvit bovem suum aut ásinum a præsépio, et ducit adaquáre? Hanc autem fíliam Abrahæ, quam alligávit sátanas, ecce decem et octo annis, non opórtuit solvi a vínculo isto die sábbati? Et cum hæc díceret, erubescébant omnes adversárii ejus: et omnis pópulus gaudébat in univérsis, quæ glorióse fiébant ab eo.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 31 on the Gospels, on Luke 13:6-17
+      text: |-
+        Dóminus ac Redémptor noster per Evangélium suum aliquándo verbis, aliquándo rebus lóquitur: aliquándo áliud verbis, atque áliud rebus; aliquándo autem hoc verbis, quod rebus. Duas étenim res ex Evangélio, fratres, audístis: ficúlneam infructuósam, et mulíerem curvam; et utríque rei est píetas impénsa. Illud autem dixit per similitúdinem: istud egit per exhibitiónem. Sed hoc signíficat ficúlnea infructuósa, quod múlier inclináta; et hoc ficúlnea reserváta, quod múlier erécta.
+
+        Quid arbor fici, nisi humánam natúram desígnat? Quid múlier inclináta, nisi eámdem natúram significándo denúntiat? Quæ et bene plantáta est sicut ficus, et bene creáta sicut múlier; sed in culpam própria sponte lapsa, neque fructum servat operatiónis, neque statum rectitúdinis. Ad peccátum quippe ex voluntáte córruens, quia fructum obediéntiæ ferre nóluit, statum rectitúdinis amísit. Quæ ad Dei similitúdinem cóndita, dum in sua dignitáte non pérstitit, quod plantáta vel creáta fúerat, serváre contémpsit. Tértio dóminus víneæ ad ficúlneam venit, quia natúram géneris humáni ante legem, sub lege, sub grátia, exspéctando, admonéndo, visitándo requisívit.
+
+        Venit ante legem, quia per naturálem intelléctum quid unusquísque exémplo sui, quáliter erga próximum ágere debuísset, innótuit. Venit in lege, quia præcipiéndo dócuit. Venit post legem per grátiam, quia pietátis suæ præséntiam exhibéndo monstrávit. Sed tamen in tribus annis fructum se non invenísse conquéritur: quia quorúmdam pravórum mentes nec inspiráta lex naturális córrigit, nec præcépta erúdiunt, nec incarnatiónis ejus mirácula convértunt. Quid vero per cultórem víneæ, nisi præpositórum ordo exprímitur? Qui dum præsunt Ecclésiæ, nimírum Domínicæ víneæ curam gerunt.
+      responsory: |-
+        R. Tribulatiónes civitátum audívimus, quas passæ sunt, et defécimus: timor et hebetúdo mentis cécidit super nos et super líberos nostros: ipsi montes nolunt recípere fugam nostram: * Dómine, miserére.
+        V. Peccávimus cum pátribus nostris, injúste égimus, iniquitátem fécimus.
+        R. Dómine, miserére.
+      status: verified

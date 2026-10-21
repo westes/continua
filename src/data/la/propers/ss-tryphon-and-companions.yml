@@ -1,0 +1,46 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08.
+# Pulled from the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt + M1617.txt, own title
+# "Ss. Tryphonis et Sociorum Martyris") and its own source file, not the merged per-date
+# files those tables' fileref points at directly -- see TODO.md.
+collect:
+  text: |
+    Orémus.
+    Fac nos, quǽsumus, Dómine, sanctórum Mártyrum tuórum Tryphónis, Respícii et Nymphæ semper festa sectári: quorum suffrágiis, protectiónis tuæ dona sentiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-several-martyrs (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags actually used for
+# a mere commemoration, confirmed against this exact category via an
+# independently live-verified precedent elsewhere in this app). ss-tryphon-and-companions has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper. Collect is the saint's own
+# real proper (ss-tryphon-and-companions-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Fac nos, quǽsumus, Dómine, sanctórum Mártyrum tuórum Tryphónis, Respícii et Nymphæ semper festa sectári: quorum suffrágiis, protectiónis tuæ dona sentiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Tryphon, Respicius, and Nympha,
+# Martyrs (Nov 10) — pre-1955-but-post-1617. Plain Sancti/11-10.txt is a
+# different, later saint (St. Andrew Avellino, canonized 1712) who
+# displaced these martyrs on the general calendar's own Nov 10 slot;
+# their content survives at the suffixed sibling file (see memory
+# vu-matins-pre1955-saints's "critical wrinkle").
+# web/www/horas/Latin/Sancti/11-10o.txt, English/Sancti/11-10o.txt.
+# Single lesson (simplex-feast Lectio93), no responsory in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Tryphon, Decio imperatóre, cum Jesu Christi fidem prædicans, omnes ad ejus cultum perducere conarétur, a Decii satellítibus comprehénsus, primum equuleo torquétur et ungulis férreis excarnificátur; deínde, sublimibus pédibus candéntibus clavis confíxus, fustibus cæditur, et, admotis facibus ardéntibus, aduritur. Quæ cum ómnia fortiter ferentem vidísset Respicius tribunus, ad Christi Dómini fidem convérsus, statim se christianum esse palam proféssus est. Qui, varie cruciatus, una cum Tryphone rapitur ad Jovis simulacrum; quæ statua, Tryphone orante, cóncidit. Quare plumbátis crudelíssime contúsi, nobilíssimum martyrium consecúti sunt quarto Idus Novembris. Eodem die virgo quædam, cui nomen Nympha, cum Jesum Christum verum esse Deum clara voce testarétur, martyrii palmam ad virginitátis corónam adjunxit.
+      status: verified

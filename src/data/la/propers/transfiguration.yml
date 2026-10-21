@@ -1,0 +1,334 @@
+# Read directly from web/www/horas/Latin/Sancti/08-06.txt's own
+# [Oratio] and its English counterpart -- fully proper text, not a
+# Common template.
+collect:
+  text: |
+    Orémus.
+    Deus, qui fídei sacraménta in Unigéniti tui gloriósa Transfiguratióne patrum testimónio
+    roborásti, et adoptiónem filiórum perféctam, voce delápsa in nube lúcida, mirabíliter
+    præsignásti: concéde propítius; ut ipsíus Regis glóriæ nos coherédes effícias, et
+    ejúsdem glóriæ tríbuas esse consórtes.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: verified
+
+# Fully proper feast -- own real [Ant 2]/[Versum 2] read directly from the reference engine's own Sancti file (Latin + English), not a Common-category substitute. Collect is the saint's own real proper (transfiguration-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Et ecce, * vox de nube dicens: Hic est Fílius meus diléctus, in quo mihi complácui; ipsum audíte, allelúia.
+    V. Coróna áurea super caput ejus.
+    R. Expréssa signo sanctitátis, glóriæ, et honóris.
+    Orémus.
+    Deus, qui fídei sacraménta in Unigéniti tui gloriósa Transfiguratióne patrum testimónio
+    roborásti, et adoptiónem filiórum perféctam, voce delápsa in nube lúcida, mirabíliter
+    præsignásti: concéde propítius; ut ipsíus Regis glóriæ nos coherédes effícias, et
+    ejúsdem glóriæ tríbuas esse consórtes.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Matins
+# live query, 2026-08-06 -- byte-identical to the Vespers hymn
+# ("Quicúmque Christum quǽritis"). See lauds-capitulum-
+# transfiguration.yml's header. English final stanza corrected 2026-09-10:
+# the live query had baked in the plain `[Epi]` doxology's English
+# ("Jesu, to thee our praise we pay..."), mismatched against the Latin,
+# which already correctly shows the Monastic `[EpiT]` text ("Glória tibi,
+# Dómine, Qui apparuísti hódie..."). Corrected to `[EpiT]`'s own English
+# (Psalterium/Doxologies.txt), matching vespers-hymn-transfiguration.yml.
+matins-hymn:
+  text: |-
+    Quicúmque Christum quǽritis,
+    Oculos in altum tóllite:
+    Illic licébit vísere
+    Signum perénnis glóriæ.
+
+    Illústre quiddam cérnimus,
+    Quod nésciat finem pati,
+    Sublíme, celsum, intérminum,
+    Antíquius cælo et chao.
+
+    Hic ille Rex est géntium
+    Populíque Rex judáici,
+    Promíssus Abrahæ patri
+    Ejúsque in ævum sémini.
+
+    Hunc, et prophétis téstibus
+    Iisdémque signatóribus,
+    Testátor et Pater jubet
+    Audíre nos et crédere.
+
+    * Glória tibi, Dómine,
+    Qui apparuísti hódie,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/08-06.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Summum Regem glóriæ, * Christum adorémus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-06 (fixed date). Fully proper feast: own chapter
+# (Phil 3:20-21), own distinct responsory/hymn/versicle at each hour;
+# real Alleluias baked into the responsory text. Same chapter reused for
+# Vespers -- no separate vespers-capitulum-<id> file authored, per
+# vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
+lauds-capitulum:
+  text: Salvatórem exspectámus Dóminum nostrum Jesum Christum, qui reformábit corpus humilitátis nostræ configurátum córpori claritátis suæ.
+  citation: Phil 3:20-21
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-06 -- own proper hymn ("Amor Jesu dulcíssime").
+# See lauds-capitulum-transfiguration.yml's header.
+lauds-hymn:
+  text: |-
+    Amor Jesu dulcíssime,
+    Quando cor nostrum vísitas,
+    Pellis mentis calíginem,
+    Et nos reples dulcédine.
+
+    Quam felix est quem sátias!
+    Consors patérnæ déxteræ,
+    Tu vere lumen pátriæ,
+    Quod omnem sensum súperat.
+
+    Splendor patérnæ glóriæ,
+    Incomprehénsa bónitas,
+    Amóris tui cópiam
+    Da nobis per præséntiam.
+
+    Glória tibi Dómine,
+    Qui apparuísti hódie,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-06 -- own proper responsory. See lauds-capitulum-
+# transfiguration.yml's header.
+lauds-responsory:
+  text: |
+    R.br. Gloriósus apparuísti in conspéctu Dómini, * Allelúia, allelúia.
+    R. Gloriósus apparuísti in conspéctu Dómini, * Allelúia, allelúia.
+    V. Proptérea decórem índuit te Dóminus.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Gloriósus apparuísti in conspéctu Dómini, * Allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-06 -- own proper versicle. Same versicle as
+# Vespers -- see vespers-versicle-transfiguration.yml.
+lauds-versicle:
+  text: |
+    V. Coróna áurea super caput ejus.
+    R. Expréssa signo sanctitátis, glóriæ, et honóris.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/08-06.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: Sústulit me in spíritu in montem magnum et altum, et osténdit mihi civitátem sanctam Jerúsalem, descendéntem de cælo a Deo, habéntem claritátem Dei; et lucérna ejus est Agnus.
+  citation: Apoc 21:10-11; 21:23
+  status: verified
+
+# Sancti/08-06.txt [Capitulum Laudes] and [Responsory Breve Tertia]; the Monastic source's matching versicle (Versum 1 / Nocturn 2 Versum / Nocturn 3 Versum) carries no Alleluia.
+terce-capitulum:
+  text: |
+    Salvatórem exspectámus Dóminum nostrum Jesum Christum, qui reformábit corpus humilitátis nostræ configurátum córpori claritátis suæ.
+    R. Deo grátias.
+    V. Gloriósus apparuísti in conspéctu Dómini.
+    R. Proptérea decórem índuit te Dóminus.
+  citation: Phil 3:20-21
+  status: verified
+
+# Sancti/08-06.txt [Capitulum Sexta] and [Responsory Breve Sexta]; the Monastic source's matching versicle (Versum 1 / Nocturn 2 Versum / Nocturn 3 Versum) carries no Alleluia.
+sext-capitulum:
+  text: |
+    Nos omnes reveláta fácie glóriam Dómini speculántes, in eándem imáginem transformámur a claritáte in claritátem, tamquam a Dómini Spíritu.
+    R. Deo grátias.
+    V. Glória et honóre coronásti eum, Dómine.
+    R. Et constituísti eum super ópera mánuum tuárum.
+  citation: 2 Cor 3:18
+  status: verified
+
+# Sancti/08-06.txt [Capitulum Nona] and [Responsory Breve Nona]; the Monastic source's matching versicle (Versum 1 / Nocturn 2 Versum / Nocturn 3 Versum) carries no Alleluia.
+none-capitulum:
+  text: |
+    Sústulit me in spíritu in montem magnum et altum, et osténdit mihi civitátem sanctam Jerúsalem, descendéntem de cælo a Deo, habéntem claritátem Dei; et lucérna ejus est Agnus.
+    R. Deo grátias.
+    V. Magna est glória ejus in salutári tuo.
+    R. Glóriam et magnum decórem impónes super eum.
+  citation: Apoc 21:10-11; 21:23
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-08-06 -- own proper hymn ("Quicúmque Christum
+# quǽritis"). See lauds-capitulum-transfiguration.yml's header. English
+# final stanza corrected 2026-09-10, same fix as matins-hymn-
+# transfiguration.yml: the live query had baked in the plain `[Epi]`
+# doxology's English, mismatched against the Latin's correct Monastic
+# `[EpiT]` text. Final stanza marked with a leading "* " -- the source's
+# own `[Hymnus Vespera]` carries this marker (Divinum Officium's own
+# variable-doxology convention), overridden here to `[EpiT]` per this
+# feast's `Doxology=Epi` rule (see hours/hymn-doxology-by-feast.yml's
+# `transfiguration` entry) -- see hours/resolve-common.ts's
+# substituteDoxology and hours/hymn-doxology.ts.
+vespers-hymn:
+  text: |-
+    Quicúmque Christum quǽritis,
+    Oculos in altum tóllite:
+    Illic licébit vísere
+    Signum perénnis glóriæ.
+
+    Illústre quiddam cérnimus,
+    Quod nésciat finem pati,
+    Sublíme, celsum, intérminum,
+    Antíquius cælo et chao.
+
+    Hic ille Rex est géntium
+    Populíque Rex judáici,
+    Promíssus Abrahæ patri
+    Ejúsque in ævum sémini.
+
+    Hunc, et prophétis téstibus
+    Iisdémque signatóribus,
+    Testátor et Pater jubet
+    Audíre nos et crédere.
+
+    * Glória tibi, Dómine,
+    Qui apparuísti hódie,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-08-06 -- own proper responsory. See lauds-capitulum-
+# transfiguration.yml's header.
+vespers-responsory:
+  text: |
+    R.br. Glória et honóre coronásti eum, Dómine, * Allelúia, allelúia.
+    R. Glória et honóre coronásti eum, Dómine, * Allelúia, allelúia.
+    V. Et constituísti eum super ópera mánuum tuárum.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Glória et honóre coronásti eum, Dómine, * Allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-08-06 -- same versicle as Lauds (see lauds-versicle-
+# transfiguration.yml).
+vespers-versicle:
+  text: |
+    V. Coróna áurea super caput ejus.
+    R. Expréssa signo sanctitátis, glóriæ, et honóris.
+  status: verified
+
+# Read directly from web/www/horas/Latin/Sancti/08-06.txt's own [Ant 1]
+# and its English counterpart -- fully proper text, not a Common
+# template.
+benedictus-antiphon:
+  text: Christus Jesus, * splendor Patris et figúra substántiæ ejus, portans ómnia verbo virtútis suæ, purgatiónem peccatórum fáciens, in monte excélso gloriósus apparére hódie dignátus est.
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/08-06.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this fully proper Festum
+# Domini, not a Common substitution.
+magnificat-antiphon:
+  text: 'Et audiéntes * discípuli cecidérunt in fáciem suam et timuérunt valde: et accéssit Jesus, et tétigit eos dixítque eis: Súrgite et nolíte timére, allelúia.'
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 08-06
+# transfiguration (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Christus Jesus, * splendor Patris et figúra substántiæ ejus, portans ómnia verbo virtútis suæ, purgatiónem peccatórum fáciens, in monte excélso gloriósus apparére hódie dignátus est.
+  status: verified
+
+# Sancti/08-06.txt [Ant Laudes] (both languages), the five Lauds antiphons by position: three psalm groups, the canticle, Laudate. Psalmody is the 'Psalmi Dominica' scheme these feasts' [Rule] names (Ps 92 / 99 / 62, the Three Young Men, Ps 148-150), the same shape as apparition-of-st-michael.yml. Before this file the psalm antiphons fell to the ferial ones.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Assúmpsit Jesus * Petrum, et Jacóbum, et Joánnem fratrem ejus, et duxit eos in montem excélsum seórsum, et transfigurátus est ante eos.
+    - psalms:
+        - 99
+      antiphon: Resplénduit * fácies ejus sicut sol, vestiménta autem ejus facta sunt alba sicut nix, allelúia.
+    - psalms:
+        - 62
+      antiphon: Et ecce * apparuérunt eis Móyses et Elías loquéntes cum Jesu.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Respóndens autem Petrus, * dixit ad Jesum: Dómine, bonum est nos hic esse.'
+  laudate:
+    antiphon: Adhuc eo loquénte, * ecce nubes lúcida obumbrávit eos.
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-08-06, own day). `common: proper-to-the-
+# transfiguration` has no Vespers Common category (fully proper), so
+# without this file the feast fell to the plain ferial default. Psalms
+# 109/110/111/112.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Assúmpsit Jesus * Petrum, et Jacóbum, et Joánnem fratrem ejus, et duxit eos in montem excélsum seórsum, et transfigurátus est ante eos.
+    - psalms:
+        - 110
+      antiphon: Resplénduit * fácies ejus sicut sol, vestiménta autem ejus facta sunt alba sicut nix, allelúia.
+    - psalms:
+        - 111
+      antiphon: Et ecce * apparuérunt eis Móyses et Elías loquéntes cum Jesu.
+    - psalms:
+        - 112
+      antiphon: Adhuc eo loquénte, * ecce nubes lúcida obumbrávit eos.
+
+# Matins Nocturn 2-3 readings for the Transfiguration of Our Lord
+# (Aug 6). Sourced directly from web/www/horas/Latin/Sancti/08-06.txt,
+# English/Sancti/08-06.txt. (Lectio1-3, 2 Peter 1:10-21, is left to the
+# bible-plan store as usual.)
+#
+# Nocturn 2: Lectio4-6 combined into one reading, Pope St. Leo the
+# Great's sermon — one continuous piece, no genuine source break.
+# Nocturn 3: Lectio7's Gospel citation (Matt 17:1-9) was a bare incipit
+# ("Et réliqua") with no full pericope text given; the full pericope is
+# now authored too (isGospel: true, immediately before the homily) —
+# sourced from this same day's own Missale [Evangelium]
+# (`web/www/missa/Latin/Sancti/08-06.txt`, English/Sancti/08-06.txt),
+# not guessed at (2026-09-05 update). The homily portion remains St.
+# John Chrysostom's homily (Lectio7's homily + Lectio8-9 combined, one
+# continuous piece).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: Pope St. Leo the Great, Sermon on the Transfiguration
+      text: |-
+        Aperit Dóminus coram eléctis téstibus glóriam suam, et commúnem illam cum céteris córporis formam tanto splendóre claríficat, ut et fácies ejus solis fulgóri símilis, et vestítus candóri nívium esset æquális. In qua transfiguratióne illud quidem principáliter agebátur, ut de córdibus discipulórum crucis scándalum tollerétur; nec conturbáret eórum fidem voluntáriæ humílitas passiónis, quibus reveláta esset abscónditæ excelléntia dignitátis. Sed non minóre providéntia spes sanctæ Ecclésiæ fundabátur, ut totum Christi corpus agnósceret quali esset commutatióne donándum, ut ejus sibi honóris consórtium membra promítterent, qui in cápite præfulsísset.
+
+        Confirmándis vero Apóstolis et ad omnem sciéntiam provehéndis, ália quoque in illo miráculo accéssit instrúctio. Móyses enim et Elías, lex scílicet et prophétæ apparuérunt cum Dómino loquéntes; ut veríssime in illa quinque virórum præséntia complerétur quod dictum est: in duóbus vel tribus téstibus stat omne verbum. Quid hoc stabílius, quid fírmius verbo, in cujus prædicatióne véteris et novi Testaménti cóncinit tuba, et cum evangélica doctrína, antiquárum protestatiónum instruménta concúrrunt? Astipulántur enim sibi ínvicem utriúsque Fœ́deris páginæ; et, quem sub velámine mysteriórum præcedéntia signa promíserant, maniféstum atque perspícuum præséntis glóriæ splendor osténdit.
+
+        His ergo sacramentórum revelatiónibus Petrus Apóstolus incitátus, mundána spernens et terréna fastídiens, in æternórum desidérium quodam mentis rapiebátur excéssu; et, gáudio totíus visiónis implétus, ibi cum Jesu optábat habitáre, ubi manifésta ejus glória lætabátur. Unde et ait: Dómine, bonum est nos hic esse: si vis, faciámus hic tria tabernácula; tibi unum, Móysi unum et Elíæ unum. Sed huic suggestióni Dóminus non respóndit, signíficans, non quidem ímprobum, sed inordinátum esse quod cúperet; cum salvári mundus, nisi Christi morte, non posset, et exémplo Dómini in hoc vocarétur credéntium fides, ut licet non oportéret de beatitúdinis promissiónibus dubitári, intellegerémus tamen inter tentatiónes hujus vitæ prius nobis tolerántiam postulándam esse, quam glóriam.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 17:1-9
+      text: 'In illo témpore: Assúmpsit Jesus Petrum, et Jacóbum, et Joánnem fratrem ejus, et duxit illos in montem excélsum seórsum: et transfigurátus est ante eos. Et resplénduit fácies ejus sicut sol: vestiménta autem ejus facta sunt alba sicut nix. Et ecce, apparuérunt illis Moyses et Elías cum eo loquéntes. Respóndens autem Petrus, dixit ad Jesum: Dómine, bonum est nos hic esse: si vis, faciámus hic tria tabernácula, tibi unum, Móysi unum et Elíæ unum. Adhuc eo loquénte, ecce, nubes lúcida obumbrávit eos. Et ecce vox de nube, dicens: Hic est Fílius meus diléctus, in quo mihi bene complácui: ipsum audíte. Et audiéntes discípuli, cecidérunt in fáciem suam, et timuérunt valde. Et accéssit Jesus, et tétigit eos, dixítque eis: Surgite, et nolíte timére. Levántes autem óculos suos, néminem vidérunt nisi solum Jesum. Et descendéntibus illis de monte, præcépit eis Jesus, dicens: Némini dixéritis visiónem, donec Fílius hóminis a mórtuis resúrgat.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. John Chrysostom, Homily 57 on Matthew (on Matt 17:1-9)
+      text: |-
+        Quóniam multa de perículis, multa de passióne sua, multa de morte et de cæde discipulórum locútus est Dóminus, et áspera complúra atque árdua eis injúnxit; et illa quidem in præsénti vita, et jam imminébant; bona vero in spe et exspectatióne erant: ut puta, quia servárent ánimam suam, si pérderent eam; quia in glória Patris sui ventúrus sit, et prǽmia redditúrus: ut visu étiam certióres fáceret, et osténderet quidnam sit illa glória, cum qua ventúrus est, quantum cápere póterant in hac præsénti vita, illis osténdit eámque détegit, ne aut sua aut Dómini morte dóleant, et máxime Petrus.
+
+        Et vide quid agit, cum de regno et de gehénna disserúerit. Nam in eo quod dixit: Qui ínvenit ánimam suam, perdet eam; et quicúmque perdet eam grátia mei, invéniet ipsam; et in eo quod ait: Reddet unicuíque secúndum ópera sua; et regnum et gehénnam designávit. Cum ígitur de utrísque disserúerit, regnum quidem ut óculis cernátur, concédit, gehénnam autem mínime; quóniam rudióribus atque ineptióribus illud necessárium fuísset, sed, cum illi probi essent ac perspicáces, satis fuit eos a melióribus confirmári. Hoc étiam multo magis ipsum decébat. Non tamen omníno illud prætermísit, sed et aliquándo atrocitátem gehénnæ quasi ante óculos propónit, véluti cum Lázari imáginem descrípsit, et ejus méminit qui denários centum repétiit.
+
+        Tu vero Matthǽi philosophíam consídera, qui non celávit nómina eórum qui præpósiti fúerant. Quod et Joánnes sǽpius facit, cum exímias Petri laudes veríssime ac diligentíssime descríbat. Nullum enim in hoc Apostolórum consórtio livor aut inánis glória locum habébat. Primos ígitur Apostolórum seórsum assúmpsit. Quam ob rem eos solos accépit? Quia excellentióres céteris vidélicet erant. Cur autem non íllico, sed post sex dies hoc fecit? Ne céteri scílicet discípuli seu hómines moveréntur; qua de re nec eos nominávit, quos acceptúrus erat.
+      status: verified

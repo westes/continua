@@ -1,0 +1,17 @@
+# Matins Nocturn 2 reading for St. Leo III, Pope and Confessor (Rome-city calendar office).
+# Source: web/www/horas/Latin/Sancti/Urbis/06-12-LeoIII.txt, [Lectio4]-[Lectio6], combined into one
+# reading (one continuous vita, no genuine source break). No English source
+# exists for the Urbis directory (English/Sancti/ is flat), so the English
+# is this project's own translation, marked draft. OCR damage in the Urbis
+# file's Latin corrected here (misspelt and run-together words).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Leo hujus nóminis tértius, Románus, ex patre Astippio, a puerítia in vestiario patriarchii Lateranensis in omnem ecclesiásticam ac divínam disciplínam educátus, ex monacho sancti Benedícti, présbyter cardinális, ac demum Póntifex Máximus, incredíbili ómnium consensióne, ipso die óbitus Adriani creátus est, anno septingentésimo nonagésimo quinto, seditque in sancta Petri sede annos vigínti, menses quinque, dies decem et septem.
+
+        Talem se in pontificátu exhíbuit, qualem se ante assumptiónem præbuerat: piissimum scílicet, mitissimum, singulári in Deum religióne, erga próximum caritáte, prudéntia in rebus gerendis, páuperum ægrorumque paréntem, Ecclésiæ defensorem, divíni cultus promotorem, utpote qui máxima quæque pro Christo et Ecclésia sédulo prǽstitit, et patiénter tolerávit.
+
+        Cum ab ímpiis, erutis óculis, et confossus vulnéribus, semivivus relictus fuísset, postrídie per insígne miráculum sanus invéntus est, iisdemque parricídis vitam suis précibus obtínuit. Cárolo Magno Francorum regi Románum impérium détulit; peregrinis amplissimum xenodochíum exstrúxit: patrimónium aliósque fundos paupéribus adscrípsit. Basílicas Urbis, præsértim Lateranensem (in cujus patriarchio trichnium magnum super ómnia trichnia fundávit), et sacras ædes tot ac tantis divítiis cumulávit, ut fidem omnem superáre videátur. Vitam demum religiosissimam pio fine coronávit, prídie Idus Júnii, anno Dómini octingentésimo décimo sexto, et sepúltus est in Vaticáno.
+      status: verified

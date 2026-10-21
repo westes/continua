@@ -1,0 +1,54 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2029-05-07).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, pro cujus honóre gloriósus Póntifex Stanisláus gládiis impiórum occúbuit: præsta, quǽsumus; ut omnes, qui ejus implórant auxílium, petitiónis suæ salutárem consequántur efféctum.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-stanislaus-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-martyr-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-stanislaus-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Deus, pro cujus honóre gloriósus Póntifex Stanisláus gládiis impiórum occúbuit: præsta, quǽsumus; ut omnes, qui ejus implórant auxílium, petitiónis suæ salutárem consequántur efféctum.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Stanislaus's own day (2026-05-07). The Benedictus
+# antiphon -- see st-john-before-the-latin-gate-antiphon.yml's note on
+# the shared Eastertide Common text.
+benedictus-antiphon:
+  text: Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Stanislaus, Bishop and Martyr (May 7)
+# — pre-1955-but-post-1617 (no SanctiM/05-07*.txt at all).
+# web/www/horas/Latin/Sancti/05-07.txt, English/Sancti/05-07.txt.
+# Lectio4-6 is this saint's own proper text, one continuous vita account,
+# no internal break, combined into a single reading; Lectio7-9 (not
+# present in this file, implicitly Common) skipped. No responsory given.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Stanislaus Polonus, apud Cracoviam nobili genere natus et piis paréntibus, qui antea per annos trigínta stériles, illum a Deo precibus impetrarunt, ab ineunte ætate futuræ sanctitátis specimen dedit. Adoléscens bonis artibus operam navávit, multumque in sacra cánonum et theologíæ doctrina profecit. Paréntibus mórtuis, amplum patrimónium paupéribus distríbuit, vitæ monasticæ desidério. Sed Dei providéntia canonicus Cracoviénsis et concionátor factus a Lampérto epíscopo, in ejus póstea locum, quamvis invitus, suffícitur. Quo in múnere, ómnium pastorálium virtútum laude, et præcípue misericórdia in páuperes, enítuit.
+
+        Erat tum Poloniæ rex Bolesláus, quem gráviter offendit, quod illíus notam libidinem publice arguebat. Quare in solemni regni convéntu Stanisláum per calumniam in judícium coram se vocari curat, tamquam pagum occuparet, quem ecclésiæ suæ nómine coémerat. Quod cum neque tabulis probare posset, et testes veritátem cidere timerent, spondet epíscopus, se Petrum pagi venditórem, qui triennio ante obíerat, intra dies tres in judícium adducturum. Conditióne cum risu accepta, vir Dei toto triduo jejuniis et oratióni incumbit; ipso sponsiónis die, post oblátum Missæ sacrifícium, Petrum e sepúlcro surgere jubet; qui statim redivivus, episcopum ad regium tribunal euntem sequitur, ibique, rege et ceteris stupore attónitis, de agro a se véndito et pretio rite sibi ab episcopo persoluto testimónium dicit, atque íterum in Dómino obdormívit.
+
+        At Boleslaum, frustra sæpe admónitum, Stanisláus tandem a fidelium communióne rémovet. Ille, iracúndia furens, milites in ecclésiam immíttit, ut sanctum episcopum confodiant; qui, ter conati, occúlta vi, tertio divinitus sunt depulsi. Postremo ímpius rex sacerdotem Dei, Hostiam immaculátam ad altáre offeréntem, sua manu obtruncat. Corpus, membratim concisum et per agros projectum, áquilæ a feris mirabíliter defendunt. Mox canonici Cracovienses sparsa membra, nocturni de cælo splendoris indicio cólligunt, et suis locis apte disponunt; quæ súbito ita inter se copuláta sunt, ut nulla vúlnerum vestígia exstarent. Multis præterea miraculis servi sui sanctitátem Deus declarávit post ejus mortem: quibus permotus Innocentius quartus, summus Pontifex, illum in Sanctórum númerum rétulit. Clemens vero octavus, Pontifex maximus, sancti Stanislai festo die in Románum Breviárium reláto, gloriósi Mártyris memóriam dúplici Officio ubíque celebrári jussit.
+      status: verified

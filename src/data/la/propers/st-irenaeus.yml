@@ -1,0 +1,79 @@
+# Read directly from web/www/horas/Latin/Sancti/06-28.txt's own [Oratio]
+# and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beáto Irenǽo Mártyri tuo atque Pontífici tribuísti, ut et veritáte doctrínæ
+    expugnáret hǽreses, et pacem Ecclésiæ felíciter confirmáret: da, quǽsumus, plebi tuæ in
+    sancta religióne constántiam; et pacem tuam nostris concéde tempóribus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle, same combined-bundle shape as
+# ss-felix-and-adauctus-commemoration.yml/st-alphonsus-liguori-
+# commemoration.yml -- see hours/resolve-common.ts's
+# sanctoralCommemorationPart for how this renders, falling back to the
+# bare collect (st-irenaeus-collect.yml) when this file didn't exist.
+# June 28 has no active octave to demote him (see calendar/saints/
+# st-irenaeus.yml's own header), so this bundle isn't reachable under an
+# ordinary year, but is authored anyway per this project's established
+# practice of covering a winning saint's own commemoration path in the
+# same pass (a privileged Sunday could in principle still displace him).
+# Ant 2/Versum 2 are the standard de-Communi pairing for the Common of a
+# Martyr Bishop (C2, his own source common) -- common-of-a-martyr-bishop-
+# commemoration-antiphon.yml/lauds-versicle-common-of-a-martyr-bishop.yml,
+# both already verified elsewhere.
+commemoration:
+  text: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Deus, qui beáto Irenǽo Mártyri tuo atque Pontífici tribuísti, ut et veritáte doctrínæ
+    expugnáret hǽreses, et pacem Ecclésiæ felíciter confirmáret: da, quǽsumus, plebi tuæ in
+    sancta religióne constántiam; et pacem tuam nostris concéde tempóribus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2-3 readings for St. Irenaeus, Bishop and Martyr (June 28).
+# Sourced from web/www/horas/Latin/Sancti/06-28.txt,
+# English/Sancti/06-28.txt.
+#
+# Nocturn 2 (Lectio4-6): one continuous vita, no genuine source break --
+# same combining convention st-alphonsus-liguori.yml/st-ephraim-of-syria.yml
+# use.
+#
+# Nocturn 3: genuinely Irenaeus's own on both counts, unlike most non-
+# bishop confessors' bare Common cross-reference -- the source's own
+# Gospel (Matt 10:28-33, "Nolite timere eos qui occidunt corpus") is
+# paired with a homily drawn from Irenaeus's own Adversus Haereses (Lib.
+# 3, cap. 18/20, num. 5-6), transcribed here rather than left to the
+# generic Common of a Martyr Bishop pool.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Irenæus, non longe ab urbe Smyrna in Asia proconsulari natus, jam inde a púero sese Polycarpo, Joánnis Evangelistæ discipulo eidemque episcopo Smyrnæórum, tradiderat in disciplínam. Hoc tam excellénti magistro, progréssus in doctrina præceptisque christianæ religiónis insignes fecit. Polycarpo in cælum martyrii glória sublato, etsi erat Irenæus in sacris litteris egregie versatus, quod tamen incredibili studio flagraret discéndi quæ dógmata depósiti loco custodienda ceteri accepissent, quos Apóstoli institúerant; horum quam pótuit plures convénit, quæque ab iisdem audívit, mémori mente ténuit, ea deinceps opportune advérsus hæreses allatúrus, quas cum vidéret ingénti pópuli christiáni damno latius in dies manare, diligenter copioséque reféllere cogitarat. In Gállias inde profectus, a Pothino episcopo presbyter est constitútus Ecclésiæ Lugdunénsis. Quod munus sic laborando in verbo et doctrina gessit, ut (testibus sanctis Martyribus, qui, Marco Aurelio imperatóre, strenue pro vera pietáte certarant) æmulatórem sese præstíterit testaménti Christi.
+
+        Cum Mártyres ipsi clerusque Lugdunénsis de pace Ecclesiárum Asiæ, quam Montanistárum factio turbarat, solliciti cum primis essent, Irenæum, cujus esse potíssimum habéndam ratiónem prædicábant, unum ómnium maxime delegérunt, quem Romam ad Eleuthérium Pontificem mitterent rogátum, ut novis sectariis auctoritate Sedis Apostolicæ reprobátis, discordiárum causa tollerétur. Jam Pothinus epíscopus, martyr decesserat: huic Irenæus cum successísset, tam feliciter munus obiit episcopatus, ut sapiéntia, oratióne, exemploque suo non modo brevi cives Lugdunenses omnes, sed multos étiam aliárum Galliæ urbium íncolas superstitiónem atque errórem abjecisse, dedísseque christianæ milítiæ nómina víderit. Interea, cum de die celebrándi Paschátis orta esset contentio, ac Victor, Romanus Pontifex, Asiános episcopos ab collégis réliquis fere ómnibus dissidéntes aut prohibuísset communióne sacrórum, aut prohibére minátus esset, eum Irenæus, sequester pacis, decenter monuit, exemplisque usus Pontificum superiórum indúxit, ut ne tot Ecclésias ob ritum quem a majóribus accepisse se dicerent, avelli ab unitate catholica paterétur.
+
+        Multa scripsit, quæ Eusebius Cæsariénsis et sanctus Hieronymus mémorant, quorúmque pars magna intércidit injuria témporum. Exstant ejus advérsus hæreses libri quinque, anno circiter centésimo octogesimo perscripti, dum adhuc Eleutherius rem christianam publicam géreret. In tertio libro vir Dei, ab iis edoctus quos auditores constat fuísse Apostolórum, grave in primis atque præclárum de Romana Ecclésia, deque illíus episcopórum successióne, divinæ traditiónis fideli, perpetua, certíssima custode, testimónium dixit. Atque ad hanc, dixit, Ecclésiam propter potiórem principalitátem necesse est omnem conveníre Ecclésiam, hoc est eos qui sunt undique fidéles. Postremo una cum aliis prope innumerabílibus, quos ipse ad veram fidem frugemque perduxerat, martyrio coronátus migrávit in cælum, anno salútis ducentésimo secundo, quo témpore Septimius Sevérus Augustus eos omnes, qui constanter in colenda christiana religióne perstare voluíssent, in summum cruciátum dari atque intérfici imperaverat. Sancti Irenæi festum Benedíctus décimus quintus Pontifex maximus ad universam Ecclésiam extendit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 10:28-33
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Nolíte timere eos qui occídunt corpus, ánimam autem non possunt occídere; sed potius timéte eum qui potest et ánimam et corpus perdere in gehennam. Et réliqua.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Irenaeus, Bishop and Martyr, Against Heresies, Book 3, ch. 18
+      text: |-
+        Sciebat Dóminus eos qui persecutiónem passuri essent; sciebat et eos qui flagéllari et occídi haberent propter eum. Erat ergo sermo ejus, adhortántis étiam illos: Nolíte timere eos qui occídunt corpus, ánimam autem non possunt occídere. Timéte autem magis eum qui habet potestátem et corpus et ánimam mittere in gehennam, et servare eas quæ essent ad eum confessiónes. Etenim ipse confessurum se promittebat coram Patre suo eos, qui confiteréntur nomen suum coram homínibus; negatúrum autem eos qui negarent eum, et confusurum qui confunderéntur contra confessiónem ejus. Et, cum hæc ita se habeant, ad tantam temeritátem progressi sunt quidam, ut étiam Mártyres spernant, et vitúperent eos qui propter Dómini confessiónem occidúntur, et sústinent ómnia a Dómino prædicta, et secúndum hoc conántur vestígia ássequi passiónis Dómini, passibilis Mártyres facti; quos et concédimus ipsis Martyribus. Cum enim inquirétur sanguis eórum, et glóriam consequéntur, tunc a Christo confundéntur omnes qui inhonoravérunt eórum martyrium.
+
+        Hoc autem idem et illis occurrit, qui dicunt eum putative passum. Si enim non vere passus est, nulla grátia ei, cum nulla fúerit passio; et nos, cum incipiémus vere pati, seducens vidébitur, adhortans nos vapulare, et álteram præbére maxíllam, si ipse illud non prior in veritáte passus est. Et, quemádmodum illos sedúxit, ut viderétur eis ipse hoc quod non erat; et nos sedúcit, adhortans perferre ea quæ ipse non pértulit. Erimus autem et super Magistrum, dum pátimur et sustinémus quæ neque passus est, neque sustinuit Magister. Sed, quóniam solus vere magister Dóminus noster, et bonus vere Fílius Dei; et pátiens Verbum Dei Patris, fílius hóminis factus. Luctátus est enim et vicit; erat enim homo pro pátribus certans, et per obediéntiam inobediéntiam persolvens. Alligávit enim fortem, et solvit infirmos, et salútem donávit plasmáti suo, destruens peccátum. Igitur qui dicunt eum putative manifestátum, neque in carne natum, neque vere hóminem factum, adhuc sub veteri sunt damnatióne.
+      status: verified

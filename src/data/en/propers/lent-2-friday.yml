@@ -1,0 +1,45 @@
+collect:
+  text: |
+    Let us pray.
+    O Almighty God, grant, we beseech thee, that the Sacred Fast may so cleanse us that thereby Thou mayest make us to come with clean hearts unto those holy ordinances which are now before us.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+collect/~-vespers:
+  text: |
+    Let us pray.
+    Grant unto thy people, O Lord, we beseech thee, soundness both of mind and body, that they, cleaving ever unto good works, may evermore worthily be defended by the shield of thine Almighty arm.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+benedictus-antiphon:
+  text: He will miserably destroy * those wicked men, and will let out His vineyard unto other husbandmen, which shall render Him the fruits in their seasons.
+  status: verified
+
+magnificat-antiphon:
+  text: When they sought * to lay hands on Him, they feared the multitude, because they took Him for a Prophet.
+  status: verified
+
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Matthew 21:33-46
+      text: 'At that time, Jesus spoke this parable to the multitude of the Jews and the chief priests: "There was a man, a householder, who planted a vineyard, and put a hedge about it, and dug a wine vat in it, and built a tower; then he let it out to vine-dressers, and went abroad. But when the fruit season drew near, he sent his servants to the vine-dressers to receive his fruits. And the vine-dressers seized his servants, and beat one, killed another, and stoned another. Again he sent another party of servants more numerous than the first; and they did the same to these. Finally he sent his son to them, saying, ''They will respect my son.'' But the vine-dressers, on seeing the son, said among themselves, ''This is the heir; come, let us kill him, and we shall have his inheritance.'' So they seized him, cast him out of the vineyard, and killed him. When, therefore, the owner of the vineyard comes, what will he do to those vine-dressers?" They said to Him, "He will utterly destroy those evil men, and will let out the vineyard to other vine-dressers, who will render to him the fruits in their seasons." Jesus said to them, "Did you never read in the Scriptures, ''The stone which the builders rejected, has become the cornerstone; by the Lord this has been done, and it is wonderful in our eyes''? Therefore I say to you, that the kingdom of God will be taken away from you and will be given to a people yielding its fruits. And he who falls on this stone will be broken to pieces; but upon whomever it falls, it will grind him to powder." And when the chief priests and Pharisees had heard His parables, they knew that He was speaking about them. And though they sought to lay hands on Him, they feared the people, because they regarded Him as a prophet.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Book 9 on Luke, ch. 20
+      text: |-
+        Many derive diverse spiritual meanings from the term vineyard, but Isaias giveth us to know that the vineyard of the Lord of Sabaoth is the house of Israel. Who but God planted that vineyard? He it was that let it out to husbandmen, and went into a far country; not that the Lord, Who is everywhere present, moveth from place to place; but because He is nigh unto them that seek Him, and from such as regard Him not He standeth afar off. For a long time He tarried away, lest He might seem to ask too early for the fruits of His vineyard. For where kindness is greatest, there ingratitude is worst.
+
+        Therefore it is well written in Matthew, for our instruction, that He hedged it round about, that is, He girded it with the fortifications of His own Divine protection, that it might not easily lie open to the ravages of spiritual wild beasts. "And digged a wine-press in it." What sense are we to put upon the wine-press, unless it be that the Psalms are here described under that title, because in them the mysteries of the Lord's Passion flow over like new wine, working under the power of the Holy Ghost? Whence also, they upon whom the Holy Ghost was outpoured were deemed to be drunken. God therefore digged a wine-press, whereinto the reasonable grapes of inward fruitfulness poured their spiritual richness.
+
+        "And built a tower," that is, He raised up the goodly structure of the Law. And so this His vineyard, thus fortified, furnished, and garnished, He gave over to the Jews. "And when the time of the fruit drew near, He sent His servants to the husbandmen." Well doth He call it the time of the fruit, not the time of the in-gathering. For the Jews yielded Him no fruit; the Lord had no ingathering from that vineyard of which He said, "When I looked that it should bring forth grapes, it brought forth wild grapes." Not that wine that maketh glad the heart of man, not with the new wine of the spirit, reeked that wine-press, but with the blood of the Prophets, brutally shed.
+      responsory: |-
+        R. As Jacob went out from his own land, he saw the glory of God, and said: How dreadful is this place. * This is none other but the house of God and this is the gate of heaven.
+        V. Surely God is in this place, and I knew it not.
+        R. This is none other but the house of God and this is the gate of heaven.
+      status: verified

@@ -1,0 +1,63 @@
+# Read directly from web/www/horas/Latin/Sancti/06-19.txt's own [Oratio]
+# and its English counterpart (the reference engine's own English is
+# already an idiomatic, non-literal rendering -- lightly polished here,
+# not machine-translated). $Per eumdem refers back to "thy Son" named
+# earlier in the oration, per the "Per eúndem Dóminum..." convention used
+# elsewhere in this Common (e.g. apparition-of-the-immaculate-bvm-collect.yml).
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátam Juliánam Vírginem tuam extrémo morbo laborántem, pretióso Fílii tui
+    Córpore mirabíliter recreáre dignátus es: concéde, quǽsumus; ut, ejus intercedéntibus
+    méritis, nos quoque eódem in mortis agóne refécti ac roboráti, ad cæléstem pátriam
+    perducámur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in
+    unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-virgin (`[Ant 2]`+
+# `[Versum 2]` from the reference engine's Commune files, same pattern
+# st-rose-of-lima-commemoration.yml uses). St. Juliana has no proper
+# antiphon of her own in the source (a plain "vide C6a" reference), so
+# this reuses the Common's own text, marked `draft` per this app's
+# "prefer draft over missing" convention. Collect is her own real proper
+# (st-juliana-falconieri-collect.yml), unchanged. Needed for the rare
+# case Jun 19 falls on a day that outranks her (e.g. a Sunday), demoting
+# her to a commemoration alongside Ss. Gervase and Protase.
+commemoration:
+  text: |
+    Ant. Símile est regnum cælórum * hómini negotiatóri quærénti bonas margarítas: invénta una pretiósa, dedit ómnia sua, et comparávit eam.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Deus, qui beátam Juliánam Vírginem tuam extrémo morbo laborántem, pretióso Fílii tui
+    Córpore mirabíliter recreáre dignátus es: concéde, quǽsumus; ut, ejus intercedéntibus
+    méritis, nos quoque eódem in mortis agóne refécti ac roboráti, ad cæléstem pátriam
+    perducámur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in
+    unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Juliana Falconieri, Virgin (Jun 19).
+# Sourced directly from web/www/horas/Latin/Sancti/06-19.txt,
+# English/Sancti/06-19.txt. Lectio4-6 combined into one reading, one
+# continuous vita -- same combining convention st-rose-of-lima.yml/
+# st-ephraim-of-syria.yml use. No Lectio7-9 of her own in the source
+# (`[Rule]` is `vide C6a`) -- defers to the Common of a Virgin's own
+# Nocturn 3, not transcribed here. (The source's own Lectio94, a shorter
+# 1-lesson variant of the same biography, is an alternate not used here.
+# The source's proper Hymnus Vespera/Matutinum, "Cæléstis Agni núptias",
+# is not modeled -- see st-juliana-falconieri.yml's own comment.)
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Juliana, ex nobili Falconéria família, Claríssimo patre, qui templum Deiparæ ab Angelo salutátæ ære suo magnifice a fundamentis Floréntiæ, ut nunc visitur, eréxit, matre Reguardata, ambóbus jam senescéntibus ac ad id tempus sterílibus, nata est anno millesimo ducentésimo septuagesimo. Ab incunabulis non éxiguum futuræ sanctitátis specimen dedit; vagiéntibus quippe labris, suavíssima Jesu et Maríæ nómina ultro proferre audíta est. Puerítiam postmodum ingressa totam se christiánis virtútibus mancipávit, in quibus adeo excelluit, ut beátus Aléxius patruus, cujus institútis ac exemplis instruebátur, matri dicere non dubitaverit, ipsam non feminam peperisse, sed angelum. Nam ita modesto vultu animoque ab omni vel levíssima erroris macula pura fuit, ut óculos numquam in toto vitæ cursu ad hóminis fáciem intuéndam erexerit, auditoque peccáti vocabulo contremúerit. Expleto nondum décimo quinto ætátis suæ anno, re familiari, licet opulenta, terrenisque posthabitis nuptiis, Deo virginitátem in mánibus divi Philippi Benitii solemniter vovit, ab eoque ómnium prima religiósum Mantellatárum habitum, ut dicunt, sumpsit.
+
+        Julianæ exemplum secutæ sunt plurimæ ex nobilióribus familiis feminæ, ac mater ipsa fíliæ sese religiose instituéndam dedit, ita ut, aucto paulatim numero, ordinem Mantellatárum institúerit, ac illi pie vivéndi leges summa prudéntia ac sanctitáte tradíderit. Ejus virtútes cum optime perspectas divus Benitius haberet, morti próximus nulli mélius quam Julianæ, non feminas tantum, sed et totum Servórum ordinem, cujus propagator et moderátor exstiterat, commendátum vóluit. Verum ipsa demisse semper de se cogitábat; et, cum ceterárum esset magistra, in re quaque domestica, licet vili, soróribus famulabátur. Assiduitate orándi íntegras insumebat dies in éxtasim sæpíssime rapta, et, si reliquum, in sedandis civium dissidiis, criminosis a via iniquitátis retrahendis, ac inserviéndis impendebat ægrotis; quorum quandoque saniem ex ulcéribus manántem, admoto ore lambens, eos sanitáti restituébat. Corpus suum flagris, nodosis funículis, férreis cingulis, vigiliis, humi nudæ cubando, térere sólita fuit. Parcíssimo cibo, et hoc vili, quatuor hebdomadæ diebus, et reliquis duobus solo Angelórum pane contenta, excepto die sábbati, quo pane solo et aqua nutriebátur.
+
+        Dura hujusmodi vivéndi ratióne in stómachi morbum íncidit, quo ingravescente, cum septuagesimum ætátis annum ágeret, ad extremum vitæ spatium redacta est. Diuturnæ valetúdinis incómmoda hílari vultu constantique animo pértulit; de uno tantum cónqueri audíta est, quod, cum cibum cápere ac retinére nullo modo posset, ab Eucharistica mensa ob sacraménti reveréntiam arcerétur. Verum, his in angustiis constituta, sacerdotem rogávit ut allátum divinum Panem, quem ore sumere nequíbat, péctori saltem exterius admovéret. Precibus illíus morem gessit sacerdos; et mirum! eodem témporis momento divinus Panis dispáruit, et Juliana sereno ac ridénti vultu exspirávit. Res supra fidem tamdiu fuit, donec virgineum de more curarétur corpus; invénta enim est circa sinistrum péctoris latus carni véluti sigillo impressa forma hostiæ, quæ Christi crucifixi effigiem repræsentábat. Hujus prodigii fama ceterorúmque miraculórum non Floréntiæ tantum, sed totius christiáni orbis veneratiónem illi conciliávit, ac per quatuor prope íntegra sæcula adeo aucta est, ut tandem Benedíctus Papa décimus tertius in ejus celebritate Offícium proprium recitari ab universo ordine beátæ Maríæ Vírginis Servórum jússerit. Clemens vero duodecimus, munificentíssimus ejusdem ordinis protéctor, novis in dies miraculis coruscántem, sanctárum Vírginum catálogo adscripsit.
+      status: verified

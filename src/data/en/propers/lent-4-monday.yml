@@ -1,0 +1,45 @@
+collect:
+  text: |
+    Let us pray.
+    Grant, we beseech thee, O Almighty God, that we who year by year do prayerfully renew the holy observance of this thy great Fast, may be acceptable in thy sight, as touching both our bodies and our souls.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+collect/~-vespers:
+  text: |
+    Let us pray.
+    O Lord, we beseech thee graciously to hear our supplications, and evermore help and defend all them to whom Thou hast given the mind to pray.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+benedictus-antiphon:
+  text: 'Thus saith the Lord: * Take these things hence; make not My Father''s house an house of merchandise.'
+  status: verified
+
+magnificat-antiphon:
+  text: 'Thus saith the Lord: * Destroy this temple, and in three days I will raise it up. But He spoke of the temple of His Body.'
+  status: verified
+
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: John 2:13-25
+      text: At that time, the Passover of the Jews was at hand, and Jesus went up to Jerusalem. And He found in the temple men selling oxen, sheep and doves, and money-changers at their tables. And making a kind of whip of cords, He drove them all out of the temple, also the sheep and oxen, and He poured out the money of the changers and overturned the tables. And to them who were selling the doves He said, "Take these things away, and do not make the house of My Father a house of business." And His disciples remembered that it is written, "The zeal of Your house has eaten Me up." The Jews therefore answered and said to Him, "What sign do You show us, seeing that You do these things?" In answer Jesus said to them, "Destroy this temple, and in three days I will raise it up." The Jews therefore said, "Forty-six years has this temple been in building, and will You raise it up in three days?" But He was speaking of the temple of His body. When, accordingly, He had risen from the dead, His disciples remembered that He had said this, and they believed the Scripture and the word that Jesus had spoken. Now when He was at Jerusalem for the feast of the Passover, many believed in His name, seeing the signs that He was working. But Jesus did not trust Himself to them, in that He knew all men, and because He had no need that anyone should bear witness concerning man, for He Himself knew what was in man.
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, 10th Tract on John
+      text: |-
+        What hear we now, my brethren? Behold, that temple was still but a figure, and the Lord drove out therefrom all them that sought their own, even them that were come to deal in merchandise. And what was it that they sold there? Only such things as were needful to men for the sacrifices that then were. For your love knoweth that, because of that people's carnal-mindedness and the stoniness of their heart, there were commanded unto them such sacrifices as these, thereby to hold them back from idolatry; and there, accordingly, they offered up oxen, and sheep, and doves. This ye have read, and know.
+
+        It was no great sin, therefore, if they sold in the temple that which was bought to be offered in the temple; and yet He drove them out. If, then, the Lord drove out of His temple them which sold such things as are lawful and right (for to buy and sell is lawful, if only it be done honestly,) and suffered not the house of prayer to be made an house of merchandise, what would He have done if He had found there men drunken?
+
+        If the house of God must not be a house of merchandise, must it be an house to drink in? And yet, when we say this, men gnash upon us with their teeth. But we find consolation in remembering that so far we are even as the Psalmist, who saith: They gnashed upon me with their teeth. Yea, we have also learnt to listen to words that heal us, though, of a verity, the lashes that are made at His word are really made at Christ. Lashes, saith He, were heaped upon Me; and they knew not what they did. He was lashed by the scourges of the Jews, and He is lashed still by the blasphemies of false Christians; they heap lashes upon the Lord their God; and know not what they do. As for us, we will do that which He hath holpen us to do; But as for me, when they troubled me, my clothing was sackcloth, and I humbled my soul with fasting.
+      responsory: |-
+        R. When ye be gone over Jordan, there shall ye build an altar unto the Lord * Of whole stones; ye shall not lift up any iron tool upon them; and ye shall offer burnt-offerings thereon, and peace-offerings, unto your God.
+        V. When ye shall pass over Jordan unto the land which the Lord giveth you, there shall ye build an altar unto the Lord.
+        R. Of whole stones; ye shall not lift up any iron tool upon them; and ye shall offer burnt-offerings thereon, and peace-offerings, unto your God.
+      status: verified

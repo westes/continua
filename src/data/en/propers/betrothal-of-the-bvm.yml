@@ -1,0 +1,157 @@
+collect:
+  text: |
+    Let us pray.
+    Grant to thy servants, we beseech thee, O Lord, the gift of heavenly grace: that to those for whom the childbearing of the blessed Virgin was the beginning of salvation, the votive solemnity of her Betrothal may bring an increase of peace.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: draft
+
+commemoration:
+  text: |
+    Ant. Let us solemnly celebrate the betrothal of this day of the ever-virgin Mary, Mother of God, whereby the height of the throne went forth, alleluia.
+    V. This day is the betrothal of the holy Virgin Mary.
+    R. Whose illustrious life lights up all the churches.
+    Let us pray.
+    Grant to thy servants, we beseech thee, O Lord, the gift of heavenly grace: that to those for whom the childbearing of the blessed Virgin was the beginning of salvation, the votive solemnity of her Betrothal may bring an increase of peace.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: draft
+
+matins-invitatory:
+  text: Let us celebrate the betrothal of the Virgin Mary, * and adore Christ her Son, the Lord.
+  status: draft
+
+lauds-versicle:
+  text: |
+    V. This day is the betrothal of the holy Virgin Mary.
+    R. Whose illustrious life lights up all the churches.
+  status: draft
+
+vespers-versicle:
+  text: |
+    V. This day is the betrothal of the holy Virgin Mary.
+    R. Whose illustrious life lights up all the churches.
+  status: draft
+
+vespers-versicle/~-first:
+  text: |
+    V. This day is the betrothal of the holy Virgin Mary.
+    R. Whose illustrious life lights up all the churches.
+  status: draft
+
+benedictus-antiphon:
+  text: Let us solemnly celebrate the betrothal of this day of the ever-virgin Mary, Mother of God, whereby the height of the throne went forth, alleluia.
+  status: draft
+
+magnificat-antiphon:
+  text: 'Thy betrothal, O Virgin Mother of God, hath announced joy to the whole world: for from thee is risen the sun of justice, Christ our God: who, loosing the curse, gave blessing, and confounding death, gave us life everlasting.'
+  status: draft
+
+magnificat-antiphon/~-first:
+  text: Let us recall most worthily the betrothal of the glorious Virgin Mary, who both obtained the dignity of Mother and lost not her virginal chastity.
+  status: draft
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: The betrothal * of the glorious Virgin Mary, sprung of the seed of Abraham, of the tribe of Juda, bright from the stock of David.
+    - psalms:
+        - 99
+      antiphon: This day is the betrothal * of the holy Virgin Mary, whose illustrious life lights up all the churches.
+    - psalms:
+        - 62
+      antiphon: 'From a royal lineage * Mary sprung forth shines: by whose prayers we most devoutly beg to be helped in mind and spirit.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: With heart and soul * let us sing glory to Christ on this holy solemnity of the most exalted Mother of God, Mary.
+  laudate:
+    antiphon: With joy * let us celebrate the betrothal of blessed Mary, that she may intercede for us to our Lord Jesus Christ.
+
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: The betrothal * of the glorious Virgin Mary, sprung of the seed of Abraham, of the tribe of Juda, bright from the stock of David.
+    - psalms:
+        - 112
+      antiphon: This day is the betrothal * of the holy Virgin Mary, whose illustrious life lights up all the churches.
+    - psalms:
+        - 121
+      antiphon: 'From a royal lineage * Mary sprung forth shines: by whose prayers we most devoutly beg to be helped in mind and spirit.'
+    - psalms:
+        - 126
+      antiphon: With joy * let us celebrate the betrothal of blessed Mary, that she may intercede for us to our Lord Jesus Christ.
+
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: The betrothal * of the glorious Virgin Mary, sprung of the seed of Abraham, of the tribe of Juda, bright from the stock of David.
+    - psalms:
+        - 112
+      antiphon: This day is the betrothal * of the holy Virgin Mary, whose illustrious life lights up all the churches.
+    - psalms:
+        - 121
+      antiphon: 'From a royal lineage * Mary sprung forth shines: by whose prayers we most devoutly beg to be helped in mind and spirit.'
+    - psalms:
+        - 126
+      antiphon: With joy * let us celebrate the betrothal of blessed Mary, that she may intercede for us to our Lord Jesus Christ.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Bernard, Abbot, Homily 2 on "Missus est"
+      text: 'It behoved that the mystery of the divine counsel be hidden for some time from the prince of this world: not that God, if he wished to do his work openly, feared that he could be hindered by him; but because he who has done whatever he willed, not only powerfully but also wisely, as in all his works he is wont to observe certain fitnesses of things and of times for the beauty of order, so in this his work also, so magnificent, namely of our restoration, wished to show not only his power but also his prudence.'
+      responsory: |
+        R. The betrothal of the glorious Virgin Mary, sprung of the seed of Abraham, of the tribe of Juda, bright from the stock of David, * Whose illustrious life lights up all the churches.
+        V. This day the blessed Virgin Mary is betrothed, of the line of David.
+        R. Whose illustrious life lights up all the churches.
+      status: draft
+    - nocturn: 2
+      isGospel: false
+      source: St. Bernard, Abbot, Homily 2 on "Missus est"
+      text: 'It was fitting, therefore, that he should dispose all things sweetly too, heavenly and earthly alike, so that on the one side, casting down the restless one, he might establish the rest in peace; and here, about to overthrow the envious one, he might first leave us a most necessary example of his humility and meekness: and so it should come to pass by the wonderful governance of wisdom that he should appear both sweet to his own and strong against his enemies.'
+      responsory: |
+        R. With joy let us celebrate the betrothal of blessed Mary: * That she may intercede for us to our Lord Jesus Christ.
+        V. With heart and soul let us sing glory to Christ on this holy solemnity of the most exalted Mother of God, Mary.
+        R. That she may intercede for us to our Lord Jesus Christ.
+      status: draft
+    - nocturn: 2
+      isGospel: false
+      source: St. Bernard, Abbot, Homily 2 on "Missus est"
+      text: For what would it have profited that the devil be conquered by God, if we remained proud? Of necessity, therefore, Mary was betrothed to Joseph, since by this both the holy thing is hidden from the dogs, and her virginity is attested by her betrothed, and so modest a Virgin is spared, as her good name is provided for. What is wiser? what more worthy of divine providence? By one such counsel both the witness is admitted to the heavenly secrets and the enemy is shut out, and the good name of the Virgin Mother is kept whole.
+      responsory: |
+        R. Thy betrothal, O Virgin Mother of God, hath announced joy to the whole world: for from thee is risen the sun of justice, Christ our God: * Who, loosing the curse, gave blessing, and confounding death, gave us life everlasting.
+        V. Blessed art thou among women, and blessed is the fruit of thy womb.
+        R. For from thee is risen the sun of justice, Christ our God.
+      status: draft
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 1:18-21
+      text: When as his mother Mary was espoused to Joseph, before they came together, she was found with child, of the Holy Ghost. And so on.
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Priest
+      text: 'Why is he conceived not of a simple virgin, but of one betrothed? First, that through the genealogy of Joseph the origin of Mary might be shown; second, that she might not be stoned by the Jews as an adulteress; third, that, fleeing into Egypt, she might have a consolation. The martyr Ignatius also added a fourth reason why he was conceived of one betrothed: That his birth, he says, might be hidden from the devil, while he thinks him begotten not of a virgin, but of a wife.'
+      responsory: |
+        R. All generations shall call me blessed. * For he that is mighty, even the Lord, hath done to me great things; and holy is his name.
+        V. And his mercy is on them that fear him, from generation to generation.
+        R. For he that is mighty, even the Lord, hath done to me great things; and holy is his name.
+      status: draft
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Priest
+      text: 'Before they came together, she was found with child of the Holy Ghost. She was found by no other than by Joseph, who almost by the licence of a husband knew all things concerning his future wife. But when it is said, Before they came together, it does not follow that afterwards they did come together: but Scripture shows what did not happen.'
+      responsory: |
+        R. Happy art thou, O holy Virgin Mary, and most worthy of all praise: for from thee is risen the sun of justice, * Christ our God.
+        V. Pray for the people, plead for the clergy, intercede for the devout female sex: let all feel thy help who celebrate thy holy betrothal.
+        R. For from thee is risen the sun of justice.
+      status: draft
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Priest
+      text: 'But Joseph her husband, being a just man, and not willing publicly to expose her, was minded to put her away privately. If a man is joined to a harlot, he is made one body, and it is commanded in the law that not only the guilty but also those who are aware of crimes are liable to sin: how then is Joseph, while concealing the crime of his wife, written just? But this is the testimony of Mary, that Joseph, knowing her chastity, and wondering at what had happened, conceals in silence that whose mystery he knew not.'
+      status: draft

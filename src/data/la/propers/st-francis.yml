@@ -1,0 +1,56 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-10-04).
+collect:
+  text: |
+    Orémus.
+    Deus, qui Ecclésiam tuam beáti Francísci méritis fœtu novæ prolis amplíficas: tríbue nobis; ex ejus imitatióne, terréna despícere, et cæléstium donórum semper participatióne gaudére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-francis-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor-not-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-francis-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui Ecclésiam tuam beáti Francísci méritis fœtu novæ prolis amplíficas: tríbue nobis; ex ejus imitatióne, terréna despícere, et cæléstium donórum semper participatióne gaudére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Francis of Assisi's own day (2026-10-04). The
+# Benedictus antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Francis of Assisi, Confessor (Oct
+# 4) — SanctiM/10-04.txt inherits the whole day (`@Sancti/10-04`) with
+# no Nocturn 2/3 override, so this saint's own vita is sourced from
+# the Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/10-04.txt, English/Sancti/10-04.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. Lectio7-9 reference `@Sancti/02-24` (St. Matthias's
+# own lessons, unrelated) — not proper to Francis, so not authored
+# here. No responsory given for Lectio4-6.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Francíscus, Assísii in Umbria natus, patris exémplum secútus, a prima ætáte mercatúram fecit. Qui, quodam die, páuperem, pro Christi amóre flagitántem pecúniam, cum præter consuetúdinem repulísset, repénte eo facto commótus, large ei misericórdiam impertívit; et ex eo die Deo promísit se némini umquam poscénti eleemósynam negatúrum. Cum vero post in gravem morbum incidísset, ex eo aliquándo confirmátus, cœpit ardéntius cólere offícia caritátis; qua in exercitatióne tantum profécit, ut, evangélicæ perfectiónis cúpidus, quidquid habéret, paupéribus largirétur. Quod ferens iníquius pater, eum ad Assisinátem epíscopum duxit, ut coram illo bonis céderet patérnis; qui, rejéctis étiam véstibus, patri concéssit ómnia, illud subjúngens, sibi in pósterum majórem facultátem fore dicéndi: Pater noster, qui es in cælis.
+
+        Cum autem illud ex Evangélio audísset: Nolíte possidére aurum, neque argéntum, neque pecúniam in zonis vestris, non peram in via, neque duas túnicas, neque calceaménta; sibi eam régulam servándam propósuit. Itaque, detráctis cálceis et una conténtus túnica, cum duódecim sócios adhibuísset, órdinem Minórum instítuit. Quare Romam venit, ut sui órdinis régula ab apostolica Sede confirmarétur. Quem cum accedéntem ad se summus Póntifex Innocéntius tértius rejecísset; quod in somnis póstea sibi ille, quem repúlerat, collabéntem Lateranénsem basílicam suis húmeris sustinére visus esset, conquisítum accérsi jussit, benignéque accípiens, omnem ejus institutórum ratiónem confirmávit. Francíscus ígitur, dimíssis in omnes orbis terræ partes frátribus ad prædicándum Christi Evangélium, ipse cúpiens sibi áliquam dari martyrii occasiónem, navigávit in Syriam; ubi, a rege soldáno liberalíssime tractátus, cum nihil profíceret, rédiit in Itáliam.
+
+        Multis ígitur exstrúctis suæ famíliæ domicíliis, se in solitúdinem montis Alvérni cóntulit; ubi quadragínta diérum, propter honórem sancti Michaélis Archángeli, jejúnio inchoáto, festo die Exaltatiónis sanctæ Crucis, ei Séraphim crucifíxi effígiem inter alas cóntinens appáruit; qui ejus et mánibus, et pédibus, et láteri vestígia clavórum impréssit. Quæ sanctus Bonaventúra, cum Alexándri quarti summi Pontíficis prædicatióni interésset, narrásse Pontíficem a se visa esse, lítteris commendávit. His insígnibus summi in eum Christi amóris, máximam habébat ómnium admiratiónem. Ac biénnio post, gráviter ægrótans, deférri vóluit in ecclésiam sanctæ Maríæ Angelórum; ut, ubi grátiæ spíritum a Deo accéperat, ibi spíritum vitæ rédderet. Eo in loco fratres ad paupertátem ac patiéntiam, et sanctæ Románæ Ecclésiæ fidem servándam cohortátus, Psalmum illum pronúntians, Voce mea ad Dóminum clamávi; in eo versículo, Me exspéctant justi, donec retríbuas mihi, efflávit ánimam quarto Nonas Octóbris. Quem, miráculis clarum, Gregórius nonus Póntifex máximus in Sanctórum númerum adscrípsit.
+      status: verified

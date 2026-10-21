@@ -1,0 +1,83 @@
+# Read directly from web/www/horas/Latin/Sancti/08-16.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui præ ómnibus Sanctis tuis beátum Jóachim Genetrícis Fílii tui patrem
+    esse voluísti: concéde, quǽsumus; ut, cujus festa venerámur, ejus quoque
+    perpétuo patrocínia sentiámus.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-joachim-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-joachim-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Laudémus * virum gloriósum in generatióne sua, quia benedictiónem ómnium géntium dedit illi Dóminus, et testaméntum suum confirmávit super caput ejus.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui præ ómnibus Sanctis tuis beátum Jóachim Genetrícis Fílii tui patrem
+    esse voluísti: concéde, quǽsumus; ut, cujus festa venerámur, ejus quoque
+    perpétuo patrocínia sentiámus.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Read directly from web/www/horas/Latin/Sancti/08-16.txt's own
+# [Ant 1] and its English counterpart -- a real, proper antiphon of
+# this feast, not a Common substitution.
+benedictus-antiphon:
+  text: Laudémus * virum gloriósum in generatióne sua, quia benedictiónem ómnium géntium dedit illi Dóminus, et testaméntum suum confirmávit super caput ejus.
+  status: verified
+
+# Matins Nocturn 2-3 readings for St. Joachim, Confessor, Father of
+# the Blessed Virgin Mary (Aug 16). Sourced directly from
+# web/www/horas/Latin/Sancti/08-16.txt, English/Sancti/08-16.txt.
+# Nocturn 2: Lectio4-6, sermons by St. Epiphanius and St. John of
+# Damascus on Ss. Joachim and Anne, combined into one reading.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope, previously left
+# unauthored because Lectio7 gives only the incipit ("Et réliqua"), is
+# now authored too (isGospel: true, immediately before the homily) --
+# fittingly, since this Nocturn's own homily (St. John of Damascus, on
+# the Lord's genealogy) is a commentary specifically on this pericope,
+# the citation is Matt 1:1-16 (Christ's genealogy per Matthew, not Luke
+# 3's) per that same Lectio7 line; the full text is sourced from
+# missa/Latin/Sancti/08-16.txt's own [Evangelium] (the Mass Gospel and
+# the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Epiphanius, Discourse on the Praises of the Virgin; St. John of Damascus, 1st Sermon on the Birth of the BVM
+      text: |-
+        De radíce Jesse ortus est rex David, et de tribu regis David sancta Virgo: sancta, inquam, et sanctórum virórum fília, cujus paréntes fuérunt Jóachim et Anna; qui quidem in vita sua Deo placuérunt, atque étiam fructum ejúsmodi germinavérunt, sanctam Vírginem Maríam, templum simul et matrem Dei. Jóachim porro, Anna et María, hi tres Trinitáti palam sacrifícium laudis offerébant. Jóachim enim interpretátur Præparátio Dómini, eo quod ex illo præparátum sit templum Dómini, nempe Virgo. Anna rursus simíliter Grátia interpretátur, proptérea quod Jóachim et Anna grátiam accepérunt, ut accedéntibus précibus, talem fructum germinárent, sanctam Vírginem adépti; Jóachim síquidem precabátur in monte, et Anna in horto suo.
+
+        Quóniam futúrum erat ut Dei Génetrix et Virgo ex Anna orirétur, natúra grátiæ fœtum antevértere mínime ausa est; verum tantísper exspectávit, dum grátia fructum suum produxísset. Síquidem oportébat eam primogénitam in lucem edi, quæ rerum ómnium conditárum Primogénitum, in quo ómnia coagmentáta sunt, paritúra erat. O par beátum Jóachim et Anna! vobis omnis creatúra obstrícta est. Per vos enim donum, ómnium donórum præstantíssimum, Creatóri óbtulit, nempe castam matrem, quæ sola Creatóre digna erat.
+
+        Exsúlta, Jóachim, quóniam ex fília tua Fílius natus est nobis; et vocátur nomen ejus magni consílii, hoc est, salútis totíus mundi Angelus. Pudóre afficiátur Nestórius, ac manum ori impónat. Puer hic Deus est. Quonam ígitur modo ea Dei Génetrix non sit, quæ péperit? Si quis sanctam Dei Genetrícem non confitétur, a Deitáte remótus est. Mea non est hæc orátio, quamquam alióqui mea; hanc enim diviníssimam hereditátem a theólogo patre Gregório accépi. O beátum par Jóachim et Anna! Ac profécto ex ventris vestri fructu immaculáti agnoscímini, quemádmodum Christus quodam loco dixit: Ex frúctibus eórum cognoscétis eos. Ut Deo gratum erat ac dignum ea quæ a vobis orta est, vitæ vestræ ratiónes instituístis. Caste enim ac sancte múnere vestro functi, virginitátis thesáurum produxístis.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 1:1-16
+      text: 'Liber generatiónis Jesu Christi, fílii David, fílii Abraham. Abraham génuit Isaac. Isaac autem génuit Jacob. Jacob autem génuit Judam et fratres ejus. Judas autem génuit Phares et Zaram de Thamar. Phares autem génuit Esron. Esron autem génuit Aram. Aram autem génuit Amínadab. Amínadab autem génuit Naásson. Naásson autem génuit Salmon. Salmon autem génuit Booz de Rahab. Booz autem génuit Obed ex Ruth. Obed autem génuit Jesse. Jesse autem génuit David regem. David autem rex génuit Salomónem ex ea, quæ fuit Uriæ. Sálomon autem génuit Róboam. Róboam autem génuit Abíam. Abías autem génuit Asa. Asa autem génuit Jósaphat. Jósaphat autem génuit Joram. Joram autem génuit Ozíam. Ozías autem génuit Jóatham. Jóatham autem génuit Achaz. Achaz autem génuit Ezechíam. Ezechías autem génuit Manássen. Manásses autem génuit Amon. Amon autem génuit Josíam. Josías autem génuit Jechoníam et fratres ejus in transmigratióne Babylónis. Et post transmigratiónem Babylónis: Jechonías génuit Saláthiel. Saláthiel autem génuit Zoróbabel. Zoróbabel autem génuit Abiud. Abiud autem génuit Elíacim. Elíacim autem génuit Azor. Azor autem génuit Sadoc. Sadoc autem génuit Achim. Achim autem génuit Eliud. Eliud autem génuit Eleázar. Eleázar autem génuit Mathan. Mathan autem génuit Jacob. Jacob autem génuit Joseph, virum Maríæ, de qua natus est Jesus, qui vocátur Christus.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. John of Damascus, Bk. IV on the Orthodox Faith, ch. 15 (on the Lord's genealogy)
+      text: |-
+        Quod Joseph ex davídica tribu oríginem dúxerit, sanctíssimi Evangelístæ Matthǽus et Lucas líquido demonstrárunt. Verum, hoc inter eos discríminis est, quod Matthǽus ex Davíde per Salomónem Joséphum dedúcit; Lucas autem per Nathan. At vero sanctæ Vírginis ortum uterque siléntio prætériit. Quocírca scire óperæ prétium est, nec apud Hebrǽos nec apud Scriptúram sacram hoc in more pósitum fuísse, ut mulíerum genus recenserétur. Verum, hoc demum lege cautum erat ne tribus ulla uxóres ex áltera tribu accérseret. Ac proínde Joseph, qui ex tribu davídica ortum trahébat justitiámque colébat, sanctam Vírginem haudquáquam præter legis præscríptum despondísset, nisi ex eódem sceptro genus duxísset. Ob idque satis hábuit Evangelísta demonstrásse, unde Joseph ortum tráxerit.
+
+        Igitur ex stirpe Nathan, fílii David, Levi génuit Melchi et Panthérem. Panther autem génuit Barpanthérem. Barpánther rursus génuit Jóachim. Jóachim dénique génuit sanctam Dei Genetrícem. Rursus, ex stirpe Salomónis, fílii David, Mathan ex uxóre sua génuit Jacob. Mórtuo autem Mathan, Melchi ex tribu Nathan, fílius Levi ac frater Panthéris, uxórem ipsíus Mathan, quæ étiam Jacóbi mater erat, matrimónio sibi copulávit, atque ex ea génuit Heli. Ita uteríni fratres erant Jacob et Heli; ille nimírum ex tribu Salomónis, hic ex tribu Nathan oriúndus.
+
+        Porro Heli, qui ex tribu Nathan erat, nullis líberis suscéptis, e vita migrávit; eáque de causa Jacob ipsíus frater, qui ex tribu Salomónis flúxerat, ipsíus uxórem accépit, fratríque suo semen excitávit ac Joséphum progénuit. Joseph ítaque natúra quidem fílius Jacob erat, a Salomóne oriúndus; legis autem ratióne patrem habébat Heli, ex Nathan oriúndum. Quæ cum ita sint, Jóachim lectíssimam illam ac summis láudibus dignam mulíerem Annam matrimónio sibi copulávit. Verum, quemádmodum prisca illa Anna, cum sterilitátis morbo laboráret, per oratiónem ac promissiónem, Samuélem procreávit; eódem modo hæc étiam, per obsecratiónem et promissiónem, Dei Genetrícem a Deo accépit, ut ne hic quoque cuíquam ex illústribus matrónis céderet. Itaque grátia Dóminam parit. Vere étenim rerum ómnium conditárum Dómina facta est, cum Creatóris Mater éxstitit.
+      status: verified

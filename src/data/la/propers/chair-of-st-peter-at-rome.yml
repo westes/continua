@@ -1,0 +1,269 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2029-01-18, a
+# year that date doesn't collide with a Sunday). Same convention as
+# data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beáto Petro Apóstolo tuo, collátis clávibus regni cæléstis, ligándi atque solvéndi pontifícium tradidísti: concéde; ut, intercessiónis ejus auxílio, a peccatórum nostrórum néxibus liberémur:
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (chair-of-st-peter-at-rome-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-apostle (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (chair-of-st-peter-at-rome-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Quodcúmque ligáveris super terram, erit ligátum et in cælis; et quodcúmque sólveris super terram, erit solútum et in cælis: dicit Dóminus Simóni Petro.
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+    Orémus.
+    Deus, qui beáto Petro Apóstolo tuo, collátis clávibus regni cæléstis, ligándi atque solvéndi pontifícium tradidísti: concéde; ut, intercessiónis ejus auxílio, a peccatórum nostrórum néxibus liberémur:
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# the Chair of St. Peter at Rome: proper Matins hymn, "Quodcumque in orbe nexibus revinxeris" (Sancti/01-18.txt's [Hymnus Matutinum] = "@Sancti/02-22:Hymnus Vespera").
+# Latin and English as rendered by the local reference engine (Monastic
+# Tridentinum 1617, command=prayMatutinum, 01-18-2027); before this file the saint
+# fell to the Common's Matins hymn.
+matins-hymn:
+  text: |
+    Quodcúmque in orbe néxibus revínxeris,
+    Erit revínctum, Petre, in arce síderum:
+    Et quod resólvit hic potéstas trádita,
+    Erit solútum cæli in alto vértice;
+    In fine mundi judicábis sǽculum.
+
+    Patri perénne sit per ævum glória,
+    Tibíque laudes concinámus ínclitas,
+    Ætérne Nate; sit, supérne Spíritus,
+    Honor tibi decúsque: sancta júgiter
+    Laudétur omne Trínitas per sǽculum.
+    Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/01-18.txt, which references
+# @Sancti/02-22 (Chair of St. Peter at Antioch) for its [Invit]; no
+# Monastic override exists. English likewise inherits Sancti/02-22's text.
+matins-invitatory:
+  text: 'Tu es pastor óvium, Princeps Apostolórum: * Tibi trádidit Deus claves regni cælórum.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-01-18, clean year.
+lauds-capitulum:
+  text: 'Ecce sacérdos magnus, qui in diébus suis plácuit Deo, et invéntus est justus: et in témpore iracúndiæ factus est reconciliátio.'
+  citation: Sir 44:16-17
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-01-18, clean year.
+lauds-hymn:
+  text: |
+    Jam bone Pastor Petre, clemens áccipe
+    Vota precántum, et peccáti víncula
+    Resólve tibi potestáte trádita,
+    Qua cunctis cælum verbo claudis, áperis.
+
+    Sit Trinitáti sempitérna glória,
+    Honor, potéstas, atque jubilátio,
+    In unitáte, cui manet impérium,
+    Ex tunc et modo, per ætérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-01-18, clean year.
+lauds-responsory:
+  text: |
+    R.br. Amávit eum Dóminus, * Et ornávit eum.
+    R. Amávit eum Dóminus, * Et ornávit eum.
+    V. Stolam glóriæ índuit eum.
+    R. Et ornávit eum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Amávit eum Dóminus, * Et ornávit eum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-01-18, clean year.
+lauds-versicle:
+  text: |-
+    V. Exáltent eum in Ecclésia plebis.
+    R. Et in cáthedra seniórum laudent eum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2029-01-18, the same clean date already used for lauds-capitulum-chair-of-st-peter-at-rome.yml.
+vespers-hymn:
+  text: |
+    Quodcúmque vinclis super terram strínxeris,
+    Erit in astris religátum fórtiter:
+    Et quod resólvis in terris arbítrio,
+    Erit solútum super cæli rádium:
+    In fine mundi judex eris sǽculi.
+
+    Glória Patri per imménsa sǽcula,
+    Sit tibi Nate decus et impérium,
+    Honor, potéstas, Sanctóque Spirítui:
+    Sit Trinitáti salus indivídua,
+    Per infiníta sæculórum sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2029-01-18, the same clean date already used for lauds-capitulum-chair-of-st-peter-at-rome.yml.
+vespers-responsory:
+  text: |
+    R.br. Elégit eum Dóminus * Sacerdótem sibi.
+    R. Elégit eum Dóminus * Sacerdótem sibi.
+    V. Ad sacrificándum ei hóstiam laudis.
+    R. Sacerdótem sibi.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Elégit eum Dóminus * Sacerdótem sibi.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2029-01-18, the same clean date already used for lauds-capitulum-chair-of-st-peter-at-rome.yml.
+vespers-versicle:
+  text: |-
+    V. Elégit te Dóminus sacerdótem sibi.
+    R. Ad sacrificándum ei hóstiam laudis.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 01-18
+# chair-of-st-peter-at-rome (saint file = second). First Vespers variant; the default (second Vespers) file is
+# the same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Tu es Petrus.
+    R. Et super hanc petram ædificábo Ecclésiam meam.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, the Chair of St. Peter at Rome's own day (2026-01-18) --
+# the Benedictus antiphon. Corrects the previous version of this file,
+# which had been sourced from the Roman/secular rite's Sancti/01-18.txt's
+# own [Ant 1] instead: confirmed, like St. Lawrence's own antiphon before
+# it, to be real but different text from what Monastic 1617 actually
+# renders at Lauds.
+benedictus-antiphon:
+  text: 'Quodcúmque ligáveris super terram, erit ligátum et in cælis; et quodcúmque sólveris super terram, erit solútum et in cælis: dicit Dóminus Simóni Petro.'
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 01-18
+# chair-of-st-peter-at-rome (new saint-level second; continua had "estotefortes"). See hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon:
+  text: Dum esset Summus Póntifex, * terréna non métuit, sed ad cæléstia regna gloriósus migrávit.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 01-18
+# chair-of-st-peter-at-rome (saint file = second). First Vespers variant; the default (second Vespers) file is
+# the same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Tu es pastor óvium, * Princeps Apostolórum, tibi tráditæ sunt claves regni cælórum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-01-18, clean year.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Ecce sacérdos magnus, * qui in diébus suis plácuit Deo, et invéntus est justus.
+    - psalms:
+        - 99
+      antiphon: Non est invéntus * símilis illi, qui conserváret legem Excélsi.
+    - psalms:
+        - 62
+      antiphon: Ideo jurejurándo * fecit illum Dóminus créscere in plebem suam.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Sacerdótes Dei, * benedícite Dóminum: servi Dómini, hymnum dícite Deo. Allelúia.'
+  laudate:
+    antiphon: Serve bone * et fidélis, intra in gáudium Dómini tui.
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-01-18, own day). Byte-identical to
+# `categories/common-of-a-confessor-bishop.yml` -- same real finding
+# already recorded for his Prime/Terce/Sext/None content (TODO.md's
+# "Prime/Terce/Sext/None Commons extraction" entry): considered *as
+# bishop* of that particular see for this commemoration, even though his
+# own `common:` field is `common-of-an-apostle`, which is why this file
+# is needed at all (the category lookup only ever consults that field).
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Ecce sacérdos magnus, * qui in diébus suis plácuit Deo, et invéntus est justus.
+    - psalms:
+        - 111
+      antiphon: Non est invéntus * símilis illi, qui conserváret legem Excélsi.
+    - psalms:
+        - 112
+      antiphon: Ideo jurejurándo * fecit illum Dóminus créscere in plebem suam.
+    - psalms:
+        - 131
+      antiphon: Serve bone * et fidélis, intra in gáudium Dómini tui.
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 01-18
+# chair-of-st-peter-at-rome. First Vespers psalm antiphons; the other evening's set is
+# chair-of-st-peter-at-rome.yml. See vespers-psalmody-overrides.ts's getVespersSaintOverride.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Ecce sacérdos magnus, * qui in diébus suis plácuit Deo, et invéntus est justus.
+    - psalms:
+        - 110
+      antiphon: Non est invéntus * símilis illi, qui conserváret legem Excélsi.
+    - psalms:
+        - 111
+      antiphon: Ideo jurejurándo * fecit illum Dóminus créscere in plebem suam.
+    - psalms:
+        - 112
+      antiphon: Serve bone * et fidélis, intra in gáudium Dómini tui.
+
+# Matins Nocturn 2-3 readings for the Chair of St. Peter at Rome (Jan
+# 18) — SanctiM/01-18.txt inherits the whole day (`@Sancti/01-18`);
+# only Lectio4 is overridden (with unrelated Eastertide filler content,
+# `@Tempora/Pasc5-0:Lectio3`, evidently a generic 12-lesson-slot filler
+# rather than anything about St. Peter, so not used here) — Lectio5-8
+# are not overridden and carry through as this feast's own proper
+# content, same as a pre-1955 saint (see memory vu-matins-pre1955-saints).
+# web/www/horas/Latin/Sancti/01-18.txt, English/Sancti/01-18.txt.
+#
+# Nocturn 2: Lectio4-6 (St. Leo the Great's sermon on Ss. Peter and
+# Paul) combined into one reading, one continuous excerpt.
+# Nocturn 3: Lectio7's Gospel pericope (Matt 16:13-19) is a full short
+# passage, authored as a genuine Gospel reading; Lectio7's homily
+# portion + Lectio8 (St. Hilary of Poitiers's commentary) combined into
+# one reading, one continuous excerpt. No responsory given for either.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: Pope St. Leo the Great, Sermon 1 on Ss. Peter and Paul
+      text: |-
+        Cum duódecim Apóstoli, accépta per Spíritum Sanctum ómnium locutióne linguárum, imbuéndum Evangélio mundum, distribútis sibi terrárum pártibus, suscepíssent, beatíssimus Petrus, princeps apostólici órdinis, ad arcem Románi destinátur impérii, ut lux veritátis, quæ in ómnium géntium revelabátur salútem, efficácius se ab ipso cápite per totum mundi corpus effúnderet. Cujus autem natiónis hómines in hac tunc urbe non essent? aut quæ usquam gentes ignorárent quod Roma didicísset?
+
+        Hic conculcándæ philosophíæ opiniónes, hic dissolvéndæ erant terrénæ sapiéntiæ vanitátes, hic confutándi dǽmonum cultus, hic ómnium sacrilegiórum impíetas destruénda, ubi diligentíssima superstitióne habebátur colléctum quidquid usquam fúerat vanis erróribus institútum. Ad hanc ergo urbem tu, beatíssime Petre Apóstole, veníre non métuis, et, consórte glóriæ tuæ Paulo Apóstolo, aliárum adhuc ecclesiárum ordinatiónibus occupáto, silvam istam freméntium bestiárum, et turbullentíssimæ profunditátis océanum, constántior quam cum supra mare graderéris, ingréderis.
+
+        Jam pópulos, qui ex circumcisióne credíderant, erudíeras: jam Antiochénam ecclésiam, ubi primum christiáni nóminis dignitas est orta, fundáveras: jam Pontum, Galátiam, Cappadóciam, Asiam atque Bithýniam légibus evangélicæ prædicatiónis impléveras; nec aut dúbius de provéctu óperis, aut de spátio tuæ ignárus ætátis, trophǽum crucis Christi Románis árcibus inferébas, quo te divínis præordinatiónibus anteíbant, et honor potestátis, et glória passiónis.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 16:13-19
+      source: St. Hilary of Poitiers, Bishop, Commentary on Matthew 16
+      text: |-
+        In illo témpore: Venit Jesus in partes Cæsaréæ Philíppi, et interrogábat discipulos suos, dicens: Quem dicunt hómines esse Fílium hóminis? Et réliqua.
+
+        Dóminus a discípulis requírit, quem se hómines esse dícerent; ut adjécit, hóminis fílium. Hæc enim confessiónis tenénda rátio est, ut sicut Dei Fílium, ita et fílium hóminis meminérimus: quia álterum sine áltero nihil spei tríbuit ad salútem. Editis ítaque, quæ diversæ de eo erant, hóminum opiniónibus, quid de se ipse séntiant quærit. Petrus respóndit: Tu es Christus Fílius Dei vivi. Sed Petrus conditiónes propositiónis expénderat. Dóminus enim díxerat: Quem me hómines esse dicunt, fílium hóminis? Et certe fílium hóminis contemplátio córporis præferébat. Sed addéndo, Quem me esse dicunt, significávit, præter id quod in se videbátur, esse áliud sentiéndum: erat enim hóminis fílius. Quod ígitur de se opinándi judícium desiderábat? Non illud arbitrámur, quod de se ipse conféssus est: sed occúltum erat de quo quærebátur, in quod se credéntium fides debébat exténdere.
+
+        Et dignum plane conféssio Petri præmium consecúta est, quia Dei Fílium in hómine vidísset. Beátus hic est, qui ultra humánum óculos intendísse et vidísse laudátus est: non id quod ex carne et sánguine erat cóntuens, sed Dei Fílium cæléstis Patris revelatióne conspíciens; dignúsque judicátus, qui quod in Christo Dei esset, primus agnósceret. O in nuncupatióne novi nóminis felix Ecclésiæ fundaméntum, dígnaque ædificatióne illíus petra, quæ inférnas leges, et tártari portas, et ómnia mortis claustra dissólveret! O beátus cæli jánitor, cujus arbítrio claves ætérni áditus tradúntur, cujus terréstre judícium præjudicáta auctóritas sit in cælo!
+      status: verified

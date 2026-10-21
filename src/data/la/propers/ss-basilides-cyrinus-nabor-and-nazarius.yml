@@ -1,0 +1,58 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2035-06-12).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Sanctórum Mártyrum tuórum Basílidis, Cyríni, Náboris atque Nazárii, quǽsumus, Dómine, natalítia nobis votíva respléndeant: et, quod illis cóntulit excelléntia sempitérna, frúctibus nostræ devotiónis accréscat.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-basilides-cyrinus-nabor-and-nazarius-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (ss-basilides-cyrinus-nabor-and-nazarius-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Sanctórum Mártyrum tuórum Basílidis, Cyríni, Náboris atque Nazárii, quǽsumus, Dómine, natalítia nobis votíva respléndeant: et, quod illis cóntulit excelléntia sempitérna, frúctibus nostræ devotiónis accréscat.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Basilides, Cyrinus, Nabor, and Nazarius's own day
+# (2029-06-12 -- St. Barnabas's own day and its transfer-year artifact,
+# plus Our Lady's Saturday, occupy the 12th in every other tested year).
+# The Benedictus antiphon. Corrects the previous version of this file,
+# which had been sourced from the Roman/secular rite's Sancti/06-12.txt's
+# own [Ant 1] instead: real but different text from what Monastic 1617
+# actually renders at Lauds, same mistake as St. Lawrence's earlier fix.
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Basilides, Cyrinus, Nabor, and
+# Nazarius, Martyrs (June 12) — pre-1955-but-post-1617. Plain
+# Sancti/06-12.txt is a different, later saint (St. John of San Facundo,
+# canonized 1690) who displaced these martyrs on the general calendar's
+# own June 12 slot; their content survives at the suffixed sibling file
+# (see memory vu-matins-pre1955-saints's "critical wrinkle").
+# web/www/horas/Latin/Sancti/06-12o.txt, English/Sancti/06-12o.txt.
+# Single lesson (simplex-feast Lectio93), no responsory in the source.
+# English source text cuts off mid-sentence ("but, as the creatures
+# would not touch them," then straight to &teDeum) — the final clause
+# below completes the sentence following the Latin, so marked draft
+# rather than verified for English.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Basilides, Cyrinus, Nabor et Nazarius, Romani milites, nobiles genere, et virtute illustres, christiana religione suscepta, cum Christum Dei Filium, Diocletiano imperatore, prædicarent, ab Aurelio præfecto Urbis comprehensi, et ut diis sacra facerent admoniti, ejus jussa contemnentes, missi sunt in carcerem. Quibus orantibus, cum subito clarissima lux oborta omnium oculis, qui ibidem essent, carcerem collustrasset: illo cælesti splendore commotus Marcellus custodiæ præpositus, multique alii, Christo Domino crediderunt. Verum postea e carcere emissi, ab imperatore Maximiano, cum ejus étiam neglecto imperio, unum Christum Deum et Dominum in ore haberent, scorpionibus cruciati iterum conjiciuntur in vincula: unde septimo die educti, et ante pedes imperatoris constituti, perstiterunt in irrisione inanium deorum, Jesum Christum Deum constantissime confitentes. Quam ob rem damnati, securi feriuntur. Quorum corpora feris objecta, nec ab illis tacta a Christianis honorifice sepulta sunt.'
+      status: verified

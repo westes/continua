@@ -1,0 +1,76 @@
+# Reference engine (Monastic Tridentinum 1617, command=prayVespera, 2026-04-04): "Sabbato Sancto special Paschal Vespera" -- Holy Saturday evening is its own short Vespers, not Easter Sunday First Vespers.
+vespers-antiphon-holy-saturday:
+  text: Allelúia, * allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium ("Tridentine - 1906", i.e. `version=
+# Tridentine 1910`), Vespers live query, the same clean Advent feria
+# 2026-12-17 already used for lauds-preces-feriales.yml. Source
+# (Psalterium/Special/Preces.txt) defines this section as
+# `[Preces feriales Vespera] @:Preces feriales Laudes:s/129/50/` -- i.e.
+# byte-for-byte identical to the Lauds ferial Preces except Psalm 129 (De
+# profundis) is replaced by Psalm 50 (Miserere) -- confirmed directly
+# against the live render, same omission pattern as Lauds: the Pope/Bishop
+# versicle pair and the benefactors' versicle are both omitted live despite
+# being present in the underlying template, while the King/nation pair
+# *is* rendered -- transcribed as rendered, not reconstructed from the
+# template's own conditional markup. Monastic 1617 has no ferial Preces at
+# Vespers at all, same gap as Lauds -- sourced from this different track
+# per the same direct instruction. Replaces a plain `preces` part with
+# `textRef: lauds-conclusio` on a ferial or vigil day -- see hours/
+# vespers.ts's 'vespers-preces' case for the exact predicate, mirroring
+# hours/lauds.ts's 'lauds-preces' case exactly.
+#
+# Psalm 50 (Miserere), which the live render embeds between the first and
+# second V/R blocks with its own Gloria Patri, is deliberately dropped here
+# per direct instruction (2026-08) -- not a transcription gap, same as
+# lauds-preces-feriales.yml's own Psalm 129 drop.
+vespers-preces-feriales:
+  text: |
+    Kýrie, eléison. Christe, eléison. Kýrie, eléison.
+    Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum quotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris:
+    V. Et ne nos indúcas in tentatiónem:
+    R. Sed líbera nos a malo.
+    V. Ego dixi: Dómine, miserére mei.
+    R. Sana ánimam meam quia peccávi tibi.
+    V. Convértere, Dómine, úsquequo?
+    R. Et deprecábilis esto super servos tuos.
+    V. Fiat misericórdia tua, Dómine, super nos.
+    R. Quemádmodum sperávimus in te.
+    V. Sacerdótes tui induántur justítiam.
+    R. Et sancti tui exsúltent.
+    V. Dómine, salvum fac regem.
+    R. Et exáudi nos in die, qua invocavérimus te.
+    V. Salvum fac pópulum tuum, Dómine, et bénedic hereditáti tuæ.
+    R. Et rege eos, et extólle illos usque in ætérnum.
+    V. Meménto Congregatiónis tuæ.
+    R. Quam possedísti ab inítio.
+    V. Fiat pax in virtúte tua.
+    R. Et abundántia in túrribus tuis.
+    V. Orémus pro fidélibus defúnctis.
+    R. Réquiem ætérnam dona eis, Dómine, et lux perpétua lúceat eis.
+    V. Requiéscant in pace.
+    R. Amen.
+    V. Pro frátribus nostris abséntibus.
+    R. Salvos fac servos tuos, Deus meus, sperántes in te.
+    V. Pro afflíctis et captívis.
+    R. Líbera eos, Deus Israël, ex ómnibus tribulatiónibus suis.
+    V. Mitte eis, Dómine, auxílium de sancto.
+    R. Et de Sion tuére eos.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+
+    V. Dómine, Deus virtútum, convérte nos.
+    R. Et osténde fáciem tuam, et salvi érimus.
+    V. Exsúrge, Christe, ádjuva nos.
+    R. Et líbera nos propter nomen tuum.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+  status: verified
+
+# Reference engine (Monastic Tridentinum 1617, command=prayVespera, 2026-04-04): "Sabbato Sancto special Paschal Vespera" -- Holy Saturday evening is its own short Vespers, not Easter Sunday First Vespers.
+holy-saturday-vespers-exaudi:
+  text: |
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+  status: verified

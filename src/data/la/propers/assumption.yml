@@ -1,0 +1,627 @@
+# User decision (2026-08-21): switched from the pre-1950 collect
+# ("Famulórum tuórum...", what Monastic Tridentinum 1617 renders for the
+# feast itself and the closing octave day) to the post-1950-dogma
+# collect below ("Omnípotens sempitérne Deus, qui Immaculátam..."),
+# introduced in the 1954 Divino Afflatu revision after Pius XII defined
+# the Assumption dogma. Text read directly from the reference engine's
+# Sancti/08-15.txt [Oratio] (Latin) and English/Sancti/08-15.txt
+# [Oratio] (English) -- this is also what Monastic 1617 itself actually
+# renders for the *interior* octave days (Aug 16/18/19/21), just not
+# for the feast/closing day, an inconsistency in D.O.'s own data files
+# (see TODO.md/memory for the live-verify trace). vu now uses this
+# collect uniformly for the feast and the whole octave, matching the
+# majority (interior-day) reference-engine behavior rather than the
+# feast/closing-day one.
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui Immaculátam Vírginem Maríam, Fílii tui Genetrícem, córpore et ánima ad cæléstem glóriam assumpsísti: concéde, quǽsumus; ut ad supérna semper inténti, ipsíus glóriæ mereámur esse consórtes.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (assumption-antiphon.yml), paired with the standard BVM
+# commemoration versicle already verified elsewhere in this app
+# (propers/common/lauds-suffrage-bvm.yml -- 'V. Ora pro nobis sancta Dei
+# Genitrix'). Collect is the saint's own real proper (assumption-collect.yml),
+# unchanged.
+commemoration:
+  text: |
+    Ant. Quæ est ista quæ ascéndit sicut auróra consúrgens, pulchra ut luna, elécta ut sol, terríbilis ut castrórum ácies ordináta?
+    V. Ora pro nobis sancta Dei Génitrix.
+    R. Ut digni efficiámur promissiónibus Christi.
+    Orémus.
+    Omnípotens sempitérne Deus, qui Immaculátam Vírginem Maríam, Fílii tui Genetrícem, córpore et ánima ad cæléstem glóriam assumpsísti: concéde, quǽsumus; ut ad supérna semper inténti, ipsíus glóriæ mereámur esse consórtes.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Commemoratio Octavæ Assumptionis -- said at Lauds/Vespers on a day
+# within the Assumption's octave (Aug 16-22) where the Assumption itself
+# doesn't win the day outright (e.g. St. Bernard, Aug 20, Duplex, beats
+# the octave's own Semiduplex threshold -- see hours/resolve-common.ts's
+# getDayCollects, kind: 'octave' branch). No reference-engine text exists
+# for this exact block: the live Monastic Tridentinum 1617 engine (and
+# the default Tridentine version) both render only St. Bernard's own
+# oration on Aug 20, no Assumption commemoration at all -- this app's own
+# "generous commemorations" design (see this project's "Not a
+# reconstruction" note) deliberately goes further than any single
+# historical rite here, so this block is assembled from already-verified
+# Assumption pieces rather than copied whole from one reference-engine
+# page: the antiphon from assumption-antiphon.yml (Lauds/Benedictus, the
+# only plain antiphon authored for the feast), the versicle/response from
+# vespers-versicle-assumption.yml, and the collect from
+# assumption-collect.yml (already in the "Per eúmdem" commemoration
+# doxology form) -- matching christmas-day-octave-commemoration.yml's own
+# "one shared Ant+V/R+collect block regardless of hour" shape and
+# assembly method.
+commemoration/octave-~:
+  text: |
+    Ant. Quæ est ista quæ ascéndit sicut auróra consúrgens, pulchra ut luna, elécta ut sol, terríbilis ut castrórum ácies ordináta?
+    V. Exaltáta est sancta Dei Génitrix.
+    R. Super choros Angelórum ad cæléstia regna.
+    Orémus.
+    Omnípotens sempitérne Deus, qui Immaculátam Vírginem Maríam, Fílii tui Genetrícem, córpore et ánima ad cæléstem glóriam assumpsísti: concéde, quǽsumus; ut ad supérna semper inténti, ipsíus glóriæ mereámur esse consórtes.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# The Assumption's own proper Matins hymn ("Surge! Jam terris fera bruma
+# cessit" / "Arise! the cold blasts from earth have receded"), read from
+# `Sancti/08-15.txt`'s own `[Hymnus Matutinum]` block (both Latin and
+# English) -- distinct from the BVM Common (CommuneM/C10), which has no
+# Matins hymn override of its own at all. Used throughout the Assumption's
+# octave (Aug 15-22), not just on the feast day itself: `Sancti/08-21bmv.txt`
+# (a representative octave day) carries `[Rule] ex Sancti/08-15`, meaning the
+# octave day's whole office -- Matins hymn included -- is the Assumption's
+# own, not the plain BVM Common's.
+matins-hymn:
+  text: |-
+    Surge! Jam terris fera bruma cessit,
+    Ridet in pratis decus omne florum,
+    Alma quæ Vitæ Génetrix fuísti,
+    Surge, María!
+
+    Lílium fulgens velut in rubéto,
+    Mortis auctórem teris una, carpens
+    Sóntibus fructum pátribus negátum
+    Arbore vitæ.
+
+    Arca non putri fabricáta ligno
+    Manna tu servas, fluit unde virtus,
+    Ipsa qua surgent animáta rursus
+    Ossa sepúlcris.
+
+    Prǽsidis mentis dócilis minístra,
+    Haud caro tabo pátitur resólvi;
+    Spíritus imo sine fine consors
+    Tendit ad astra.
+
+    Surge! Dilécto pete nixa cælum,
+    Sume consértum diadéma stellis,
+    Teque natórum récinens beátam
+    Excipe carmen.
+
+    Laus sit excélsæ Tríadi perénnis,
+    Quæ tibi, Virgo, tríbuit corónam,
+    Atque regínam statuítque nostram
+    Próvida matrem.
+    Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/08-15t.txt's own [Invit] (no
+# Monastic override exists; Sancti/08-15.txt itself references 08-15t)
+# and its English counterpart.
+matins-invitatory:
+  text: Veníte, adorémus Regem regum, * Cujus hódie ad æthéreum Virgo Mater assúmpta est cælum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-15, clean year.
+lauds-capitulum:
+  text: 'In ómnibus réquiem quæsívi, et in hereditáte Dómini morábor. Tunc præcépit, et dixit mihi Creátor ómnium: et qui creávit me, requiévit in tabernáculo meo.'
+  citation: Sir 24:11-12
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-15, clean year.
+lauds-hymn:
+  text: |
+    O gloriósa Dómina,
+    Excélsa super sídera:
+    Qui te creávit, próvide
+    Lactásti sacro úbere.
+
+    Quod Heva tristis ábstulit,
+    Tu reddis almo gérmine:
+    Intrent ut astra flébiles,
+    Cæli fenéstra facta es.
+
+    Tu Regis alti jánua,
+    Et porta lucis fúlgida:
+    Vitam datam per Vírginem,
+    Gentes redémptæ, pláudite.
+
+    Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-15, clean year.
+lauds-responsory:
+  text: |
+    R.br. María Virgo assúmpta est * Ad æthéreum thálamum.
+    R. María Virgo assúmpta est * Ad æthéreum thálamum.
+    V. In quo Rex regum stelláto sedet sólio.
+    R. Ad æthéreum thálamum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. María Virgo assúmpta est * Ad æthéreum thálamum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-15, clean year.
+lauds-versicle:
+  text: |-
+    V. Exaltáta est sancta Dei Génitrix.
+    R. Super choros Angelórum ad cæléstia regna.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, the Assumption's own day (2026-08-15, clean year).
+# Latin asterisk confirmed against source data file
+# web/www/horas/Latin/Commune/C12.txt.
+prime-antiphon:
+  text: 'Assúmpta est María in cælum: * gaudent Angeli, laudántes benedícunt Dóminum.'
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/08-15.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: Tu glória Jerúsalem, tu lætítia Israël, tu honorificéntia pópuli nostri.
+  citation: Judith 15:10
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, the Assumption's own day (2026-08-15, clean year).
+# Latin asterisk confirmed against source data file
+# web/www/horas/Latin/Commune/C12.txt.
+terce-antiphon:
+  text: María Virgo assúmpta est * ad æthéreum thálamum, in quo Rex regum stelláto sedet sólio.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, the Assumption's own day (2026-08-15, clean year).
+terce-capitulum:
+  text: |
+    In ómnibus réquiem quæsívi, et in hereditáte Dómini morábor. Tunc præcépit, et dixit mihi Creátor ómnium: et qui creávit me, requiévit in tabernáculo meo.
+    R. Deo grátias.
+    V. Exaltáta est sancta Dei Génitrix.
+    R. Super choros Angelórum ad cæléstia regna.
+  citation: Sir 24:11-12
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, the Assumption's own day (2026-08-15, clean year).
+# Latin asterisk confirmed against source data file
+# web/www/horas/Latin/Commune/C7.txt (and C12.txt).
+sext-antiphon:
+  text: 'In odórem * unguentórum tuórum cúrrimus: adolescéntulæ dilexérunt te nimis.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, the Assumption's own day (2026-08-15, clean year).
+sext-capitulum:
+  text: |
+    Et sic in Sion firmáta sum, et in civitáte sanctificáta simíliter requiévi, et in Jerúsalem potéstas mea. Et radicávi in pópulo honorificáto, et in parte Dei mei heréditas illíus, et in plenitúdine sanctórum deténtio mea.
+    R. Deo grátias.
+    V. Assúmpta est María in cælum: gaudent Angeli.
+    R. Laudántes benedícunt Dóminum.
+  citation: Sir 24:15-16
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, the Assumption's own day (2026-08-15, clean year).
+# Latin asterisk confirmed against source data file
+# web/www/horas/Latin/Commune/C12.txt.
+none-antiphon:
+  text: Pulchra es * et decóra, fília Jerúsalem, terríbilis ut castrórum ácies ordináta.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, the Assumption's own day (2026-08-15, clean year).
+none-capitulum:
+  text: |
+    In platéis sicut cinnamómum et bálsamum aromatízans odórem dedi: quasi myrrha elécta, dedi suavitátem odóris.
+    R. Deo grátias.
+    V. María Virgo assúmpta est ad æthéreum thálamum.
+    R. In quo Rex regum stelláto sedet sólio.
+  citation: Sir 24:19-20
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-08-15, the same clean date already used for lauds-capitulum-assumption.yml.
+vespers-hymn:
+  text: |
+    Prima stropha sequentis hymni dicitur flexis genibus.
+    Ave maris stella,
+    Dei Mater alma,
+    Atque semper Virgo,
+    Felix cæli porta.
+
+    Sumens illud Ave
+    Gabriélis ore,
+    Funda nos in pace,
+    Mutans Hevæ nomen.
+
+    Solve vincla reis,
+    Profer lumen cæcis,
+    Mala nostra pelle,
+    Bona cuncta posce.
+
+    Monstra te esse matrem,
+    Sumat per te preces,
+    Qui pro nobis natus,
+    Tulit esse tuus.
+
+    Virgo singuláris,
+    Inter omnes mitis,
+    Nos culpis solútos
+    Mites fac et castos.
+
+    Vitam præsta puram,
+    Iter para tutum,
+    Ut vidéntes Jesum,
+    Semper collætémur.
+
+    Sit laus Deo Patri,
+    Summo Christo decus,
+    Spirítui Sancto,
+    Tribus honor unus.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-08-15, the same clean date already used for lauds-capitulum-assumption.yml.
+vespers-responsory:
+  text: |
+    R.br. Assúmpta est María in cælum: * Gaudent Angeli.
+    R. Assúmpta est María in cælum: * Gaudent Angeli.
+    V. Laudántes benedícunt Dóminum.
+    R. Gaudent Angeli.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Assúmpta est María in cælum: * Gaudent Angeli.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-08-15, the same clean date already used for lauds-capitulum-assumption.yml.
+vespers-versicle:
+  text: |-
+    V. Exaltáta est sancta Dei Génitrix.
+    R. Super choros Angelórum ad cæléstia regna.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, the Assumption's own day (2026-08-15) -- the Benedictus
+# antiphon (Cant 6:9). Her Lauds psalmody override (see hours/lauds-
+# psalmody-overrides.ts, TODO.md) is still unauthored -- this is only
+# the Benedictus antiphon, a separate lookup.
+benedictus-antiphon:
+  text: Quæ est ista quæ ascéndit sicut auróra consúrgens, pulchra ut luna, elécta ut sol, terríbilis ut castrórum ácies ordináta?
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 08-15
+# assumption (new saint-level second; continua had "beatammedicent"). See hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon:
+  text: 'Hódie * María Virgo cælos ascéndit: gaudéte, quia cum Christo regnat in ætérnum.'
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 08-15
+# assumption (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Virgo prudentíssima, * quo progréderis, quasi auróra valde rútilans? Fília Sion, tota formósa et suávis es, pulchra ut luna, elécta ut sol.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-15, clean year.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: 'Assúmpta est María in cælum: * gaudent Angeli, laudántes benedícunt Dóminum.'
+    - psalms:
+        - 99
+      antiphon: María Virgo assúmpta est * ad æthéreum thálamum, in quo Rex regum stelláto sedet sólio.
+    - psalms:
+        - 62
+      antiphon: 'In odórem * unguentórum tuórum cúrrimus: adolescéntulæ dilexérunt te nimis.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Benedícta * fília tu a Dómino: quia per te fructum vitæ communicávimus.'
+  laudate:
+    antiphon: Pulchra es * et decóra, fília Jerúsalem, terríbilis ut castrórum ácies ordináta.
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-08-15, own day). Same four psalm numbers as
+# her Common (common-of-the-bvm.yml: 109/112/121/126), but her own proper
+# antiphons throughout.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'Assúmpta est María in cælum: * gaudent Angeli, laudántes benedícunt Dóminum.'
+    - psalms:
+        - 112
+      antiphon: María Virgo assúmpta est * ad æthéreum thálamum, in quo Rex regum stelláto sedet sólio.
+    - psalms:
+        - 121
+      antiphon: 'In odórem * unguentórum tuórum cúrrimus: adolescéntulæ dilexérunt te nimis.'
+    - psalms:
+        - 126
+      antiphon: Pulchra es * et decóra, fília Jerúsalem, terríbilis ut castrórum ácies ordináta.
+
+# Matins Nocturn 2-3 readings for the Assumption of the B.V.M. (Aug
+# 15, Duplex I class with Common Octave) — SanctiM/08-15.txt bases
+# `@SanctiM/08-15t`, which in turn bases `@Sancti/08-15t` (the whole
+# day, no Nocturn 2/3 override), so this feast's own proper content is
+# sourced from the Tridentine track exactly as for a pre-1955 saint
+# (see memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# Nocturn 1 (Lectio1-3, the Song of Songs) not authored here, per this
+# project's convention of leaving Nocturn 1 scripture to the bible-plan
+# store rather than this file.
+# web/www/horas/Latin/Sancti/08-15t.txt, English/Sancti/08-15t.txt.
+#
+# Nocturn 2: Lectio4_-6_ (St. John of Damascus's sermon on the
+# Dormition) combined into one reading, one continuous excerpt.
+# Nocturn 3: Lectio7's Gospel citation (Luke 10:38-42 — the same
+# Martha-and-Mary pericope as `st-martha.yml`'s own Nocturn 3, read
+# here for its traditional allegorical link to Mary's "better part")
+# is a bare incipit ("Et réliqua") with no full pericope text given,
+# so only the homily portion was originally authored (not marked
+# isGospel), combined with Lectio8-9 as one continuous excerpt of St.
+# Augustine's own (different) sermon on the same passage. No
+# responsory given for either reading.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — sourced from
+# Sancti/07-29.txt's own [Evangelium] (St. Martha's own Mass Gospel,
+# this feast's own `@Sancti/08-15t` -> `@SanctiM/08-15t` chain resolving
+# back to `@Sancti/08-15t`, which itself in turn shares this same
+# Nocturn 3 Gospel — cross-checked against `st-martha.yml`'s own
+# citation), not guessed at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. John of Damascus, Sermon 2 on the Falling-Asleep of the B.V.M.
+      text: |-
+        Hódie sacra et animáta arca Dei vivéntis, quæ suum in útero concépit Creatórem, requiéscit in templo Dómini, quod nullis est exstrúctum mánibus. Et David exsúltat ejus parens, et cum eo choros ducunt Angeli, célebrant Archángeli, Virtútes gloríficant, Principátus exsúltant, Potestátes collætántur, gaudent Dominatiónes, Throni festum diem agunt, laudant Chérubim, glóriam ejus prǽdicant Séraphim. Hódie Eden novi Adam paradísum súscipit animátum, in quo solúta est condemnátio, in quo plantátum est lignum vitæ, in quo opérta fuit nostra núditas.
+
+        Hódie Virgo immaculáta, quæ nullis terrénis inquináta est afféctibus, sed cæléstibus educáta cogitatiónibus, non in terram revérsa est; sed, cum esset animátum cælum, in cæléstibus tabernáculis collocátur. Ex qua enim ómnibus vera vita manávit, quómodo illa mortem gustáret? Sed cedit legi latæ ab eo quem génuit; et, ut fília véteris Adam, véterem senténtiam súbiit (nam et ejus Fílius, qui est vita ipsa, eam non recusávit); ut autem Dei vivéntis Mater, ad illum ipsum digne assúmitur.
+
+        Heva, quæ serpéntis suggestióni assénsum præbuit, partus dolóre, et mortis senténtia damnátur, et in inferórum collocátur penetrálibus. Hanc autem vere beátam, quæ Dei verbo aures præstitit, et Spíritus sancti operatióne repléta est, atque ad Archángeli spiritáli salutatióni, sine voluptáte et virili consórtio, Dei Fílium concépit, et sine dolóre áliquo péperit, ac totam se Deo consecrávit, quónam modo mors devoráret? quómodo inferi suscíperent? quómodo corrúptio invaderet corpus illud, in quo vita suscépta est? Huic recta, plana, et facilis ad cælum paráta est via. Si enim, Ubi ego sum, illic et miníster meus erit, inquit vita et véritas Christus; quómodo non pótius mater cum ipso erit?
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 10:38-42
+      text: 'In illo témpore: Intrávit Jesus in quoddam castéllum: et múlier quædam, Martha nómine, excépit illum in domum suam et huic erat soror nómine María quæ étiam sedens secus pedes Dómini audiébat verbum illíus. Martha autem satagébat circa frequens ministérium quæ stetit, et ait: Dómine non est tibi curæ quod soror mea relíquit me solam ministráre dic ergo illi ut me adjúvet et respóndens dixit illi Dóminus: Martha, Martha, sollícita es, et turbáris erga plúrima: porro unum est necessárium. María óptimam partem elégit, quæ non auferétur ab ea.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Sermon 27 on the Words of the Lord (on Luke 10:38-42)
+      text: |-
+        Sanctum Evangelium cum legeretur, audivimus a femina religiosa susceptum esse Dominum hospitio, eaque Martha vocabatur. Et cum esset ipsa occupata in cura ministrandi, soror ejus Maria sedebat ad pedes Domini, et audiebat verbum ejus. Laborabat illa, vacabat ista. Illa erogabat, hæc implebatur. Verumtamen Martha laborans multum in illa occupatione et negotio ministrandi, interpellavit Dominum: et de sorore sua conquesta est, quod eam laborantem non adjuvaret.
+
+        Dominus autem pro Maria respondit Marthæ: et ipse ejus factus est advocatus, qui judex fuerat interpellatus. Martha, inquit, circa multa es occupata, quando unum est necessarium. Maria meliorem partem elegit, quæ non auferetur ab ea. Audivimus enim et interpellationem interpellantis, et sententiam judicis. Quæ sententia interpellanti respondit, susceptam defendit. Erat enim Maria intenta dulcedini verbi Domini. Intenta erat Martha quomodo pasceret Dominum: intenta Maria quomodo pasceretur a Domino. A Martha convivium Domino parabatur, in cujus convivio Maria jam jucundabatur.
+
+        Cum ergo María suaviter audíret verbum dulcissimum, et corde intentissimo pasceretur, interpellato Domino a soróre sua, quomodo putamus eam timuisse, ne diceret ei Dominus: Surge, et adjuva sororem tuam? Mira enim suavitate tenebatur: quæ profecto major est mentis quam ventris. Excusata est, sedit securior. Quomodo autem excusata? Attendamus, inspiciamus, perscrutemur quod possumus, ut pascamur et nos.
+      status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-08-16) -- Aug 16 is day 2 of the Assumption's own
+# octave (started Aug 15), not day 7 of St. Lawrence's (which it's also
+# nominally within, but Lawrence's weaker octave is entirely overshadowed
+# here). Matins reading collapsed into one continuous reading per project
+# convention. Not corrected here, since guessing where they belong isn't the
+# same class of fix as an isolated single-character typo -- the Latin's own
+# punctuation gaps (some older "oct"/"bmv"-suffixed variant files drop
+# question marks entirely in places) are left as the source has them.
+#
+# 2026-09-12: no English translation exists in the source at all for this
+# reading -- its own English page falls back to showing the Latin text
+# under the "Reading" header. Since it's prose, this English is a
+# translation done for this project rather than left missing, same
+# precedent already used for assumption-octave-day-4.yml -- draft, not
+# verified against any source. This day's Latin is the same John
+# Damascene passage as day-3 (assumption-octave-day-3.yml) with only
+# orthographic variance, except this text omits one sentence day-3 has
+# ("Ubi pretiósus ille thesáurus, qui vitam suscépit?" -- "Where is that
+# precious treasure which received Life itself?"); the translation below
+# is adapted from day-3's own, with that one sentence dropped to match.
+#
+# 2026-09-09: `text.la` had the source citation ("Sermo sancti Joannis
+# Damasceni Orat. 2 de Dorm. Deiparæ") baked into its opening words, run
+# on directly into the sermon's own text with no separating punctuation --
+# redundant with the `source` field above, which already renders as this
+# reading's label. Stripped (part of a repo-wide sweep of octave-readings
+# files with the same pattern).
+octave-readings/~-octave-day-2:
+  source: Sermo sancti Joannis Damasceni
+  text: |
+    Jubilemus in arca Domini Dei toto animo, et muri cadent Hiericontini, contrariarum, inquam potestatum infestæ munitiones. Cum David exsultemus spiritu. Arca enim Domini hodie requievit. Clamemus cum Gabriele, qui primum locum obtinet inter angelos: Ave gratia plena: dominus tecum. Ave gaudii pelagus inexhaustum. Ave unicum molestiarum levamen. Aue omnium cordis dolorum medicamentum. Ave sancta virgo per quam mors quidem fuit expulsa, vita autem introducta.
+
+    Tu vero o sacrorum sepulcrorum sacratissimum, post domini quidem sepulcrum, quod uitæ dedit principium, quod fuit fons resurrectionis, (tecum enim loquar tamquam cum animato) ubinam est aurum illud purum, quod manus apostolorum in te condiderunt! Ubi divitiæ, quæ consumi nequeunt! Ubi novum uolumen, in quo ineffabiliter deus uerbum sine manu inscriptum fuit! Ubi abyssus gratiæ? Ubi pelagus curationum? Ubi est desiderabile illud deiparæ uirginis corpus?
+
+    Quid quæritis in sepulcro eam, quæ ad cælestia translata est tabernacula? cur a me custodiæ rationem exposcitis? Non possum ego divinis jussis resistere. Sacrosanctum corpus mihi quoque sanctitatem impertivit quod me pretiosissimi unguenti fragrantia replevit, et divinum templum effecit relictis sindonibus, abiit raptum sublime, comitantibus angelis, archangelis, et omnibus cælestibus potentiis. Nunc me circumdant angeli; nunc divina in me habitat gratia. Ergo evasi officina medicinæ ægrotantibus. Ego sum fons perennis curationum: Ego remedium aduersus dæmones: Ego civitas refugii omnibus ad me confugientibus.
+  responsory: |
+    R. Vidi speciósam sicut colúmbam, ascendéntem désuper rivos aquárum, cujus inæstimábilis odor erat nimis in vestiméntis ejus; * Et sicut dies verni circúmdabant eam flores rosárum et lília convállium. V. Quæ est ista quæ ascéndit per desértum sicut vírgula fumi ex aromátibus myrrhæ et thuris? R. Et sicut dies verni circúmdabant eam flores rosárum et lília convállium.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617) --
+# read directly from the reference engine's own SanctiM/08-17bmv.txt
+# ("Tertia die infra Octavam S. Assumptionis Beatæ Mariæ Virginis," per
+# Sancti/08-17bmv.txt's own [Rank] line). Same recurring "Sermo sancti
+# Joannis Damasceni" Nocturn 2 homily excerpt already used on day 2
+# (assumption-octave-day-2.yml) and days 4-5 -- confirmed a standing,
+# day-independent reading reused across the octave, not a copy-paste
+# mistake -- collapsed into one continuous reading per project
+# convention. Responsory is the same recurring "Vidi speciosam" already
+# used on days 2, 4, and 5 -- a standing octave-wide responsory, not
+# day-specific.
+#
+# 2026-09-12: no English translation exists in the source at all for this
+# reading (English/Sancti/08-17bmv.txt has only the day's own [Rank]
+# line, no lesson text). Since it's prose, this English is a translation
+# done for this project rather than left missing, same precedent already
+# used for assumption-octave-day-4.yml -- draft, not verified against any
+# source.
+#
+# 2026-09-09: `text.la` had the source citation baked into its opening
+# words, run on directly into the sermon's own text with no separating
+# punctuation -- redundant with the `source` field above. Stripped (part
+# of a repo-wide sweep of octave-readings files with the same pattern).
+octave-readings/~-octave-day-3:
+  source: Sermo sancti Joannis Damasceni
+  text: |
+    Jubilémus in arca Dómini Dei toto ánimo, et muri cadent Jerichuntíni, contrariárum, inquam, potestátum inféstæ munitiónes. Cum David exsultémus spíritu: Arca enim Dómini hódie requiévit. Clamémus cum Gabriéle, qui primum locum óbtinet inter Angelos: Ave, grátia plena; Dóminus tecum. Ave, gáudii pélagus inexháustum: ave, únicum molestiárum levámen: ave, ómnium cordis dolórum medicaméntum. Ave, sancta Virgo, per quam mors quidem fuit expúlsa, vita autem introdúcta.
+
+    Tu vero, o sacrórum sepulcrórum sacratíssimum post Dómini quidem sepúlcrum, quod vitæ dedit princípium, quod fuit fons resurrectiónis (tecum enim loquar, tamquam cum animáto): úbinam est aurum illud purum, quod manus Apostolórum in te condidérunt? Ubi divítiæ, quæ consúmi néqueunt? Ubi pretiósus ille thesáurus, qui vitam suscépit? Ubi novum volúmen, in quo ineffabíliter Dei Verbum sine manu inscríptum fuit? Ubi abýssus grátiæ, ubi pélagus curatiónum? Ubi est desiderábile illud Deíparæ Vírginis corpus?
+
+    Quid quǽritis in sepúlcro eam, quæ ad cæléstia transláta est tabernácula? Cur a me custódiæ ratiónem expóscitis? Non possum ego divínis jussis resístere. Sacrosánctum illud corpus, quod mihi quoque sanctitátem impertívit, ac pretiosíssimi unguénti fragrántia me replévit, et divínum templum effécit, relíctis sindónibus, ábiit raptum sublíme, comitántibus Angelis, Archángelis et ómnibus cæléstibus poténtiis. Nunc me circúmdant Angeli, nunc divína in me hábitat grátia. Ego evási officína medicínæ ægrotántibus: ego fons perénnis curatiónum: ego remédium advérsus dæmones: ego cívitas refúgii ómnibus ad me confugiéntibus.
+  responsory: |
+    R. Vidi speciósam sicut colúmbam, ascendéntem désuper rivos aquárum, cujus inæstimábilis odor erat nimis in vestiméntis ejus; * Et sicut dies verni circúmdabant eam flores rosárum et lília convállium. V. Quæ est ista quæ ascéndit per desértum sicut vírgula fumi ex aromátibus myrrhæ et thuris? R. Et sicut dies verni circúmdabant eam flores rosárum et lília convállium.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-08-18). Matins reading for day 4 of the
+# Assumption's own octave -- collapsed into one continuous reading per project
+# convention. No English translation exists in the source at all for this
+# reading; since it's prose, this English is a translation done for this
+# project rather than left missing (2026-08 decision) -- draft, not verified
+# against any source. The source's own English translation is used as-is,
+# including gaps in its own punctuation (some older "oct"/"bmv"-suffixed
+# variant files drop question marks entirely in places) -- not corrected here,
+# since guessing where they belong isn't the same class of fix as an isolated
+# single-character typo.
+#
+# 2026-09-09: `text.la` had the source citation baked into its opening
+# words, run on directly into the sermon's own text with no separating
+# punctuation -- redundant with the `source` field above. Stripped (`en`
+# was already clean, part of a repo-wide sweep of octave-readings files
+# with the same pattern).
+octave-readings/~-octave-day-4:
+  source: De Sermone sancti Joannis Damasceni
+  text: |
+    Ex antíqua accépimus traditióne, quod témpore gloriósæ dormitiónis beátæ Virginis, univérsi quidem sancti Apóstoli, qui orbem terræ ad salútem Géntium peragrábant, moménto témporis in sublíme eláti, convenérunt Jerosólymis. Cumque illic essent, eis vísio appáruit angélica, et audíta est psalmodía cæléstium Potestátum; et sic cum divína glória in manus Dei sanctam trádidit ánimam. Ejus autem corpus, quod Deum ineffábili quadam ratióne suscépit, cum angélica et apostólica hymnodía elátum, in lóculo fuit depósitum Gethsemane; quo in loco Angelórum cantus mansit tres dies contínuos.
+
+    Post tres autem dies angélico cantu cessante, qui áderant Apóstoli (cum unus Thomas, qui abfúerat, post tértium diem venísset, et, quod Deum suscéperat, corpus adoráre voluísset), túmulum aperuérunt; sed omni ex parte sacrum ejus corpus nequáquam inveníre potuérunt. Cum ea autem tantum inveníssent, in quibus fúerat compósitum, et ineffabili, qui ex iis proficiscebátur, essent odóre repléti, lóculum clausérunt. Ejus mystérii obstupefácti miráculo, hoc solum cogitáre potuerunt, quod, cui plácuit ex María Vírgine carnem súmere, et hóminem fíeri et nasci, cum esset Deus Verbum, et Dóminus glóriæ, quique post partum incorrúptam servávit ejus virginitátem; eídem étiam plácuit, et ipsíus, postquam migrávit, immaculátum corpus, incorrúptum servátum, translatióne honoráre ante commúnem et universálem resurrectiónem.
+
+    Aderant tunc cum Apóstolis sanctíssimus Timotheus, primus epíscopus Ephesiórum, et Dionysius Areopagíta, sicut ipse testátur in iis, quæ de beáto Hierótheo, qui ipse quoque tunc áderat, scripsit ad prædíctum Timótheum, sic dicens: Nam étiam apud ipsos a Deo afflátos Sacrórum antístites, quando nos quoque, ut nosti, et multi ex sanctis nostris frátribus, ad contuéndum corpus, quod Vitæ princípium dedit, et Deum suscépit, convenissémus (áderat autem et Dómini frater Jacóbus, et Petrus, supréma et antiquíssima theologórum súmmitas): et viso sacro córpore, plácuit ómnibus, prout quisque póterat, hymnis celebráre infínitam bonitátem divínæ poténtiæ.
+  responsory: |
+    R. Vidi speciósam sicut colúmbam, ascendéntem désuper rivos aquárum, cujus inæstimábilis odor erat nimis in vestiméntis ejus; * Et sicut dies verni circúmdabant eam flores rosárum et lília convállium. V. Quæ est ista quæ ascéndit per desértum sicut vírgula fumi ex aromátibus myrrhæ et thuris? R. Et sicut dies verni circúmdabant eam flores rosárum et lília convállium.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-08-19). Matins reading for day 5 of the
+# Assumption's own octave -- collapsed into one continuous reading per project
+# convention. The source's own English translation is used as-is, including
+# gaps in its own punctuation (some older "oct"/"bmv"-suffixed variant files
+# drop question marks entirely in places) -- not corrected here, since
+# guessing where they belong isn't the same class of fix as an isolated
+# single-character typo.
+#
+# 2026-09-09: both `text.la` and `text.en` had the source citation baked
+# into their opening words -- redundant with the `source` field above,
+# which already renders as this reading's label. Stripped (kept the
+# source's own "n. 1"/"n. 4" paragraph-number markers, which aren't
+# citations; part of a repo-wide sweep of octave-readings files with the
+# same pattern).
+octave-readings/~-octave-day-5:
+  source: Sermo sancti Bernardi Abbátis
+  text: |
+    n. 1 Virgo, hódie gloriósa cælos ascendens, gaudiæ civium copiósis sine dúbio cumulávit augméntis. Hæc est enim, cujus salutatiónis vox et ipsos exsultáre facit in gáudio, quos matérna adhuc víscera claudunt. Quod, si párvuli necdum nati anima liquefácta est, ut María locúta est; quid putámus, quænam illa fúerit cæléstium exsultátio, cum et vocem audíre, et vidére fáciem, et beáta ejus frui præséntia meruérunt?
+
+    n. 4 Sed et illud quis cogitáre sufficiát, quam gloriósa mundi Regína procésserit, et quanto devotiónis afféctu tota in ejus occursum cæléstium legiónum prodíerit multitúdo; quibus ad thronum glóriæ cánticis sit dedúcta; quam plácido vultu, quam seréna fácie, quam divínis ampléxibus suscépta a Fílio, et super omnem exaltáta creatúram, cum eo honóre, quo tanta Mater digna fuit, cum ea glória, quæ tantum décuit Fílium?
+
+    Felicía prorsus óscula lábiis impressa lactentis, cui virgíneo Mater applaudébat in grémio. Verum numquid non felicióra censébimus, quæ ab ore sedéntis in déxtera Patris hódie in beáta salutatióne suscépit, cum ascénderet ad thronum glóriæ, epithalámium canens, et dicens: Osculétur me ósculo oris sui?  Christi generatiónem et Maríæ assumptiónem quis enarrábit? Quantum enim grátiæ in terris adépta est præ céteris, tantum et in cælis óbtinet glóriæ singuláris.
+  responsory: |
+    R. Vidi speciósam sicut colúmbam, ascendéntem désuper rivos aquárum, cujus inæstimábilis odor erat nimis in vestiméntis ejus; * Et sicut dies verni circúmdabant eam flores rosárum et lília convállium. V. Quæ est ista quæ ascéndit per desértum sicut vírgula fumi ex aromátibus myrrhæ et thuris? R. Et sicut dies verni circúmdabant eam flores rosárum et lília convállium.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-08-20). Matins reading for day 6 of the
+# Assumption's own octave -- a direct Scripture reading (Wisdom 4:7-20),
+# resolved from data/scripture/sap-4.yml (2026-08 decision: whole-passage
+# Scripture readings pull from a dedicated store instead of embedding text,
+# unlike prose that merely cites a verse or two). Each entry below is its
+# own paragraph, preserving the source's original three-lesson breaks.
+octave-readings/~-octave-day-6:
+  source: De libro Sapiéntiæ
+  passages:
+    - book: sap
+      chapter: 4
+      verses: 7-12
+    - book: sap
+      chapter: 4
+      verses: 13-16
+    - book: sap
+      chapter: 4
+      verses: 17-20
+  responsory: |
+    R. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: * Intra in gáudium Dómini tui. V. Dómine, quinque talénta tradidísti mihi, ecce ália quinque superlucrátus sum. R. Intra in gáudium Dómini tui.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-08-21). Matins reading for day 7 of the
+# Assumption's own octave -- collapsed into one continuous reading per project
+# convention. The source's own English translation is used as-is, including
+# gaps in its own punctuation (some older "oct"/"bmv"-suffixed variant files
+# drop question marks entirely in places) -- not corrected here, since
+# guessing where they belong isn't the same class of fix as an isolated
+# single-character typo.
+#
+# 2026-09-09: both `text.la` and `text.en` had the source citation baked
+# into their opening words, stripped (kept "n. 1", not a citation) --
+# redundant with the `source` field above. `text.en`'s 2nd paragraph was
+# also genuinely corrupted: untranslated Latin followed by a verbatim
+# repeat of the 1st paragraph's English, not an actual translation of the
+# Latin 2nd paragraph -- replaced with a real (own, unverified-against-
+# source) translation, `en` downgraded to draft accordingly. `text.en`'s
+# 3rd paragraph also had a stray untranslated "ígitur" wedged between two
+# English renderings of the same word ("Ascending... therefore"); fixed
+# to a single "therefore".
+octave-readings/~-octave-day-7:
+  source: Sermo sancti Bernárdi Abbátis
+  text: |
+    n. 1 Tempus loquéndi est omni carni, cum assúmitur incarnáti Verbi Mater in cælum, nec cessáre debet a láudibus humána mortálitas, cum hóminis sola natúra supra immortáles spíritus exaltátur in Vírgine. Sed de ejus glória nec silére devótio pátitur, nec dignum áliquid stérilis concípere cogitátio, aut inerrudíta potest locútio parturíre. Hinc est, quod et ipsi cæléstis cúriæ príncipes in consideratióne tantæ novitátis clamant non sine admiratióne: Quæ est ista, quæ ascéndit de desérto delíciis áffluens?
+
+    Ac si manifestius dicant: Quanta est hæc, aut, unde ei ascendenti utique de deserto affluentia tanta deliciarum? Nec enim pares inveniuntur deliciae vel in nobis, quos in civitate Dómini laetificat fluminis impetus, qui a vultu gloriae, voluptatis torrente potamur. Quae est ista, quae de sub sole, ubi nihil est nisi labor et dolor et afflictio spiritus, ascendit deliciis spiritualibus affluens? Quidni delícias díxerim, virginitátis decus cum múnere fecunditátis, humilitátis insígne distillántem caritátis favum, misericórdiæ víscera, plentitúdinem grátiæ, prærogatívam glóriæ singuláris?
+
+    Ascéndens ígitur de desérto Regína mundi, étiam Angelis sanctis, ut canit Ecclésia, speciósa facta est, et suávis in delíciis suis. Désinant tamen desérti hujus mirári delícias, quia Dóminus dedit benignitátem, et terra nostra dedit fructum suum. Quid mirántur, de terra desérta Maríam ascéndere delíciis affluéntem? Miréntur pótius páuperem Christum de cæléstis regni plenditúdine descendéntem; longe enim amplióri miráculo dignum vidétur, Dei Fílium paulo minus ab Angelis minorári, quam Dei Matrem super Angelos exaltári. Illíus síquidem exinanítio, facta est replétio nostra: illíus misériæ, mundi delíciæ sunt. Dénique, cum dives esset, propter nos pauper factus est, ut nos ejus inópia ditarémur.
+  responsory: |
+    R. Vidi speciósam sicut colúmbam, ascendéntem désuper rivos aquárum, cujus inæstimábilis odor erat nimis in vestiméntis ejus; * Et sicut dies verni circúmdabant eam flores rosárum et lília convállium. V. Quæ est ista quæ ascéndit per desértum sicut vírgula fumi ex aromátibus myrrhæ et thuris? R. Et sicut dies verni circúmdabant eam flores rosárum et lília convállium.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-08-22). Matins reading for day 8, "In Octava
+# Assumptionis," the Assumption's own octave-concluding day -- a direct
+# Scripture reading (Canticles 8:5-10), resolved from
+# data/scripture/cant-8.yml (2026-08 decision).
+octave-readings/~-octave-day-8:
+  source: De Canticis canticorum
+  passages:
+    - book: cant
+      chapter: 8
+      verses: 5-6
+    - book: cant
+      chapter: 8
+      verses: 7-8
+    - book: cant
+      chapter: 8
+      verses: 9-10
+  responsory: |
+    R. Vidi speciósam sicut colúmbam, ascendéntem désuper rivos aquárum, cujus inæstimábilis odor erat nimis in vestiméntis ejus; * Et sicut dies verni circúmdabant eam flores rosárum et lília convállium. V. Quæ est ista quæ ascéndit per desértum sicut vírgula fumi ex aromátibus myrrhæ et thuris? R. Et sicut dies verni circúmdabant eam flores rosárum et lília convállium.
+  status: verified

@@ -1,0 +1,171 @@
+collect:
+  text: |
+    Let us pray.
+    Grant us, Lord, we beseech thee, to glory in the solemnity of thy blessed Apostle Thomas, that we may ever be aided by his patronage, and follow his faith with true devotion.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+commemoration:
+  text: |
+    Ant. Because thou hast seen me, * Thomas, thou hast believed: blessed are they that have not seen and have believed, alleluia.
+    V. They have declared the works of God:
+    R. And have wisely considered of his doings.
+    Let us pray.
+    Grant us, Lord, we beseech thee, to glory in the solemnity of thy blessed Apostle Thomas, that we may ever be aided by his patronage, and follow his faith with true devotion.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: draft
+
+lauds-capitulum:
+  text: 'Brothers: Now therefore you are no more strangers and foreigners; but you are fellow citizens with the saints, and the domestics of God, built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone.'
+  citation: Eph 2:19-20
+  status: verified
+
+lauds-hymn:
+  text: |
+    Now let the earth with joy resound,
+    And heaven the chant re-echo round;
+    Nor heaven nor earth too high can raise
+    The great Apostles' glorious praise.
+
+    O ye who, throned in glory dread,
+    Shall judge the living and the dead,
+    Lights of the world forevermore!
+    To you the suppliant prayer we pour.
+
+    Ye close the sacred gates on high;
+    At your command apart they fly:
+    Oh! loose for us the guilty chain
+    We strive to break, and strive in vain.
+
+    Sickness and health your voice obey;
+    At your command they go or stay:
+    From sin's disease our souls restore;
+    In good confirm us more and more.
+
+    So when the world is at its end,
+    And Christ to judgement shall descend,
+    May we be called those joys to see
+    Prepared from all eternity.
+
+    * Praise to the Father, with the Son,
+    And Holy Spirit, Three in One;
+    As ever was in ages past,
+    And so shall be while ages last. Amen.
+  status: verified
+
+lauds-responsory:
+  text: |
+    R.br. Their sound hath gone * forth into all the earth.
+    R. Their sound hath gone * forth into all the earth.
+    V. And their words unto the ends of the world.
+    R. Forth into all the earth.
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. Their sound hath gone * forth into all the earth.
+  status: verified
+
+lauds-versicle:
+  text: |-
+    V. They declared the works of God.
+    R. And understood his doings.
+  status: verified
+
+vespers-hymn:
+  text: |
+    Now let the earth with joy resound,
+    And heaven the chant re-echo round;
+    Nor heaven nor earth too high can raise
+    The great Apostles' glorious praise.
+
+    O ye who, throned in glory dread,
+    Shall judge the living and the dead,
+    Lights of the world forevermore!
+    To you the suppliant prayer we pour.
+
+    Ye close the sacred gates on high;
+    At your command apart they fly:
+    Oh! loose for us the guilty chain
+    We strive to break, and strive in vain.
+
+    Sickness and health your voice obey;
+    At your command they go or stay:
+    From sin's disease our souls restore;
+    In good confirm us more and more.
+
+    So when the world is at its end,
+    And Christ to judgement shall descend,
+    May we be called those joys to see
+    Prepared from all eternity.
+
+    * Praise to the Father, with the Son,
+    And Holy Spirit, Three in One;
+    As ever was in ages past,
+    And so shall be while ages last.
+    Amen.
+  status: verified
+
+vespers-responsory:
+  text: |
+    R.br. Thou shalt make them princes * over all the earth.
+    R. Thou shalt make them princes * over all the earth.
+    V. They shall remember thy name, O Lord.
+    R. All over the earth.
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. Thou shalt make them princes * over all the earth.
+  status: verified
+
+vespers-versicle:
+  text: |-
+    V. They declared the works of God.
+    R. And understood his doings.
+  status: verified
+
+vespers-versicle/~-first:
+  text: |
+    V. Their sound hath gone forth into all the earth:
+    R. And their words unto the ends of the world.
+  status: verified
+
+benedictus-antiphon:
+  text: 'Because thou hast seen me, * Thomas, thou hast believed: blessed are they that have not seen and have believed, alleluia.'
+  status: verified
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: This is my commandment * that you love one another, as I have loved you.
+    - psalms:
+        - 99
+      antiphon: Greater love than this no man hath, * that a man lay down his life for his friends.
+    - psalms:
+        - 62
+      antiphon: You are my friends * if you do the things that I command you, said the Lord.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Blessed are the peacemakers * the clean of heart, they shall see God.
+  laudate:
+    antiphon: In your patience * you shall possess your souls.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: The Apostle Thomas, called Didymus, or the Twin, was a Galilean. After the descent of the Holy Ghost, he went into many provinces to preach Christ's Gospel. He gave knowledge of the rules of Christian faith and life to the Parthians, Medes, Persians, Hyrcanians, and Bactrians. He went last to the East Indies. Here he provoked the anger of one of the idolatrous kings, because the holiness of his life and teaching, and the number of his miracles, drew many after him, and brought them to the love of Christ Jesus. He was therefore condemned, and slain with lances. He crowned the dignity of the Apostleship with the glory of martyrdom, on the Coromandel coast, not far from Madras.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: John 20:24-29
+      text: At that time, Thomas, one of the Twelve, called the Twin, was not with them when Jesus came. The other disciples therefore said to him, "We have seen the Lord." But he said to them, "Unless I see in His hands the print of the nails, and put my finger into the place of the nails, and put my hand into His side, I will not believe." And after eight days, His disciples were again inside, and Thomas with them. Jesus came, the doors being closed, and stood in their midst, and said, "Peace be to you!" Then He said to Thomas, "Bring here your finger, and see My hands; and bring here your hand, and put it into My side; and be not unbelieving, but believing." Thomas answered and said to Him, "My Lord and my God!" Jesus said to him, "Because you have seen Me, Thomas, you have believed. Blessed are they who have not seen, and yet have believed."
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 26 on the Gospels (on John 20:24-29)
+      text: |-
+        Dearly beloved brethren, what is it in this passage which particularly claimeth our attention? Think ye that it was by accident that this chosen Apostle was not with them when Jesus came? or, when he came, heard? or, when he heard, doubted? or, when he doubted, felt? or when he had felt, believed? All these things were not accidental, but Providential. It was a wonderful provision of Divine mercy, that this incredulous disciple, by thrusting his fingers into the bodily Wounds of his Master, should apply a remedy to the spiritual wounds of unbelief in our souls. The doubts of Thomas have done us more good than the faith of all the disciples that believed. While he feeleth his way to faith, our minds are freed from doubt, and settled in faith.
+
+        Even as the Lord before His birth willed that Mary should be espoused, and yet never lose her virginity, so, after His Resurrection, He willed that His disciple should doubt, and yet not lose his faith. For, even as the espoused husband was the keeper of the virginity of the Mother, so was the disciple who doubted and felt, the witness of the truth of the Resurrection. He felt, and cried out My Lord and my God. Jesus saith unto him Thomas, because thou hast seen Me, thou hast believed. When the Apostle Paul saith: Faith is the substance of things hoped for, the evidence of things not seen, he plainly meaneth that faith is the evidence of things that cannot be seen. When they are seen, there remaineth not faith, but knowledge.
+
+        Thomas, then, seeth, and believeth. Why is it said to him Because thou hast seen Me, thou hast believed? The truth is, he saw one thing, and so believed another. To mortal man it is not given to see God. He therefore saw only the Manhood, and yet had faith in the Godhead: My Lord and my God. This he said, seeing and believing, seeing Perfect Man, and yet believing in Perfect God, Whom he could not see. O what a comfort are the words which follow! Blessed are they that have not seen, and yet have believed. These words are specially meant for us, who have not seen even the Flesh, and who yet do believe. They are specially meant for us if we believe and do not, by our lives, give the lie to our belief. He only hath a saving faith, whose faith beareth fruit.
+      status: verified

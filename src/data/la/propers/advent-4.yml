@@ -1,0 +1,271 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Excita, quǽsumus, Dómine, poténtiam tuam, et veni: et magna nobis virtúte succúrre; ut per auxílium grátiæ tuæ, quod nostra peccáta præpédiunt, indulgéntia tuæ propitiatiónis accéleret:
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-12-19); Latin and English both taken from the page.
+lauds-capitulum:
+  text: 'Fratres: Sic nos exístimet homo ut minístros Christi, et dispensatóres mysteriórum Dei. Hic jam quǽritur inter dispensatóres, ut fidélis quis inveniátur.'
+  citation: 1 Cor 4:1-2
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-12-19); Latin and English both taken from the page.
+lauds-hymn:
+  text: |
+    Vox clara ecce íntonat,
+    Obscúra quæque íncrepat:
+    Pellántur éminus sómnia;
+    Ab æthre Christus prómicat.
+
+    Mens jam resúrgat tórpida
+    Quæ sorde exstat sáucia;
+    Sidus refúlget jam novum,
+    Ut tollat omne nóxium.
+
+    E sursum Agnus míttitur
+    Laxáre gratis débitum:
+    Omnes pro indulgéntia
+    Vocem demus cum lácrimis,
+
+    Secúndo ut cum fúlserit,
+    Mundúmque horror cínxerit,
+    Non pro reátu púniat,
+    Sed nos pius tunc prótegat.
+
+    Laus, honor, virtus, glória,
+    Deo Patri, et Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-12-19); Latin and English both taken from the page.
+lauds-responsory:
+  text: |
+    R.br. Veni ad liberándum nos * Dómine Deus virtútum.
+    R. Veni ad liberándum nos * Dómine Deus virtútum.
+    V. Osténde fáciem tuam et salvi érimus.
+    R. Dómine Deus virtútum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Veni ad liberándum nos * Dómine Deus virtútum.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-12-19); Latin and English both taken from the page.
+lauds-versicle:
+  text: 'V. Vox clamántis in desérto: Paráte viam Dómini. R. Rectas fácite sémitas ejus.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayPrima, 2027-12-19); Latin and English both taken from the page.
+prime-antiphon:
+  text: 'Cánite tuba * in Sion, quia prope est dies Dómini: ecce véniet ad salvándum nos, allelúia, allelúia.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2027-12-19); Latin and English both taken from the page.
+terce-antiphon:
+  text: 'Ecce véniet * desiderátus cunctis Géntibus: et replébitur glória domus Dómini, allelúia.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2027-12-19); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    1 Cor 4:1-2 Fratres: Sic nos exístimet homo ut minístros Christi, et dispensatóres mysteriórum Dei. Hic jam quǽritur inter dispensatóres, ut fidélis quis inveniátur.
+    R. Deo grátias.
+    V. Veni ad liberándum nos, Dómine, Deus virtútum.
+    R. Osténde fáciem tuam, et salvi érimus.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2027-12-19); Latin and English both taken from the page.
+sext-antiphon:
+  text: 'Erunt prava * in dirécta, et áspera in vias planas: veni, Dómine, et noli tardáre, allelúia.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2027-12-19); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    1 Cor 4:3 Mihi autem pro mínimo est, ut a vobis júdicer, aut ab humáno die: sed neque meípsum júdico.
+    R. Deo grátias.
+    V. Osténde nobis, Dómine, misericórdiam tuam.
+    R. Et salutáre tuum da nobis.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2027-12-19); Latin and English both taken from the page.
+none-antiphon:
+  text: Omnípotens Sermo tuus, * Dómine, a regálibus sédibus véniet, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2027-12-19); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    1 Cor 4:5 Itaque nolíte ante tempus judicáre, quoadúsque véniat Dóminus: qui et illuminábit abscóndita tenebrárum, et manifestábit consília córdium: et tunc laus erit unicuíque a Deo.
+    R. Deo grátias.
+    V. Super te, Jerúsalem, oriétur Dóminus.
+    R. Et glória ejus in te vidébitur.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-12-19); Latin and English both taken from the page.
+vespers-hymn:
+  text: |
+    Cónditor alme síderum,
+    Ætérna lux credéntium,
+    Christe, Redémptor ómnium,
+    Exáudi preces súpplicum.
+
+    Qui cóndolens intéritu
+    Mortis períre sǽculum,
+    Salvásti mundum lánguidum,
+    Donans reis remédium,
+
+    Vergénte mundi véspere,
+    Uti sponsus de thálamo,
+    Egréssus honestíssima
+    Vírginis matris cláusula.
+
+    Cujus forti poténtiæ
+    Genu curvántur ómnia;
+    Cæléstia, terréstria
+    Nutu faténtur súbdita.
+
+    Te deprecámur, hágie,
+    Ventúre judex sǽculi,
+    Consérva nos in témpore
+    Hostis a telo pérfidi.
+
+    Laus, honor, virtus, glória,
+    Deo Patri, et Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-12-19); Latin and English both taken from the page.
+vespers-responsory:
+  text: |
+    R.br. Osténde nobis Dómine * Misericórdiam tuam.
+    R. Osténde nobis Dómine * Misericórdiam tuam.
+    V. Et salutáre tuum da nobis.
+    R. Misericórdiam tuam.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Osténde nobis Dómine * Misericórdiam tuam.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-12-19); Latin and English both taken from the page.
+vespers-versicle:
+  text: V. Roráte, cæli, désuper, et nubes pluant justum. R. Aperiátur terra, et gérminet Salvatórem.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-12-19 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Ave, María, * grátia plena: Dóminus tecum: benedícta tu in muliéribus, allelúia.'
+  status: verified
+  temporal: true
+
+# Engine (Monastic Tridentinum 1617, command=prayLaudes, 2026-12-20); source Tempora/Adv4-0.txt's [Ant Laudes] entries 1,2,3,4,5 in Latin and English. Antiphons for the Sunday's own psalm slots (Ps 66 first, no antiphon). Applies via the numbers-override path for this temporal Sunday (resolve-common.ts getPsalmodyNumbersOverrideId).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 50
+      antiphon: 'Cánite tuba * in Sion, quia prope est dies Dómini: ecce véniet ad salvándum nos, allelúia, allelúia.'
+    - psalms:
+        - 117
+      antiphon: 'Ecce véniet * desiderátus cunctis géntibus: et replébitur glória domus Dómini, allelúia.'
+    - psalms:
+        - 62
+      antiphon: 'Erunt prava * in dirécta, et áspera in vias planas: veni, Dómine, et noli tardáre, allelúia.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Dóminus véniet, * occúrrite illi, dicéntes: Magnum princípium, et regni ejus non erit finis: Deus, Fortis, Dominátor, Princeps pacis, allelúia, allelúia.'
+  laudate:
+    antiphon: Omnípotens Sermo tuus, * Dómine, a regálibus sédibus véniet, allelúia.
+
+# Engine (Monastic Tridentinum 1617, command=prayVespera, 2027-12-19). The Sunday's own Second Vespers psalm antiphons; First Vespers (Saturday evening) keeps the ferial Saturday psalmody (hours/vespers.ts).
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'Cánite tuba * in Sion, quia prope est dies Dómini: ecce véniet ad salvándum nos, allelúia, allelúia.'
+    - psalms:
+        - 110
+      antiphon: 'Ecce véniet * desiderátus cunctis géntibus: et replébitur glória domus Dómini, allelúia.'
+    - psalms:
+        - 111
+      antiphon: 'Erunt prava * in dirécta, et áspera in vias planas: veni, Dómine, et noli tardáre, allelúia.'
+    - psalms:
+        - 112
+      antiphon: Omnípotens Sermo tuus, * Dómine, a regálibus sédibus véniet, allelúia.
+
+# Nocturn 2-3, Fourth Sunday of Advent (temporalId advent-4). Sourced from
+# Tempora/Adv4-0.txt (Latin) / English/Tempora/Adv4-0.txt. See
+# advent-1.yml for the general sweep method. (When Dec 24 itself falls on
+# this Sunday, calendar/temporal-id.ts's own Vigil-of-Christmas override
+# takes over that specific date's identity - see vigil-of-christmas.yml -
+# so this file governs the other six possible dates for Advent 4.)
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Leo the Great's
+# 1st Sermon on the December Fast and Almsgiving. Responsory: Lectio4's
+# own (Responsory4, "Nascétur nobis párvulus").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Luke 3:1-6, "Et réliqua") - Pope St. Gregory the Great's
+# Homily 20 on the Gospels begins within Lectio7 itself, same pattern as
+# advent-1/-2/-3. Combined Lectio7's homily portion (incipit dropped) with
+# Lectio8-9, using Responsory7 ("Jurávi, dicit Dóminus").
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Leo the Great, Sermon 1 on the December Fast and Almsgiving
+      text: |-
+        Si fidéliter, dilectíssimi, atque sapiénter creatiónis nostræ intelligámus exórdium, inveniémus hóminem ideo ad imáginem Dei cónditum, ut imitátor sui esset auctóris: et hanc esse naturálem nostri géneris dignitátem, si in nobis, quasi in quodam spéculo, divínæ benignitátis forma respléndeat. Ad quam quotídie nos útique réparat grátia Salvatóris, dum quod cécidit in Adam primo, erígitur in secúndo.
+
+        Causa autem reparatiónis nostræ non est nisi misericórdia Dei: quem non diligerémus, nisi prius nos ipse dilígeret, et ténebras ignorántiæ nostræ, suæ veritátis luce discúteret. Quod per sanctum Isaíam Dóminus denúntians, ait: Addúcam cæcos in viam quam ignorábant, et sémitas quas nesciébant, fáciam illos calcáre: fáciam illis ténebras in lucem, et prava in dirécta. Hæc verba fáciam illis, et non relínquam eos. Et íterum: Invéntus sum, inquit, a non quæréntibus me, et palam appárui iis qui me non interrogábant.
+
+        Quod quómodo implétum sit, Joánnes Apóstolus docet, dicens: Scimus quóniam Fílius Dei venit, et dedit nobis sensum, ut cognoscámus verum, et simus in vero Fílio ejus. Et íterum: Nos ergo diligámus Deum, quóniam ipse prior diléxit nos. Diligéndo ítaque nos Deus, ad imáginem suam nos réparat: et ut in nobis formam suæ bonitátis invéniat, dat unde ipsi quoque quod operátur operémur, accéndens scílicet méntium nostrárum lucérnas, et igne nos suæ caritátis inflámmans, ut non solum ipsum, sed étiam quidquid díligit, diligámus.
+      responsory: |-
+        R. Nascétur nobis párvulus, et vocábitur Deus, Fortis: * Ipse sedébit super thronum David patris sui, et imperábit: cujus potéstas super húmerum ejus.
+        V. In ipso benedicéntur omnes tribus terræ, omnes gentes sérvient ei.
+        R. Ipse sedébit super thronum David patris sui, et imperábit: cujus potéstas super húmerum ejus.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 3:1-6
+      text: 'Anno quintodécimo impérii Tibérii Cǽsaris, procuránte Póntio Piláto Judǽam, tetrárcha autem Galilǽæ Heróde, Philíppo autem fratre ejus tetrárcha Iturǽæ et Trachonítidis regiónis, et Lysánia Abilínæ tetrárcha, sub princípibus sacerdótum Anna et Cáipha: factum est verbum Dómini super Joánnem, Zacharíæ fílium, in desérto. Et venit in omnem regiónem Jordánis, prǽdicans baptísmum pæniténtiæ in remissiónem peccatórum, sicut scriptum est in libro sermónum Isaíæ Prophétæ: Vox clamántis in desérto: Paráte viam Dómini: rectas fácite sémitas ejus: omnis vallis implébitur: et omnis mons et collis humiliábitur: et erunt prava in dirécta, et áspera in vias planas: et vidébit omnis caro salutáre Dei.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 20 on the Gospels
+      text: |-
+        Dicébat Joánnes ad turbas, quæ éxibant ut baptizaréntur ab eo: Genímina viperárum, quis osténdit vobis fúgere a ventúra ira? Ventúra enim ira est animadvérsio ultiónis extrémæ: quam tunc fúgere peccátor non valet, qui nunc ad laménta pœniténtiæ non recúrrit. Et notándum, quod malæ sóboles, malórum paréntum actiónem imitántes, genímina viperárum vocántur: quia per hoc quod bonis ínvident, eósque persequúntur, quod quibúsdam mala retríbuunt, quod læsiónes próximis exquírunt: quóniam in his ómnibus patrum suórum carnálium vias sequúntur, quasi venenáti fílii de venenátis paréntibus nati sunt.
+
+        Sed quia jam peccávimus, quia usu malæ consuetúdinis involúti sumus: dicat quid nobis faciéndum sit, ut fúgere a ventúra ira valeámus. Séquitur: Fácite ergo fructus dignos pœniténtiæ. In quibus verbis notándum est, quod amícus Sponsi non solum fructus pœniténtiæ, sed dignos pœniténtiæ ádmonet esse faciéndos. Aliud namque est fructum fácere pœniténtiæ, aliud, dignum pœniténtiæ fructum fácere. Ut enim secúndum dignos pœniténtiæ fructus loquámur, sciéndum est, quia quisquis illícita nulla commísit, huic jure concéditur, ut lícitis utátur: sicque pietátis ópera fáciat, ut tamen si volúerit, ea quæ mundi sunt, non relínquat.
+
+        At si quis in fornicatiónis culpam, vel fortasse, quod est grávius, in adultérium lapsus est: tanto a se lícita debet abscíndere, quanto se méminit et illícita perpetrásse. Neque enim par fructus boni óperis esse debet, ejus qui minus, et ejus qui ámplius delíquit: aut ejus qui in nullis, et ejus qui in quibúsdam facinóribus cécidit, et ejus qui in multis est lapsus. Per hoc ergo quod dícitur: Fácite fructus dignos pœniténtiæ: uniuscujúsque consciéntia convenítur, ut tanto majóra acquírat bonórum óperum lucra per pœniténtiam, quanto gravióra sibi íntulit damna per culpam.
+      responsory: |-
+        R. Jurávi, dicit Dóminus, ut ultra jam non iráscar super terram: montes enim et colles suscípient justítiam meam, * Et testaméntum pacis erit in Jerúsalem.
+        V. Juxta est salus mea, ut véniat: et justítia mea, ut revelétur.
+        R. Et testaméntum pacis erit in Jerúsalem.
+      status: verified

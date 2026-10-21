@@ -1,0 +1,61 @@
+# Read directly from web/www/horas/Latin/Tempora/Pasc7-6.txt's own
+# [Oratio] and its English counterpart. Standard "Per Dóminum..." closing
+# spelled out in full (the source abbreviates it as "$Per Dominum
+# eiusdem"), matching every other collect in this store.
+collect:
+  text: |
+    Orémus.
+    Méntibus nostris, quǽsumus, Dómine, Spíritum Sanctum benígnus infúnde: cujus et sapiéntia cónditi sumus, et providéntia gubernámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte ejúsdem Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Pasc7-6.txt's own
+# [Ant 2] and its English counterpart.
+benedictus-antiphon:
+  text: Cáritas Dei * diffúsa est in córdibus nostris, per inhabitántem Spíritum ejus in nobis, allelúia.
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Pentecost Ember Saturday (Sabbato Quattuor
+# Temporum Pentecostes) — Gospel pericope (Luke 4:38-44, the healing of
+# Simon's mother-in-law) sourced from web/www/missa/Latin/Tempora/
+# Pasc7-6.txt and missa/English/Tempora/Pasc7-6.txt (horas/Tempora/
+# Pasc7-6.txt only gives the incipit "Luc 4:38" + "Et réliqua"); homily
+# sourced from horas/Latin/Tempora/Pasc7-6.txt and horas/English/Tempora/
+# Pasc7-6.txt.
+#
+# Only 2 lessons in the source (not padded to 3, matching this day's own
+# real shape — unlike Wednesday/Friday's 3): horas/Latin/Tempora/
+# Pasc7-6.txt does carry a bare `[Lectio3]` slot, but it's a cross-season
+# pointer (`@Tempora/Quad3-4:Lectio3`, a Lent-week-3-Thursday homily
+# continuation with no thematic connection to this day), not this day's
+# own content, and its own `[Responsory2]`/`[Responsory3]` are likewise
+# bare cross-references elsewhere (`@Tempora/Pasc7-1:Responsory1`, a
+# different day in the Octave) rather than anything proper to Saturday
+# itself — so only the 2 genuinely-this-day's-own lessons (St. Ambrose's
+# unbroken homily on Simon's mother-in-law) are used, recombined into
+# one reading per the usual convention (see ember-september-friday.yml's
+# own doc comment). Responsory is Lectio1's own (Responsory1 =
+# @Tempora/Pasc7-0:Responsory2) per the "first one, when several
+# collapse" convention.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Luc 4:38-44
+      text: 'In illo témpore: Surgens Jesus de synagóga, introívit in domum Simónis. Socrus autem Simónis tenebátur magnis fébribus: et rogavérunt illum pro ea. Et stans super illam, imperávit febri: et dimísit illam. Et contínuo surgens, ministrábat illis. Cum autem sol occidísset, omnes qui habébant infírmos váriis languóribus, ducébant illos ad eum. At ille síngulis manus impónens, curábat eos. Exíbant autem dæmónia a multis clamántia et dicéntia: Quia tu es Fílius Dei: et íncrepans non sinébat ea loqui, quia sciébant ipsum esse Christum. Facta autem die egréssus ibat in desértum locum, et turbæ requirébant eum, et venérunt usque ad ipsum: et detinébant illum, ne discéderet ab eis. Quibus ille ait: Quia et áliis civitátibus opórtet me evangelizáre regnum Dei: quia ídeo missus sum. Et erat prǽdicans in synagógis Galilǽæ.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Book 4 on Luke 4 (on the healing of Simon's mother-in-law)
+      text: |-
+        Vide cleméntiam Dómini Salvatóris: nec indignatióne commótus nec scélere offénsus, nec injúria violátus Judǽam déserit: quin étiam ímmemor injúriæ, memor cleméntiæ, nunc docéndo, nunc liberándo, nunc sanándo, infídæ plebis corda demúlcet. Et bene sanctus Lucas virum ab spíritu nequítiæ liberátum ante præmísit, et subdit féminæ sanitátem. Utrúmque enim sexum Dóminus curatúrus advénerat: sed prior sanári débuit, qui prior creátus est; nec prætermítti illa, quæ mobilitáte magis ánimi, quam pravitáte peccáverat.
+
+        Sábbato medicínæ Domínicæ ópera cœpta signíficat, ut inde nova creatúra cœ́perit, ubi vetus creatúra ante desívit: nec sub lege esse Dei Fílium, sed supra legem in ipso princípio designáret: nec solvi legem, sed impléri. Neque enim per legem, sed verbo factus est mundus, sicut légimus: Verbo Dómini cæli firmáti sunt. Non sólvitur ergo lex, sed implétur: ut fiat renovátio hóminis jam labéntis. Unde et Apóstolus ait: Exspoliántes vos véterem hóminem, indúite novum, qui secúndum Deum creátus est.
+      responsory: |-
+        R. Repléti sunt omnes Spíritu Sancto: et cœpérunt loqui, prout Spíritus Sanctus dabat éloqui illis: * Et convénit multitúdo dicéntium, allelúia.
+        V. Loquebántur váriis linguis Apóstoli magnália Dei.
+        R. Et convénit multitúdo dicéntium, allelúia.
+      status: verified

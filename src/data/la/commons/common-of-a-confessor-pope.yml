@@ -1,0 +1,154 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C4b.txt ("Commune unius Summi Pontificis
+# Confessoris") and web/www/horas/English/Commune/C4b.txt, 2026-10. A
+# Common-collect template -- `{N}` stands for the saint's own name,
+# substituted by getDayCollect (hours/resolve-common.ts) via
+# SaintRecord.collectCommon/collectName. Same shape as collect-c2b.yml,
+# minus the martyrdom clause. C4b-1 is a bare `@Commune/C4b` redirect, so
+# saints needing it point collectCommon here too.
+collect/c4b:
+  text: |
+    Orémus.
+    Gregem tuum, Pastor ætérne, placátus inténde: et, per beátum {N} Summum Pontíficem, perpétua protectióne custódi; quem totíus Ecclésiæ præstitísti esse pastórem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Same Common-of-a-Confessor Matins hymn as
+# matins-hymn-common-of-a-confessor-not-bishop.yml ("Iste Conféssor Dómini
+# sacrátus") — see that file's header comment for full sourcing detail
+# (Monastic-track textual variant, original English translation).
+matins-hymn:
+  text: |-
+    Iste Conféssor Dómini sacrátus,
+    Festa plebs cujus celébrat per orbem,
+    Hódie lætus méruit secréta
+    Scándere cæli.
+
+    Qui pius, prudens, húmilis, pudícus,
+    Sóbrius, castus fuit et quiétus,
+    Vita dum præsens vegetávit ejus
+    Córporis artus.
+
+    Ob sacrum cujus túmulum frequénter
+    Membra languéntum modo sanitáti,
+    Quólibet morbo fúerint graváta,
+    Restituúntur.
+
+    Unde nunc noster chorus in honórem
+    Ipsius, hymnum canit hunc libénter:
+    Ut piis ejus méritis juvémur
+    Omne per ævum.
+
+    Sit salus illi, decus atque virtus,
+    Qui supra cæli résidens cacúmen,
+    Tótius mundi máchinam gubérnat
+    Trinus et unus. Amen.
+  status: verified
+
+# Same Common-of-a-Confessor invitatory antiphon as
+# matins-invitatory-common-of-a-confessor.yml — see that file's header
+# for full sourcing detail (Commune/C4.txt's own [Invit], inherited
+# verbatim by C4a/C4b/C5 alike; C4b is the Pope-Confessor Common
+# specifically).
+matins-invitatory:
+  text: Regem Confessórum Dóminum, * Veníte, adorémus.
+  status: verified
+
+# New file, 2026-09-15: the Common-category tier of Prime's Lectio
+# Brevis override (see hours/resolve-common.ts's getPrimeLectioBrevis) --
+# a saint with no proper Lectio Prima of her own, but who belongs to a
+# Common category, uses that category's own text rather than falling all
+# the way to the generic per-annum default. Sourced directly from
+# web/www/horas/Latin/Commune/C4.txt's own [Lectio Prima] tag and its
+# English counterpart.
+prime-lectio:
+  text: Fungi sacerdótio, et habére laudem in nómine ipsíus, et offérre illi incénsum dignum in odórem suavitátis.
+  citation: Sir 45:19-20
+  status: verified
+
+# Verified -- C4b (confessor-pope) shares the C4 (confessor-bishop)
+# capitulum at Terce/Sext/None. Content identical to
+# terce-capitulum-common-of-a-confessor-bishop.yml (Sir 44:16-17).
+terce-capitulum:
+  text: |
+    Ecce sacérdos magnus, qui in diébus suis plácuit Deo, et invéntus est justus: et in témpore iracúndiæ factus est reconciliátio.
+    R. Deo grátias.
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+  citation: Sir 44:16-17
+  status: verified
+
+# Verified -- C4b (confessor-pope) shares the C4 (confessor-bishop)
+# capitulum at Sext. Content identical to
+# sext-capitulum-common-of-a-confessor-bishop.yml (Sir 44:20, 44:22).
+sext-capitulum:
+  text: |
+    Non est invéntus símilis illi, qui conserváret legem Excélsi: ídeo jurejurándo fecit illum Dóminus créscere in plebem suam.
+    R. Deo grátias.
+    V. Elégit eum Dóminus sacerdótem sibi.
+    R. Ad sacrificándum ei hóstiam laudis.
+  citation: Sir 44:20; 44:22
+  status: verified
+
+# Verified -- C4b (confessor-pope) shares the C4 (confessor-bishop)
+# capitulum at None. Content identical to
+# none-capitulum-common-of-a-confessor-bishop.yml (Sir 45:19-20).
+none-capitulum:
+  text: |
+    Fungi sacerdótio, et habére laudem in nómine ipsíus, et offérre illi incénsum dignum in odórem suavitátis.
+    R. Deo grátias.
+    V. Tu es sacérdos in ætérnum.
+    R. Secúndum órdinem Melchísedech.
+  citation: Sir 45:19-20
+  status: verified
+
+# Second Vespers versicle of the Common of Confessors. Latin/Commune/C4.txt (and
+# C5/C5b/C5c, which inherit it): [Versum 3] is "@:Versum 2", i.e. "Justum
+# deduxit" (also the Lauds versicle); [Versum 1], First Vespers, is "Amavit eum"
+# -- see the matching -first file. Confirmed against the local reference engine
+# (Monastic Tridentinum 1617, command=prayVespera) on St. Francis (2024-10-03
+# First Vespers "Amavit eum", 2024-10-04 Second Vespers "Justum deduxit"),
+# St. Romuald and St. Bernard. The earlier `votive=` queries behind this file
+# showed the First Vespers versicle, because a votive Vespers is said as one.
+vespers-versicle:
+  text: |-
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+  status: verified
+
+# First Vespers versicle of the Common of Confessors: Latin/Commune/C4.txt
+# [Versum 1] ("Amavit eum"; C5, C5b and C5c inherit it). Second Vespers uses
+# [Versum 3] = "Justum deduxit" -- see the default file; see
+# hours/resolve-common.ts's withVespersVariant. Confirmed against the local
+# reference engine (2024-10-03 St. Francis, 2025-02-06 St. Romuald).
+vespers-versicle/~-first:
+  text: |-
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- C4b
+# (Commune Confessoris Pontificis) Benedictus antiphon is byte-identical
+# to C4 (confessor-bishop). Content sourced from
+# benedictus-antiphon-common-of-a-confessor-bishop.yml.
+benedictus-antiphon:
+  text: Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+  status: verified
+
+# Second Vespers Magnificat antiphon for `common-of-a-confessor-pope`
+# (C4b, Commune Summi Pontificis Confessoris) -- Ant 3 is
+# @Commune/C4:Ant 3 summi Pontificis, which is the distinct Pope
+# Confessor antiphon, not the same as C4 (confessor-bishop).
+# Sourced directly from Latin/Commune/C4b.txt; English is a translation.
+magnificat-antiphon:
+  text: Dum esset Summus Póntifex, * terréna non métuit, sed ad cæléstia regna gloriósus migrávit.
+  status: verified
+
+# First Vespers Magnificat antiphon for this Common: Latin/Commune/C4.txt (also the Pope Confessor Common, C4b, which has no [Ant 1] of its own)'s own
+# [Ant 1] (and its English counterpart), where it differs from [Ant 3]. Second
+# Vespers' [Ant 3] is magnificat-antiphon-common-of-a-confessor-bishop.yml (the default); see
+# hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Sacérdos et Póntifex, * et virtútum ópifex, pastor bone in pópulo, ora pro nobis Dóminum.
+  status: verified

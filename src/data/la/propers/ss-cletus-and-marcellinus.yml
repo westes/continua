@@ -1,0 +1,59 @@
+# Matins Nocturn 2 readings for Ss. Cletus and Marcellinus, Popes and
+# Martyrs (Apr 26) — SanctiM/04-26.txt inherits the whole day
+# (`@Sancti/04-26`) with no Nocturn 2/3 override, so this feast's own
+# proper content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints). A second SanctiM variant
+# (`SanctiM/04-26M.txt`) demotes this to a Cletus-only commemoration,
+# the same "Monastic office narrows a joint feast" pattern already
+# seen for `ss-vincent-and-anastasius.yml` — real proper text about
+# both martyrs is used here per vu-prefer-text-over-missing, not the
+# rank-driven demotion.
+# web/www/horas/Latin/Sancti/04-26.txt, English/Sancti/04-26.txt.
+# Lectio4 (Cletus's own vita) and Lectio5 (Marcellinus's, a genuinely
+# distinct martyr) kept split; Lectio6 (St. Ambrose's sermon on the
+# Easter-season martyrs generally) is its own distinct source, kept
+# separate too. No responsory given in the source.
+#
+# Checked 2026-09-05 for a Gospel pairing: all three readings here are
+# Nocturn 2 (Lectio4-6). St. Ambrose's Sermon 22 is a generic
+# post-Paschaltide "rejoice with the Martyrs" homily reused verbatim
+# for several other martyr-Popes (see ss-soter-and-caius.yml), not tied
+# to any Gospel pericope -- no isGospel pairing applies.
+#
+# Update (2026-09-05, second pass): Nocturn 3 now authored too --
+# 04-26.txt's own [Rule] ("vide C3b") inherits it wholesale from the
+# Common of Popes (C3b -> C4b -> Sancti/03-12: Matt 16:13-19, "Tu es
+# Petrus", Pope St. Leo the Great's own Sermon 2 on the Anniversary of
+# his Election) -- reused verbatim from `st-martin-i.yml`, already
+# authored this session with the identical Common-of-Popes text.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Cletus Romanus, patre Æmiliano, de regione quinta, e vico Patricio, imperatoribus Vespasiano et Tito, Ecclesiam gubernavit. Is ex præcepto Principis Apostolorum in Urbe viginti quinque presbyteros ordinavit. Primus in litteris verbis illis usus est: Salutem et apostolicam benedictionem. Qui Ecclesia optime constituta, cum ei præfuísset annos duodecim, menses septem, dies duos, Domitiano imperatore, secunda post Neronem persecutione, martyrio coronatus est, et in Vaticano juxta corpus beati Petri sepultus.'
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      text: 'Marcellinus Romanus, ab anno ducentesimo nonagesimo sexto ad annum trecentesimum quartum in immani imperatoris Diocletiani persecutione Ecclesiæ præfuit. Multas pertulit angustias ob improbam eorum severitatem, qui eum redarguebant de nimia indulgentia erga lapsos in idololatriam, quæque causa fuit, ut per calumniam infamatus fuerit, quasi thus idolis adhibuisset. Verum hic beatus Pontifex in confessione fidei, una cum tribus aliis Christianis, Claudio, Cyrino et Antonino, capite plexus est. Quorum projecta corpora, cum triginta sex dies jussu imperatoris sepultura caruissent, beatus Marcellus a sancto Petro in somnis admonitus, cum presbyteris et diaconis, hymnis et luminibus adhibitis, honorifice sepelienda curavit in cœmeterio Priscillæ via Salaria. Rexit Ecclesiam annos septem, menses undecim, dies viginti tres: quo tempore fecit ordinationes duas mense Decembri, quibus creavit presbyteros quatuor, episcopos per diversa loca quinque.'
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Sermon 22
+      text: 'Dignum et congruum est, fratres, ut post lætitiam Paschæ, quam in Ecclesia celebravimus, gaudia nostra cum sanctis Martyribus conferamus: et iis annuntiemus Dominicæ resurrectionis gloriam, qui consortes sunt Dominicæ passionis. Qui enim socii sunt contumeliæ, debent et participes esse lætitiæ. Ita enim dicit beatus Apostolus: Sicut socii passionum estis, et resurrectionis eritis; si tolerabimus, inquit, et conregnabimus. Qui ergo toleraverunt mala propter Christum, debent et gloriam habere cum Christo.'
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 16:13-19
+      text: 'In illo témpore: Venit Jesus in partes Cæsaréæ Philíppi, et interrogábat discípulos suos, dicens: Quem dicunt hómines esse Fílium hóminis? At illi dixérunt: Alii Joánnem Baptístam, alii autem Elíam, álii vero Jeremíam, aut unum ex prophétis. Dicit illis Jesus: Vos autem quem me esse dícitis? Respóndens Simon Petrus, dixit: Tu es Christus, Fílius Dei vivi. Respóndens autem Jesus, dixit ei: Beátus es, Simon Bar Jona: quia caro et sanguis non revelávit tibi, sed Pater meus, qui in cœlis est. Et ego dico tibi, quia tu es Petrus, et super hanc petram ædificábo Ecclésiam meam, et portæ ínferi non prævalébunt advérsus eam. Et tibi dabo claves regni cœlórum. Et quodcúmque ligáveris super terram, erit ligátum et in cœlis: et quodcúmque sólveris super terram, erit solútum et in cœlis.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Leo the Great, Sermon 2 on the Anniversary of his own Election (on Matt 16:13-19)
+      text: |-
+        Cum, sicut evangelica lectióne reserátum est, interrogasset Dóminus discipulos, quem ipsum (multis diversa opinántibus) crederent; respondissétque beátus Petrus, dicens: Tu es Christus Fílius Dei vivi; Dóminus ait: Beátus es, Simon Bar-Jona, quia caro et sanguis non revelávit tibi, sed Pater meus, qui in cælis est: et ego dico tibi, quia tu es Petrus, et super hanc petram ædificábo Ecclésiam meam, et portæ ínferi non prævalébunt advérsus eam. Et tibi dabo claves regni cælórum: et quodcúmque ligáveris super terram, erit ligátum et in cælis: et quodcúmque solveris super terram, erit solutum et in cælis. Manet ergo disposítio veritátis, et beátus Petrus, in accepta fortitúdine petræ persevérans, suscepta Ecclésiæ gubernácula non relíquit.
+
+        In univérsa namque Ecclésia, Tu es Christus Fílius Dei vivi, quotídie Petrus dicit; et omnis lingua, quæ confitétur Dóminum, magisterio hujus vocis imbuitur. Hæc fides diabolum vincit et captivórum ejus víncula dissolvit. Hæc érutos mundo, ínserit cælo, et portæ ínferi advérsus eam prævalere non possunt. Tanta enim divinitus soliditate muníta est, ut eam neque hæretica umquam corrumpere pravitas, nec pagána potúerit superare perfidia. His ítaque modis, dilectíssimi, rationábile obsequio celebrétur hodiérna festívitas: ut in persona humilitátis meæ ille intelligátur, ille honorétur, in quo et ómnium pastórum sollicitudo, cum commendatárum sibi óvium custódia persevérat, et cujus étiam dignitas in indigno heréde non déficit.
+
+        Cum ergo cohortatiónes nostras áuribus vestræ sanctitátis adhibemus, ipsum vobis, cujus vice fungimur, loqui crédite: quia et illíus vos afféctu monémus, et non aliud vobis, quam quod docuit, prædicámus; obsecrántes, ut succincti lumbos mentis vestræ, castam et sobriam vitam in Dei timóre ducatis. Corona mea, sicut Apóstolus ait, et gáudium vos estis, si fides vestra, quæ ab inítio Evangélii in universo mundo prædicáta est, in dilectióne et sanctitáte permanserit. Nam licet omnem Ecclésiam, quæ in toto est orbe terrárum, cunctis oporteat florere virtútibus; vos tamen præcipue inter ceteros pópulos decet meritis pietátis excellere, quos in ipsa apostolicæ petræ arce fundatos, et Dóminus noster Jesus Christus cum ómnibus redémit, et beátus Apóstolus Petrus præ ómnibus erudívit.
+      status: verified

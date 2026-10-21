@@ -1,0 +1,541 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C3.txt ("Commune Plurimorum Martyrum
+# Pontificum") and its English counterpart, 2026-08. A Common-collect
+# template for TWO saints named together — `{N}` appears twice,
+# substituted with each of their own names by getDayCollect
+# (hours/resolve-common.ts).
+collect/c3:
+  text: |
+    Orémus.
+    Beatórum Mártyrum paritérque Pontíficum {N} et {N} nos, quǽsumus, Dómine, festa tueántur: et eórum comméndet orátio veneránda.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C3a.txt ("Commune Plurimorum Martyrum") and
+# its English counterpart, 2026-08. A Common-collect template for TWO
+# saints named together — `{N}` appears twice, substituted with each of
+# their own names by getDayCollect (hours/resolve-common.ts).
+collect/c3a:
+  text: |
+    Orémus.
+    Deus, qui nos concédis sanctórum Mártyrum tuórum {N} et {N} natalítia cólere: da nobis in ætérna beatitúdine de eórum societáte gaudére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C3a-1.txt and its English counterpart,
+# 2026-08. A Common-collect template for TWO saints named together —
+# `{N}` appears twice, substituted with each of their own names by
+# getDayCollect (hours/resolve-common.ts).
+collect/c3a-1:
+  text: |
+    Orémus.
+    Deus, qui nos ánnua sanctórum Mártyrum tuórum {N} et {N} sollemnitáte lætíficas: concéde propítius; ut, quorum gaudémus méritis, accendámur exémplis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C6b.txt ("Commune Plurium Virginum
+# Martyrum") and its English counterpart, 2026-08. A Common-collect
+# template for TWO saints named together — `{N}` appears twice,
+# substituted with each of their own names by getDayCollect
+# (hours/resolve-common.ts).
+collect/c6b:
+  text: |
+    Orémus.
+    Da nobis, quǽsumus, Dómine Deus noster, sanctárum Vírginum et Mártyrum tuárum {N} et {N} palmas incessábili devotióne venerári: ut quas digna mente non póssumus celebráre, humílibus saltem frequentémus obséquiis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Commune Plurimorum Martyrum (C3), [Ant 2] -- read directly from the reference engine (Latin/Commune/C3.txt, English/Commune/C3.txt), pairing with the already-verified lauds-versicle-common-of-several-martyrs.yml's Versum 2.
+commemoration-antiphon:
+  text: |
+    Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Matins
+# `votive=C3` live query, 2026-08 -- "Ætérna Christi múnera," the
+# classic Common-of-Several-Martyrs Matins hymn. Same votive-office-view
+# reasoning as this session's earlier Lauds/Vespers entries (this
+# Common's real saints are scattered with no cheap guarantee of an
+# un-outranked day).
+matins-hymn:
+  text: |-
+    Ætérna Christi múnera,
+    Et Mártyrum victórias,
+    Laudes canéntes débitas,
+    Lætis canámus méntibus.
+
+    Terróre victo sǽculi,
+    Pœnísque spretis córporis,
+    Mortis sacræ compéndio
+    Vitam beátam póssident.
+
+    Tradúntur igni Mártyres,
+    Et bestiárum déntibus;
+    Armáta sævit úngulis
+    Tortóris insáni manus.
+
+    Nudáta pendent víscera,
+    Sanguis sacrátus fúnditur;
+    Sed pérmanent immóbiles,
+    Vitæ perénnis grátia.
+
+    Te nunc, Redémptor, quǽsumus,
+    Ut mártyrum consórtio
+    Jungas precántes sérvulos
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Same Common-of-a-Martyr invitatory antiphon as
+# matins-invitatory-common-of-a-martyr.yml — Commune/C3.txt's own
+# [Invit] is a literal `@Commune/C2` redirect (no distinct text of its
+# own for Several Martyrs).
+matins-invitatory:
+  text: Regem Mártyrum Dóminum, * Veníte, adorémus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C3` live query, 2026-08 -- same votive-office-view reasoning as
+# vespers-hymn-common-of-a-martyr-bishop.yml's header (this Common's real
+# saints are scattered across the calendar with no cheap guarantee of an
+# un-outranked day, so the votive view gets the category's true content
+# directly instead). Byte-identical to `votive=C3a`/`C3b`, confirming the
+# Missal-collect split TODO.md records (plain groups of martyrs vs.
+# Pope-martyr groups getting a distinct, more triumphal collect) doesn't
+# carry through to this Office bundle -- both variants share one real
+# chapter/responsory/hymn/versicle here. Same chapter reused for Vespers
+# -- no separate vespers-capitulum-<id> file authored, per vespers.ts's
+# lookupPart (Vespers chapter, Lauds sibling) fallback.
+lauds-capitulum:
+  text: 'Justórum ánimæ in manu Dei sunt, et non tanget illos torméntum mortis. Visi sunt óculis insipiéntium mori: illi autem sunt in pace.'
+  citation: Sap 3:1-3
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C3` live query, 2026-08 -- see lauds-capitulum-common-of-
+# several-martyrs.yml's header for why the votive-office view was used.
+# "Rex glorióse Mártyrum" -- the classic Common-of-Several-Martyrs Lauds
+# hymn, a single genuine recension found in the reference engine.
+lauds-hymn:
+  text: |-
+    Rex glorióse Mártyrum,
+    Coróna confiténtium,
+    Qui respuéntes térrea
+    Perdúcis ad cæléstia:
+
+    Aurem benígnam prótinus
+    Appóne nostris vócibus:
+    Trophǽa sacra pángimus:
+    Ignósce quod delíquimus.
+
+    Tu vincis in Martýribus,
+    Parcéndo Confessóribus:
+    Tu vince nostra crímina,
+    Donándo indulgéntiam.
+
+    * Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc et in perpétuum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C3` live query, 2026-08 -- see lauds-capitulum-common-of-
+# several-martyrs.yml's header for why the votive-office view was used.
+lauds-responsory:
+  text: |
+    R.br. Lætámini in Dómino, * Et exsultáte justi.
+    R. Lætámini in Dómino, * Et exsultáte justi.
+    V. Et gloriámini omnes recti corde.
+    R. Et exsultáte justi.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Lætámini in Dómino, * Et exsultáte justi.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C3` live query, 2026-08 -- same versicle as Vespers -- see
+# vespers-versicle-common-of-several-martyrs.yml's header.
+lauds-versicle:
+  text: |
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Ss. Faustinus and Jovita, 02-15-2038) -- common-of-several-martyrs.
+# For groups of martyrs who are not Popes (see
+# common-of-pope-martyrs.yml for that distinct, allelúia-toned set) --
+# cross-checked against Ss. Cornelius and Cyprian, Ss. Placid and
+# Companions (a real Duplex II. classis feast, not just a stub --
+# confirms this fallback applies at any rank, per
+# resolveMinorHourAntiphon's own "eligible, not gated" design).
+prime-antiphon:
+  text: Omnes Sancti, * quanta passi sunt torménta, ut secúri pervenírent ad palmam martýrii.
+  status: verified
+
+# New file, 2026-09-15: the Common-category tier of Prime's Lectio
+# Brevis override (see hours/resolve-common.ts's getPrimeLectioBrevis) --
+# a saint with no proper Lectio Prima of her own, but who belongs to a
+# Common category, uses that category's own text rather than falling all
+# the way to the generic per-annum default. Sourced directly from
+# web/www/horas/Latin/Commune/C3.txt's own [Lectio Prima] tag and its
+# English counterpart.
+prime-lectio:
+  text: 'Fulgébunt justi, et tamquam scintíllæ in arundinéto discúrrent. Judicábunt natiónes, et dominabúntur pópulis: et regnábit Dóminus illórum in perpétuum.'
+  citation: Sap 3:7-8
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Ss. Faustinus and Jovita, 02-15-2038) -- common-of-several-martyrs.
+# For groups of martyrs who are not Popes (see
+# common-of-pope-martyrs.yml for that distinct, allelúia-toned set) --
+# cross-checked against Ss. Cornelius and Cyprian, Ss. Placid and
+# Companions (a real Duplex II. classis feast, not just a stub --
+# confirms this fallback applies at any rank, per
+# resolveMinorHourAntiphon's own "eligible, not gated" design).
+terce-antiphon:
+  text: Cum palma * ad regna pervenérunt Sancti, corónas decóris meruérunt de manu Dei.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Ss. Faustinus and Jovita, 02-15-2038) -- common-of-several-martyrs.
+# For groups of martyrs who are not Popes (see
+# common-of-pope-martyrs.yml for that distinct, allelúia-toned set) --
+# cross-checked against Ss. Cornelius and Cyprian, Ss. Placid and
+# Companions (a real Duplex II. classis feast, not just a stub --
+# confirms this fallback applies at any rank, per
+# resolveMinorHourAntiphon's own "eligible, not gated" design).
+terce-capitulum:
+  text: |
+    Justórum ánimæ in manu Dei sunt, et non tanget illos torméntum mortis. Visi sunt óculis insipiéntium mori: illi autem sunt in pace.
+    R. Deo grátias.
+    V. Lætámini in Dómino, et exsultáte justi.
+    R. Et gloriámini omnes recti corde.
+  citation: Sap 3:1-3
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Ss. Faustinus and Jovita, 02-15-2038) -- common-of-several-martyrs.
+# For groups of martyrs who are not Popes (see
+# common-of-pope-martyrs.yml for that distinct, allelúia-toned set) --
+# cross-checked against Ss. Cornelius and Cyprian, Ss. Placid and
+# Companions (a real Duplex II. classis feast, not just a stub --
+# confirms this fallback applies at any rank, per
+# resolveMinorHourAntiphon's own "eligible, not gated" design).
+sext-antiphon:
+  text: 'Córpora Sanctórum * in pace sepúlta sunt: et vivent nómina eórum in ætérnum.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Ss. Faustinus and Jovita, 02-15-2038) -- common-of-several-martyrs.
+# For groups of martyrs who are not Popes (see
+# common-of-pope-martyrs.yml for that distinct, allelúia-toned set) --
+# cross-checked against Ss. Cornelius and Cyprian, Ss. Placid and
+# Companions (a real Duplex II. classis feast, not just a stub --
+# confirms this fallback applies at any rank, per
+# resolveMinorHourAntiphon's own "eligible, not gated" design).
+sext-capitulum:
+  text: |
+    Réddidit Deus mercédem labórum sanctórum suórum, et dedúxit illos in via mirábili: et fuit illis in velaménto diéi, et in luce stellárum nocte.
+    R. Deo grátias.
+    V. Exsúltent justi in conspéctu Dei.
+    R. Et delecténtur in lætítia.
+  citation: Sap 10:17
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Ss. Faustinus and Jovita, 02-15-2038) -- common-of-several-martyrs.
+# For groups of martyrs who are not Popes (see
+# common-of-pope-martyrs.yml for that distinct, allelúia-toned set) --
+# cross-checked against Ss. Cornelius and Cyprian, Ss. Placid and
+# Companions (a real Duplex II. classis feast, not just a stub --
+# confirms this fallback applies at any rank, per
+# resolveMinorHourAntiphon's own "eligible, not gated" design).
+none-antiphon:
+  text: Mártyrum chorus * laudáte Dóminum de cælis, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Ss. Faustinus and Jovita, 02-15-2038) -- common-of-several-martyrs.
+# For groups of martyrs who are not Popes (see
+# common-of-pope-martyrs.yml for that distinct, allelúia-toned set) --
+# cross-checked against Ss. Cornelius and Cyprian, Ss. Placid and
+# Companions (a real Duplex II. classis feast, not just a stub --
+# confirms this fallback applies at any rank, per
+# resolveMinorHourAntiphon's own "eligible, not gated" design).
+none-capitulum:
+  text: |
+    Fulgébunt justi, et tamquam scintíllæ in arundinéto discúrrent. Judicábunt natiónes, et dominabúntur pópulis: et regnábit Dóminus illórum in perpétuum.
+    R. Deo grátias.
+    V. Justi autem in perpétuum vivent.
+    R. Et apud Dóminum est merces eórum.
+  citation: Sap 3:7-8
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C3` live query, 2026-08 -- "Sanctórum méritis ínclyta gáudia,"
+# byte-identical to `votive=C3a`/`C3b` -- see lauds-capitulum-common-of-
+# several-martyrs.yml's header for the fuller gap/sourcing writeup.
+vespers-hymn:
+  text: |-
+    Sanctórum méritis ínclyta gáudia
+    Pangámus, sócii, géstaque fórtia:
+    Nam gliscit ánimus prómere cántibus
+    Victórum genus óptimum.
+
+    Hi sunt quos rétinens mundus inhórruit:
+    Ipsum nam stérili flore peráridum
+    Sprevére pénitus, teque secúti sunt,
+    Rex Christe bone cǽlitus.
+
+    Hi pro te fúrias atque ferócia
+    Calcárunt hóminum, sǽvaque vérbera:
+    Cessit his lácerans fórtiter úngula,
+    Nec carpsit penetrália.
+
+    Cædúntur gládiis more bidéntium:
+    Non murmur résonat, non querimónia:
+    Sed corde tácito mens bene cónscia
+    Consérvat patiéntiam.
+
+    Quæ vox, quæ póterit lingua retéxere,
+    Quæ tu Martyribus múnera prǽparas?
+    Rubri nam flúido sánguine láureis
+    Ditántur bene fúlgidis.
+
+    Te summa Déitas únaque póscimus,
+    Ut culpas ábluas, nóxia súbtrahas,
+    Des pacem fámulis, nos quoque glóriam
+    Per cuncta tibi sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C3` live query, 2026-08 -- see lauds-capitulum-common-of-
+# several-martyrs.yml's header for why the votive-office view was used.
+vespers-responsory:
+  text: |
+    R.br. Exsúltent justi * In conspéctu Dei.
+    R. Exsúltent justi * In conspéctu Dei.
+    V. Et delecténtur in lætítia.
+    R. In conspéctu Dei.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Exsúltent justi * In conspéctu Dei.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C3` live query, 2026-08 -- same versicle as Lauds (see lauds-
+# versicle-common-of-several-martyrs.yml).
+vespers-versicle:
+  text: |
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# Common-level: 10-05 ss-placid-and-companions. First Vespers variant; the default (second Vespers) file is the
+# same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Lætámini in Dómino, et exsultáte justi.
+    R. Et gloriámini omnes recti corde.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Ss. Faustinus and Jovita, 02-15-2038) -- common-of-several-martyrs.
+# For groups of martyrs who are not Popes (see
+# common-of-pope-martyrs.yml for that distinct, allelúia-toned set) --
+# cross-checked against Ss. Cornelius and Cyprian, Ss. Placid and
+# Companions (a real Duplex II. classis feast, not just a stub --
+# confirms this fallback applies at any rank, per
+# resolveMinorHourAntiphon's own "eligible, not gated" design).
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Second Vespers Magnificat antiphon for `common-of-several-martyrs`
+# (Commune Plurimorum Martyrum, Latin/Commune/C3.txt's own [Ant 3] --
+# confirmed by file position and live-verified directly: Ss. Placid and
+# Companions' own Second Vespers (10-05-2026, no "Vespera de sequenti")
+# renders this exact text, while the evening before (10-04-2026, "Vespera
+# de sequenti") renders C3's own [Ant 1] instead -- pins down Ant1 =
+# First Vespers, Ant3 = Second Vespers for this file layout. Ant 2 in
+# the same file matches the already-authored
+# benedictus-antiphon-common-of-several-martyrs.yml's "Vestri capilli
+# capitis" text exactly.
+magnificat-antiphon:
+  text: 'Gaudent in cælis * ánimæ Sanctórum, qui Christi vestígia sunt secúti: et quia pro ejus amóre sánguinem suum fudérunt, ídeo cum Christo exsúltant sine fine.'
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# Common-level: 10-05 ss-placid-and-companions. First Vespers variant; the default (second Vespers) file is the
+# same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Istórum est enim * regnum cælórum qui contempsérunt vitam mundi, et pervenérunt ad prǽmia regni, et lavérunt stolas suas in sánguine Agni.
+  status: verified
+
+# Generic Common-of-Several-Martyrs Matins psalmody, live-verified
+# against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayMatutinum, 2029-01-20 -- Ss. Fabian and Sebastian,
+# Martyrs, whose own rule is entirely Common, no proper antiphon of
+# their own -- so their own output *is* this category's generic
+# scheme). Confirmed genuinely distinct from `common-of-a-martyr.yml`'s
+# scheme (a single martyr), not a duplicate: different psalm numbers in
+# both nocturns (Nocturn 1: 1,2,10,14,15,23 here vs 1,2,4,5,8,10 there;
+# Nocturn 2: 32,33,45,60,63,78 here vs 14,20,23,63,64,91 there) and a
+# different Nocturn 3 canticle source (Wisdom 3/10 here vs Sirach 14/15
+# + Jeremiah 17 + Sirach 31 there).
+#
+# One wrinkle: the reference engine's own English track has no
+# translation for two antiphons here -- Nocturn 1's Psalm 10 antiphon
+# ("Oculi Dómini...") and Nocturn 3's ("Beáti, qui persecutiónem...",
+# the standard "Blessed are they that suffer persecution" Beatitude
+# text, Matt 5:10) -- its rendered "English" column just repeats the
+# Latin for both. The English given below for those two is an original
+# translation (matching this project's other Douay-adjacent psalm-
+# antiphon phrasing, e.g. Ps 10:5's own "His eyes look on the poor
+# man"), not reused reference-engine text.
+#
+# 40 saints/groups on the calendar carry this `common` id -- the
+# largest single Common category by population -- so this file unlocks
+# real (non-ferial-fallback) Matins psalmody for all of them at once,
+# even before any of them has its own proper `saints/*.yml` entry.
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 1
+        antiphon: Secus decúrsus aquárum * plantávit víneam justórum, et in lege Dómini fuit volúntas eórum.
+      - psalms:
+          - 2
+        antiphon: 'Tamquam aurum * in fornáce probávit eléctos Dóminus: et quasi holocáusta accépit eos in ætérnum.'
+      - psalms:
+          - 10
+        antiphon: Oculi Dómini * respexérunt in páuperes, † cum peccatóres arcus suos in eos inténderent.
+      - psalms:
+          - 14
+        antiphon: Dabo Sanctis meis * locum nominátum in regno Patris mei, dicit Dóminus.
+      - psalms:
+          - 15
+        antiphon: Sanctis, qui in terra sunt ejus, * mirificávit omnes voluntátes meas inter illos.
+      - psalms:
+          - 23
+        antiphon: Sancti qui sperant in Dómino, * habébunt fortitúdinem, assúment pennas ut áquilæ, volábunt, et non defícient.
+    versicle:
+      v: Lætámini in Dómino, et exsultáte justi.
+      r: Et gloriámini omnes recti corde.
+  nocturn2:
+    groups:
+      - psalms:
+          - 32
+        antiphon: Justi autem * in perpétuum vivent, et apud Dóminum est merces eórum.
+      - psalms:
+          - 33
+        antiphon: 'Tradidérunt * córpora sua in mortem, ne servírent idólis: ídeo coronáti póssident palmam.'
+      - psalms:
+          - 45
+        antiphon: 'Ecce merces * Sanctórum copiósa est apud Deum: ipsi vero mórtui sunt pro Christo, et vivent in ætérnum.'
+      - psalms:
+          - 60
+        antiphon: Istórum est enim * regnum cælórum, qui contempsérunt vitam mundi, et pervenérunt ad premia regni, et lavérunt stolas suas in sanguine Agni.
+      - psalms:
+          - 63
+        antiphon: Sanguis sanctórum mártyrum * pro Christo effúsus est in terra; ideo adépti sunt munera sempitérna.
+      - psalms:
+          - 78
+        antiphon: Víndica Domine * sánguinem Sanctórum tuórum, qui effúsus est super terram.
+    versicle:
+      v: Exsúltent justi in conspéctu Dei.
+      r: Et delecténtur in lætítia.
+  nocturn3:
+    antiphon: Beáti, * qui persecutiónem patiúntur propter justítiam, quóniam ipsórum est regnum cælórum.
+    canticles:
+      - refs:
+          - book: sap
+            chapter: 3
+            verses: 1-6
+      - refs:
+          - book: sap
+            chapter: 3
+            verses: 7-9
+      - refs:
+          - book: sap
+            chapter: 10
+            verses: 17-21
+    versicle:
+      v: Justi autem in perpétuum vivent.
+      r: Et apud Dóminum est merces eórum.
+  aliases:
+    - common-of-pope-martyrs
+
+# Generic Common-of-Several-Martyrs Lauds psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayLaudes,
+# votive=C3). Psalm numbers (92, 99, 62, Canticum Trium Puerorum) are the
+# same fixed Duplex-majus+ set used by every Common (see
+# hours/lauds-psalmody-overrides.ts's own doc comment) -- only these
+# antiphons (all plural "Sancti"/"Martyres") are specific to this Common.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Omnes Sancti, * quanta passi sunt torménta, ut secúri pervenírent ad palmam martýrii.
+    - psalms:
+        - 99
+      antiphon: Cum palma * ad regna pervenérunt Sancti, corónas decóris meruérunt de manu Dei.
+    - psalms:
+        - 62
+      antiphon: 'Córpora Sanctórum * in pace sepúlta sunt: et vivent nómina eórum in ætérnum.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Mártyres Dómini * Dóminum benedícite in ætérnum.
+  laudate:
+    antiphon: Mártyrum chorus * laudáte Dóminum de cælis, allelúia.
+  aliases:
+    - common-of-pope-martyrs
+
+# Generic Common-of-Several-Martyrs Vespers psalmody, live-verified
+# against Divinum Officium (Monastic Tridentinum 1617, command=
+# prayVespera, votive=C3, 2026-08-28). Same four psalm numbers as
+# Common-of-a-Martyr (109, 111, 112, 115) -- only the antiphons (all
+# plural "Sancti") differ, so this is deliberately its own category file
+# rather than an alias of common-of-a-martyr.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Isti sunt Sancti, * qui pro testaménto Dei sua córpora tradidérunt, et in sánguine Agni lavérunt stolas suas.
+    - psalms:
+        - 111
+      antiphon: Sancti per fidem * vicérunt regna, operáti sunt iustítiam, adépti sunt repromissiónes.
+    - psalms:
+        - 112
+      antiphon: 'Sanctórum velut áquilæ * iuvéntus renovábitur: florébunt sicut lílium in civitáte Dómini.'
+    - psalms:
+        - 115
+      antiphon: In cæléstibus regnis * Sanctórum habitátio est, et in ætérnum réquies eórum.
+  aliases:
+    - common-of-pope-martyrs
+
+# First Vespers of the Common of Several Martyrs.
+# Engine render (Monastic Tridentinum 1617, command=prayVespera), Ss. Fabian and Sebastian's eve 2026-01-19. See hours/resolve-common.ts's VespersVariant.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Omnes Sancti, * quanta passi sunt torménta, ut secúri pervenírent ad palmam martýrii.
+    - psalms:
+        - 110
+      antiphon: Cum palma * ad regna pervenérunt Sancti, corónas decóris meruérunt de manu Dei.
+    - psalms:
+        - 111
+      antiphon: 'Córpora Sanctórum * in pace sepúlta sunt: et vivent nómina eórum in ætérnum.'
+    - psalms:
+        - 112
+      antiphon: Mártyrum chorus * laudáte Dóminum de cælis, allelúia.
+  aliases:
+    - common-of-pope-martyrs

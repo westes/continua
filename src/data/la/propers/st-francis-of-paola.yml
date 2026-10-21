@@ -1,0 +1,70 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2042-04-14 (his true date, Apr 2, was blocked by Holy Week that year, so he transferred here)).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, humílium celsitúdo, qui beátum Francíscum Confessórem Sanctórum tuórum glória sublimásti: tríbue, quǽsumus; ut, ejus méritis et imitatióne, promíssa humílibus prǽmia felíciter consequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-francis-of-paola-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-francis-of-paola-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, humílium celsitúdo, qui beátum Francíscum Confessórem Sanctórum tuórum glória sublimásti: tríbue, quǽsumus; ut, ejus méritis et imitatióne, promíssa humílibus prǽmia felíciter consequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 04-02
+# st-francis-of-paola (new saint-level second). See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle:
+  text: |
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 04-02
+# st-francis-of-paola (saint file = second). First Vespers variant; the default (second Vespers) file is the
+# same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Francis of Paola's own day (2030-04-02 -- Holy Week/
+# Eastertide govern 2026-2029). The Benedictus antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Francis of Paola, Confessor (Apr 2) —
+# pre-1955-but-post-1617 (no SanctiM/04-02*.txt at all).
+# web/www/horas/Latin/Sancti/04-02.txt, English/Sancti/04-02.txt.
+# Lectio4-6 is this saint's own proper text, one continuous vita account,
+# no internal break, combined into a single reading; Lectio7-9 are
+# Common-of-a-Confessor (skipped). No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Francíscus Paulæ, quod est Calábriæ óppidum, loco húmili natus est; quem paréntes, cum diu prole caruíssent, voto facto, beáti Francísci précibus suscepérunt. Is adoléscens divíno ardóre succénsus in erémum secéssit, ubi annis sex, victu ásperam, sed meditatiónibus cæléstibus suávem vitam duxit. Sed cum virtútum ejus fama lóngius manáret, multíque ad eum pietátis stúdio concúrrerent, fratérnæ caritátis causa e solitúdine egréssus, ecclésiam prope Paulam ædificávit, ibíque prima sui órdinis fundaménta jecit.
+
+        Erat in eo mirífica loquéndi grátia: perpétuam virginitátem servávit: humilitátem sic cóluit, ut se ómnium mínimum díceret, suósque alúmnos Mínimos appellári volúerit. Rudi amíctu, nudis pédibus incédens, humi cubábat. Cibi abstinéntia fuit admirábili: semel in die post solis occásum reficiebátur, et ad panem, et aquæ potum, vix áliquid ejusmodi obsónii adhibébat, quo vesci in Quadragésima licet: quam consuetúdinem, ut fratres sui toto anni témpore retinérent, quarto eos voto adstrínxit.
+
+        Multis miráculis servi sui sanctitátem Deus testári vóluit, quorum illud in primis célebre, quod a nautis rejéctus, Sicíliæ fretum strato super flúctibus pállio cum sócio transmísit. Multa étiam futúra prophético spíritu prædíxit. A Ludovíco undécimo Francórum rege expetítus, magnóque in honóre est hábitus. Dénique annum primum et nonagésimum agens, Turónis migrávit ad Dominum: cujus corpus dies úndecim insepúltum, ita incorrúptum permánsit, ut suávem étiam odórem effláret. Eum Leo Papa décimus in Sanctórum númerum rétulit.
+      status: verified

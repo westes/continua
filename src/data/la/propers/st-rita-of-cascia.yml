@@ -1,0 +1,57 @@
+# Read directly from web/www/horas/Latin/Sancti/05-22n.txt's own [Oratio].
+# The reference engine's English/Sancti/05-22n.txt carries only the
+# [Officium] name, no translated collect -- the English below is this
+# project's own translation, marked draft accordingly.
+collect:
+  text: |
+    Orémus.
+    Deus, qui sanctæ Ritæ tantam grátiam conférre dignátus es, ut inimícos dilígeret et in corde ac fronte
+    caritátis et passiónis tuæ signa portáret: da nobis, quǽsumus, ejus intercessióne et méritis; inimícis
+    nostris sic párcere et passiónis tuæ dolóres contemplári, ut promíssa mítibus ac lugéntibus prǽmia
+    consequámur:
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle, same combined-bundle shape as
+# st-canute-commemoration.yml. Ant 2/Versum 2 are the standard de-Communi
+# pairing for the Common of a Holy Woman (C7a, her own real common per
+# [Rank]/[Rule]) -- common-of-a-holy-woman-commemoration-antiphon.yml /
+# lauds-versicle-common-of-a-holy-woman.yml, both already verified
+# elsewhere (Common text, not proper to Rita). Collect's English half is
+# this project's own translation (see st-rita-of-cascia-collect.yml).
+commemoration:
+  text: |
+    Ant. Símile est regnum cælórum * hómini negotiatóri quærénti bonas margarítas: invénta una pretiósa, dedit ómnia sua, et comparávit eam.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Deus, qui sanctæ Ritæ tantam grátiam conférre dignátus es, ut inimícos dilígeret et in corde ac fronte caritátis et passiónis tuæ signa portáret: da nobis, quǽsumus, ejus intercessióne et méritis; inimícis nostris sic párcere et passiónis tuæ dolóres contemplári, ut promíssa mítibus ac lugéntibus prǽmia consequámur:
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Rita of Cascia, Widow (May 22).
+# UNUSUAL CASE: `web/www/horas/Latin/Sancti/05-22n.txt` carries no [Lectio]
+# content at all -- only [Rank]/[Rule]/[Oratio]/[Name], no vita of any
+# kind, Latin or English (matches its Duplex-optional/vide-Common status;
+# the source apparently expected this feast to lean entirely on the Common
+# of a Holy Woman's own Matins). Rather than leave this as a bare "missing"
+# placeholder (this project's "prefer real text over missing" convention),
+# a concise vita is authored below from well-attested biographical fact
+# (her marriage and long-suffering widowhood, entry into the Augustinian
+# convent at Cascia, the wound believed to be from Christ's crown of
+# thorns, and her 1900 canonization). English was drafted first, then the
+# Latin below translated from it in the corpus's own liturgical register
+# (cf. st-canute.yml/st-gorgonius.yml's Lectio style) -- neither text is
+# from a real historical liturgical source, so both are marked `draft`,
+# not `verified`.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Rita, Roccaporénæ prope Cásiam in Umbria orta anno millésimo trecentésimo octogésimo primo, paréntibus jam ætáte provéctis nata est. A pueritia se totam Deo tradere cupiébat; sed paréntum obsequens voluntáti, viro violénto et rixóso ánimo in matrimónium data est. Per octodécim annos ejus durítiam et infidelitátes patiénter tulit, eúmque tandem, ántequam ab inimícis quos síbi fécerat occíderetur, ad pæniténtiam addúxit. Fílii ejus duo, paterna cæde ad ultiónem incitáti, patris necem ulcísci statuérunt; Rita vero, ne fílii se ultiónis reátu pollúerent, Deum orávit ut eos pótius ad se assúmeret quam in mortálem culpam prolábi síneret; et ambo mox morbo corrépti, Deo reconciliáti, obiérunt.
+
+        Vídua sine libéris relícta, Rita in monastérium Augustiniánum Cásiæ ingredi cupívit; sed primum repúlsa est, quóniam ejus régula solas vírgines aut víduas quarum viri in pace obíerant recipiébat. In oratióne perseverávit; et tráditio fert eam, trium suórum patrónorum Augustíni, Nicolái Tolentináti, et Joánnis Baptístæ intercessióne, intra claustri sepes esse indúctam. Intra claustrum austeritáti sese dedit, et assíduæ in Domínicæ Passiónis meditatióni. Cum ante crucifíxum quondam oráret, in fronte plagam quasi ex spina corónæ ejus accépit, quæ numquam sanáta est, quamque, sæpe cum gravi dolóre et áliis offensióni, per última quíndecim vitæ suæ annos gessit. Obiit Cásiæ anno millésimo quadringentésimo quinquagésimo séptimo, et a Leóne Papa Décimo Tértio anno millésimo nongentésimo canonizáta est. Invocátur præcípue ab iis qui in matrimónio, viduitáte, ac ærúmnis graves sarcínas ferunt, tamquam desperatárum et pæne impossibílium causárum patróna.
+      status: draft

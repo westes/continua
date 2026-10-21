@@ -1,0 +1,65 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output. Originally
+# checked against 2029-01-23 (a transfer-year artifact, see
+# st-hilary-of-poitiers.yml's own corrected note); re-confirmed identical
+# on 2026-01-14, his real fixed date, so the collect text itself was
+# never wrong, only the date this app filed it under.
+collect:
+  text: |
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut beáti Hilárii Confessóris tui atque Pontíficis veneránda solémnitas, et devotiónem nobis áugeat et salútem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-hilary-of-poitiers-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-hilary-of-poitiers-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut beáti Hilárii Confessóris tui atque Pontíficis veneránda solémnitas, et devotiónem nobis áugeat et salútem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Hilary's real fixed day (2026-01-14) -- the Benedictus
+# antiphon. See st-hilary-of-poitiers.yml's own updated note: his previous
+# "own day" (2029-01-23) turned out to be a one-year transfer artifact,
+# not his real date.
+benedictus-antiphon:
+  text: Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Hilary of Poitiers, Bishop, Confessor,
+# Doctor (Jan 14) — SanctiM/01-14.txt inherits the whole day (`@Sancti/01-14`)
+# with no Nocturn 2/3 override, so this saint's own vita is sourced from
+# the Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints/vu-reference-engine-file-layout).
+# web/www/horas/Latin/Sancti/01-14.txt, English/Sancti/01-14.txt.
+# Lectio4-5 combined with Lectio6 (itself internally split into
+# `Lectio6beginning`/`Lectio6recentaddition` by the source, purely to
+# splice in a later Vatican-added closing paragraph about his 1851
+# Doctor-of-the-Church declaration) — all one continuous vita, no
+# genuine source change. Lectio7-9 fall back to Common of a Doctor
+# (`Commune/C4a`), not proper text, so not authored here. No responsory
+# given in the source for these lessons.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Hilárius, in Aquitánia nóbili génere natus, doctrína et eloquéntia excélluit. Qui primum in matrimónio quasi mónachi vitam egit: deínde propter singuláres virtútes Pictavórum epíscopus creátur: quod munus episcopále sic gessit, ut a fidélibus summam laudem consequerétur. Quo témpore, cum terróribus, bonórum spoliatióne, exsílio, et omni crudelitáte Constántius imperátor Cathólicos vexáret, nisi ad Ariánas partes transírent; Hilárius tamquam firmíssimum murum se Ariánis oppónens, illórum furórem in se concitávit. Itaque multis petítus insídiis, tandem dolo Saturníni Arelaténsis epíscopi, de sýnodo Biterrénsi in Phrýgiam relegátus est: ubi et mórtuum suscitávit, et libros duódecim scripsit de Trinitáte contra Ariános.
+
+        Quadriénnio post coácto concílio ad Seléuciam, Isáuriæ urbem, Hilárius adésse compúlsus est: ac deínde Constantinópolim proféctus, ubi extrémum fídei perículum animadvértit, tribus libéllis públice datis, audiéntiam imperatóris popóscit, ut de fide cum adversáriis coram disputáret. Verum cum Ursácius et Valens Ariáni epíscopi, quos Hilárius scriptis confutárat, præséntis eruditiónem pertiméscerent, Constántio persuasérunt, ut spécie honóris eum in suum episcopátum restitúeret. Tunc Hilárium e prǽlio hæreticórum reverténtem, ut inquit sanctus Hierónymus, Galliárum ecclésia cómplexa est: quem ad episcopátum secútus est Martínus, qui póstea Turonénsi prǽfuit ecclésiæ; tantúmque illo doctóre profécit, quantum ejus póstea sánctitas declarávit.
+
+        Magna deínceps tranquillitáte Pictavórum ecclésiam administrávit: Galliámque univérsam addúxit, ut Arianórum impietátem condemnáret. Multos libros scripsit mira eruditióne; quos omnes sanctus Hierónymus ad Lætam, sine ulla erróris suspicióne legi posse testátur illis verbis: Hilárii libros inoffénso decúrrat pede. Migrávit in cælum Idibus Januárii, Valentiniáno et Valénte imperatóribus, anno post Christum natum trecentésimo sexagésimo nono. Eum a multis Pátribus et concíliis insígnem Ecclésiæ Doctórem nuncupátum, atque uti talem in áliquot diœcésibus cultum, tandem instánte sýnodo Burdigalénsi Pius nonus Póntifex máximus, ex sacrórum Rítuum Congregatiónis consúlto, universális Ecclésiæ Doctórem declarávit et confirmávit, ac ipsíus festo die Missam et Offícium de Doctóribus ab ómnibus recitári jussit.
+      status: verified

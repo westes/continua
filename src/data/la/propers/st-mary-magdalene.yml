@@ -1,0 +1,217 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2028-07-22).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Beátæ Maríæ Magdalénæ, quǽsumus, Dómine, suffrágiis adjuvémur: cujus précibus exorátus, quatriduánum fratrem Lázarum vivum ab ínferis resuscitásti:
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-mary-magdalene-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-holy-woman (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (st-mary-magdalene-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. María unxit pedes Jesu, et extérsit capíllis suis, et domus impléta est ex odóre unguénti.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Beátæ Maríæ Magdalénæ, quǽsumus, Dómine, suffrágiis adjuvémur: cujus précibus exorátus, quatriduánum fratrem Lázarum vivum ab ínferis resuscitásti:
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# St. Mary Magdalene's own Matins hymn, Monastic track: Latin/Sancti/07-22.txt's
+# [HymnusM Matutinum] ("Nardo María pístico", own doxology). The English
+# stanza is the source's English of the secular hymn ("María castis
+# ósculis"), shown by the engine beside this Latin; same scene, not a
+# word-for-word translation, hence draft.
+matins-hymn:
+  text: |
+    Nardo María pístico,
+    Unxit beátos Dómini
+    Pedes, rigándo lácrimis,
+    Et detergéndo crínibus.
+
+    Honor, decus, impérium,
+    Sit Trinitáti únicæ
+    Patri, Nato, Paráclito,
+    Per infiníta sǽcula.
+    Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/07-22.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Laudémus Deum nostrum * In conversióne Maríæ Magdalénæ.
+  status: verified
+
+# St. Mary Magdalene's own Lauds hymn, Monastic track: Latin/Sancti/07-22.txt's
+# [HymnusM Laudes]. The English is the source's English [Hymnus Laudes]
+# (the secular Latin, "Summi Paréntis Unice"), which the engine also shows
+# beside this Latin; it follows the same four images stanza for stanza but
+# is not a translation of this exact text, hence draft.
+lauds-hymn:
+  text: |
+    Ætérne Patris Unice,
+    Nos pio vultu réspice,
+    Qui Magdalénam hódie
+    Vocas ad thronum glóriæ.
+
+    In thesáuro repósita
+    Regis est drachma pérdita:
+    Gémmaque luce ínclyta
+    De luto luci réddita.
+
+    Jesu dulce refúgium,
+    Spes una pæniténtium,
+    Per peccatrícis méritum
+    Peccáti solve débitum.
+
+    Pia mater et húmilis,
+    Natúræ memor frágilis,
+    In hujus vitæ flúctibus
+    Nos rege tuis précibus.
+
+    Uni Deo sit glória
+    Pro multifórmi grátia,
+    Qui culpas et supplícia
+    Remíttit, et dat prǽmia.
+    Amen.
+  status: verified
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayTertia), 2026-07-22, own day -- her real proper Terce
+# antiphon, distinct from the raw source file's own [Ant 1] tag (which
+# turned out to be unrelated content, per TODO.md's note on this). Sext/
+# None/Prime live-queried empty (no proper antiphon at those hours).
+terce-antiphon:
+  text: 'In odórem unguentórum tuórum cúrrimus: adolescéntulæ dilexérunt te nimis.'
+  status: verified
+
+# St. Mary Magdalene's own Vespers hymn: Latin/Sancti/07-22.txt's
+# [Hymnus Vespera] (the Monastic track takes it as-is, `[HymnusM Vespera]`
+# only cuts the variable doxology after the `*`) and English/Sancti/07-22.txt.
+# Confirmed against the engine's live Vespers render (Monastic Tridentinum
+# 1617, 2026-07-21/22). Before this file the saint fell to the Common of a
+# Holy Woman's hymn.
+vespers-hymn:
+  text: |
+    Pater supérni lúminis,
+    Cum Magdalénam réspicis,
+    Flammas amóris éxcitas,
+    Gelúque solvis péctoris.
+
+    Amóre currit sáucia
+    Pedes beátos úngere,
+    Laváre fletu, térgere
+    Comis, et ore lámbere.
+
+    Astáre non timet cruci,
+    Sepúlcro inhǽret ánxia,
+    Truces nec horret mílites:
+    Pellit timórem cáritas.
+
+    O vera, Christe, cáritas,
+    Tu nostra purga crímina,
+    Tu corda reple grátia,
+    Tu redde cæli prǽmia.
+
+    * Patri simúlque Fílio,
+    Tibíque, Sancte Spíritus,
+    Sicut fuit, sit júgiter
+    Sæclum per omne glória.
+    Amen.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 07-22
+# st-mary-magdalene (new saint-level second). See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle:
+  text: |
+    V. Elégit eam Deus, et præelégit eam.
+    R. In tabernáculo suo habitáre facit eam.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 07-22
+# st-mary-magdalene (saint file = second). First Vespers variant; the default (second Vespers) file is the same
+# id without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Mary Magdalene's own day (2026-07-22) -- the Benedictus
+# antiphon. Corrects the previous version of this file, which had been
+# sourced from the Roman/secular rite's Sancti/07-22.txt's own [Ant 1]
+# instead: real but different text from what Monastic 1617 actually
+# renders at Lauds, same mistake as St. Lawrence's earlier fix.
+benedictus-antiphon:
+  text: María unxit pedes Jesu, et extérsit capíllis suis, et domus impléta est ex odóre unguénti.
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/07-22.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast, not a Common
+# substitution. (This feast's own Benedictus antiphon,
+# st-mary-magdalene-antiphon.yml, already correctly sourced [Ant 2].)
+magnificat-antiphon:
+  text: Múlier * quæ erat in civitáte peccátrix, áttulit alabástrum unguénti, et stans retro secus pedes Dómini, lácrimis cœpit rigáre pedes ejus, et capíllis cápitis sui tergébat.
+  status: verified
+
+# First Vespers Magnificat antiphon: web/www/horas/Latin/Sancti/07-22.txt's own [Ant 1]
+# and its English counterpart. Second Vespers' [Ant 3] is
+# st-mary-magdalene-magnificat-antiphon.yml (the default); see hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Múlier * quæ erat in civitáte peccátrix, ut cognóvit quod Jesus accúbuit in domo Simónis leprósi, áttulit alabástrum unguénti, et stans retro secus pedes Jesu, lácrimis cœpit rigáre pedes ejus, et capíllis cápitis sui tergébat, et osculabátur pedes ejus, et unguénto ungébat.
+  status: verified
+
+# Matins Nocturn 2-3 readings for St. Mary Magdalene, Penitent (Jul
+# 22) — SanctiM/07-22.txt's own Lectio4-9 resolve back to
+# `@Sancti/07-22:LectioN` (resliced), so this saint's own proper
+# content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/07-22.txt, English/Sancti/07-22.txt.
+#
+# Nocturn 2: Lectio4-6 (Pope St. Gregory the Great's homily) combined
+# into one reading, one continuous excerpt.
+# Nocturn 3: Lectio7's Gospel citation (Luke 7:36-50) was a bare
+# incipit ("Et réliqua") with no full pericope text given; the full
+# pericope is now authored too (isGospel: true, immediately before the
+# homily) — this is this same day's own proper Missale [Evangelium]
+# (`web/www/missa/Latin/Sancti/07-22.txt`, English/Sancti/07-22.txt),
+# and is the very text `ember-september-friday.yml` reused verbatim
+# from this file (its own header cites `@Sancti/07-22`) — reused here
+# in turn for consistency (2026-09-05 update). The homily portion
+# remains a single excerpt of St. Augustine's homily. No responsory
+# given for either reading.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 25 on the Gospels
+      text: |-
+        María Magdaléne, quæ fúerat in civitáte peccátrix, amándo veritátem, lavit lácrimis máculas críminis: et vox Veritátis implétur, qua dícitur: Dimíssa sunt ei peccáta multa, quia diléxit multum. Quæ enim prius frígida peccándo remánserat, póstmodum amándo fórtiter ardébat. Quæ a monuménto Dómini, étiam discípulis recedéntibus, non recedébat. Exquirébat quem non invénerat; flebat inquiréndo, et amóris sui igne succénsa, ejus, quem ablátum crédidit, ardébat desidério. Unde cóntigit, ut eum sola tunc vidéret, quæ remánserat ut quǽreret: quia nimírum virtus boni óperis perseverántia est.
+
+        Quæsívit ergo prius, et mínime invénit: perseverávit ut quæreret, unde et cóntigit ut inveníret: actúmque est, ut desidéria diláta créscerent, et crescéntia cáperent quod inveníssent. Hinc est enim quod de eódem sponsa Ecclésia in Cánticis canticórum dicit: In léctulo meo per noctes quæsívi quem díligit ánima mea. Diléctum namque in léctulo quærimus, quando, in præséntis vitæ aliquántula réquie, Redemptóris nostri desidério suspirámus. Per noctem quærimus: quia, etsi jam in illo mens vígilat, tamen adhuc óculus calígat.
+
+        Sed, qui diléctum suum non invénit, restat ut surgat, civitátem circúmeat, id est, sanctam electórum Ecclésiam mente et inquisitióne percúrrat; per vicos eum et platéas quærat, id est, per angústa et lata gradiéntes aspíciat, ut, si qua inveníre in eis váleat, ejus vestígia exquírat: quia sunt nonnúlli étiam vitæ sæculáris, qui imitándum áliquid hábeant de actióne virtútis. Quæréntes autem nos vígiles invéniunt, qui custódiunt civitátem: quia sancti Patres, qui Ecclésiæ statum custódiunt, bonis nostris stúdiis occúrrunt, ut suo vel verbo vel scripto nos dóceant. Quos cum páululum pertransímus, invenímus quem dilígimus: quia Redémptor noster, etsi humilitáte homo inter hómines, divinitáte tamen super hómines fuit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 7:36-50
+      text: 'In illo témpore: Rogábat Jesum quidam de pharisǽis, ut manducáret cum illo. Et ingréssus domum pharisǽi, discúbuit. Et ecce múlier, quæ erat in civitáte peccátrix, ut cognóvit, quod accubuísset in domo pharisǽi, áttulit alabástrum unguénti: et stans retro secus pedes ejus, lácrimis cœpit rigáre pedes ejus, et capíllis cápitis sui tergébat, et osculabátur pedes ejus, et unguénto ungébat. Videns autem pharisǽus, qui vocáverat eum, ait intra se, dicens: Hic si esset Prophéta, sciret útique, quæ et qualis est múlier, quæ tangit eum: quia peccátrix est. Et respóndens Jesus, dixit ad illum: Simon, hábeo tibi áliquid dícere. At ille ait: Magíster, dic. Duo debitóres erant cuidam fœneratóri: unus debébat denários quingéntos, et álius quinquagínta. Non habéntibus illis, unde rédderent, donávit utrísque. Quis ergo eum plus díligit? Respóndens Simon, dixit: Æstimo, quia is, cui plus donávit. At ille dixit ei: Recte judicásti. Et convérsus ad mulíerem, dixit Simóni: Vides hanc mulíerem? Intrávi in domum tuam, aquam pédibus meis non dedísti: hæc autem lácrimis rigávit pedes meos et capíllis suis tersit. Osculum mihi non dedísti: hæc autem, ex quo intrávit, non cessávit osculári pedes meos. Oleo caput meum non unxísti: hæc autem unguénto unxit pedes meos. Propter quod dico tibi: Remittúntur ei peccáta multa, quóniam diléxit multum. Cui autem minus dimíttitur, minus díligit. Dixit autem ad illam: Remittúntur tibi peccáta. Et cœpérunt, qui simul accumbébant, dícere intra se: Quis est hic, qui étiam peccáta dimíttit? Dixit autem ad mulíerem: Fides tua te salvam fecit: vade in pace.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Homily 23 (on Luke 7:36-50)
+      text: Evangélium cum legerétur, attentíssime audístis; et res gesta narráta atque versáta est ante óculos cordis vestri. Vidístis enim, non carne, sed mente, Dóminum Jesum Christum in domo pharisǽi recumbéntem, et ab illo invitátum non fastidiéntem. Vidístis étiam in civitáte mulíerem famósam, mala útique fama, quæ erat peccátrix, non invitátam irruísse convívio ubi suus médicus recumbébat, et quæsísse pia impudéntia sanitátem; írruens, quasi importúna convívio, opportúna benefício. Nóverat enim quanto morbo laboráret; et illum ad sanándum esse idóneum, ad quem vénerat, sciébat.
+      status: verified

@@ -1,0 +1,63 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2029-01-22, a
+# year that date doesn't collide with a Sunday). Same convention as
+# data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Adésto, Dómine, supplicatiónibus nostris: ut, qui ex iniquitáte nostra reos nos esse cognóscimus, beatórum Mártyrum tuórum Vincéntii et Anastásii intercessióne liberémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-vincent-and-anastasius-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (ss-vincent-and-anastasius-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Adésto, Dómine, supplicatiónibus nostris: ut, qui ex iniquitáte nostra reos nos esse cognóscimus, beatórum Mártyrum tuórum Vincéntii et Anastásii intercessióne liberémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Vincent and Anastasius's own day (2026-01-22). The
+# Benedictus antiphon.
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Matins Nocturn 2 readings for Ss. Vincent and Anastasius, Martyrs
+# (Jan 22) — SanctiM/01-22M.txt inherits the whole day (`@Sancti/01-22`),
+# only overriding the collect wording to single out Vincent (the
+# Monastic office demotes this to Simplex, honouring Vincent alone via
+# the Common of a Martyr) — but Lectio4-6, Sancti/01-22's own proper
+# text about both martyrs, is not overridden, so it's sourced from the
+# Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints); authored here for both martyrs together
+# per this app's own calendar id, following "prefer real text over
+# a rank-driven Common substitution" (vu-prefer-text-over-missing).
+# web/www/horas/Latin/Sancti/01-22.txt, English/Sancti/01-22.txt.
+# Lectio4-5 (Vincent's own vita) combined into one reading, no internal
+# break. Lectio6 (Anastasius's vita) is a genuinely distinct martyr,
+# kept separate. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Vincentius, Oscæ in Hispánia citeriore natus, a prima ætate stúdiis déditus, sacras litteras a Valerio Cæsaraugustano episcopo didicit; cujus étiam partes suscépit prædicándi Evangélium, quod epíscopus, propter linguæ impediméntum, prædicatiónis officio fungi non poterat. Ea re ad Dacianum, provinciæ a Diocletiáno et Maximiáno præpositum, delata, Vincentius Cæsaraugustæ comprehénditur, et vinctus ad Dacianum Valéntiam adducitur. Ubi verbéribus et equuleo tortus, multis præséntibus, cum nulla aut tormentórum vi, aut acerbitate vel lenitate verbórum a proposito deterreri posset; in cratícula impositus, prunis ardéntibus suppositis, ac férreis unguibus excarnificatus, candentibúsque láminis exustus, íterum ducitur in carcerem stratum testáceis fragméntis, ut ejus nudum corpus, somno oppressum, a subjectis étiam testárum aculeis torquerétur.
+
+        Verum, illo in tenebricosa incluso custódia, claríssimus splendor obortus totum carcerem illustrávit; quæ lux cum summa admiratióne omnes, qui aderant, affecísset, res a custode carceris ad Dacianum defertur. Qui eductum in molli cúlcitra collocat; et quem cruciátibus in suam senténtiam trahere non poterat, deliciis perducere conátur. Sed invictus Vincentii animus, Jesu Christi fide speque munítus, vicit ómnia; et ignis, ferri, tortórum immanitate superata, victor ad cælestem martyrii corónam advolávit, undecimo Kalendas Februarii. Cujus corpus, cum projectum esset inhumátum, corvus et a volucribus et a lupo únguibus, rostro, alis mirabíliter defendit. Qua re cógnita, Dacianus illud in altum mare demergi jubet: sed inde étiam divinitus ejectum ad littus, Christiáni sepeliunt.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      text: Anastasius Persa, monachus, Heraclío imperatóre, cum sanctam Jerosolymórum terram visitasset, ad Cæsaréam Palæstinæ pro Christi religióne víncula et verbera constanter perpéssus est. Mox a Persis ob eamdem causam variis cruciátibus afféctus, a rege Chósroa una cum septuagínta aliis Christiánis secúri percútitur. Cujus relíquiæ primum Jerosolymam ad monastérium, in quo monasticam vitam proféssus erat, deínde Romam delátæ, collocátæ sunt in monasterio ad Aquas Sálvias.
+      status: verified

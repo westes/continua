@@ -1,0 +1,454 @@
+# Read directly from the reference engine's own static file: web/www/horas/
+# Latin/Tempora/Pasc2-3.txt's [Oratio] / English/Tempora/Pasc2-3.txt's
+# [Oratio] -- the Patronage of St. Joseph's own real collect. A pre-existing
+# content gap found while auditing octave-commemoration coverage
+# (calendar/temporal-feasts/patronage-of-st-joseph.yml's own record already
+# existed, but no collect had ever been authored for it). `$Qui vivis`
+# macro expanded to match the exact wording already used for the same
+# macro elsewhere in this project (e.g. corpus-christi-collect.yml).
+collect:
+  text: |
+    Orémus.
+    Deus, qui ineffábili providéntia beátum Joseph sanctíssimæ Genitrícis tuæ sponsum elígere dignátus es: præsta, quǽsumus; ut quem protectórem venerámur in terris, intercessórem habére mereámur in cælis:
+    Qui vivis et regnas cum Deo Patre in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayLaudes, 2026-04-22); Latin and English both taken from the page.
+lauds-capitulum:
+  text: 'Gen 49:26 Benedictiónes patris tui confortátæ sunt benedictiónibus patrum ejus, donec veníret Desidérium cóllium æternórum: fiant in cápite Joseph, et in vértice Nazarǽi inter fratres suos.'
+  citation: ''
+  status: verified
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayLaudes, 2026-04-22); Latin and English both taken from the page.
+lauds-hymn:
+  text: |
+    Cǽlitum Joseph, decus atque nostræ
+    Certa spes vitæ, columénque mundi,
+    Quas tibi læti cánimus, benígnus
+    Súscipe laudes.
+
+    Te Sator rerum státuit pudícæ
+    Vírginis sponsum, voluítque Verbi
+    Te patrem dici, dedit et minístrum
+    Esse salútis.
+
+    Tu Redemptórem stábulo jacéntem,
+    Quem chorus Vatum cécinit futúrum,
+    Aspicis gaudens, humilísque natum
+    Numen adóras.
+
+    Rex Deus regum, Dominátor orbis,
+    Cujus ad nutum tremit inferórum
+    Turba, cui pronus famulátur æther,
+    Se tibi subdit.
+
+    Laus sit excélsæ Tríadi perénnis,
+    Quæ tibi præbens súperos honóres,
+    Det tuis nobis méritis beátæ
+    Gáudia vitæ.
+    Amen.
+  status: verified
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayLaudes, 2026-04-22); Latin and English both taken from the page.
+lauds-responsory:
+  text: ''
+  status: verified
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayLaudes, 2026-04-22); Latin and English both taken from the page.
+lauds-versicle:
+  text: |
+    V. Dedísti mihi protectiónem salútis tuæ, allelúia.
+    R. Et déxtera tua suscépit me, allelúia.
+  status: verified
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayPrima, 2026-04-22); Latin and English both taken from the page.
+prime-antiphon:
+  text: Jacob autem * génuit Joseph, virum Maríæ, de qua natus est Jesus, qui vocátur Christus, allelúia.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Tempora/Pasc2-3.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: 'Fílius accréscens Joseph, fílius accréscens, et decorus aspectu: fíliæ discurrérunt super murum.'
+  citation: Gen 49:22
+  status: verified
+  temporal: true
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayTertia, 2026-04-22); Latin and English both taken from the page.
+terce-antiphon:
+  text: Missus est * Ángelus Gábriel a Deo in civitátem Galilǽæ, cui nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, allelúia.
+  status: verified
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayTertia, 2026-04-22); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    Gen 49:26 Benedictiónes patris tui confortátæ sunt benedictiónibus patrum ejus, donec veníret Desidérium cóllium æternórum: fiant in cápite Joseph, et in vértice Nazarǽi inter fratres suos.
+    R. Deo grátias.
+    V. Confitébor nómini tuo, allelúia.
+    R. Quóniam adjútor et protéctor factus es mihi, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=praySexta, 2026-04-22); Latin and English both taken from the page.
+sext-antiphon:
+  text: Ascéndit autem * Joseph a Galilǽa de civitáte Názareth in Judǽam, in civitátem David, quæ vocátur Béthlehem, allelúia.
+  status: verified
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=praySexta, 2026-04-22); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    Gen 49:25 Deus patris tui erit adjútor tuus, et Omnípotens benedícet tibi benedictiónibus cæli désuper.
+    R. Deo grátias.
+    V. Justus germinábit sicut lílium, allelúia.
+    R. Et florébit in ætérnum ante Dóminum, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayNona, 2026-04-22); Latin and English both taken from the page.
+none-antiphon:
+  text: Et ipse Jesus * erat incípiens quasi annórum trigínta, ut putabátur, fílius Joseph, allelúia.
+  status: verified
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayNona, 2026-04-22); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    Gen 49:22 Fílius accréscens Joseph, fílius accréscens, et decórus aspéctu: fíliæ discurrérunt super murum.
+    R. Deo grátias.
+    V. Plantátus in domo Dómini, allelúia.
+    R. In átriis domus Dei nostri, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayVespera, 2026-04-22); Latin and English both taken from the page.
+vespers-hymn:
+  text: |
+    Te, Joseph, célebrent ágmina cǽlitum,
+    Te cuncti résonent christíadum chori,
+    Qui clarus méritis, junctus est ínclitæ
+    Casto fœ́dere Vírgini.
+
+    Almo cum túmidam gérmine cónjugem
+    Admírans, dúbio tángeris ánxius,
+    Afflátu súperi Fláminis Angelus
+    Concéptum Púerum docet.
+
+    Tu natum Dóminum stringis, ad éxteras
+    Ægýpti prófugum tu séqueris plagas;
+    Amíssum Sólymis quæris, et ínvenis,
+    Miscens gáudia flétibus.
+
+    Post mortem réliquos sors pia cónsecrat,
+    Palmámque eméritos glória súscipit:
+    Tu vivens, Súperis par, frúeris Deo,
+    Mira sorte beátior.
+
+    Nobis, summa Trias, parce precántibus,
+    Da Joseph méritis sídera scándere:
+    Ut tandem líceat nos tibi pérpetim
+    Gratum prómere cánticum.
+    Amen.
+  status: verified
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayVespera, 2026-04-22); Latin and English both taken from the page.
+vespers-responsory:
+  text: ''
+  status: verified
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayVespera, 2026-04-22); Latin and English both taken from the page.
+vespers-versicle:
+  text: |
+    V. Sub umbra illíus, quem desideráveram, sedi, allelúia.
+    R. Et fructus ejus dulcis gútturi meo, allelúia.
+  status: verified
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayVespera, 2026-04-21); Latin and English both taken from the page. First Vespers variant.
+vespers-versicle/~-first:
+  text: |
+    V. Constítuit eum dóminum domus suæ, allelúia.
+    R. Et príncipem omnis possessiónis suæ, allelúia.
+  status: verified
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayLaudes, 2026-04-22); Latin and English both taken from the page.
+benedictus-antiphon:
+  text: Joseph, fili David, * noli timére accípere Maríam cónjugem tuam; quod enim in ea natum est, de Spíritu Sancto est, allelúia.
+  status: verified
+  temporal: true
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayVespera, 2026-04-22); Latin and English both taken from the page.
+magnificat-antiphon:
+  text: Fili, quid fecísti * nobis sic? Ecce pater tuus et ego doléntes quærebámus te, allelúia.
+  status: verified
+  temporal: true
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayVespera, 2026-04-21); Latin and English both taken from the page. First Vespers variant.
+magnificat-antiphon/~-first:
+  text: Cum esset desponsáta * Mater Jesu María Joseph, ántequam convenírent, invénta est in útero habens de Spíritu Sancto, allelúia.
+  status: verified
+  temporal: true
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayLaudes, 2026-04-22); Latin and English both taken from the page. Antiphons only; the psalm numbers are the Monastic Sunday scheme (92/99/62, canticle, Laudate).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Jacob autem * génuit Joseph, virum Maríæ, de qua natus est Jesus, qui vocátur Christus, allelúia.
+    - psalms:
+        - 99
+      antiphon: Missus est * Ángelus Gábriel a Deo in civitátem Galilǽæ, cui nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, allelúia.
+    - psalms:
+        - 62
+      antiphon: Ascéndit autem * Joseph a Galilǽa de civitáte Názareth in Judǽam, in civitátem David, quæ vocátur Béthlehem, allelúia.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Et venérunt festinántes, * et invenérunt Maríam, et Joseph, et Infántem pósitum in præsépio, allelúia.
+  laudate:
+    antiphon: Et ipse Jesus * erat incípiens quasi annórum trigínta, ut putabátur, fílius Joseph, allelúia.
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayVespera, 2026-04-22); Latin and English both taken from the page. Second Vespers psalm antiphons.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Jacob autem * génuit Joseph, virum Maríæ, de qua natus est Jesus, qui vocátur Christus, allelúia.
+    - psalms:
+        - 110
+      antiphon: Missus est * Ángelus Gábriel a Deo in civitátem Galilǽæ, cui nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, allelúia.
+    - psalms:
+        - 111
+      antiphon: Ascéndit autem * Joseph a Galilǽa de civitáte Názareth in Judǽam, in civitátem David, quæ vocátur Béthlehem, allelúia.
+    - psalms:
+        - 112
+      antiphon: Et ipse Jesus * erat incípiens quasi annórum trigínta, ut putabátur, fílius Joseph, allelúia.
+
+# Engine render (Divino Afflatu 1954 (the feast postdates 1617; no Monastic render exists), command=prayVespera, 2026-04-21); Latin and English both taken from the page. First Vespers psalm antiphons.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Jacob autem * génuit Joseph, virum Maríæ, de qua natus est Jesus, qui vocátur Christus, allelúia.
+    - psalms:
+        - 110
+      antiphon: Missus est * Ángelus Gábriel a Deo in civitátem Galilǽæ, cui nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, allelúia.
+    - psalms:
+        - 111
+      antiphon: Ascéndit autem * Joseph a Galilǽa de civitáte Názareth in Judǽam, in civitátem David, quæ vocátur Béthlehem, allelúia.
+    - psalms:
+        - 112
+      antiphon: Et ipse Jesus * erat incípiens quasi annórum trigínta, ut putabátur, fílius Joseph, allelúia.
+
+# Matins Nocturn 2-3 for the Patronage of St. Joseph (Wednesday after the
+# 2nd Sunday after Easter, Easter+17 -- see
+# data/calendar/temporal-feasts/patronage-of-st-joseph.yml for the dating
+# note). Sourced from web/www/horas/Latin+English/Tempora/Pasc2-3.txt.
+# Nocturn 1 (Lectio1-3, Genesis 39/41 -- the patriarch Joseph as a type)
+# left to the bible-plan store, same convention as every other nocturn-
+# readings file. Nocturn 2 (Lectio4-6): one continuous sermon of
+# St. Bernardine of Siena on St. Joseph. Nocturn 3 (Lectio7-9): Lectio7's
+# own Gospel pericope (Luke 3:21-23) was a bare "Et réliqua" incipit in
+# the horas file; the full pericope is this day's own Mass Gospel,
+# sourced directly from web/www/missa/Latin+English/Tempora/Pasc2-3.txt's
+# [Evangelium] and added 2026-09-05 (isGospel: true) immediately before
+# St. Augustine's homily on the two genealogies (Matthew's and Luke's).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Ómnium singulárium gratiárum alícui rationábili creatúræ communicatárum generális régula est, quod, quandocúmque divína grátia éligit áliquem ad áliquam grátiam sublímem statum, ómnia charísmata donet, quæ illi persónæ sic eléctæ et ejus offício necessária sunt atque illam copióse décorant. Quod máxime verificátum est in sancto Joseph, putatívo patre Dómini nostri Jesu Christi, et vero sponso Regínæ mundi et Dóminæ Angelórum; qui ab ætérno Patre eléctus est fidélis nutrítius atque custos principálium thesaurórum suórum, scílicet Fílii ejus et Sponsæ suæ: quod offícium fidelíssime prosecútus est. Cui proptérea Dóminus ait: Serve bone et fidélis, intra in gáudium Dómini tui.
+
+        Si cómpares eum ad totam Ecclésiam Christi, nonne iste est homo eléctus et speciális, per quem et sub quo Christus est ordináte et honéste introdúctus in mundum? Si ergo Vírgini Matri tota Ecclésia sancta débitrix est, quia per eam Christum suscípere digna facta est: sic profécto post eam huic debet grátiam et reveréntiam singulárem. Ipse enim est clavis véteris testaménti, in qua patriarchális et prophetális dígnitas promíssum conséquitur fructum. Porro hic est solus, qui corporáliter possédit, quod eis divína dignátio repromísit. Mérito ígitur figurátur per illum patriárcham Joseph, qui pópulis fruménta servávit. Sed et hic illum præcéllit, quia non solum Ægýptiis panem corporális vitæ, sed ómnibus eléctis panem de cælo, qui cæléstem vitam tríbuit, cum multa sollértia enutrívit.
+
+        Profécto dubitándum non est, quod Christus familiaritátem, reveréntiam atque sublimíssimam dignitátem, quam illi exhíbuit, dum ágeret in humánis, tamquam fílius patri suo, in cælis útique non negávit, quin pótius complévit et consummávit. Unde non immérito in verbo propósito a Dómino subinfértur: Intra in gáudium Dómini tui. Unde, licet gáudium ætérnæ beatitúdinis in cor hóminis intret, máluit tamen Dóminus ei dícere, Intra in gáudium; ut mýstice innuátur, quod gáudium illud non solum in eo sit intra, sed úndique illum circúmdans et absórbens, et ipsum velut abýssus infiníta submérgens. Meménto ígitur nostri, beáte Joseph, et tuæ oratiónis suffrágio apud tuum putatívum Fílium intercéde; sed et beatíssimam Vírginem sponsam tuam nobis propítiam redde, quæ Mater est ejus, qui cum Patre et Spíritu Sancto vivit et regnat per infiníta sǽcula sæculórum. Amen.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 3:21-23
+      text: 'In illo témpore: Factum est autem, cum baptizarétur omnis pópulus, et Jesu baptizáto et oránte, apértum est cœlum: et descéndit Spíritus Sanctus corporáli spécie sicut colúmba in ipsum: et vox de cœlo facta est: Tu es Fílius meus diléctus, in te complácui mihi. Et ipse Jesus erat incípiens quasi annórum trigínta, ut putabátur, fílius Joseph.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      text: |-
+        Maniféstum est illud quod ait, Ut putabátur fílius Joseph, propter illos dixísse, qui eum ex Joseph, sicut álii hómines nascúntur, natum arbitrántur. Quos autem movet, quod álios progenitóres Matthǽus enúmerat, descéndens a David usque ad Joseph, álios autem Lucas, ascéndens a Joseph usque ad David; fácile est, ut advértant duos patres habére potuísse Joseph: unum, a quo génitus, álterum, a quo fúerit adoptátus. Antíqua est enim consuetúdo adoptándi étiam in illo pópulo Dei, ut sibi fílios fácerent, quos non ipsi genuíssent. Unde intellígitur Lucas patrem Joseph, non a quo génitus, sed a quo fúerat adoptátus, suscepísse in Evangélio suo, cujus progenitóres sursum versus commémorat, donec exíret ad David.
+
+        Cum enim necésse sit, utróque Evangelísta vera narránte, et Matthǽo scílicet et Luca, ut unus eórum ejus patris oríginem tenéret qui genúerat, alter ejus qui adoptáverat Joseph; quem probabílius intellígimus adoptántis oríginem tenuísse quam eum, qui nóluit Joseph génitum dícere ab illo cujus eum fílium esse narrábat? Matthǽus autem dicens, Ábraham génuit Isaac, Isaac génuit Jacob, atque ita in hoc verbo, quod est, Génuit, persevérans, donec in último díceret, Jacob autem génuit Joseph; satis expréssit ad eum patrem se perduxísse oríginem generátium, a quo Joseph non adoptátus, sed génitus erat.
+
+        Quamquam si étiam Lucas génitum díceret Joseph ab Heli, nec sic nos hoc verbum perturbáre debéret, ut áliud crederémus quam ab uno Evangelísta gignéntem, ab áltero adoptántem patrem fuísse commemorátum. Neque enim absúrde quisque dícitur non carne sed caritáte genuísse, quem fílium sibi adoptáverit. At vero étiam nos, quibus dedit Deus potestátem fílios ejus fíeri, de natúra atque substántia sua non nos génuit, sicut únicum Fílium, sed útique dilectióne adoptávit.
+      status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pasc2-4.txt) -- day 2 of the Patronage of St. Joseph's own
+# movable octave (Thursday), per the Wednesday-based pre-1955 dating (see
+# data/calendar/temporal-feasts/patronage-of-st-joseph.yml). Joins another
+# sermon of St. Bernardine of Siena on St. Joseph (Lectio4-6, distinct from
+# the feast day's own excerpt) with St. Augustine's own continuation of his
+# homily on the two genealogies (Lectio7-9, same Gospel pericope as the
+# feast day; bare incipit dropped). Responsory now sourced -- resolved the
+# same way Ascension's/Sacred Heart's/Corpus Christi's octaves resolve the
+# identical situation: reuse the feast's own well-known Responsory1
+# (Tempora/Pasc2-3.txt, the feast day itself) across every combined-lesson
+# octave day.
+octave-readings/~-octave-day-2:
+  source: Sermo sancti Bernardíni Senénsis; Homilía sancti Augustíni Epíscopi
+  text: |
+    Cum inter Maríam et Joseph fúerit veríssimum matrimónium per divínam inspiratiónem contráctum, et in matrimónio fiat únio animórum in tantum quod una dicúntur persóna sponsus et sponsa, ut possit dici únitas quasi summa; quómodo cogitáre potest mens discréta quod Spíritus Sanctus tanta unióne uníret menti tantæ Vírginis áliquam ánimam, nisi ei virtútum operatióne simíllimam? Unde credo, istum virum sanctum Joseph fuísse mundíssimum in virginitáte, profundíssimum in humilitáte, ardentíssimum in Dei amóre et caritáte, altíssimum in contemplatióne. Et quia nóverat Virgo istum sibi a Spíritu Sancto datum in sponsum, et in suæ virginitátis fidum custódem, et ad participándum secum in caritátis amóre et obsequiósa sollicitúdine erga diviníssimam Prolem Dei; ídeo credo, quod totíus cordis afféctu hunc, sanctum Joseph, sinceríssime diligébat.
+
+    Hábuit Joseph erga Christum ardentíssimam caritátem. Quis déneget, óbsecro, quod ipsi tenénti Christum in brácchiis aut confabulánti cum ipso, Christus, sive infans sive adúltus, ingéreret et imprímeret ineffábiles sensus atque jucunditátes de semetípso, et hoc cooperánte extérius grátia Christi cum filiáli aspéctu, affátu atque compléxu? O quanta dúlcia óscula ab ipso recépit! o quanta dulcédine audiébat balbutiéntem Párvulum se patrem vocáre, et quanta suavitáte sentiébat se dúlciter amplexári! Consídera étiam, cum quanta compassióne in itinéribus, quæ fecérunt, párvulum Jesum ex labóre lassum, cum grandiúsculus esset, in suo grémio requiéscere faciébat: quia omni amóre transformatívo ferebátur in eum, ut in dulcíssimum Fílium sibi in cónjuge sua Vírgine per Spíritum Sanctum datum.
+
+    Ideo prudentíssima Mater, quæ expérta fúerat ejus afféctum, ad Fílium suum Jesum in templo reinvéntum ait: Fili, quid fecísti nobis sic? Ecce pater tuus et ego doléntes quærebámus te. Ad hujus verbi intelléctum notándum est, quod duo sapórum génera cóntinet in se Christus, dulcóris et dolóris; et quia sanctíssimus Joseph horum duórum gústuum mirabíliter párticeps fuit, ídeo beáta Virgo vocat eum singuláriter patrem Christi. Hic solum légitur Vírginem Joseph appellásse patrem Jesu: quia sensus dolóris, quem hábuit de Jesu pérdito, verum in eo monstrávit patris afféctum. Si enim secúndum humánas leges divínitus approbátas potest extráneus áliquem adoptáre in fílium, multo magis Dei Fílius datus ipsi Joseph in sua sanctíssima Sponsa sub virginális matrimónii admirábili sacraménto, debet ejus fílius appellári; et étiam credi quod in eo fúerit gustus paternális amóris atque dolóris respéctu dilécti Jesu.
+
+    Neque proptérea non erat appellándus Joseph pater Christi, quia non eum concumbéndo genúerat; quandóquidem pater esset étiam ejus, quem non ex sua cónjuge procreátum aliúnde adoptásset. Putabátur quidem Christus étiam áliter fílius Joseph, tamquam ex ejus omníno carne progénitus; sed ab eis hoc putabátur, quos Maríæ latébat virgínitas: nam Lucas ait: Et ipse Jesus erat incípiens quasi annórum trigínta, ut putabátur, fílius Joseph. Qui tamen Lucas non ejus paréntem solam Maríam, sed ambos paréntes ejus appelláre mínime dubitávit, ubi ait: Puer autem crescébat et confortabátur plenus sapiéntia, et grátia Dei erat in illo; et ibant paréntes ejus per omnes annos in Jerúsalem, in die solémni Paschæ.
+
+    Sed, ne quisnam hic paréntes consanguíneos pótius Maríæ cum ipsa Matre ejus intelligéndos putet, quid ad illud respondébit quod ipse item Lucas supérius dixit, Et erant Pater ejus et Mater mirántes super his, quæ dicebántur de illo? Cum ígitur ipse narret, non ex concúbitu Joseph, sed ex María Vírgine natum Christum; unde eum patrem ejus appéllat, nisi quia et virum Maríæ recte intellígimus sine commixtióne carnis, ipsa copulatióne conjúgii; et ob hoc étiam Christi patrem multo conjúnctius, qui ex ejus cónjuge natus sit, quam si esset aliúnde adoptátus? Ac per hoc, si demonstráre áliquis posset Maríam ex David nullam consanguinitátis oríginem dúcere, sat erat secúndum istam ratiónem, accípere Christum Fílium David; qua ratióne étiam Joseph pater ejus appellátus est.
+
+    Lucas autem non ab inítio Evangélii sui, sed a baptísmo Christi generatiónes enárrat, nec descendéndo, sed ascendéndo, tamquam sacerdótem in expiándis peccátis magis assígnans; ubi eum vox de cælo declarávit, ubi testimónium Joánnes ipsi perhíbuit dicens: Ecce, qui tollit peccáta mundi. Ascendéndo autem transit Abraham et pérvenit ad Deum, cui mundáti et expiáti reconciliámur. Mérito et adoptiónis oríginem ipse suscépit, quia per adoptiónem effícimur fílii Dei, credéndo in Fílium Dei. Satis autem demonstrávit, non se ídeo dixísse. Joseph fílium Heli, quod de illo génitus, sed quod ab illo fúerat adoptátus; cum et ipsum Adam fílium Dei dixit, cum sit factus a Deo, sed per grátiam, quam póstea peccándo amísit, tamquam fílius in paradíso constitútus sit.
+  responsory: |
+    R. Clamávit pópulus ad regem, aliménta petens: * Quibus ille respóndit: Ite ad Joseph, allelúia. V. Salus nostra in manu tua est: réspice nos tantum, et læti serviémus regi. R. Quibus ille respóndit: Ite ad Joseph, allelúia.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pasc2-5.txt) -- day 3 of the Patronage of St. Joseph's own
+# movable octave (Friday), same shape/rationale as
+# patronage-of-st-joseph-octave-day-2.yml. Joins a homily of St. John
+# Chrysostom on Matt. 1 (Lectio4-6, Joseph's own just and merciful response
+# to Mary's conception) with St. Augustine's own "Contra Faustum"
+# (Lectio7-9, same Gospel pericope as the feast day; bare incipit dropped).
+# A couple of stray OCR accent marks in the source's own English corrected
+# as clear transcription typos. Responsory now sourced -- same resolution
+# as day 2: reuse the feast's own well-known Responsory1 (Tempora/
+# Pasc2-3.txt, the feast day itself) across every combined-lesson octave
+# day.
+octave-readings/~-octave-day-3:
+  source: Sermo sancti Joánnis Chrysóstomi; Homilía sancti Augustíni Epíscopi
+  text: |
+    Hunc morem plerúmque tenébat antíquitas, ut sponsæ in sponsórum dómibus haberéntur: sic habitábat étiam María cum Sponso. Et cujus tandem rei grátia, non ántequam desponderétur, Virgo concépit? Ut vidélicet mystérium ínterim quasi obumbrátum latéret, et ut Virgo omnem prorsus occasiónem malígnæ suspiciónis effúgeret. Quando enim ille, qui præcípuo zelo posset ardére, cérnitur non solum non abjícere Sponsam, nec eam ignomínia notáre, sed étiam recípere in consórtium et inservíre post conceptiónem; profécto maniféstum est, quod, nisi apérte nosset ex operatióne Sancti Spíritum illum exstitísse concéptum, numquam vel apud se illam retinuísset, vel ei in ómnibus, quorum indíguit, ministrásset.
+
+    Joseph autem, cum esset justus et nollet eam tradúcere, vóluit occúlte dimíttere eam. Postquam dixit, quod esset ex Spíritu Sancto et absque ulla mixtióne séxuum, sermónem suum étiam aliúnde confírmat. Ne enim áliquis díceret: Et unde hoc potest esse maniféstum? quis vidit? quis audívit aliquándo tale áliquid contigísse? neque putáres discípulum, quasi gratificátum magístro, ista confíngere; introdúcit Joseph ex his, quæ passus est, fidem dictis per cuncta faciéntem, ut plane hinc dícere Evangelísta videátur: Si non credis mihi et testimónium tibi meum forte suspéctum est, crede ígitur vel maríto.
+
+    Joseph enim vir ejus, inquit, cum esset justus. Justum hic, in omni virtúte dicit esse perféctum. Cum ígitur esset justus, hoc est, frugi bonúsque vir, vóluit occúlte dimíttere eam. Proptérea vero Evangelísta dixit quid justo illi accíderit ante notítiam, ut nequáquam de his, quæ post notítiam rei sunt facta, dubitáres. Et certe, si María talis fuísset qualem illam suspício fingébat, non modo publicári merúerat, verum étiam ex legis auctoritáte puníri: sed Joseph non tantum eam damnáre nóluit, sed nec publicáre quidem. Vidísti nempe virum sublímiter philosophántem et tyránnicæ illíus passiónis immúnem. Quamquam hic quæ tandem dicerétur esse suspício, ubi ipse úteri tumor videbátur factum argúere? Sed tamen ita erat ille vir ab hujúsmodi passióne mundus ac liber, ut ne in mínimis quidem Vírgini vellet inférre mæstítiam; et adhuc sub lege vivens, supra legem philosophátur: síquidem adventánte jam grátia, multo sublimióris disciplínæ documénta fulgére oportébat.
+
+    Sic de cælo dictum est super aquam Jordánis: Hic est Fílius meus diléctus, in quo mihi bene complácui; quemádmodum dictum est et in monte. Neque enim quia et ibi de cælo vox ipsa sónuit, Fílius Dei ante non fuit; quandóquidem ex útero Vírginis ille accépit formam servi, qui cum in forma Dei esset, non rapínam arbitrátus est esse æquális Deo. Dénique idem Apóstolus Paulus álio loco apertíssime dicit: Cum autem venit plenitúdo témporis, misit Deus Fílium suum factum ex mulíere, factum sub lege, ut eos, qui sub lege erant, redímeret, ut filiórum adoptiónem reciperémus. Ipse ergo est Fílius Dei, qui et Dóminus David secúndum divinitátem, et idem ipse fílius David ex sémine David secúndum carnem.
+
+    Quod si nobis crédere non prodésset, non hoc tam atténte idem Apóstolus Timótheo commendáret dicens: Memor esto Christum Jesum resurrexísse a mórtuis, ex sémine David, secúndum Evangélium meum. Quid ergo jam móveat sancti Evangélii sectatórem, quod sine concúbitu Joseph Christus natus ex Vírgine, fílius tamen David appellátur, cum generatiónum sériem non usque ad Maríam sed usque ad Joseph Matthæus Evangelísta perdúcat? Primo quia maríti ejus fúerat propter virílem sexum pótius honoránda persóna; neque enim quia concúbitu non permíxtus, ídeo non marítus, cum ipse Matthæus narret ab Angelo Maríam cónjugem ipsíus appellátam, qui narrat, quod de Spíritu Sancto concéperat.
+
+    Cum vero unus idémque narrátor utrúmque dicat, utrúmque comméndet, et virum Maríæ Joseph et Christi Vírginem Matrem, et Christum ex sémine David et Joseph in série progeneratórum Christi ex David; quid restat, nisi et Maríam non fuísse extráneam a cognatióne David, et eam Joseph cónjugem non frustra appellátam propter órdinem sexus et animórum confœderatiónem; et Joseph pótius propter dignitátem virílem ab órdine generatiónum illárum non fuísse separándum, ne hoc ipso viderétur ab illa fémina separátus, cui eum conjungébat mentis afféctus?
+  responsory: |
+    R. Clamávit pópulus ad regem, aliménta petens: * Quibus ille respóndit: Ite ad Joseph, allelúia. V. Salus nostra in manu tua est: réspice nos tantum, et læti serviémus regi. R. Quibus ille respóndit: Ite ad Joseph, allelúia.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pasc2-6.txt) -- day 4 of the Patronage of St. Joseph's own
+# movable octave (Saturday), same shape/rationale as
+# patronage-of-st-joseph-octave-day-2.yml. Joins the continuation of
+# St. John Chrysostom's Homily 4 on Matthew (Lectio4-6, the angel's own
+# words to Joseph in Matt 1:20-21) with St. Ambrose's own commentary on
+# Luke (Lectio7-9, same Gospel pericope as the feast day; bare incipit
+# dropped). A couple of stray OCR spelling artifacts in the source's own
+# English corrected as clear transcription typos. Responsory now sourced --
+# same resolution as day 2: reuse the feast's own well-known Responsory1
+# (Tempora/Pasc2-3.txt, the feast day itself) across every combined-lesson
+# octave day.
+octave-readings/~-octave-day-4:
+  source: Sermo sancti Joánnis Chrysóstomi; Homilía sancti Ambrósii Epíscopi
+  text: |
+    Joseph, fili David, noli timére accípere Maríam cónjugem tuam. Quid autem est accípere? Domi profécto retinére; jam enim illam mente dimíserat: sed dimíssam, inquit, retíneas, quam Deus tibi cópulat, non paréntes; cópulat vero, non in fœdus solémne conjúgii, sed in consórtium commúnis habitáculi, et cópulat per meæ vocis offícium. Sicut enim illam póstea comméndat Christus ipse discípulo, ita étiam nunc Angelus Sponso; solátium tantúmmodo ejus habitúram absque fœdere nuptiárum. Deínde honéstius multóque dígnius causa partus expósita, suspiciónem quoque prorsus restínxit. Non modo, inquit, illícito non est violáta compléxu, verum étiam supra natúram morémque fœcúnda est. Noli ígitur de tam felíci partu Sponsæ attráhere mærórem, immo vero in majorem prorúmpe lætítiam; quod enim in ea natum est, de Spíritu Sancto est.
+
+    Páriet autem Fílium, et vocábis nomen ejus Jesum; non enim quia ex Spíritu Sancto est, idcírco te a ministério tantæ exístimes dispensatiónis extráneum. Nam etsi nihil hábeas in hac generatióne commúne (Virgo quippe permánsit intácta), tamen quod est próprium patris quodque nihil offúscat Vírginis dignitátem, hoc tibi fácile concédo, ut scílicet Nato nomen impónas; tu enim illum primum vocábis. Quamquam enim non sit fílius tuus iste, qui náscitur, tu tamen curam erga illum et sollicitúdinem osténdes paréntis; et proptérea te illi ab ipsa statim nóminis impositióne conjúngo. Deínde, ne quis illum ex hoc patrem esse suspicarétur, Páriet, inquit, Fílium. Non dixit, Páriet tibi, sed pósuit illud indefinítum et suspénsum; non enim illi, sed univérso prorsus orbi péperit Christum.
+
+    Proptérea et nomen ejus de cælo Angelum detulísse Evangelísta memorávit, ut hinc quoque osténderet illum mirábilem esse partum, quo ejus nomen ad Joseph et per Angelum et a Deo missum docéret. Nam et ipsum vocábulum non inániter pósitum est, quod certe mille cóntinet thesáuros bonórum. Propter quod illud étiam Angelus interpretátur bonis mæréntem spebus animándo; et hoc quoque illum modo ad credéndum quod lóquitur, invítat. Fácile namque sollicitámur ad próspera, et prómptius fidem accommodámus secúndis. Ipse enim, inquit, salvum fáciet pópulum suum a peccátis eórum. Hinc quoque benefícii nóvitas indicátur. Non enim a bello visíbili neque a gládio barbarórum, sed, quod his longe majus est, a peccáto suo pópulum suum núntiat liberándum: quod præstáre nulli fuit hóminum aliquándo possíbile.
+
+    Néminem movére debet, quod ita scriptum est: Qui putabátur fílius Joseph. Bene enim putabátur, quia natúra non erat; sed ídeo putabátur, quia eum María, quæ Joseph viro suo erat desponsáta genúerat. Sic enim habes: Nonne hic est fílius Joseph fabri? Díximus supra qua ratióne per Vírginem, díximus étiam, qua ratióne per desponsátam, et quare census témpore nasci volúerit Dóminus salutáris; non aliénum étiam vidétur, ut qua ratióne fabrum patrem habúerit, declarémus. Hoc enim typo eum patrem sibi esse demónstrat, qui fabricátor ómnium cóndidit mundum. Nam etsi humána non sunt comparánda divínis, typus tamen ínteger est, quod Pater Christi igne operátur et spíritu, et tamquam bonus ánimæ faber vítia nostra circúmdolat; cito secúrim ádmovens arbóribus infœcúndis, secáre doctus exígua, culmínibus serváre sublímia, rígida méntium spíritus igne mollíre, et in vários usus omne humánum genus divérsa ministeriórum qualitáte formáre.
+
+    Cur autem Joseph magis quam Maríæ generátio describátur, cum María de Spíritu Sancto generávit Christum, et Joseph a generatióne Dómini videátur aliénus, dubitáre possémus, nisi consuetúdo nos instrúeret Scripturárum, quæ semper viri oríginem quærit. Viri enim persóna quæritur, qui étiam in senátu et réliquis cúriis civitátum géneris assérvat dignitátem. Quam defórme autem, si relícta viri orígine, orígo féminæ quærerétur, ut viderétur patrem non habuísse ille totíus mundi pópulis prædicándus! Vides ubíque famíliam per virórum generatiónes esse decúrsam. Noli mirári quod Joseph orígo descrípta est. Etenim secúndum carnem natus, usum débuit sequi carnis, et qui in sæculum venit, sæculi débuit more descríbi; máxime cum in Joseph orígine étiam orígo sit Maríæ.
+
+    Cur autem sanctus Matthæus ab Abraham generatiónem enumeráre cœperit Christi, sanctus vero Lucas a Christo usque ad Deum perdúxerit, explanándum vidétur. Lucas ad Deum putávit oríginem ejus esse referéndam, quod verus Christi generátor Deus sit, vel secúndum veram generatiónem Pater, vel secúndum lavácri regeneratiónem mystici múneris auctor. Et ídeo non a primo generatiónem ejus cœpit descríbere; sed posteáquam baptísmum ejus explícuit, Auctórem ómnium Deum per baptísmum cúpiens demonstráre. Christum quoque a Deo órdine manásse successiónis asséruit, univérsa contéxens, ut et secúndum natúram et secúndum grátiam et secúndum carnem Dei Fílium demonstráret. Quod autem evidéntius divínæ generatiónis indícium, quam quod de generatióne dictúrus, ipsum Patrem præmísit loquéntem: Hic est Fílius meus diléctus, in quo complácui?
+  responsory: |
+    R. Clamávit pópulus ad regem, aliménta petens: * Quibus ille respóndit: Ite ad Joseph, allelúia. V. Salus nostra in manu tua est: réspice nos tantum, et læti serviémus regi. R. Quibus ille respóndit: Ite ad Joseph, allelúia.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pasc3-1.txt) -- day 6 of the Patronage of St. Joseph's own
+# movable octave (Monday of the following week; day 5, the Sunday, has no
+# override in the source at all, correctly unauthored). Joins St. Bernard's
+# own homily "Super Missus Est" on Joseph as a second David (Lectio4-6)
+# with St. Ambrose's own commentary on Luke's genealogy through Nathan vs.
+# Matthew's through Solomon (Lectio7-9, same Gospel pericope as the feast
+# day; bare incipit dropped). A couple of stray OCR spelling artifacts in
+# the source's own English corrected as clear transcription typos.
+# Responsory now sourced -- same resolution as day 2: reuse the feast's
+# own well-known Responsory1 (Tempora/Pasc2-3.txt, the feast day itself)
+# across every combined-lesson octave day.
+octave-readings/~-octave-day-6:
+  source: Sermo sancti Bernárdi Abbátis; Homilía sancti Ambrósii Epíscopi
+  text: |
+    Desponsáta est María Joseph, vel pótius (sicut ponit Evangelísta) viro, cui nomen erat Joseph. Virum nóminat, non quia marítus, sed quod homo virtútis erat; vel pótius quia juxta álium Evangelístam non vir simplíciter, sed vir ejus dictus est, mérito appellátur quod necessário putátur. Débuit ergo vir ejus appellári, quia necésse fuit et putári; sicut et pater Salvatóris non quidem esse, sed dici méruit, ut putarétur esse, dicénte hoc ipso Evangelísta: Et ipse Jesus erat incípiens quasi annórum trigínta, ut putabátur, fílius Joseph.
+
+    Non est dúbium, quin bonus et fidélis homo fúerit iste Joseph, cui Mater desponsáta est Salvatóris. Fidélis, inquam, servus et prudens, quem constítuit Dóminus suæ Matris solátium, suæ carnis nutrítium, solum dénique in terris magni consílii coadjutórem fidelíssimum. Huc accédit, quod dícitur fuísse de domo David. Vere enim de domo David, vere de régia stirpe descéndit vir iste Joseph, nóbilis génere, mente nobílior. Plane fílius David, non degénerans a patre suo David; prorsus, inquam, fílius David, non tantum carne, sed fide, sed sanctitáte, sed devotióne, quem tamquam álterum David Dóminus invénit secúndum cor suum; cui tuto commítteret sacratíssimum atque secretíssimum sui cordis arcánum; cui, tamquam álteri David, incérta et occúlta sapiéntiæ suæ manifestávit, et dedit illi non ignárum esse mystérii, quod nemo príncipum hujus sǽculi agnóvit.
+
+    Cui dénique datum est, quod multi reges et prophétæ, cum vellent vidére, non vidérunt, audíre et non audiérunt; non solum vidére et audíre, sed étiam portáre, dedúcere, amplécti, deosculári, et nutríre et custodíre. Non tantum autem Joseph, sed et María descendísse credénda est de domo David; alióquin non esset desponsáta viro de domo David, si non esset et ipsa de domo David. Ambo ígitur erant de domo David; sed in áltera compléta est véritas, quam jurávit Dóminus David, áltero tamen cónscio et teste adimplétæ promissiónis.
+
+    Quod per Salomónem Matthǽus generatiónem derivándum putávit, Lucas vero per Nathan, álteram regálem, álteram sacerdotálem Christi famíliam vidétur osténdere. Quod non ita accípere debémus, quod álterum áltero vérius; sed alter álteri pari fide et veritáte concórdet. Fuit enim vere et secúndum carnem regális et sacerdotális famíliæ, Rex ex régibus, Sacérdos ex sacerdótibus; licet oráculum non de carnálibus, sed de cæléstibus exprimátur: quóniam et Rex in Dei virtúte lætátur, cui judícium a Patre Rege defértur, et Sacérdos est in ætérnum, secúndum quod scriptum est: Tu es Sacérdos in ætérnum secúndum órdinem Melchísedech.
+
+    Bene ígitur utérque ténuit fidem, ut Matthǽus per reges ductam oríginem comprobáret, et Lucas per sacerdótes a Deo transmíssam in Christum sériem géneris deducéndo, sanctiórem ipsam oríginem declaráret. Simul in hoc quoque vítuli figúra signátur, quod ubíque sacerdotále mystérium putat esse servándum. Nec miréris, si ab Abraham plures secúndum Lucam successiónes usque ad Christum sunt, paucióres secúndum Matthǽum, cum per álias persónas generatiónem fateáris esse decúrsam. Potest enim fíeri, ut álii longǽvam transégerint vitam, altérius vero generatiónis viri immatúra ætáte decésserint; cum videámus complúres senes cum suis nepótibus vívere, álios vero viros statim fíliis obíre suscéptis.
+
+    Illud quoque advértimus, quod sanctus Matthǽus, Jacob, qui fuit pater Joseph, fílium Mathat esse memoráverit; Lucas vero Joseph, cui desponsáta erat María, fílium Heli, Heli autem fílium Melchi esse descrípserit. Quómodo uníus duo patres, id est, Heli et Jacob? Duórum fílius dictus est, quia altérius secúndum generatiónem, altérius secúndum legem factus est fílius. In quo præscrípto legis futúram perpetuitátem defunctórum séminis nobis esse promíssam non intelléxit pópulus Judæórum, sed secúndum lítteram accípiens, grátiam corrúpit oráculi. Alius enim erat frater, qui defunctórum fratrum semen suscitáret, non frater secúndum carnis germanitátem, sed secúndum grátiæ puritátem. Et ídeo fortásse Frater non redémit, redémit homo; quia non germánus frater ille, sed mediátor Dei et hóminum, homo Christus Jesus, resurrectiónis grátiam propagávit.
+  responsory: |
+    R. Clamávit pópulus ad regem, aliménta petens: * Quibus ille respóndit: Ite ad Joseph, allelúia. V. Salus nostra in manu tua est: réspice nos tantum, et læti serviémus regi. R. Quibus ille respóndit: Ite ad Joseph, allelúia.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pasc3-2.txt) -- day 7 of the Patronage of St. Joseph's own
+# movable octave (Tuesday). Joins the continuation of St. Bernard's
+# "Super Missus Est" homily (Lectio4-6, Joseph's own reasoning for
+# wishing to put Mary away privily) with St. John Damascene's homily on
+# the two genealogies (Lectio7-9, same Gospel pericope as the feast day;
+# bare incipit dropped). Responsory now sourced -- same resolution as
+# day 2: reuse the feast's own well-known Responsory1 (Tempora/
+# Pasc2-3.txt, the feast day itself) across every combined-lesson octave
+# day.
+octave-readings/~-octave-day-7:
+  source: Sermo sancti Bernárdi Abbátis; Homilía sancti Joánnis Damascéni
+  text: |
+    Scriptum est: Joseph autem vir ejus, cum esset justus et nollet eam tradúcere, vóluit occúlte dimíttere eam. Bene, cum esset justus, nóluit eam tradúcere; quia, sicut nequáquam justus esset, si cógnitam ream consensísset; sic nihilóminus justus non esset, si probátam innóxiam condemnásset. Cum ergo justus esset et nollet eam tradúcere, vóluit occúlte dimíttere eam. Quare vóluit dimíttere? Accipe et in hoc, non meam, sed Patrum senténtiam. Propter hoc Joseph vóluit dimíttere eam, propter quod et Petrus Dóminum a se repellébat, dicens: Exi a me, Dómine, quia homo peccátor sum; propter quod et centúrio a domo sua eum prohibébat, cum díceret: Dómine, non sum dignus, ut intres sub tectum meum.
+
+    Ita ergo et Joseph, indígnum et peccatórem se réputans, dicébat intra se, a tali et tanta non debére sibi ultra familiáre præstári contubérnium, cujus supra se mirábilem expavescébat dignitátem. Vidébat et horrébat divínæ præséntiæ certíssimum gestántem insígne; et quia mystérium penetráre non póterat, volébat dimíttere eam. Expávit Petrus poténtiæ magnitúdinem: expávit centúrio præséntiæ majestátem: exhórruit nimírum et Joseph, sicut homo, hujus tanti miráculi novitátem. Miráris quod Joseph prægnántis se consórtio Vírginis judicábat indígnum, cum áudias et sanctam Elísabeth ejus non posse ferre præséntiam, nisi cum tremóre quidem et reveréntia? Ait namque: Unde hoc mihi, ut véniat Mater Dómini mei ad me?
+
+    Ideo ítaque Joseph vóluit dimíttere eam. Sed quare occúlte, et non palam? Ne vidélicet divórtii causa inquirerétur, exigerétur rátio. Quid enim vir justus respónderet pópulo duræ cervícis, pópulo non credénti et contradicénti? Si díceret quod sentiébat, quod de illíus puritáte comprobáverat, nonne mox incréduli et crudéles Judæi subsannárent illum, lapidárent illam? Quómodo namque Veritáti créderent tacénti in útero, quam póstea contempsérunt clamántem in templo? quid fácerent necdum apparénti, cui póstmodum ímpias manus injecérunt étiam miráculis coruscánti? Mérito ergo Vir justus, ne aut mentíri aut diffamáre cogerétur innóxiam, vóluit occúlte dimíttere eam.
+
+    Matthæus opus suum ínchoans, Liber generatiónis, inquit, Jesu Christi fílii David, fílii Abraham: verum hic non subsístit; étenim ipsíus sermo étiam usque ad Vírginis Sponsum progréssus est. Lucas autem post Salvatóris in baptísmo declaratiónem, oratiónem suam non nihil derívans, ad hunc modum scribit: Ipse Jesus erat incípiens quasi annórum trigínta, ut putabátur, fílius Joseph, qui fuit Heli, qui fuit Mathat; et sic deínceps in altum ascendéndo usque ad Seth, qui fuit Adæ, qui fuit Dei. Proínde cum Joséphi genus ad hunc modum recenseátur, certe Virgo quoque ipsa ac Dei Génitrix María ejúsdem cum eo tribus esse simul demonstrátur. Síquidem Móysis lege non licébat ulli tríbui cum áltera tribu permiscéri, ne géneris heréditas ab una tribu ad áliam laberétur.
+
+    Non abs re Christi ex Spíritu Sancto natívitas apud vulgus silebátur, ac Joseph loco patris assumebátur; atque inde, ut vero consentáneum est, tamquam Púeri pater recensebátur. Nam, nisi hoc exstitísset, patre carére Puer existimátus fuísset, quod a patérno látere genus ipsíus mínime recenserétur. Quam ob rem ab exímiis Evangelístis necessário tunc factum est, ut Joséphi genus recensérent. Nam si, hoc prætermísso, a matérno látere géneris ipsíus sériem texuíssent, prætérquam quod istud indecórum fuísset, a divinárum quoque Scripturárum consuetúdine abhorruísset. Cómmode ígitur Joséphi genus a Davíde, ob eam quam attúlimus causam, ducéntes, simul quoque Vírginem Maríam ex Davíde ortam esse confírmant, per Sponsum scílicet uxóris genus una inferéntes.
+
+    Quod quidem justítia præditus Joseph esset, ac vitam legi consentáneam dúceret, némini obscúrum est. Ex legis porro præscrípto vivens, profécto non aliúnde quam ex sua tribu ortam uxórem despondébat. Quocírca, si Joseph ex tribu Juda atque ex Davídis sorte ac família erat, an non consentáneum est Maríam quoque ab iísdem proficísci? Ex quo factum est, ut Sponsi genus recenserétur. Nam, cum de Apóstoli senténtia caput mulíeris vir sit; quid tandem afférri potest, quin, cum cápitis genus recensétur, corpus quoque una cum cápite recenséri consequátur? Maniféste ígitur osténsum esse árbitror, Joséphi genus apud Evangelístas non frustra recenséri, ex quo necessário Virgo quoque a Davíde oriúnda esse per consecutiónem intellígitur, et qui præcellénti miráculo ex ipsa génitus est Christus, ante sæcula Dei Fílius.
+  responsory: |
+    R. Clamávit pópulus ad regem, aliménta petens: * Quibus ille respóndit: Ite ad Joseph, allelúia. V. Salus nostra in manu tua est: réspice nos tantum, et læti serviémus regi. R. Quibus ille respóndit: Ite ad Joseph, allelúia.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pasc3-3.txt) -- day 8, "In Octava Patrocinii S. Joseph," the
+# octave's own closing day (Wednesday, per the Wednesday-based pre-1955
+# dating). Joins St. Augustine's own "De Nuptiis et Concupiscentia"
+# (Lectio4-6, Joseph and Mary's true marriage) with another sermon of
+# St. Augustine on Christ's baptism as a "second birthday" (Lectio7-9,
+# same Gospel pericope as the feast day; bare incipit dropped).
+# Responsory now sourced -- same resolution as day 2: reuse the feast's
+# own well-known Responsory1 (Tempora/Pasc2-3.txt, the feast day itself)
+# across every combined-lesson octave day.
+octave-readings/~-octave-day-8:
+  source: Sermo sancti Augustíni Epíscopi; Homilía sancti Augustíni Epíscopi
+  text: |
+    Non falláciter ab Angelo dictum est ad Joseph: Noli timére accípere Maríam cónjugem tuam. Conjux vocátur ex prima fide desponsatiónis, quam concúbitu nec cognóverat nec fúerat cognitúrus; nec períerat nec mendax mánserat cónjugis appellátio, ubi nec fúerat nec futúra erat ulla carnis commíxtio. Erat quippe illa Virgo; ídeo et sánctius et mirabílius jucúnda suo viro, quia étiam fœcúnda sine viro, prole dispar, fide compar. Propter quod fidéle conjúgium paréntes Christi vocári ambo meruérunt, et non solum illa mater, verum étiam ille pater ejus, sicut conjux matris ejus, utrúmque mente, non carne. Sive autem ille pater sola mente, sive illa mater et carne, paréntes tamen ambo humilitátis ejus, non sublimitátis; infirmitátis, non divinitátis.
+
+    Neque enim mentítur Evangélium, ubi légitur: Et erat Pater ejus et Mater mirántes super his, quæ dicebántur de illo. Et álio loco: Ibant paréntes ejus per omnes annos in Jerúsalem. Item paulo post: Et dixit Mater ejus ad illum: Fili, quid fecísti nobis sic? Ecce pater tuus et ego doléntes quærebámus te. At ille, ut osténderet habére se præter illos Patrem, qui eum génuit præter matrem, respóndit eis: Quid est, quod me quærebátis? Nesciebátis, quia in his, quæ Patris mei sunt, opórtet me esse? Et rursum, ne hoc dicto paréntes illos negásse putarétur, Evangelísta secútus adjúnxit: Et ipsi non intellexérunt verbum quod locútus est ad illos; et descéndit cum eis, et venit Názareth, et erat súbditus illis. Quibus súbditus nisi paréntibus? Quis autem súbditus, nisi Jesus Christus, qui, cum in forma Dei esset, non rapínam arbitrátus est, esse se æquálem Deo?
+
+    Cur ergo illis súbditus, qui longe infra formam Dei erant, nisi quia semetípsum exinanívit formam servi accípiens, cujus formæ paréntes erant? Sed profécto nec ipsíus formæ servi paréntes ambo essent, nisi inter se étiam sine carnis commixtióne cónjuges essent. Unde et séries generatiónum, cum paréntes Christi connexióne successiónis commemorántur, usque ad Joseph pótius, sicut factum est, fúerat perducénda; ne in illo conjúgio viríli séxui, útique potióri, fíeret injúria, cum veritáti nihil períret, quia ex sémine David, ex quo ventúrus prædíctus est Christus, et Joseph erat et María. Omne ítaque nuptiárum bonum implétum est in illis paréntibus Christi: proles, fides sacraméntum. Prolem cognóscimus ipsum Dóminum Jesum; fidem, quia nullum adultérium; sacraméntum, quia nullum divórtium.
+
+    Natális hódie alter est quodam modo Salvatóris. Nam eísdem eum signis, eísdem miráculis cognóscimus génitum, sed nunc majóri mystério baptizátum. Ait enim Deus: Hic est Fílius meus diléctus, in quo mihi complácui. Præclárior plane est secúnda, quam prima natívitas. Illa enim sine teste siléntio Christum génuit; ista cum divinitátis professióne Dóminum baptizávit. Ab illa se Joseph, qui pater putabátur, excúsat; in hac se Pater, qui non credebátur, insínuat. Ibi labórat suspiciónibus Mater, quia professióni déerat pater; hic honorátur Génitrix, quia Divínitas Fílium protestátur.
+
+    Honorátior, inquam, secúnda, quam prima natívitas. Síquidem Pater hic Deus majestátis inscríbitur; illic Joseph ártifex æstimátur. Et licet in utráque Dóminus per Spíritum Sanctum et natus sit et baptizátus, tamen honorátior est qui de cælis clamat, quam qui in terris labórat. Joseph ergo faber in terris pater putabátur esse Dómini Salvatóris, nec ab hoc ópere Deus, qui vere est Pater Dómini nostri Jesu Christi, exclúditur; nam est et ipse faber.
+
+    Ipse enim est ártifex, qui hujus mundi máchinam non solum mirábili, sed étiam ineffábili poténtia fabricávit; tamquam sápiens architéctus cælum sublimitáte suspéndit, terram mole fundávit, mária cálculis alligávit. Ipse est ártifex, qui ad mensúram quamdam supérbiæ depónit fastígia, humilitátis extréma sublímat. Ipse est ártifex, qui in nostris móribus præcídit supérflua ópera, utília quæque consérvat. Ipse est ártifex, cujus secúrim ad radícem nostram pósitam Joánnes Baptísta comminátur, ut omnis arbor, quæ normam justæ discretiónis excésserit, excísa radícitus tradátur incéndio; quæ autem mensúram veritátis habúerit, cælésti fábricæ deputétur.
+  responsory: |
+    R. Clamávit pópulus ad regem, aliménta petens: * Quibus ille respóndit: Ite ad Joseph, allelúia. V. Salus nostra in manu tua est: réspice nos tantum, et læti serviémus regi. R. Quibus ille respóndit: Ite ad Joseph, allelúia.
+  status: verified

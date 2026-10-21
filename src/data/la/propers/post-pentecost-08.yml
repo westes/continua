@@ -1,0 +1,91 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Largíre nobis, quǽsumus, Dómine, semper spíritum cogitándi quæ recta sunt, propítius et agéndi: ut, qui sine te esse non póssumus, secúndum te vívere valeámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-07-11 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Ait dóminus víllico: * Quid hoc áudio de te? redde ratiónem villicatiónis tuæ, allelúia.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-07-11 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: Quid fáciam, * quia dóminus meus aufert a me villicatiónem? Fódere non váleo, mendicáre erubésco. Scio quid fáciam, ut, cum amótus fúero a villicatióne, recípiant me in domos suas.
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2027-07-10 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: Exaudísti, Dómine, * oratiónem servi tui, ut ædificárem templum nómini tuo.
+  status: verified
+  temporal: true
+
+# Nocturn 2-3, 8th Sunday after Pentecost. Sourced from Tempora/Pent08-0.txt.
+# See post-pentecost-02.yml for sweep method/responsory-reuse note.
+# Nocturn 2: St. Augustine, City of God Bk 17, on Solomon as a type of
+# Christ - one continuous excerpt (Lectio4-6). Nocturn 3: Lectio7 bare
+# incipit (Luke 16:1-9, the unjust steward) skipped; Lectio8-9 one
+# continuous excerpt from St. Jerome's letter to Algasia, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, City of God, Book 17, ch. 8
+      text: |-
+        Facta est quidem nonnúlla imágo rei futúræ étiam in Salomóne, in eo quod templum ædificávit, et pacem hábuit secúndum nomen suum (Sálomon quippe pacíficus est Latíne), et in exórdio regni sui mirabíliter laudábilis fuit. Sed eádem sua persóna per umbram futúri prænuntiábat étiam ipse Christum Dóminum nostrum, non exhibébat. Unde quædam de illo ita scripta sunt, quasi de ipso ista prædícta sint, dum Scriptúra sancta étiam rebus gestis prophétans, quodámmodo in eo figúram delíneat futurórum.
+
+        Nam præter libros divínæ históriæ, ubi regnásse narrátur, Psalmus étiam septuagésimus primus título nóminis ejus inscríptus est. In quo tam multa dicúntur, quæ omníno ei conveníre non possunt, Dómino autem Christo aptíssima perspicuitáte convéniunt: ut evidénter appáreat, quod in illo figúra qualiscúmque adumbráta sit, in isto autem ipsa véritas præsentáta.
+
+        Notum est enim quibus términis regnum conclúsum fúerit Salomónis: et tamen in eo Psalmo légitur, ut ália táceam: Dominábitur a mari usque ad mare, et a flúmine usque ad términos orbis terræ; quod in Christo vidémus impléri. A flúmine quippe dominándi sumpsit exórdium, ubi baptizátus a Joánne, eódem monstránte, cœpit agnósci a discípulis, qui eum non solum magístrum, verum étiam Dóminum appellavérunt.
+      responsory: |-
+        R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.
+        V. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?
+        R. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 16:1-9
+      text: 'In illo témpore: Dixit Jesus discípulis suis parábolam hanc: Homo quidam erat dives, qui habébat víllicum: et hic diffamátus est apud illum, quasi dissipásset bona ipsíus. Et vocávit illum et ait illi: Quid hoc audio de te? redde ratiónem villicatiónis tuæ: jam enim non póteris villicáre. Ait autem víllicus intra se: Quid fáciam, quia dóminus meus aufert a me villicatiónem? fódere non váleo, mendicáre erubésco. Scio, quid fáciam, ut, cum amótus fúero a villicatióne, recípiant me in domos suas. Convocátis itaque síngulis debitóribus dómini sui, dicébat primo: Quantum debes dómino meo? At ille dixit: Centum cados ólei. Dixítque illi: Accipe cautiónem tuam: et sede cito, scribe quinquagínta. Deínde álii dixit: Tu vero quantum debes? Qui ait: Centum coros trítici. Ait illi: Accipe lítteras tuas, et scribe octogínta. Et laudávit dóminus víllicum iniquitátis, quia prudénter fecísset: quia fílii hujus sǽculi prudentióres fíliis lucis in generatióne sua sunt. Et ego vobis dico: fácite vobis amicos de mammóna iniquitátis: ut, cum defecéritis, recípiant vos in ætérna tabernácula.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Priest, Letter 151 to Algasia
+      text: |-
+        Si dispensátor iníqui mammónæ, dómini voce laudátur, quod de re iníqua sibi justítiam præparárit; et passus dispéndia dóminus laudat dispensatóris prudéntiam, quod advérsus dóminum quidem fraudulénter, sed pro se prudénter égerit: quanto magis Christus, qui nullum damnum sustinére potest, et pronus est ad cleméntiam, laudábit discípulos suos, si in eos qui creditúri sibi sunt, misericórdes fúerint?
+
+        Dénique post parábolam íntulit: Et ego vobis dico, Fácite vobis amícos de iníquo mammóna. Mammóna autem non Hebræórum, sed Syrórum lingua divítiæ nuncupántur, quod de iniquitáte colléctæ sint. Si ergo iníquitas bene dispensáta vértitur in justítiam; quanto magis sermo divínus, in quo nulla est iníquitas, qui et Apóstolis créditus est, si bene fúerit dispensátus, dispensatóres suos levábit in cælum?
+
+        Quam ob rem séquitur: Qui fidélis est in mínimo, hoc est, in carnálibus; et in multis fidélis erit, hoc est, in spirituálibus. Qui autem in parvo iníquus est, ut non det frátribus ad uténdum, quod a Deo pro ómnibus est creátum; iste et in spirituáli pecúnia dividénda iníquus erit, ut non pro necessitáte, sed pro persónis doctrínam Dómini dívidat. Si autem, inquit, carnáles divítia, quæ labúntur, non bene dispensátis; veras æternásque divítias doctrínæ Dei quis credet vobis?
+      responsory: |-
+        R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.
+        V. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.
+        R. Plena est omnis terra glória ejus.
+      status: verified

@@ -1,0 +1,45 @@
+# Read directly from web/www/horas/Latin/Sancti/09-11.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Beatórum Mártyrum tuórum Proti et Hyacínthi nos, Dómine, fóveat pretiósa
+    conféssio: et pia júgiter intercéssio tueátur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-several-martyrs (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags actually used for
+# a mere commemoration, confirmed against this exact category via an
+# independently live-verified precedent elsewhere in this app). ss-protus-and-hyacinth has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper. Collect is the saint's own
+# real proper (ss-protus-and-hyacinth-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Beatórum Mártyrum tuórum Proti et Hyacínthi nos, Dómine, fóveat pretiósa
+    conféssio: et pia júgiter intercéssio tueátur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins reading for Ss. Protus and Hyacinth, Martyrs (Sep 11).
+# Sourced directly from web/www/horas/Latin/Sancti/09-11.txt,
+# English/Sancti/09-11.txt. Single simplex-feast lesson (Lectio93),
+# one continuous account covering both martyrs, pooled into the
+# nocturn: 2 slot per the established vigil/simplex convention (see
+# vigil-of-st-lawrence.yml's own note).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Protus et Hyacinthus fratres, beátæ Eugeniæ Vírginis eunuchi, una cum illa ab Héleno episcopo baptizati, ac stúdiis déditi divinárum litterárum, aliquámdiu in Ægypto inter ascetas mira humilitate et vitæ sanctitáte vixérunt. Sed póstea, sanctam Vírginem Eugeniam Romam prosecuti, Gallieno imperatóre, in Urbe propter christianæ fidei professiónem comprehénsi sunt. A quibus cum nullo modo impetrari posset ut, christianam religiónem deseréntes, deos cólerent, acerbis verbéribus cæsi, secúri feriúntur tertio Idus Septembris.
+      status: verified

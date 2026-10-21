@@ -1,0 +1,56 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2028-07-28).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Sanctórum tuórum nos, Dómine, Nazárii, Celsi, Victóris et Innocéntii conféssio beáta commúniat: et fragilitáti nostræ subsídium dignánter exóret.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-nazarius-celsus-victor-and-innocent-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (ss-nazarius-celsus-victor-and-innocent-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Sanctórum tuórum nos, Dómine, Nazárii, Celsi, Victóris et Innocéntii conféssio beáta commúniat: et fragilitáti nostræ subsídium dignánter exóret.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Nazarius/Celsus/Victor I/Innocent I's own day
+# (2026-07-28). The Benedictus antiphon.
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Matins Nocturn 2 readings for Ss. Nazarius and Celsus, Martyrs, St.
+# Victor I, Pope and Martyr, and St. Innocent I, Pope and Confessor
+# (July 28) — pre-1955-but-post-1617 (no SanctiM/07-28*.txt at all).
+# web/www/horas/Latin/Sancti/07-28.txt, English/Sancti/07-28.txt.
+# Lectio4 (Nazarius and Celsus), Lectio5 (Victor I), and Lectio6
+# (Innocent I) are three distinct saints' vitae, genuine source changes,
+# kept as three separate readings. No responsory given.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Nazarius, a beato Lino papa baptizatus, cum in Gálliam profectus esset, ibi Celsum púerum, a se christiánis præceptis prius instructum, baptizávit. Qui una Trévirim euntes, Nerónis persecutióne, in mare uterque dejícitur, unde mirabíliter evasérunt. Postea Mediolanum veniéntes, cum ibi Christi fidem disseminárent, ab Anolino præfecto, constantíssime Christum Deum confiténtes, cápite plectúntur: quorum córpora extra portam Romanam sepúlta sunt. Quæ cum diu latuíssent, Dei mónitu a beato Ambrosio conspersa recénti sánguine sunt invénta, tamquam si paulo ante martyrium passi essent; unde, in urbem translata, honorifico sepúlcro contecta sunt.'
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      text: 'Victor in Africa natus, Sevéro imperatóre rexit Ecclésiam. Confirmávit decretum Pii primi, ut sacrum Pascha die Dominico celebrarétur: qui ritus ut póstea in mores inducerétur, habita sunt multis in locis concília; et in Nicæna dénique prima synodo sancítum est, ut Paschæ dies festus post quartam décimam lunam agerétur, ne Christiáni Judæos imitari videréntur. Státuit ut quavis aqua, modo naturali, si necessitas cógeret, quicúmque baptizari posset. Theódotum Coriárium Byzantinum, docéntem Christum tantummodo hóminem fuísse, ejécit ex Ecclésia. Scripsit de quæstióne Paschæ et alia quædam opúscula. Creávit duabus ordinatiónibus, mense Decembri, presbyteros quatuor, diaconos septem, episcopos per diversa loca duodecim. Martyrio coronátus, sepelítur in Vaticano, quinto Kalendas Augusti. Sedit annos novem, mensem unum, dies viginti octo.'
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      text: 'Innocentius Albanénsis, sancti Hierónymi et Augustíni ætate flóruit. De quo ille ad Demetríadem vírginem: Sancti Innocentii, qui apostolicæ cathedræ et beátæ memóriæ Anastasii successor et fílius est, teneas fidem nec peregrinam, quamvis tibi prudens callídaque videaris, doctrinam recipias. Eum, tamquam justum Lot subtractum Dei providéntia, ad Ravennam servátum fuísse, scribit Orósius, ne Romani pópuli vidéret excidium. Is, Pelagio et Cælestio damnatis, contra eórum hæresim decretum fecit, ut párvuli, ex christiana étiam mulíere nati, per baptismum renasci debérent; ut in eis regeneratióne mundétur, quod generatióne contraxérunt. Probávit etiam, ut Sábbato, ob memóriam Christi Dómini sepultúræ jejunium servarétur. Sedit annos quíndecim, mensem unum, dies decem. Quatuor ordinatiónibus, mense Decembri, creávit presbyteros trigínta, diaconos quíndecim, episcopos per diversa loca quinquagínta quatuor. Sepultus est in cœmeterio ad Ursum pileátum.'
+      status: verified

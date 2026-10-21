@@ -1,0 +1,45 @@
+collect:
+  text: |
+    Let us pray.
+    Almighty God, grant, we beseech thee, unto this thy family, that as they do abstain from meals to afflict the flesh, so by following after righteousness they may fast from sin.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+collect/~-vespers:
+  text: |
+    Let us pray.
+    Graciously hear our prayers, O Almighty God, and as Thou dost give us to look with confidence for thy favour for which we hope, so grant us, in thy goodness, the manifestation of thine accustomed mercy.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+benedictus-antiphon:
+  text: The beginning, * who also speak unto you.
+  status: verified
+
+magnificat-antiphon:
+  text: He That sent Me is with Me, * and hath not left Me alone, for I do always those things that please Him.
+  status: verified
+
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: John 8:21-29
+      text: 'At that time, Jesus said to the multitudes of the Jews: "I go, and you will seek Me, and in your sin you will die. Where I go you cannot come." The Jews therefore kept saying, "Will He kill Himself, since He says, ''Where I go you cannot come''?" And He said to them, "You are from below, I am from above. You are of this world, I am not of this world. Therefore I said to you that you will die in your sins; for if you do not believe that I am He, you will die in your sin." They therefore said to Him, "Who are You?" Jesus said to them, "Why do I speak to you at all? I have many things to speak and to judge concerning you; but He Who sent Me is true, and the things that I heard from Him, these I speak in the world." And they did not understand that He was speaking to them about the Father. Jesus therefore said to them, "When you have lifted up the Son of Man, then you will know that I am He, and that of Myself I do nothing; but that I preach only what the Father has taught Me. And He Who sent Me is with Me; He has not left Me alone, because I do always the things that are pleasing to Him."'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Tract 38 on John
+      text: |-
+        The Lord spake unto the Jews, saying: "I go My way," for, to the Lord Christ, death was a departure to that place whence He had come, and whence He had never departed. "I go My way," saith He, "and ye shall seek Me" not from love, but from hatred. Yea after He had withdrawn Himself from the sight of men, two classes sought Him, even they that loved, and they that hated Him; the one because they longed for His presence, the other because they were fain to hunt Him down. In the Psalms the Lord Himself saith by His Prophet, "Refuge failed me, and no man cared for my soul." And again He said in another Psalm, "Let them be confounded and put to shame that seek after my soul."
+
+        Thus doth He blame them that seek not, and condemn such as seek. Yea, it is a good thing to seek the soul of Christ, as the disciples sought it; and an evil thing to seek it, as the Jews sought it; the first sought it to possess, the second to destroy it. What then doth He bid us know will be the reward of such as seek it evilly in a perverse heart? "Ye shall seek Me," and lest ye think that ye shall do well so to seek Me, "I tell you that ye shall die in your sins." To seek Christ with bad intent, is as much as to die in sin, for it is to hate Him through Whom alone we can be saved.
+
+        Whereas men whose hope is in God ought to return good even for evil, those men returned evil for good. The Lord therefore told them beforehand, and, because He knew it, He let them know their coming end, how that they should die in their sins. Then He said farther, "Whither I go, ye cannot come." This He said in another place to His disciples, but He never said to them, "Ye shall die in your sins." What said He? The same words as to the Jews, "Whither I go, ye cannot come." Yet, to the disciples, these words only deferred, they cut not away hope, for they, though for a little while they could not come whither He was to go, were yet in the end to go there. Not so they, to whom He foretold and said, "Ye shall die in your sins."
+      responsory: |-
+        R. While as Jacob went from Beersheba, and hasted unto Haran, the Lord spake unto him, saying: * The land whereon thou sleepest, to thee will I give it, and to thy seed.
+        V. He built an altar of stones unto the Name of the Lord, and poured oil upon the top of it; and God blessed him and said.
+        R. The land whereon thou sleepest, to thee will I give it, and to thy seed.
+      status: verified

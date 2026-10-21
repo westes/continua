@@ -1,0 +1,51 @@
+# The source (`web/www/horas/Latin/Sancti/08-06cc.txt`) has no proper
+# [Oratio] of its own -- a plain "@Commune/C3a:Oratio" cross-reference.
+# vu's own `collect-c3a.yml`/`collect-c3a-1.yml` templates only support
+# TWO substituted names (`{N}` twice), but this group has three (Xystus,
+# Felicissimus, Agapitus), so rather than force a mismatched substitution,
+# this is a dedicated collect: `collect-c3a.yml`'s own real Latin/English
+# text, adapted with all three names written in directly instead of the
+# `{N}` placeholder mechanism -- same "dedicated collect for a plural
+# saint-group with no proper text of its own" pattern
+# ss-marius-martha-audifax-and-abachum-collect.yml uses.
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos concédis sanctórum Mártyrum tuórum Xysti, Felicíssimi et Agapíti natalítia
+    cólere: da nobis in ætérna beatitúdine de eórum societáte gaudére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle, same shape as
+# st-canute-commemoration.yml. Ant 2/Versum 2 are the standard de-Communi
+# pairing for the Common of Several Martyrs (C3, their own real common per
+# [Rank]/[Rule]) -- common-of-several-martyrs-commemoration-antiphon.yml /
+# lauds-versicle-common-of-several-martyrs.yml, both already verified
+# elsewhere. This is in fact the real, historical rendering: they always
+# ride as the Transfiguration's own commemoration (see
+# ss-sixtus-felicissimus-and-agapitus.yml's own header), never the day's
+# winner.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Deus, qui nos concédis sanctórum Mártyrum tuórum Xysti, Felicíssimi et Agapíti natalítia cólere: da nobis in ætérna beatitúdine de eórum societáte gaudére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Sixtus II, Felicissimus, and Agapitus,
+# Martyrs (Aug 6). Sourced from web/www/horas/Latin/Sancti/08-06cc.txt
+# (Lectio93, the source's own single combined lesson) and
+# English/Sancti/08-06cc.txt's real translation -- both verified, no
+# translation needed.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Xystus secúndus, Atheniénsis, ex philósopho Christi discípulus, in persecutióne Valeriáni accusátus quod públice Christum prædicáret, comprehénsus tráhitur in templum Martis, propósita ei capitáli pœna, nisi illi simulácro sacrificáret. Qua impietáte constantíssime recusáta, cum ad martýrium ducerétur, occurrénti sancto Lauréntio et dolénter in hunc modum interrogánti, Quo progréderis sine fílio, pater? quo, sacérdos sancte, sine minístro próperas? respóndit: Non ego te désero, fili, majóra te manent pro Christi fide certámina: post tríduum me sequéris, sacerdótem levíta; intérea, si quid in thesáuris habes, paupéribus distríbue. Eódem ígitur die interféctus est una cum Felicíssimo et Agapíto diáconis, Januário, Magno, Vincéntio et Stéphano subdiáconis; et in cœmetério Callísti sepúltus octávo Idus Augústi, céteri vero in cœmetério Prætextáti. Sedit menses úndecim, dies duódecim. Quo témpore hábuit ordinatiónem mense Decémbri, creátis presbýteris quátuor, diáconis septem, epíscopis duóbus.'
+      status: verified

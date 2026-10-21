@@ -1,0 +1,68 @@
+# Read directly from web/www/horas/Latin/Tempora/Pasc7-5.txt's own
+# [Oratio] and its English counterpart. Standard "Per Dóminum..." closing
+# spelled out in full (the source abbreviates it as "$Per Dominum
+# eiusdem"), matching every other collect in this store.
+collect:
+  text: |
+    Orémus.
+    Da, quǽsumus, Ecclésiæ tuæ, miséricors Deus: ut, Sancto Spíritu congregáta, hostíli nullátenus incursióne turbétur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte ejúsdem Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Pasc7-5.txt's own
+# [Ant 2] and its English counterpart, echoing Lectio1's Gospel line
+# (Luke 5:24). The source's own default (non-Cistercian/Dominican-rubric)
+# text is used, not the alternate variant given alongside it.
+benedictus-antiphon:
+  text: 'Dixit Jesus: * Ut sciátis autem quia Fílius hóminis habet potestátem in terra dimitténdi peccáta, ait paralýtico: Tibi dico, surge: tolle lectum tuum, et vade in domum tuam, allelúia.'
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Pasc7-5.txt's own
+# [Ant 3] and its English counterpart (John 14:26, the Vespers antiphon
+# for the Comforter).
+magnificat-antiphon:
+  text: Paráclitus autem * Spíritus Sanctus, quem mittet Pater in nómine meo, ille vos docébit ómnia, et súggeret vobis ómnia, quæcúmque díxero vobis, allelúia.
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Pentecost Ember Friday (Feria Sexta Quattuor
+# Temporum Pentecostes) — Gospel pericope (Luke 5:17-26, the healing of
+# the paralytic) sourced from web/www/missa/Latin/Tempora/Pasc7-5.txt and
+# missa/English/Tempora/Pasc7-5.txt (horas/Tempora/Pasc7-5.txt only gives
+# the incipit + "Et réliqua"); homily sourced from horas/Latin/Tempora/
+# Pasc7-5.txt and horas/English/Tempora/Pasc7-5.txt. Latin/TemporaM/
+# Pasc7-5.txt inherits Lectio1-3/Responsory1-2 unchanged from the secular
+# file and only adds its own extra Responsory3 (a cross-reference to
+# Pasc7-2's own Responsory2, for a 3rd Monastic lesson this app doesn't
+# model) — no divergence in the content actually used here.
+#
+# Recombined into one reading, same convention as ember-pentecost-
+# wednesday.yml (see ember-september-friday.yml's own doc comment for
+# the fuller rationale): St. Ambrose's homily is one continuous text on
+# the healing of the paralytic, split only to fill the fixed 3-lesson
+# slot count. Responsory is Lectio1's own (Responsory1) per the "first
+# one, when several collapse" convention — genuinely proper to this day.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Luc 5:17-26
+      text: 'In illo témpore: Factum est in una diérum, et Jesus sedébat docens. Et erant pharisǽi sedéntes, et legis doctóres, qui vénerant ex omni castéllo Galilǽæ et Judǽæ et Jerúsalem: et virtus Dómini erat ad sanándum eos. Et ecce, viri portántes in lecto hóminem, qui erat paralýticus: et quærébant eum inférre, et pónere ante eum. Et non inveniéntes, qua parte illum inférrent præ turba, ascendérunt supra tectum, et per tégulas summisérunt eum cum lecto in médium ante Jesum. Quorum fidem ut vidit, dixit: Homo, remittúntur tibi peccáta tua. Et cœpérunt cogitáre scribæ et pharisǽi, dicéntes: Quis est hic, qui lóquitur blasphémias? Quis potest dimíttere peccáta nisi solus Deus? Ut cognóvit autem Jesus cogitatiónes eórum, respóndens dixit ad illos: Quid cogitátis in córdibus vestris? Quid est facílius dícere: Dimittúntur tibi peccáta, an dícere: Surge et ámbula? Ut autem sciátis, quia Fílius hóminis habet potestátem in terra dimitténdi peccáta, ait paralýtico: Tibi dico, surge, tolle lectum tuum et vade in domum tuam. Et conféstim consúrgens coram illis, tulit lectum, in quo jacébat: et ábiit in domum suam, magníficans Deum. Et stupor apprehéndit omnes et magnificábant Deum. Et repléti sunt timóre, dicéntes: Quia vídimus mirabília hódie.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Book 5 on Luke 5 (on the healing of the paralytic)
+      text: |-
+        Non otiósa hujus paralýtici, nec angústa medicína est, quando Dóminus et orásse præmíttitur; non útique propter suffrágium, sed propter exémplum. Imitándi enim spécimen dedit, non precándi ámbitum requisívit. Et conveniéntibus ex omni Galilǽa, et Judǽa, et Jerúsalem, legis doctóribus, inter ceterórum remédia debílium, paralýtici istíus medicína descríbitur. Primum ómnium, quod ante díximus, unusquísque æger peténdæ salútis debet adhibére, per quos nostræ vitæ compágo resolúta, actuúmque nostrórum clauda vestígia, verbi cæléstis remédio reforméntur.
+
+        Sint ígitur áliqui monitóres mentis, qui ánimum hóminis, quamvis exterióris córporis debilitáte torpéntem, ad superióra érigant. Quorum rursus adminículis et attóllere et humiliáre se fácilis ante Jesum locétur, Domínico vidéri dignus aspéctu. Humilitátem enim réspicit Dóminus: quia respéxit humilitátem ancíllæ suæ. Quorum fidem ut vidit, dixit: Homo, remittúntur tibi peccáta tua. Magnus Dóminus, qui aliórum mérito ignóscit áliis: et dum álios probat, áliis reláxat erráta. Cur apud te, homo, colléga non váleat, cum apud Deum servus et interveniéndi méritum, et jus hábeat impetrándi?
+
+        Disce, qui júdicas, ignóscere: disce, qui æger es, impetráre. Si grávium peccatórum diffídis véniam, ádhibe precatóres, ádhibe Ecclésiam, quæ pro te precétur, cujus contemplatióne, quod tibi Dóminus negáre posset, ignóscat. Et quamvis históriæ fidem non debeámus omíttere, ut vere paralýtici istíus corpus credámus esse sanátum: cognósce tamen interióris hóminis sanitátem, cui peccáta donántur. Cum Judǽi ásserunt peccáta a solo Deo posse concédi, Deum útique eum confiténtur; suóque judício perfídiam suam produnt, qui opus ástruunt, ut persónam negent.
+      responsory: |-
+        R. Non vos me elegístis, sed ego elégi vos, et pósui vos: * Ut eátis, et fructum afferátis, et fructus vester máneat, allelúia, allelúia.
+        V. Sicut misit me Pater, et ego mitto vos.
+        R. Ut eátis, et fructum afferátis, et fructus vester máneat, allelúia, allelúia.
+      status: verified

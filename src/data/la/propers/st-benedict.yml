@@ -1,0 +1,443 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08.
+# Pulled from the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt + M1617.txt, own title
+# "S. Benedicti Abbatis") and its own source file, not the merged per-date
+# files those tables' fileref points at directly -- see TODO.md.
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui hodiérna die carnis edúctum ergástulo sanctíssimum Confessórem tuum Benedíctum sublevásti ad cælum: † concéde, quǽsumus, hæc festa tuis fámulis celebrántibus cunctórum véniam delictórum; * ut, qui exsultántibus ánimis ejus claritáti congáudent, ipso apud te interveniénte, consociéntur et méritis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-benedict-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-abbot (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-benedict-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Sanctíssime Conféssor Dómini, Monachórum pater et dux, Benedícte, intercéde pro nostra omniúmque salúte.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Omnípotens sempitérne Deus, qui hodiérna die carnis edúctum ergástulo sanctíssimum Confessórem tuum Benedíctum sublevásti ad cælum: † concéde, quǽsumus, hæc festa tuis fámulis celebrántibus cunctórum véniam delictórum; * ut, qui exsultántibus ánimis ejus claritáti congáudent, ipso apud te interveniénte, consociéntur et méritis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# St. Benedict (Transitus): proper Matins hymn, "Quidquid antiqui cecinere vates" (SanctiM/03-21.txt [Hymnus Matutinum]).
+# Latin and English as rendered by the local reference engine (Monastic
+# Tridentinum 1617, command=prayMatutinum, 03-21-2033); before this file the saint
+# fell to the Common's Matins hymn. Four misprints in the source were corrected
+# (Monàrchæ, péetas, genitáeque, Témpore).
+matins-hymn:
+  text: |
+    Quidquid antíqui cecinére vates,
+    Quidquid ætérne moniménta legis,
+    Cóntinet nobis celebránda summi
+    Vita Monárchæ.
+
+    Extulit Móysen píetas benígnum,
+    Inclitum proles Abraham decórat,
+    Isaac sponsæ decus et sevéri
+    Jussa paréntis.
+
+    Ipse virtútum cúmulis onústus,
+    Célsior nostri Patriárcha cœtus,
+    Isaac, Móysen, Abraham sub uno,
+    Péctore clausit.
+
+    Ipse, quos mundi rápuit procéllis,
+    Hic pius flatu státuat secúndo:
+    Pax ubi nullo, requiésque gliscit
+    Mixta pavóre.
+
+    Glória Patri, genitǽque Proli,
+    Et tibi, compar utriúsque semper
+    Spíritus alme, Deus unus,
+    omni témpore sæcli.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2033-03-21 (clean year, per st-benedict.yml's own comment)
+# -- also cross-checked directly against the source's own Monastic-
+# specific file (SanctiM/03-21.txt), which carries a full proper office
+# for his Transitus despite the plain secular Sancti file having none.
+# Own real proper chapter and own hymns at both hours; Lauds responsory
+# and both hours' versicle turn out byte-identical to Common-of-a-
+# Confessor-Bishop's own (reused, not duplicated separately here since
+# Vespers has its own distinct responsory -- see vespers-responsory-st-
+# benedict.yml). No English rendering exists in the reference engine for
+# this chapter or either hymn -- own translations, marked draft.
+lauds-capitulum:
+  text: Ecce Conféssor magnus, quasi stella matutína in médio nébulæ, et quasi luna plena, in diébus suis lucet. Et quasi sol refúlgens, sic ille effúlsit in templo Dei.
+  citation: Eccli 50:6-7
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2033-03-21 -- "Inter ætérnas súperum corónas," own proper
+# Sapphic hymn. No English rendering exists in the reference engine --
+# own original translation, marked draft. See lauds-capitulum-st-
+# benedict.yml's header.
+lauds-hymn:
+  text: |-
+    Inter ætérnas súperum corónas,
+    Quas sacro partas rétinent agóne,
+    Emicas celsis méritis corúscus,
+    O Benedícte!
+
+    Sancta te compsit púerum senéctus,
+    Nil sibi de te rápuit volúptas,
+    Aruit mundi tibi flos, ad alta
+    Mente leváto.
+
+    Hinc fuga lapsus, pátriam, paréntes
+    Déseris, fervens némorum colónus;
+    Edomas carnem, subigísque Christo
+    Tortor acérbus.
+
+    Ne diu tutus látebras fovéres,
+    Digna te produnt óperum piórum;
+    Spárgitur felix céleri per orbem
+    Fama volátu.
+
+    Glória Patri genitǽque Proli,
+    Et tibi compar utriúsque semper,
+    Spíritus alme, Deus unus, omni
+    Témpore sæcli. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2033-03-21 -- byte-identical to Common-of-a-Confessor-
+# Bishop's own Lauds responsory ("Amávit eum Dóminus"), NOT his own
+# `common: common-of-an-abbot` (which resolves to Confessor-Not-Bishop's
+# different "Os justi" responsory -- would be wrong here) -- authored
+# explicitly under his own id for that reason, not left to fall through.
+# See lauds-capitulum-st-benedict.yml's header.
+lauds-responsory:
+  text: |
+    R.br. Amávit eum Dóminus, * Et ornávit eum.
+    R. Amávit eum Dóminus, * Et ornávit eum.
+    V. Stolam glóriæ índuit eum.
+    R. Et ornávit eum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Amávit eum Dóminus, * Et ornávit eum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2033-03-21 -- byte-identical to Common-of-a-Confessor-
+# Bishop's own versicle, authored explicitly for the same reason as
+# lauds-responsory-st-benedict.yml. Same versicle as Vespers.
+lauds-versicle:
+  text: |
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, St. Benedict's own day (2033-03-21) -- own proper text (the
+# opening line of St. Gregory the Great's Life of St. Benedict, Dialogues
+# II), not shared with any Common. English translated (the source's own
+# English page didn't render one, same gap as his existing
+# Benedictus-antiphon file), so `draft`.
+prime-antiphon:
+  text: Fuit vir * vitæ venerábilis, grátia Benedíctus et nómine, qui ab ipso puerítiæ suæ témpore cor gerens seníle, ætátem móribus tránsiens, nulli ánimum voluptáti dedit.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, St. Benedict's own day (2033-03-21) -- see
+# prime-antiphon-st-benedict.yml's header for the full provenance note.
+terce-antiphon:
+  text: Beátus vir Benedíctus * plus appétiit mala mundi pérpeti, quam laudes; pro Deo labóribus fatigári, quam vitæ hujus favóribus extólli.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, St. Benedict's own day (2033-03-21) -- see
+# prime-antiphon-st-benedict.yml's header for the full provenance note.
+# The source's own English page rendered the closing versicles but not
+# the reading itself (silently duplicated the Latin); only the reading
+# is translated here, so `draft`.
+terce-capitulum:
+  text: |
+    Ecce Conféssor magnus, quasi stella matutína in médio nébulæ, et quasi luna plena, in diébus suis lucet. Et quasi sol refúlgens, sic ille effúlsit in templo Dei.
+    R. Deo grátias.
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+  citation: Eccl 50:6-7
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, St. Benedict's own day (2033-03-21) -- see
+# prime-antiphon-st-benedict.yml's header for the full provenance note.
+sext-antiphon:
+  text: 'Gloriósus * Confessor Dómini Benedíctus vitam angélicam gerens in terris, spéculum bonórum óperum factus est mundo: et ídeo cum Christo jam sine fine gaudet in cælis.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, St. Benedict's own day (2033-03-21) -- see
+# prime-antiphon-st-benedict.yml's header for the full provenance note.
+# The source's own English page rendered the closing versicles but not
+# the reading itself (silently duplicated the Latin); only the reading
+# is translated here, so `draft`.
+sext-capitulum:
+  text: |
+    In diébus ipsíus emanavérunt pútei aquárum, et quasi mare adimpléti sunt supra modum. Qui curávit gentem suam, et liberávit eam a perditióne.
+    R. Deo grátias.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+  citation: Eccl 50:3-4
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, St. Benedict's own day (2033-03-21) -- see
+# prime-antiphon-st-benedict.yml's header for the full provenance note.
+none-antiphon:
+  text: 'Vir Dómini Benedíctus * ómnium justórum spíritu plenus fuit: ipse intercédat pro cunctis monásticæ professiónis.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, St. Benedict's own day (2033-03-21) -- see
+# prime-antiphon-st-benedict.yml's header for the full provenance note.
+# The source's own English page rendered the closing versicles but not
+# the reading itself (silently duplicated the Latin); only the reading
+# is translated here, so `draft`.
+none-capitulum:
+  text: |
+    Quasi vas auri sólidum, ornátum omni lápide pretióso. Quasi olíva púllulans, et cypréssus in altitúdinem se extóllens. Et circa illum coróna fratrum: quasi plantátio cedri in monte Líbano, sic circa illum stetérunt quasi rami palmæ: et omnes fílii Aaron in glória sua.
+    R. Deo grátias.
+    V. Lex Dei ejus in corde ipsíus.
+    R. Et non supplantabúntur gressus ejus.
+  citation: Eccl 50:10-11,13-14
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2033-03-21 -- "Láudibus cives résonent canóris," own
+# proper Sapphic hymn recounting his flight to solitude at Subiaco,
+# conquering temptation, and destroying the shrine to Apollo/Venus at
+# Monte Cassino to found his own monastery there. No English rendering
+# exists in the reference engine -- own original translation, marked
+# draft. See lauds-capitulum-st-benedict.yml's header.
+vespers-hymn:
+  text: |-
+    Láudibus cives résonent canóris,
+    Templa solémnes moduléntur hymnos:
+    Hac die summi Benedíctus arcem
+    Scandit olýmpi.
+
+    Ille floréntes peragébat annos,
+    Cum puer dulcis pátriæ penátes
+    Liquit, et solus látuit silénti
+    Cónditus antro.
+
+    Inter urtícas rigidósque sentes
+    Vicit altrícem scélerum juvéntam:
+    Inde consrípsit documénta vitæ
+    Pulchra beátæ.
+
+    Æream turpis Clárii figúram,
+    Et nemus stravit Véneri dicátum,
+    Atque Baptístæ pósuit sacráto
+    Monte sacéllum.
+
+    Jam que felíci résidens olympo,
+    Inter ardéntes Séraphim catévas
+    Spectat, et dulci réficit cliéntum
+    Corda liquóre.
+
+    Glória Patri, Genitǽque Proli
+    Et tibi, compar utriúsque semper
+    Spíritus alme, Deus unus, omni
+    Témpore sæcli. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2033-03-21, cross-checked directly against the source's
+# own SanctiM/03-21.txt ([Responsory Vespera]) -- his own proper
+# responsory, invoking him directly by name ("Sancte Pater Benedícte").
+# See lauds-capitulum-st-benedict.yml's header.
+vespers-responsory:
+  text: |
+    R.br. Sancte Pater Benedícte, * Intercéde pro nobis.
+    R. Sancte Pater Benedícte, * Intercéde pro nobis.
+    V. Ut digni efficiámur promissiónibus Christi.
+    R. Intercéde pro nobis.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Sancte Pater Benedícte, * Intercéde pro nobis.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2033-03-21 -- same versicle as Lauds (see lauds-versicle-
+# st-benedict.yml).
+vespers-versicle:
+  text: |
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 03-21
+# st-benedict (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query (2025-03-21, winner outright) -- the Benedictus antiphon.
+# The source's own English page didn't render a translation (silently
+# duplicated the Latin, same gap as st-scholastica-antiphon.yml);
+# translated here in the same register as the rest of this project's
+# antiphons, so marked `draft` rather than `verified`. No embedded "*":
+# this feast is Duplex I. classis (double-or-higher), so its own query
+# shows the antiphon in full at both open and close with no separate
+# incipit marker, and there's no lower-rank saint sharing this text to
+# reconstruct the split from.
+benedictus-antiphon:
+  text: Sanctíssime Conféssor Dómini, Monachórum pater et dux, Benedícte, intercéde pro nostra omniúmque salúte.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 03-21
+# st-benedict (new saint-level second; continua had "hicvirdespiciensmundum"). See hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon:
+  text: 'Hodie * sanctus Benedíctus per viam Oriéntis recto trámite vidéntibus discípulis cælum ascéndit: hódie eréctis mánibus inter verba oratiónis exspirávit hódie in glória ab Angelis suscéptus est.'
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 03-21
+# st-benedict (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Exsúltet ómnium * turba fidélium pro glória almi Patris Benedícti; læténtur præcípue catérvæ monachórum, celebrántes ejus festa in terris, de cujus societáte sancti congáudent in cælis.
+  status: verified
+
+# Paschaltide variant of St. Benedict's Transitus Second Vespers Magnificat ([Ant 3] tempore paschali): engine render, 2027-04-05 (the Transitus transferred into Eastertide), Monastic Tridentinum 1617.
+magnificat-antiphon/~-paschaltide:
+  text: 'Sanctus Benedíctus * per viam Oriéntis recto trámite vidéntibus discípulis cælum ascéndit: et eréctis mánibus inter verba oratiónis exspirávit: et in glória ab Angelis suscéptus est, allelúia.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Latin/
+# SanctiM/03-21.txt's own [Ant Laudes] block (5 antiphons run together,
+# one per line, not individually numbered/tagged the way most other
+# Sancti/SanctiM files are -- St. Benedict's own file uses this older
+# format). No English rendering exists in the reference engine's data for
+# these at all (English/SanctiM/03-21.txt has no [Ant Laudes] block
+# either), same gap already found and worked around for his Prime/Terce/
+# Sext/None content (see prime-antiphon-st-benedict.yml etc.) and for St.
+# Scholastica's own Lauds override. Antiphons 1/2/3/5 are byte-identical
+# to his already-authored Prime/Terce/Sext/None antiphons (Prime reuses
+# Lauds Ant 1, Terce Ant 2, Sext Ant 3, None Ant 5 -- the historical
+# minor-hours-borrow-from-Lauds convention), so their already-translated
+# English is reused directly; antiphon 4 (the canticle's own) is new,
+# translated here. Per st-scholastica.yml's own note: this schema
+# (hours/lauds.ts's BilingualText) has no per-language status field, so
+# this self-translated English can't carry an explicit `draft` marker.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Fuit vir * vitæ venerábilis, grátia Benedíctus et nómine, qui ab ipso puerítiæ suæ témpore cor gerens seníle, ætátem móribus tránsiens, nulli ánimum voluptáti dedit.
+    - psalms:
+        - 99
+      antiphon: Beátus vir Benedíctus * plus appétiit mala mundi pérpeti, quam laudes; pro Deo labóribus fatigári, quam vitæ hujus favóribus extólli.
+    - psalms:
+        - 62
+      antiphon: 'Gloriósus * Confessor Dómini Benedíctus vitam angélicam gerens in terris, spéculum bonórum óperum factus est mundo: et ídeo cum Christo jam sine fine gaudet in cælis.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Erat * vir Dómini Benedíctus vultu plácido, móribus decorátus angélicis, tantáque circa eum cláritas excréverat, ut in terris pósitus in cæléstibus habitáret.
+  laudate:
+    antiphon: 'Vir Dómini Benedíctus * ómnium justórum spíritu plenus fuit: ipse intercédat pro cunctis monásticæ professiónis.'
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-03-21, St. Benedict's own day). Without this
+# file he fell back to categories/common-of-a-confessor-not-bishop.yml
+# (its own `aliases` list registers `common-of-an-abbot` under that same
+# scheme) -- a real Common fallback, not the plain ferial default. This
+# file replaces that generic text with his own proper antiphons, at the
+# same psalm numbers ("Psalmi & antiphonæ ex Proprio Sanctorum", confirmed
+# live). Antiphons 1/2/3/4 here reuse his own Lauds antiphons 1/2/3/5
+# verbatim (Lauds antiphon 4, the canticle-only one, has no Vespers slot)
+# -- same historical minor-hours-borrow-from-Lauds pattern already used
+# for his Prime/Terce/Sext/None antiphons, whose already-translated
+# English is reused directly here too.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Fuit vir * vitæ venerábilis, grátia Benedíctus et nómine, qui ab ipso puerítiæ suæ témpore cor gerens seníle, ætátem móribus tránsiens, nulli ánimum voluptáti dedit.
+    - psalms:
+        - 110
+      antiphon: Beátus vir Benedíctus * plus appétiit mala mundi pérpeti, quam laudes; pro Deo labóribus fatigári, quam vitæ hujus favóribus extólli.
+    - psalms:
+        - 111
+      antiphon: 'Gloriósus * Confessor Dómini Benedíctus vitam angélicam gerens in terris, spéculum bonórum óperum factus est mundo: et ídeo cum Christo jam sine fine gaudet in cælis.'
+    - psalms:
+        - 112
+      antiphon: 'Vir Dómini Benedíctus * ómnium justórum spíritu plenus fuit: ipse intercédat pro cunctis monásticæ professiónis.'
+
+# Matins Nocturn 2-3 readings for St. Benedict, Abbot, patron of the
+# Monastic rite (Mar 21, Duplex I class) — SanctiM/03-21.txt is a
+# richer case than most SanctiM files: Lectio1-4 (Nocturn 1) fall back
+# to Common of an Abbot; Lectio5-8 resolve back to
+# `@Sancti/03-21:Lectio4-6` (resliced, same vita text as the Tridentine
+# track — see memory vu-matins-pre1955-saints, vu-matins-sanctim-saints);
+# but Lectio9-12 are the Monastic office's *own* content, not found in
+# `Sancti/03-21.txt` at all — a homily by St. Peter Damian preached
+# specifically "In Natal. S. Bened. Abb.", genuinely proper to this
+# feast in the Monastic rite.
+#
+# Nocturn 2: `Sancti/03-21.txt`/`English/Sancti/03-21.txt` Lectio4-6
+# combined into one reading, one continuous vita (drawn from St.
+# Gregory the Great's Dialogues, Bk. 2, the classic Life of St.
+# Benedict), no genuine source break.
+# Nocturn 3: `SanctiM/03-21.txt` Lectio9's Gospel citation (Matt
+# 19:27-29) is a bare incipit ("Et réliqua") with no full pericope text
+# given, so — per the pre-1955 pass's convention of not transcribing
+# bare incipits — only the homily portion was originally authored (not
+# marked isGospel), combined with Lectio10-12 as one continuous excerpt
+# of St. Peter Damian's sermon. No English/SanctiM translation exists
+# for this file in the reference engine, so `en` for the Nocturn 3
+# reading is this project's own translation, marked `draft` per
+# vu-prefer-text-over-missing. No responsory given for either reading.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Peter Damian's homily) — the day's
+# Missale (`Sancti/03-21.txt`, `[Rule] vide C5b`) redirects to the
+# Common of a Confessor Not a Bishop, whose own [Evangelium] gives the
+# full Matt 19:27-29 pericope, sourced from
+# web/www/horas/Latin/Commune/C5b.txt (same text also authored
+# independently for ss-seven-founders-of-the-servite-order.yml).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Benedíctus, Núrsiæ nóbili génere ortus, Romæ liberálibus disciplínis erudítus, ut totum se Jesu Christo daret, ad eum locum, qui Sublácus dícitur, in altíssimam spelúncam penetrávit; in qua sic per triénnium delítuit, ut unus id sciret Románus mónachus, quo ad vitæ necessitátem minístro utebátur. Dum ígitur ei quodam die ardéntes ad libídinem faces a diábolo subjiceréntur, se in vépribus támdiu volutávit, dum, laceráto córpore, voluptátis sensus dolóre opprimerétur. Sed jam erumpénte ex illis látebris fama ejus sanctitátis, quidam mónachi se illi instituéndos tradidérunt: quorum vivéndi licéntia cum ejus objurgatiónes ferre non posset, venénum in potióne ei dare constítuunt. Verum, póculum ei præbéntibus, crucis signo vas confrégit, ac relícto monastério in solitúdinem se recépit.
+
+        Sed cum multi ad eum quotídie discípuli convenírent, duódecim monastéria ædificávit, éaque sanctíssimis légibus communívit. Póstea Cassínum migrávit, ubi simulácrum Apóllinis, qui adhuc ibi colebátur, commínuit, aram evértit et lucos succéndit; ibíque sancti Martíni sacéllum et sancti Joánnis ædículam exstrúxit, oppidános autem et íncolas christiánis præcéptis ímbuit. Quare augebátur in dies magis divína grátia Benedíctus, ut étiam prophético spíritu ventúra prædíceret. Quod ubi accépit Tótila Gothórum rex, exploratúrus, an res ita esset, spathárium suum régio ornátu et comitátu præmíttit, qui se regem simuláret. Quem ut ille vidit, Depóne, inquit, fili, depóne quod geris; nam tuum non est. Tótilæ vero prædíxit advéntum ejus in Urbem, maris transmissiónem, et post novem annos mortem.
+
+        Qui áliquot ménsibus ántequam e vita migráret, præmónuit discípulos, quo die esset moritúrus; ac sepúlcrum, in quo suum corpus condi vellet, sex diébus ántequam eo inferrétur, aperíri jussit: sextóque die deférri vóluit in ecclésiam; ubi, sumpta Eucharístia, sublátis in cælum óculis orans, inter manus discipulórum efflávit ánimam: quam duo mónachi eúntem in cælum vidérunt, pállio ornátum pretiosíssimo, circum eam fulgéntibus lampádibus, et claríssima et gravíssima spécie virum, stantem supra caput ipsíus, dicéntem audiérunt: Hæc est via, qua diléctus Dómini Benedíctus in cælum ascéndit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 19:27-29
+      text: 'In illo témpore: Dixit Petrus ad Jesum: Ecce, nos relíquimus ómnia, et secúti sumus te: quid ergo erit nobis? Jesus autem dixit illis: Amen, dico vobis, quod vos, qui secúti estis me, in regeneratióne, cum séderit Fílius hóminis in sede majestátis suæ, sedébitis et vos super sedes duódecim, judicántes duódecim tribus Israël. Et omnis, qui relíquerit domum, vel fratres, aut soróres, aut patrem, aut matrem, aut uxórem, aut fílios, aut agros, propter nomen meum, céntuplum accípiet, et vitam ætérnam possidébit.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Peter Damian, Bishop, Sermon 9, On the Nativity of St. Benedict, Abbot (on Matt 19:27-29)
+      text: |-
+        Ecce nos relíquimus ómnia, et secúti sumus te. Solémne verbum, magna promíssio, opus sanctum, dignum benedictióne: relínquere ómnia, et sequi Christum. Hæc sunt verba voluntárie persuasória paupertátis, quæ monastéria genuérunt, quæ claustra mónachis, anachorétis silvas copiósius replevérunt. Hæc enim sunt, de quibus psallit Ecclésia: Propter verba labiórum tuórum ego custodívi vias duras; perceptúra requiem pro labóre, pro paupertáte divítias, pro tribulatióne mercédem. Magnum revéra est relínquere ómnia, sed majus Christum sequi, cum multos ómnia reliquísse, nec Christum secútos fuísse legámus. Hoc opus, hic labor est, hic salútis humánæ summa consístit; nec Christum póssumus sequi, nisi ómnia relinquámus, quia exsúltat ut gigas ad curréndam viam, et onerátus eum sequi non potest.
+
+        Ecce, inquit, nos relíquimus ómnia, non solum facultátes mundi, sed et ánimi quoque cupiditátes: neque enim relínquit ómnia, qui retínuit vel seípsum; immo vero nihil prodest, sine seípso cétera reliquísse, quandóquidem nullum áliud onus est grávius hómini, quam homo ipse. Quis enim tyránnus crudélior, quæ sǽvior potéstas hómini, quam hóminis ipsíus volúntas? Séquitur: Quid ergo erit nobis? Jam ómnia relíquit Petrus, jam non solum séquitur, sed et diu secútus est; et nunc primum intérrogat, quidnam sit acceptúrus. Quid est, Petre? Nonne obediéntiam promisísti in auris auditióne, non in pacti conventióne? Sed audíte jam, quid loquátur Dóminus Deus, et atténdite spem, in qua mundo fluctuánte speráre debémus: Sedébitis, ait Dóminus, ait Véritas. Solémnis séssio, grata quies, plena sufficiéntia.
+
+        Sed ne magnæ promissiónis dulcédinem longánimis expectátio contorquéret, mentis nostræ mobilitátem sermónem témperat dulcióri. Novit enim ipse figméntum nostrum, quóniam dilatiónis moras pusillanímitas nostra non sústinet; ideóque benignitáte sua huic quoque obviat cogitatióni, et occúrrit étiam ex hac parte, dicens: Et omnis, qui relíquerit domum, aut patrem, aut matrem, aut fratrum, aut uxórem, aut agros, aut fílios, propter nomen meum, céntuplum accípiet, et vitam ætérnam possidébit. Obstrúctum est certe os loquéntium iníqua. Jamque confundántur omnes iníqua agéntes supervácue. Habémus enim promissiónem vitæ hujus, quæ nunc est, páriter et futúræ, manifestúmque est præséntis témporis esse céntupli promissiónem, ex eo nimírum quod séquitur: Et vitam ætérnam possidébit.
+
+        Qui ergo nondum céntuplum accepérunt, scruténtur corda sua, et univérsa mánuum suárum stúdia diligénter exáminent; nec dúbium, quin invéniant ángulum et diversórium, quod Salvátor non novit. Sed quid est céntuplum istud, nisi consolatiónes visitationésque et primítiæ Spíritus, qui super mel dulcis est, nisi testimónium consciéntiæ nostræ, nisi læta et jucundíssima justórum expectátio, nisi memória abundántiæ suavitátis Dei, et magna vere multitúdo dulcédinis ejus, quam nec expértis necésse est dícere, nec inexpértis illis verbis exprímere quiquam potest? Cui vero sic speciáliter totus evangélicæ lectiónis excúrsus assignári potest, quemádmodum Patri et Magístro nostro beáto Benedícto? Hic a puerítia mundum cum flore relíquit, et curréntem Christum cursu rapidíssimo secútus est, nec déstitit, donec consequerétur.
+      status: verified

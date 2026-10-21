@@ -1,0 +1,45 @@
+collect:
+  text: |
+    Let us pray.
+    Further with thy gracious favor, we beseech thee, O Lord, the fasts which we have begun, that we may be able to practice the bodily fasts which we keep, with sincere minds.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+collect/~-vespers:
+  text: |
+    Let us pray.
+    Guard, O Lord, thy people, and from all their sins cleanse them; for no adversity shall harm them if no iniquity dominates them.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+benedictus-antiphon:
+  text: When thou dost * alms, let not thy left hand know what thy right hand doth.
+  status: verified
+
+magnificat-antiphon:
+  text: But thou when thou shalt pray, * enter into thy chamber, and having shut the door, pray to thy Father.
+  status: verified
+
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Matthew 5:43-48; 6:1-4
+      text: At that time, Jesus said to His disciples, "You have heard that it was said, 'You shall love your neighbor, and shall hate your enemy.' But I say to you, love your enemies, do good to those who hate you, and pray for those who persecute and calumniate you, so that you may be children of your Father in heaven, Who makes His sun to rise on the good and the evil, and sends rain on the just and the unjust. For if you love those that love you, what reward shall you have? Do not even the publicans do that? And if you salute your brethren only, what are you doing more than others? Do not even the Gentiles do that? You therefore are to be perfect, even as your heavenly Father is perfect. Take heed not to do your good before men, in order to be seen by them; otherwise you shall have no reward with your Father in heaven. Therefore when you give alms, do not sound a trumpet before you, as the hypocrites do in the synagogues and streets, in order that they may be honored by men. Amen I say to you, they have received their reward. But when you give alms, do not let your left hand know what your right hand is doing, so that your alms may be given in secret; and your Father, Who sees in secret, will reward you."
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Jerome, Priest, Book 1, Commentary on Matthew, ch. 5 and 6
+      text: |-
+        But I say unto you, "Love your enemies, do good to them that hate you." There are many who judge of the commandments of the Lord by their own weakness, and not by the strength of His Saints; and so deem Him to have commanded things impossible. These are they who think that not to hate their enemies is all that they are able to do; and that to command us to love them, is to command more than man's nature can bear. It behoveth them to know, that this which Christ commandeth is not impossible, albeit perfect. This is what David did in respect of Saul and Absalom; the martyr Stephen also prayed for his enemies, even while they were stoning him; and Paul could wish that himself were accursed from Christ for his persecutors. And this, Jesus Himself did, as well as taught, when He said, "Father, forgive them, for they know not what they do."
+
+        That ye may be the children of your Father Which is in heaven. If he that doeth the commandments of God becometh a son of God, then is he not a son by nature, but by his own choice. Therefore when thou doest thine alms, do not sound a trumpet before thee, as the hypocrites do in the synagogues, and in the streets, that they may have glory of men. He that soundeth a trumpet before him, when he doeth alms, is an hypocrite. He that disfigureth his face, when he fasteth, to the end that he may show the emptiness of his belly in his looks, he also is an hypocrite. He that prayeth in the synagogues and in the corners of the streets, that he may be seen of men, is an hypocrite.
+
+        From all which, we gather that an hypocrite is one which doeth anything that he may have glory of men. To me also it seemeth that he which saith unto his brother, "Let me pull out the mote out of thine eye," that he also is an hypocrite; for he proposeth to take upon him that office for vainglory's sake, that he himself may appear righteous. Therefore the Lord saith unto him, "Thou hypocrite, first cast out the beam out of thine own eye." Thus we see that it is, not the doing good, but the motive which moveth us to do good, which will meet with reward from God; and, if thou stray but a little from the right way, it is of small moment whether thou wander to the right hand or to the left, when once thou hast lost the straight path.
+      responsory: |-
+        R. The Angel of the Lord called unto Abraham and said: * Lay not thine hand upon the lad; for now I know that thou fearest God.
+        V. And Abraham stretched forth his hand to slay his son; and, behold, the Angel of the Lord called unto him out of heaven, and said.
+        R. Lay not thine hand upon the lad; for now I know that thou fearest God.
+      status: verified

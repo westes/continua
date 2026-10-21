@@ -1,0 +1,82 @@
+# Read directly from web/www/horas/Latin/Sancti/09-12.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Concéde, quǽsumus, omnípotens Deus: ut fidéles tui, qui sub sanctíssimæ
+    Vírginis Maríæ Nómine et protectióne lætántur; ejus pia intercessióne,
+    a cunctis malis liberéntur in terris, et ad gáudia ætérna perveníre
+    mereántur in cælis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (holy-name-of-mary-antiphon.yml), paired with the standard BVM commemoration versicle already verified elsewhere in this app (propers/common/lauds-suffrage-bvm.yml -- 'V. Ora pro nobis sancta Dei Genitrix'). Collect is the saint's own real proper (holy-name-of-mary-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Sancta María, * succúrre míseris, juva pusillánimes, réfove flébiles, ora pro pópulo, intérveni pro clero, intercéde pro devóto femineo sexu: séntiant omnes tuum juvámen, quicúmque célebrant tui sancti nóminis commemoratiónem.
+    V. Ora pro nobis sancta Dei Génitrix.
+    R. Ut digni efficiámur promissiónibus Christi.
+    Orémus.
+    Concéde, quǽsumus, omnípotens Deus: ut fidéles tui, qui sub sanctíssimæ
+    Vírginis Maríæ Nómine et protectióne lætántur; ejus pia intercessióne,
+    a cunctis malis liberéntur in terris, et ad gáudia ætérna perveníre
+    mereántur in cælis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Read directly from web/www/horas/Latin/Sancti/09-12.txt's own
+# untagged [Ant 1] and its English counterpart -- a real, proper
+# antiphon of this feast, not a Common substitution. (Verbatim text
+# shared with our-lady-of-mount-carmel-antiphon.yml -- a coincidental
+# reuse of the same formulaic BVM-commemoration wording already present
+# in the reference source itself.)
+benedictus-antiphon:
+  text: 'Sancta María, * succúrre míseris, juva pusillánimes, réfove flébiles, ora pro pópulo, intérveni pro clero, intercéde pro devóto femineo sexu: séntiant omnes tuum juvámen, quicúmque célebrant tui sancti nóminis commemoratiónem.'
+  status: verified
+
+# Matins Nocturn 2-3 readings for the Holy Name of the Blessed Virgin
+# Mary (Sep 12). Sourced directly from
+# web/www/horas/Latin/Sancti/09-12.txt, English/Sancti/09-12.txt.
+# Nocturn 2: Lectio4-6, St. Bernard's own homily on the name of Mary
+# ("Star of the Sea"), combined into one reading. Nocturn 3: the
+# Gospel citation ends "Et réliqua"/"And so on" with no full pericope
+# given -- per the bare-incipit convention, only the homily (Lectio7-9,
+# St. Peter Chrysologus) is authored, isGospel: false, no citation
+# field.
+#
+# Update (2026-09-05): Nocturn 2's Gospel pericope (Luke 1:26-38, the
+# Annunciation) is now authored too (isGospel: true, immediately before
+# St. Bernard's homily) -- the day's own Missale [Evangelium] in
+# web/www/missa/Latin/Sancti/09-12.txt (same pericope, full text given
+# there, not a redirect), matching the homily's own declared citation.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: true
+      citation: Luc 1:26-38
+      text: 'In illo témpore: Missus est Angelus Gábriel a Deo in civitátem Galilææ, cui nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, de domo David, et nomen Vírginis María. Et ingréssus Angelus ad eam, dixit: Ave, grátia plena; Dóminus tecum: benedícta tu in muliéribus. Quæ cum audísset, turbáta est in sermóne ejus: et cogitábat, qualis esset ista salutátio. Et ait Angelus ei: Ne tímeas, María, invenísti enim grátiam apud Deum: ecce, concípies in útero et páries fílium, et vocábis nomen ejus Jesum. Hic erit magnus, et Fílius Altíssimi vocábitur, et dabit illi Dóminus Deus sedem David, patris ejus: et regnábit in domo Jacob in ætérnum, et regni ejus non erit finis. Dixit autem María ad Angelum: Quómodo fiet istud, quóniam virum non cognósco? Et respóndens Angelus, dixit ei: Spíritus Sanctus supervéniet in te, et virtus Altíssimi obumbrábit tibi. Ideóque et quod nascétur ex te Sanctum, vocábitur Fílius Dei. Et ecce, Elísabeth, cognáta tua, et ipsa concépit fílium in senectúte sua: et hic mensis sextus est illi, quæ vocátur stérilis: quia non erit impossíbile apud Deum omne verbum. Dixit autem María: Ecce ancílla Dómini, fiat mihi secúndum verbum tuum.'
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: St. Bernard of Clairvaux, 2nd Homily on Luke 1:26 (Missus est)
+      text: |-
+        Et nomen, inquit, Vírginis Maria. Loquámur pauca, et super hoc nómine, quod interpretátum maris stella dícitur, et Matri Vírgini valde conveniénter aptátur. Ipsa namque aptíssime síderi comparátur, quia sicut sine sui corruptióne sidus suum emíttit rádium, sic absque sui læsióne Virgo parturívit Fílium. Nec síderi rádius suam mínuit claritátem, nec Vírgini Fílius suam integritátem. Ipsa est ígitur nóbilis illa stella ex Jacob orta, cujus rádius univérsum orbem illúminat, cujus splendor et præfúlget in supérnis, et ínferos pénetrat; terras étiam perlústrans, et calefáciens magis mentes quam córpora, fovet virtútes, éxcoquit vítia. Ipsa, inquam, est præclára et exímia stella super hoc mare magnum et spatiósum necessário subleváta, micans méritis, illústrans exémplis.
+
+        O quisquis te intélligis in hujus sǽculi proflúvio magis inter procéllas et tempestátes fluctuáre, quam per terram ambuláre; ne avértas óculos a fulgóre hujus síderis, si non vis óbrui procéllis. Si insúrgant venti tentatiónum, si incúrras scópulos tribulatiónum, réspice stellam, voca Maríam. Si jactáris supérbiæ undis, si ambitiónis, si detractiónis, si æmulatiónis, réspice stellam, voca Maríam. Si iracúndia aut avarítia aut carnis illécebra navículam concússerit mentis, réspice ad Maríam. Si críminum immanitáte turbátus, consciéntiæ fœditáte confúsus, judícii horróre pertérritus, bárathro incípias absorbéri tristítiæ, desperatiónis abýsso, cógita Maríam.
+
+        In perículis, in angústiis, in rebus dúbiis Maríam cógita, Maríam ínvoca. Non recédat ab ore, non recédat a corde; et, ut ímpetres ejus oratiónis suffrágium, non déseras conversatiónis exémplum. Ipsam sequens, non dévias; ipsam rogans, non despéras; ipsam cógitans, non erras; ipsa tenénte, non córruis; ipsa protegénte, non métuis; ipsa duce, non fatigáris; ipsa propítia, pérvenis: et sic in temetípso experíris quam mérito dictum sit: Et nomen Vírginis María. - Quod quidem venerábile nomen, jamprídem in quibúsdam christiáni orbis pártibus speciáli ritu cultum, Innocéntius undécimus Románus Póntifex, ob insígnem victóriam sub ejusdem Vírginis Maríæ præsídio de immaníssimo Turcárum tyránno, cervícibus pópuli christiáni insultánti, Viénnæ in Austria partam, et in perenne tanti benefícii monuméntum, in Ecclésia universáli síngulis annis celebrári præcépit.
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Peter Chrysologus, Sermon 142, on the Annunciation
+      text: |-
+        Audístis hódie, fratres caríssimi, Angelum cum muliere de hóminis reparatióne tractántem. Audístis agi, ut homo cursibus eisdem, quibus delapsus fuerat ad mortem, rediret ad vitam. Agit, agit cum Maria Angelus de salúte, quia cum Heva angelus egerat de ruína. Audístis Angelum de carnis nostræ limo templum divinæ majestátis arte ineffábili construentem. Audístis in terris Deum in cælis hóminem sacraménto incomprehensibili collocari. Audístis inaudíta ratióne in uno corpore Deum hominémque misceri. Audístis frágilem nostræ carnis natúram ad portandam totam Deitátis glóriam angelica exhortatióne roborari.
+
+        Denique, ne tanto pónderi cæléstis fabricæ in Maria subtilis nostri corporis arena succumberet, et in Vírgine totius generis humani portatúra fructum, virga ténuis frangerétur; fugatúra metum vox Angeli mox præcessit, dicens: Ne timeas, Maria. Ante causam dignitas Vírginis annuntiátur ex nómine; nam Maria Hebræo sermóne, Latine Domina nuncupátur. Vocat ergo Angelus Dominam, ut Dominatoris Genitricem trepidátio déserat servitutis, quam nasci et vocari Dominam ipsa sui Gérminis fecit et impetrávit auctoritas. Ne timeas, Maria, invenísti enim grátiam. Verum est, quia, qui invénit grátiam, nescit timére: Invenísti grátiam.
+
+        Beata, quæ inter hómines audíre sola méruit præ ómnibus: Invenísti grátiam. Quantam? Quantam supérius díxerat: plenam. Et vere plenam, quæ largo imbre totam fúnderet et infúnderet creatúram: Invenísti enim grátiam apud Deum. Hæc cum dicit, et ipse Angelus mirátur, aut féminam tantum, aut omnes hómines vitam meruísse per féminam: stupet Angelus totum Deum veníre intra virginális úteri angústias, cui tota simul angústa est creatúra. Hinc est quod remorátur Angelus, hinc est quod vírginem vocat de mérito, de grátia compéllat, vix causam prodit audiénti, sane ut sensum promóveat, vix longa trepidatióne compónit.
+      status: verified

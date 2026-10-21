@@ -1,0 +1,50 @@
+# Matins Nocturn 2-3 readings for St. Martin I, Pope, Martyr (Nov 14
+# on this app's own calendar) — an off-date sourcing case like St.
+# Paul the Hermit in the pre-1955 pass (memory vu-matins-pre1955-saints):
+# the general Tridentine calendar keeps Martin I on Nov 12 instead
+# (`Sancti/11-12.txt`), the date this app's own calendar uses for St.
+# Emilian. No genuine SanctiM match at either date: the only SanctiM
+# file at Nov 12, `SanctiM/11-12M.txt`, is St. Emilian's own
+# (Common-only) file, and the file at Nov 14, `SanctiM/11-14M.txt`,
+# bases `@SanctiM/11-02` (All Souls, unrelated) — a missed
+# pre-1955-pool candidate rather than a genuine SanctiM case (see
+# memory vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/11-12.txt, English/Sancti/11-12.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
+# Nocturn 3: Lectio7's Gospel citation (Matt 16:13-19) was a bare
+# incipit ("Et réliqua") with no full pericope text given; the full
+# pericope is now authored too (isGospel: true, immediately before the
+# homily) — sourced from the Missale's own Common of a Pope/Martyr
+# Gospel (`web/www/missa/Latin/Commune/Coronatio.txt`'s `[Evangelium]`,
+# English/Commune/Coronatio.txt), the same text already used for this
+# day in `chair-of-st-peter-at-rome.yml` (2026-09-05 update). The
+# homily portion remains Pope St. Leo the Great's sermon, combined with
+# Lectio8-9 as one continuous excerpt. No responsory given for either
+# reading.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Martinus, Tuderti in Umbria natus, inítio pontificatus, et litteris et legatiónibus missis operam dedit, ut Paulum Constantinopolitanum patriarcham a nefaria hæresi ad catholicæ fidei veritátem revocaret. Qui, Constante imperatóre hæretico fretus, eo améntiæ progréssus fuerat, ut Sedis apostolicæ legatos varie in insulas relegarit. Quo ejus scélere commótus Pontifex, coacto Romæ concílio centum quinque episcopórum, eum condemnávit.
+
+        Quæ causa fuit Constanti mitténdi in Italiam Olympium exarchum, ut Martinum Pontificem interficiéndum aut ad se perducéndum curaret. Igitur Olympius, Romam veniens, lictori mandat ut Pontificem, dum in basilica sanctæ Maríæ ad Præsepe Missárum solemnia celebraret, occíderet. Quod ubi lictor aggréditur, cæcus repénte factus est.
+
+        Constanti autem imperatóri ex eo témpore multæ calamitátes incidérunt; quibus níhilo mélior factus, Theodórum Callíopam ad Urbem mittens, imperat ut Pontifici manus injíciat. A quo per fraudem captus Martinus et Constantinopolim perductus, deínde in Chersonesum relegátus; ibi ob catholicam fidem ærumnis confectus, sextodecimo Kalendas Octobris cessit e vita, clarus miraculis. Cujus corpus, Romam póstea translátum, in ecclésia conditum est, quæ sanctórum Silvestri et Martini nómine dedicáta erat. Præfuit Ecclésiæ annos sex, mensem unum, dies viginti sex. Habuit ordinatiónes duas mense Decembri, quibus creávit presbyteros undecim, diaconos quinque, episcopos per diversa loca trigínta tres.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 16:13-19
+      text: 'In illo témpore: Venit Jesus in partes Cæsaréæ Philíppi, et interrogábat discípulos suos, dicens: Quem dicunt hómines esse Fílium hóminis? At illi dixérunt: Alii Joánnem Baptístam, alii autem Elíam, álii vero Jeremíam, aut unum ex prophétis. Dicit illis Jesus: Vos autem quem me esse dícitis? Respóndens Simon Petrus, dixit: Tu es Christus, Fílius Dei vivi. Respóndens autem Jesus, dixit ei: Beátus es, Simon Bar Jona: quia caro et sanguis non revelávit tibi, sed Pater meus, qui in cœlis est. Et ego dico tibi, quia tu es Petrus, et super hanc petram ædificábo Ecclésiam meam, et portæ ínferi non prævalébunt advérsus eam. Et tibi dabo claves regni cœlórum. Et quodcúmque ligáveris super terram, erit ligátum et in cœlis: et quodcúmque sólveris super terram, erit solútum et in cœlis.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Leo the Great, Sermon 2 on the Anniversary of his own Election (on Matt 16:13-19)
+      text: |-
+        Cum, sicut evangelica lectióne reserátum est, interrogasset Dóminus discipulos, quem ipsum (multis diversa opinántibus) crederent; respondissétque beátus Petrus, dicens: Tu es Christus Fílius Dei vivi; Dóminus ait: Beátus es, Simon Bar-Jona, quia caro et sanguis non revelávit tibi, sed Pater meus, qui in cælis est: et ego dico tibi, quia tu es Petrus, et super hanc petram ædificábo Ecclésiam meam, et portæ ínferi non prævalébunt advérsus eam. Et tibi dabo claves regni cælórum: et quodcúmque ligáveris super terram, erit ligátum et in cælis: et quodcúmque solveris super terram, erit solutum et in cælis. Manet ergo disposítio veritátis, et beátus Petrus, in accepta fortitúdine petræ persevérans, suscepta Ecclésiæ gubernácula non relíquit.
+
+        In univérsa namque Ecclésia, Tu es Christus Fílius Dei vivi, quotídie Petrus dicit; et omnis lingua, quæ confitétur Dóminum, magisterio hujus vocis imbuitur. Hæc fides diabolum vincit et captivórum ejus víncula dissolvit. Hæc érutos mundo, ínserit cælo, et portæ ínferi advérsus eam prævalere non possunt. Tanta enim divinitus soliditate muníta est, ut eam neque hæretica umquam corrumpere pravitas, nec pagána potúerit superare perfidia. His ítaque modis, dilectíssimi, rationábile obsequio celebrétur hodiérna festívitas: ut in persona humilitátis meæ ille intelligátur, ille honorétur, in quo et ómnium pastórum sollicitudo, cum commendatárum sibi óvium custódia persevérat, et cujus étiam dignitas in indigno heréde non déficit.
+
+        Cum ergo cohortatiónes nostras áuribus vestræ sanctitátis adhibemus, ipsum vobis, cujus vice fungimur, loqui crédite: quia et illíus vos afféctu monémus, et non aliud vobis, quam quod docuit, prædicámus; obsecrántes, ut succincti lumbos mentis vestræ, castam et sobriam vitam in Dei timóre ducatis. Corona mea, sicut Apóstolus ait, et gáudium vos estis, si fides vestra, quæ ab inítio Evangélii in universo mundo prædicáta est, in dilectióne et sanctitáte permanserit. Nam licet omnem Ecclésiam, quæ in toto est orbe terrárum, cunctis oporteat florere virtútibus; vos tamen præcipue inter ceteros pópulos decet meritis pietátis excellere, quos in ipsa apostolicæ petræ arce fundatos, et Dóminus noster Jesus Christus cum ómnibus redémit, et beátus Apóstolus Petrus præ ómnibus erudívit.
+      status: verified

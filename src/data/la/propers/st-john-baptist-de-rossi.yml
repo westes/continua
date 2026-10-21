@@ -1,0 +1,54 @@
+# Read directly from web/www/horas/Latin/Sancti/05-23.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui sanctum Joánnem Baptistam Confessórem tuum in evangelizandis pauperibus
+    caritate et patientia decorásti: concede quǽsumus; ut cujus pia merita veneramur,
+    virtutum quoque imitemur exempla.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-john-baptist-de-rossi has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-john-baptist-de-rossi-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui sanctum Joánnem Baptistam Confessórem tuum in evangelizandis pauperibus
+    caritate et patientia decorásti: concede quǽsumus; ut cujus pia merita veneramur,
+    virtutum quoque imitemur exempla.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. John Baptist de Rossi, Confessor
+# (May 23). Sourced directly from web/www/horas/Latin/Sancti/05-23.txt,
+# English/Sancti/05-23.txt. Lectio4-6 combined into one reading, one
+# continuous vita (his own file has no Lectio94/teDeum marker at all --
+# not a gap, just how the source lays out this particular office). No
+# Lectio7-9 in his own file (his `[Rule]` is `vide C5`) -- defers to
+# the Common of a Confessor's own Nocturn 3, not transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Joannes Baptista de Rossi Veiturii in Liguria honesto genere ortus, adhuc puer morum suavitate ac pietatis studio in omnium admiratione fuit. Tredecim annos natus visus est Dei consilio Romam mitti, ut apostoli munus in ea expleret. Inter ephebos Collegii Romani Societatis Jesu adlectus, ingenio et virtute præluxit. Curabat impense, ut ii Mariano sodalitio frequentes adessent, in nosocomiis segris ministrarent, honestaque animarum recreatione retraherentur a noxiis; interim cælestia sermonibus pertractans segniores excitabat, ac proinde Apostoli agnomen adeptus est. Ob asperam corporis castigationem gravi morbo correptus, ab usitata sibi studiorum severitate aliquantum remittere coactus fuit: quod divinitus factum ajebat, ne scientia inflatus sua potius quæreret, quam quæ Jesu Christi. Clericali militiæ adscriptus sacris disciplinis in sancti Thomæ collegio operam dedit, ac in virtute proficiens, dein ingenti animi voluptate sacerdotio est auctus. Ita Dominum in hereditatem sibi constituit, ut nullum, ne oblatum quidem, ecclesiasticum beneficium acceptandi, nisi obedientia adigeretur, singulari voto se obstrinxerit.
+
+        De spirituali proximorum salute jam ab adolescentia sollicitus, sacerdos factus in id totum se devovit. Ecclesiasticos viros, sacras virgines, oppidanos, carcere detentos, imam plebem universam mira suavitate, verbi ministerio ad virtutis amórem inflammabat. Plures quotidie horas rudiorum confessionibus excipiendis impendens, ægrotis aderat vel in domibus vel in valetudinarus, præsertim phisicis, quos sui veluti juris esse affirmabat. Hac illac per urbem alacer advolans, innumeris operibus præsto erat: at assiduus in sanctæ Gallæ hospitio versabatur, ut pauperes, quos carissimos habuit, omni ope juvaret. Ob id a decimo quinto ætatis anno adjunctus sacerdotum cœtui, qui eisdem evangelizando addicti sunt, ibi apostolatus sui rationem didicit, ipsiusque societatis opera instauravit et auxit. Eadem misericordia motus egenorum omnium necessitatibus sublevandis modicam suam substantiam impendit. Perennes autem infatigabilis sui zeli fructus reliquit, satellitum, vagorum, rudium institutionem, catecheses ad sancte Pascha celebrandum, certam custodiam perditarum, noctuque per Urbem vagantium mulierum hospitium, præcipue vero studium lucrandi animas in clero excitatum.
+
+        Caritatis in Deum ardor ex ejus ore emicabat, dum sacris operabatur, nec sine lacrimis de ejus bonitate loqui poterat. In collegium canonicorum basilicæ sanctæ Mariæ in Cosmedin ex obedientia cooptatus, inter psallendum extra sensus rapi videbatur. In sacris ceremoniis diligentissimus, domus Dei decorem promovit, et in id suas opes libenter erogabat. Amorem erga Deiparam in alios effundebat, ejusque cultum in sua ecclesia fovit, addito étiam psalmodiæ quotidiano laudum præconio. Philippi Nerii spiritu imbui studens, et in omnes cælites pius, Apostolorum Principum obsequium augendum curavit. In oratione omnique virtutum exercitatione assiduus, supernis quoque charismatibus donatus, tandem in hospitio, cui nomen a sanctissima Trinitate, quo se reduxerat in sacerdotum convictum, laboribus fractus ad vitæ exitum adductus est, atque Ecclesiæ sacramentis refectus, caritatis opera et pauperum curam commendans, decessit in osculo Domini, die vigesima tertia Maji, anno Christi millesimo septingentesimo sexagesimo quarto, ætatis suæ sexagesimo sexto. Insigne adeo sacerdotalis virtutis exemplar miraculis Deus illustrare dignatus est, quibus rite probatis, Summus Pontifex Pius nonus tertio Idus Maji anno millesimo octingentesimo sexagesimo cælitum beatorum honoribus auxit: novisque fulgentem signis Leo decimus tertius sexto Idus Decembris anno millesimo octingentesimo octogesimo primo in sanctorum albo recensuit.
+      status: verified

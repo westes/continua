@@ -1,0 +1,316 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-05-31 (Trinity Sunday itself).
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui dedísti fámulis tuis in confessióne veræ fídei, ætérnæ Trinitátis glóriam agnóscere, et in poténtia majestátis adoráre Unitátem: quǽsumus; ut, ejúsdem fídei firmitáte, ab ómnibus semper muniámur advérsis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Trinity Sunday's own Matins hymn ("Summæ Deus cleméntiæ") — shares its
+# opening stanza with the plain ferial Saturday hymn
+# (matins-hymn-ferial-saturday.yml's "Summæ Deus cleméntiæ, Mundíque
+# Factor máchinæ..."), but diverges completely from its second stanza
+# onward and is shorter overall (2 body stanzas + its own doxology,
+# not 4 + the shared weekday doxology) — a genuinely different hymn, not
+# a mislabeled duplicate. Live-verified against Divinum Officium
+# (Monastic Tridentinum 1617), Matins live query, 2026-05-31 (Trinity
+# Sunday itself). Self-contained — its own final stanza is a fixed,
+# unique doxology, not the shared weekday one.
+matins-hymn:
+  text: |-
+    Summæ Deus cleméntiæ,
+    Mundíque Factor máchinæ,
+    Unus potentiáliter,
+    Trinúsque personáliter.
+
+    Da déxteram surgéntibus,
+    Exsúrgat ut mens sóbria,
+    Flagrans et in laudem Dei,
+    Grates repéndet débitas.
+
+    Glória Patri Dómino,
+    Glória Unigénito,
+    Una cum Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Trinity Sunday's own Lauds chapter (Rom 11:33) — shared with Vespers
+# via lookupPart (Vespers chapter, Lauds sibling)'s own cross-hour fallback (see
+# hours/vespers.ts), not duplicated into a separate vespers-capitulum-
+# trinity-sunday.yml. Live-verified against Divinum Officium (Monastic
+# Tridentinum 1617), Lauds/Vespers live query, 2026-05-31 (Trinity Sunday
+# itself).
+lauds-capitulum:
+  text: O Altitúdo divitiárum sapiéntiæ, et sciéntiæ Dei, quam incomprehensibília sunt judícia ejus, et investigábiles viæ ejus!
+  citation: Rom 11:33
+  status: verified
+
+# Trinity Sunday's Lauds hymn, re-read from the live engine (Monastic Tridentinum 1617, command=prayLaudes, 2027-05-23): "O lux beáta Trínitas", the same as Vespers'.
+# An earlier version of this file read "Tu, Trinitátis Unitas" out of the static source's [HymnusM Laudes] overlay; the engine does not render that at Lauds.
+lauds-hymn:
+  text: |
+    O lux beáta Trínitas,
+    Et principális Únitas,
+    Jam sol recédit ígneus,
+    Infúnde lumen córdibus.
+
+    Te mane laudum cármine,
+    Te deprecémur véspere:
+    Te nostra supplex glória
+    Per cuncta laudet sǽcula.
+
+    Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum.
+    Amen.
+  status: verified
+
+# Trinity Sunday's own Lauds responsory ("Benedíctus es, Dómine, in
+# firmaménto cæli") — distinct from Vespers' own ("Benedicámus Patrem et
+# Fílium cum Sancto Spíritu", see
+# vespers-responsory-trinity-sunday.yml). Live-verified against Divinum
+# Officium (Monastic Tridentinum 1617), Lauds live query, 2026-05-31
+# (Trinity Sunday itself).
+lauds-responsory:
+  text: |
+    R.br. Benedíctus es, Dómine, * In firmaménto cæli.
+    R. Benedíctus es, Dómine, * In firmaménto cæli.
+    V. Et laudábilis et gloriósus in sǽcula.
+    R. In firmaménto cæli.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Benedíctus es, Dómine, * In firmaménto cæli.
+  status: verified
+
+# Trinity Sunday's own Lauds versicle — distinct from Vespers' own
+# ("Benedíctus es, Dómine, in firmaménto cæli", see
+# vespers-versicle-trinity-sunday.yml). Live-verified against Divinum
+# Officium (Monastic Tridentinum 1617), Lauds live query, 2026-05-31
+# (Trinity Sunday itself).
+lauds-versicle:
+  text: |-
+    V. Benedicámus Patrem et Fílium cum Sancto Spíritu.
+    R. Laudémus et superexaltémus eum in sǽcula.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayPrima, 2027-05-23); Latin and English both taken from the page.
+prime-antiphon:
+  text: Glória tibi, Trínitas * æquális, una Déitas, et ante ómnia sǽcula, et nunc et in perpétuum.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2027-05-23); Latin and English both taken from the page.
+terce-antiphon:
+  text: Laus et perénnis glória * Deo Patri, et Fílio, Sancto simul Paráclito, in sæculórum sǽcula.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2027-05-23); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    Rom 11:33 O Altitúdo divitiárum sapiéntiæ, et sciéntiæ Dei, quam incomprehensibília sunt judícia ejus, et investigábiles viæ ejus!
+    R. Deo grátias.
+    V. Benedíctus es, Dómine, in firmaménto cæli.
+    R. Et laudábilis et gloriósus in sǽcula.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2027-05-23); Latin and English both taken from the page.
+sext-antiphon:
+  text: Glória laudis * résonet in ore ómnium, Patri, genitǽque Proli, Spirítui Sancto páriter resúltet laude perénni.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2027-05-23); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    2 Cor 13:13 Grátia Dómini nostri Jesu Christi et cáritas Dei et communicátio Sancti Spíritus sit cum ómnibus vobis. Amen.
+    R. Deo grátias.
+    V. Benedíctus es, Dómine, in firmaménto cæli.
+    R. Et laudábilis et gloriósus in sǽcula.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2027-05-23); Latin and English both taken from the page.
+none-antiphon:
+  text: 'Ex quo ómnia, * per quem ómnia, in quo ómnia: ipsi glória in sǽcula.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2027-05-23); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    1 Joann. 5:7 Tres sunt, qui testimónium dant in cælo: Pater, Verbum et Spíritus Sanctus, et hi tres unum sunt.
+    R. Deo grátias.
+    V. Verbo Dómini cæli firmáti sunt.
+    R. Et Spíritu oris ejus omnis virtus eórum.
+  citation: ''
+  status: verified
+
+# Trinity Sunday's own Vespers hymn ("O lux beáta Trínitas") — identical
+# text to Lauds' own (lauds-hymn-trinity-sunday.yml). Live-verified
+# against Divinum Officium (Monastic Tridentinum 1617), Vespers live
+# query, 2026-05-31 (Trinity Sunday itself).
+vespers-hymn:
+  text: |-
+    O lux beáta Trínitas,
+    Et principális Únitas,
+    Jam sol recédit ígneus,
+    Infúnde lumen córdibus.
+
+    Te mane laudum cármine,
+    Te deprecémur véspere:
+    Te nostra supplex glória
+    Per cuncta laudet sǽcula.
+
+    Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum. Amen.
+  status: verified
+
+# Trinity Sunday's own Vespers responsory ("Benedicámus Patrem et
+# Fílium cum Sancto Spíritu") — distinct from Lauds' own ("Benedíctus
+# es, Dómine, in firmaménto cæli", see
+# lauds-responsory-trinity-sunday.yml). Live-verified against Divinum
+# Officium (Monastic Tridentinum 1617), Vespers live query, 2026-05-31
+# (Trinity Sunday itself).
+vespers-responsory:
+  text: |
+    R.br. Benedicámus Patrem et Fílium * Cum Sancto Spíritu.
+    R. Benedicámus Patrem et Fílium * Cum Sancto Spíritu.
+    V. Laudémus et superexaltémus eum in sǽcula.
+    R. Cum Sancto Spíritu.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Benedicámus Patrem et Fílium * Cum Sancto Spíritu.
+  status: verified
+
+# Trinity Sunday's own Vespers versicle — distinct from Lauds' own
+# ("Benedicámus Patrem et Fílium cum Sancto Spíritu", see
+# lauds-versicle-trinity-sunday.yml). Live-verified against Divinum
+# Officium (Monastic Tridentinum 1617), Vespers live query, 2026-05-31
+# (Trinity Sunday itself).
+vespers-versicle:
+  text: |-
+    V. Benedíctus es, Dómine, in firmaménto cæli.
+    R. Et laudábilis et gloriósus in sǽcula.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-05-31 (Trinity Sunday itself).
+benedictus-antiphon:
+  text: Benedícta sit * sancta creátrix et gubernátrix ómnium, sancta et indivídua Trínitas, nunc, et semper, et per infiníta sǽcula sæculórum.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-05-31 (Trinity Sunday itself).
+magnificat-antiphon:
+  text: 'Te Deum * Patrem ingénitum, te Fílium unigénitum, te Spíritum Sanctum Paráclitum, sanctam et indivíduam Trinitátem, toto corde et ore confitémur, laudámus, atque benedícimus: tibi glória in sǽcula.'
+  status: verified
+  temporal: true
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-05-30 trinity-sunday first. Paschaltide Alleluia is left to hours/resolve-common.ts's
+# withPaschaltideAlleluia.
+magnificat-antiphon/~-first:
+  text: Grátias * tibi Deus, grátias tibi, vera et una Trínitas, una et summa Déitas, sancta et una Unítas.
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-05-23); Latin and English both taken from the page. Antiphons only; the psalm numbers are the Monastic Sunday scheme (92/99/62, canticle, Laudate).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Glória tibi, Trínitas * æquális, una Déitas, et ante ómnia sǽcula, et nunc et in perpétuum.
+    - psalms:
+        - 99
+      antiphon: Laus et perénnis glória * Deo Patri, et Fílio, Sancto simul Paráclito, in sæculórum sǽcula.
+    - psalms:
+        - 62
+      antiphon: Glória laudis * résonet in ore ómnium, Patri, genitǽque Proli, Spirítui Sancto páriter resúltet laude perénni.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Laus Deo Patri, * parilíque Proli, et tibi, Sancte, stúdio perénni, Spíritus, nostro résonet ab ore, omne per ævum.
+  laudate:
+    antiphon: 'Ex quo ómnia, * per quem ómnia, in quo ómnia: ipsi glória in sǽcula.'
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2027-05-23 trinity-sunday second. Named temporal feast: the app had no Vespers psalm antiphons for it and fell
+# back to the ferial/Sunday set. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Glória tibi, Trínitas * æquális, una Déitas, et ante ómnia sǽcula, et nunc et in perpétuum.
+    - psalms:
+        - 110
+      antiphon: Laus et perénnis glória * Deo Patri, et Fílio, Sancto simul Paráclito, in sæculórum sǽcula.
+    - psalms:
+        - 111
+      antiphon: Glória laudis * résonet in ore ómnium, Patri, genitǽque Proli, Spirítui Sancto páriter resúltet laude perénni.
+    - psalms:
+        - 112
+      antiphon: 'Ex quo ómnia, * per quem ómnia, in quo ómnia: ipsi glória in sǽcula.'
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-05-30 trinity-sunday first. Named temporal feast: the app had no Vespers psalm antiphons for it and fell
+# back to the ferial/Sunday set. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Glória tibi, Trínitas * æquális, una Déitas, et ante ómnia sǽcula, et nunc et in perpétuum.
+    - psalms:
+        - 110
+      antiphon: Laus et perénnis glória * Deo Patri, et Fílio, Sancto simul Paráclito, in sæculórum sǽcula.
+    - psalms:
+        - 111
+      antiphon: Glória laudis * résonet in ore ómnium, Patri, genitǽque Proli, Spirítui Sancto páriter resúltet laude perénni.
+    - psalms:
+        - 112
+      antiphon: 'Ex quo ómnia, * per quem ómnia, in quo ómnia: ipsi glória in sǽcula.'
+
+# Matins nocturn content for Trinity Sunday (temporalId trinity-sunday,
+# Duplex II classis). Sourced from Tempora/Pent01-0.txt (Latin) /
+# English/Tempora/Pent01-0.txt, and the Gospel pericope's full text from
+# missa/Latin+English/Tempora/Pent01-0.txt's own [Evangelium] (the
+# Matins file itself only gives the incipit + "Et réliqua" for Lectio7,
+# per this project's Gospel/homily-split convention).
+#
+# The audit found this id registered in ALWAYS_OVERRIDE_TEMPORAL_IDS,
+# with a real collect/antiphons already authored, but no Matins reading.
+# Nocturn 1-2 (Lectio1-6, Romans 11) left unauthored here per this
+# project's convention of leaving Nocturn 1/2 scripture to the bible-plan
+# store when the source itself draws Nocturn 2 from ordinary Scripture
+# rather than a patristic sermon (Trinity Sunday's own [Lectio4-6] are a
+# continuation of Romans, not a proper sermon on the feast).
+#
+# Nocturn 3: the Gospel pericope (Matt 28:18-20) authored in full
+# (isGospel: true), followed by Lectio7's homily portion (incipit
+# dropped) combined with Lectio8/8a as one continuous excerpt of St.
+# Gregory of Nazianzus's own Treatise on the Faith. The source's own
+# [Lectio9] is a distinct "Commemoratio Dominicæ" (a Gospel+homily pair
+# for whichever ordinary Sunday after Pentecost Trinity Sunday displaces,
+# not Trinity's own proper content) and is deliberately not carried over
+# here — see ferial-commemoration-temporal-leak memory for the general
+# principle this follows.
+nocturn-readings:
+  readings:
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 28:18-20
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Data est mihi omnis potéstas in cælo et in terra. Eúntes ergo docéte omnes gentes, baptizántes eos in nómine Patris, et Fílii, et Spíritus Sancti: docéntes eos serváre ómnia, quæcúmque mandávi vobis. Et ecce, ego vobíscum sum ómnibus diébus usque ad consummatiónem sǽculi.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Gregory of Nazianzus, Bishop, Treatise on the Faith
+      text: |-
+        Quis catholicórum ignórat Patrem vere esse Patrem, Fílium vere esse Fílium, et Spíritum Sanctum vere esse Spíritum Sanctum? sicut ipse Dóminus ad Apóstolos suos dicit: Eúntes baptizáte omnes gentes in nómine Patris, et Fílii, et Spíritus Sancti. Hæc est perfécta Trínitas in unitáte consístens, quam scílicet uníus substántiæ profitémur. Non enim nos secúndum córporum conditiónem, divisiónem in Deo fácimus; sed secúndum divínæ natúræ poténtiam, quæ in matéria non est, et nóminum persónas vere constáre crédimus, et unitátem divinitátis esse testámur.
+
+        Nec extensiónem partis alicújus ex parte, ut quidam putavérunt, Dei Fílium dícimus: nec verbum sine re, velut sonum vocis, accípimus: sed tria nómina et tres persónas uníus esse esséntiæ, uníus majestátis atque poténtiæ crédimus. Et ídeo unum Deum confitémur: quia únitas majestátis, plúrium vocábulo deos próhibet appellári. Dénique Patrem et Fílium cathólice nominámus; duos autem Deos dícere, nec póssumus, nec debémus. Non quod Fílius Dei Deus non sit, immo verus Deus de Deo vero; sed quia non aliúnde, quam de ipso uno Patre, Dei Fílium nóvimus, perínde unum Deum dícimus. Hoc enim Prophétæ, hoc Apóstoli tradidérunt: hoc ipse Dóminus dócuit, cum dicit: Ego et Pater unum sumus. Unum ad unitátem divinitátis, ut dixi, refert; Sumus autem, persónis assígnat.
+      responsory: |-
+        R. Benedicámus Patrem et Fílium cum Sancto Spíritu: * Laudémus et superexaltémus eum in sǽcula.
+        V. Benedíctus es, Dómine, in firmaménto cæli: et laudábilis et gloriósus in sǽcula.
+        R. Laudémus et superexaltémus eum in sǽcula.
+      status: verified

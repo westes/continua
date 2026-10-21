@@ -1,0 +1,55 @@
+# Lauds collect ([Oratio 2] in the source) — read from
+# web/www/horas/{Latin,English}/Tempora/Quad3-6.txt. No [Oratio 3] in
+# the source for this day, so no `-collect-vespers` file exists for this
+# id — Vespers falls back to this same collect via getDayCollect's own
+# missing-status fallback.
+collect:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, qui se, affligéndo carnem, ab aliméntis ábstinent; sectándo justítiam a culpa jejúnent.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad3-6.txt's own
+# [Ant 2] and its English counterpart. No [Ant 3] in the source for this
+# day, so no `-magnificat-antiphon` file exists for this id.
+benedictus-antiphon:
+  text: 'Inclinávit se Jesus, * et scribébat in terra: Si quis sine peccáto est, mittat in eam lápidem.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Saturday of Lent week 3 — read from
+# web/www/horas/{Latin,English}/Tempora/Quad3-6.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quad3-6.txt's own [Evangelium].
+# Recombined into one reading (Lectio1-3 are one continuous Augustine
+# homily split only to fill the fixed 3-lesson slot count). Responsory1
+# is a cross-reference (@Tempora/Quad3-0:Responsory7 — the same text
+# lent-3-wednesday's combined reading uses, reused here per the source's
+# own cross-reference, not an error) per the "the first one, when
+# several collapse" convention. This day has no [Ant 3]/[Oratio 3] in
+# the source at all, so no `-collect-vespers`/`-magnificat-antiphon`
+# files exist for this id.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Joann 8:1-11
+      text: 'In illo témpore: Perréxit Jesus in montem Olivéti: et dilúculo íterum venit in templum, et omnis pópulus venit ad eum, et sedens docébat eos. Addúcunt autem scribæ et pharisǽi mulíerem in adultério deprehénsam: et statuérunt eam in médio, et dixérunt ei: Magíster, hæc múlier modo deprehénsa est in adultério. In lege autem Móyses mandávit nobis hujúsmodi lapidáre. Tu ergo quid dicis? Hoc autem dicébant tentántes eum, ut possent accusáre eum. Jesus autem inclínans se deórsum, dígito scribébat in terra. Cum ergo perseverárent interrogántes eum, eréxit se, et dixit eis: Qui sine peccáto est vestrum, primus in illam lápidem mittat. Et íterum se inclínans, scribébat in terra. Audiéntes autem unus post unum exíbant, incipiéntes a senióribus: et remánsit solus Jesus, et múlier in médio stans. Erigens autem se Jesus, dixit ei: Múlier, ubi sunt, qui te accusábant? nemo te condemnávit? Quæ dixit: Nemo, Dómine. Dixit autem Jesus: Nec ego te condemnábo: Vade, et jam ámplius noli peccáre.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, 33rd Tract on John
+      text: |-
+        Jesus perréxit in montem Olivéti, in montem fructuósum, in montem unguénti, in montem chrísmatis. Ubi enim decébat docére Christum, nisi in monte Olivéti? Christi enim nomen a chrísmate dictum est: chrisma autem Græce, Latíne únctio nominátur. Ideo autem nos unxit, quia luctatóres contra diábolum fecit. Et dilúculo íterum venit in templum, et omnis pópulus venit ad eum: et sedens docébat eos, et non tenebátur, quia nondum pati dignabátur. Nunc jam atténdite, ubi ab inimícis tentáta sit Dómini mansuetúdo.
+
+        Addúcunt autem illi scribæ et pharisǽi mulíerem in adultério deprehénsam, et statuérunt eam in médio, et dixérunt ei: Magíster, hæc múlier modo deprehénsa est in adultério: in lege autem Móyses mandávit nobis hujúsmodi lapidáre: tu ergo quid dicis? Hæc autem dicébant tentántes eum: ut possent accusáre eum. Unde accusáre? Numquid ipsum in áliquo facínore deprehénderant, aut illa múlier ad eum áliquo modo pertinuísse dicebátur?
+
+        Intellegámus, fratres, admirábilem mansuetúdinem in Dómino fuísse. Animadvertérunt eum nímium esse mitem, nímium esse mansuétum. De illo quippe fúerat ante prædíctum: Accíngere gládio tuo circa femur tuum, potentíssime. Spécie tua et pulchritúdine tua inténde, próspere procéde, et regna: propter veritátem, et mansuetúdinem, et justítiam. Ergo áttulit veritátem ut doctor, mansuetúdinem ut liberátor, justítiam ut cógnitor. Propter hæc eum esse regnatúrum in Spíritu Sancto prophéta prædíxerat. Cum loquerétur, véritas agnoscebátur: cum advérsus inimícos non moverétur, mansuetúdo laudabátur. Cum ergo de duóbus istis, id est, de veritáte et mansuetúdine ejus, inimíci livóre et invídia torqueréntur; in tértio, id est justítia, scándalum posuérunt.
+      responsory: |-
+        R. Mérito hæc pátimur, quia peccávimus in fratrem nostrum, vidéntes angústias ánimæ ejus, dum deprecarétur nos, et non audívimus: * Idcírco venit super nos tribulátio.
+        V. Dixit Ruben frátribus suis: Numquid non dixi vobis, Nolíte peccáre in púerum; et non audístis me?
+        R. Idcírco venit super nos tribulátio.
+      status: verified

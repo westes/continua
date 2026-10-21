@@ -1,0 +1,58 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-08-26).
+# The English "so his example may be of betterment" is corrected from a
+# dropped mid-word "e" ("exampl / may be of betterment") present in both
+# the raw source file and the live query output -- a transcription
+# artifact, not a stylistic choice.
+collect:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut beáti Zephyríni, Mártyris tui atque Pontíficis, cujus gaudémus méritis, instruámur exémplis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-zephyrinus-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-martyr-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-zephyrinus-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut beáti Zephyríni, Mártyris tui atque Pontíficis, cujus gaudémus méritis, instruámur exémplis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Zephyrinus's own day (2026-08-26). The Benedictus
+# antiphon.
+benedictus-antiphon:
+  text: Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, St. Zephyrinus's own First Vespers (anticipated the evening
+# of Aug 25, per the corrected `hasFirstVespers` rule — see
+# src/calendar/vespers.ts). The "Iste Sanctus" formula, common to a
+# Martyr not Pope/Bishop-rank office.
+magnificat-antiphon:
+  text: 'Iste Sanctus pro lege Dei sui certávit usque ad mortem, et a verbis impiórum non tímuit: fundátus enim erat supra firmam petram.'
+  status: verified
+
+# Matins Nocturn 2 reading for St. Zephyrinus, Pope and Martyr (Aug 26)
+# — pre-1955-but-post-1617 (no SanctiM/08-26*.txt at all).
+# web/www/horas/Latin/Sancti/08-26.txt, English/Sancti/08-26.txt. Single
+# lesson (simplex-feast Lectio93), no responsory in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Zephyrinus Romanus Severo imperatore ad regendam Ecclesiam assumptus, sancivit, ut qui ordinandi essent, opportuno tempore et multis præsentibus clericis et laicis, de more sacris initiarentur; doctique ac spectatæ vitæ homines ad id officii munus deligerentur. Decrevit præterea, ut rem divinam facienti episcopo sacerdotes omnes astarent. Idem instituit ut patriarcha, primas, metropolitanus adversus episcopum non ferant sententiam, nisi apostolica auctoritate fulti. Vixit in pontificatu annos decem et octo, dies decem et octo. Habuit ordinationes quatuor mense Decembri, quibus creavit presbyteros tredecim, diaconos septem, episcopos per diversa loca tredecim. Antonino imperatore martyrio coronatus est, et sepultus via Appia prope cemeterium Callisti, septimo Kalendas Septembris.
+      status: verified

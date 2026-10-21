@@ -1,0 +1,57 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08.
+# Pulled from the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt + M1617.txt, own title
+# "Ss. Martyrum Machabaeorum") and its own source file, not the merged per-date
+# files those tables' fileref points at directly -- see TODO.md.
+collect:
+  text: |
+    Orémus.
+    Fratérna nos, Dómine, Mártyrum tuórum coróna lætíficet: quæ et fídei nostræ prǽbeat increménta virtútum; et multíplici nos suffrágio consolétur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-several-martyrs (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags actually used for
+# a mere commemoration, confirmed against this exact category via an
+# independently live-verified precedent elsewhere in this app). ss-machabees has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper. Collect is the saint's own
+# real proper (ss-machabees-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Fratérna nos, Dómine, Mártyrum tuórum coróna lætíficet: quæ et fídei nostræ prǽbeat increménta virtútum; et multíplici nos suffrágio consolétur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for the Holy Machabees, Martyrs (Aug 1,
+# sharing the date with St. Peter's Chains — see st-peter-ad-vincula.yml).
+# No genuine SanctiM match: the only SanctiM file for this date,
+# `SanctiM/08-01.txt`, bases `@Sancti/08-01` (Peter's Chains, not the
+# Machabees) — a missed pre-1955-pool candidate rather than a genuine
+# SanctiM case (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/08-01r.txt, English/Sancti/08-01r.txt.
+# Single lesson (Lectio93), one continuous excerpt of St. Gregory
+# Nazianzen's sermon, no responsory given in the source.
+#
+# Checked 2026-09-05 for a Gospel pairing: skipped, verified via
+# 08-01r.txt itself. This is a Simplex-rank commemoration whose entire
+# night office is a single combined lesson (`[Lectio93]`) running
+# straight to the Te Deum -- there is no Nocturn 1/2/3 structure at all
+# for this day, and therefore no separate Gospel pericope to pair with
+# Gregory Nazianzen's homily on the (Old Testament, pre-Christian)
+# Machabees.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Gregory Nazianzen, Sermon 20 on the Machabees
+      text: Quidnam Machabǽi? Horum enim nómine dies festus præsénti frequéntia celebrátur. Qui, etsi apud multos non sunt in honóre, quod illud certámen post Christum non suscepérunt; tamen digni sunt qui ab ómnibus honoréntur, quia pro pátriis légibus et institútis fortes constantésque se præbuérunt. Nam qui martýrium subiére ante Christi passiónem, quid factúri erant, si post Christum persecutiónem passi fuíssent, ejúsque mortem, nostræ salútis causa suscéptam, ad imitándum propósitam habuíssent? Quorum enim, nullo propósito exémplo, talis tántaque virtus fuit; an non ii, exémplum illud intuéntes, fórtius in certámen descendíssent? Quin étiam mýstica quædam et occúlta rátio, mihi quidem atque ómnibus Dei amatóribus valde probábilis est, néminem eórum qui ante Christi advéntum martýrio consummáti sunt, id sine fide in Christum cónsequi potuísse.
+      status: verified

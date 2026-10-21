@@ -80,18 +80,19 @@
 //   matching (ranges extracted per "Nocturn N" segment, first dash-range
 //   in each segment), not a guaranteed structural link.
 
-import { readFileSync, readdirSync, existsSync, writeFileSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import yaml from 'js-yaml';
+import { loadLegacyView } from './lib/legacy-view.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
 const REF_HORAS = path.resolve(REPO_ROOT, '..', 'divinum-officium-reference', 'web', 'www', 'horas');
-const COMMON_DIR = path.join(REPO_ROOT, 'src', 'data', 'propers', 'common');
-const TEMPORAL_DIR = path.join(REPO_ROOT, 'src', 'data', 'propers', 'temporal');
-const NOCTURN_READINGS_DIR = path.join(REPO_ROOT, 'src', 'data', 'propers', 'nocturn-readings');
-const OCTAVE_READINGS_DIR = path.join(REPO_ROOT, 'src', 'data', 'propers', 'octave-readings');
+// The per-language Common/feast files, presented as the four flat groups this
+// audit was written against (see scripts/lib/legacy-view.mjs). Each entry is
+// { raw, doc, where }: header comment, parsed body, and its real location.
+const LEGACY = loadLegacyView(path.join(REPO_ROOT, 'src', 'data'));
 const SAINTS_DIR = path.join(REPO_ROOT, 'src', 'data', 'calendar', 'saints');
 const SANCTORAL_CALENDAR_FILE = path.join(REPO_ROOT, 'src', 'data', 'calendar', 'sanctoral-calendar.yml');
 const REPORT_FILE = path.join(REPO_ROOT, 'audit-source-fidelity-report.md');
@@ -949,8 +950,7 @@ function buildCommuneCategoryMap(files) {
     if (!m) continue;
     const category = m[1];
     if (categoryToCnumber.has(category)) continue;
-    const raw = readFileSync(path.join(COMMON_DIR, filename), 'utf8');
-    const comment = extractHeaderComment(raw);
+    const comment = extractHeaderComment(LEGACY.common.get(filename).raw);
     const { sourceFiles } = extractCitations(comment);
     const commune = sourceFiles.find((s) => s.track === 'Commune');
     if (commune) categoryToCnumber.set(category, commune.date);
@@ -982,16 +982,14 @@ function withCommuneBaseFallback(sourceFiles) {
 }
 
 function auditCommon(cache, byPropers, byId, idToDate, buckets, counts) {
-  const files = readdirSync(COMMON_DIR).filter((f) => f.endsWith('.yml'));
+  const files = [...LEGACY.common.keys()];
   counts.commonTotal = files.length;
   const communeCategoryMap = buildCommuneCategoryMap(files);
 
   for (const filename of files) {
-    const filePath = path.join(COMMON_DIR, filename);
-    const raw = readFileSync(filePath, 'utf8');
-    const doc = loadYaml(filePath);
+    const { raw, doc, where } = LEGACY.common.get(filename);
     const stem = legacyStem(filename.slice(0, -4));
-    const relPath = `src/data/propers/common/${filename}`;
+    const relPath = where;
     const comment = extractHeaderComment(raw);
     const flatComment = comment.replace(/\s+/g, ' ');
     const { sourceFiles, tags } = extractCitations(comment);
@@ -1175,10 +1173,10 @@ function auditCoverage(byPropers, idToDate, buckets, counts) {
     for (const [suffix, tag] of Object.entries(SUFFIX_TO_TAG)) {
       const hasTag = new RegExp(`^\\[${tag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\]`, 'm').test(srcText);
       if (!hasTag) continue;
-      const expectedPath = path.join(COMMON_DIR, `${newStemFor(propers, suffix)}.yml`);
-      if (!existsSync(expectedPath)) {
+      const expectedName = `${newStemFor(propers, suffix)}.yml`;
+      if (!LEGACY.common.has(expectedName)) {
         buckets['MISSING-FILE'].push({
-          file: `src/data/propers/common/${newStemFor(propers, suffix)}.yml`,
+          file: `src/data/<lang>/propers/${propers}.yml [${expectedName.slice(0, -4).replace(`-${propers}`, '/~')}]`,
           saintId: saint.id,
           date,
           tag,
@@ -1199,13 +1197,11 @@ function auditCoverage(byPropers, idToDate, buckets, counts) {
 // -------------------------------------------------------------------------
 
 function auditTemporal(cache, buckets, counts) {
-  const files = readdirSync(TEMPORAL_DIR).filter((f) => f.endsWith('.yml'));
+  const files = [...LEGACY.temporal.keys()];
   counts.temporalTotal = files.length;
 
   for (const filename of files) {
-    const filePath = path.join(TEMPORAL_DIR, filename);
-    const raw = readFileSync(filePath, 'utf8');
-    const doc = loadYaml(filePath);
+    const { raw, doc, where } = LEGACY.temporal.get(filename);
     const stem = legacyStem(filename.slice(0, -4));
     const id = stripPropersSuffix(stem) ?? stem.replace(/-benedictus-antiphon$/, '');
     const suffix = stem.slice(id.length);
@@ -1215,7 +1211,7 @@ function auditTemporal(cache, buckets, counts) {
     const flatComment = comment.replace(/\s+/g, ' ');
     const { sourceFiles, tags } = extractCitations(comment);
     const isLiveQuery = LIVE_QUERY_RE.test(flatComment);
-    const relPath = `src/data/propers/temporal/${filename}`;
+    const relPath = where;
     const yamlLa = normalize(doc?.text?.la ?? '');
     const yamlEn = normalize(doc?.text?.en ?? '');
     counts.temporalScanned++;
@@ -1290,15 +1286,13 @@ function resolveReadingIdSource(id, byId, idToDate) {
 }
 
 function auditNocturnReadings(cache, byId, idToDate, buckets, counts) {
-  const files = readdirSync(NOCTURN_READINGS_DIR).filter((f) => f.endsWith('.yml'));
+  const files = [...LEGACY['nocturn-readings'].keys()];
   counts.nocturnTotal = files.length;
 
   for (const filename of files) {
-    const filePath = path.join(NOCTURN_READINGS_DIR, filename);
-    const raw = readFileSync(filePath, 'utf8');
-    const doc = loadYaml(filePath);
+    const { raw, doc, where } = LEGACY['nocturn-readings'].get(filename);
     const comment = extractHeaderComment(raw);
-    const relPath = `src/data/propers/nocturn-readings/${filename}`;
+    const relPath = where;
     const source = resolveReadingIdSource(doc.id, byId, idToDate);
     const ranges = extractLectioRanges(comment);
     const nonGospelReadings = (doc.readings ?? []).filter((r) => !r.isGospel);
@@ -1400,15 +1394,13 @@ function auditNocturnReadings(cache, byId, idToDate, buckets, counts) {
 }
 
 function auditOctaveReadings(cache, byId, idToDate, buckets, counts) {
-  const files = readdirSync(OCTAVE_READINGS_DIR).filter((f) => f.endsWith('.yml'));
+  const files = [...LEGACY['octave-readings'].keys()];
   counts.octaveTotal = files.length;
 
   for (const filename of files) {
-    const filePath = path.join(OCTAVE_READINGS_DIR, filename);
-    const raw = readFileSync(filePath, 'utf8');
-    const doc = loadYaml(filePath);
+    const { raw, doc, where } = LEGACY['octave-readings'].get(filename);
     const comment = extractHeaderComment(raw);
-    const relPath = `src/data/propers/octave-readings/${filename}`;
+    const relPath = where;
     counts.octaveScanned++;
 
     if (doc.passages) {

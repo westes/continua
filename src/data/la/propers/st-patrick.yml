@@ -1,0 +1,75 @@
+# Read directly from web/www/horas/Latin/Sancti/03-17.txt's own [Oratio]
+# and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui ad prædicándam géntibus glóriam tuam beátum Patrícium Confessórem atque
+    Pontíficem míttere dignátus es: ejus méritis et intercessióne concéde; ut, quæ nobis
+    agénda prǽcipis, te miseránte adimplére possímus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor-bishop (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-patrick has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-patrick-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui ad prædicándam géntibus glóriam tuam beátum Patrícium Confessórem atque
+    Pontíficem míttere dignátus es: ejus méritis et intercessióne concéde; ut, quæ nobis
+    agénda prǽcipis, te miseránte adimplére possímus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Patrick, Bishop, Confessor (Mar 17).
+# Sourced directly from web/www/horas/Latin/Sancti/03-17.txt,
+# English/Sancti/03-17.txt. Lectio4-6 combined into one reading, one
+# continuous vita.
+#
+# Checked 2026-09-05 for a missing Nocturn 3 Gospel pairing. The
+# [Rule] line reads "vide C4; 9 lectiones" -- the office's own Lectio1-3
+# (Nocturn 1) and Lectio7-9 (Nocturn 3) fall through to Commune/C4
+# (Common of a Confessor Bishop) undifferentiated, no "in X loco"
+# variant specified. C4's plain Lectio7 gives Matt 25:14-23 (the
+# Parable of the Talents), but only as a bare incipit ("Et réliqua",
+# no full pericope) followed by Pope St. Gregory the Great's homily
+# (Homilia 9 in Evangelia) -- same bare-incipit pattern as
+# st-raphael-archangel's Nocturn 3. Per that convention, only the
+# homily is authored below (isGospel: false, no citation field);
+# Lectio7(homily part)-8-9 of Commune/C4.txt (Latin) and
+# English/Commune/C4.txt combined into one continuous excerpt, no
+# genuine source break.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Patricius, Hiberniæ dictus Apostolus, Calphurnio patre, matre Conchessa sancti Martini Turonensis episcopi, ut perhibent, consanguinea, majori in Britannia natus, puer in barbarorum sæpius incidit captivitatem. Eo in statu, pascendis gregibus præpositus jam tum futuræ sanctitatis specimen præbuit: fidei namque, divinique timoris et amoris spiritu repletus, antelucano tempore per nives, gelu ac pluvias ad preces Deo fundendas, impiger consurgebat; solitus centies interdiu, centiesque noctu Deum orare. A servitute tertio exemptus, et inter clericos relatus, in divinis lectionibus longo se tempore exercuit. Galliis, Italia, insulisque Tyrrheni maris labore summo peragratis, divino tandem monitu ad Hibernorum salutem advocatur; et facta a beato Cælestino Papa Evangelii nuntiandi potestate, consecratusque episcopus, in Hiberniam perrexit.
+
+        Eo in munere mirum quot vir apostolicus mala, quot ærumnas et labores, quot pertulerit adversarios. Verum Dei afflante benignitate, terra illa, idolorum antea cultrix, eum mox prædicante Patricio fructum dedit, ut sanctorum insula deínde fuerit appellata. Frequentissimi ab eo populi sacro sunt regenerati lavacro: episcopi, clericique plurimi ordinati; virgines ac viduæ ad continentiæ leges institutæ. Armachanam sedem, Romani Pontificis auctoritate, totius insulæ principem metropolim constituit, sanctorumque reliquiis ab Urbe relatis decoravit. Supernis visionibus, prophetiæ dono, ingentibusque signis et prodigiis a Deo exornatus adeo refulsit, ut longe lateque celebrior Patricii se fama diffuderit.
+
+        Præter quotidianam ecclesiarum sollicitudinem, invictum ab oratione spiritum numquam relaxabat. Ajunt enim, integrum quotidie Psalterium, una cum Canticis et Hymnis, ducentisque orationibus, consuevisse recitare, tercenties per dies singulos flexis genibus Deum adorare, ac in qualibet hora diei canonica centies se crucis signo munire. Noctem tria in spatia distribuens, primum in centum Psalmis percurrendis et bis centies genuflectendo alterum in reliquis quinquaginta Psalmis, algidis aquis immersus, ac corde, oculis manibusque ad cælum erectus, absolvendis insumebat: tertium vero super nudum lapidem stratus tenui dabat quieti. Humilitatis eximius cultor, apostolico more a manuum suarum labore non abstinuit. Assiduis tandem curis pro Ecclesia consumptus, verbo et opere clarus, in extrema senectute divinis mysteriis refectus, obdormivit in Domino, sepultusque est apud Dunum in Ultonia, a christiana salute sæculo quinto.
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 9 on the Gospels (Common of a Confessor Bishop)
+      text: |-
+        Léctio sancti Evangélii, fratres caríssimi, solícite consideráre nos ádmonet, ne nos, qui plus céteris in hoc mundo accepísse áliquid cérnimur, ab Auctóre mundi grávius inde judicémur. Cum enim augéntur dona, ratiónes étiam crescunt donórum. Tanto ergo esse humílior atque ad serviéndum Deo prómptior quisque debet ex múnere, quanto se obligatiórem esse cónspicit in reddénda ratióne. Ecce homo, qui péregre proficíscitur, servos suos vocat, eisque ad negótium talénta partítur. Post multum vero témporis positúrus ratiónem revértitur: bene operántes pro apportáto lucro remúnerat, servum vero a bono ópere torpéntem damnat.
+
+        Quis ítaque iste homo est qui péregre proficíscitur, nisi Redémptor noster, qui, in ea carne quam assúmpserat, ábiit in cælum? Carnis enim locus próprius terra est; quæ quasi ad peregrína dúcitur, dum per Redemptórem nostrum in cælo collocátur. Sed homo iste, péregre proficíscens, servis suis bona sua trádidit; quia fidélibus suis spirituália dona concéssit. Et uni quidem quinque talénta, álii duo, álii vero commísit unum. Quinque étenim sunt córporis sensus, vidélicet: visus, audítus, gustus, odorátus et tactus. Quinque ergo taléntis, donum quinque sénsuum, id est, exteriórum sciéntia, exprímitur. Duóbus vero, intelléctus et operátio designátur. Uníus autem talénti nómine, intelléctus tantúmmodo designátur.
+
+        Sed is, qui quinque talénta accéperat, ália quinque lucrátus est: quia sunt nonnúlli, qui, etsi intérna ac mýstica penetráre nésciunt, pro intentióne tamen supérnæ pátriæ docent recta quos possunt; de ipsis exterióribus, quæ accepérunt, duplum taléntum portant; dumque se a carnis petulántia et a terrenárum rerum ámbitu atque a visibílium voluptáte custódiunt, ab his étiam álios admonéndo compéscunt. Et sunt nonnúlli, qui, quasi duóbus taléntis ditáti, intelléctum atque operatiónem percípiunt, subtília de intérnis intélligunt, mira in exterióribus operántur; cumque et intelligéndo et operándo áliis prǽdicant, quasi duplicátum de negótio lucrum repórtant.
+      status: verified

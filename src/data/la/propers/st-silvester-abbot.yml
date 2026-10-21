@@ -1,0 +1,64 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2032-11-26).
+collect:
+  text: |
+    Orémus.
+    Clementíssime Deus, qui sanctum Silvéstrum Abbátem, sǽculi hujus vanitátem in apérto túmulo pie meditántem, ad erémum vocáre, et præcláris vitæ méritis decoráre dignátus es: te súpplices exorámus; ut, ejus exémplo terréna despiciéntes, tui consórtio perfruámur ætérno.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-silvester-abbot-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-abbot (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-silvester-abbot-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Clementíssime Deus, qui sanctum Silvéstrum Abbátem, sǽculi hujus vanitátem in apérto túmulo pie meditántem, ad erémum vocáre, et præcláris vitæ méritis decoráre dignátus es: te súpplices exorámus; ut, ejus exémplo terréna despiciéntes, tui consórtio perfruámur ætérno.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-11-26 st-silvester-abbot second (continua had "amauiteumdominusetorna"). Paschaltide Alleluia is left to
+# hours/paschal-alleluia.ts. See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle:
+  text: |
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Silvester Abbot's own day (2026-11-26). The Benedictus
+# antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Silvester, Abbot (Nov 26, sharing
+# the date with St. Peter of Alexandria — see st-peter-of-alexandria.yml)
+# — SanctiM/11-26.txt inherits the whole day (`@Sancti/11-26`) with no
+# Nocturn 2/3 override, so this saint's own vita is sourced from the
+# Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/11-26.txt, English/Sancti/11-26.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Silvester, Auximi in Piceno nobili genere ortus, statim puerílem ætátem litteris ac bonis móribus mirifice exornavit. Adoléscens, Bonóniam ad stúdia jurisprudéntiæ missus a patre, cum sacris litteris, a Deo mónitus, dedísset operam, parentis incurrit indignatiónem; quam æquo animo toto decennio pértulit. Ob egregiam ejus virtútem a canonicis cathedralis Auximanæ ecclésiæ socius honoris eléctus est; in quo munere pópulo oratiónibus, exemplo et conciónibus opem tulit.
+
+        Inter funus nobilis cujusdam defuncti, in aperto tumulo formosi viri suique propinqui deforme cadáver conspíciens: Ego, inquit, sum, quod hic fuit; quod hic est, ego ero. Et mox, peracto funere, illa sibi Dómini occurrénte senténtia: Qui vult veníre post me, ábneget semetípsum, et tollat crucem suam, et sequátur me; in solitúdinem, majoris perfectiónis studio, secessit, ibique vigiliis, oratiónibus jejuniisque deditus, crudas tantum herbas in cibum sæpius adhibuit. Ut autem magis latéret hómines, varias mutavit sedes; ac demum pervenit ad montem Fanum, locum, quamvis prope Fabrianum, eo tamen témpore desértum, ibique in honórem sanctíssimi patris Benedicti templum eréxit, congregatiónisque Silvestrinórum fundaménta jecit, sub regula et habitu in visióne sibi ab eodem Sancto osténsis.
+
+        At ínvidens sátanas variis terróribus illíus monachos turbare nitebátur, noctu monasterii jánuas hostíliter invadens. Sed vir Dei, hostis impetum ita repressit, ut monachi in sancto instituto magis confirmaréntur ac patris sanctitátem agnoscerent. Spíritu prophetíæ aliisque donis enituit. Quæ ut semper profúnda humilitate conservavit, ita contra se dæmonis invidiam concitavit; a quo præceps actus per scalas oratórii, et prope interimendus, præsentíssimo Vírginis benefício incolumitáti redditus est. Quod benefícium perpetua et singulari in illam pietáte commendavit ad ultimum usque vitæ spíritum, quem, fere nonagenarius, sanctitáte et miraculis clarus, Deo réddidit anno salútis millesimo ducentésimo sexagesimo séptimo, sexto Kalendas Decembris. Ejus Offícium ac Missam Leo décimus tertius Pontifex maximus ad universam exténdit Ecclésiam.
+      status: verified

@@ -1,0 +1,284 @@
+collect:
+  text: |
+    Let us pray.
+    O Lord Jesus Christ, our mediator with the Father, who hast vouchsafed to appoint the most blessed Virgin, thy Mother, to be our mother also and our mediatrix with thee: mercifully grant that whosoever shall come to thee to ask for benefits may rejoice to have obtained all things through her:
+    Who livest and reignest with God the Father, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: draft
+
+commemoration:
+  text: |
+    Ant. Without thy command * no man shall move hand or foot in all the land.
+    V. Pray for us, O our most powerful Mediatrix.
+    R. That we may be made worthy of the promises of Christ.
+    Let us pray.
+    O Lord Jesus Christ, our mediator with the Father, who hast vouchsafed to appoint the most blessed Virgin, thy Mother, to be our mother also and our mediatrix with thee: mercifully grant that whosoever shall come to thee to ask for benefits may rejoice to have obtained all things through her:
+    Who livest and reignest with God the Father, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: draft
+
+matins-hymn:
+  text: |
+    Christ, having pity on the human race,
+    struck down as we were by a death we had deserved,
+    begot us again unto the life on high,
+    and cleansed us with his own blood.
+
+    O holy stream, that purgest away all sin!
+    O inexhaustible ocean of good things,
+    whence, from a sevenfold fountain,
+    life and salvation flow without end!
+
+    But who shall dispense these sacred waters
+    to the redeemed? This office is given to Mary,
+    that she, as their arbiter, may govern
+    the course of the divine wave.
+
+    All the gifts that the Redeemer merited for us
+    Mary, the Mother, distributes;
+    at her wish her Son freely pours out
+    his own bounty.
+
+    Through eternal years let us venerate thee,
+    O Trinity, to be celebrated with highest praise:
+    let our minds praise thee with faith,
+    and our tongues with resounding song.
+    Amen.
+  status: draft
+
+matins-invitatory:
+  text: 'Christ the Redeemer, who willed that we should have all good things through Mary: * Come, let us adore.'
+  status: draft
+
+lauds-capitulum:
+  text: 'All you that thirst, come to the waters: and you that have no money make haste, buy, and eat: come ye, buy wine and milk without money, and without any price.'
+  citation: Isaiah 55:1
+  status: verified
+
+lauds-hymn:
+  text: |
+    O Mary, who lovingly receivest
+    the prayers of mortals,
+    behold, we suppliants beseech thee:
+    be ever present to us.
+
+    Be present, if the dreadful chain of sins
+    binds us; swiftly loose the fetters
+    that bind our hearts with guilt.
+
+    Help us, if the deceitful image of the world
+    allures us, lest the mind, forgetful of heaven,
+    forsake the path of salvation.
+
+    And to thy children be a protection
+    at the hour of death, that by thy help
+    they may be granted to obtain the everlasting reward.
+
+    * All honour, laud, and glory be,
+    O Jesu, Virgin-Born, to thee;
+    Whom with the Father we adore,
+    And Holy Ghost, for evermore.
+    Amen.
+  status: draft
+
+lauds-versicle:
+  text: |
+    V. Pray for us, O our most powerful Mediatrix.
+    R. That we may be made worthy of the promises of Christ.
+  status: draft
+
+prime-lectio:
+  text: 'Behold thou shalt call a nation, which thou knewest not: and the nations that knew not thee shall run to thee, because of the Lord thy God, and for the Holy One of Israel, for he hath glorified thee.'
+  citation: Isaiah 55:5
+  status: verified
+
+terce-capitulum:
+  text: |
+    All you that thirst, come to the waters: and you that have no money make haste, buy, and eat: come ye, buy wine and milk without money, and without any price.
+    R. Thanks be to God.
+    V. Despise not our petitions.
+    R. In our necessities.
+  citation: Isaiah 55:1
+  status: verified
+
+sext-capitulum:
+  text: |
+    Hearken diligently to me, and eat that which is good, and your soul shall be delighted in fatness. Incline your ear and come to me: hear and your soul shall live.
+    R. Thanks be to God.
+    V. From all dangers deliver us ever.
+    R. O glorious and blessed Virgin.
+  citation: Isaiah 55:2-3
+  status: verified
+
+vespers-versicle:
+  text: |
+    V. Pray for us, O our most powerful Mediatrix.
+    R. That we may be made worthy of the promises of Christ.
+  status: draft
+
+vespers-versicle/~-first:
+  text: |
+    V. Pray for us, O our most powerful Mediatrix.
+    R. That we may be made worthy of the promises of Christ.
+  status: draft
+
+benedictus-antiphon:
+  text: Without thy command * no man shall move hand or foot in all the land.
+  status: draft
+
+magnificat-antiphon:
+  text: Our salvation * is in thy hand; only look upon us, and we shall gladly serve the lord king.
+  status: draft
+
+magnificat-antiphon/~-first:
+  text: Behold, my lord * hath delivered all things to me, and there is nothing which is not in my power, or that he hath not delivered to me.
+  status: draft
+
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 8
+        antiphon: The fountain of gardens, * the well of living waters, which run with a strong stream from Libanus.
+      - psalms:
+          - 18
+        antiphon: My hands * have dropped with myrrh, and my fingers are full of the choicest myrrh.
+      - psalms:
+          - 23
+        antiphon: I will go * to the mountain of myrrh, and to the hill of frankincense.
+    versicle:
+      v: Under thy protection we all take refuge.
+      r: O holy Mother of God.
+  nocturn2:
+    groups:
+      - psalms:
+          - 44
+        antiphon: She found grace * and mercy before the king above all women.
+      - psalms:
+          - 45
+        antiphon: Ask, my mother; * for it is not right that I should turn away thy face.
+      - psalms:
+          - 86
+        antiphon: Do thou call upon the Lord, * and speak to the King for us, and deliver us from death.
+    versicle:
+      v: Despise not our petitions.
+      r: In our necessities.
+  nocturn3:
+    groups:
+      - psalms:
+          - 95
+        antiphon: If I have found favour * in thy eyes, O king, give me my people, for whom I beseech thee.
+      - psalms:
+          - 96
+        antiphon: Blessed art thou * above all women upon the earth, because thou hast succoured our ruin before the sight of our God.
+      - psalms:
+          - 97
+        antiphon: 'Rule thou over us, * thou and thy Son: for thou hast delivered us from the hand of our enemies.'
+    versicle:
+      v: From all dangers deliver us ever.
+      r: O glorious and blessed Virgin.
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: The Lord gave her the blessing of all nations, * and confirmed his covenant upon her head.
+    - psalms:
+        - 99
+      antiphon: Her mercy * is for ever, and unto generation and generation.
+    - psalms:
+        - 62
+      antiphon: I will bless thee * as long as I live, and in thy name I will lift up my hands.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Thou hast not spared * thy life, by reason of the distress and tribulation of thy people.
+  laudate:
+    antiphon: Remember, * O Virgin Mother of God, when thou shalt stand in the sight of the Lord, to speak good things for us.
+
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: The Lord gave her the blessing of all nations, * and confirmed his covenant upon her head.
+    - psalms:
+        - 112
+      antiphon: Her mercy * is for ever, and unto generation and generation.
+    - psalms:
+        - 121
+      antiphon: I will bless thee * as long as I live, and in thy name I will lift up my hands.
+    - psalms:
+        - 126
+      antiphon: Remember, * O Virgin Mother of God, when thou shalt stand in the sight of the Lord, to speak good things for us.
+
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: The Lord gave her the blessing of all nations, * and confirmed his covenant upon her head.
+    - psalms:
+        - 112
+      antiphon: Her mercy * is for ever, and unto generation and generation.
+    - psalms:
+        - 121
+      antiphon: I will bless thee * as long as I live, and in thy name I will lift up my hands.
+    - psalms:
+        - 126
+      antiphon: Remember, * O Virgin Mother of God, when thou shalt stand in the sight of the Lord, to speak good things for us.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Ephrem the Syrian, Deacon, Prayer to the Mother of God
+      text: My Lady, most holy Mother of God and full of grace, inexhaustible ocean of divine and hidden largesses and gifts, dispenser of all good things, Lady of all after the Trinity, another Consoler after the Paraclete, and after the Mediator Mediatrix of the whole world, behold my faith and my desire, divinely given. Despise not the unworthy one, and let not the foulness of my deeds interrupt thy immense mercy, Mother of God, my most desirable name; for there is no firmer trophy than thy help. For thou hast taken away all tears from the face of the earth; thou hast filled creation with every kind of benefit, hast brought joy to the heavenly beings, hast saved the things of earth. Through thee we hold the most certain pledge of our resurrection; through thee we hope to obtain the heavenly kingdom; through thee all glory, honour and holiness, from the first Adam himself even to the consummation of the world, has been derived, is derived and shall be derived to the Apostles, the Prophets, the just and the humble of heart, thou alone being immaculate; and in thee, full of grace, every creature rejoices.
+      responsory: |
+        R. Behold, my lord hath delivered all things to me, * And there is nothing which is not in my power, or which he hath not delivered to me.
+        V. He that is mighty hath done great things to me, and holy is his name.
+        R. And there is nothing which is not in my power, or which he hath not delivered to me.
+      status: draft
+    - nocturn: 2
+      isGospel: false
+      source: St. Germanus, Bishop of Constantinople, Sermon (Oratio 9)
+      text: 'We who are poor in divine works and in virtues, while through thee, O Mary, we behold the riches of kindness shown to us, let us say with fervour: The earth is full of the mercy of the Lord. We, exiled from God by the multitude of our sins, have through thee sought God and found him, and having found him have been made safe. Mighty therefore to bring salvation is thy help, O Mother of God, and such that it needs no other mediator with God. For plainly there is no end to thy magnificence; thy succour is insatiable. There is no number to thy gifts. For no one, save through thee, O most holy, obtains salvation. No one, save through thee, O most immaculate, is delivered from evils. No one, save through thee, O most chaste, is granted pardon. No one, save through thee, O most honoured, is granted by mercy the gift of grace. Wherefore, who will not proclaim thee blessed? Thee, I say, glorious, thee worthy to be called blessed, who hast received from thy very Son and God great and wonderful things; wherefore all generations praise thee.'
+      responsory: |
+        R. Set over all, she governeth the house committed to her, and all things that are delivered to her. * Without her command no man shall move hand or foot in all the land.
+        V. The Lord gave her the blessing of all nations, and confirmed his covenant upon her head.
+        R. Without her command no man shall move hand or foot in all the land.
+      status: draft
+    - nocturn: 2
+      isGospel: false
+      source: St. Bernard, Abbot, Sermon on the Nativity of the Blessed Virgin Mary, n. 6
+      text: 'Behold, O man, the counsel of God; acknowledge the counsel of wisdom, the counsel of piety. About to water the threshing-floor with heavenly dew, he first poured the whole fleece; about to redeem the human race, he laid out the entire price in Mary. To what end? Perhaps that Eve might be excused through her daughter, and the man''s complaint against the woman be henceforth quieted. Say no more, O Adam: The woman whom thou gavest me gave me of the forbidden tree; say rather: The woman whom thou gavest me fed me with the blessed fruit. A most pious counsel indeed; but perhaps there is another hidden, and this is not the whole. Look more deeply, therefore, with what devotion of heart he would have her honoured by us, who placed the fullness of all good in Mary; so that, accordingly, if there is any hope in us, any grace, any salvation, we may know that it overflows from her. With the whole marrow of our hearts, then, with all the affections of our breast and with all our vows, let us venerate this Mary: for such is the will of him who willed that we should have all through Mary. This, I say, is his will, but it is for our sake.'
+      responsory: |
+        R. Praise the Lord our God, who hath not forsaken them that hope in him: * And by me his handmaid hath he fulfilled his mercy, which he promised to the house of Israel.
+        V. God hath exalted me, that I might save many peoples.
+        R. And by me his handmaid hath he fulfilled his mercy, which he promised to the house of Israel.
+      status: draft
+    - nocturn: 3
+      isGospel: true
+      citation: John 19:25-27
+      text: At that time, there were standing by the Cross of Jesus His Mother and His Mother's sister, Mary of Cleophas, and Mary Magdalene. When Jesus, therefore, saw His Mother and the disciple standing by, whom He loved, He said to His Mother, Woman, behold your son. Then He said to the disciple, Behold your Mother. And from that hour the disciple took her into his home.
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Bernardine of Siena, Lenten sermons on Christian religion, Sermon 51 on the Passion of the Lord, part 2, art. 1, ch. 3
+      text: 'The minds of all who read or hear are struck with wonder, namely, by what motion, what sense, what possibility, what true authority these things are said: that the disciple passes over into the son of the Virgin, and that the Virgin has as her son a mere man whom she did not bear: just as it is not to be thought that he should be the son of a Virgin who had been born of corrupt parents from seed. These things indeed seem impossible, but nothing is impossible with God. Piety and prayer are needed to enter upon such a mystery. For the blessed Virgin is called Woman by Christ, whom he never addressed by the word mother. Woman, and not woman: but a woman surpassing angels, and men, and women. She received from the Son, whom with the eternal Father she possessed as the only one, a son apart from the womb, whom she before had in the flesh as her nephew.'
+      responsory: |
+        R. Mary is made a refuge to the poor, * A helper in due time, in tribulation.
+        V. A powerful Virgin, like the tower of David: a thousand bucklers hang upon it, all the armour of valiant men.
+        R. A helper in due time, in tribulation.
+      status: draft
+    - nocturn: 3
+      isGospel: false
+      source: St. Bernardine of Siena, Lenten sermons on Christian religion, Sermon 51 on the Passion of the Lord, part 2, art. 1, ch. 3
+      text: 'But in what kind of sonship was John made the son of the Virgin, or she his mother? Nature does not favour this; conception does not, nor birth follow, nor entrance into the womb to be born anew, nor adoption for obtaining an inheritance in temporal things, nor imitation, nor delivered teaching. Nor were these things to be explained by the word of Christ, nor was the saying made so as to be an "as if", but thus we read it said by Christ: Woman, behold thy son; so that, all superfluity of words excluded, we may penetrate the secret of the mystery. Mystically, therefore, we understand in John all the souls of the elect, of whom the blessed Virgin was made mother through love: for "son" in Greek is a name of love. For all the love of Christ passes into love of the Virgin, so that he is deservedly called son, that is, love of the Virgin, and has the Virgin more as mother than her who, having received seed, bore him, condemned by sin, to the world.'
+      responsory: |
+        R. Let us go with confidence to the throne of grace, * That we may obtain mercy, and find grace in seasonable aid.
+        V. To thee, O Virgin, we sigh, mourning and weeping in this vale of tears.
+        R. That we may obtain mercy, and find grace in seasonable aid.
+      status: draft
+    - nocturn: 3
+      isGospel: false
+      source: St. Bernardine of Siena, Lenten sermons on Christian religion, Sermon 51 on the Passion of the Lord, part 2, art. 1, ch. 3
+      text: 'This motherhood and sonship is transferred by the authority of the words of Christ hanging on the cross. Therefore nature passes into grace, and grace surely ennobles nature; not that the one is changed into the other, but because nature is perfected by grace. The evil woman, Eve, by the corruption of nature: the good woman, Mary, mother of grace, mother of mercy. A mother of grace is given for the mother of nature; yet the mother by nature remains, and the mother by grace remains also. For John had Mary Salome as mother in the order of succeeding nature; and the blessed Virgin is also mother to him in the order of grace. Eve is the mother of all by the channel of nature; and the Virgin Mary is the mother of all who love Christ by the infusion of invisible grace.'
+      status: draft

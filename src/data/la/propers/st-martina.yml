@@ -1,0 +1,117 @@
+# web/www/horas/Latin/Sancti/01-30.txt's own [Hymnus Matutinum] ("Martínæ
+# célebri pláudite nómini") and English/Sancti/01-30.txt's translation. The
+# last stanza is the fixed martyrs' doxology, not a swappable one.
+matins-hymn:
+  text: |
+    Martínæ célebri pláudite nómini,
+    Cives Romúlei, pláudite glóriæ:
+    Insígnem méritis dícite Vírginem,
+    Christi dícite Mártyrem.
+
+    Hæc dum conspícuis orta paréntibus
+    Inter delícias, inter amábiles
+    Luxus illécebras, dítibus áffluit
+    Faustæ munéribus domus,
+
+    Vitæ despíciens cómmoda, dédicat
+    Se rerum Dómino, et munífica manu
+    Christi paupéribus distríbuens opes,
+    Quærit prǽmia cǽlitum.
+
+    Non illam crúcians úngula, non feræ,
+    Non virgæ horríbili vúlnere cómmovent;
+    Hinc lapsi e Súperum sédibus Angeli
+    Cælésti dape récreant.
+
+    Quin et depósita sævítie leo
+    Se rictu plácido próicit ad pedes:
+    Te, Martína, tamen dans gládius neci
+    Cæli cœ́tibus ínserit.
+
+    Te, thuris rédolens ara vapóribus,
+    Quæ fumat, précibus júgiter ínvocat,
+    Et falsum périmens auspícium, tui
+    Delet nóminis ómine.
+
+    A nobis ábigas lúbrica gáudia,
+    Tu, qui Martýribus dexter ades, Deus
+    Une et Trine: tuis da fámulis jubar,
+    Quo clemens ánimos beas.
+    Amen.
+  status: verified
+
+# web/www/horas/Latin/Sancti/01-30.txt's own [Hymnus Laudes] ("Tu natále
+# solum prótege") and English/Sancti/01-30.txt's translation. The last
+# stanza is the fixed martyrs' doxology. [Hymnus Vespera 3] is
+# `@:Hymnus Laudes`, so the same text is her Second Vespers hymn
+# (vespers-hymn-st-martina-second.yml); First Vespers has no hymn of her own
+# in the source and takes her Common's.
+lauds-hymn:
+  text: |
+    Tu natále solum prótege, tu bonæ
+    Da pacis réquiem Christíadum plagis;
+    Armórum strépitus, et fera prǽlia
+    In fines age Thrácios.
+
+    Et regum sócians ágmina sub crucis
+    Vexíllo, Sólymas néxibus éxime,
+    Vindéxque innócui sánguinis hósticum
+    Robur fúnditus érue.
+
+    Tu nostrum cólumen, tu decus ínclitum,
+    Nostrárum obséquium réspice méntium;
+    Romæ vota libens éxcipe, quæ pio
+    Te ritu canit, et colit.
+
+    A nobis ábigas lúbrica gáudia,
+    Tu, qui Martýribus dexter ades, Deus
+    Une et Trine: tuis da fámulis jubar,
+    Quo clemens ánimos beas.
+    Amen.
+  status: verified
+
+# Second Vespers hymn: web/www/horas/Latin/Sancti/01-30.txt's [Hymnus
+# Vespera 3], which is `@:Hymnus Laudes` -- the same text as
+# lauds-hymn-st-martina.yml. First Vespers has no hymn of her own in the
+# source and takes common-of-a-virgin-martyr's (resolveOfficeBundle's
+# partial-proper fallback; see withVespersVariant).
+vespers-hymn/~-second:
+  text: |
+    Tu natále solum prótege, tu bonæ
+    Da pacis réquiem Christíadum plagis;
+    Armórum strépitus, et fera prǽlia
+    In fines age Thrácios.
+
+    Et regum sócians ágmina sub crucis
+    Vexíllo, Sólymas néxibus éxime,
+    Vindéxque innócui sánguinis hósticum
+    Robur fúnditus érue.
+
+    Tu nostrum cólumen, tu decus ínclitum,
+    Nostrárum obséquium réspice méntium;
+    Romæ vota libens éxcipe, quæ pio
+    Te ritu canit, et colit.
+
+    A nobis ábigas lúbrica gáudia,
+    Tu, qui Martýribus dexter ades, Deus
+    Une et Trine: tuis da fámulis jubar,
+    Quo clemens ánimos beas.
+    Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Martina, Virgin, Martyr (Jan 30).
+# Sourced directly from web/www/horas/Latin/Sancti/01-30.txt,
+# English/Sancti/01-30.txt. Lectio4-6 combined into one reading, one
+# continuous vita, no genuine source break. No Lectio7-9 in the source
+# at all (a 6-lesson, not 9-lesson, office for this feast).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Martina virgo Romana, patre consulari, illustri genere nata, teneris, adhuc annis orbáta paréntibus, christianæ pietátis ardore succensa, divítias, quibus affluebat, mira in páuperes liberalitate distríbuit. Sub Alexandro príncipe, cum deos inánes cólere juberétur, immane fácinus summa libertáte detestátur. Quapropter íterum atque íterum affecta verbéribus, uncis, úngulis férreis, testárum fragmentis lacerata, acutíssimis gládiis membratim concisa, ádipe fervénti peruncta, demum in amphitheatro damnátur ad bestias; a quibus illǽsa divinitus evadens, in ardentem rogum injecta, incólumis pari beneficio servátur.
+
+        Ex ejus tortóribus nonnulli, miraculi novitate correpti, Dei aspirante grátia, Christi fidem ampléxi, post cruciátus gloriósam martyrii palmam cápitis abscissióne promeruére. Ad ejusdem preces nunc terræmótibus exórtis, nunc ignibus e cælo tonante delapsis, deórum templa prostráta sunt et simulacra consumpta. Interdum ex vulnéribus lac cum sánguine erupit, splendorque nitidíssimus ac suavíssimus odor e corpore emanávit: intérdum sublimis regia in sede divinis laudibus una cum cælítibus interesse visa est.
+
+        Hisce prodigiis ejusque in primis constantia, acriter permotus judex, caput Virgini amputari præcepit: qua perempta, auditáque de cælo voce, qua ad Súperos evocabátur, Urbs tota contrémuit, ac multi idolórum cultores ad Christi fidem convérsi sunt. Sacrum Martinæ corpus, sedénte sancto Urbano primo, martyrio afféctum, Urbano octavo Pontifice máximo, in pervetusta ejusdem ecclésia, ad Mamertinum carcerem, in Capitolini clivi radicibus, cum sanctórum Mártyrum Concordii, Epiphanii et Sociórum corpóribus repertum, eodem loco in meliórem formam redacto, atque decentius ornato, magno pópuli concursu, totius Urbis lætítia, solemni ritu ac pompa repósitum est.
+      status: verified

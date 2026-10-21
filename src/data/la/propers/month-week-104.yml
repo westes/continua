@@ -1,0 +1,25 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2028-10-21 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Exáudiat Dóminus * oratiónes vestras et reconciliétur vobis: nec vos déserat in témpore malo Dóminus, Deus noster.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "4th Sunday of October" (Tempora/104-0.txt) — see
+# month-week-081.yml's header for the id scheme. Responsory reuses 101's
+# own Responsory4 (source's own cross-reference).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. John Chrysostom, On Psalm 43
+      text: |-
+        Deus, áuribus nostris audívimus, patres nostri annuntiavérunt nobis opus quod operátus es in diébus eórum. Hunc Psalmum dicit quidem prophéta, dicit autem non ex persóna própria, sed ex persóna Machabæórum, narrans et prædícens quæ futúra erant illo témpore. Tales enim sunt prophétæ: ómnia témpora percúrrunt, præséntia, prætérita, futúra. Quinam sint autem hi Machabǽi, quidque passi sint et quid fécerint, necessárium est primum dícere, ut sint apertióra quæ in arguménto dicúntur. Ii enim, cum invasísset Judǽam Antíochus qui dictus est Epíphanes, et ómnia devastásset, et multos qui tunc erant, a pátriis institútis resilíre coëgísset, permansérunt illǽsi ab illis tentatiónibus.
+
+        Et quando grave quidem bellum ingruébat, nec quidquam possent fácere quod prodésset, se abscondébant; nam hoc quoque fecérunt Apóstoli. Non enim semper apparéntes in média irruébant perícula, sed nonnúmquam et fugiéntes, et laténtes secedébant. Postquam autem parum respirárunt, tamquam generósi quidam cátuli ex antris exsiliéntes et e látebris emergéntes, statuérunt non se ámplius solos serváre, sed étiam álios quoscúmque possent: et civitátem et omnem regiónem obeúntes, collegérunt quotquot invenérunt adhuc sanos et íntegros; et multos étiam qui laborábant et corrúpti erant, in statum prístinum redegérunt, eis persuadéntes redíre ad legem pátriam.
+
+        Deum enim dicébant esse benígnum et cleméntem, nec umquam adímere salútem, quæ proficíscitur ex pœniténtia. Hæc autem dicéntes, habuérunt deléctum fortissimórum virórum. Non enim pro uxóribus, líberis, et ancíllis, patriǽque eversióne et captivitáte, sed pro lege et pátria república pugnábant. Eórum autem dux erat Deus. Cum ergo áciem dirígerent, et suas ánimas prodígerent, fundébant adversários, non armis fidéntes, sed loco omnis armatúræ, pugnæ causam suffícere ducéntes. Ad bellum autem eúntes non tragœ́dias excitábant, non pæána canébant, sicut nonnúlli fáciunt: non ascivérunt tibícines, ut fit in áliis castris: sed Dei supérne auxílium invocábant, ut adésset, opem ferret et manum præbéret, propter quem bellum gerébant, pro cujus glória decertábant.
+      responsory: |-
+        R. Impetum inimicórum ne timuéritis: mémores estóte, quómodo salvi facti sunt patres nostri: * Et nunc clamémus in cælum et miserébitur nostri Deus noster.
+        V. Mementóte mirabílium ejus, quæ fecit pharaóni et exercítui ejus in Mari Rubro.
+        R. Et nunc clamémus in cælum et miserébitur nostri Deus noster.
+      status: verified

@@ -1,0 +1,236 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-02-05 (clean year, per st-agatha.yml's own comment).
+# Real proper content is narrow, same shape as Commemoration of St.
+# Paul's own: only the chapter is genuinely her own (Sir 51:1-3,
+# "Confitébor tibi, Dómine, Rex"); responsory, hymn, and versicle are
+# all byte-identical to Common-of-a-Virgin-Martyr's own already-
+# authored content -- duplicated under her own id rather than left to
+# fall through (resolveOfficeBundle resolves a whole bundle per id, not
+# per part). Same chapter reused for Vespers -- no separate vespers-
+# capitulum-<id> file authored, per vespers.ts's
+# lookupPart (Vespers chapter, Lauds sibling) fallback.
+lauds-capitulum:
+  text: 'Confitébor tibi, Dómine, Rex, et collaudábo te Deum Salvatórem meum. Confitébor nómini tuo: quóniam adjútor et protéctor factus es mihi, et liberásti corpus meum a perditióne.'
+  citation: Eccli 51:1-3
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C6` live query, 2026-08 -- see lauds-capitulum-common-of-a-
+# virgin-martyr.yml's header for why the votive-office view was used.
+# "Jesu, coróna Vírginum" -- the classic Common-of-Virgins Lauds/Vespers
+# hymn (same text both hours here), a single genuine recension found in
+# the reference engine.
+lauds-hymn:
+  text: |-
+    Jesu, coróna Vírginum,
+    Quem Mater illa cóncipit
+    Quæ sola Virgo párturit,
+    Hæc vota clemens áccipe:
+
+    Qui pascis inter lília
+    Septus choréis Vírginum,
+    Sponsus decórus glória
+    Sponsísque reddens prǽmia.
+
+    Quocúmque pergis, Vírgines
+    Sequúntur, atque láudibus
+    Post te canéntes cúrsitant,
+    Hymnósque dulces pérsonant;
+
+    Te deprecámur lárgius,
+    Nostris adáuge sénsibus
+    Nescíre prorsus ómnia
+    Corruptiónis vúlnera.
+
+    Laus, honor, virtus, glória
+    Deo Patri et Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C6` live query, 2026-08 -- see lauds-capitulum-common-of-a-
+# virgin-martyr.yml's header for why the votive-office view was used.
+lauds-responsory:
+  text: |
+    R.br. Spécie tua * Et pulchritúdine tua.
+    R. Spécie tua * Et pulchritúdine tua.
+    V. Inténde, próspere procéde, et regna.
+    R. Et pulchritúdine tua.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Spécie tua * Et pulchritúdine tua.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C6` live query, 2026-08 -- same versicle as Vespers -- see
+# vespers-versicle-st-agatha.yml's header.
+lauds-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 1, per the established
+# Prime=Lauds-Ant1 minor-hours-borrow-from-Lauds convention.
+prime-antiphon:
+  text: 'Quis es tu, * qui venísti ad me curáre vúlnera mea? Ego sum Apóstolus Christi: nihil in me dúbites, fília.'
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 2, per the established
+# Terce=Lauds-Ant2 minor-hours-borrow-from-Lauds convention.
+terce-antiphon:
+  text: Medicínam carnálem * córpori meo nunquam exhíbui, sed hábeo Dóminum Jesum Christum, qui solo sermóne restáurat univérsa.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 3, per the established
+# Sext=Lauds-Ant3 minor-hours-borrow-from-Lauds convention.
+sext-antiphon:
+  text: Grátias tibi ago, * Dómine Jesu Christe, quia memor es mei, et misísti ad me Apóstolum tuum curáre vúlnera mea.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 5, per the established
+# None=Lauds-Ant5 minor-hours-borrow-from-Lauds convention.
+none-antiphon:
+  text: Qui me dignátus est * ab omni plaga curáre, et mamíllam meam meo péctori restitúere, ipsum ínvoco Deum vivum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C6` live query, 2026-08 -- byte-identical to the Lauds hymn
+# ("Jesu, coróna Vírginum") -- see lauds-capitulum-common-of-a-virgin-
+# martyr.yml's header for the fuller gap/sourcing writeup.
+vespers-hymn:
+  text: |-
+    Jesu, coróna Vírginum,
+    Quem Mater illa cóncipit
+    Quæ sola Virgo párturit,
+    Hæc vota clemens áccipe:
+
+    Qui pascis inter lília
+    Septus choréis Vírginum,
+    Sponsus decórus glória
+    Sponsísque reddens prǽmia.
+
+    Quocúmque pergis, Vírgines
+    Sequúntur, atque láudibus
+    Post te canéntes cúrsitant,
+    Hymnósque dulces pérsonant;
+
+    Te deprecámur lárgius,
+    Nostris adáuge sénsibus
+    Nescíre prorsus ómnia
+    Corruptiónis vúlnera.
+
+    Laus, honor, virtus, glória
+    Deo Patri et Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C6` live query, 2026-08 -- see lauds-capitulum-common-of-a-
+# virgin-martyr.yml's header for why the votive-office view was used.
+vespers-responsory:
+  text: |
+    R.br. Adjuvábit eam * Deus vultu suo.
+    R. Adjuvábit eam * Deus vultu suo.
+    V. Deus in médio ejus, non commovébitur.
+    R. Deus vultu suo.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Adjuvábit eam * Deus vultu suo.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C6` live query, 2026-08 -- same versicle as Lauds (see lauds-
+# versicle-st-agatha.yml).
+vespers-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Agatha's own day (2026-02-05) -- the Benedictus
+# antiphon. Corrects the previous version of this file, which had been
+# sourced from the Roman/secular rite's Sancti/02-05.txt's own [Ant 1]
+# instead: real but different text from what Monastic 1617 actually
+# renders at Lauds, same mistake as St. Lawrence's earlier fix.
+benedictus-antiphon:
+  text: 'Paganórum * multitúdo fúgiens ad sepúlcrum Vírginis, tulérunt velum ejus contra ignem: ut comprobáret Dóminus, quod a perículis incéndii méritis beátæ Agathæ Mártyris suæ eos liberáret.'
+  status: verified
+
+# Vespers' Magnificat antiphon for St. Agatha -- genuinely identical to
+# st-agatha-antiphon.yml's own First Vespers/Benedictus-adjacent [Ant 1]
+# text ("Stans beáta Agatha..."): web/www/horas/Latin/Sancti/02-05.txt's
+# own [Ant 3] is a bare `@:Ant 1` cross-reference, same one-text-for-
+# both-Vespers pattern as exaltation-of-the-holy-cross-magnificat-
+# antiphon.yml's own header explains. (This feast's own Benedictus
+# antiphon uses [Ant 2], already correct.)
+magnificat-antiphon:
+  text: 'Stans beáta Agatha * in médio cárceris, expánsis mánibus orábat ad Dóminum: Dómine Jesu Christe, magíster bone, grátias tibi ago, qui me fecísti víncere torménta carníficum: jube me, Dómine, ad tuam immarcescíbilem glóriam felíciter perveníre.'
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/02-05.txt's own [Ant Laudes]
+# ("@:Ant Vespera" -- Lauds reuses the Vespers antiphons verbatim) and
+# English/Sancti/02-05.txt's own translation. Below duplex-majus, so
+# hours/lauds.ts's mergeFerialNumbersWithProperAntiphons only takes this
+# file's antiphon text, not its psalm numbers -- the numbers below are
+# placeholders (the standard 92/99/62 scheme), not independently
+# confirmed for this feast, since they have no functional effect at this
+# rank.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: 'Quis es tu, * qui venísti ad me curáre vúlnera mea? Ego sum Apóstolus Christi: nihil in me dúbites, fília.'
+    - psalms:
+        - 99
+      antiphon: Medicínam carnálem * córpori meo nunquam exhíbui, sed hábeo Dóminum Jesum Christum, qui solo sermóne restáurat univérsa.
+    - psalms:
+        - 62
+      antiphon: Grátias tibi ago, * Dómine Jesu Christe, quia memor es mei, et misísti ad me Apóstolum tuum curáre vúlnera mea.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Benedíco te, * Pater Dómini mei Jesu Christi, quia per Apóstolum tuum mamíllam meam meo péctori restituísti.
+  laudate:
+    antiphon: Qui me dignátus est * ab omni plaga curáre, et mamíllam meam meo péctori restitúere, ipsum ínvoco Deum vivum.
+
+# Sourced from web/www/horas/Latin/Sancti/02-05.txt's own [Ant Vespera]
+# and English/Sancti/02-05.txt's own translation -- same text as lauds-
+# psalmody-overrides/st-agatha.yml (her Lauds is just this Vespers set
+# reused, per the source's own reference). Below duplex-majus, so hours/
+# vespers.ts's mergeFerialNumbersWithProperAntiphons only takes this
+# file's antiphon text, not its psalm numbers.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'Quis es tu, * qui venísti ad me curáre vúlnera mea? Ego sum Apóstolus Christi: nihil in me dúbites, fília.'
+    - psalms:
+        - 110
+      antiphon: Medicínam carnálem * córpori meo nunquam exhíbui, sed hábeo Dóminum Jesum Christum, qui solo sermóne restáurat univérsa.
+    - psalms:
+        - 111
+      antiphon: Grátias tibi ago, * Dómine Jesu Christe, quia memor es mei, et misísti ad me Apóstolum tuum curáre vúlnera mea.
+    - psalms:
+        - 112
+      antiphon: Benedíco te, * Pater Dómini mei Jesu Christi, quia per Apóstolum tuum mamíllam meam meo péctori restituísti.
+
+# Matins Nocturn 2 reading for St. Agatha, Virgin and Martyr (Feb 5) —
+# SanctiM/02-05.txt inherits the whole day (`@Sancti/02-05`) with no
+# Nocturn 2/3 override, so this saint's own vita is sourced from the
+# Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/02-05.txt, English/Sancti/02-05.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. No responsory given in the source for these lessons.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Agatha virgo, in Sicília nobílibus paréntibus nata, quam Panormitáni et Catanénses civem suam esse dicunt, in persecutióne Decii imperatóris Cátanæ gloriósi martyrii corónam consecúta est. Nam cum pari pulchritúdinis et castitátis laude commendarétur, Quintiánus Sicíliæ prætor ejus amóre captus est. Sed cum, tentáta modis ómnibus ejus pudicítia, Agatham in suam senténtiam perdúcere non posset, christiánæ superstitiónis nómine comprehénsam, Aphrodísiæ cuidam mulíeri depravándam tradit. Quæ Aphrodísiæ consuetúdine cum de constántia coléndæ christiánæ fídei et servándæ virginitátis removéri non posset, núntiat illa Quintiáno se in Agatha óperam pérdere. Quare ille ad se Vírginem addúci jubet; et, Nonne, inquit, te pudet nóbili génere natam, húmilem et servílem Christianórum vitam ágere? Cui Agatha: Multo præstántior est christiána humílitas et sérvitus, regum ópibus ac supérbia.
+
+        Quam ob rem irátus prætor hanc ei optiónem dat, velítne pótius venerári deos, an vim tormentórum subíre. At illa constans in fide, primum cólaphis cæsa míttitur in cárcerem; unde postrídie edúcta, cum in senténtia permanéret, admótis candéntibus láminis in equúleo torquétur. Tum ei mamílla abscínditur; quo in vúlnere Quintiánum appéllans Virgo, Crudélis, inquit, tyránne, non te pudet amputáre in fémina, quod ipse in matre suxísti? Mox conjécta in víncula, sequénti nocte a sene quodam, qui se Christi Apóstolum esse dicébat, sanáta est. Rursum evocáta a prætóre, et in Christi confessióne persevérans, in acutis téstulis et candéntibus carbónibus ei subjéctis volutátur.
+
+        Quo témpore, ingénti terræmótu urbs tota contrémuit, ac duo paríetes, corruéntes, Silvínum et Falcónium íntimos prætóris familiáres oppressérunt. Quare veheméntius commóta civitáte, véritus pópuli tumúltum Quintiánus, Agatham semimórtuam clam redúci ímperat in cárcerem. Quæ sic Deum precáta: Dómine, qui me custodísti ab infántia, qui abstulísti a me amórem sæculi, qui me carníficum torméntis superiórem præstitísti, áccipe ánimam meam. Ea in oratióne migrávit in cælum, Nonis Februárii: cujus corpus a Christiánis sepelítur.
+      status: verified

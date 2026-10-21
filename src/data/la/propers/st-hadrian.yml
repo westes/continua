@@ -1,0 +1,15 @@
+# Matins Nocturn 2 reading for St. Hadrian, Martyr (Sep 8, sharing the
+# date with the Nativity of the B.V.M. — see nativity-bvm.yml). No
+# genuine SanctiM match: the only SanctiM file for this date bases
+# `@Sancti/09-08` (the Nativity, not Hadrian) — a missed pre-1955-pool
+# candidate rather than a genuine SanctiM case (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/09-08cc.txt, English/Sancti/09-08cc.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Hadrianus, jussu Maximiáni imperatóris apud Nicomedíam pérsequens Christiános, cum sæpius eórum in fidei confessióne et tormentórum perpessióne constantiam demirátus esset, veheménter ea re commótus ad Christum sese convértit. Quam ob rem cum aliis viginti tribus Christiánis conjéctus est in carcerem; ubi eum visitans Natália uxor, quæ et ipsa antea in Christum credíderat, ad martyrium incendit. Itaque, e custódia edúctus, tamdiu flagellis cæsus est, donec intestína diffluerent. Postremo, fractis crúribus, mánibus pedibúsque præcisis, una cum multis aliis martyrii certamen feliciter absolvit.
+      status: verified

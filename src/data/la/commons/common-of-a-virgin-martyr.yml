@@ -1,0 +1,519 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C6.txt ("Commune Unius Virginis et
+# Martyris") and its English counterpart, 2026-08. A Common-collect
+# template — `{N}` stands for the saint's own name, substituted by
+# getDayCollect (hours/resolve-common.ts) via
+# SaintRecord.collectCommon/collectName.
+collect/c6:
+  text: |
+    Orémus.
+    Deus, qui inter cétera poténtiæ tuæ mirácula étiam in sexu frágili victóriam martýrii contulísti: concéde propítius; ut, qui beátæ {N} Vírginis et Mártyris tuæ natalícia cólimus, per ejus ad te exémpla gradiámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C6-1.txt and its English counterpart,
+# 2026-08. A Common-collect template — `{N}` stands for the saint's own
+# name, substituted by getDayCollect (hours/resolve-common.ts) via
+# SaintRecord.collectCommon/collectName.
+collect/c6-1:
+  text: |
+    Orémus.
+    Indulgéntiam nobis, quǽsumus, Dómine, beáta {N} Virgo et Martyr implóret: quæ tibi grata semper éxstitit, et mérito castitátis, et tuæ professióne virtútis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Commune Virginis Martyris (C6), [Ant 2] -- read directly from the reference engine (Latin/Commune/C6.txt, English/Commune/C6.txt), pairing with the already-verified lauds-versicle-common-of-a-virgin-martyr.yml's Versum 2.
+commemoration-antiphon:
+  text: |
+    Símile est regnum cælórum * hómini negotiatóri quærénti bonas margarítas: invénta una pretiósa, dedit ómnia sua, et comparávit eam.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Matins
+# `votive=C6` live query, 2026-08 -- "Vírginis Proles," the classic
+# Common-of-Virgins Matins hymn. Same votive-office-view reasoning as
+# this session's earlier Lauds/Vespers entries.
+matins-hymn:
+  text: |-
+    Vírginis Proles, Opiféxque Matris,
+    Virgo quem gessit, peperítque Virgo:
+    Vírginis festum cánimus trophǽum
+    Accipe votum.
+
+    Hæc tua Virgo dúplici beáta
+    Sorte, dum gestit frágilem domáre
+    Córporis sexum, dómuit cruéntum
+    Corpóre sæclum.
+
+    Unde nec mortem, nec amíca mortis
+    Sæva pœnárum génera pavéscens,
+    Sánguine fuso méruit sacrátum
+    Scándere cælum.
+
+    Hujus obténtu, Deus alme, nostris
+    Parce jam culpis, vítia remíttens,
+    Quo tibi puri resonémus almum
+    Péctoris hymnum.
+
+    Glória Patri genitǽque Proli,
+    Et tibi compar utriúsque semper
+    Spíritus alme, Deus unus, omni
+    Témpore sæcli. Amen.
+  status: verified
+
+# Same Common-of-a-Virgin invitatory antiphon as
+# matins-invitatory-common-of-a-virgin.yml — see that file's header for
+# full sourcing detail.
+matins-invitatory:
+  text: Regem Vírginum Dóminum, * Veníte, adorémus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C6` live query, 2026-08 -- same votive-office-view reasoning as
+# vespers-hymn-common-of-a-martyr-bishop.yml's header (real saints in
+# this category have their evening/Lauds contaminated by neighboring
+# days' anticipation or their own fame — Ss. Agatha/Agnes/Cecilia/Lucy
+# all have real proper content of their own — so the votive view gets a
+# clean, unambiguous read of the category's real content). Same chapter
+# reused for Vespers -- no separate vespers-capitulum-<id> file
+# authored, per vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
+lauds-capitulum:
+  text: 'Fratres: Qui gloriátur, in Dómino gloriétur. Non enim qui seípsum comméndat, ille probátus est; sed quem Deus comméndat.'
+  citation: 2 Cor 10:17-18
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C6` live query, 2026-08 -- see lauds-capitulum-common-of-a-
+# virgin-martyr.yml's header for why the votive-office view was used.
+# "Jesu, coróna Vírginum" -- the classic Common-of-Virgins Lauds/Vespers
+# hymn (same text both hours here), a single genuine recension found in
+# the reference engine.
+lauds-hymn:
+  text: |-
+    Jesu, coróna Vírginum,
+    Quem Mater illa cóncipit
+    Quæ sola Virgo párturit,
+    Hæc vota clemens áccipe:
+
+    Qui pascis inter lília
+    Septus choréis Vírginum,
+    Sponsus decórus glória
+    Sponsísque reddens prǽmia.
+
+    Quocúmque pergis, Vírgines
+    Sequúntur, atque láudibus
+    Post te canéntes cúrsitant,
+    Hymnósque dulces pérsonant;
+
+    Te deprecámur lárgius,
+    Nostris adáuge sénsibus
+    Nescíre prorsus ómnia
+    Corruptiónis vúlnera.
+
+    * Laus, honor, virtus, glória
+    Deo Patri et Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C6` live query, 2026-08 -- see lauds-capitulum-common-of-a-
+# virgin-martyr.yml's header for why the votive-office view was used.
+lauds-responsory:
+  text: |
+    R.br. Spécie tua * Et pulchritúdine tua.
+    R. Spécie tua * Et pulchritúdine tua.
+    V. Inténde, próspere procéde, et regna.
+    R. Et pulchritúdine tua.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Spécie tua * Et pulchritúdine tua.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C6` live query, 2026-08 -- same versicle as Vespers -- see
+# vespers-versicle-common-of-a-virgin-martyr.yml's header.
+lauds-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# Duplicated from prime-antiphon-common-of-a-virgin.yml — that file's own header
+# comment documents this Common category as live-verified identical
+# for this hour-part; registered under its own id (rather than
+# aliased) matching this codebase's standing convention for shared
+# Common content (e.g. prime-antiphon-common-of-a-confessor.yml vs.
+# prime-antiphon-common-of-an-abbot.yml).
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Justina, 10-07-2025) -- common-of-a-virgin.
+# Covers `common-of-a-virgin-martyr`, `common-of-a-virgin`, and
+# `common-of-a-holy-woman` saints (SaintRecord.common) -- live-
+# verified identical P/T/S/N across all three (the Martyr/non-Martyr
+# distinction only affects the collect's own wording), cross-checked
+# against St. Emerentiana, St. Praxedes, and St. Martha (the sole
+# `common-of-a-holy-woman` saint -- her own collect uses the Virgin
+# template `collect-c6a` too, same finding).
+prime-antiphon:
+  text: Hæc est Virgo sápiens, * et una de número prudéntum.
+  status: verified
+
+# New file, 2026-09-15: the Common-category tier of Prime's Lectio
+# Brevis override (see hours/resolve-common.ts's getPrimeLectioBrevis) --
+# a saint with no proper Lectio Prima of her own, but who belongs to a
+# Common category, uses that category's own text rather than falling all
+# the way to the generic per-annum default. Sourced directly from
+# web/www/horas/Latin/Commune/C6.txt's own [Lectio Prima] tag and its
+# English counterpart.
+prime-lectio:
+  text: Dómine, Deus meus, exaltásti super terram habitatiónem meam, et pro morte defluénte deprecáta sum. Invocávi Dóminum, Patrem Dómini mei, ut non derelínquat me in die tribulatiónis meæ, et in témpore superbórum sine adjutório.
+  citation: Sir 51:13-14
+  status: verified
+
+# Duplicated from terce-antiphon-common-of-a-virgin.yml — that file's own header
+# comment documents this Common category as live-verified identical
+# for this hour-part; registered under its own id (rather than
+# aliased) matching this codebase's standing convention for shared
+# Common content (e.g. prime-antiphon-common-of-a-confessor.yml vs.
+# prime-antiphon-common-of-an-abbot.yml).
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Justina, 10-07-2025) -- common-of-a-virgin.
+# Covers `common-of-a-virgin-martyr`, `common-of-a-virgin`, and
+# `common-of-a-holy-woman` saints (SaintRecord.common) -- live-
+# verified identical P/T/S/N across all three (the Martyr/non-Martyr
+# distinction only affects the collect's own wording), cross-checked
+# against St. Emerentiana, St. Praxedes, and St. Martha (the sole
+# `common-of-a-holy-woman` saint -- her own collect uses the Virgin
+# template `collect-c6a` too, same finding).
+terce-antiphon:
+  text: Hæc est Virgo sápiens, * quam Dóminus vigilántem invénit.
+  status: verified
+
+# Duplicated from terce-capitulum-common-of-a-virgin.yml — that file's own header
+# comment documents this Common category as live-verified identical
+# for this hour-part; registered under its own id (rather than
+# aliased) matching this codebase's standing convention for shared
+# Common content (e.g. prime-antiphon-common-of-a-confessor.yml vs.
+# prime-antiphon-common-of-an-abbot.yml).
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Justina, 10-07-2025) -- common-of-a-virgin.
+# Covers `common-of-a-virgin-martyr`, `common-of-a-virgin`, and
+# `common-of-a-holy-woman` saints (SaintRecord.common) -- live-
+# verified identical P/T/S/N across all three (the Martyr/non-Martyr
+# distinction only affects the collect's own wording), cross-checked
+# against St. Emerentiana, St. Praxedes, and St. Martha (the sole
+# `common-of-a-holy-woman` saint -- her own collect uses the Virgin
+# template `collect-c6a` too, same finding).
+terce-capitulum:
+  text: |
+    Fratres: Qui gloriátur, in Dómino gloriétur. Non enim qui seípsum comméndat, ille probátus est; sed quem Deus comméndat.
+    R. Deo grátias.
+    V. Spécie tua et pulchritúdine tua.
+    R. Inténde, próspere procéde, et regna.
+  citation: 2 Cor 10:17-18
+  status: verified
+
+# Duplicated from sext-antiphon-common-of-a-virgin.yml — that file's own header
+# comment documents this Common category as live-verified identical
+# for this hour-part; registered under its own id (rather than
+# aliased) matching this codebase's standing convention for shared
+# Common content (e.g. prime-antiphon-common-of-a-confessor.yml vs.
+# prime-antiphon-common-of-an-abbot.yml).
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Justina, 10-07-2025) -- common-of-a-virgin.
+# Covers `common-of-a-virgin-martyr`, `common-of-a-virgin`, and
+# `common-of-a-holy-woman` saints (SaintRecord.common) -- live-
+# verified identical P/T/S/N across all three (the Martyr/non-Martyr
+# distinction only affects the collect's own wording), cross-checked
+# against St. Emerentiana, St. Praxedes, and St. Martha (the sole
+# `common-of-a-holy-woman` saint -- her own collect uses the Virgin
+# template `collect-c6a` too, same finding).
+sext-antiphon:
+  text: 'Hæc est quæ nescívit * torum in delícto: habébit fructum in respectióne animárum sanctárum.'
+  status: verified
+
+# Duplicated from sext-capitulum-common-of-a-virgin.yml — that file's own header
+# comment documents this Common category as live-verified identical
+# for this hour-part; registered under its own id (rather than
+# aliased) matching this codebase's standing convention for shared
+# Common content (e.g. prime-antiphon-common-of-a-confessor.yml vs.
+# prime-antiphon-common-of-an-abbot.yml).
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Justina, 10-07-2025) -- common-of-a-virgin.
+# Covers `common-of-a-virgin-martyr`, `common-of-a-virgin`, and
+# `common-of-a-holy-woman` saints (SaintRecord.common) -- live-
+# verified identical P/T/S/N across all three (the Martyr/non-Martyr
+# distinction only affects the collect's own wording), cross-checked
+# against St. Emerentiana, St. Praxedes, and St. Martha (the sole
+# `common-of-a-holy-woman` saint -- her own collect uses the Virgin
+# template `collect-c6a` too, same finding).
+sext-capitulum:
+  text: |
+    Æmulor enim vos Dei æmulatióne. Despóndi enim vos uni viro vírginem castam exhibére Christo.
+    R. Deo grátias.
+    V. Adjuvábit eam Deus vultu suo.
+    R. Deus in médio ejus, non commovébitur.
+  citation: 2 Cor 11:2
+  status: verified
+
+# Duplicated from none-antiphon-common-of-a-virgin.yml — that file's own header
+# comment documents this Common category as live-verified identical
+# for this hour-part; registered under its own id (rather than
+# aliased) matching this codebase's standing convention for shared
+# Common content (e.g. prime-antiphon-common-of-a-confessor.yml vs.
+# prime-antiphon-common-of-an-abbot.yml).
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Justina, 10-07-2025) -- common-of-a-virgin.
+# Covers `common-of-a-virgin-martyr`, `common-of-a-virgin`, and
+# `common-of-a-holy-woman` saints (SaintRecord.common) -- live-
+# verified identical P/T/S/N across all three (the Martyr/non-Martyr
+# distinction only affects the collect's own wording), cross-checked
+# against St. Emerentiana, St. Praxedes, and St. Martha (the sole
+# `common-of-a-holy-woman` saint -- her own collect uses the Virgin
+# template `collect-c6a` too, same finding).
+none-antiphon:
+  text: Ista est speciósa * inter fílias Jerúsalem.
+  status: verified
+
+# Duplicated from none-capitulum-common-of-a-virgin.yml — that file's own header
+# comment documents this Common category as live-verified identical
+# for this hour-part; registered under its own id (rather than
+# aliased) matching this codebase's standing convention for shared
+# Common content (e.g. prime-antiphon-common-of-a-confessor.yml vs.
+# prime-antiphon-common-of-an-abbot.yml).
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Justina, 10-07-2025) -- common-of-a-virgin.
+# Covers `common-of-a-virgin-martyr`, `common-of-a-virgin`, and
+# `common-of-a-holy-woman` saints (SaintRecord.common) -- live-
+# verified identical P/T/S/N across all three (the Martyr/non-Martyr
+# distinction only affects the collect's own wording), cross-checked
+# against St. Emerentiana, St. Praxedes, and St. Martha (the sole
+# `common-of-a-holy-woman` saint -- her own collect uses the Virgin
+# template `collect-c6a` too, same finding).
+none-capitulum:
+  text: |
+    Dómine, Deus meus, exaltásti super terram habitatiónem meam, et pro morte defluénte deprecáta sum. Invocávi Dóminum, Patrem Dómini mei, ut non derelínquat me in die tribulatiónis meæ, et in témpore superbórum sine adjutório.
+    R. Deo grátias.
+    V. Elégit eam Deus, et præelégit eam.
+    R. In tabernáculo suo habitáre facit eam.
+  citation: Sir 51:13-14
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C6` live query, 2026-08 -- byte-identical to the Lauds hymn
+# ("Jesu, coróna Vírginum") -- see lauds-capitulum-common-of-a-virgin-
+# martyr.yml's header for the fuller gap/sourcing writeup.
+vespers-hymn:
+  text: |-
+    Jesu, coróna Vírginum,
+    Quem Mater illa cóncipit
+    Quæ sola Virgo párturit,
+    Hæc vota clemens áccipe:
+
+    Qui pascis inter lília
+    Septus choréis Vírginum,
+    Sponsus decórus glória
+    Sponsísque reddens prǽmia.
+
+    Quocúmque pergis, Vírgines
+    Sequúntur, atque láudibus
+    Post te canéntes cúrsitant,
+    Hymnósque dulces pérsonant;
+
+    Te deprecámur lárgius,
+    Nostris adáuge sénsibus
+    Nescíre prorsus ómnia
+    Corruptiónis vúlnera.
+
+    * Laus, honor, virtus, glória
+    Deo Patri et Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C6` live query, 2026-08 -- see lauds-capitulum-common-of-a-
+# virgin-martyr.yml's header for why the votive-office view was used.
+vespers-responsory:
+  text: |
+    R.br. Adjuvábit eam * Deus vultu suo.
+    R. Adjuvábit eam * Deus vultu suo.
+    V. Deus in médio ejus, non commovébitur.
+    R. Deus vultu suo.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Adjuvábit eam * Deus vultu suo.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C6` live query, 2026-08 -- same versicle as Lauds (see lauds-
+# versicle-common-of-a-virgin-martyr.yml).
+vespers-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# Common-level: 12-13 st-lucy. First Vespers variant; the default (second Vespers) file is the same id without
+# "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Spécie tua et pulchritúdine tua.
+    R. Inténde, próspere procéde, et regna.
+  status: verified
+
+# Duplicated from benedictus-antiphon-common-of-a-virgin.yml — that file's own header
+# comment documents this Common category as live-verified identical
+# for this hour-part; registered under its own id (rather than
+# aliased) matching this codebase's standing convention for shared
+# Common content (e.g. prime-antiphon-common-of-a-confessor.yml vs.
+# prime-antiphon-common-of-an-abbot.yml).
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Justina, 10-07-2025) -- common-of-a-virgin.
+# Covers `common-of-a-virgin-martyr`, `common-of-a-virgin`, and
+# `common-of-a-holy-woman` saints (SaintRecord.common) -- live-
+# verified identical P/T/S/N across all three (the Martyr/non-Martyr
+# distinction only affects the collect's own wording), cross-checked
+# against St. Emerentiana, St. Praxedes, and St. Martha (the sole
+# `common-of-a-holy-woman` saint -- her own collect uses the Virgin
+# template `collect-c6a` too, same finding).
+# Text taken from St. Emerentiana's own rendering, not St. Justina's:
+# Justina is Duplex (double-or-higher), so her own query shows this
+# antiphon in full at both open and close with no separate incipit
+# marker -- Emerentiana (Simplex) renders the same underlying text with
+# the incipit/full split visible, which is what splitAntiphon
+# (hours/antiphon.ts) needs to find via the embedded "*".
+benedictus-antiphon:
+  text: 'Símile est regnum cælórum * hómini negotiatóri quærénti bonas margarítas: invénta una pretiósa, dedit ómnia sua, et comparávit eam.'
+  status: verified
+
+# Duplicated from magnificat-antiphon-common-of-a-virgin.yml — that file's own header
+# comment documents this Common category as live-verified identical
+# for this hour-part; registered under its own id (rather than
+# aliased) matching this codebase's standing convention for shared
+# Common content (e.g. prime-antiphon-common-of-a-confessor.yml vs.
+# prime-antiphon-common-of-an-abbot.yml).
+# Second Vespers Magnificat antiphon for `common-of-a-virgin` (Commune
+# Unius Virginis, Latin/Commune/C6.txt) -- its own [Ant 3] is a bare
+# `@:Ant 1` cross-reference, i.e. this Common reuses its First Vespers
+# antiphon at Second Vespers too (same pattern as
+# common-of-several-women-martyrs, below). Ant 2 in this same file
+# matches the already-authored benedictus-antiphon-common-of-a-virgin.yml
+# exactly, confirming the read. Covers `common-of-a-virgin-martyr` and
+# `common-of-a-holy-woman` too, same as the Benedictus file. Not
+# independently live-queried.
+magnificat-antiphon:
+  text: Veni, Sponsa Christi, * áccipe corónam, quam tibi Dóminus præparávit in ætérnum.
+  status: verified
+
+# Generic Common-of-a-Virgin-Martyr Matins psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayMatutinum,
+# 2026-10-07 -- St. Justina, Virgin and Martyr, whose own Rule is a plain
+# calendar reassignment with no proper Matins content of her own --
+# `propers: null` confirmed correct by her own file's header comment -- so
+# her output *is* this category's generic scheme, not a saint-specific
+# deviation). Rank Duplex, clears the Duplex+ three-nocturn gate.
+#
+# Reference-engine votive number: C6 ("Unius Virginis Martyris"), per
+# `../divinum-officium-reference/web/www/horas/horas.dialog`'s own
+# `[votives]`/`[communes]` index -- recorded here as the authoritative
+# mapping for the next saint in this category, but note the CGI's
+# `votive=` parameter does NOT actually swap Matins nocturn psalmody (it
+# does affect the Invitatory antiphon, and Lauds/Vespers) -- confirmed by
+# querying `votive=C6`/`votive=C7` back-to-back and getting byte-identical
+# ferial Nocturn 1/2 antiphons both times. A real Duplex+ saint's own
+# calendar date is the only reliable way to pull this content live; the
+# votive number is still useful as a cross-reference into the reference
+# engine's own on-disk `CommuneM/C6.txt` et al.
+#
+# All 6 Nocturn 1/2 antiphons draw on the Song of Songs (bridal imagery);
+# Nocturn 3's canticle is Sirach 39 + Isaiah 61-62 (garment-of-salvation/
+# bridal-adornment imagery), distinct from Common-of-a-Confessor's Sirach/
+# Jeremiah canticle set.
+#
+# `aliases` also registers `common-of-a-virgin` (2026-08-28), corrected
+# from an earlier note here claiming it was a separate, unverified
+# scheme under its own votive number (C6a, "Unius Virginis tantum").
+# Reading `CommuneM/C6a.txt` directly settles it: the whole file is a
+# top-level inherit from `@CommuneM/C6` (this file) with no `[Ant
+# Matutinum]`/`[Ant Matutinum 3N]` override of its own anywhere -- C6a
+# only overrides Officium(secular)/Oratio/Hymn/Responsory1/Capitulum/
+# Lectio-Prima, none of which is Matins nocturn psalmody. Confirmed live
+# against St. Scholastica (2029-02-10, `common: common-of-a-virgin`,
+# `vide C6a` in her own `[Rank]`): her rendered psalm numbers and all
+# three nocturn-closing versicles are byte-identical to this file's own
+# (8,18,23,44,45,47 / 84,86,95,96,97,98 / same Nocturn 3 canticle refs
+# and versicle) -- only her antiphon *text* differs, and that's because
+# she carries real proper antiphons of her own (see
+# `saints/st-scholastica.yml`), not because the Common itself differs.
+matins-psalmody:
+  aliases:
+    - common-of-a-virgin
+  nocturn1:
+    groups:
+      - psalms:
+          - 8
+        antiphon: O quam pulchra * est casta generátio cum claritáte!
+      - psalms:
+          - 18
+        antiphon: Ante torum * hujus Vírginis frequentáte nobis dúlcia cántica drámatis.
+      - psalms:
+          - 23
+        antiphon: Revértere, * revértere, Sunamítis; revértere, ut intueámur te.
+      - psalms:
+          - 44
+        antiphon: Spécie tua * et pulchritúdine tua inténde, próspere procéde, et regna.
+      - psalms:
+          - 45
+        antiphon: 'Adjuvábit eam * Deus vultu suo: Deus in médio ejus, non commovébitur.'
+      - psalms:
+          - 47
+        antiphon: Aquæ multæ * non potuérunt exstínguere caritátem.
+    versicle:
+      v: Spécie tua et pulchritúdine tua.
+      r: Inténde, próspere procéde, et regna.
+  nocturn2:
+    groups:
+      - psalms:
+          - 84
+        antiphon: Nigra sum, * sed formósa, fíliæ Jerúsalem; ídeo diléxit me Rex, et introdúxit me in cubículum suum.
+      - psalms:
+          - 86
+        antiphon: 'Trahe me post te, * in odórem currémus unguentórum tuórum: óleum effúsum nomen tuum.'
+      - psalms:
+          - 95
+        antiphon: Veni, Sponsa Christi, * áccipe corónam, quam tibi Dóminus præparávit in ætérnum.
+      - psalms:
+          - 96
+        antiphon: Unguéntum effúsum * nomen tuum; ideo adolescéntulæ dilexérunt te nimis.
+      - psalms:
+          - 97
+        antiphon: Pulchra es * et decóra fília Jerúsalem, terríbilis ut castrórum ácies ordináta.
+      - psalms:
+          - 98
+        antiphon: Accínxit * fortitúdine lumbos suos, et roborávit bráchium suum; ideóque lucérna ejus non exstinguétur in sempitérnum.
+    versicle:
+      v: Adjuvábit eam Deus vultu suo.
+      r: Deus in médio ejus, non commovébitur.
+  nocturn3:
+    antiphon: 'Média nocte * clamor factus est: Ecce sponsus venit: exíte óbviam ei.'
+    canticles:
+      - refs:
+          - book: sir
+            chapter: 39
+            verses: 17-21
+      - refs:
+          - book: isa
+            chapter: 61
+            verses: 10-11
+          - book: isa
+            chapter: 62
+            verses: 1-3
+      - refs:
+          - book: isa
+            chapter: 62
+            verses: 4-7
+    versicle:
+      v: Elégit eam Deus, et præelégit eam.
+      r: In tabernáculo suo habitáre facit eam.

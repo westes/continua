@@ -1,0 +1,53 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2031-05-14).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut qui beáti Bonifátii Mártyris tui solémnia cólimus, ejus apud te intercessiónibus adjuvémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-boniface-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-martyr (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-boniface-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut qui beáti Bonifátii Mártyris tui solémnia cólimus, ejus apud te intercessiónibus adjuvémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Boniface's own day (2031-05-14 -- Ascensiontide/
+# Pentecost govern every year from 2026-2030). The Benedictus antiphon --
+# see st-john-before-the-latin-gate-antiphon.yml's note on the shared
+# Eastertide Common text.
+benedictus-antiphon:
+  text: Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Boniface, Martyr (May 14). No
+# genuine SanctiM match: the only SanctiM file for this date,
+# `SanctiM/05-14M.txt`, is a wholly different, later saint (St.
+# Pachomius, marked "1965") — a missed pre-1955-pool candidate rather
+# than a genuine SanctiM case (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/05-14.txt, English/Sancti/05-14.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Bonifatius, civis Romanus, quod cum Aglaë nobili matrona impudíce versátus esset, tanto illíus intemperantiæ dolóre captus est, ut pœniténtiæ causa se ad conquirenda et sepelienda Mártyrum córpora contulerit. Itaque, relictis peregrinatiónis sociis, cum Tarsi multos propter christianæ fidei professiónem variis tormentis cruciatos vidísset; illórum víncula osculátus, eos veheméntius hortabátur, ut constanter supplícia perferrent, quod brevem labórem sempiterna requies consecutura sit. Comprehénsus ígitur, férreis ungulis excarnificátus est; cui étiam inter mánuum ungues et carnem acúti cálami sunt infixi, plumbumque liquefactum in os ejus infusum. Quibus in cruciátibus ea vox tantum Bonifatii audiebátur: Gratias tibi ago, Dómine Jesu Christe, Fili Dei. Mox in ollam ferventis picis demisso cápite conjéctus est; unde cum inviolátus exísset, ira incénsus judex eum secúri pércuti jubet. Quo témpore magnus terræmotus factus est, ita ut multi infidéles ad Christi Dómini fidem converteréntur. Eum sequénti die quæréntes socii, cum martyrio afféctum cognovíssent, quingentis solidis ejus corpus redemérunt, et condítum unguentis linteisque involutum Romam portándum curarunt. Quod factum cum ab Angelo Aglaë matrona, quæ et ipsa pœnitens se piis opéribus addixerat, cognovísset, prodiens obviam sancto corpori, ecclésiam ejus nómine ædificávit; in qua corpus sepúltum est Nonis Junii, cum ejus ánima pridie Idus Maji apud Tarsum Ciliciæ urbem migrasset in cælum, Diocletiáno et Maximiáno imperatóribus.'
+      status: verified

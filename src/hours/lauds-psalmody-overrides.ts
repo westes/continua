@@ -1,5 +1,6 @@
 import { sharedOfficeId } from './office-source';
 import { resolveCommonCategoryId } from './psalmody-common-category';
+import { psalmodyRecords } from '../propers/store';
 
 /** Same shape as data/hours/lauds-antiphons.yml's per-weekday entries
  * (see hours/lauds.ts) — a whole-block substitute for the plain ferial
@@ -7,12 +8,12 @@ import { resolveCommonCategoryId } from './psalmody-common-category';
  * `getLaudsPsalmodyOverride` (mirrors matins-psalmody-overrides.ts's own
  * saint/category split):
  *
- * 1. **Proper** — `data/hours/lauds-psalmody-overrides/*.yml`, keyed by a
+ * 1. **Proper** — the lauds-psalmody section of `data/<lang>/propers/*.yml`, keyed by a
  *    saint's own id (gated at duplex-majus+, see hours/lauds.ts's
  *    getPsalmodyOverrideFor) or the literal 'marian-saturday' (applies
  *    unconditionally whenever it wins) — real proper antiphon text for a
  *    saint who has one, live-verified.
- * 2. **Common** — `data/hours/lauds-psalmody-overrides/categories/*.yml`,
+ * 2. **Common** — the lauds-psalmody section of `data/<lang>/commons/*.yml`,
  *    one file per `SaintRecord.common` category (with optional `aliases`
  *    for a second category id sharing the identical scheme, e.g. Common-
  *    of-a-Confessor-Doctor reuses Common-of-a-Confessor-Bishop's Lauds
@@ -49,25 +50,14 @@ export interface LaudsPsalmodyCategory extends LaudsPsalmodyOverride {
   aliases?: string[];
 }
 
-const modules = import.meta.glob<{ default: LaudsPsalmodyOverride }>(
-  '../data/hours/lauds-psalmody-overrides/*.yml',
-  { eager: true },
-);
-const categoryModules = import.meta.glob<{ default: LaudsPsalmodyCategory }>(
-  '../data/hours/lauds-psalmody-overrides/categories/*.yml',
-  { eager: true },
-);
-
-const overrides = new Map<string, LaudsPsalmodyOverride>();
-for (const mod of Object.values(modules)) {
-  overrides.set(mod.default.id, mod.default);
-}
+const laudsRecords = psalmodyRecords<LaudsPsalmodyCategory>('lauds');
+const overrides = laudsRecords.saints as Map<string, LaudsPsalmodyOverride>;
 
 const categories = new Map<string, LaudsPsalmodyCategory>();
-for (const mod of Object.values(categoryModules)) {
-  categories.set(mod.default.id, mod.default);
-  for (const alias of mod.default.aliases ?? []) {
-    categories.set(alias, mod.default);
+for (const category of laudsRecords.categories.values()) {
+  categories.set(category.id, category);
+  for (const alias of category.aliases ?? []) {
+    categories.set(alias, category);
   }
 }
 

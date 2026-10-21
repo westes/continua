@@ -1,0 +1,64 @@
+# Lauds collect ([Oratio 2] in the source) — read from
+# web/www/horas/{Latin,English}/Tempora/Quad2-4.txt.
+collect:
+  text: |
+    Orémus.
+    Præsta nobis, quǽsumus, Dómine, auxílium grátiæ tuæ: ut, jejúniis et oratiónibus conveniénter inténti, liberémur ab hóstibus mentis et córporis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Vespers collect ([Oratio 3] in the source), distinct from Lauds' own —
+# read from web/www/horas/{Latin,English}/Tempora/Quad2-4.txt.
+collect/~-vespers:
+  text: |
+    Orémus.
+    Adésto, Dómine, fámulis tuis, et perpétuam benignitátem largíre poscéntibus: ut iis, qui te auctóre et gubernatóre gloriántur, et congregáta restáures et restauráta consérves.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad2-4.txt's own
+# [Ant 2] and its English counterpart.
+benedictus-antiphon:
+  text: Fili, recordáre, * quia recepísti bona in vita tua, et Lázarus simíliter mala.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad2-4.txt's own
+# [Ant 3] and its English counterpart.
+magnificat-antiphon:
+  text: Dives ille * guttam aquæ pétiit, qui micas panis Lázaro negávit.
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Thursday of Lent week 2 — read from
+# web/www/horas/{Latin,English}/Tempora/Quad2-4.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quad2-4.txt's own [Evangelium].
+# Recombined into one reading (Lectio1-3 are one continuous Gregory
+# excerpt split only to fill the fixed 3-lesson slot count). Responsory1
+# is a cross-reference (@Tempora/Quad2-0:Responsory1).
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Luc 16:19-31
+      text: 'In illo témpore: Dixit Jesus pharisǽis: Homo quidam erat dives, qui induebátur púrpura et bysso: et epulabátur cotídie spléndide. Et erat quidam mendícus, nómine Lázarus, qui jacébat ad jánuam ejus, ulcéribus plenus, cúpiens saturári de micis, quæ cadébant de mensa dívitis, et nemo illi dabat: sed et canes veniébant et lingébant úlcera ejus. Factum est autem, ut morerétur mendícus, et portarétur ab Angelis in sinum Abrahæ. Mórtuus est autem et dives, et sepúltus est in inférno. Elevans autem óculos suos, cum esset in torméntis, vidit Abraham a longe, et Lázarum in sinu ejus: et ipse clamans, dixit: Pater Abraham, miserére mei, et mitte Lázarum, ut intíngat extrémum dígiti sui in aquam, ut refrígeret linguam meam, quia crúcior in hac flamma. Et dixit illi Abraham: Fili, recordáre, quia recepísti bona in vita tua, et Lázarus simíliter mala: nunc autem hic consolátur, tu vero cruciáris. Et in his ómnibus, inter nos et vos chaos magnum firmátum est: ut hi, qui volunt hinc transíre ad vos, non possint, neque inde huc transmeáre. Et ait: Rogo ergo te, pater, ut mittas eum in domum patris mei. Hábeo enim quinque fratres, ut testétur illis, ne et ipsi véniant in hunc locum tormentórum. Et ait illi Abraham: Habent Móysen et Prophétas: áudiant illos. At ille dixit: Non, pater Abraham: sed si quis ex mórtuis íerit ad eos, pæniténtiam agent. Ait autem illi: Si Móysen et Prophétas non áudiunt, neque si quis ex mórtuis resurréxerit, credent.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 40 on the Gospels
+      text: |-
+        Quem, fratres caríssimi, quem dives iste, qui induebátur púrpura et bysso, et epulabátur cotídie spléndide, nisi Judáicum pópulum signat: qui cultum vitæ extérius hábuit, qui accéptæ legis delíciis ad nitórem usus est, non ad utilitátem? Quem vero Lázarus ulcéribus plenus, nisi gentílem pópulum figuráliter éxprimit? Qui dum convérsus ad Deum peccáta confitéri sua non erúbuit, huic vulnus in cute fuit. In cutis quippe vúlnere virus a viscéribus tráhitur, et foras erúmpit.
+
+        Quid est ergo peccatórum conféssio, nisi quædam vúlnerum rúptio? Quia peccáti virus salúbriter aperítur in confessióne, quod pestífere latébat in mente. Vúlnera étenim cutis in superfíciem trahunt humórem putrédinis. Et confiténdo peccáta, quid áliud ágimus, nisi malum, quod in nobis latébat, aperímus? Sed Lázarus vulnerátus cupiébat saturári de micis, quæ cadébant de mensa dívitis, et nemo illi dabat: quia gentílium quemque ad cognitiónem legis admíttere supérbus ille pópulus despiciébat.
+
+        Qui dum doctrínam legis non ad caritátem hábuit, sed ad elatiónem, quasi de accéptis ópibus túmuit: et quia ei verba defluébant de sciéntia, quasi micæ cadébant de mensa. At contra, jacéntis páuperis vúlnera lingébant canes. Nonnúnquam solent in sacro elóquio, per canes prædicatóres intéllegi. Canum étenim lingua, vulnus dum lingit, curat: quia et doctóres sancti, dum in confessióne peccáti nostri nos ínstruunt, quasi vulnus mentis per linguam tangunt.
+      responsory: |-
+        R. Tolle arma tua, pháretram et arcum, et affer de venatióne tua, ut cómedam: * Et benedícat tibi ánima mea.
+        V. Cumque venátu áliquid attúleris, fac mihi inde pulméntum, ut cómedam.
+        R. Et benedícat tibi ánima mea.
+      status: verified

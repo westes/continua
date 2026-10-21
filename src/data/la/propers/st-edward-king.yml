@@ -1,0 +1,52 @@
+# Read directly from web/www/horas/Latin/Sancti/10-13.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátum regem Eduárdum Confessórem tuum æternitátis glória
+    coronásti: fac nos, quǽsumus; ita eum venerári in terris, ut cum eo
+    regnáre possímus in cælis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-edward-king has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-edward-king-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui beátum regem Eduárdum Confessórem tuum æternitátis glória
+    coronásti: fac nos, quǽsumus; ita eum venerári in terris, ut cum eo
+    regnáre possímus in cælis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Edward the Confessor, King (Oct 13).
+# Sourced directly from web/www/horas/Latin/Sancti/10-13.txt,
+# English/Sancti/10-13.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in his own file (his `[Rule]` is `vide
+# C5`) -- defers to the Common's own Nocturn 3, not transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Eduardus, cognomento Confessor, nepos sancti Eduardi Regis et Mártyris, Anglo-Sáxonum regum ultimus, quem futurum regem Brithualdo viro sanctíssimo in mentis excéssu Dóminus demonstrávit, decennis a Danis Angliam vastántibus quæsítus ad necem, exsulare cogitur apud avúnculum, Normanniæ ducem. Ubi in mediis vitiórum illécebris talem se exhibuit integritate vitæ morúmque innocéntia, ut ómnibus admiratióni esset. Eluxit in eo vel tum mira pietas in Deum ac res divinas, fuitque ingenio mitíssimo atque ab omni dominándi cupiditate alieno. Cujus ea vox fertur, Malle se regno carére, quod sine cæde et sánguine obtineri non possit.
+
+        Exstinctis mox tyrannis, qui frátribus suis vitam et regnum eripúerant, revocátur in pátriam. Ubi, summis ómnium votis et gratulatióne, regno potítus, ad hostílium irárum delenda vestígia totum se convértit, a sacris exorsus ac Divórum templis, quorum alia a fundamentis eréxit, alia refécit auxitque redítibus ac privilegiis; in eam curam potíssimum intentus, ut refloresceret collapsa religio. Ab aulæ procéribus compulsum ad nuptias, constans est assertio scriptórum, cum vírgine sponsa virginitátem in matrimonio servasse. Tantus in eo fuit in Christum amor et fides, ut illum aliquándo inter Missárum solemnia vidére merúerit, blando vultu et divina luce fulgentem. Ob profusam caritátem, orphanórum et egenórum pater passim dicebátur, numquam lætior quam cum regios thesáuros exhausísset in páuperes.
+
+        Prophetíæ dono illustris, de Angliæ futuro statu multa cælitus prævidit; et illud in primis memorábile, quod Sweyni Danórum regis, in mare demersi, mortem, dum Angliam invadéndi animo classem conscenderet, eodem quo accidit momento, divinitus intelléxit. Joánnem Evangelistam mirifice coluit, nihil cuiquam, quod ejus nómine peterétur, negare sólitus. Cui olim sub lácera veste suo nómine stipem roganti, cum nummi deéssent, detractum ex dígito ánulum porréxit; quem Divus non ita multo post Eduardo remisit, una cum núntio secuturæ mortis. Quare rex, indictis pro se precibus, ipso ab Evangelista prædicto die piíssime obiit, Nonis videlicet Januarii, anno salútis millesimo sexagesimo sexto, quem sequénti sæculo Alexander Papa tertius, miraculis clarum, Sanctórum fastis adscripsit.
+      status: verified

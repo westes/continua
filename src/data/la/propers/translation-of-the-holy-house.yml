@@ -1,0 +1,327 @@
+# Collect. Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). English is this project's own translation, marked draft.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátæ Maríæ Vírginis Domum per incarnati Verbi mystérium misericórditer consecrasti, eámque in sinu Ecclésiæ tuæ mirabíliter collocasti: concéde; ut segregati a tabernáculis peccatórum, digni efficiamur habitatóres Domus sanctæ tuæ.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle: the feast's own Benedictus antiphon ([Ant 2]) and [Versum 2], then the collect. Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). English is this project's own translation, marked draft.
+commemoration:
+  text: |
+    Ant. Ecce tabernáculum Dei cum homínibus, et habitábit cum eis: et ipsi pópulus ejus erunt, et ipse Deus cum eis erit eórum Deus.
+    V. Introíbimus in tabernáculum ejus.
+    R. Adorábimus in loco, ubi stetérunt pedes ejus.
+    Orémus.
+    Deus, qui beátæ Maríæ Vírginis Domum per incarnati Verbi mystérium misericórditer consecrasti, eámque in sinu Ecclésiæ tuæ mirabíliter collocasti: concéde; ut segregati a tabernáculis peccatórum, digni efficiamur habitatóres Domus sanctæ tuæ.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). The Matins hymn is the Common of a Dedication's, copied from matins-hymn-common-of-a-dedication.yml (Latin and English both).
+matins-hymn:
+  text: |
+    Urbs beáta Jerúsalem,
+    Dicta pacis vísio,
+    Quæ constrúitur in cælis
+    Vivis ex lapídibus,
+    Et Ángelis coronáta
+    Ut sponsáta cómite.
+
+    Nova véniens e cælo,
+    Nuptiáli thálamo
+    Præparáta, ut sponsáta
+    Copulétur Dómino:
+    Platéæ et muri ejus
+    Ex auro puríssimo.
+
+    Portæ nitent margarítis
+    Ádytis paténtibus,
+    Et virtúte meritórum
+    Illuc introdúcitur
+    Omnis qui ob Christi nomen
+    Hic in mundo prémitur.
+
+    Tunsiónibus, pressúris
+    Expolíti lápides,
+    Suis coaptántur locis
+    Per manus artíficis,
+    Disponúntur permansúri
+    Sacris ædifíciis.
+
+    Glória et honor Deo
+    Usquequáque altíssimo,
+    Una Patri, Filióque,
+    Inclyto Paráclito,
+    Cui laus est et potéstas
+    Per ætérna sǽcula.
+    Amen.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). English is this project's own translation, marked draft.
+matins-invitatory:
+  text: Salvatórem mundi in domo Vírginis de Spíritu sancto concéptum, * Veníte, adorémus.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). English is the Douay-Rheims text from the project's scripture store, from "In all these" on (the source's Latin begins mid-verse). The source cites it "Eccl. 24:1"; the words are Sir 24:11-12.
+lauds-capitulum:
+  text: In ómnibus réquiem quæsívi, et in hæreditate Dómini morabor. Tunc præcépit, et dixit mihi Creátor ómnium; et qui creávit me, requievit in tabernáculo meo.
+  citation: Sir 24:11-12
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). The Lauds hymn is the Common of a Dedication's, copied from lauds-hymn-common-of-a-dedication.yml (Latin and English both).
+lauds-hymn:
+  text: |
+    Anguláris fundaméntum
+    Lapis Christus missus est,
+    Qui paríetum compáge
+    In utróque néctitur,
+    Quem Sion sancta suscépit,
+    In quo credens pérmanet.
+
+    Omnis illa Deo sacra
+    Et dilécta cívitas,
+    Plena módulis, in laude,
+    Et canóre júbilo,
+    Trinum Deum unicúmque
+    Cum fervóre prǽdicat.
+
+    Hoc in templo, summe Deus,
+    Exorátus ádveni,
+    Et cleménti bonitáte
+    Precum vota súscipe,
+    Largam benedictiónem
+    Hic infúnde júgiter.
+
+    Hic promereántur omnes
+    Petíta acquírere,
+    Et adépta possidére,
+    Cum Sanctis perénniter
+    Paradísum introíre,
+    Transláti in réquiem.
+
+    Glória et honor Deo
+    Usquequáque altíssimo,
+    Una Patri, Filióque,
+    Inclyto Paráclito,
+    Cui laus est et potéstas
+    Per ætérna sǽcula.
+    Amen.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). English is this project's own translation, marked draft.
+lauds-versicle:
+  text: |
+    V. Introíbimus in tabernáculum ejus.
+    R. Adorábimus in loco, ubi stetérunt pedes ejus.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). English is the Douay-Rheims text from the project's scripture store, from "In all these" on (the source's Latin begins mid-verse). The source cites it "Eccl. 24:1"; the words are Sir 24:11-12.
+terce-capitulum:
+  text: |
+    In ómnibus réquiem quæsívi, et in hæreditate Dómini morabor. Tunc præcépit, et dixit mihi Creátor ómnium; et qui creávit me, requievit in tabernáculo meo.
+    R. Deo grátias.
+    V. Dómine diléxi decórem domus tuæ.
+    R. Et locum habitatiónis glóriæ tuæ.
+  citation: Sir 24:11-12
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). English is this project's own translation, marked draft.
+vespers-versicle:
+  text: |
+    V. Hæc est domus Dómini fírmiter ædificáta.
+    R. Bene fundáta est supra firmam petram.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). English is this project's own translation, marked draft.
+vespers-versicle/~-first:
+  text: |
+    V. Hæc est domus Dómini fírmiter ædificáta.
+    R. Bene fundáta est supra firmam petram.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). English is this project's own translation, marked draft.
+benedictus-antiphon:
+  text: 'Ecce tabernáculum Dei cum homínibus, et habitábit cum eis: et ipsi pópulus ejus erunt, et ipse Deus cum eis erit eórum Deus.'
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). English is this project's own translation, marked draft.
+magnificat-antiphon:
+  text: 'O quam metuéndus est * locus iste: vere non est hic áliud, nisi domus Dei, et porta cæli.'
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). English is this project's own translation, marked draft.
+magnificat-antiphon/~-first:
+  text: 'Sanctificávit Dóminus * tabernáculum suum: quia hæc est domus Dei, in qua invocábitur nomen ejus, de quo scriptum est: Et erit nomen meum ibi, dicit Dóminus.'
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). Matins psalmody: nine antiphons with the psalms the source assigns, three nocturns of three. English is this project's own translation, marked draft.
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 8
+        antiphon: Eleváta est magnificéntia tua super cœlos.
+      - psalms:
+          - 18
+        antiphon: In sole pósuit tabernáculum suum, et ipse tamquam sponsus procédens de thálamo suo.
+      - psalms:
+          - 23
+        antiphon: Quis ascendat in montem Dómini? aut quis stabit in loco sancto ejus? Ínnocens mánibus, et mundo corde.
+    versicle:
+      v: Hic domus Dei est, et porta cœli.
+      r: Et vocábitur aula Dei.
+  nocturn2:
+    groups:
+      - psalms:
+          - 44
+        antiphon: Diffúsa est grátia in lábiis tuis, proptérea benedíxit te Deus in ætérnum, et in sǽculum sǽculi.
+      - psalms:
+          - 45
+        antiphon: Sanctificávit tabernáculum suum Altíssimus.
+      - psalms:
+          - 86
+        antiphon: Homo natus est in ea, et ipse fundávit eam Altíssimus.
+    versicle:
+      v: Dómine, diléxi decórem domus tuæ,
+      r: Et locum habitatiónis glóriæ tuæ.
+  nocturn3:
+    groups:
+      - psalms:
+          - 95
+        antiphon: 'Tóllite hóstias, et introíte in átria ejus: * adoráte Dóminum in átrio sancto ejus.'
+      - psalms:
+          - 96
+        antiphon: Vidérunt omnes pópuli glóriam ejus.
+      - psalms:
+          - 97
+        antiphon: Cantáte Dómino cánticum novum, quia mirabília fecit Dóminus, allelúia.
+    versicle:
+      v: Domum tuam, Dómine, decet sanctitúdo.
+      r: In longitúdinem diérum.
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). Lauds psalmody: the Common's own psalms (92, 99, 62, canticle, Laudate) under this feast's own five antiphons. English is this project's own translation, marked draft.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Domum tuam, Dómine, * decet sanctitúdo in longitúdinem diérum.
+    - psalms:
+        - 99
+      antiphon: 'Domus mea, * domus oratiónis vocábitur: in ea omnis qui petit, áccipit, et qui quærit ínvenit: et pulsánti aperiétur.'
+    - psalms:
+        - 62
+      antiphon: Propter domum * Dómini Dei nostri quæsívi bona tibi.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Dómine Deus * exaltásti super terram habitatiónem meam.
+  laudate:
+    antiphon: Domum majestátis meæ, * et locum pedum meórum glorificábo.
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). Vespers psalmody: the source's five antiphons reduced to the Monastic four: antiphons 1, 2, 3 under their own psalms, antiphon 5 under the fourth antiphon's psalm (126), as the engine's Monastic Vespers does. English is this project's own translation, marked draft.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Domum tuam, Dómine, * decet sanctitúdo in longitúdinem diérum.
+    - psalms:
+        - 112
+      antiphon: 'Domus mea, * domus oratiónis vocábitur: in ea omnis qui petit, áccipit, et qui quærit ínvenit: et pulsánti aperiétur.'
+    - psalms:
+        - 121
+      antiphon: Propter domum * Dómini Dei nostri quæsívi bona tibi.
+    - psalms:
+        - 126
+      antiphon: Domum majestátis meæ, * et locum pedum meórum glorificábo.
+
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt (Duplex majus, nine lessons, `ex C11`; the parts it marks `@Commune/C8` are read from Commune/C8.txt, the Common of a Dedication). Vespers psalmody: the source's five antiphons reduced to the Monastic four: antiphons 1, 2, 3 under their own psalms, antiphon 5 under the fourth antiphon's psalm (126), as the engine's Monastic Vespers does. English is this project's own translation, marked draft.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Domum tuam, Dómine, * decet sanctitúdo in longitúdinem diérum.
+    - psalms:
+        - 112
+      antiphon: 'Domus mea, * domus oratiónis vocábitur: in ea omnis qui petit, áccipit, et qui quærit ínvenit: et pulsánti aperiétur.'
+    - psalms:
+        - 121
+      antiphon: Propter domum * Dómini Dei nostri quæsívi bona tibi.
+    - psalms:
+        - 126
+      antiphon: Domum majestátis meæ, * et locum pedum meórum glorificábo.
+
+# Matins Nocturn 2 and 3 readings for the Translation of the Holy House. Sourced from
+# web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt. One entry per lesson,
+# each with its own responsory: Lectio4-6 (St. Bernard, Sermon 52; the sixth lesson
+# adds the Office's account of the Translation) in Nocturn 2, with Responsory4 from the
+# source and Responsory5 and 7 as it takes them from the Common of a Dedication
+# (Commune/C8.txt, Responsory2 and Responsory7, English from the reference's English
+# C8); in Nocturn 3 the Gospel (Luke 1:26-38, the source gives only its incipit, so
+# the pericope is the Annunciation's, already carried) and Lectio7-9 (St. Bernard,
+# Homilies 1-3 on "Missus est"), with the source's Responsory7 and 8. Lectio9 has no
+# responsory (the Te Deum follows). Nocturn 1 (Lectio1-3, 3 Kings 8) is not carried:
+# continua's first nocturn runs the Scripture course.
+#
+# Latin: obvious typos corrected silently ("Mriam" -> "Mariam", "pra.'dixísse" ->
+# "prædixísse", "sacculo" -> "sæculo", "siti præparatam" -> "sibi præparatam", "l'atrem"
+# -> "Patrem", "nec no viter" -> "nec novíter", "chros" -> "choros"); spaces before
+# ; : ? removed. Everything else is verbatim. English is this project's own
+# translation, marked draft, except the two Common responsories and the Gospel.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Bernard, Abbot, Sermon 52 on Various Subjects
+      text: 'Sapiéntia, quæ Dei erat, et Deus erat, de sinu Patris ad nos véniens, ædificávit sibi domum, ipsam scílicet Matrem suam Vírginem Mariam, in qua septem colúmnas excidit. Quid est in ea septem colúmnas excidere, nisi ipsam dignum sibi habitáculum fide, et opéribus præparare? Nimírum ternarius númerus ad fidem propter sanctam Trinitátem, quaternarius pértinet ad mores propter quátuor principales virtútes. Quod autem in beáta María sancta Trínitas fúerit, fúerit dico per præséntiam majestátis; ubi solus Fílius erat per susceptionem humanitátis, testátur núntius cœlestis, qui ei arcána mystéria réserans, ait: Ave grátia plena. Dóminus tecum; et post pauca: Spíritus sanctus superveniet in te, et virtus Altíssimi obumbrábit tibi. Ecce habes Dóminum, habes virtútem Altíssimi, habes Spíritum sanctum, habes Patrem, Fílium, et Spíritum sanctum.'
+      responsory: |
+        R. O quam metuendus est locus iste! * Vere non est hic aliud, nisi domus Dei, et porta cœli.
+        V. Hæc est domus Domini firmiter ædificata, bene fundata est supra firmam petram.
+        R. Vere non est hic aliud, nisi domus Dei, et porta cœli.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: St. Bernard, Abbot, Sermon 52 on Various Subjects
+      text: 'Utrum autem et quátuor principales virtútes, tamquam quátuor colúmnas possederit, inquisitione dignum vidétur. Primum ergo videámus, an fortitúdinem habúerit. Quæ nimírum virtus quómodo illi abesse pótuit, quæ abjéctis sæculáribus pompis, spretisque voluptatibus carnis, soli Deo in virginitáte vívere propósuit? Ni fallor, hæc Virgo est, quæ apud Salomónem légitur: Mulíerem fortem quis inveniet? procul, et de ultimis fínibus prétium ejus. Porro quod temperans et justa fúerit, ex Ángeli collocutione, et sui ipsíus responsione, luce clárius comprobamus. Salutata quippe tam venerabiliter ab Angelo: Ave, grátia plena. Dóminus tecum; non se éxtulit, quasi quæ ex singulári grátiæ privilégio benediceretur, sed siluit, et qualis esset insólita hæc salutatio secum cogitávit. Qua in re, quid nisi temperans fuit? At vero, cum de cœlestibus mystériis ab eódem Angelo doceretur, diligénter quæsívit, quómodo conciperet et pareret, quæ virum útique non cognósceret, et in hoc sine dúbio prudens éxstitit.'
+      responsory: |
+        R. Fundáta est domus Dómini supra vérticem móntium, et exaltáta est super omnes colles: * Et vénient ad eam omnes gentes, et dicent: Glória tibi, Dómine.
+        V. Veniéntes autem vénient cum exsultatióne, portántes manípulos suos.
+        R. Et vénient ad eam omnes gentes, et dicent: Glória tibi, Dómine.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: St. Bernard, Abbot, Sermon 52 on Various Subjects, and the Office's own account of the Translation
+      text: 'Justítiæ autem præ se fert insígne, ubi se ancíllam Dómini confitétur; nam quod justórum sit conféssio, testátur qui ait; Verúmtamen justi confitebúntur nómini tuo. Fuit ígitur beáta Virgo María fortis in propósito, temperans in siléntio, prudens in interrogatione, justa in confessióne. His ítaque quátuor morum columnis, et tribus fídei prædictis exstrúxit in ea sibi domum Sapiéntia cœlestis, quæ ádeo mentem ejus replevit, ut de plenitudine mentis fœcundaretur et caro. Ipsíus autem Vírginis natális domus divínis mystériis consecráta , Angelórum ministério ab infidélium potestáte in Dalmatiam prius, deínde in agrum Laurentanum Picenæ provínciæ transláta fuit, sedénte sancto Cœlestino Quinto: eamdémque ipsam esse, in qua Verbum caro factum est, et habitávit in nobis, tum pontifíciis diplomátibus, et celebérrima totíus orbis veneratióne, tum continua miraculórum virtúte et cœlestium beneficiórum grátia comprobátur. Quibus permótus Innocéntius Duodécimus, quo ferventius erga Matris amantissimæ cultum Fidélium memória excitaretur, ejúsdem sanctæ Domus Translationem anniversária solemnitáte in tota Piceni Provincia veneratam. Missa étiam et Offício próprio celebrári præcépit.'
+      responsory: |
+        R. Domus mea, domus oratiónis vocábitur, dicit Dóminus: in ea omnis qui petit, áccipit; et qui quærit, ínvenit; * Et pulsánti aperiétur.
+        V. Pétite, et accipiétis; quǽrite, et inveniétis.
+        R. Et pulsánti aperiétur.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 1:26-38
+      text: 'In illo témpore: Missus est Angelus Gábriel a Deo in civitátem Galilǽæ, cui nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, de domo David, et nomen Vírginis María. Et ingréssus Angelus ad eam, dixit: Ave, grátia plena; Dóminus tecum: benedícta tu in muliéribus. Quæ cum audísset, turbáta est in sermóne ejus: et cogitábat, qualis esset ista salutátio. Et ait Angelus ei: Ne tímeas, María, invenísti enim grátiam apud Deum: ecce, concípies in útero, et páries fílium, et vocábis nomen ejus Jesum. Hic erit magnus, et Fílius Altíssimi vocábitur, et dabit illi Dóminus Deus sedem David, patris ejus: et regnábit in domo Jacob in ætérnum, et regni ejus non erit finis. Dixit autem María ad Angelum: Quómodo fiet istud, quóniam virum non cognósco? Et respóndens Angelus, dixit ei: Spíritus Sanctus supervéniet in te, et virtus Altíssimi obumbrábit tibi. Ideóque et quod nascétur ex te Sanctum, vocábitur Fílius Dei. Et ecce, Elísabeth, cognáta tua, et ipsa concépit fílium in senectúte sua: et hic mensis sextus est illi, quæ vocátur stérilis: quia non erit impossíbile apud Deum omne verbum. Dixit autem María: Ecce ancílla Dómini, fiat mihi secúndum verbum tuum.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Bernard, Abbot, Homily 1 on "Missus est"
+      text: 'Quæ est hæc Virgo tam venerábilis, ut salutetur ab Angelo? tam húmilis, ut desponsáta sit fabro? Pulchra permixtio virginitátis et humilitátis: nec mediocriter placet Deo illa ánima, in qua et humílitas comméndat virginitátem, et virgínitas exornat humilitátem. Sed quanta, putas veneratióne digna est, in qua humilitátem exáltat fœcunditas, et partus consecrat virginitátem? Audis vírginem, audis húmilem? Laudábilis virtus virgínitas, sed magis necessaria humílitas: illa consulitur ista præcipitur.'
+      responsory: |
+        R. Diffúsa est grátia in lábiis tuis, * Proptérea benedíxit te Deus in ætérnum.
+        V. Myrrha, et gutta, et cásia a vestiméntis tuis, a dómibus ebúrneis, ex quibus te delectavérunt filiæ regum in honóre tuo.
+        R. Proptérea benedíxit te Deus in ætérnum.
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Bernard, Abbot, Homily 2 on "Missus est"
+      text: 'Missus est, inquit, Ángelus ad vírginem, vírginem carne, vírginem mente, vírginem professióne, vírginem dénique qualem describit Apóstolus, mente et córpore sanctam, nec novíter, nec fortúito inventam, sed a sæculo electam, ab Altíssimo præcognitam, et sibi præparatam, ab Ángelis servatam, a Pátribus præfiguratam, a Prophétis promíssam. Ut pauca loquar de plúribus, quam sibi áliam prædixísse Deus vidétur, quando ad serpentem ait; Inimicitias ponam inter te et mulíerem? Et si adhuc dubitas, an de María dixerit, audi quod séquitur: Ipsa cónteret caput tuum; cui hæc serváta victória est, nisi Maríæ?'
+      responsory: |
+        R. Beáta es, Virgo María Dei Génitrix, quæ credidísti Dómino: perfécta sunt in te, quæ dicta sunt tibi: ecce exaltáta es super choros Angelórum: * Intercéde pro nobis ad Dóminum Deum nostrum.
+        V. Ave María, grátia plena: Dóminus tecum.
+        R. Intercéde pro nobis ad Dóminum Deum nostrum.
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Bernard, Abbot, Homily 3 on "Missus est"
+      text: 'Et ingréssus Ángelus ad eam, dixit: Ave grátia plena. Dóminus tecum. Quo ingréssus ad eam? Puto in sacrárium pudici cubículi, ubi illa fortassis, clauso super se ostio, orabat Patrem in abscóndito. Solent Ángeli adstare orantibus, et delectari in his, quos vident levare puras manus in oratióne. Holocáustum sanctæ devotiónis gaudent se offérre Deo in odórem suavitátis. Maríæ autem orationes, quantum placuerint in conspéctu Altíssimi, Ángelus indicávit, qui ingréssus ad eam tam reverénter salutavit.'
+      status: verified

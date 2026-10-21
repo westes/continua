@@ -1,0 +1,38 @@
+# Read from the reference engine: web/www/horas/Latin/Sancti/02-09.txt [Oratio];
+# English from English/Sancti/02-09.txt.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátum Cyríllum Confessórem tuum atque Pontíficem divínæ maternitátis beatíssimæ Vírginis Maríæ assertórem invíctum effecísti: concéde, ipso intercedénte; ut, qui vere eam Genetrícem Dei crédimus, matérna eíusdem protectióne salvémur.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# No proper antiphon of his own -- standard de-Communi text and versicle for
+# common-of-a-confessor-doctor; collect is the saint's own (collect-st-cyril-of-alexandria.yml). Not
+# independently live-verified for this category, so marked draft.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui beátum Cyríllum Confessórem tuum atque Pontíficem divínæ maternitátis beatíssimæ Vírginis Maríæ assertórem invíctum effecísti: concéde, ipso intercedénte; ut, qui vere eam Genetrícem Dei crédimus, matérna eíusdem protectióne salvémur.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Cyril of Alexandria, Bishop, Confessor and Doctor of the Church. Sourced directly from
+# web/www/horas/Latin/Sancti/02-09.txt, English/Sancti/02-09.txt.
+# Lectio4-6 combined into one reading, one continuous vita.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Cyríllus Alexandrínus, cujus præcónia non uníus tantum vel altérius sunt comprobáta testimónio, sed étiam œcumenicórum conciliórum Ephesíni et Chalcedonénsis actis celebráta, claris ortus paréntibus, ac Theóphili epíscopi Alexandríni nepos, adhuc adoléscens præcelléntis ingénii clara specímina dedit. Lítteris ac sciéntiis egrégie imbútus, ad Joánnem epíscopum, Jerosolymitánum se cóntulit, ut in Christiána fide perficerétur. Alexandríam deínde cum rediísset, Theóphilo vita functo, ad illíus sedem evéctus est: quo in múnere ita óptimi pastóris formam ab Apóstolo definítam constánter præ se tulit, ut sanctíssimi præsulis glóriam mérito sit adéptus.
+
+        Salútis animárum zelo incénsus curas omnes inténdit, ut sibi commíssum gregem in fídei et morum integritáte serváret, atque a venenátis infidélium et hæreticórum páscuis defénderet. Hinc tum Nováti ásseclas e civitáte expélli, tum Judæos, qui furóre acti in cædem Christianórum conspiráverant, juxta leges puníri satégit. Singuláre vero Cyrílli pro cathólicæ fídei incolumitáte enítuit stúdium contra Nestórium Constantinopolitánum epíscopum, asseréntem Jesum Christum ex María Vírgine hóminem tantum et non Deum natum, eíque divinitátem pro méritis esse collátam; cujus emendatiónem cum frustra tentásset, eum sancto Cælestíno Pontífici máximo denuntiávit.
+
+        Cælestíni delegáta auctoritáte, concílio Ephesíno præfuit, in quo hæresis Nestoriána pénitus proscrípta est, damnátus Nestórius et a sua Sede dejéctus, ac dogma cathólicum de una in Christo eáque divína persóna, et divína gloriósæ Vírginis Maríæ maternitáte assértum; plaudénte pópulo univérso, qui incredíbili gáudio géstiens, collucéntibus fácibus domum dedúxit epíscopus. Sed hac de causa Cyríllus calúmniis, injúriis et persecutiónibus, plúrimis a Nestório ejúsque fautóribus impetítus fuit; quas ipse patientíssime tulit, ita ut, de sola fide sollícitus, quidquid advérsus eum effutiébant ac moliebántur hærétici, pro níhilo habéret. Tandem pro Ecclésia Dei máximis perfúnctus labóribus, plurimísque scriptis éditis tum ad éthnicos et hæréticos confutándos, tum ad sacras Scriptúras et cathólica explanánda dógmata, sancto fine quiévit anno quadringentésimo quadragésimo quarto, episcopátus trigésimo secúndo. Leo décimus tértius Póntifex máximus Offícium et Missam præclaríssimi hujus fídei cathólicæ propugnatóris et Orientális ecclésiæ lúminis, ad Ecclésiam univérsam exténdit.
+      status: verified

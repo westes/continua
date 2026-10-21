@@ -1,0 +1,57 @@
+# Transcribed directly from the reference engine's own Office file
+# (web/www/horas/Latin/Tempora/Pasc0-4.txt's [Oratio], English parallel in
+# web/www/horas/English/Tempora/Pasc0-4.txt). See easter-monday-collect.yml's
+# own header for sourcing/status convention.
+collect:
+  text: |
+    Orémus.
+    Deus, qui diversitátem géntium in confessióne tui nóminis adunásti: da, ut renátis fonte baptísmatis una sit fides méntium et píetas actiónum.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-04-01); Latin and English both taken from the page.
+benedictus-antiphon:
+  text: María stabat * ad monuméntum plorans, et vidit duos Angelos in albis, sedéntes, et sudárium quod fúerat super caput Jesu, allelúia.
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-04-01); Latin and English both taken from the page.
+magnificat-antiphon:
+  text: 'Tulérunt Dóminum meum, * et néscio ubi posuérunt eum: si tu sustulísti eum, dícito mihi, allelúia: et ego eum tollam, allelúia.'
+  status: verified
+  temporal: true
+
+# Matins content for Easter Thursday (temporalId easter-thursday,
+# Pasc0-4 -- "Die V infra octavam Paschæ"). Sourced from web/www/horas/
+# Latin/Tempora/Pasc0-4.txt (Latin homily) / English/Tempora/Pasc0-4.txt
+# (English homily); Gospel pericope from the Missal's own [Evangelium]
+# (missa/Latin+English/Tempora/Pasc0-4.txt), same convention as
+# easter-monday.yml.
+#
+# Single-nocturn source form, same structural note as easter-monday.yml.
+# Lectio1's homily portion (incipit dropped) combined with Lectio2-3 into
+# one continuous reading. Responsory: the source's own [Responsory1]
+# ("Tulérunt Dóminum meum").
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Joannes 20:11-18
+      text: 'In illo témpore: María stabat ad monuméntum foris, plorans. Dum ergo fleret, inclinávit se et prospéxit in monuméntum: et vidit duos Angelos in albis, sedéntes, unum ad caput et unum ad pedes, ubi pósitum fúerat corpus Jesu. Dicunt ei illi: Múlier, quid ploras? Dicit eis: Quia tulérunt Dóminum meum: et néscio, ubi posuérunt eum. Hæc cum dixísset, convérsa est retrórsum, et vidit Jesum stantem: et non sciébat, quia Jesus est. Dicit ei Jesus: Múlier, quid ploras? quem quæris? Illa exístimans, quia hortulánus esset, dicit ei: Dómine, si tu sustulísti eum, dícito mihi, ubi posuísti eum: et ego eum tollam. Dicit ei Jesus: María. Convérsa illa, dicit ei: Rabbóni - quod dícitur Magíster. - Dicit ei Jesus: Noli me tángere, nondum enim ascéndi ad Patrem meum: vade autem ad fratres meos et dic eis: Ascéndo ad Patrem meum et Patrem vestrum, Deum meum et Deum vestrum. Venit María Magdaléne annúntians discípulis: Quia vidi Dóminum, et hæc dixit mihi.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 25 on the Gospels
+      text: |-
+        María Magdaléne, quæ fúerat in civitáte peccátrix, amándo veritátem, lavit lácrimis máculas críminis: et vox Veritátis implétur, qua dícitur: Dimíssa sunt ei peccáta multa, quia diléxit multum. Quæ enim prius frígida peccándo remánserat, póstmodum amándo fórtiter ardébat. Nam postquam venit ad monuméntum, ibíque corpus Domínicum non invénit, sublátum crédidit, atque discípulis nuntiávit: qui veniéntes vidérunt, atque ita esse, ut múlier díxerat, credidérunt. Et de eis prótinus scriptum est: Abiérunt ergo discípuli ad semetípsos: ac deínde subjúngitur: María autem stabat ad monuméntum foris, plorans.
+
+        Qua in re pensándum est, hujus mulíeris mentem quanta vis amóris accénderat, quæ a monuménto Dómini, étiam discípulis recedéntibus, non recedébat. Exquirébat quem non invénerat: flebat inquírendo, et amóris sui igne succénsa, ejus, quem ablátum crédidit, ardébat desidério. Unde cóntigit, ut eum sola tunc vidéret, quæ remánserat ut quǽreret: quia nimírum virtus boni óperis, perseverántia est: et voce Veritátis dícitur: Qui autem perseveráverit usque in finem, hic salvus erit.
+
+        María ergo cum fleret, inclinávit se, et prospéxit in monuméntum. Certe jam monuméntum vácuum víderat, jam sublátum Dóminum nuntiáverat: quid est, quod se íterum inclínat, íterum vidére desíderat? Sed amánti semel aspexísse non súfficit: quia vis amóris intentiónem multíplicat inquisitiónis. Quæsívit ergo prius, et mínime invénit: perseverávit ut quǽreret, unde et cóntigit, ut inveníret: actúmque est, ut desidéria diláta créscerent, et crescéntia cáperent quod inveníssent.
+      responsory: |-
+        R. Tulérunt Dóminum meum, et néscio ubi posuérunt eum. Dicunt ei Angeli: Múlier, quid ploras? surréxit sicut dixit: * Præcédet vos in Galilǽam: ibi eum vidébitis, allelúia, allelúia.
+        V. Cum ergo fleret, inclinávit se, et prospéxit in monuméntum: et vidit duos Angelos in albis, sedéntes, qui dicunt ei.
+        R. Præcédet vos in Galilǽam: ibi eum vidébitis, allelúia, allelúia.
+      status: verified

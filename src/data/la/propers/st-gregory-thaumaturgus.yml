@@ -1,0 +1,43 @@
+# Matins Nocturn 2-3 readings for St. Gregory Thaumaturgus, Bishop and
+# Confessor (Nov 17) — pre-1955-but-post-1617 (no SanctiM/11-17*.txt at
+# all). web/www/horas/Latin/Sancti/11-17.txt, English/Sancti/11-17.txt.
+#
+# Lectio4-5 (this saint's own vita) combined into one reading, no
+# internal break. Lectio6 (St. Maximus of Turin's sermon) is a
+# genuinely distinct source, kept separate.
+#
+# Nocturn 3: Lectio7's Gospel quotation (Mark 11:22-24) is nearly the
+# full short pericope, not just a bare incipit like elsewhere in this
+# pass, so authored as a genuine Gospel reading here. Lectio7's own
+# homily portion + Lectio8-9 (the Venerable Bede's commentary) is one
+# continuous excerpt, combined into a single reading. No responsory
+# given for either Nocturn 3 reading.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Gregórius, Neocæsaréæ Ponti epíscopus, sanctitáte doctrinaque illustris, signis vero ac miraculis multo illustrior, quorum multitúdine atque præstántia Thaumatúrgus appellátus est, et sancti Basilíi testimonio cum Moyse, Prophetis et Apóstolis comparátus; montem, qui ecclésiæ ædificatiónem impediebat, oratióne álio tránstulit. Item palúdem, inter fratres causam discordiárum, exsiccávit. Lycum fluvium, perniciose agros inundántem, defixo ad ripam quo sustentabátur baculo, qui statim virentem crevit in árborem, coércuit, ut póstea ultra eum terminum non efflúxerit.
+
+        Sæpíssime dæmones ex idolórum simulacris atque ex hóminum corpóribus ejécit, múltaque alia mirabíliter effécit, quibus innumerábiles hómines traxit ad Jesu Christi fidem, cum étiam prophetico spíritu futura prædiceret. Qui, migratúrus e vita, cum quæsísset quot in civitáte Neocæsariénsi réliqui essent infidéles, responsumque esset tantum esse septemdecim; Deo grátias agens, Tótidem, inquit, erant fidéles, cum cœpi episcopátum. Plura scripsit, quibus etiam, non solum miraculis, Dei Ecclésiam illustrávit.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: St. Maximus, Bishop of Turin, Homily 59 (the 2nd on St. Eusebius of Vercelli)
+      text: Beáti Patris Gregórii merita jam in tuto posita secúri magnificémus; qui, gubernaculum fidei viríliter tenens, ánchoram spei tranquilla jam in statióne compósuit, et plenam cæléstibus divítiis et ætérnis mercibus navem optato in littore collocávit. Qui, contra omnes adversarios, scutum timoris Dei tamdiu, donec ad victoriam perveníret. Quid enim fuit totus vitæ illíus cursus, nisi uníus cum vígili hoste conflictus?
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Marc 11:22-24
+      text: 'Respóndens Jesus discípulis suis ait illis: Habéte fidem Dei. Amen dico vobis quia quicúmque díxerit huic monti: Tóllere et míttere in mare, et non hæsitáverit in corde suo, sed credíderit quia quodcúmque díxerit fiat, fiet ei.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: The Venerable Bede, Priest, Commentary on Mark, Book 3
+      text: |-
+        Solent Gentiles qui contra Ecclésiam maledicta scripsére, improperare nostris quod non habúerint plenam fidem Dei, quia numquam montes transferre potúerint. Quibus respondéndum est non scripta esse, quæ in Ecclésia sunt gesta, sicut étiam de factis ipsíus Christi et Dómini nostri Scriptúra testátur. Unde et hoc quoque fíeri potuísset, ut mons ablátus de terra mitterétur in mare, si necessitas id fíeri poposcísset. Quómodo légimus factum précibus beáti Patris Gregórii, Neocæsaréæ Ponti antístitis, viri meritis et virtútibus exímii, ut mons in terra tantum loco cederet quantum íncolæ civitátis opus habebant.
+
+        Cum enim, volens ædificáre ecclésiam in loco apto, vidéret eum angustiórem esse quam res exigébat, eo quod ex una parte, rupe maris, ex alia, monte próximo coarctarétur; venit nocte ad locum, et, genibus flexis, admonuit Dóminum promissiónis suæ, ut montem longius juxta fidem petentis ágeret. Et, mane facto, reversus invénit montem tantum spatii reliquisse structóribus ecclésiæ quantum opus habuerant. Poterat ergo hic, poterat alius quis ejusdem meriti vir, si opportunitas exegísset, impetrare a Dómino, mérito fidei, ut étiam mons tollerétur et mitterétur in mare.
+
+        Verum, quia montis nómine nonnumquam diabolus significátur, videlicet propter supérbiam, qua se contra Deum erigit, et esse vult símilis Altíssimo; mons ad præcéptum eórum qui fortes fide sunt, tollitur de terra et in mare projícitur, cum, prædicántibus verbum doctóribus sanctis, immundus spíritus ab eórum corde repéllitur qui ad vitam sunt præordináti, et in turbulentis amarisque infidelium méntibus vesaniam suæ tyrannidis exercére permittitur.
+      status: verified

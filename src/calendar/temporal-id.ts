@@ -1,5 +1,5 @@
 // Maps any date to one of the 52 canonical temporal-propers ids already
-// authored in data/propers/temporal/*.yml — the "which Sunday's collect
+// authored in the entries of data/<lang>/propers/*.yml flagged `temporal` — the "which Sunday's collect
 // governs this date" question. A feria always inherits the collect of the
 // Sunday on or before it (real rubric: the ferias of a week use that
 // week's own Sunday collect), so this is really "find the governing
@@ -80,8 +80,8 @@ export function resolveTemporalId(isoDate: string): string {
 
   // The Vigil of Christmas (Dec 24) has its own real proper content
   // (collect, Lauds antiphons, Matins Gospel+homily nocturn) distinct from
-  // Advent 4's own — see data/propers/temporal/vigil-of-christmas-collect.yml
-  // and data/propers/nocturn-readings/vigil-of-christmas.yml, both
+  // Advent 4's own — see the collect section of data/<lang>/propers/vigil-of-christmas.yml
+  // and the nocturn-readings section of data/<lang>/propers/vigil-of-christmas.yml, both
   // transcribed directly from the reference engine's Sancti/12-24.txt.
   // Applies even when Dec 24 itself is Advent 4's own Sunday — per direct
   // instruction (2026-08), the Vigil's own identity (rank/collect/Lauds

@@ -1,0 +1,340 @@
+# Read directly from web/www/horas/Latin/Sancti/02-11.txt's own [Oratio]
+# and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui per immaculátam Vírginis Conceptiónem dignum Fílio tuo habitáculum
+    præparásti: súpplices a te quǽsumus; ut, ejúsdem Vírginis Apparitiónem celebrántes,
+    salútem mentis et córporis consequámur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in
+    unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (apparition-of-the-immaculate-bvm-antiphon.yml), paired with the standard BVM commemoration versicle already verified elsewhere in this app (propers/common/lauds-suffrage-bvm.yml -- 'V. Ora pro nobis sancta Dei Genitrix'). Collect is the saint's own real proper (apparition-of-the-immaculate-bvm-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Ista est * colúmba mea, perfécta mea, immaculáta mea.
+    V. Ora pro nobis sancta Dei Génitrix.
+    R. Ut digni efficiámur promissiónibus Christi.
+    Orémus.
+    Deus, qui per immaculátam Vírginis Conceptiónem dignum Fílio tuo habitáculum
+    præparásti: súpplices a te quǽsumus; ut, ejúsdem Vírginis Apparitiónem celebrántes,
+    salútem mentis et córporis consequámur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in
+    unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# the Apparition of the Immaculate BVM: proper Matins hymn, Latin/Sancti/02-11.txt's [Hymnus Matutinum]. English from English/Sancti/02-11.txt.
+# Before this file the saint fell to the Common's hymn.
+matins-hymn:
+  text: |
+    Te dícimus præcónio,
+    Intácta Mater Núminis,
+    Nostris benígna láudibus
+    Tuam repénde grátiam.
+
+    Sontes Adámi pósteri
+    Infécta proles gígnimur;
+    Labis patérnæ néscia
+    Tu sola, Virgo, créderis.
+
+    Caput dracónis ínvidi
+    Tu cónteris vestígio,
+    Et sola glóriam refers
+    Intaminátæ oríginis.
+
+    O gentis humánæ decus
+    Quæ tollis Hevæ oppróbrium,
+    Tu nos tuére súpplices,
+    Tu nos labántes érige.
+
+    Serpéntis antíqui potens
+    Astus retúnde et ímpetus,
+    Ut cǽlitum perénnibus
+    Per te fruámur gáudiis.
+
+    * Jesu, tibi sit glória
+    Qui natus es de Vírgine,
+    Cum Patre, et almo Spíritu
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/02-11.txt, which references
+# @Sancti/12-08 (Immaculate Conception) for its [Invit]; no Monastic
+# override exists. English likewise inherits Sancti/12-08's own text.
+matins-invitatory:
+  text: 'Immaculátam Conceptiónem Vírginis Maríæ celebrémus: * Christum ejus Fílium adorémus Dóminum.'
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/02-11.txt's own [Capitulum
+# Laudes] and English/Sancti/02-11.txt's own translation. Authoring this
+# was necessary for the feast's own hymn (lauds-hymn-apparition-of-the-
+# immaculate-bvm.yml) to actually be reached at all: hours/resolve-
+# common.ts's resolveOfficeBundle is all-or-nothing per id -- her own
+# `common: common-of-the-bvm` field means without a chapter of her own,
+# the whole bundle (hymn included) fell through to that Common's generic
+# text.
+lauds-capitulum:
+  text: Surge, amíca mea, speciósa mea, et veni, colúmba mea, in foramínibus petræ, in cavérna macériæ, osténde mihi fáciem tuam, sonet vox tua in áuribus meis.
+  citation: Cant 2:13-14
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/02-11.txt's own [Hymnus Laudes]
+# and English/Sancti/02-11.txt's own translation (the well-known Lourdes
+# hymn, "Aurora soli praevia"). No Vespers hymn exists in the source for
+# this feast at all (both the Latin and English files' own [Hymnus
+# Vespera] blocks are empty) -- correctly falls to common-of-the-bvm's
+# Vespers hymn, not a gap.
+lauds-hymn:
+  text: |-
+    Auróra soli prǽvia,
+    Felix salútis núntia,
+    In noctis umbra plebs tua
+    Te, Virgo, supplex ínvocat.
+
+    Torrens nefástis flúctibus
+    Cunctos trahens vorágine,
+    Leni resídit ǽquore
+    Cum transit Arca fœ́deris.
+
+    Dum torret aréscens humus,
+    Tu rore sola spárgeris;
+    Tellúre circum rórida,
+    Intácta sola pérmanes.
+
+    Fatále virus évomens
+    Attóllit anguis vérticem;
+    At tu dracónis túrgidum
+    Invícta cónteris caput.
+
+    Mater benígna, réspice
+    Fletus precésque súpplicum,
+    Et dimicántes, tártari
+    Victrix, tuére ab hóstibus.
+
+    Jesu, tibi sit glória,
+    Qui natus es de Vírgine,
+    Cum Patre, et almo Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# No distinct Lauds versicle found for this feast in the reference source
+# beyond her own Matins nocturn versicle (a different slot); reusing
+# common-of-the-bvm's own Lauds versicle, same pattern as her chapter/
+# hymn tiers not needing anything beyond the Common where nothing proper
+# was found. Authored to make the feast's own bundle (needed for her own
+# hymn, see lauds-capitulum-apparition-of-the-immaculate-bvm.yml) render a real versicle instead of
+# an unconditionally-rendered empty one.
+lauds-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/02-11.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: In me grátia omnis viæ et veritátis, in me omnis spes vitæ et virtútis. Transíte ad me, omnes qui concupíscitis me, et a generatiónibus meis implémini.
+  citation: Sir 24:25-26
+  status: verified
+
+# No distinct Vespers hymn found for this feast in the reference source
+# (both Latin/English [Hymnus Vespera] blocks are empty); reusing
+# common-of-the-bvm's own Vespers hymn ("Ave maris stella") verbatim.
+# Authored to make the feast's own bundle (needed for her own Lauds
+# hymn, see lauds-capitulum-apparition-of-the-immaculate-bvm.yml -- Vespers falls back to the same
+# Lauds capitulum via lookupPart (Vespers chapter, Lauds sibling)) render a real hymn
+# instead of an unconditionally-rendered empty one.
+vespers-hymn:
+  text: |-
+    Ave maris stella,
+    Dei Mater alma,
+    Atque semper Virgo,
+    Felix cæli porta.
+
+    Sumens illud Ave
+    Gabriélis ore,
+    Funda nos in pace,
+    Mutans Hevæ nomen.
+
+    Solve vincla reis,
+    Profer lumen cæcis,
+    Mala nostra pelle,
+    Bona cuncta posce.
+
+    Monstra te esse matrem,
+    Sumat per te preces,
+    Qui pro nobis natus,
+    Tulit esse tuus.
+
+    Virgo singuláris,
+    Inter omnes mitis,
+    Nos culpis solútos
+    Mites fac et castos.
+
+    Vitam præsta puram,
+    Iter para tutum,
+    Ut vidéntes Jesum,
+    Semper collætémur.
+
+    Sit laus Deo Patri,
+    Summo Christo decus,
+    Spirítui Sancto,
+    Tribus honor unus. Amen.
+  status: verified
+
+# Second Vespers hymn: web/www/horas/Latin/Sancti/02-11.txt's own [Hymnus
+# Vespera 3] ("Omnis expértem máculæ Maríam") and English/Sancti/02-11.txt's
+# translation. The source's final stanza is a fixed doxology that
+# SanctiM/02-11b.txt rewrites for the Monastic rite; here it is replaced by
+# this app's doxology marker instead (common-of-the-bvm sets Doxology=Nat),
+# same as every other BVM hymn. First Vespers has no own hymn in the
+# source (the plain [Hymnus Vespera] is empty), so
+# vespers-hymn-apparition-of-the-immaculate-bvm.yml stays the default; see
+# hours/resolve-common.ts's withVespersVariant.
+vespers-hymn/~-second:
+  text: |
+    Omnis expértem máculæ Maríam
+    Edocet summus fídei magíster;
+    Vírginis gaudens celébrat fidélis
+    Terra triúmphum.
+
+    Ipsa se præbens húmili puéllæ
+    Virgo spectándam, récreat pavéntem,
+    Seque concéptam sine labe, sancto
+    Prǽdicat ore.
+
+    O specus felix, decoráte divæ
+    Matris aspéctu! veneránda rupes,
+    Unde vitáles scatuére pleno
+    Gúrgite lymphæ!
+
+    Huc catervátim pia turba nostris,
+    Huc ab extérnis peregrína terris
+    Affluit supplex, et opem poténtis
+    Vírginis orat.
+
+    Excipit Mater lácrimas precántum,
+    Donat optátam míseris salútem;
+    Compos hinc voti pátrias ad oras
+    Turba revértit.
+
+    Súpplicum, Virgo, miseráta casus,
+    Semper o nostros réfove labóres,
+    Impetrans mæstis bona sempitérnæ
+    Gáudia vitæ.
+
+    * Glória tibi, Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# No distinct Vespers versicle found for this feast in the reference
+# source; reusing common-of-the-bvm's own Vespers versicle. Authored to
+# make the feast's own bundle (needed for her own hymn, see lauds-
+# capitulum-apparition-of-the-immaculate-bvm.yml -- Vespers falls back to the same Lauds capitulum
+# via lookupPart (Vespers chapter, Lauds sibling)) render a real versicle instead of an
+# unconditionally-rendered empty one.
+vespers-versicle:
+  text: |
+    V. Dignáre me laudáre te, Virgo sacráta.
+    R. Da mihi virtútem contra hostes tuos.
+  status: verified
+
+# Lauds' Benedictus antiphon, read from web/www/horas/Latin/Sancti/
+# 02-11.txt's own [Ant 2] and its English counterpart -- corrected
+# 2026-09-14: this file previously held [Ant 1] (this feast's own First
+# Vespers Magnificat antiphon, "Ista est colúmba mea..."), the same
+# Ant1-for-Benedictus mis-tagging bug already found for the Exaltation
+# of the Holy Cross, Annunciation, and the Seven Sorrows (TODO.md).
+benedictus-antiphon:
+  text: Præclára salútis auróra, * ex te, Virgo María, exívit sol justítiæ, qui visitávit nos óriens ex alto.
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/02-11.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast, not a Common
+# substitution.
+magnificat-antiphon:
+  text: Hódie gloriósa cæli Regína * in terris appáruit; hódie pópulo suo verba salútis et pígnora pacis áttulit; hódie Angelórum et fidélium chori immaculátam Conceptiónem celebrántes gáudio exsúltant. Allelúia.
+  status: verified
+
+# First Vespers Magnificat antiphon: web/www/horas/Latin/Sancti/02-11.txt's own [Ant 1]
+# and its English counterpart. Second Vespers' [Ant 3] is
+# apparition-of-the-immaculate-bvm-magnificat-antiphon.yml (the default); see hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Ista est * colúmba mea, perfécta mea, immaculáta mea.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/02-11.txt's own [Ant Vespera]
+# block (a live "Hodie" query for 2026-02-11 renders a plain Sexagesima
+# feria under Monastic Tridentinum 1617 -- this 1858 apparition feast
+# doesn't exist in that calendar at all, same pattern as several other
+# late-19th/20th-century feasts found in this sweep). Psalms
+# 109/112/121/126 (only the first 4 of the raw file's 5 listed
+# antiphons used, per the established Monastic-4-slots convention).
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Candor est * lucis ætérnæ, et spéculum sine mácula.
+    - psalms:
+        - 112
+      antiphon: Múlier * amícta sole, et luna sub pédibus ejus, et in cápite ejus coróna stellárum duódecim.
+    - psalms:
+        - 121
+      antiphon: Tu glória Jerúsalem, * tu lætítia Israël, tu honorificéntia pópuli nostri.
+    - psalms:
+        - 126
+      antiphon: Benedícta es tu, * Virgo María, a Dómino Deo excélso præ ómnibus muliéribus super terram.
+
+# Matins Nocturn 2-3 readings for the Apparition of the Immaculate BVM
+# (Our Lady of Lourdes), Feb 11. Sourced from
+# web/www/horas/Latin/Sancti/02-11.txt (Nocturn 2) and
+# Sancti/12-10bmv.txt (Nocturn 3, per that file's own `@Sancti/12-10bmv`
+# cross-reference — the 3rd day within the Octave of the Immaculate
+# Conception).
+#
+# Nocturn 2: Lectio4-6 combined into one reading — the Bernadette
+# apparition narrative, one continuous piece.
+# Nocturn 3: Lectio7's Gospel citation (Luke 1:26-28) is a bare incipit
+# ("Et réliqua"), so only the homily was originally authored (not marked
+# isGospel), St. Bernard of Clairvaux's homily (Lectio7's homily +
+# Lectio8-9 combined).
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — sourced from
+# Sancti/12-08.txt's own [Evangelium] (the Immaculate Conception's own
+# Mass Gospel, this Octave day's `vide Sancti/12-08` Rule pulling its
+# content wholesale, per that file's own comment above), not guessed at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Anno quarto a dogmática definitióne de immaculáto beátæ Vírginis Concéptu, ad Gavi flúminis oram prope óppidum Lourdes diœcésis Tarbiénsis in Gállia, ipsa Virgo in rupis sinu super specum Massabiélle puéllæ cuidam, vernácula lingua Bernadétte nuncupátæ, paupérrimæ quidem sed ingénuæ ac piæ, plúries se conspiciéndam óbtulit. Immaculáta Virgo juveníli ac benígno videbátur aspéctu, nívea veste niveóque pállio contécta, ac zona cærúlea succíncta; nudos pedes áurea rosa ornábat. Primo apparitiónis die, qui fuit undécimus Februárii anno millésimo octingentésimo quinquagésimo octávo, puéllam signum crucis rite piéque faciéndum edócuit, atque ad sacri rosárii recitatiónem, exémplo suo, corónam, quæ prius ex brácchio demíssa pendébat, manu advólvens, excitávit: quod in céteris étiam apparitiónibus prǽstitit. Altero autem apparitiónis die, puélla in simplicitáte cordis sui, diabólicam fraudem timens, lustrálem aquam in Vírginem effúdit; sed beáta Virgo, léniter arrídens, benigniórem illi vultum osténdit. Cum vero tértio apparuísset, puéllam ad specum per quíndecim dies invitávit. Exínde eam sǽpius est allocúta, ac pro peccatóribus oráre, terram deosculári, pœnitentiámque ágere est hortáta; deínde imperávit, ut sacerdótibus edíceret, ædificándum ibi esse sacéllum, solemnísque supplicatiónibus more illo accedéndum. Mandávit ínsuper ut e fonte, qui sub aréna adhuc latébat sed mox erat eruptúrus, aquam bíberet, eáque se abstérgeret. Dénique die festo Annuntiatiónis, percontánti eníxe puéllæ illíus nomen, cujus aspéctu tóties dignáta fúerat, Virgo, admótis péctori mánibus elatísque in cælum óculis, respóndit: Immaculáta Concéptio ego sum.
+
+        Percrebrescénte fama beneficiórum, quæ in sacro specu recepísse fidéles dicebántur, augebátur in dies hóminum concúrsus, quos loci relígio ad specum advocábat. Itaque prodigiórum fama puellǽque candóre mortus Tarbiénsis epíscopus, quarto ab enarrátis anno, post jurídiam factórum inquisitiónem, supernaturáles esse apparitiónis notas sua senténtia probávit, cultúmque Vírginis immaculátæ in eódem specu permísit. Mox ædificátum sacéllum: ex illa die pene innúmeræ fidélium turbæ, voti ac supplicatiónis causa, ex Gállia, Bélgio, Itália, Hispánia ceterísque Európæ provínciis necnon ex longínquis Américæ regiónibus quovis anno illuc advéniunt, noménque Immaculátæ de Lourdes ubíque terrárum inclaréscit. Fontis aqua, in cunctas orbis partes deláta, ægris sanitátem restítuit. Orbis vero cathólicus tantórum memor benefactórum, ædes sacras mirábili ópere ibi exstrúxit.
+
+        Peregrinatiónes hujúsmodi fidem, frigescénte sǽculo, excitásse, ánimum ad christiánam legem profiténdam addidísse, cultúmque Vírginis immaculátæ mirum in modum auxísse, ómnibus compértum est. Pius nonus, sacris indulgéntiis, archiconfraternitátis privilégio ac minóris Basílicæ título ipsam insignívit; ac Deíparæ imáginem íbidem cultam, solémni ritu per legátum suum apostólicum in Gállia, diadémate distínctam vóluit. Leo vero décimus tértius innúmera étiam cóntulit benefícia, ac solémnem Ecclésiæ sub título Rosárii dedicatiónem suo nómine péragi curávit; quorum beneficiórum amplitúdinem cumulávit, cum, plúrium episcopórum rogátu, solémne festum sub título Apparitiónis beátæ Maríæ Vírginis immaculátæ, próprio Offício et própria Missa celebrándum benígne concéssit. Tandem Pius décimus Póntifex máximus idem festum ad Ecclésiam univérsam exténdit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 1:26-28
+      text: 'In illo témpore: Missus est Angelus Gábriël a Deo in civitátem Galilææ, cui nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, de domo David, et nomen Vírginis María. Et ingréssus Angelus ad eam, dixit: Ave, grátia plena; Dóminus tecum: benedícta tu in muliéribus.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Bernard of Clairvaux, Homily 2 on the text "Missus est" (on Luke 1:26-28)
+      text: |-
+        Lætáre, pater Adam, sed magis tu, o Heva mater, exsúlta, qui sicut ómnium paréntes, ita ómnium fuístis peremptóres; et quod infelícius est, prius peremptóres quam paréntes. Ambo, inquam, consolámini super fília, et tali fília, sed illa ámplius de qua malum ortum est prius, cujus oppróbrium in omnes pertransívit mulíeres. Instat namque tempus, quo jam tollátur oppróbrium, nec hábeat vir quid causétur advérsus féminam: qui útique, dum se imprudénter excusáre conarétur, crudéliter illam accusáre non cunctátus est, dicens: Múlier quam dedísti mihi, dedit mihi de ligno, et comédi. Proptérea curre Heva ad Maríam; curre mater ad fíliam; fília pro matre respóndeat: ipsa matris oppróbrium áuferat; ipsa patri pro matre satisfáciat: quia ecce si vir cécidit per féminam, jam non erígitur nisi per féminam.
+
+        Quid dicébas, o Adam? Múlier quam dedísti mihi, dedit mihi de ligno, et comédi. Verba malítiæ sunt hæc quibus magis áugeas quam déleas culpam. Verúmtamen Sapiéntia vicit malítiam, cum occasiónem véniæ, quam a te Deus interrogándo elícere tentávit, sed non pótuit, in thesáuro indeficiéntis suæ pietátis invénit. Rédditur nempe fémina pro fémina, prudens pro fátua, húmilis pro supérba, quæ pro ligno mortis gustum tibi pórrigat vitæ, et pro venenóso cibo illo amaritúdinis, dulcédinem páriat fructus ætérni. Muta ergo iníquæ excusatiónis verbum in vocem grátiárum actiónis, et dic: Dómine, múlier, quam dedísti mihi, dedit mihi de ligno vitæ, et comédi; et dulce factum est super mel ori meo, quia in ipso vivificásti me. Ecce enim ad hoc missus est Angelus ad Vírginem. O admirándam et omni honóre digníssimam Vírginem; o féminam singuláriter venerándam, super omnes féminas admirábilem, paréntum reparatrícem, posterórum vivificatrícem.
+
+        Quam tibi áliam prædixísse Deus vidétur, quando ad serpéntem ait: Inimicítias ponam inter te et mulíerem? Et si adhuc dúbitas, quod de María díxerit, audi quod séquitur: Ipsa cónteret caput tuum. Cui hæc serváta victória est, nisi Maríæ? Ipsa procul dúbio caput contrívit venenátum, quæ omnimódam malígni suggestiónem tam de carnis illécebra, quam de mentis supérbia dedúxit ad níhilum. Quam vero áliam Sálomon requirébat, cum dicébat: Mulíerem fortem quis invéniet? Nóverat quippe vir sápiens hujus sexus infirmitátem, frágile corpus, lúbricam mentem. Quia tamen et Deum légerat promisísse, et ita vidébat congrúere, ut qui vícerat per féminam, vincerétur per ipsam, veheménter admírans ajébat: Mulíerem fortem quis invéniet? Quod est dícere: si ita de manu féminæ pendet et nostra ómnium salus, et innocéntiæ restitútio, et de hoste victória: fortis omníno necésse est ut provideátur, quæ ad tantum opus possit esse idónea.
+      status: verified

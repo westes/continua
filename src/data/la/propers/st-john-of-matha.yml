@@ -1,0 +1,80 @@
+# Read directly from web/www/horas/Latin/Sancti/02-08.txt's own [Oratio]
+# and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui per sanctum Joánnem órdinem sanctíssimæ Trinitátis ad rediméndum de potestáte
+    Saracenórum captívos cǽlitus institúere dignátus es: præsta, quǽsumus; ut, ejus
+    suffragántibus méritis, a captivitáte córporis et ánimæ, te adjuvánte, liberémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-john-of-matha has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-john-of-matha-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui per sanctum Joánnem órdinem sanctíssimæ Trinitátis ad rediméndum de potestáte
+    Saracenórum captívos cǽlitus institúere dignátus es: præsta, quǽsumus; ut, ejus
+    suffragántibus méritis, a captivitáte córporis et ánimæ, te adjuvánte, liberémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2-3 readings for St. John of Matha, Confessor (Feb 8).
+# Sourced directly from web/www/horas/Latin/Sancti/02-08.txt,
+# English/Sancti/02-08.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
+# Nocturn 3: his own file's Lectio7-9 are a direct `@Commune/C5:LectioN`
+# cross-reference (not his own proper text) -- the Common of a
+# Confessor's own Gospel-incipit-plus-homily (Luke 12:35-40, Pope St.
+# Gregory the Great), sourced from Commune/C5.txt directly. Lectio7's
+# Gospel citation is a bare incipit ("Et réliqua"), so only the homily
+# is authored (not marked isGospel), Lectio7's homily + Lectio8-9
+# combined.
+#
+# Update (2026-09-05): the Gospel pericope itself (Luke 12:35-40) is
+# now authored too (isGospel: true, immediately before the homily) —
+# sourced from Commune/C5.txt's own [Evangelium] section (Latin) and
+# English/Commune/C5.txt's own [Evangelium] (English), the same Common
+# file this feast's Nocturn 3 already draws its homily from.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Joánnes de Matha, ordinis sanctíssimæ Trinitátis redemptiónis captivórum institutor, Falcone in Provincia natus est paréntibus pietáte et nobilitate conspicuis. Studiórum causa Aquas Sextias, mox Parisios profectus, confectóque theologíæ curriculo, magisterii lauream adeptus, doctrinæ et virtútum splendore enituit. Quibus motus Parisiénsis antístes, ad sacrum presbyterátus ordinem præ humilitate reluctántem promovit, eo consílio, ut in ea civitáte cómmorans, sapiéntia et móribus studiosæ juventúti prælucéret. Cum autem in sacello ejusdem epíscopi, ipso cum aliis astante, primum Deo Sacrum offerret, cælésti favore meruit recreari. Nam Angelus cándida et fulgénti veste indútus, cui in péctore crux rúbei et cærúlei coloris assuta erat, brácchiis cancellátis et super duos captivos ad látera positos, Christianum unum, álterum Maurum, exténsis, appáruit. Qua visióne in éxtasim raptus, intelléxit prótinus vir Dei, se ad redimendos ab infidelibus captivos destinari.
+
+        Quo vero matúrius in re tanti moménti procéderet, in solitúdinem secessit, ibique divino nutu factum est, ut Felicem Valesium in ipsa erémo jam multis annis degentem repérerit: cum quo ínita societáte, se per triennium in oratióne, et contemplatióne, omniúmque virtútum studio exercuit. Cóntigit autem, ut, dum secum de rebus divinis prope fontem colloqueréntur, cervus ad eos accesserit, crucem inter córnua gerens rúbei et cærúlei coloris. Cumque Felix ob rei novitátem mirarétur, narrávit ei Joánnes visiónem in prima Missa hábitam; et exínde ferventius oratióni incumbéntes, ter in somnis admoniti, Romam proficísci decrevérunt, ut a summo Pontifice novi ordinis pro rediméndis captivis institutiónem impetrarent. Electus fuerat eo témpore Innocentius tertius; qui, illis benígne acceptis, dum secum de re proposita deliberat, in festo sanctæ Agnetis secundo, Laterani intra Missárum solemnia ad sacræ Hostiæ elevatiónem, Angelus ei cándida veste, cruce bicolori, spécie redimentis captivos appáruit. Quo viso, Pontifex institutum approbávit, et novum ordinem sanctíssimæ Trinitátis redemptiónis captivórum vocari jussit, ejusque professóribus albas vestes cum cruce rúbei et cærúlei coloris præbuit.
+
+        Sic stabilito ordine, sancti fundatores in Gálliam rediérunt, primoque cœnobio Cervi Frígidi in diœcesi Meldénsi constructo, ad ejus regimen Felix remánsit; et Joánnes Romam cum aliquot sociis reversus est, ubi Innocentius domum, ecclésiam et hospitale sancti Thomæ de Formis in monte Cælio eis donávit cum multis redítibus et possessiónibus. Datis quoque litteris ad Miramolínum regem Marochii, opus redemptiónis felici auspicio inchoátum fuit. Tum ad Hispánias, sub jugo Saracenórum magna ex parte oppressas, Joánnes profectus est, regumque, príncipum atque aliórum fidelium animos ad captivórum et páuperum commiseratiónem commovit. Monasteria ædificávit, hospitalia eréxit, magnoque lucro animárum plures captivos redémit. Romam tandem reversus, sanctisque opéribus incumbens, assiduis labóribus attritus et morbo confectus, ardentíssimo Dei et próximi amóre exæstuans, ad extremum devenit. Quare frátribus convocatis, eisque ad opus redemptiónis cælitus præmonstrátum efficaciter cohortátis, obdormívit in Dómino sextodecimo Kalendas Januarii, anno salútis millesimo ducentésimo décimo tertio; ejusque corpus in ipsa ecclésia sancti Thomæ de Formis condigno honóre tumulátum fuit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 12:35-40
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Sint lumbi vestri præcíncti, et lucérnæ ardéntes in mánibus vestris, et vos símiles homínibus exspectántibus dóminum suum, quando revertátur a núptiis: ut, cum vénerit et pulsáverit, conféstim apériant ei. Beáti servi illi, quos, cum vénerit dóminus, invénerit vigilántes: amen, dico vobis, quod præcínget se, et fáciet illos discúmbere, et tránsiens ministrábit illis. Et si vénerit in secúnda vigília, et si in tértia vigília vénerit, et ita invénerit, beáti sunt servi illi. Hoc autem scitóte, quóniam, si sciret paterfamílias, qua hora fur veníret, vigiláret útique, et non síneret pérfodi domum suam. Et vos estóte paráti, quia, qua hora non putátis, Fílius hóminis véniet.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 13 on the Gospels (on Luke 12:35-40)
+      text: |-
+        Sancti Evangélii, fratres caríssimi, apérta vobis est léctio recitata. Sed ne alíquibus ipsa ejus planíties alta fortásse videátur, eam sub brevitáte transcúrrimus, quátenus ejus exposítio ita nesciéntibus fiat cógnita, ut tamen sciéntibus non sit onerósa. Dóminus dicit: Sint lumbi vestri præcíncti. Lumbos enim præcíngimus, cum carnis luxúriam per continéntiam coarctámus. Sed quia minus est, mala non ágere, nisi étiam quisque stúdeat, et bonis opéribus insudáre, prótinus ádditur: Et lucérnæ ardéntes in mánibus vestris. Lucérnas quippe ardéntes in mánibus tenémus, cum per bona ópera próximis nostris lucis exémpla monstrámus. De quibus profécto opéribus Dóminus dicit: Lúceat lux vestra coram homínibus, ut vídeant ópera vestra bona, et gloríficent Patrem vestrum qui in cælis est.
+
+        Duo autem sunt, quæ jubéntur, et lumbos restríngere, et lucérnas tenére: ut et mundítia sit castitátis in córpore, et lumen veritátis in operatióne. Redemptóri étenim nostro unum sine áltero placére nequáquam potest: si aut is qui bona agit, adhuc luxúriæ inquinaménta non déserit: aut is qui castitáte præéminet, necdum se per bona ópera exércet. Nec cástitas ergo magna est sine bono ópere, nec opus bonum est áliquod sine castitáte. Sed et si utrúmque ágitur, restat, ut quisquis ille est, spe ad supérnam pátriam tendat, et nequáquam se a vítiis pro mundi hujus honestáte contíneat.
+
+        Et vos símiles homínibus exspectántibus dóminum suum, quando revertátur a núptiis: ut cum vénerit et pulsáverit, conféstim apériant ei. Venit quippe Dóminus, cum ad judícium próperat: pulsat vero, cum jam per ægritúdinis moléstias esse mortem vicínam desígnat. Cui conféstim aperímus, si hunc cum amóre suscípimus. Aperíre enim júdici pulsánti non vult, qui exíre de córpore trépidat: et vidére eum, quem contempsísse se méminit, júdicem formídat. Qui autem de sua spe et operatióne secúrus est, pulsanti conféstim áperit, quia lætus júdicem sústinet; et, cum tempus propínquæ mortis advénerit, de glória retributiónis hilaréscit.
+      status: verified

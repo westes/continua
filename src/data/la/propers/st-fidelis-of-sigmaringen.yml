@@ -1,0 +1,53 @@
+# Read directly from web/www/horas/Latin/Sancti/04-24.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátum Fidélem, seráphico spíritus ardóre succénsum, in veræ fídei
+    propagatióne martýrii palma et gloriósis miráculis decoráre dignátus es: ejus,
+    quǽsumus, méritis et intercessióne, ita nos per grátiam tuam in fide et caritáte
+    confírma; ut in servítio tuo fidéles usque ad mortem inveníri mereámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-martyr (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-fidelis-of-sigmaringen has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-fidelis-of-sigmaringen-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Deus, qui beátum Fidélem, seráphico spíritus ardóre succénsum, in veræ fídei
+    propagatióne martýrii palma et gloriósis miráculis decoráre dignátus es: ejus,
+    quǽsumus, méritis et intercessióne, ita nos per grátiam tuam in fide et caritáte
+    confírma; ut in servítio tuo fidéles usque ad mortem inveníri mereámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Fidelis of Sigmaringen, Martyr
+# (Apr 24). Sourced directly from web/www/horas/Latin/Sancti/04-24.txt,
+# English/Sancti/04-24.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in the source (6-lesson office).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Fidélis, in oppido Sueviæ Sigmaringa ex honesta Reyórum família natus, ab ineunte ætate singularibus natúræ et gratiæ donis ornatus præfulsit. Egregiam quippe sortitus índolem, morúmque optima imbutus disciplína, dum Friburgi philosophíæ et juris utriusque lauream emeruit, in schola étiam Christi ad perfectiónis ápicem sedulo virtútum exercítio conténdere cœpit. Nobílium exínde virórum varias Europæ provincias lustrántium comes ascitus, eos ad christianam pietátem sectandam, tam verbis quam opéribus, excitare non déstitit. Quinimmo in eodem itinere crebris austeritátibus desidéria carnis mortificare, ac ita seípsum regere studuit, ut in tanta rerum vicissitúdine nullo umquam visus fúerit iræ motu perturbari. Juris præterea et justítiæ strenuus propugnator, post réditum in Germaniam celebre sibi nomen acquisívit in advocáti munere; in quo tamen cum fori pericula esset expertus, tutiórem ætérnæ salútis viam íngredi deliberávit, et superna vocatióne illustratus, paulo post ordini Seraphico inter fratres Minores Capuccinos adscribi pétiit.
+
+        Piæ petitiónes compos redditus, mundi suique contemptor insígnis, in ipso statim tirocinio, magisque cum solemnis professióne vota in gáudio spíritus Dómino nuncupasset, in regulari observántia ómnibus admiratióni fuit et exemplo. Oratióni maxime et sacris litteris vacans, in verbi quoque ministerio singulari grátia excellens, nedum Catholicos ad meliórem frugem, verum étiam heterodoxos ad veritátis cognitiónem attraxit. Plúribus in locis cœnobii præfectus constitútus, prudéntia, justítia, mansuetúdine, discretióne et humilitátis laude, munus sibi demandátum exercuit. Arctíssimæ paupertátis zelator egregius, quidquid vel minus necessárium viderétur, e cœnobio pénitus eliminávit. Inter austera jejunia, vigílias et flagélla salutári seípsum prósequens ódio, in alios amórem, quasi mater in fílios, osténdit. Cum pestífera febris Austríacas militares copias dire affligeret, ipse in extremis infirmórum indigentiis ad assidua caritátis offícia toto spíritu incúbuit. In componéndis étiam animórum dissidiis, aliisque próximi necessitátibus sublevandis consílio et opere adeo præcláre se gessit, ut pater pátriæ merúerit appellari.
+
+        Deíparæ Vírginis et rosarii cultor exímius, illíus præcipue aliorúmque Sanctórum patrocinio a Deo postulávit, ut in catholicæ fidei obsequium vitam sibi et sánguinem fúndere licéret. Cumque ardens hoc desidérium in quotidiana Sacri devota celebratióne magis accenderétur, mira Dei providéntia factum est, ut fortis Christi athleta præses eligerétur illárum missiónum, quas Congregátio de Propaganda Fide pro Rhætia tunc témporis institúerat. Quod arduum munus prompto hilaríque animo suscípiens, tanto fervore exsecutus est, ut, plúribus hæreticis ad orthodoxam fidem conversis, spes non modica effulserit totius illíus gentis Ecclésiæ et Christo reconciliandæ. Prophetíæ dono præditus, futuras Rhætiæ calamitátes, suique necem ab hæreticis inferéndam sæpius prædixit. Postquam vero insidiárum probe cónscius impendénti agoni se præparasset, die vigesima quarta Aprilis anno millesimo sexcentésimo vigesimo secundo, ad ecclésiam loci, Sevisium nuncupati, se cóntulit; ubi ab hæreticis, qui pridie conversiónem simulántes, eum dolóse ad prædicándum invitáverant, concióne tumultuárie interrupta, per verbera ac vulnera eídem crudeliter inflicta gloriósam mortem magno et álacri corde perpéssus, primítias Mártyrum memorátæ Congregatiónis proprio sánguine consecrávit; plúribus signis et miraculis exínde clarus, præsertim Curiæ et Feldkírchii, ubi summa pópuli veneratióne illíus relíquiæ asservántur.
+      status: verified

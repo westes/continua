@@ -1,0 +1,75 @@
+# Read directly from web/www/horas/Latin/Tempora/Adv3-6.txt's own [Oratio]
+# and its English counterpart. Standard "Qui vivis..." closing spelled
+# out in full (the source abbreviates it), matching ember-advent-friday-
+# collect.yml's own closing.
+collect:
+  text: |
+    Orémus.
+    Deus, qui cónspicis, quia ex nostra pravitáte afflígimur: concéde propítius; ut ex tua visitatióne consolémur.
+    Qui vivis et regnas cum Deo Patre in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-12-19 -- Advent Ember Saturday, labeled "Antiphona ex
+# Proprio de Tempore". Same text as Tempora/Adv3-6.txt's own plain [Ant
+# 2] (not the "(rubrica cisterciensis)" alternate below it -- no
+# Cistercian-specific track modeled in this app).
+#
+# No Magnificat antiphon file for this id: Ember Saturday's own Second
+# Vespers is always ceded to the 4th Sunday of Advent (live-verified
+# 2026-12-19: "Dominica IV Adventus"), same "Vespera de sequenti" pattern
+# already confirmed for September's own Ember Saturday -- the source file
+# itself has no [Ant 3] for this day either.
+benedictus-antiphon:
+  text: 'Quómodo fiet istud, * Angele Dei, quóniam virum non cognósco? Audi, María Virgo: Spíritus Sanctus supervéniet in te, et virtus Altíssimi obumbrábit tibi.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Advent Ember Saturday (Sabbato Quattuor
+# Temporum Adventus) — read directly from
+# web/www/horas/Latin/Tempora/Adv3-6.txt and English/Tempora/Adv3-6.txt.
+# No Monastic-track override file exists for this day — confirms the
+# Monastic 1617 track uses this same text.
+#
+# Lectio1's Gospel citation (Luke 3:1-6, the preaching of St. John the
+# Baptist) is a bare incipit with no full pericope text given in this
+# day's own file, so only the homily portion was originally authored,
+# same convention as the other Ember days.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily), matching the
+# convention set by ember-september-friday.yml — this day's own
+# [Evangelium] carries the full pericope directly (not a redirect),
+# sourced from missa/Latin/Tempora/Adv3-6.txt, English/Tempora/
+# Adv3-6.txt, not guessed at.
+#
+# Recombined into one reading 2026-09-04 (previously kept as 3 separate
+# readings): Lectio1-3 are one continuous, unbroken Gregory homily, split
+# only to fill the fixed 3-lesson Nocturn slot count — same fix already
+# applied to the other 4 Ember day nocturn-readings files the same day,
+# see ember-september-friday.yml's own header for the fuller rationale.
+# Responsory is Lectio1's own; Lectio2/3's own distinct responsories are
+# dropped, same as every other collapsed-reading case in this store.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Luc 3:1-6
+      text: 'Anno quintodécimo impérii Tibérii Cæsaris, procuránte Póntio Piláto Judǽam, tetrárcha autem Galilǽæ Heróde, Philíppo autem fratre ejus tetrárcha Iturǽæ et Trachonítidis regiónis, et Lysánia Abilínæ tetrárcha, sub princípibus sacerdótum Anna et Cáipha: factum est verbum Dómini super Joánnem, Zacharíæ fílium, in desérto. Et venit in omnem regiónem Jordánis, prǽdicans baptísmum pæniténtiæ in remissiónem peccatórum, sicut scriptum est in libro sermónum Isaíæ Prophétæ: Vox clamántis in desérto: Paráte viam Dómini: rectas fácite sémitas ejus: omnis vallis implébitur: et omnis mons et collis humiliábitur: et erunt prava in dirécta, et áspera in vias planas: et vidébit omnis caro salutáre Dei.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 20 on the Gospels, on Luke 3:1-6
+      text: |-
+        Redemptóris nostri Præcúrsor, quo témpore prædicatiónis offícium accéperit, memoráto Románæ reipúblicæ príncipe, et Judǽæ régibus, designátur. Quia enim illum prædicáre veniébat, qui et ex Judǽa quosdam, et multos ex géntibus redemptúrus erat: per regem géntium et príncipes Judæórum prædicatiónis ejus témpora designántur. Quia autem gentílitas colligénda erat, et Judǽa pro culpa perfídiæ dispergénda, ipsa quoque descríptio terréni principátus osténdit: quóniam et in Romána república unus præfuísse descríbitur, et in Judǽæ regno per quartam partem plúrimi principabántur.
+
+        Voce étenim nostri Redemptóris dícitur: Omne regnum in seípsum divisum desolábitur. Liquet ergo, quod ad finem regni Judǽa pervénerat, quæ tot régibus divísa subjacébat. Apte quoque non solum quibus régibus, sed étiam quibus sacerdótibus actum sit, demonstrátur: et quia illum Joánnes Baptísta prædicáret, qui simul Rex et Sacérdos exsísteret, Lucas Evangelísta prædicatiónis ejus témpora per regnum et sacerdótium designávit.
+
+        Et venit in omnem regiónem Jordánis, prǽdicans baptísmum pœniténtiæ in remissiónem peccatórum. Cunctis legéntibus liquet, quia Joánnes non solum baptísmum pœniténtiæ prædicávit, verum étiam quibúsdam dedit: sed tamen baptísmum suum in remissiónem peccatórum dare non pótuit. Remíssio étenim peccatórum in solo nobis baptísmo Christi tribúitur. Notándum ítaque, quod dícitur: Prǽdicans baptísmum pœniténtiæ in remissiónem peccatórum: quóniam baptísmum, quod peccáta sólveret, quia dare non póterat, prædicábat: ut sicut incarnátum Verbum Patris præcurrébat verbo prædicatiónis, ita baptísmum pœniténtiæ, quo peccáta solvúntur, præcúrreret suo baptísmate, quo peccáta solvi non possunt.
+      responsory: |-
+        R. Egrediétur virga de radíce Jesse, et flos de radíce ejus ascéndet: * Et erit justítia cíngulum lumbórum ejus, et fides cinctórium renum ejus.
+        V. Et requiéscet super eum spíritus Dómini: spíritus sapiéntiæ, et intelléctus: spíritus consílii, et fortitúdinis.
+        R. Et erit justítia cíngulum lumbórum ejus, et fides cinctórium renum ejus.
+      status: verified

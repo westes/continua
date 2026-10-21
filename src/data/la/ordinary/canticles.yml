@@ -1,0 +1,173 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live
+# query. Fixed year-round, same shape as nunc-dimittis.yml — the framing
+# antiphon is resolved separately, by day (see hours/resolve-common.ts's
+# getBenedictusAntiphon), not stored here. The closing Gloria Patri isn't
+# stored here either — it's attached centrally (hours/index.ts) so it can
+# be omitted during the Sacred Triduum (live-verified: Divino Afflatu 1954
+# and Tridentine 1906 both omit it at Lauds of Holy Thursday).
+benedictus:
+  text: |
+    Benedíctus ✠ Dóminus, Deus Israël: * quia visitávit, et fecit redemptiónem plebis suæ:
+    Et eréxit cornu salútis nobis: * in domo David, púeri sui.
+    Sicut locútus est per os sanctórum, * qui a sǽculo sunt, prophetárum ejus:
+    Salútem ex inimícis nostris, * et de manu ómnium, qui odérunt nos.
+    Ad faciéndam misericórdiam cum pátribus nostris: * et memorári testaménti sui sancti.
+    Jusjurándum, quod jurávit ad Ábraham patrem nostrum, * datúrum se nobis:
+    Ut sine timóre, de manu inimicórum nostrórum liberáti, * serviámus illi.
+    In sanctitáte, et justítia coram ipso, * ómnibus diébus nostris.
+    Et tu, puer, Prophéta Altíssimi vocáberis: * præíbis enim ante fáciem Dómini, paráre vias ejus:
+    Ad dandam sciéntiam salútis plebi ejus: * in remissiónem peccatórum eórum:
+    Per víscera misericórdiæ Dei nostri: * in quibus visitávit nos, óriens ex alto:
+    Illumináre his, qui in ténebris, et in umbra mortis sedent: * ad dirigéndos pedes nostros in viam pacis.
+  citation: Luc. 1:68-79
+  status: verified
+
+# Sourced from Divinum Officium's own canticle text (Latin/English
+# Psalterium/Psalmorum/Psalm232.txt — the Magnificat, Luke 1:46-55, stored
+# alongside the other canticles rather than the numbered psalms). Fixed
+# year-round, same shape as benedictus.yml/nunc-dimittis.yml — the framing
+# antiphon is resolved separately, by day (see hours/resolve-common.ts's
+# getMagnificatAntiphon), not stored here. Not live-query-verified (see
+# TODO.md) — read directly from source. The closing Gloria Patri isn't
+# stored here either — it's attached centrally (hours/index.ts) so it can
+# be omitted during the Sacred Triduum, same as every other canticle/psalm.
+magnificat:
+  text: |
+    Magníficat ✠ ánima mea Dóminum.
+    Et exsultávit spíritus meus: * in Deo, salutári meo.
+    Quia respéxit humilitátem ancíllæ suæ: * ecce enim ex hoc beátam me dicent omnes generatiónes.
+    Quia fecit mihi magna qui potens est: * et sanctum nomen ejus.
+    Et misericórdia ejus, a progénie in progénies: * timéntibus eum.
+    Fecit poténtiam in brácchio suo: * dispérsit supérbos mente cordis sui.
+    Depósuit poténtes de sede: * et exaltávit húmiles.
+    Esuriéntes implévit bonis: * et dívites dimísit inánes.
+    Suscépit Israël púerum suum: * recordátus misericórdiæ suæ.
+    Sicut locútus est ad patres nostros: * Ábraham, et sémini ejus in sǽcula.
+  status: verified
+
+# Verified against Divinum Officium (stored internally as "Psalm 234" —
+# a pseudo-psalm number the engine uses for canticles). Included at Prime on
+# Sundays that don't have a Double-or-higher feast (see calendar's
+# isDoubleOrHigher) — real Divinum Officium's actual inclusion rule is far
+# more version/rank-tangled than that (see hours/prime.ts's 'creed' case for
+# the honest simplification and why), and Octaves aren't modeled at all yet
+# (milestone 4), so this can't be exercised by real data beyond "is it
+# Sunday" today.
+athanasian-creed:
+  text: |
+    Quicúmque vult salvus esse, * ante ómnia opus est, ut téneat cathólicam fidem:
+    Quam nisi quisque íntegram inviolatámque serváverit, * absque dúbio in ætérnum períbit.
+    Fides autem cathólica hæc est: * ut unum Deum in Trinitáte, et Trinitátem in unitáte venerémur.
+    Neque confundéntes persónas, * neque substántiam separántes.
+    Alia est enim persóna Patris, ália Fílii, * ália Spíritus Sancti:
+    Sed Patris, et Fílii, et Spíritus Sancti una est divínitas, * æquális glória, coætérna majéstas.
+    Qualis Pater, talis Fílius, * talis Spíritus Sanctus.
+    Increátus Pater, increátus Fílius, * increátus Spíritus Sanctus.
+    Imménsus Pater, imménsus Fílius, * imménsus Spíritus Sanctus.
+    Ætérnus Pater, ætérnus Fílius, * ætérnus Spíritus Sanctus.
+    Et tamen non tres ætérni, * sed unus ætérnus.
+    Sicut non tres increáti, nec tres imménsi, * sed unus increátus, et unus imménsus.
+    Simíliter omnípotens Pater, omnípotens Fílius, * omnípotens Spíritus Sanctus.
+    Et tamen non tres omnipoténtes, * sed unus omnípotens.
+    Ita Deus Pater, Deus Fílius, * Deus Spíritus Sanctus.
+    Et tamen non tres Dii, * sed unus est Deus.
+    Ita Dóminus Pater, Dóminus Fílius, * Dóminus Spíritus Sanctus.
+    Et tamen non tres Dómini, * sed unus est Dóminus.
+    Quia, sicut singillátim unamquámque persónam Deum ac Dóminum confitéri christiána veritáte compéllimur: * ita tres Deos aut Dóminos dícere cathólica religióne prohibémur.
+    Pater a nullo est factus: * nec creátus, nec génitus.
+    Fílius a Patre solo est: * non factus, nec creátus, sed génitus.
+    Spíritus Sanctus a Patre et Fílio: * non factus, nec creátus, nec génitus, sed procédens.
+    Unus ergo Pater, non tres Patres: unus Fílius, non tres Fílii: * unus Spíritus Sanctus, non tres Spíritus Sancti.
+    Et in hac Trinitáte nihil prius aut postérius, nihil majus aut minus: * sed totæ tres persónæ coætérnæ sibi sunt et coæquáles.
+    Ita ut per ómnia, sicut jam supra dictum est, * et únitas in Trinitáte, et Trínitas in unitáte veneránda sit.
+    Qui vult ergo salvus esse, * ita de Trinitáte séntiat.
+    Sed necessárium est ad ætérnam salútem, * ut Incarnatiónem quoque Dómini nostri Jesu Christi fidéliter credat.
+    Est ergo fides recta ut credámus et confiteámur, * quia Dóminus noster Jesus Christus, Dei Fílius, Deus et homo est.
+    Deus est ex substántia Patris ante sǽcula génitus: * et homo est ex substántia matris in sǽculo natus.
+    Perféctus Deus, perféctus homo: * ex ánima rationáli et humána carne subsístens.
+    Æquális Patri secúndum divinitátem: * minor Patre secúndum humanitátem.
+    Qui licet Deus sit et homo, * non duo tamen, sed unus est Christus.
+    Unus autem non conversióne divinitátis in carnem, * sed assumptióne humanitátis in Deum.
+    Unus omníno, non confusióne substántiæ, * sed unitáte persónæ.
+    Nam sicut ánima rationális et caro unus est homo: * ita Deus et homo unus est Christus.
+    Qui passus est pro salúte nostra: descéndit ad ínferos: * tértia die resurréxit a mórtuis.
+    Ascéndit ad cælos, sedet ad déxteram Dei Patris omnipoténtis: * inde ventúrus est judicáre vivos et mórtuos.
+    Ad cujus advéntum omnes hómines resúrgere habent cum corpóribus suis; * et redditúri sunt de factis própriis ratiónem.
+    Et qui bona egérunt, ibunt in vitam ætérnam: * qui vero mala, in ignem ætérnum.
+    Hæc est fides cathólica, * quam nisi quisque fidéliter firmitérque credíderit, salvus esse non póterit.
+  status: verified
+
+# Verified against Divinum Officium (Tridentine 1906 run, 2026-08-25 —
+# Monastic Compline doesn't have this canticle at all; it's added from the
+# Tridentine 1906 form by explicit choice). The antiphon that frames it
+# ("Salva nos") is a separate proper — see nunc-dimittis-antiphon.yml. The
+# closing Gloria Patri isn't stored here either — it's attached centrally
+# (hours/index.ts) so it can be omitted during the Sacred Triduum, same as
+# every other canticle/psalm.
+nunc-dimittis:
+  text: |
+    Nunc dimíttis ✠ servum tuum, Dómine, * secúndum verbum tuum in pace:
+    Quia vidérunt óculi mei * salutáre tuum,
+    Quod parásti * ante fáciem ómnium populórum,
+    Lumen ad revelatiónem géntium, * et glóriam plebis tuæ Israël.
+  citation: Luc. 2:29-32
+  status: verified
+
+# Verified against Divinum Officium (Tridentine 1906), 2026-08-25 run.
+# Fixed year-round (unlike Prime's weekday-variable psalm antiphon) — same
+# incipit/full split via the embedded "*", same by-rank opening logic (see
+# hours/antiphon.ts), full repeat after via its own 'closing-antiphon'-style
+# part in the ordo.
+nunc-dimittis-antiphon:
+  text: Salva nos, * Dómine, vigilántes, custódi nos dormiéntes; ut vigilémus cum Christo, et requiescámus in pace.
+  status: verified
+
+# Sourced from Psalterium/Common/Prayers.txt's [Te decet] block. Rule of
+# Benedict ch. 11: after the abbot reads the closing Gospel following the
+# Te Deum, all reply Amen, then the abbot begins this versicle, closing
+# Vigils — sung only on a 3-nocturn day (Sunday or Duplex+), right after
+# the Te Deum, same gating as `te-deum` itself. This app doesn't model the
+# Gospel-read-again-in-full step that precedes it live (a known
+# simplification, see data/propers/nocturn-readings/post-pentecost-15.yml's
+# own header comment) — this versicle is added directly after the Te Deum.
+te-decet-laus:
+  text: |
+    V. Te decet laus, te decet hymnus: tibi glória Deo Patri, et Fílio, cum Spíritu Sancto in sǽcula sæculórum. Amen.
+  status: verified
+
+# Live-verified (Monastic Tridentinum 1617, 2026-09-06) — fixed text, sung
+# after the last lesson on a 3-nocturn day (Sunday or Duplex+; see
+# hours/matins.ts and hours/types.ts's 'te-deum' ResolvedPart). Never said
+# on a plain ferial (1-nocturn) day.
+te-deum:
+  text: |-
+    Te Deum laudámus: * te Dóminum confitémur.
+    Te ætérnum Patrem * omnis terra venerátur.
+    Tibi omnes Ángeli, * tibi Cæli, et univérsæ Potestátes:
+    Tibi Chérubim et Séraphim * incessábili voce proclámant:
+    Sanctus, Sanctus, Sanctus * Dóminus Deus Sábaoth.
+    Pleni sunt cæli et terra * majestátis glóriæ tuæ.
+    Te gloriósus * Apostolórum chorus,
+    Te Prophetárum * laudábilis númerus,
+    Te Mártyrum candidátus * laudat exércitus.
+    Te per orbem terrárum * sancta confitétur Ecclésia,
+    Patrem * imménsæ majestátis;
+    Venerándum tuum verum * et únicum Fílium;
+    Sanctum quoque * Paráclitum Spíritum.
+    Tu Rex glóriæ, * Christe.
+    Tu Patris * sempitérnus es Fílius.
+    Tu, ad liberándum susceptúrus hóminem: * non horruísti Vírginis úterum.
+    Tu, devícto mortis acúleo, * aperuísti credéntibus regna cælórum.
+    Tu ad déxteram Dei sedes, * in glória Patris.
+    Judex créderis * esse ventúrus.
+    Te ergo quǽsumus, tuis fámulis súbveni, * quos pretióso sánguine redemísti.
+    Ætérna fac cum Sanctis tuis * in glória numerári.
+    Salvum fac pópulum tuum, Dómine, * et bénedic hereditáti tuæ.
+    Et rege eos, * et extólle illos usque in ætérnum.
+    Per síngulos dies * benedícimus te.
+    Et laudámus nomen tuum in sǽculum, * et in sǽculum sǽculi.
+    Dignáre, Dómine, die isto * sine peccáto nos custodíre.
+    Miserére nostri, Dómine, * miserére nostri.
+    Fiat misericórdia tua, Dómine, super nos, * quemádmodum sperávimus in te.
+    In te, Dómine, sperávi: * non confúndar in ætérnum.
+  status: verified

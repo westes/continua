@@ -1,0 +1,104 @@
+collect:
+  text: |
+    Let us pray.
+    Lord, we beseech thee, that the keeping of this honourable feastday in memory of the holy Baptist John, thy Fore-runner, and thy Martyr, may be a mean to draw upon us the effectual outpouring of thy saving help.
+    Who livest and reignest with God the Father in the unity of the Holy Spirit, God, world without end.
+    R. Amen.
+  status: verified
+
+commemoration:
+  text: |
+    Ant. Herod sent * an executioner, and commanded that John's head should be cut off in the prison. When they heard thereof, his disciples came and took up his body and laid it in a tomb.
+    V. O Lord, thou hast set a crown of precious stones.
+    R. Upon his head.
+    Let us pray.
+    Lord, we beseech thee, that the keeping of this honourable feastday in memory of the holy Baptist John, thy Fore-runner, and thy Martyr, may be a mean to draw upon us the effectual outpouring of thy saving help.
+    Who livest and reignest with God the Father in the unity of the Holy Spirit, God, world without end.
+    R. Amen.
+  status: verified
+
+prime-antiphon:
+  text: For Herod had laid hold upon John, * and bound him, and put him in prison, for Herodias' sake.
+  status: verified
+
+terce-antiphon:
+  text: O Lord my King, * give me in a charger the head of John the Baptist.
+  status: verified
+
+sext-antiphon:
+  text: 'The damsel danced, * and her mother charged her, saying: See thou ask nothing, but only the head of John.'
+  status: verified
+
+none-antiphon:
+  text: Give me in a charger the head of John the Baptist. * And the King was sorry, for his oath's sake.
+  status: verified
+
+benedictus-antiphon:
+  text: Herod sent * an executioner, and commanded that John's head should be cut off in the prison. When they heard thereof, his disciples came and took up his body and laid it in a tomb.
+  status: verified
+
+magnificat-antiphon:
+  text: The unbelieving King * sent his loathsome messengers, and commanded that John the Baptist's head should be cut off.
+  status: verified
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: For Herod had laid hold upon John, * and bound him, and put him in prison, for Herodias' sake.
+    - psalms:
+        - 99
+      antiphon: O Lord my King, * give me in a charger the head of John the Baptist.
+    - psalms:
+        - 62
+      antiphon: 'The damsel danced, * and her mother charged her, saying: See thou ask nothing, but only the head of John.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: John had rebuked Herod for Herodias' sake, * his brother Philip's wife, for he had taken her.
+  laudate:
+    antiphon: Give me in a charger the head of John the Baptist. * And the King was sorry, for his oath's sake.
+
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: For Herod had laid hold upon John, * and bound him, and put him in prison, for Herodias' sake.
+    - psalms:
+        - 110
+      antiphon: O Lord my King, * give me in a charger the head of John the Baptist.
+    - psalms:
+        - 111
+      antiphon: 'The damsel danced, * and her mother charged her, saying: See thou ask nothing, but only the head of John.'
+    - psalms:
+        - 112
+      antiphon: Give me in a charger the head of John the Baptist. * And the King was sorry, for his oath's sake.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, On Virgins, Bk. 3
+      text: |-
+        We must not hurry by the record of the Blessed Baptist John. We must ask what he was, and by whom, and why, and how, and when he was slain. He was a righteous man murdered by adulterers. The guilty passed upon their judge the sentence of death. Moreover, the death of the Prophet was the fee of a dancing-girl. And lastly, there was a feature about it from which even savages shrink; the order for completing the atrocity was given amid the merriment of a dinner-party. From banquet to prison, from prison to banquet, that was the course run by the servants of the murderer. How many horrors does this simple crime embrace within its details?
+
+        Who is there, that, on seeing the messenger hasten from the dinner-table to the prison, would not have forthwith concluded that he carried an order for the Prophet's release. If any one had heard that it was Herod's birth-day, and that he was giving a great feast, and that he had offered a damsel the choice of whatever she listed, and that thereupon a messenger had been sent to John's dungeon. If any one, I say, had heard this, what would he have supposed? He would have concluded that the damsel had asked and obtained John's freedom. What have executions in common with dinners, or death with gaiety? While the banquet was going on, the Prophet was hurried to death, by an order from the reveller whom he had not troubled even by a prayer for release. He was slain with the sword, and his head was served up in a plate. This was the new dish demanded by a cruelty which the Feast had been powerless to glut.
+
+        Look, savage King, look at a decoration which suiteth well with thy banquet. Put out thine hand, so as to lose no part of the luxury of cruelty, and let the streams of the sacred blood run between thy fingers. Thine hunger the dinner hath been unable to satisfy, thy cups have not been able to quench thine inhuman thirst. Suck, suck the blood which the still palpitating veins are discharging from the place where the neck has been severed. Look at the eyes. Even in death they remain the eyes of a witness of thine uncleanness, but they are closing themselves upon the spectacle of thy pleasures. Those eyes indeed are shutting, but it seems not so much from the laws of natural death, as from horror at the scene of thine enjoyment. The golden mouth, whose bloodless lips are silent now, can repeat no more the denunciation which thou couldest not bear to hear, and still thou art afraid of it.
+      status: verified
+      responsory: |-
+        R. The Lord made him honourable, and kept him from his enemies, and defended him from seducers: * and gave him everlasting glory.
+        V. He went down with him into the pit, and left him not in bonds.
+        R. And gave him everlasting glory.
+    - nocturn: 3
+      isGospel: true
+      citation: Mark 6:17-29
+      text: At that time, Herod had sent and taken John, and bound him in prison, because of Herodias, his brother Philip's wife, whom he had married. For John had said to Herod, "It is not lawful for you to have your brother's wife." But Herodias laid snares for him, and would have liked to put him to death, but she could not. For Herod feared John, knowing that he was a just and holy man, and protected him; and when he heard him talk, he did many things, and he liked to hear him. And a favorable day came when Herod on his birthday gave a banquet to the officials, tribunes and chief men of Galilee. And Herodias' own daughter having come in and danced, she pleased Herod and his guests. And the king said to the girl, "Ask of me what you will, and I will give it to you." And he swore to her, "Whatever you ask, I will give you, even though it be the half of my kingdom." Then she went out and said to her mother, "What am I to ask for?" And she said, "The head of John the Baptist." And she came in at once with haste to the king, and asked, saying, "I want you right away to give me on a dish the head of John the Baptist." And grieved as he was, the king because of his oath and his guests, was unwilling to displease her. But sending an executioner, he commanded that his head be brought on a dish. Then he beheaded him in the prison, and brought his head on a dish, and gave it to the girl, and the girl gave it to her mother. His disciples, hearing of it, came and took away his body, and laid it in a tomb.
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, New Sermons (on Mark 6:17-29)
+      text: |-
+        The reading of the Holy Gospel hath set a scene of cruelty before our eyes: even the head of St. John in a charger; a message of death sent forth to discharge the bloody commands of one that hateth the truth; a damsel dancing, and a mother rabid; a rash oath sworn in the midst of uncleanness and the revels of a supper, and a wicked fulfillment of the oath so sworn. It befell unto John according to his own saying. For he had said concerning the Lord Jesus Christ: He must increase, but I must decrease; so John decreased by an head, and Christ's height was made higher upon the Cross. The truth drew hatred. It could not be borne in patience that the holy man of God should utter a rebuke, albeit he sought by his rebuke nothing but the soul's health of them to whom he addressed it. They repaid him evil for good.
+
+        For what could he say but that whereof he was full? And what could they answer him but that whereof they were full? He sowed wheat, and found thorns. He had said unto the King: It is not lawful for thee to have thy brother's wife. Lust had got the better of the King, and he kept a woman whom it was not lawful for him to have, even his brother's wife. But she pleased him, so that his cruelty was lulled. He respected the Saint who had spoken the truth to him. But the horrible woman conceived hatred, and by-and-by brought it forth. When she brought forth, she brought forth a girl, a dancing-girl.
+      status: verified

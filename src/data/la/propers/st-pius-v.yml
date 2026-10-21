@@ -1,0 +1,47 @@
+# Read directly from web/www/horas/Latin/Sancti/05-05.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui, ad conteréndos Ecclésiæ tuæ hostes et ad divínum cultum reparándum,
+    beátum Pium Pontíficem Máximum elígere dignátus es: fac nos ipsíus deféndi
+    præsídiis et ita tuis inhærére obséquiis; ut, ómnium hóstium superátis insídiis,
+    perpétua pace lætémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# No proper antiphon of his own -- standard de-Communi text, paired with the standard de-Communi commemoration versicle for common-of-a-confessor-pope (C4b -- inherits C4's own Ant2/Versum2 with no override) (not yet independently live-verified for this specific category, marked draft). Collect is the saint's own real proper (st-pius-v-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui, ad conteréndos Ecclésiæ tuæ hostes et ad divínum cultum reparándum,
+    beátum Pium Pontíficem Máximum elígere dignátus es: fac nos ipsíus deféndi
+    præsídiis et ita tuis inhærére obséquiis; ut, ómnium hóstium superátis insídiis,
+    perpétua pace lætémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Pius V, Pope and Confessor (May 5).
+# Sourced directly from web/www/horas/Latin/Sancti/05-05.txt,
+# English/Sancti/05-05.txt. Lectio4-6 combined into one reading, one
+# continuous vita. Nocturn 3 in the Common of Confessor Popes (C4b) is
+# a cross-reference to St. Gregory the Great's own Nocturn 3
+# (`@Sancti/03-12`), not this saint's own content -- not transcribed.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Pius in oppido Insubriæ, quod Boschum vocant, natus, sed e Bonónia oriundus ex nobili Ghisleriórum família, cum quatuordecim esset annórum, ordinem Prædicatórum ingréssus est. Erat in eo admirábilis patiéntia, profúnda humilitas, summa vitæ austeritas, continuum oratiónis studium, et regularis observantiæ ac divini honoris ardentíssimus zelus. Philosophíæ vero ac theologíæ incumbens, adeo in iis excelluit, ut illas docéndi munus magna cum laude per multos annos exercúerit. Sacras conciónes plúribus in locis cum ingénti auditórum fructu hábuit. Inquisitoris offícium inviolábili animi fortitúdine diu sustinuit; multasque civitátes, non sine vitæ discrimine, ab hæresi tunc grassante immunes servávit.
+
+        A Paulo quarto, cui ob exímias virtútes caríssimus erat, ad Nepesínum et Sutrinum episcopátum promotus, et post biennium inter Romanæ Ecclésiæ presbyteros cardinales adscriptus fuit. Tum ad ecclésiam Montis Regalis in Subalpinis a Pio quarto translatus, cum plures in eam abusus irrepsisse cognovísset, totam diœcesim lustrávit; rebusque compositis Romam reversus, gravíssimis expediéndis negotiis applicatus, quod justum erat, apostolica libertáte et constántia decernebat. Mortuo autem Pio, præter ómnium exspectatiónem electus Pontifex, nihil in vitæ ratióne, excepto exteriori habitu, immutávit. Fuit in eo religiónis propagandæ perpétuum studium, in ecclesiástica disciplína restituénda indeféssus labor, in exstirpandis erróribus assidua vigilantia, in sublevandis egéntium necessitátibus indeficiens beneficéntia, in Sedis apostolicæ júribus vindicándis robur invictum.
+
+        Selímum Turcárum tyrannum multis elátum victoriis, ingénti comparáta classe, ad Echínadas ínsulas non tam armis quam fusis ad Deum precibus devicit. Quam victoriam ea ipsa hora, qua obténta fuit, Deo revelante, cognóvit suisque familiaribus indicávit. Dum vero novam in ipsos Turcas expeditiónem molirétur, in gravem morbum incidit; et, acerbíssimis dolóribus patientíssime tolerátis, ad extrema deveniens, cum sacraménta de more suscepísset, ánimam Deo placidíssime réddidit, anno millesimo quingentésimo septuagesimo secundo, ætátis suæ sexagesimo octavo, cum sedísset annos sex, menses tres, dies viginti quatuor. Corpus ejus in basilica sanctæ Maríæ ad Præsépe summa fidelium veneratióne colitur, multis a Deo ejus intercessióne patrátis miraculis. Quibus rite probátis, a Cleménte undecimo, Pontifice máximo, Sanctórum número adscriptus est.
+      status: verified

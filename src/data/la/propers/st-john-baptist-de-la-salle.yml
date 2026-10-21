@@ -1,0 +1,77 @@
+# Read directly from web/www/horas/Latin/Sancti/05-15.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui, ad christiánam páuperum eruditiónem et ad juvéntam in via veritátis
+    firmándam, sanctum Joánnem Baptístam Confessórem excitásti, et novam per eum in
+    Ecclésia famíliam collegísti: concéde propítius; ut ejus intercessióne et exémplo,
+    stúdio glóriæ tuæ in animárum salúte fervéntes, ejus in cælis corónæ partícipes
+    fíeri valeámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-john-baptist-de-la-salle has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-john-baptist-de-la-salle-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui, ad christiánam páuperum eruditiónem et ad juvéntam in via veritátis
+    firmándam, sanctum Joánnem Baptístam Confessórem excitásti, et novam per eum in
+    Ecclésia famíliam collegísti: concéde propítius; ut ejus intercessióne et exémplo,
+    stúdio glóriæ tuæ in animárum salúte fervéntes, ejus in cælis corónæ partícipes
+    fíeri valeámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2-3 readings for St. John Baptist de la Salle,
+# Confessor (May 15). Sourced directly from
+# web/www/horas/Latin/Sancti/05-15.txt, English/Sancti/05-15.txt.
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope is now authored too
+# (isGospel: true, immediately before Chrysostom's homily). Same
+# Chrysostom Homily 60 on Matthew as `st-joseph-calasanctius.yml`, which
+# directly quotes Matt 18:10 ("Vidéte ne aliquem istórum contempséritis
+# parvulórum...") — the same Matt 18:1-10 pericope already authored for
+# `st-michael.yml`, reused verbatim.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Joánnes Baptista de la Salle, Rhemis claro genere ortus, puer adhuc móribus et factis in sortem Dómini se vocándum et sanctimoniæ laude honestándum portendit. Adoléscens in Rheménsi academía litteras ac philosophicas disciplínas didicit: quo témpore, etsi ob animi virtútes et álacre ingenium ac suave ómnibus carus esset, ab æqualium tamen societáte abhorrebat, ut solitudini addictus facílius Deo vacaret. In clericalem milítiam jampridem cooptatus, sexto décimo ætátis anno inter Rhemenses canonicos adscriptus est, Lutétiam Parisiórum, theologíæ in Sorbónica universitáte datúrus operam, contendit, atque in Sulpitianum seminárium adscítus est. At brevi paréntibus orbatus, domum régredi coactus, fratres educándos suscépit; quod, scientiárum interim sacrárum stúdia non intermittens, optimo cum fructu præstitit, uti éxitus comprobávit.
+
+        Sacerdotio demum auctus, qua præstanti fide animique ardore primum ad aram fecit, eisdem toto vitæ témpore Sacris est operatus. Interea, salútis animárum studio incénsus, totum in earumdem utilitátem sese impendit. Sorórum a Jesu infante, puellis educandis institutárum, regimen suscépit; easque non modo prudentíssime est moderátus, sed ab excidio vindicávit. Hinc porro ánimum advértit ad púeros de plebe religióne bonisque móribus informándos. Atque in hoc quidem illum suscitaverat Deus, ut scilicet, nova in Ecclésia sua religiosórum hóminum família cóndita, puerórum, præsertim páuperum, scholis perenni efficacíque ratióne consuleret. Demandátum vero a Dei providéntia munus, per contradictiónes plurimas magnasque ærúmnas, feliciter implévit, fundáta fratrum sodalitate, quam a Scholis christiánis nuncupávit.
+
+        Adjunctos ígitur sibi hómines in gravi opere et arduo, apud se primum suscépit; tum aptiori in sede constitutos disciplína sua optime imbuit iis légibus sapientibúsque institutis, quæ póstea a Benedicto décimo tertio sunt confírmata. Ex demissióne animi ac paupertátis amóre primum canonicatu se abdicávit, omniáque sua bona in páuperes erogávit; quin étiam serius, quod frustra sæpius tentaverat, fundáti a se institúti regimen sponte depósuit. Nihil tamen interim de fratrum sollicitúdine remíttens deque scholis ab eo, plúribus jam locis, apertis, impensius Deo vacare cœpit. Assidue jejuniis, flagellis aliisque asperitátibus in se ipsum sæviens, noctes orando ducebat. Donec, virtútibus ómnibus conspicuus, præsertim obediéntia, studio divinæ voluntátis implendæ, amóre ac devotióne in apostolicam Sedem; meritis onustus, sacramentis rite susceptis, obdormívit in Dómino annos natus duo de septuagínta. Eum Leo décimus tertius, Pontifex maximus, Beatórum catálogo inseruit; novisque fulgentem signis, anno jubilæi millesimo nongentésimo, Sanctórum honóribus decorávit. Pius vero duodecimus ómnium magistrórum púeris adulescentibúsque instituéndis præcipuum apud Deum cælestem Patronum constítuit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 18:1-10
+      text: 'In illo témpore: Accessérunt discípuli ad Jesum, dicéntes: Quis, putas, major est in regno cœlórum? Et ádvocans Jesus párvulum, státuit eum in médio eórum et dixit: Amen, dico vobis, nisi convérsi fuéritis et efficiámini sicut párvuli, non intrábitis in regnum cœlórum. Quicúmque ergo humiliáverit se sicut párvulus iste, hic est major in regno cœlórum. Et qui suscéperit unum párvulum talem in nómine meo, me súscipit. Qui autem scandalizáverit unum de pusíllis istis, qui in me credunt, expédit ei, ut suspendátur mola asinária in collo ejus, et demergátur in profúndum maris. Væ mundo a scándalis! Necésse est enim, ut véniant scándala: verúmtamen væ hómini illi, per quem scándalum venit! Si autem manus tua vel pes tuus scandalízat te, abscíde eum et projíce abs te: bonum tibi est ad vitam ingrédi débilem vel claudum, quam duas manus vel duos pedes habéntem mitti in ignem ætérnum. Et si óculus tuus scandalízat te, érue eum et projice abs te: bonum tibi est cum uno óculo in vitam intráre, quam duos óculos habéntem mitti in gehénnam ignis. Vidéte, ne contemnátis unum ex his pusíllis: dico enim vobis, quia Angeli eórum in cœlis semper vident fáciem Patris mei, qui in cœlis est.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. John Chrysostom, Homily 60 on Matthew 18
+      text: |-
+        Vidéte ne aliquem istórum contempséritis parvulórum, quia eórum Angeli Patris mei fáciem semper aspíciunt, et quia ego propter eos veni, et hæc Patris mei volúntas est. Ad tuéndos conservándosque pusillos diligentiores nos reddit. Pérspicis quam ingéntia in tutelam tenúium mœnia erexerit, et quantum studium curamque habeat, ne perdántur; tum quia supremas despiciéntibus eos pœnas státuit, tum quia summam pollicétur mercedem his qui curam eórum suscipiunt, idque tam suo quam Patris exemplo corróborat.
+
+        Dóminum ígitur étiam nos imitemur, et nihil pro frátribus omittamus, étiam eórum quæ humília viliáque nimium vidéntur. Sed, si administratióne nostra étiam opus fúerit, quamvis ténuis atque abjéctus quidem, cui administrándum sit, fúerit, quamvis ardua nobis res atque labóris plena esse videátur; ómnia hæc pro fratris salúte tolerabilióra facilióraque, oro, videántur. Tanto enim studio tantáque cura Deus dignam esse ánimam osténdit, ut neque Fílio suo pepercerit.
+
+        Si non est nobis satis ad salútem, quod virtuose ipse vivamus, sed oportet aliórum salútem re ipsa desiderare; cum neque nos recte vivámus neque alios hortemur, quid respondébimus? quæ nobis spes salútis réliqua erit? Quid majus quam ánimis moderari, quam adolescentulórum fingere mores? Omni certe pictore, omni certe statuario, ceterisque hujusmodi ómnibus excellentiórem hunc duco, qui juvenum animos fingere non ignoret.
+      status: verified

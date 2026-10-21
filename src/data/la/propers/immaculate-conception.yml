@@ -1,0 +1,525 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — Latin
+# read from the live prayTertia query's own real-date output (2025-12-08);
+# its English side rendered a *different* Marian feast's text by mistake
+# (same class of query glitch as All Saints/St. Damasus this pull, just
+# silent instead of empty, and caught only by cross-checking against the
+# raw source file directly), so the English was read from
+# web/www/horas/English/Sancti/12-08.txt instead. Its own closing formula
+# ("$Per eumdem", not the standard "$Per Dominum") is expanded to this
+# project's standard closing form for consistency, same convention used
+# throughout.
+collect:
+  text: |
+    Orémus.
+    Deus, qui per immaculátam Vírginis Conceptiónem dignum Fílio tuo habitáculum præparásti: quǽsumus; ut qui ex morte ejúsdem Fílii tui prævísa, eam ab omni labe præservásti, nos quoque mundos ejus intercessióne ad te perveníre concédas.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (immaculate-conception-antiphon.yml), paired with the standard BVM commemoration versicle already verified elsewhere in this app (propers/common/lauds-suffrage-bvm.yml -- 'V. Ora pro nobis sancta Dei Genitrix'). Collect is the saint's own real proper (immaculate-conception-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Conceptiónem hodiérnam perpétuæ Vírginis Genitrícis Dei Maríæ solémniter celebrémus, qua celsitúdo throni procéssit, allelúia.
+    V. Ora pro nobis sancta Dei Génitrix.
+    R. Ut digni efficiámur promissiónibus Christi.
+    Orémus.
+    Deus, qui per immaculátam Vírginis Conceptiónem dignum Fílio tuo habitáculum præparásti: quǽsumus; ut qui ex morte ejúsdem Fílii tui prævísa, eam ab omni labe præservásti, nos quoque mundos ejus intercessióne ad te perveníre concédas.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# the Immaculate Conception: proper Matins hymn, Latin/Sancti/12-08.txt's [Hymnus Matutinum]. English from English/Sancti/12-08.txt.
+# Before this file the saint fell to the Common's hymn.
+matins-hymn:
+  text: |
+    Præclára custos Vírginum,
+    Intácta mater Núminis,
+    Cæléstis aulæ jánua,
+    Spes nostra, cæli gáudium,
+
+    Inter rubéta lílium,
+    Colúmba formosíssima,
+    Virga e radíce gérminans
+    Nostro medélam vúlneri.
+
+    Turris dracóni impérvia,
+    Amíca stella náufragis,
+    Tuére nos a fráudibus,
+    Tuáque luce dírige.
+
+    Erróris umbras díscute,
+    Syrtes dolósas ámove,
+    Fluctus tot inter, déviis
+    Tutam reclúde sémitam.
+
+    Jesu, tibi sit glória,
+    Qui natus es de Vírgine,
+    Cum Patre, et almo Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/12-08.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: 'Immaculátam Conceptiónem Vírginis Maríæ celebrémus: * Christum ejus Fílium adorémus Dóminum.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-12-08, clean year.
+lauds-capitulum:
+  text: Ab inítio et ante sǽcula creáta sum, et usque ad futúrum sǽculum non désinam, et in habitatióne sancta coram ipso ministrávi.
+  citation: Sir 24:14
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-12-08, clean year.
+lauds-hymn:
+  text: |
+    O gloriósa Dómina,
+    Excélsa super sídera:
+    Qui te creávit, próvide
+    Lactásti sacro úbere.
+
+    Quod Heva tristis ábstulit,
+    Tu reddis almo gérmine:
+    Intrent ut astra flébiles,
+    Cæli fenéstra facta es.
+
+    Tu Regis alti jánua,
+    Et porta lucis fúlgida:
+    Vitam datam per Vírginem,
+    Gentes redémptæ, pláudite.
+
+    Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-12-08, clean year.
+lauds-responsory:
+  text: |
+    R.br. Ave María, grátia plena, * Dóminus tecum.
+    R. Ave María, grátia plena, * Dóminus tecum.
+    V. Benedícta tu in muliéribus, et benedíctus fructus ventris tui
+    R. Dóminus tecum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ave María, grátia plena, * Dóminus tecum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-12-08, clean year.
+lauds-versicle:
+  text: |-
+    V. Conceptio est hodie sanctæ Mariæ Virginis.
+    R. Cujus vita inclyta cunctas illustrat ecclesias.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, the Immaculate Conception's own day (2026-12-08, clean year).
+# The live-rendered Latin lacks diacritics throughout ("Conceptio gloriosæ
+# Virginis Mariæ..." with no accents), unlike the word-for-word parallel
+# Nativity BVM antiphon ("Natívitas gloriósæ Vírginis Maríæ...", verified
+# against source data file web/www/horas/Latin/Sancti/09-08.txt). Restored
+# accentuation and asterisk position to match that parallel; status: draft.
+prime-antiphon:
+  text: Concéptio gloriósæ * Vírginis Maríæ ex sémine Abrahæ, ortæ de tribu Juda, clara ex stirpe David.
+  status: draft
+
+# Sourced from web/www/horas/Latin/Sancti/12-08.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: 'Signum magnum appáruit in cælo: Múlier amícta sole, et luna sub pédibus ejus, et in cápite ejus coróna stellárum duódecim.'
+  citation: Apo 12:1
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, the Immaculate Conception's own day (2026-12-08, clean year).
+# The live-rendered Latin lacks diacritics throughout, unlike the
+# word-for-word parallel Nativity BVM antiphon (verified against source
+# data file web/www/horas/Latin/Sancti/09-08.txt). Restored accentuation
+# and asterisk position to match that parallel; status: draft.
+terce-antiphon:
+  text: Concéptio est hódie * sanctæ Maríæ Vírginis, cujus vita ínclita cunctas illústrat ecclésias.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, the Immaculate Conception's own day (2026-12-08, clean year).
+# The live-rendered Latin lacks diacritics throughout, unlike the
+# word-for-word parallel Nativity BVM antiphon (verified against source
+# data file web/www/horas/Latin/Sancti/09-08.txt). Restored accentuation
+# and asterisk position to match that parallel; status: draft.
+sext-antiphon:
+  text: 'Regáli ex progénie * María exórta refúlget: cujus précibus nos adjuvári mente et spíritu devotíssime póscimus.'
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, the Immaculate Conception's own day (2026-12-08, clean year).
+# The live-rendered Latin lacks diacritics throughout, unlike the
+# word-for-word parallel Nativity BVM antiphon (verified against source
+# data file web/www/horas/Latin/Sancti/09-08.txt). Restored accentuation
+# and asterisk position to match that parallel; status: draft.
+none-antiphon:
+  text: Cum jucunditáte * Conceptiónem beátæ Maríæ celebrémus, ut ipsa pro nobis intercédat ad Dóminum Jesum Christum.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-12-08, the same clean date already used for lauds-capitulum-immaculate-conception.yml.
+vespers-hymn:
+  text: |
+    Prima stropha sequentis hymni dicitur flexis genibus.
+    Ave maris stella,
+    Dei Mater alma,
+    Atque semper Virgo,
+    Felix cæli porta.
+
+    Sumens illud Ave
+    Gabriélis ore,
+    Funda nos in pace,
+    Mutans Hevæ nomen.
+
+    Solve vincla reis,
+    Profer lumen cæcis,
+    Mala nostra pelle,
+    Bona cuncta posce.
+
+    Monstra te esse matrem,
+    Sumat per te preces,
+    Qui pro nobis natus,
+    Tulit esse tuus.
+
+    Virgo singuláris,
+    Inter omnes mitis,
+    Nos culpis solútos
+    Mites fac et castos.
+
+    Vitam præsta puram,
+    Iter para tutum,
+    Ut vidéntes Jesum,
+    Semper collætémur.
+
+    Sit laus Deo Patri,
+    Summo Christo decus,
+    Spirítui Sancto,
+    Tribus honor unus.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-12-08, the same clean date already used for lauds-capitulum-immaculate-conception.yml. The one line the reference engine left untranslated (Luke 1:42, the Hail Mary's own second line) is filled in here with its standard Douay-Rheims/Ave Maria wording, not freely translated.
+vespers-responsory:
+  text: |
+    R.br. Ave María, grátia plena, * Dóminus tecum.
+    R. Ave María, grátia plena, * Dóminus tecum.
+    V. Benedícta tu in muliéribus, et benedíctus fructus ventris tui
+    R. Dóminus tecum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ave María, grátia plena, * Dóminus tecum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-12-08, the same clean date already used for lauds-capitulum-immaculate-conception.yml.
+vespers-versicle:
+  text: |-
+    V. Conceptio est hodie sanctæ Mariæ Virginis.
+    R. Cujus vita inclyta cunctas illustrat ecclesias.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, the Immaculate Conception's own day (2026-12-08) -- the
+# Benedictus antiphon. Same formula as the Nativity of the BVM's own
+# (Sept 8), adapted for the Conception instead of the Birth, confirmed
+# independently rather than assumed. Her Lauds psalmody override (see
+# hours/lauds-psalmody-overrides.ts, TODO.md) is still unauthored --
+# this is only the Benedictus antiphon, a separate lookup.
+benedictus-antiphon:
+  text: Conceptiónem hodiérnam perpétuæ Vírginis Genitrícis Dei Maríæ solémniter celebrémus, qua celsitúdo throni procéssit, allelúia.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 12-08
+# immaculate-conception (OVERWRITE: stored file "hodieegressaest" matches neither engine evening). See
+# hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon:
+  text: 'Conceptio tua, * Dei Genitrix Virgo, gaudium annuntiavit universo mundo: ex te enim ortus est sol justitiæ, Christus Deus noster: qui solvens maledictionem, dedit benedictionem, et confundens mortem, donavit nobis vitam sempiternam.'
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 12-08
+# immaculate-conception (first). First Vespers variant; the default (second Vespers) file is the same id without
+# "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Gloriósæ * Vírginis Maríæ ortum digníssimum recolámus, quæ et Genitrícis dignitátem obtínuit, et virginálem pudicítiam non amísit.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-12-08, clean year.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Conceptio gloriosæ Virginis Mariæ * ex semine Abrahæ, ortæ de tribu Juda, clara ex stirpe David.
+    - psalms:
+        - 99
+      antiphon: Conceptio est hodie * sanctæ Mariæ Virginis cujus vita inclyta cunctas illustrat ecclesias.
+    - psalms:
+        - 62
+      antiphon: 'Regali ex progenie * Maria exorta refulget: cujus precibus nos adjuvari mente et spiritu devotissime poscimus.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Corde et animo * Christo canamus gloriam in hac sacra solemnitate præcelsæ Genitricis Dei Mariæ.
+  laudate:
+    antiphon: Cum jucunditate * Conceptionem beatæ Mariæ celebremus, ut ipsa pro nobis intercedat ad Dominum Jesum Christum.
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-12-08, own day). Same four psalm numbers as
+# her Common (common-of-the-bvm.yml: 109/112/121/126), her own proper
+# antiphons throughout -- byte-identical to her already-authored Prime/
+# Terce/Sext/None antiphons (Prime=Ps109 slot, Terce=Ps112, Sext=Ps121,
+# None=Ps126), so their already-restored accentuation is reused directly
+# (the live render itself drops diacritics throughout; see prime-antiphon-
+# immaculate-conception.yml's own note on restoring it against the
+# word-for-word-parallel Nativity BVM antiphon).
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Concéptio gloriósæ * Vírginis Maríæ ex sémine Abrahæ, ortæ de tribu Juda, clara ex stirpe David.
+    - psalms:
+        - 112
+      antiphon: Concéptio est hódie * sanctæ Maríæ Vírginis, cujus vita ínclita cunctas illústrat ecclésias.
+    - psalms:
+        - 121
+      antiphon: 'Regáli ex progénie * María exórta refúlget: cujus précibus nos adjuvári mente et spíritu devotíssime póscimus.'
+    - psalms:
+        - 126
+      antiphon: Cum jucunditáte * Conceptiónem beátæ Maríæ celebrémus, ut ipsa pro nobis intercédat ad Dóminum Jesum Christum.
+
+# Matins Nocturn 2-3 readings for the Immaculate Conception (Dec 8) —
+# SanctiM/12-08.txt inherits the whole day (`@Sancti/12-08`) with no
+# Nocturn 2/3 override, so this feast's own proper content is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/12-08.txt, English/Sancti/12-08.txt.
+#
+# Nocturn 2 has two genuinely distinct sources kept as separate
+# readings: Lectio4-5 (St. Jerome's sermon on the Assumption, applied
+# here to the Conception, one continuous piece) and Lectio6 (the Acts
+# of Pope Pius IX defining the dogma in 1854) — a real source and
+# topic change, not a split-for-length case.
+# Nocturn 3: Lectio7's Gospel citation is Luke 1:26-28 (the
+# Annunciation's opening verses); St. Germain of Constantinople's
+# homily on the Presentation (Lectio7's homily + Lectio8-9 combined,
+# one continuous piece) follows it.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — this exact text
+# (Luke 1:26-28) is already authored verbatim in
+# apparition-of-the-immaculate-bvm.yml (that Octave day's own Nocturn 2
+# Gospel, wholesale-inherited from this same Dec 8 feast per its own
+# header), so reused from there rather than re-derived.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Jerome, Sermon on the Assumption
+      text: |-
+        Qualis et quanta esset beáta et gloriósa semper Virgo María, ab Angelo divínitus declarátur, cum dícitur: Ave, grátia plena; Dóminus tecum: benedícta tu in muliéribus. Tálibus namque decébat Vírginem oppignorári munéribus, ut esset grátia plena, quæ dedit cælis glóriam, terris Dóminum, pacémque refúdit, fidem géntibus, finem vítiis, vitæ órdinem, móribus disciplínam. Et bene plena, quia céteris per partes præstátur; Maríæ vero simul se tota infúdit plenitúdo grátiæ. Vere plena, quia etsi in sanctis Pátribus et Prophétis grátia fuísse créditur, non tamen eátenus plena; in Maríam vero totíus grátiæ, quæ in Christo est, plenitúdo venit, quamquam áliter. Et ídeo inquit: Benedícta tu in muliéribus; id est plus benedícta quam omnes mulíeres. Ac per hoc quidquid maledictiónis infúsum est per Hevam, totum ábstulit benedíctio Maríæ. De ipsa Sálomon in Cánticis, quasi in laudem ejus, Veni, inquit, colúmba mea, immaculáta mea. Jam enim hiems tránsiit, imber ábiit et recéssit. Ac deínde inquit: Veni de Líbano, veni, coronáberis.
+
+        Non immérito ígitur veníre de Líbano jubétur, quia Líbanus candidátio interpretátur. Erat enim candidáta multis meritórum virtútibus, et dealbáta nive candídior, Spíritus Sancti munéribus, simplicitátem colúmbæ in ómnibus repræséntans: quóniam, quidquid in ea gestum est, totum púritas et simplícitas, totum véritas et grátia fuit; totum misericórdia et justítia, quæ de cælo prospéxit: et ídeo immaculáta, quia in nullo corrúpta. Circúmdedit enim virum in útero, sicut Jeremías sanctus testátur, et non aliúnde accépit. Fáciet, inquit, Dóminus novum super terram, et múlier circúmdabit virum. Vere novum, et ómnium novitátum superéminens nóvitas virtútum, quando Deus (quem ferre non potest mundus, neque vidére áliquis, ut vívere possit) sic ingréssus est hospítium ventris, ut córporis claustrum nescíret; sicque gestátus, ut totus Deus in eo esset; et sic exívit inde, ut esset (sicut Ezéchiel fatétur) porta omníno clausa. Unde cánitur in eísdem Cánticis de ea: Hortus conclúsus, fons signátus, emissiónes tuæ paradísus. Vere hortus deliciárum, in quo cónsita sunt univérsa florum génera, et odoraménta virtútum; sicque conclúsus, ut nésciat violári, neque corrúmpi ullis insidiárum fráudibus. Fons ítaque signátus sigíllo totíus Trinitátis.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: Acts of Pope Pius IX (defining the dogma, 1854)
+      text: 'Deíparæ autem Vírginis in sua Conceptióne de tetérrimo humáni géneris hoste victóriam, quam divína elóquia, veneránda tradítio, perpétuus Ecclésiæ sensus, singuláris episcopórum ac fidélium conspirátio, insígnia quoque summórum Pontíficum acta atque constitutiónes mirífice jam illustrábant, Pius nonus Póntifex máximus totíus Ecclésiæ votis ánnuens státuit suprémo suo atque infallíbili oráculo solémniter proclamáre. Itaque sexto idus decémbris anni millésimi octingentésimi quinquagésimi quarti in basílica Vaticána, ingénti sanctæ Románæ Ecclésiæ patrum cardinálium et Episcopórum ex díssitis étiam regiónibus astánte cœtu, universóque plaudénte orbe, solémniter pronuntiávit et definívit: Doctrínam quæ tenet beatíssimam Vírginem Maríam in primo instánti suæ Conceptiónis fuísse, singulári Dei privilégio, ab omni originális culpæ labe præservátam immúnem, esse a Deo revelátam, ac proínde ab ómnibus fidélibus fírmiter constantérque credéndam.'
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 1:26-28
+      text: 'In illo témpore: Missus est Angelus Gábriël a Deo in civitátem Galilææ, cui nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, de domo David, et nomen Vírginis María. Et ingréssus Angelus ad eam, dixit: Ave, grátia plena; Dóminus tecum: benedícta tu in muliéribus.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Germain of Constantinople, Homily on the Presentation of the Blessed Virgin
+      text: |-
+        Ave, María, grátia plena, Sanctis sánctior, et cælis excélsior, et Chérubim gloriósior, et Séraphim honorabílior, et super omnem creatúram venerabílior. Ave, colúmba, quæ nobis et fructum fers olívæ, et servatórem a spiritáli dilúvio ac portum salútis annúntias; cujus pennæ deargentátæ, et posterióra dorsi in pallóre auri sanctíssimi et illuminántis Spíritus fulgóre irradiántur. Ave, amœníssimus et rationális Dei paradísus, benevolentíssima et omnipoténti ejúsdem dextra hódie ad Oriéntem plantátus, et ipsi suáve olens lílium, et rosam immarcescíbilem gérminans in eórum medélam, qui pestíferam animǽque exitiálem amaritúdinem mortis ad Occidéntem ebíberant; paradísus, in quo ad veritátis agnitiónem lignum vivíficum effloréscit, e quo qui gustáverint, immortalitátem consequúntur. Ave, sacrosáncte ædificátum, immaculátum, purissimúmque Dei summi Regis palátium, ejúsdem Dei Regis magnificéntia circumornátum, omnésque hospítio recípiens ac mýsticis refíciens delíciis; in quo non manufáctus et vário decóre nitens situs est spirituális Sponsi thálamus; in quo Verbum errántem humánam stirpem revocáre volens, carnem sibi desponsávit, ut eos, qui voluntáte própria extórres facti fúerant, Patri reconciliáret.
+
+        Ave, Dei mons præpínguis et umbrósus, in quo enutrítus Agnus rationális peccáta atque infirmitátes nostras portávit: mons, e quo devolútus ille nulla manu præcísus lapis, contrívit aras idolórum, et factus est in caput ánguli, mirábilis in óculis nostris. Ave, sanctus Dei thronus, divínum donárium, domus glóriæ, perpúlchrum ornaméntum, cimélium eléctum, et totíus orbis propitiatórium, cælúmque Dei glóriam enárrans. Ave, urna ex puro auro confláta, et suavíssimam animárum nostrárum dulcédinem, Christum scílicet qui manna est, cóntinens. O puríssima et omni laude et obséquio digníssima Virgo, Deo dicátum donárium omni creaturárum conditióni præcéllens, terra non secta, inarátus ager, vitis floridíssima, fons aquas effúndens, virgo génerans, et mater viri néscia, innocéntiæ thesáurus abscónditus, et sanctimóniæ decus; acceptíssimis tuis ac matérna auctoritáte válidis précibus ad Dóminum ac Deum ómnium Conditórem, Fílium tuum ex te sine patre génitum, ecclesiástici órdinis gubernácula fac dírigas, et ad portum tranquíllum perdúcas.
+
+        Sacerdótes justítia, et probátæ, immaculátæ ac sincéræ fídei exsultatióne splendidíssime indúito. Orthodóxis princípibus, qui præ omni púrpuræ aut auri splendóre, et præ margarítis ac lapídibus pretiósis, te nacti sunt diadéma et induméntum ac firmíssimum regni sui ornaméntum, in tranquíllo ac próspero statu sceptra dírige. Male fidas natiónes in te ac Deum ex te génitum blasphemántes, eórum pédibus sternens subícito; subjectúmque pópulum, ut secúndum Dei præcéptum in suávi obediéntiæ obséquio persevéret, confirmáto. Tuam hanc civitátem, quæ te tamquam turrim ac fundaméntum habet, victóriæ triúmphis coronáto, et fortitúdine circumcíngens custódito Dei habitatiónem, templi decórem semper conserváto; laudatóres tuos ab omni discrímine et ánimi angóre éxime; captívis redemptiónem tribúito; peregrínis tecto et quovis præsídio destitútis, solámen te éxhibe. Univérso mundo auxiliatrícem manum tuam pórrige, ut in lætítia et exsultatióne solemnitátes tuas simul cum ista, quam modo celebrámus, festivitáte splendidissímo éxitu transigámus, in Christo Jesu universórum Rege ac vero Deo nostro, cui glória et fortitúdo una cum sancto vitǽque princípio Patre, et coætérno et consubstantiáli et conregnánte Spíritu, nunc et semper et in sǽcula sæculórum. Amen.
+      status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Sancti/12-09bmv.txt), not the live prayMatutinum query -- that query,
+# scoped to "Monastic Tridentinum 1617," doesn't select this content at all
+# (the Immaculate Conception wasn't dogmatically defined until 1854, so the
+# 1617 monastic rubric naturally has nothing here; the live engine correctly
+# reflects that). Included anyway per explicit user direction (2026-08): this
+# project is deliberately more generous with octave content than the strict
+# target rubric alone would give. Matins reading for day 2 of the Immaculate
+# Conception's own octave -- collapsed into one continuous reading per
+# project convention, joining excerpts from Pope Pius IX's dogmatic bull
+# "Ineffabilis Deus" (the actual proclamation of the dogma) with a homily of
+# St. Sophronius on the Annunciation. Two source typos corrected
+# ("Himselfcan" -> "Himself can", "Onlybegotten" -> "Only-begotten", the
+# latter matching how the same phrase is correctly hyphenated earlier in the
+# same file).
+# Responsory missing from this and this octave's other day-3/5/7/8 files --
+# the feast's own Responsory1 (Sancti/12-08.txt), reused across the
+# octave's combined-lesson readings the same way nativity-bvm's octave
+# does; 12-09bmv.txt's own "vide Sancti/12-08" rule confirms it has no
+# responsory of its own and inherits this one.
+octave-readings/~-octave-day-2:
+  source: Ex Bulla dogmatica Pii Papæ IX; Homilía sancti Sophrónii Epíscopi
+  text: |
+    Ineffabilis Deus, cujus viæ misericordia et veritas, cujus voluntas omnipotentia, et cujus sapientia attingit a fine usque ad finem fortiter, et disponit omnia suaviter, cum ab omni æternitate præviderit luctuosissimam totius humani generis ruinam ex Adami transgressione derivandam, atque in mysterio a sæculis abscondito primum suæ bonitatis opus decreverit per Verbi incarnationem sacramento occultiore complere, ut contra misericors suum propositum homo diabolicæ iniquitatis versutia actus in culpam non periret, et quod in primo Adamo casurum erat, in secundo felicius erigeretur, ab initio et ante sæcula unigenito Filio suo Matrem, ex qua caro factus in beata temporum plenitudine nasceretur, elegit atque ordinavit, tantoque præ creaturis universis est prosecutus amóre, ut in illa una sibi propensissima voluntate complacuerit.
+
+    Quapropter illam longe ante omnes angelicos spiritus, cunctosque Sanctos cælestium omnium charismatum copia de thesauro divinitatis deprompta ita mirifice cumulavit, ut ipsa ab omni prorsus peccati labe semper libera, ac tota pulchra et perfecta eam innocentiæ et sanctitatis plenitudinem præ se ferret, qua major sub Deo nullatenus intelligitur et quam præter Deum nemo assequi cogitando potest. Et quidem decebat omnino, ut perfectissimæ sanctitatis splendoribus semper ornata fulgeret, ac vel ab ipsa originalis culpæ labe plane immunis amplissimum de antiquo serpente triumphum referret tam venerabilis mater, cui Deus Pater unicum Filium suum, quem de corde suo æqualem sibi genitum, tamquam seipsum diligit, ita dare disposuit, ut naturaliter esset unus idemque communis Dei Patris et Virginis Filius.
+
+    Quam originalem augustæ Virginis innocentiam cum admirabili ejusdem sanctitate præcelsaque Dei Matris dignitate omnino cohærentem catholica Ecclesia, quæ sancto semper edocta Spiritu columna est ac firmamentum veritatis, tamquam doctrinam possidens divinitus acceptam, et cælestis revelationis deposito comprehensam multiplici continenter ratione, splendidisque factis magis in dies explicare, proponere ac fovere numquam destitit. Hanc enim doctrinam ab antiquissimis temporibus vigentem, ac fidelium animis penitus insitam, et sacrorum Antistitum curis studiisque per catholicum orbem mirifice propagatam, ipsa Ecclesia luculentissime significavit, cum ejusdem Virginis Conceptionem publico fidelium cultui ac venerationi proponere non dubitavit.
+
+    Quid missus beatus ille Angelus ad Virginem integerrimam dicit? Aut quomodo faustissimum hoc nuntium ipsi defert? Ave gratia plena, Dominus tecum. A gaudio incipit eam alloqui ille gaudii nuntius. Noverat enim et plane sciebat, nuntium illud suum universis hominibus atque omnibus pariter creaturis gaudium parare, et quoslibet a quibuscumque dolores expellere; noverat, ex divina hujus mysterii cognitione mundum lumine collustrari; noverat, erroris disjici caliginem; noverat, retundi mortis aculeum; noverat, vim corruptionis infringi; noverat, inferno victoriam auferri; noverat, salutem perdito affulgere homini, qui horum malorum jugo jamdiu premebatur, ex quo scilicet a paradisi deliciis expulsus, et a beato illo domicilio ejectus fuerat.
+
+    Et sane par omnino erat, ut divina gaudii denuntiatio a sermonibus verbisque gaudium elicientibus sumeret initium. Gaude, o supercælestis gaudii genitrix. Gaude, o sublimissimi gaudii nutrix. Gaude, o salutaris gaudii sedes princeps. Gaude o immortalis gaudii auctrix. Gaude, o ineffabilis gaudii mysticum diversorium. Gaude, o indeficientis gaudii fons beatissime. Gaude, o gaudii æterni deiferum cimelium. Gaude, o vivificantis gaudii arbor virentissima. Gaude o innupta Dei Mater. Gaude, o Virgo post partum integerrima.
+
+    Quisnam tuum eloqui splendorem poterit? Quisnam portentum, quod ipsa es, enarrare verbis audeat? Tu hominum exornasti naturam; tu Angelorum ordines superasti; tu fulgores Archangelorum obtenebrasti; tu sublimes Thronorum sedes infra te ostendisti; tu altitudinem Dominationum depressisti; tu Principatuum ducatibus præcucurristi; tu enervasti fortitudinem Potestatum; tu ipsis Virtutibus potentior virtus prodiisti; tu Cherubim oculatissimum visum terrestribus oculis vicisti; tu Seraphim sex alas habentium volatus animæ pennis divinitus agitatis transvolasti: tu denique omnem creaturam longe transgressa es; quippe quæ præ omni creatura enituisti puritate; et omnium creaturarum Conditorem in te excepisti; ipsumque et sinu tuo gestasti, et genuisti; et sola ex omnibus creaturis Dei Mater effecta es.
+  responsory: |
+    R. Per unum hóminem peccátum in hunc mundum intrávit, in quo omnes peccavérunt. * Ne tímeas, María, invenísti grátiam apud Deum. V. Erípuit Dóminus ánimam tuam de morte, et contra inimícum factus est protéctor tuus. R. Ne tímeas, María, invenísti grátiam apud Deum.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Sancti/12-10bmv.txt), same reasoning as day 2 (see
+# immaculate-conception-octave-day-2.yml) -- not selected by the live
+# prayMatutinum query under "Monastic Tridentinum 1617," included anyway per
+# explicit user direction (2026-08). Matins reading for day 3 of the
+# Immaculate Conception's own octave -- collapsed into one continuous
+# reading per project convention, joining excerpts from Pope Pius IX's
+# dogmatic bull "Ineffabilis Deus" with a homily of St. Bernard of Clairvaux
+# on the Annunciation ("Missus est").
+# Responsory missing from this and this octave's other day-2/5/7/8 files --
+# the feast's own Responsory1 (Sancti/12-08.txt), reused across the
+# octave's combined-lesson readings the same way nativity-bvm's octave
+# does; 12-09bmv.txt's own "vide Sancti/12-08" rule confirms it has no
+# responsory of its own and inherits this one.
+octave-readings/~-octave-day-3:
+  source: Ex Bulla dogmatica Pii Papæ IX; Homilía sancti Bernárdi Abbátis
+  text: |
+    Ipsissima verba, quibus divinæ Scripturæ de increata Sapientia loquuntur, ejusque sempiternas origines repræsentant, consuevit (Ecclesia) tum in ecclesiasticis officiis, tum in sacrosancta liturgia adhibere et ad illius Virginis primordia transferre, quæ uno eodemque decreto cum divinæ Sapientiæ incarnatione fuerant præstituta. Quamvis autem hæc omnia penes fideles ubique prope recepta ostendant, quo studio ejusmodi de Immaculata Virginis Conceptione doctrinam ipsa quoque Romana Ecclesia omnium ecclesiarum mater et magistra fuerit prosecuta, tamen illustria hujus Ecclesiæ facta digna plane sunt, quæ nominatim recenseantur cum tanta sit ejusdem Ecclesiæ dignitas atque auctoritas, quanta illi omnino debetur, quæ est catholicæ veritatis et unitatis centrum, in qua solum inviolabiliter fuit custodita religio, et ex qua traducem fidei reliquæ omnes ecclesiæ mutuentur oportet.
+
+    Itaque eadem Romana Ecclesia nihil potius habuit, quam eloquentissimis quibusque modis Immaculatam Virginis Conceptionem, ejusque cultum et doctrinam asserere, tueri, promovere et vindicare. Enim vero prædecessores nostri vehementer gloriati sunt apostolica sua auctoritate festum Conceptionis in Romana Ecclesia instituere, ac proprio Officio, propriaque Missa, quibus prærogativa immunitatis ab hereditaria labe manifestissime asserebatur, augere, honestare et cultum jam institutum omni ope promovere, amplificare.
+
+    Insuper summopere lætati sunt decernere Conceptionis festum ab omni ecclesia esse habendum eodem censu ac numero quo festum Nativitatis, idemque Conceptionis festum cum octava ab universa Ecclesia celebrandum, et ab omnibus inter ea quæ præcepta sunt, sancte colendum. Atque exoptantes in fidelium animis quotidie magis fovere hanc de Immaculata Deiparæ Conceptione doctrinam, eorumque pietatem excitare ad ipsam Virginem sine labe originali conceptam colendam et venerandam, gavisi sunt quam libentissime facultatem tribuere, ut in Lauretanis Litaniis, et in ipsa Missæ Præfatione Immaculatus ejusdem Virginis proclamaretur Conceptus, atque adeo lex credendi ipsa supplicandi lege statueretur.
+
+    Lætáre, pater Adam, sed magis tu, o Heva mater, exsúlta, qui sicut ómnium paréntes, ita ómnium fuístis peremptóres; et quod infelícius est, prius peremptóres quam paréntes. Ambo, inquam, consolámini super fília, et tali fília, sed illa ámplius de qua malum ortum est prius, cujus oppróbrium in omnes pertransívit mulíeres. Instat namque tempus, quo jam tollátur oppróbrium, nec hábeat vir quid causétur advérsus féminam: qui útique, dum se imprudénter excusáre conarétur, crudéliter illam accusáre non cunctátus est, dicens: Múlier quam dedísti mihi, dedit mihi de ligno, et comédi. Proptérea curre Heva ad Maríam; curre mater ad fíliam; fília pro matre respóndeat: ipsa matris oppróbrium áuferat; ipsa patri pro matre satisfáciat: quia ecce si vir cécidit per féminam, jam non erígitur nisi per féminam.
+
+    Quid dicébas, o Adam? Múlier quam dedísti mihi, dedit mihi de ligno, et comédi. Verba malítiæ sunt hæc quibus magis áugeas quam déleas culpam. Verúmtamen Sapiéntia vicit malítiam, cum occasiónem véniæ, quam a te Deus interrogándo elícere tentávit, sed non pótuit, in thesáuro indeficiéntis suæ pietátis invénit. Rédditur nempe fémina pro fémina, prudens pro fátua, húmilis pro supérba, quæ pro ligno mortis gustum tibi pórrigat vitæ, et pro venenóso cibo illo amaritúdinis, dulcédinem páriat fructus ætérni. Muta ergo iníquæ excusatiónis verbum in vocem gratiárum actiónis, et dic: Dómine, múlier, quam dedísti mihi, dedit mihi de ligno vitæ, et comédi; et dulce factum est super mel ori meo, quia in ipso vivificásti me. Ecce enim ad hoc missus est Angelus ad Vírginem. O admirándam et omni honóre digníssimam Vírginem; o féminam singuláriter venerándam, super omnes féminas admirábilem, paréntum reparatrícem, posterórum vivificatrícem.
+
+    Quam tibi áliam prædixísse Deus vidétur, quando ad serpéntem ait: Inimicítias ponam inter te et mulíerem? Et si adhuc dúbitas, quod de María díxerit, audi quod séquitur: Ipsa cónteret caput tuum. Cui hæc serváta victória est, nisi Maríæ? Ipsa procul dúbio caput contrívit venenátum, quæ omnimódam malígni suggestiónem tam de carnis illécebra, quam de mentis supérbia dedúxit ad níhilum.
+  responsory: |
+    R. Per unum hóminem peccátum in hunc mundum intrávit, in quo omnes peccavérunt. * Ne tímeas, María, invenísti grátiam apud Deum. V. Erípuit Dóminus ánimam tuam de morte, et contra inimícum factus est protéctor tuus. R. Ne tímeas, María, invenísti grátiam apud Deum.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Sancti/12-12bmv.txt), same reasoning as day 2 (see
+# immaculate-conception-octave-day-2.yml) -- not selected by the live
+# prayMatutinum query under "Monastic Tridentinum 1617," included anyway per
+# explicit user direction (2026-08). Matins reading for day 5 of the
+# Immaculate Conception's own octave -- collapsed into one continuous
+# reading per project convention, joining excerpts from Pope Pius IX's
+# dogmatic bull "Ineffabilis Deus" with a homily of St. Tarasius, Patriarch
+# of Constantinople, on the Presentation of the Mother of God. The source
+# file's own [Lectio94] (an unrelated inserted lesson on Our Lady of
+# Guadalupe, a much later, 1531 devotion) is deliberately omitted -- not
+# part of the Immaculate Conception's own continuous reading.
+# Responsory missing from this and this octave's other day-2/3/7/8 files --
+# the feast's own Responsory1 (Sancti/12-08.txt), reused across the
+# octave's combined-lesson readings the same way nativity-bvm's octave
+# does; 12-09bmv.txt's own "vide Sancti/12-08" rule confirms it has no
+# responsory of its own and inherits this one.
+octave-readings/~-octave-day-5:
+  source: Ex Bulla dogmatica Pii Papæ IX; Homilía sancti Tharásii Epíscopi
+  text: |
+    Quoniam quæ ad cultum pertinent, intimo plane vinculo cum ejusdem objecto conserta sunt, neque rata et fixa manere possunt, si illud anceps sit et in ambiguo versetur, idcirco decessores nostri Romani Pontifices omni cura Conceptionis cultum amplificantes illius etiam objectum ac doctrinam declarare, et inculcare impensissime studuerunt. Etenim clare aperteque docuere, festum agi de Virginis Conceptione, atque uti falsam et ab Ecclesiæ mente alienissimam proscripserunt illorum opinionem qui non Conceptionem ipsam, sed sanctificationem ab Ecclesia coli arbitrarentur et affirmarent.
+
+    Neque mitius cum iis agendum esse existimarunt, qui ad labefactandam de Immaculata Virginis Conceptione doctrinam excogitato inter primum atque alterum Conceptionis instans et momentum discrimine, asserebant, celebrari quidem Conceptionem sed non pro primo instanti atque momento. Ipsi namque prædecessores nostri suarum partium esse duxerunt, et beatissimæ Virginis Conceptionis festum, et Conceptionem pro primo instanti tamquam verum cultus objectum omni studio tueri ac propugnare.
+
+    Atque illud in primis solemne quoque fuit iisdem decessoribus nostris, doctrinam de Immaculata Dei Matris Conceptione sartam tectamque omni cura, studio et contentione tueri. Neque his contenti, ut ipsa de Immaculato Virginis Conceptu doctrina inviolata persisteret, opinionem huic doctrinæ adversam, sive publice, sive privatim, defendi posse severissime prohibuere, eamque multiplici veluti vulnere confectam esse voluerunt.
+
+    Quibus te laudibus cumulabimus, Maria? O puella immaculata; o virgo impolluta; mulierum ornamentum filiarum nitor! O mater Virgo sancta, tu benedicta inter mulieres; tu celebrata propter innocentiam; tu obsignata virginitate. Tu Adami maledicti expiatio; tu debiti Hevæ solutio. Tu Abelis purissima oblatio; primogenitorum delectus; immaculatum sacrificium. Tu Enos in Deum spes non pudore suffusa; tu Enoch inita gratia, et in securam vitam migratio. Tu Noë arca, et secundæ regenerationis apud Deum conciliatio. Tu regni et sacerdotii Melchisedech perillustris splendor; tu Abrahami firma fiducia et promissionis futuræ posteritatis obsequens fides.
+
+    Tu es prophetarum speculum, et rerum ab illis prænuntiatarum exitus. Te enixe Ezechiel vaticinans appellavit portam clausam, per quam nemo hominum umquam transibit nisi Dominus Deus solus, et portam clausam conservabit. Te Isaias ille in primis grandiloquus prænuntiat virgam Jesse, ex qua flos Christus orietur. Te Jeremias præmonstravit inquiens: Ecce dies venient, dicit Dominus, et feriam domui Israël et domui Judæ fœdus novum. Te étiam Daniel vir desideriorum proclamavit montem ingentem, e quo Christus lapis angularis abscindetur. Te honoro agnam immaculatam, te prædico gratia plenam, te cano Dei habitationem puram et immaculatam.
+
+    Nos autem populus Dei, gens sancta, congregatio acceptabilis, filii columbæ, soboles gratiæ in hac Virginis celebritate puris animis, impollutis labiis, multisonis linguis hymnos suavidicos extollamus. Ave delicium Patris, per quam ad ultimos terræ fines Dei cognitio manavit. Ave Filii domicilium, de qua ille carne indutus prodivit. Ave sancti Spiritus habitaculum ineffabile. Ave sanctior Cherubim; ave gloriosior Seraphim; ave cælo altior; ave sole splendidior; ave luna micantior. Ave causa salutis omnium mortalium; ave regina pacis conciliatrix; ave matrum splendor immaculatus. Ave gratia plena, Dominus tecum, qui ante te, et ex te, et nobiscum. Ipsi laus cum Patre et sanctissimo et vivifico Spiritu, nunc et semper, et in infinita sæcula sæculorum. Amen.
+  responsory: |
+    R. Per unum hóminem peccátum in hunc mundum intrávit, in quo omnes peccavérunt. * Ne tímeas, María, invenísti grátiam apud Deum. V. Erípuit Dóminus ánimam tuam de morte, et contra inimícum factus est protéctor tuus. R. Ne tímeas, María, invenísti grátiam apud Deum.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Sancti/12-14bmv.txt), same reasoning as day 2 (see
+# immaculate-conception-octave-day-2.yml) -- not selected by the live
+# prayMatutinum query under "Monastic Tridentinum 1617," included anyway per
+# explicit user direction (2026-08). Matins reading for day 7 of the
+# Immaculate Conception's own octave -- collapsed into one continuous
+# reading per project convention, joining excerpts from Pope Pius IX's
+# dogmatic bull "Ineffabilis Deus" with a second homily of St. Sophronius on
+# the Annunciation (distinct from day 2's own Sophronius excerpt -- a
+# different passage of the same homily). The source file's own Lectio1-3 (a
+# plain cross-reference to a generic Common formula) are omitted, same as
+# every other day's own Nocturn I.
+# Responsory missing from this and this octave's other day-2/3/5/8 files --
+# the feast's own Responsory1 (Sancti/12-08.txt), reused across the
+# octave's combined-lesson readings the same way nativity-bvm's octave
+# does; 12-09bmv.txt's own "vide Sancti/12-08" rule confirms it has no
+# responsory of its own and inherits this one.
+octave-readings/~-octave-day-7:
+  source: Ex Bulla dogmatica Pii Papæ IX; Homilía sancti Sophrónii Epíscopi
+  text: |
+    Omnes norunt quanto studio hæc de immaculáta Deiparæ Vírginis Conceptióne doctrina a spectatíssimis religiosis familiis et celebrióribus theologicis academíis, ac præstantíssimis divinárum rerum sciéntia doctóribus fúerit trádita, asserta ac propugnata. Omnes páriter norunt quantopere solliciti fúerint Sacrórum antistites vel in ipsis ecclesiásticis convéntibus palam publiceque profiteri, sanctíssimam Dei Genitricem Vírginem Mariam, ob prævisa Christi Dómini Redemptoris merita, numquam originali labe, et idcirco sublimiori modo redemptam. Quibus illud profecto gravíssimum et omnino maximum accedit, ipsam quoque Tridentinam synodum, cum dogmaticum de peccáto originali ederet decretum, státuit ac definívit: Omnes hómines nasci originali culpa infectos; tamen solemniter declarasse: Non esse suæ intentiónis, in decreto ipso tantáque definitiónis amplitúdine comprehéndere beátam et immaculátam Vírginem Dei Genitricem Mariam.
+
+    Et re quidem vera hanc de immaculáta beatíssimæ Vírginis Conceptióne doctrinam quotídie magis gravíssimo Ecclésiæ sensu, magisterio, studio, sciéntia ac sapiéntia tam splendide explicatam, declaratam, confírmatam, et apud omnes catholici orbis pópulos ac natiónes mirándum in modum propagatam, in ipsa Ecclésia semper exstitisse véluti a majóribus acceptam, ac revelátæ doctrinæ charactére insígnitam, illustria venerandæ antiquitátis Ecclésiæ orientalis et occidentalis monuménta validíssime testántur.
+
+    Quapropter enarrántes verba, quibus Deus præparáta renovandis mortálibus suæ pietátis remedia inter ipsa mundi primordia prænuntians; et deceptoris serpentis rétudit audaciam et nostri generis spem mirifice eréxit, inquiens, Inimicítias ponam inter te et mulierem, et semen tuum et semen illíus; docuére, divino hoc oraculo clare aperteque demonstrátum fuísse misericordem humani generis Redemptórem, scilicet unigénitum Dei Fílium Christum Jesum, ac designatam beatíssimam ejus Matrem Vírginem Mariam.
+
+    Vere benedicta tu in muliéribus, quóniam Hevæ maledictiónem in benedictiónem commutásti; quóniam Adam, qui prius jacebat exsecratióne perculsus, ut per te benedicerétur effecísti. Vere benedicta tu in muliéribus, quóniam benedíctio Patris per te affulsit homínibus, eosque a veteri maledicto liberávit. Vere benedicta tu in muliéribus, quia per te progenitores tui salútem invéniunt. Vere benedicta tu in muliéribus, quóniam sine semine eum protulísti fructum, qui benedictiónem terrárum orbi elargítur. Vere benedicta tu in muliéribus, quia mulier naturali conditióne cum sis, Dei tamen Génetrix reipsa fies.
+
+    Ne timeas Maria, invenísti enim apud Deum grátiam perire nesciam; invenísti apud Deum grátiam præ quálibet exímiam; invenísti apud Deum grátiam ómnibus votis expeténdam; invenísti apud Deum grátiam ómnium gratiárum splendidíssimam; invenísti apud Deum grátiam numquam elanguéntem. Et alii quidem iíque plures, ante te exímia sanctitáte floruérunt. Sed nemini, quemádmodum tibi, plena grátia impertita est: nemo sicut tu, ad tantum magnificéntiæ est evectus.
+
+    Et mérito quidem; nemo enim sicut tu, ad Deum tam prope accessit; nemo sicut tu, Dei donis ditátus est; nemo sicut tu, Dei gratiæ particeps fuit. Nemo sic in se Deum complecti pótuit; nemo pótuit sic frui Dei præséntia. Et proptérea tibi clamávi, atque íterum veheménter clamábo: Ave grátia plena; Dóminus tecum: benedicta tu in muliéribus.
+  responsory: |
+    R. Per unum hóminem peccátum in hunc mundum intrávit, in quo omnes peccavérunt. * Ne tímeas, María, invenísti grátiam apud Deum. V. Erípuit Dóminus ánimam tuam de morte, et contra inimícum factus est protéctor tuus. R. Ne tímeas, María, invenísti grátiam apud Deum.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Sancti/12-15.txt) -- day 8, "In Octava," the Immaculate Conception's own
+# octave closing day, same shape as days 2/3/5/7 (see those files' own
+# headers). Not selected by the live prayMatutinum query under "Monastic
+# Tridentinum 1617," included anyway per the same explicit user direction as
+# the other days in this octave (2026-08). Joins an excerpt from Pope Pius
+# IX's dogmatic bull "Ineffabilis Deus" (Lectio4-6 -- a different passage
+# than any other day in this octave) with a homily of St. Epiphanius of
+# Salamis on the Blessed Virgin (Lectio7-9, the bare Gospel incipit line
+# dropped). The source file's own Lectio1-3 (a plain cross-reference to the
+# feast day's own Nocturn I) are omitted, same as every other day's own
+# Nocturn I.
+# Responsory missing from this and this octave's other day-2/3/5/7 files --
+# the feast's own Responsory1 (Sancti/12-08.txt), reused across the
+# octave's combined-lesson readings the same way nativity-bvm's octave
+# does; 12-09bmv.txt's own "vide Sancti/12-08" rule confirms it has no
+# responsory of its own and inherits this one.
+octave-readings/~-octave-day-8:
+  source: Ex Bulla dogmatica Pii Papæ IX; Homilía sancti Epiphánii Epíscopi
+  text: |
+    Ab antíquis tempóribus Sacrórum antistites, ecclesiástici viri, regulares ordines ac vel ipsi imperatóres et reges ab hac apostolica Sede enixe efflagitarunt, ut immaculáta sanctíssimæ Dei Genitrícis Conceptio véluti catholicæ fidei dogma definirétur. Quæ postulatiónes hac nostra quoque ætate iterátæ fuérunt, ac potíssimum felicis recordatiónis Gregório décimo sexto prædecessori nostro, ac nobis ipsis oblátæ sunt tum ab epíscopis, tum a clero sæculari, tum a religiosis familiis, ac summis princípibus et fidelibus pópulis. Nos ítaque singulari animi nostri gáudio hæc ómnia probe noscéntes ac serio considerántes, vix dum, licet immeriti, arcano divinæ providéntiæ consílio ad hanc sublimem Petri Cáthedram evecti, totius Ecclésiæ gubernácula tractanda suscépimus, nihil certe antiquius habúimus, quam pro summa nostra vel a teneris annis erga sanctíssimam Dei Genitricem Vírginem Mariam veneratióne, pietáte et afféctu, ea ómnia perágere, quæ adhuc in Ecclésiæ votis esse poterant, ut beatíssimæ Vírginis honor augerétur, ejusque prærogativæ uberióri luce nitérent.
+
+    Itaque plurimum in Dómino confisi advenisse témporum opportunitátem pro immaculáta sanctíssimæ Dei Genitrícis Vírginis Maríæ Conceptióne definienda, quam divina elóquia, veneranda traditio, perpetuus Ecclésiæ sensus, singuláris catholicórum antístitum ac fidelium conspirátio, et insígnia prædecessórum nostrórum acta et constitutiónes mirifice illustrant atque declarant; rebus ómnibus diligentíssime perpénsis et assiduis fervidisque ad Deum precibus effúsis, minime cunctándum nobis esse censúimus, supremo nostro judício immaculátam ipsíus Vírginis Conceptiónem sancire, definire, atque ita pientíssimis catholici orbis desidériis, nostræque in ipsam sanctíssimam Vírginem pietáti satisfácere, ac simul in ipsa unigénitum Fílium suum Dóminum nostrum Jesum Christum magis atque magis honorificare, cum in Fílium redundet quidquid honoris et laudis in Matrem impénditur.
+
+    Quare postquam numquam intermísimus in humilitate et jejúnio privatas nostras et publicas Ecclésiæ preces Deo Patri per Fílium ejus offerre, ut Spíritus Sancti virtúte mentem nostram dirigere et confírmare dignarétur, implorato univérsæ cæléstis curiæ præsidio, et advocato cum gemítibus Paraclito Spiritu, eoque sic aspirante; ad honórem sanctæ et indivíduæ Trinitátis, ad decus et ornaméntum Vírginis Deiparæ, ad exaltatiónem fidei catholicæ et christianæ religiónis augméntum, auctoritate Dómini nostri Jesu Christi, beatórum Apostolórum Petri et Pauli, ac nostra, declaramus, pronuntiámus et definímus: Doctrinam quæ tenet beatíssimam Vírginem Mariam in primo instanti suæ Conceptiónis fuísse singulari omnipoténtis Dei grátia et privilegio, intuitu meritórum Christi Jesu Salvatoris humani generis, ab omni originalis culpæ labe præservatam immunem, esse a Deo revelátum, atque idcirco ab ómnibus fidelibus firmiter constanterque credéndam. Quapropter si qui secus ac a nobis definítum est, quod Deus avértat, præsumpserint corde sentire, ii nóverint ac porro sciant se proprio judício condemnatos, naufragium circa fidem passos esse, et ab unitate Ecclésiæ defecisse.
+
+    Quid dicam, aut quid próloquar de præclára et sancta Vírgine? Solo enim Deo excepto, cunctis superior éxstitit: natúra formosior est ipsis Chérubim et Séraphim, et omni exercitu Angelico: cui prædicandæ cæléstis ac terrena lingua minime sufficit, immo vero nec Angelórum. O beáta Virgo, columba pura et sponsa cæléstis, Maria, cælum, templum, et thronus divinitátis, quæ coruscántem in cælo et in terra solem habes Christum! Nubes lucida, quæ fulgur de cælo lucidíssimum ad illuminándum mundum deduxísti Christum. Ave, grátia plena, porta cælórum, de qua in Canticis prophéta in decursu oratiónis plane et aperte prolóquitur inclámans: Hortus conclusus soror mea sponsa, hortus conclusus, fons signátus.
+
+    Virgo est lílium immaculátum, quæ rosam immarcescíbilem génuit Christum. O sancta Deipara, ovis immaculáta quæ Verbum ex te incarnátum Agnum Christum peperisti! O Virgo sanctíssima, quæ exercitus Angelórum in stupórem dedúxisti! Stupéndum est miraculum in cælis, mulier amícta sole, gestans lucem in ulnis: stupéndum miraculum in cælis, thálamus Vírginis habens Fílium Dei: stupéndum miraculum in cælis, Dóminus Angelórum infans Vírginis effectus est. Angeli accusábant Hevam, nunc vero Mariam glória prosequúntur, quæ lapsam Hevam eréxit, et Adámum e paradiso dejectum in cælos misit. Ipsa enim est cæli et terræ mediatrix, quæ uniónem naturáliter peregit.
+
+    Gratia sanctæ Vírginis est immensa. Hinc Gabriel in primis salutat Vírginem, dicens: Ave, grátia plena, quæ es splendidum cælum. Ave, grátia plena, multis virtútibus exornáta Virgo. Ave, grátia plena, quæ es urna aurea cóntinens manna cæleste. Ave, grátia plena, quæ sitiéntes perennis fontis dulcédine satias. Ave, sanctíssima Mater immaculáta, quæ genuísti Christum, qui est ante te. Ave, púrpura regia, quæ cæli terræque Regem induísti. Ave, liber incomprehénsus, quæ Verbum et Fílium Patris mundo legéndum exhibuisti.
+  responsory: |
+    R. Per unum hóminem peccátum in hunc mundum intrávit, in quo omnes peccavérunt. * Ne tímeas, María, invenísti grátiam apud Deum. V. Erípuit Dóminus ánimam tuam de morte, et contra inimícum factus est protéctor tuus. R. Ne tímeas, María, invenísti grátiam apud Deum.
+  status: verified

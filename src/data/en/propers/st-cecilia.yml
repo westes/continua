@@ -1,0 +1,90 @@
+collect:
+  text: |
+    Let us pray.
+    O God, Who year by year dost gladden thy people by the solemn feast of thy blessed Virgin and Martyr Cecilia, grant unto us, we beseech thee, not only devoutly to observe the same, but also to follow after the pattern of her godly conversation.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+commemoration:
+  text: |
+    Ant. As dawn was fading * into day, Cecilia cried and said: Arise, O soldiers of Christ, cast away the works of darkness, and put on the armour of light.
+    V. Grace is poured into thy lips.
+    R. Therefore God hath blessed thee for ever.
+    Let us pray.
+    O God, Who year by year dost gladden thy people by the solemn feast of thy blessed Virgin and Martyr Cecilia, grant unto us, we beseech thee, not only devoutly to observe the same, but also to follow after the pattern of her godly conversation.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+prime-antiphon:
+  text: 'The musicians played, and Cecilia sang unto the Lord, * saying: Let my heart be undefiled, that I be not ashamed.'
+  status: verified
+
+terce-antiphon:
+  text: Valerian found Cecilia praying in her chamber, * and with her the Angel.
+  status: verified
+
+sext-antiphon:
+  text: Busy like a bee, * O Lord, did thine handmaiden Cecilia serve thee.
+  status: verified
+
+none-antiphon:
+  text: I have asked the Lord for three days, * that I may consecrate my house as a Church.
+  status: verified
+
+benedictus-antiphon:
+  text: 'As dawn was fading * into day, Cecilia cried and said: Arise, O soldiers of Christ, cast away the works of darkness, and put on the armour of light.'
+  status: verified
+
+magnificat-antiphon:
+  text: The glorious maiden * carried the Gospel of Christ always in her breast, and meditated therein day and night talking with God and praying.
+  status: verified
+
+magnificat-antiphon/~-first:
+  text: Valerian! there is a secret * which I wish to tell thee. I have an Angel of God for a lover, and he is very jealous to keep my body.
+  status: verified
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'The musicians played, and Cecilia sang unto the Lord, * saying: Let my heart be undefiled, that I be not ashamed.'
+    - psalms:
+        - 112
+      antiphon: Valerian found Cecilia praying in her chamber, * and with her the Angel.
+    - psalms:
+        - 121
+      antiphon: Busy like a bee, * O Lord, did thine handmaiden Cecilia serve thee.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: I bless thee, O Father of my Lord Jesus Christ, * that through thy Son the fire is gone out round about me.
+  laudate:
+    antiphon: I have asked the Lord for three days, * that I may consecrate my house as a Church.
+
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'The musicians played, and Cecilia sang unto the Lord, * saying: Let my heart be undefiled, that I be not ashamed.'
+    - psalms:
+        - 112
+      antiphon: Valerian found Cecilia praying in her chamber, * and with her the Angel.
+    - psalms:
+        - 121
+      antiphon: Busy like a bee, * O Lord, did thine handmaiden Cecilia serve thee.
+    - psalms:
+        - 126
+      antiphon: I bless thee, O Father of my Lord Jesus Christ, * that through thy Son the fire is gone out round about me.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Cecilia was a Roman maiden of noble birth, trained up from her earliest years in the teaching of the Christian faith, and who by vow consecrated her virginity to God. She was afterwards given in marriage, against her will, to Valerian. On the first night she said to him: Valerian! I am under the wardship of an Angel, who keepeth me always a maiden. Therefore do nothing unto me, lest the anger of God should be aroused against thee. Valerian was moved at her words, and dared not to touch her. Also he added even this, that he would believe in Christ, if he could see the Angel. Cecilia answered him that that could not be unless he were first baptized, and for the sake of seeing the Angel he was willing. So she bade him go unto Pope Urban, who was hiding in the sepulchre of the Martyrs on the Appian Way on account of the persecution. And he went unto him and was baptized.
+
+        Whence he came back to Cecilia, and found her praying, and the Angel with her, shining from the glory of God. As soon as he had recovered from the shock of wonder and fear, he brought his brother Tiburtius, and Cecilia taught him Christ, and he was baptized by the same Pope Urban, and he also was vouchsafed to see the Angel whom his brother had seen. A little while after, both of them bravely suffered martyrdom under the Praefect Almachius, who then caused Cecilia to be taken, and asked of her, first of all, where was the property of Tiburtius and Valerian?
+
+        To him the Virgin answered that all their goods had been given to the poor. Thereupon he was filled with fury, and commanded her to be taken home, and burnt in the bath. She was in that place a day and a night, but the fire had not harmed her. Then was sent the executioner, who gave her three strokes of the axe, and, as he could not cut off her head, left her half-dead. Three days thereafter, in the reign of the Emperor Alexander Severus, she winged her flight for heaven, glorified with the two palms of virginity and martyrdom. Her body was buried in the cemetery of Callistus by the aforenamed Pope Urban, who also consecrated a Church in her name in her own house. Her relics were brought into the city by Pope Paschal I, along with those of Tiburtius, Valerian, and Maximus, and all laid together in the said Church of St Cecilia.
+      status: verified

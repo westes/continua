@@ -1,0 +1,315 @@
+# Read directly from web/www/horas/Latin/Sancti/10-03.txt's own
+# [Oratio] and its English counterpart. Doxology "$Qui vivis" spelled
+# out per the convention in st-bibiana-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Dómine, qui dixísti: Nisi efficiámini sicut párvuli, non intrábitis in
+    regnum cælórum: da nobis, quǽsumus: ita sanctæ Terésiæ Vírginis in
+    humilitáte et simplicitáte cordis vestígia sectári, ut prǽmia
+    consequámur ætérna.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: verified
+
+# Her own [Ant 2] and [Versum 2] (web/www/horas/Latin/SanctiM/10-03b.txt),
+# the tags used for a mere commemoration, followed by her own collect
+# (st-therese-of-lisieux-collect.yml, unchanged). Updated 2026-10-07: this
+# previously reused common-of-a-virgin's antiphon/versicle because only
+# Sancti/10-03.txt (a bare `vide C6a`) had been read; SanctiM/10-03b.txt
+# carries her full proper office. English antiphon/versicle are direct
+# translations (the source has none), so the English is draft.
+commemoration:
+  text: |
+    Ant. Requiem tibi dabit * Dóminus semper, et implébit splendóribus ánimam tuam; et eris quasi hortus irríguus, et sicut fons aquárum, cujus non defícient aquæ.
+    V. Erit tibi Dóminus in lucem sempitérnam.
+    R. Et Deus tuus in glóriam tuam.
+    Orémus.
+    Dómine, qui dixísti: Nisi efficiámini sicut párvuli, non intrábitis in
+    regnum cælórum: da nobis, quǽsumus: ita sanctæ Terésiæ Vírginis in
+    humilitáte et simplicitáte cordis vestígia sectári, ut prǽmia
+    consequámur ætérna.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: verified
+
+# web/www/horas/Latin/SanctiM/10-03b.txt's [Capitulum Laudes]. Vespers reuses it (hours/vespers.ts's lookupPart (Vespers chapter, Lauds sibling)). The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+lauds-capitulum:
+  text: 'Hæc dicit Dóminus: Ecce ego declinábo super eam quasi flúvium pacis, et quasi torréntem inundántem glóriam géntium, quam sugétis: ad úbera portabímini, et super génua blandiéntur vobis.'
+  citation: Is 66:12
+  status: verified
+
+# web/www/horas/Latin/SanctiM/10-03b.txt's [Hymnus Laudes] ("Imménsa Christi cáritas"). The source's bracketed gender/number markers are resolved ("Apostoló[rum]" -> "Apostolórum", "Terési[a] ad Christ[um]" -> "Terésia ad Christum") and three plain typos corrected ("corána Víginem" -> "coróna Vírginem", "saécula" -> "sǽcula"). The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+lauds-hymn:
+  text: |
+    Imménsa Christi cáritas
+    Majóra cogit ággredi
+    Apostolórum et Mártyrum
+    Auctam coróna Vírginem.
+
+    Optans amóris víctima
+    Ex igne adúri mýstico,
+    Sponsum precátur últimas
+    Flammas vorántes éxcitet.
+
+    Æternitátis núntia
+    Optáta mors jam pérvenit:
+    Hæc íngemens: Te díligo!
+    Terésia ad Christum émigrat.
+
+    Cæléstibus nunc gáudiis
+    Fruens, ab arce síderum,
+    Quas lárgiter promíseras,
+    Rosas meménto spárgere.
+
+    Tu corde Rex mitíssime,
+    Qui párvulis regnum paras,
+    Nos hanc secútos ingredi
+    Præsta beáta límina.
+
+    Laus, honor, virtus, glória
+    Deo Patri et Filio,
+    Sancto simul Paráclito
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# web/www/horas/Latin/SanctiM/10-03b.txt's [Responsory Laudes]. The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+lauds-responsory:
+  text: |
+    R.br. Exsultábo et lætábor, Dómine, * In misericórdia tua.
+    R. Exsultábo et lætábor, Dómine, * In misericórdia tua.
+    V. Quóniam respéxit humilitátem meam.
+    R. In misericórdia tua.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Exsultábo et lætábor, Dómine, * In misericórdia tua.
+  status: verified
+
+# web/www/horas/Latin/SanctiM/10-03b.txt's [Versum 2]. The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+lauds-versicle:
+  text: |
+    V. Erit tibi Dóminus in lucem sempitérnam.
+    R. Et Deus tuus in glóriam tuam.
+  status: verified
+
+# web/www/horas/Latin/SanctiM/10-03b.txt's [Capitulum Laudes (Terce reuses the Lauds chapter)] with the matching minor-hour versicle from SanctiM's [Responsory TertiaM]. The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+terce-capitulum:
+  text: |
+    Hæc dicit Dóminus: Ecce ego declinábo super eam quasi flúvium pacis, et quasi torréntem inundántem glóriam géntium, quam sugétis: ad úbera portabímini, et super génua blandiéntur vobis.
+    R. Deo grátias.
+    V. Exsultábo et lætábor, Dómine, in misericórdia tua.
+    R. Quóniam respéxit humilitátem meam.
+  citation: Is 66:12
+  status: verified
+
+# web/www/horas/Latin/SanctiM/10-03b.txt's [Capitulum Sexta] with the matching minor-hour versicle from SanctiM's [Responsory SextaM]. The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+sext-capitulum:
+  text: |
+    Quómodo si cui mater blandiátur, ita ego consolábor vos, et in Jerúsalem consolabímini.
+    R. Deo grátias.
+    V. Anima mea, exsultábit in Dómino.
+    R. Et delectábitur super salutári suo.
+  citation: Is 66:13
+  status: verified
+
+# web/www/horas/Latin/SanctiM/10-03b.txt's [Capitulum Nona] with the matching minor-hour versicle from SanctiM's [Responsory NonaM]. The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+none-capitulum:
+  text: |
+    Vidébitis, et gaudébit cor vestrum, et ossa vestra quasi herba germinábunt et cognoscétur manus Dómini servis ejus, et indignábitur inimícis suis.
+    R. Deo grátias.
+    V. Laudáte Dóminum, quia bonus Dóminus.
+    R. Psállite nómini ejus, quoniam suáve.
+  citation: Is 66:14
+  status: verified
+
+# Second Vespers hymn (also the default): web/www/horas/Latin/SanctiM/10-03b.txt's [Hymnus Vespera 3] ("Luce divína rutilántis aulæ"). First Vespers' is vespers-hymn-st-therese-of-lisieux-first.yml. The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+vespers-hymn:
+  text: |
+    Luce divína rutilántis aulæ
+    Sédibus, virgo, frúeris, secúndans
+    Vota, promísso réfoves precántes
+    Imbre rosárum.
+
+    Sint rosæ nobis fídei supérnæ
+    Lumen affúlgens, columénque rebus
+    Spes in advérsis, et amóris almi
+    Vívida virtus.
+
+    Sint rosæ nobis tuus ille fidens
+    Candor infántis Dómino, patérno
+    Grata qui præbet vel acérba nostræ
+    Númine vitæ.
+
+    Præstet hoc nobis Déitas beáta
+    Patris, ac Nati paritérque Sancti
+    Spíritus, cujus réboat in omni
+    Glória mundo.
+    Amen.
+  status: verified
+
+# First Vespers hymn: web/www/horas/Latin/SanctiM/10-03b.txt's [Hymnus Vespera] ("Nomen decúsque cóncinant"; its `Terési[a]` is the source's gender-variable marker, resolved to "Terésia"). The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+vespers-hymn/~-first:
+  text: |
+    Nomen decúsque cóncinant
+    Terésiæ almæ vírginis
+    Qui sancta divi párvuli
+    Credunt amántque múnera.
+
+    Carméli summos vértices
+    Patróna Mater déligit:
+    Terésia illuc ádvolat,
+    Sponsi premens vestígia.
+
+    Affláta Jesu númine,
+    Secréta pandit grátiæ;
+    Magístra mundo símplices
+    Infántium docet vias.
+
+    Virtútis ipsa flósculos
+    Olent sacráta límina,
+    Quæ casta vir ut ángelus
+    immíssus e cælo, colit.
+
+    At júbilum non éxprimit
+    Omnes amóris ímpetus;
+    Nec septa magnos cláudere
+    Ejus valent anhélitus.
+
+    Jesu, tibi sit glória,
+    Qui te revélas párvulis,
+    Cum Patre et almo Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# web/www/horas/Latin/SanctiM/10-03b.txt's [Responsory Vespera]. The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+vespers-responsory:
+  text: |
+    R.br. Anima mea * Exsultábit in Dómino.
+    R. Anima mea * Exsultábit in Dómino.
+    V. Et delectábitur super salutári suo.
+    R. Exsultábit in Dómino.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Anima mea * Exsultábit in Dómino.
+  status: verified
+
+# Second Vespers versicle (also the default): web/www/horas/Latin/SanctiM/10-03b.txt's [Versum 3]. First Vespers' [Versum 1] is vespers-versicle-st-therese-of-lisieux-first.yml. The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+vespers-versicle:
+  text: |
+    V. Manus Dómini confortávit te.
+    R. Et ídeo eris benedícta in ætérnum.
+  status: verified
+
+# First Vespers versicle: web/www/horas/Latin/SanctiM/10-03b.txt's [Versum 1]. The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+vespers-versicle/~-first:
+  text: |
+    V. Ego autem in Dómino gaudébo.
+    R. Et exsultábo in Deo Jesu meo.
+  status: verified
+
+# Lauds' Benedictus antiphon: web/www/horas/Latin/SanctiM/10-03b.txt's [Ant 2]. The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+benedictus-antiphon:
+  text: Requiem tibi dabit * Dóminus semper, et implébit splendóribus ánimam tuam; et eris quasi hortus irríguus, et sicut fons aquárum, cujus non defícient aquæ.
+  status: verified
+
+# Second Vespers Magnificat antiphon (also the default): web/www/horas/Latin/SanctiM/10-03b.txt's [Ant 3]. First Vespers' [Ant 1] is st-therese-of-lisieux-magnificat-antiphon-first.yml (see hours/resolve-common.ts's withVespersVariant). The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+magnificat-antiphon:
+  text: Benedíctus Dóminus, * quia hódie nomen tuum ita magnificávit, ut non recédat laus tua de ore hóminum, qui mémores fúerint virtútis Dómini in ætérnum.
+  status: verified
+
+# First Vespers Magnificat antiphon: web/www/horas/Latin/SanctiM/10-03b.txt's [Ant 1]. The reference source has no English for any of this feast's SanctiM-only proper office (English/SanctiM/10-03b.txt carries only the [Lectio7]/[Lectio8]/[Lectio11]/[Lectio12] overrides), so every English line here is a direct translation of the Latin, marked draft.
+magnificat-antiphon/~-first:
+  text: Ego Dóminus * sponsábo te mihi in sempitérnum; et sponsábo te mihi in iustítia et iudício, et in misericórdia et miseratiónibus; et sponsábo te mihi in fide.
+  status: verified
+
+# Sourced from web/www/horas/Latin/SanctiM/10-03b.txt's own [Ant Laudes]
+# (5 antiphons: the three psalm slots, the canticle, the Laudate group).
+# Below duplex-majus, so hours/lauds.ts's
+# mergeFerialNumbersWithProperAntiphons only takes this file's antiphon text,
+# not its psalm numbers -- the numbers below are the standard 92/99/62
+# scheme, not independently confirmed for this feast (no functional effect
+# at this rank). The reference source has no English for this feast's
+# SanctiM-only office, so each English line is a direct translation of the
+# Latin. (Draft status is not representable on a Lauds override group; the
+# standalone files for the same feast mark it, e.g. st-therese-of-
+# lisieux-antiphon.yml.)
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Benedícta tu * a Deo tuo, quóniam in omni gente, quæ audíerit nomen tuum, magnificábitur super te Deus Israël.
+    - psalms:
+        - 99
+      antiphon: Dominus elégit te, * ut sis ei, et fáciat te in laudem, et nomen, et glóriam suam.
+    - psalms:
+        - 62
+      antiphon: Eris coróna glóriæ * in manu Dómini, et diadéma regni in manu Dei tui, quia complácuit Dómino in te.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Dominus fáciet et tecum * misericórdiam et veritátem, quia ostendísti grátiam et fidem.
+  laudate:
+    antiphon: Erúmpet quasi mane * lumen tuum, et anteíbit fáciem tuam justítia tua, et glória Dómini cólliget te.
+
+# SanctiM/10-03b.txt's [Ant Vespera] is `@:Ant Laudes` with `s/$/_/gm s/_/;;109/
+# s/_/;;112/ s/_/;;121/ s/_/;;126/ s/_//`, i.e. its own Lauds antiphons 1-4
+# tagged Ps 109/112/121/126 (the fifth, "Erúmpet quasi mane", is the
+# Laudate antiphon and gets no Vespers psalm). There is no [Ant Vespera 3],
+# so First and Second Vespers share this set. Below duplex-majus, so only
+# the antiphon text applies (hours/vespers.ts's
+# mergeFerialNumbersWithProperAntiphons); the source has no English for this
+# feast, so each English line is a direct translation of the Latin.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Benedícta tu * a Deo tuo, quóniam in omni gente, quæ audíerit nomen tuum, magnificábitur super te Deus Israël.
+    - psalms:
+        - 112
+      antiphon: Dominus elégit te, * ut sis ei, et fáciat te in laudem, et nomen, et glóriam suam.
+    - psalms:
+        - 121
+      antiphon: Eris coróna glóriæ * in manu Dómini, et diadéma regni in manu Dei tui, quia complácuit Dómino in te.
+    - psalms:
+        - 126
+      antiphon: Dominus fáciet et tecum * misericórdiam et veritátem, quia ostendísti grátiam et fidem.
+
+# Matins Nocturn 2-3 readings for St. Thérèse of the Child Jesus,
+# Virgin (Oct 3). Sourced directly from
+# web/www/horas/Latin/Sancti/10-03.txt, English/Sancti/10-03.txt.
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
+# Nocturn 3: Lectio7's Gospel citation (Matt 18:1-4, the little child
+# set in the disciples' midst) is a bare "Et réliqua" incipit in the
+# horas file -- the same pericope this day's own Mass proper carries in
+# full (missa/Latin+English/Sancti/10-03.txt's [Evangelium]), sourced
+# from there and added 2026-09-05 (isGospel: true) immediately before
+# the homily (Lectio7-9, Pope St. Leo the Great -- itself an unusual
+# reuse of a Sermon originally preached for Epiphany, but on this same
+# Matt 18:1-4 text, so it pairs correctly here).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Terésia a Jesu Infante, Alensonii in Gállia, honestis paréntibus, singulari et assidua erga Deum pietáte conspicuis, orta est. Inde a prima ætate, divino Spíritu prævénta, religiosam vitam ágere cupiebat. Serio autem promisit, se nihil Deo denegatúram, quod ipse ab ea petere viderétur: quam promissiónem fideliter usque ad mortem servare satégit. Quinto ætátis anno, matre amissa, Dei providéntiæ se totam commisit sub vigilanti custódia amantíssimi patris, sororúmque natu majórum: quibus magistris, Teresia ad curréndam perfectiónis viam ut gigas exsultávit. Novennis virgínibus ex Ordine sancti Benedicti Lexoviis excolenda traditur, ibique in rerum divinárum cognitióne excellere visa est. Décimo ætátis anno, arcanus et gravis morbus eam diu cruciávit, a quo prout ipsa enárrat, ope Beatíssimæ Vírginis, quæ eídem subrídens appáruit, et quam, sub titulo Dominæ nostræ a Victoria, per novendialia invocare studuit, divinitus fuit liberata. Tunc, angelico fervore repléta, ad sacrum convivium, in quo Christus sumitur, se diligentíssime præparáre curávit.
+
+        Ut prímitus eucharistico pane fuit refecta, insatiábilem cæléstis hujus cibi famem haurire visa est: unde velut inspirata, Jesum rogabat, ut omnem mundanam consolatiónem in amaritúdinem sibi verteret. Inde tenerrimo in Christum Dóminum et in Ecclésiam amóre exæstuans, nihil antiquius hábuit, quam Carmelitárum Excalceatórum Ordinem íngredi, ut sui abnegatióne, suisque sacrifíciis, sacerdótibus, missionariis, totique Ecclésiæ opem afferret, et innumeras ánimas Jesu Christo lucrifáceret: quod jam morti próxima, apud Deum se factúram pollícita est. Propter ætátis defectum, multas ad religiosam vitam amplecténdam nacta est difficultates, quibus tamen incredibili animi fortitúdine superatis, quindecim annos nata, Lexoviensem Carmelum feliciter ingressa est. Ibi mirábiles Deus in Teresiæ corde ascensiónes dispósuit, quæ, Maríæ Vírginis vitam abscónditam imitata, quasi hortus irriguus, flores ómnium virtútum germinávit, præcipue vero exímiæ in Deum et in próximum caritátis.
+
+        Quo magis Altíssimo placéret, quum in Sacris Scripturis mónitum illud legísset: Si quis est párvulus véniat ad me; párvula in spíritu esse vóluit, et inde filiali fiducia Deo, tamquam Patri amantíssimo, se perpetuo trádidit. Hanc, spiritualis infantiæ viam, secúndum Evangélii doctrinam, alios docuit, speciatim novítias, quas ex obediéntia ad religiosárum virtútum studium informandas suscépit, atque ita apostolico zelo repléta, mundo, supérbia inflato et vanitátes diligenti, evangelicæ simplicitátis iter patefécit. Sponsus autem Jesus eam patiéndi desidério, tam in anima, quam in corpore, pénitus inflammávit. Insuper Dei caritátem undequáque neglectam animadvertens, summo dolóre affecta, duobus ante óbitum annis, Dei miserentis amori se víctimam óbtulit. Tunc, ut ipsa refert, cæléstis ignis flamma vulneráta est: unde caritate consumpta, in écstasim rapta, ferventíssime ingéminans: Deus meus, te diligo; viginti quatuor annos nata, die trigesima Septembris, anno millesimo octingentésimo nonagesimo septimo, ad Sponsum evolávit. Quod autem móriens promiserat, se perennem rosárum plúviam in terram demissuram, hoc in cælum recepta, innumeris miraculis reapse adimplévit et in dies adimplet. Quam Pius undecimus, Pontifex maximus, Beátis Virgínibus adscriptam, et biennio post, jubilæo máximo recurrente, inter Sanctas relatam, peculiarem ómnium Missiónum Patronam constítuit ac declarávit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 18:1-4
+      text: 'In illo témpore accessérunt discípuli ad Jesum, dicéntes: Quis, putas, major est in regno cælórum? Et advocans Jesus párvulum, státuit eum in médio eórum, et dixit: Amen, dico vobis, nisi convérsi fuéritis, et efficiámini sicut párvuli, non intrábitis in regnum cœlorum. Quicúmque ergo humiliáverit se sicut párvulus iste, hic est major in regno cœlórum.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Leo the Great, Sermon 37, on Epiphany, ch. 3-4
+      text: |-
+        Tota, dilectíssimi, christianæ sapiéntiæ disciplína, non in abundántia verbi, non in astutia disputándi, neque in appetitu laudis et glóriæ, sed in vera et voluntária humilitate consistit, quam Dóminus Jesus Christus ab útero Matris usque ad supplícium Crucis pro omni fortitúdine et elégit et docuit. Nam, cum discípuli ejus inter se, ut ait Evangelista, disquírerent quis eórum major esset in regno cælórum, vocávit párvulum, et státuit eum in médio eórum, et dixit: Amen, dico vobis, nisi convérsi fuéritis et efficiámini sicut párvuli, non intrabitis in regnum cælórum. Quicúmque ergo humiliaverit se sicut puer iste, hic major erit in regno cælórum. Amat Christus infantiam, quam primum et animo suscépit et corpore. Amat Christus infantiam, humilitátis magistram, innocéntiæ regulam, mansuetúdinis formam. Amat Christus infantiam, ad quam majórum dirigit mores, ad quam senum redúcit ætates; et eos ad suum inclínat exemplum, quos ad regnum sublimat ætérnum.
+
+        Ut autem plene valeámus agnóscere quómodo apprehéndi possit tam mira conversio et in puerílem gradum qua nobis mutatióne redeundum sit, doceat nos beátus Paulus et dicat: Nolíte púeri effici sensibus, sed malítia párvuli estote. Non ergo ad lúdicra infantiæ et imperfécta nobis primordia reverténdum est, sed aliquid, quod étiam graves annos déceat, inde suméndum, ut velox sit commótium tránsitus, citus ad pacem recursus: nulla sit memória offensiónis, nulla cupiditas dignitátis; amor sociæ communiónis, æqualitas naturalis. Magnum enim bonum est nocére non nosse et maligna non sápere; quia inférre ac referre injúriam, mundi hujus prudéntia est; némini autem malum pro malo reddere, christianæ est æquanimitátis infantia.
+
+        Ad hanc vos, dilectíssimi, similtúdinem parvulórum mystérium hodiérnæ festivitátis invitat; et hanc vobis humilitátis formam adorátus a Magis puer Salvátor insinuat: qui, ut imitatóribus suis quid glóriæ paráret, osténderet, ortus sui témpore éditos martyrio consecrávit; ut in Bethlehem, ubi Christus natus est, geniti, per communiónem ætátis consortes fíerent passiónis. Amétur ígitur humilitas, et omnis a fidelibus vitétur elátio. Alter álterum sibi præferat, et nemo quod suum est quærat, sed quod alterius; ut, cum in ómnibus abundaverit afféctus benevoléntiæ, in nullo virus inveniátur invidiæ: quóniam qui se exáltat humiliábitur, et qui se humíliat exaltábitur.
+      status: verified

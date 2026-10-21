@@ -1,0 +1,50 @@
+# Read directly from web/www/horas/Latin/Sancti/07-03.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátum Leónem Pontíficem sanctórum tuórum méritis coæquásti: concéde
+    propítius; ut, qui commemoratiónis ejus festa percólimus, vitæ quoque imitémur
+    exémpla.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-leo-ii-antiphon.yml), paired with the standard de-Communi commemoration versicle for common-of-a-confessor-pope (C4b) (not yet independently live-verified for this specific category, marked draft). Collect is the saint's own real proper (st-leo-ii-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui beátum Leónem Pontíficem sanctórum tuórum méritis coæquásti: concéde
+    propítius; ut, qui commemoratiónis ejus festa percólimus, vitæ quoque imitémur
+    exémpla.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Leo II's own day (2027-06-28). The Benedictus antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Leo II, Pope and Confessor (July 3).
+# Sourced directly from web/www/horas/Latin/Sancti/07-03.txt,
+# English/Sancti/07-03.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in his own file (his `[Rule]` is `vide
+# C4b`) -- defers to the Common's own Nocturn 3, not transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Leo secúndus, Póntifex máximus, Sículus, humánis et divínis lítteris Græce et Latíne doctus, músicis étiam erudítus fuit; ipse enim sacros Hymnos et Psalmos in Ecclésia ad concéntum meliórem redúxit. Probávit acta sextæ Synodi, quæ Constantinópoli celebráta est, præsidéntibus legátis apostólicæ Sedis, præsénte quoque Constantíno imperatóre, et duobus patriárchis, Constantinopolitáno et Antiochéno, ac centum septuagínta epíscopis; quam et in Latínum tránstulit.
+
+        In eo concílio Cyrus, Sergius et Pyrrhus condemnáti sunt, unam tantúmmodo voluntátem et operatiónem in Christo prædicántes. Hic fregit supérbiam antístitum Ravennátum, qui, exarchórum freti poténtia, Sedi apostólicæ non obtemperábant. Quam ob rem decrévit ut eléctio cleri Ravennátis írrita esset, nisi Románi Pontíficis auctoritáte comprobarétur.
+
+        Vere pater páuperum fuit; non enim pecúnia solum, sed opera, labóre et consíliis, egéntium viduárum et pupillórum inópiam ac solitúdinem sublevábat. Qui, dum síngulos non magis prædicatióne quam vita ad pie sanctéque vivéndum adhortarétur, obdormívit in Dómino mense sui pontificátus undécimo, quinto Nonas Julii, anno sexcentésimo octogésimo tertio, sepultúsque est in basilica sancti Petri. Ordinatióne una, mense Junio, creávit presbýteros novem, diáconos tres, epíscopos divérsis in locis vigínti tres.
+      status: verified

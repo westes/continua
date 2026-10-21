@@ -1,0 +1,50 @@
+# web/www/horas/Latin/SanctiM/04-29M.txt's own [Oratio] -- verified Latin.
+# No English exists in the source for this file at all; the translation
+# below is this project's own, marked draft.
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos Sanctórum tuórum et solemnitáte lætíficas, et imitatióne súscitas ad proféctum:
+    præsta; ut quos venerámur offício, étiam piæ conversatiónis sequámur exémplo.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle, same combined-bundle shape as
+# st-canute-commemoration.yml. Ant is the source's own Lauds [Ant 2]
+# ("Fulgébunt justi...", a stock Wisdom 3:7 text also used elsewhere as a
+# Common-of-several-Confessors antiphon, not unique to this file but still
+# this file's own real choice, not a substitution). V/R is the source's
+# own [Versum 3] cross-reference target, Commune/C1p's [Versum 2]
+# ("Pretiósa in conspéctu Dómini..."), which does have a real English
+# counterpart in the source (English/Commune/C1p.txt). The antiphon's
+# English is this project's own translation (draft) -- no English exists
+# for SanctiM/04-29M.txt itself; the collect is ss-odo-maiolus-odilo-and-
+# hugh-of-cluny-collect.yml, also draft in English for the same reason.
+commemoration:
+  text: |
+    Ant. Fulgébunt justi, * et tamquam scintíllæ in arundinéto discúrrent, judicábunt natiónes, et regnábunt in ætérnum, allelúia.
+    V. Pretiósa in conspéctu Dómini, allelúia.
+    R. Mors Sanctórum ejus, allelúia.
+    Orémus.
+    Deus, qui nos Sanctórum tuórum et solemnitáte lætíficas, et imitatióne súscitas ad proféctum: præsta; ut quos venerámur offício, étiam piæ conversatiónis sequámur exémplo.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Odo, Maiolus, Odilo, and Hugh, Abbots of
+# Cluny (Apr 29). Sourced from web/www/horas/Latin/SanctiM/04-29M.txt's
+# only lesson, [Lectio4] -- an excerpt from St. Peter Damian's epistle to
+# St. Hugh praising the Cluniac monastery, not a biographical vita of the
+# four abbots individually (the file carries no other Lectio; its
+# [MM Capitulum] block immediately follows with a Common cross-reference,
+# confirming this is genuinely the only proper lesson). No English exists
+# in the source at all -- the translation below is this project's own,
+# marked draft.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Ex Epístola sancti Petri Damiáni Epíscopi ad sanctum Hugónem Abbátem. Quid áliud Cluniacénse monastérium, nisi agrum Dómini plenum díxerim, ubi velut acérvus est cæléstium ségetum, chorus tot in caritáte degéntium monachórum? Ager ille cotidiáno sanctæ prædicatiónis ligóne proscindítur, et in eo cæléstis elóquii sémina conspergúntur. Illic spirituálium frugum provéntus aggéritur, ut hórreis póstmodum cæléstibus inferátur. Cluniácus prætérea ager spirituális quidam campus est, ubi cælum et terra congréditur, ac velut aréna certáminis, ubi spirituális more palǽstræ caro frágilis advérsus potestátes aéreas colluctátur. Non est enim nobis colluctátio advérsus carnem et sánguinem, sed advérsus mundi rectóres tenebrárum harum, contra spirituália nequítiæ, in cæléstibus. Illic Jósue, non ille fílius Nun, sed cæléstis ductor exércitus, et qui spirituálium instrúctor est bellatórum, suos édocet mílites, supérbas quinque regum calcáre cervíces: super quos nimírum triumphálem noscúntur obtinére victóriam, qui tótidem sensus córporum per distríctæ custódiæ cóhibent disciplínam.'
+      status: verified

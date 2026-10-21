@@ -1,0 +1,62 @@
+# Read directly from web/www/horas/Latin/Sancti/06-10.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátam Margarítam regínam exímia in páuperes caritáte mirábilem
+    effecísti: da; ut, ejus intercessióne et exémplo, tua in córdibus nostris cáritas
+    júgiter augeátur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-widow (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags actually used for
+# a mere commemoration, confirmed against this exact category via an
+# independently live-verified precedent elsewhere in this app). st-margaret-of-scotland has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper. Collect is the saint's own
+# real proper (st-margaret-of-scotland-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Date ei de frúctu mánuum suárum, et laudent eam in portis ópera ejus.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Deus, qui beátam Margarítam regínam exímia in páuperes caritáte mirábilem
+    effecísti: da; ut, ejus intercessióne et exémplo, tua in córdibus nostris cáritas
+    júgiter augeátur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/06-10.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Laudémus Deum nostrum * In confessióne beátæ Margarítæ.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Margaret, Queen and Widow (June 10).
+# Sourced directly from web/www/horas/Latin/Sancti/06-10.txt,
+# English/Sancti/06-10.txt. Lectio4-6 combined into one reading, one
+# continuous vita. (Note: the source's own Lectio94 gives a different
+# death date, Nov. 16, than Lectio6's June 11 -- an inconsistency
+# already present in the reference engine's own text, not introduced
+# here; Lectio4-6 is the fuller, internally-consistent account and is
+# what's transcribed.) No Lectio7-9 in her own file (her `[Rule]` is
+# `vide C7a`) -- defers to the Common's own Nocturn 3, not transcribed
+# here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Margarita, Scotórum regína, paterno Angliæ regum, materno Cæsárum sánguine claríssima, illustrior adhuc fuit christiana virtúte. Hæc in Hungária nata, ubi pater tunc témporis exsulabat, post exactam summa cum pietáte puerílem ætátem, una cum genitore, qui a sancto Eduárdo patruo, Anglórum rege, ad paterni regni fastigium vocabátur, in Angliam venit. Mox, alternante paréntum fortuna, ex Angliæ littore solvens, vi tempestátis expulsa, seu verius divinæ providéntiæ consílio deducta est in oram marítimam Scotiæ. Ibi cum ex matris imperio Malchólmo tertio Scotórum regi, egregiis ejus dótibus capto, nupsísset, sanctimóniæ ac pietátis opéribus, trigínta quibus regnávit annis, toti regno mirifice prófuit.
+
+        Inter regales delicias corpus afflictatiónibus ac vigiliis mácerans, magnam noctis partem piis precatiónibus extrahebat. Præter alia jejunia, quæ idéntidem usurpabat, íntegros quadragínta dies ante Natalícia festa tanta cum severitáte jejunare consuevit, ut ne in gravíssimis quidem dolóribus intermiserit. Divino cultui addictíssima, templa pluria et cœnobia partim ex íntegro excitávit, partim resarcívit, et sacra supelléctili ac largo censu ditávit. Regem cónjugem ad meliórem frugem et ad simília suis exercitatiónibus ópera saluberrimo exemplo traduxit, liberosque omnes tam sancte et féliciter educávit, ut eórum plerique, quemádmodum et Agatha mater, et Christina soror, sanctíssimum vitæ genus ampléxi sint. Universi demum regni felicitáti cónsulens, a vitiis ómnibus, quæ furtim irrepserant, pópulos expurgávit, eisque mores christiana pietáte dignos restituit.
+
+        Nihil tamen æque in illa mirábile fuit ac flagrantíssima caritas erga próximos, præsertim egénos, quorum numerosis grégibus non modo stipem áffatim suppeditare, verum étiam trecentis quotídie materna benignitate dapes præbére, flexis genibus in morem ancíllæ ministrare, regiis mánibus pedes ablúere, et pressis étiam ósculis úlcera fovére, solemne hábuit. His porro aliisque piis sumptibus non regias tantum vestes et preiosa monília distraxit, sed ipsum non semel exhausit ærárium. Tolerátis demum ad patiéntiæ miraculum acerbíssimis dolóribus, ánimam semestri corporis ægrotatióne purgatam Auctori suo, sextodecimo Kalendas Decembris, réddidit. Quo témporis momento fácies ejus, diuturni morbi macie ac pallore fœdata, insólita quadam venustáte reflóruit. Miris étiam post mortem prodigiis clara, et Clementis décimi auctoritate in Scotiæ patronam accepta, ubíque terrárum religiosíssime cólitur.
+      status: verified

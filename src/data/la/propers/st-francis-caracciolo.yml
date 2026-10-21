@@ -1,0 +1,55 @@
+# Read directly from web/www/horas/Latin/Sancti/06-04.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátum Francíscum, novi órdinis institutórem, orándi stúdio et
+    pœniténtiæ amóre decorásti: da fámulis tuis in ejus imitatióne ita profícere; ut,
+    semper orántes et corpus in servitútem redigéntes, ad cæléstem glóriam perveníre
+    mereántur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-francis-caracciolo has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-francis-caracciolo-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui beátum Francíscum, novi órdinis institutórem, orándi stúdio et
+    pœniténtiæ amóre decorásti: da fámulis tuis in ejus imitatióne ita profícere; ut,
+    semper orántes et corpus in servitútem redigéntes, ad cæléstem glóriam perveníre
+    mereántur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Francis Caracciolo, Confessor
+# (June 4). Sourced directly from web/www/horas/Latin/Sancti/06-04.txt,
+# English/Sancti/06-04.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in his own file (his `[Rule]` is `vide
+# C5`) -- defers to the Common of a Confessor's own Nocturn 3, not
+# transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Francíscus, dictus ántea Ascánius, ex nóbili família Carácciolo in óppido sanctæ Maríæ de Villa in Aprútio ortus, a primis annis exímio enítuit pietátis cultu. Adoléscens gráviter ægrótans státuit sese prorsus Dei proximíque mancipáre servítio. Neápolim proféctus, sacerdótio initiátus sacróque adscríptus sodalítio, contemplatióni lucrandísque animábus se totum devóvit, ac extrémo supplício damnátis hortatórem se præbuit assíduum. Cóntigit autem, ut epístolum álteri destinátum ei per errórem redderétur, quo a piíssimis viris Joánne Augustíno Adórno et Fabrício Carácciolo ad novi religiósi institúti fundatiónem vocabátur. Rei novitáte captus et divínæ voluntátis demirátus consília, álacri ánimo sese illis adjúnxit. Cónditis autem in Camaldulénsium erémo, quo secésserant, novi órdinis légibus, inde Romam simul profécti confirmatiónem a Xysto quinto impetrárunt, qui eósdem cléricos reguláres Minóres appellári vóluit, áddito ad tria consuéta áltero de non ambiéndis dignitátibus voto.
+
+        Solémni emíssa professióne, ob singulárem ejus in divum Francíscum Assisinátem cultum, Francísci nomen assúmpsit. Adórno biénnio post vita functo, ipse toti religióni, quamquam invítus, præfícitur; quo in múnere virtútum ómnium præclára præbuit exémpla. Institúti amplificándi studiosíssimus, id assíduis oratiónibus, lácrimis, et jugi córporis maceratióne eníxe a Deo postulábat. Quam ob rem tértio in Hispániam se cóntulit, peregríni hábitu indútus, victúmque ostiátim mendícans. In itínere aspérrima quæque perpéssus, Omnipoténtis auxílium mirum in modum expértus, navim quam conscénderat, ab imminénti naufrágio oratiónis præsídio servávit incólumem. Ut in regnis illis voti compos fíeret, plúrimum laborávit; sed, ejus sanctitátis fama prælucénte, amplissimáque catholicórum regum Philíppi secúndi et Philíppi tértii munificéntia, adversariórum conátibus singulári ánimi fortitúdine superátis, plura sui órdinis domicília fundávit: quod pari evéntu per Itáliam præstitit.
+
+        Humilitáte ádeo excélluit, ut Romam véniens, in páuperum hospítio recéptus, se lepróso sociáverit, et ecclesiásticas dignitátes a Paulo quinto sibi oblátas constantíssime recusáverit. Illibátam perpétuo servávit virginitátem, effrontésque mulíeres, ejus castimóniæ insidiántes, Christo lucrifécit. Erga diviníssimum Eucharístiæ mystérium ardénti æstuans amóre, noctes pene íntegras in ejus adoratióne insómnes ducébat: quod pium exercítium, véluti sui órdinis tésseram, in eo perpétuo servándum constítuit. Deíparæ Vírginis cultum impénse fovit. In próximum exímia exársit caritáte. Prophetíæ dono et córdium scrutatióne ditátus fuit. Quadragésimum quartum ætátis suæ annum agens, dum in sacra Lauretána, æde in oratióne persísteret, sibi vitæ finem imminére cognóvit. Aprútium statim defléxit, et in óppido Agnóni apud alúmnos sancti Philíppi Nerii letháli febre corréptus, sacraméntis Ecclésiæ devotíssime suscéptis, prídie Nonas Júnii anni millésimi sexcentésimi octávi, in pervigílio festi Córporis Christi, placidíssime obdormívit in Dómino. Sacrum ejus corpus, Neápolim delátum, in ecclésia sanctæ Maríæ Majóris, ubi prima sui órdinis jécerat fundaménta, honorífice cónditum fuit.
+      status: verified

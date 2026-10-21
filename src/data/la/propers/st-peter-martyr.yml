@@ -1,0 +1,61 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2042-04-30).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut beáti Petri Mártyris tui fidem cóngrua devotióne sectémur; qui, pro ejúsdem fídei dilatatióne, martýrii palmam méruit obtinére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-peter-martyr-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-martyr (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-peter-martyr-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut beáti Petri Mártyris tui fidem cóngrua devotióne sectémur; qui, pro ejúsdem fídei dilatatióne, martýrii palmam méruit obtinére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Peter Martyr's own day (2026-04-30). The Benedictus
+# antiphon -- see ss-tiburtius-valerian-and-maximus-antiphon.yml's note
+# on the shared Eastertide Common text.
+benedictus-antiphon:
+  text: Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Peter Martyr (of Verona), Martyr
+# (Apr 30 on this app's own calendar) — an off-date sourcing case: the
+# general Tridentine calendar keeps Peter Martyr on Apr 29 instead
+# (this app's own Apr 29 slot going to St. Robert and St. Catherine of
+# Siena — see st-catherine-of-siena.yml's note on this same date
+# swap). No `SanctiM/04-29*.txt` matches Peter Martyr at all (the two
+# variants found there, `04-29M.txt` and `04-29oM.txt`, are Ss.
+# Odo/Maiolus/Odilo/Hugh and St. Robert respectively — neither is
+# Peter Martyr) — a missed pre-1955-pool candidate rather than a
+# genuine SanctiM case (see memory vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/04-29.txt, English/Sancti/04-29.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Petrus, Veronæ paréntibus Manichæórum hæresi infectis natus, ab ipsa pæne infántia contra hæreses pugnávit. Puer annórum septem, cum scholas frequentaret, aliquándo a patruo hæretico interrogátus quid tandem in iis didicísset, christianæ fidei symbolum se didicisse respóndit; neque ullis umquam patris patruíve blanditiis aut minis a fidei constanti dimoveri pótuit. Adoléscens Bonóniam studiórum causa venit; ubi, a Spíritu Sancto ad sublimioris vitæ formam vocatus, ordinis Prædicatórum institutum suscépit.
+
+        Magno virtútum splendore in religióne eluxit: corpus et ánimum ab omni impuritate ita custodívit, ut nullius mortíferi peccáti labe se inquinátum umquam sénserit. Carnem jejuniis et vigiliis macerábat; mentem divinis contemplatiónibus exercebat. In salúte animárum procuranda assidue versabátur; peculiáris gratiæ dono hæreticos ácriter confutábat. Tantam in concionando vim hábuit, ut innumerábilis hóminum multitúdo ad eum audiéndum conflúeret, multique ad pœniténtiam converteréntur.
+
+        Tanto fidei ardore incénsus erat, ut pro ea mortem subire optaret, eamque a Deo grátiam enixe precarétur. Itaque hæretici necem, quam is paulo ante concionando prædixerat, illi intulérunt. Nam cum sanctæ Inquisitiónis munus géreret, illum Como Mediolanum redeuntem ímpius sicarius semel atque íterum in cápite gládio vulnerávit; jamque pene mórtuus, symbolórum fidei, quam infans virili fortitúdine conféssus fuerat, in ipso supremo spíritu pronuntiávit; iterúmque látera mucrone transverberatus, ad martyrii palmam migrávit in cælum, anno salútis millesimo ducentésimo quinquagesimo secundo. Quem multis, illustrem miraculis Innocentius quartus anno sequénti sanctórum Mártyrum número adscripsit.
+      status: verified

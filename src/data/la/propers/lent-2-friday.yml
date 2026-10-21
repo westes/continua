@@ -1,0 +1,66 @@
+# Lauds collect ([Oratio 2] in the source) — read from
+# web/www/horas/{Latin,English}/Tempora/Quad2-5.txt.
+collect:
+  text: |
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut, sacro nos purificánte jejúnio, sincéris méntibus ad sancta ventúra fácias perveníre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Vespers collect ([Oratio 3] in the source), distinct from Lauds' own —
+# read from web/www/horas/{Latin,English}/Tempora/Quad2-5.txt.
+collect/~-vespers:
+  text: |
+    Orémus.
+    Da, quǽsumus, Dómine, pópulo tuo salútem mentis et córporis: ut, bonis opéribus inhæréndo, tuæ semper virtútis mereátur protectióne deféndi.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad2-5.txt's own
+# [Ant 2] and its English counterpart.
+benedictus-antiphon:
+  text: Malos male perdet, * et víneam suam locábit áliis agrícolis, qui reddant ei fructum tempóribus suis.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad2-5.txt's own
+# [Ant 3] and its English counterpart.
+magnificat-antiphon:
+  text: Quæréntes eum tenére, * timuérunt turbam, quia sicut prophétam eum habébant.
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Friday of Lent week 2 — read from
+# web/www/horas/{Latin,English}/Tempora/Quad2-5.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quad2-5.txt's own [Evangelium].
+# Recombined into one reading (Lectio1-3 are one continuous Ambrose
+# excerpt split only to fill the fixed 3-lesson slot count). Responsory1
+# is a cross-reference (@Tempora/Quad2-0:Responsory4 — the same text
+# lent-2-tuesday's own combined reading uses, reused here per the
+# source's own cross-reference, not an error).
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Matt 21:33-46
+      text: 'In illo témpore: Dixit Jesus turbis Judæórum et princípibus sacerdótum parábolam hanc: Homo erat paterfamílias, qui plantávit víneam, et sepem circúmdedit ei, et fodit in ea tórcular, et ædificávit turrim, et locávit eam agrícolis, et péregre proféctus est. Cum autem tempus frúctuum appropinquásset, misit servos suos ad agrícolas, ut accíperent fructus ejus. Et agrícolæ, apprehénsis servis ejus, alium cecidérunt, alium occidérunt, álium vero lapidavérunt. Iterum misit álios servos plures prióribus, et fecérunt illis simíliter. Novíssime autem misit ad eos fílium suum, dicens: Verebúntur fílium meum. Agrícolæ autem vidéntes fílium, dixérunt intra se: Hic est heres, veníte, occidámus eum, et habébimus hereditátem ejus. Et apprehénsum eum ejecérunt extra víneam, et occidérunt. Cum ergo vénerit dóminus víneæ, quid fáciet agrícolis illis? Ajunt illi: Malos male perdet: et víneam suam locábit áliis agrícolis, qui reddant ei fructum tempóribus suis. Dicit illis Jesus: Numquam legístis in Scriptúris: Lápidem, quem reprobavérunt ædificántes, hic factus est in caput ánguli? A Dómino factum est istud, et est mirábile in óculis nostris. Ideo dico vobis, quia auferétur a vobis regnum Dei, et dábitur genti faciénti fructus ejus. Et qui cecíderit super lápidem istum, confringétur: super quem vero cecíderit, cónteret eum. Et cum audíssent príncipes sacerdótum et pharisǽi parábolas ejus, cognovérunt, quod de ipsis díceret. Et quæréntes eum tenére, timuérunt turbas: quóniam sicut Prophétam eum habébant.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Book 9 on Luke, ch. 20
+      text: |-
+        Pleríque várias significatiónes de víneæ appellatióne derívant: sed evidénter Isaías víneam Dómini Sábaoth, domum Israël esse memorávit. Hanc víneam quis álius, nisi Deus, cóndidit? Hic est ergo qui eam locávit colónis, et ipse péregre fuit: non quia ex loco ad locum proféctus est Dóminus, qui ubíque semper præsens est: sed quia est præséntior diligéntibus, negligéntibus abest. Multis tempóribus ábfuit, ne præprópera viderétur exáctio. Nam quo indulgéntior liberálitas, eo inexcusabílior pervicácia.
+
+        Unde bene secúndum Matthǽum habes, quia et sepem circúmdedit: hoc est, divínæ custódiæ munitióne vallávit, ne fácile spiritálium patéret incúrsibus bestiárum. Et fodit in ea tórcular. Quómodo intellégimus quid sit tórcular, nisi forte quia Psalmi pro torculáribus inscribúntur; eo quod in his mystéria Domínicæ passiónis, modo musti Sancto fervéntis Spíritu, redundántius æstuáverint? Unde ébrii putabántur, quibus Spíritus Sanctus inundábat. Ergo et hic fodit tórcular, in quod uvæ rationábilis fructus intérior spiritáli infusióne deflúeret.
+
+        Ædificávit turrim, vérticem scílicet legis attóllens: atque ita hanc víneam munítam, instrúctam, ornátam, locávit Judǽis. Et témpore frúctuum sérvulos misit. Bene tempus frúctuum pósuit, non provéntuum. Nullus enim fructus éxstitit Judæórum, nullus víneæ hujus provéntus, de qua Dóminus ait: Exspectávi ut fáceret uvas, fecit autem spinas. Itaque non lætítiæ vino, non spiritáli musto, sed cruénto Prophetárum sánguine torculária redundárunt.
+      responsory: |-
+        R. Dum exíret Jacob de terra sua, vidit glóriam Dei, et ait: Quam terríbilis est locus iste! * Non est hic áliud, nisi domus Dei, et porta cæli.
+        V. Vere Deus est in loco isto, et ego nesciébam.
+        R. Non est hic áliud, nisi domus Dei, et porta cæli.
+      status: verified

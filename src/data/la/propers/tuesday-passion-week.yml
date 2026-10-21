@@ -1,0 +1,34 @@
+# Transcribed from the reference engine's Mass propers (not the Office
+# file, which carries no [Oratio] of its own for this day -- see
+# web/www/horas/Latin/Tempora/Quad5-2.txt): the actual proper collect
+# lives at web/www/missa/Latin/Tempora/Quad5-2.txt's [Oratio], with the
+# parallel English at web/www/missa/English/Tempora/Quad5-2.txt. Marked
+# `draft`, not `verified` -- see monday-passion-week-collect.yml's own
+# note for why (direct Missal transcription, standard closing formula
+# expanded, no live Office cross-check).
+collect:
+  text: |
+    Orémus.
+    Nostra tibi, Dómine, quǽsumus, sint accépta jejúnia: quæ nos et expiándo grátia tua dignos effíciant; et ad remédia perdúcant ætérna.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2028-04-04 (a real Tuesday-of-Passion-week date confirmed
+# clean of any sanctoral collision -- title rendered exactly "Feria
+# Tertia infra Hebdomadam Passionis ~ Feria major", no commemoration).
+benedictus-antiphon:
+  text: Tempus meum * nondum advénit, tempus autem vestrum semper est parátum.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2028-04-04 (same clean date as the sibling
+# -benedictus-antiphon.yml; title tag confirmed "Vespera de Tempore
+# occurente" -- this day's own, non-anticipated Second Vespers).
+magnificat-antiphon:
+  text: 'Vos ascéndite * ad diem festum hunc: ego autem non ascéndam, quia tempus meum nondum advénit.'
+  status: verified
+  temporal: true

@@ -1,0 +1,587 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2035-06-24).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui præséntem diem honorábilem nobis in beáti Joánnis nativitáte fecísti: da pópulis tuis spirituálium grátiam gaudiórum; et ómnium fidélium mentes dírige in viam salútis ætérnæ.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (nativity-of-st-john-the-baptist-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-apostle (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (nativity-of-st-john-the-baptist-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Apértum est os Zacharíæ, et prophetávit dicens: Benedíctus Deus Israël.
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+    Orémus.
+    Deus, qui præséntem diem honorábilem nobis in beáti Joánnis nativitáte fecísti: da pópulis tuis spirituálium grátiam gaudiórum; et ómnium fidélium mentes dírige in viam salútis ætérnæ.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium — Sancti/06-24.txt's own [Hymnus
+# Matutinum], with the Monastic doxology substitution from [HymnusM
+# Matutinum] applied (s/posses/saltem/ s/Crímine linguæ/Flámine posses/
+# s/durum/hirtum/ s/Sit decus/Glória/ s/semper/alme/ s/virtus/semper/
+# s/Témporis ævo/Témpore sæcli/ — same substitution set already applied
+# for vespers-hymn-nativity-of-st-john-the-baptist.yml, whose doxology
+# it exactly matches). English is the reference's own translation,
+# already in the Monastic doxology form.
+matins-hymn:
+  text: |
+    Antra desérti téneris sub annis,
+    Cívium turmas fúgiens, petísti,
+    Ne levi saltem maculáre vitam
+    Flámine posses.
+
+    Prǽbuit hirtum tégumen camélus
+    Artubus sacris, stróphium bidéntes;
+    Cui latex haustum, sociáta pastum
+    Mella locústis.
+
+    Céteri tantum cecinére Vatum
+    Corde præságo jubar affutúrum;
+    Tu quidem mundi scelus auferéntem
+    Indice prodis.
+
+    Non fuit vasti spátium per orbis
+    Sánctior quisquam génitus Joánne,
+    Qui nefas sæcli méruit lavántem
+    Tíngere lymphis.
+
+    Glória Patri, genitǽque Proli,
+    Et tibi, compar utriúsque semper,
+    Spíritus alme, Deus unus omni
+    Témpore sæcli.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium — Sancti/06-24.txt's own [Invit]
+# (SanctiM/06-24.txt has no override, so Monastic inherits this secular
+# text). Proper to this feast, not a Commune text: "Regem Præcursóris
+# Dóminum" (the Lord, King of His Forerunner), distinct from both
+# common-of-an-apostle's and common-of-a-martyr's invitatory antiphons.
+matins-invitatory:
+  text: Regem Præcursóris Dóminum, * Veníte, adorémus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-06-24, clean year.
+lauds-capitulum:
+  text: 'Audíte, ínsulæ, et atténdite, pópuli de longe: Dóminus ab útero vocávit me, de ventre matris meæ recordátus est nóminis mei.'
+  citation: Isa 49:1
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-06-24, clean year.
+lauds-hymn:
+  text: |
+    O nimis felix, meritíque celsi,
+    Nésciens labem nívei pudóris,
+    Prǽpotens Martyr, nemorúmque cultor,
+    Máxime Vatum.
+
+    Serta ter denis álios corónant
+    Aucta creméntis, duplicáta quosdam,
+    Trina centéno cumuláta fructu
+    Te sacer ornant.
+
+    Nunc potens nostri méritis opímis
+    Péctoris duros lápides repélle:
+    Asperum planans iter, et refléxos
+    Dírige calles.
+
+    Ut pius mundi Sator et Redémptor
+    Méntibus pulsa livióne puris
+    Rite dignétur véniens sacrátos
+    Pónere gressus.
+
+    Láudibus cives célebrent supérni
+    Te, Deus simplex paritérque trine,
+    Súpplices et nos véniam precámur:
+    Parce redémptis. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-06-24, clean year.
+lauds-responsory:
+  text: |
+    R.br. Fuit homo * Missus a Deo.
+    R. Fuit homo * Missus a Deo.
+    V. Cui nomen erat Joánnes.
+    R. Missus a Deo.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Fuit homo * Missus a Deo.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-06-24, clean year.
+lauds-versicle:
+  text: |-
+    V. Iste puer magnus coram Dómino.
+    R. Nam et manus ejus cum ipso est.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, the Nativity of St. John the Baptist's own day (2026-06-24,
+# clean year).
+prime-antiphon:
+  text: Elísabeth Zacharíæ * magnum virum génuit, Joánnem Baptístam, præcursórem Dómini.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/06-24.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: Reges vidébunt, et consúrgent príncipes et adorábunt Dóminum Deum tuum, et Sanctum Israël, qui elégit te.
+  citation: Isa 49:7
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, the Nativity of St. John the Baptist's own day (2026-06-24,
+# clean year).
+terce-antiphon:
+  text: 'Innuébant patri ejus * quem vellet vocári eum: et scripsit dicens: Joánnes est nomen ejus.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, the Nativity of St. John the Baptist's own day (2026-06-24,
+# clean year).
+terce-capitulum:
+  text: |
+    Audíte, ínsulæ, et atténdite, pópuli de longe: Dóminus ab útero vocávit me, de ventre matris meæ recordátus est nóminis mei.
+    R. Deo grátias.
+    V. Fuit homo missus a Deo.
+    R. Cui nomen erat Joánnes.
+  citation: Isa 49:1
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, the Nativity of St. John the Baptist's own day (2026-06-24,
+# clean year).
+sext-antiphon:
+  text: 'Joánnes vocábitur * nomen ejus: et in nativitáte ejus multi gaudébunt.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, the Nativity of St. John the Baptist's own day (2026-06-24,
+# clean year).
+sext-capitulum:
+  text: |
+    Et nunc, hæc dicit Dóminus formans me ex útero servum sibi: Dedi te in lucem géntium, ut sis salus mea usque ad extrémum terræ.
+    R. Deo grátias.
+    V. Inter natos mulíerum non surréxit major.
+    R. Joánne Baptísta.
+  citation: Isa 49:5-6
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, the Nativity of St. John the Baptist's own day (2026-06-24,
+# clean year).
+none-antiphon:
+  text: Tu, puer, * Prophéta Altíssimi vocáberis; præíbis ante Dóminum paráre vias ejus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, the Nativity of St. John the Baptist's own day (2026-06-24,
+# clean year).
+none-capitulum:
+  text: |
+    Reges vidébunt, et consúrgent príncipes et adorábunt Dóminum Deum tuum, et Sanctum Israël, qui elégit te.
+    R. Deo grátias.
+    V. Elísabeth Zacharíæ magnum virum génuit.
+    R. Joánnem Baptístam, præcursórem Dómini.
+  citation: Isa 49:7
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-06-24, the same clean date already used for lauds-capitulum-nativity-of-st-john-the-baptist.yml.
+vespers-hymn:
+  text: |
+    Ut queant laxis resonáre fibris
+    Mira gestórum fámuli tuórum,
+    Solve pollúti lábii reátum,
+    Sancte Joánnes.
+
+    Núntius celso véniens Olýmpo,
+    Te patri magnum fore nascitúrum,
+    Nomen, et vitæ sériem geréndæ
+    Ordine promit.
+
+    Ille promíssi dúbius supérni,
+    Pérdidit promptæ módulos loquélæ;
+    Sed reformásti génitus perémptæ
+    Organa vocis.
+
+    Ventris obstrúso récubans cubíli
+    Sénseras Regem thálamo manéntem;
+    Hinc parens nati méritis utérque
+    Abdita pandit.
+
+    Glória Patri, genitǽque Proli,
+    Et tibi, compar utriúsque semper,
+    Spíritus alme, Deus unus omni
+    Témpore sæcli.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-06-24, the same clean date already used for lauds-capitulum-nativity-of-st-john-the-baptist.yml.
+vespers-responsory:
+  text: |
+    R.br. Inter natos mulíerum * Non surréxit major.
+    R. Inter natos mulíerum * Non surréxit major.
+    V. Joánne Baptísta.
+    R. Non surréxit major.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Inter natos mulíerum * Non surréxit major.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-06-24, the same clean date already used for lauds-capitulum-nativity-of-st-john-the-baptist.yml.
+vespers-versicle:
+  text: |-
+    V. Iste puer magnus coram Dómino.
+    R. Nam et manus ejus cum ipso est.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 06-24
+# nativity-of-st-john-the-baptist (saint file = second). First Vespers variant; the default (second Vespers)
+# file is the same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Fuit homo missus a Deo.
+    R. Cui nomen erat Joánnes.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, the Nativity of St. John the Baptist's own day
+# (2026-06-24) -- the Benedictus antiphon (Luke 1:64,68, the very verse
+# the Benedictus canticle itself opens with). Corrects the previous
+# version of this file, which had been sourced from the Roman/secular
+# rite's Sancti/06-24.txt's own [Ant 1] instead: real but different text
+# from what Monastic 1617 actually renders at Lauds, same mistake as
+# St. Lawrence's earlier fix.
+benedictus-antiphon:
+  text: 'Apértum est os Zacharíæ, et prophetávit dicens: Benedíctus Deus Israël.'
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 06-24
+# nativity-of-st-john-the-baptist (new saint-level second; continua had "estotefortes"). See
+# hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon:
+  text: 'Puer * qui natus est nobis, plus quam prophéta est: hic est enim, de quo Salvátor ait: Inter natos mulíerum non surréxit major Joánne Baptísta.'
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 06-24
+# nativity-of-st-john-the-baptist (saint file = second). First Vespers variant; the default (second Vespers)
+# file is the same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Ingrésso * Zacharía templum Dómini, appáruit ei Gábriel Angelus stans a dextris altáris incénsi.
+  status: verified
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayMatutinum, 2026-06-24). This feast's reference file
+# (Sancti/06-24.txt) says "Psalmi Dominica" (use Sunday's own psalm
+# pool), and the live render confirms it: Nocturn 1's psalm numbers
+# (1,2,4,5,8,10) and Nocturn 2's (14,20,33,63,64,91) are St. Lawrence's
+# own psalm sets exactly (see st-lawrence.yml's own note that this pool
+# is shared, not unique to one saint) -- only the antiphon text is
+# proper to this feast. Nocturn 3 uses the same three canticles already
+# authored for St. Lawrence (Eccli 14:22;15:3-4;15:6 / Jer 17:7-8 /
+# Eccli 31:8-11 -- data/scripture/{sir-14,sir-15,jer-17,sir-31}.yml,
+# reused verbatim, not re-transcribed), but under a single proper
+# antiphon repeated across all three canticles (the live render shows
+# one antiphon, not three), unlike Lawrence's own distinct nocturn-3
+# antiphon. No `category` cross-reference here (unlike st-lawrence.yml's
+# own `common-of-a-martyr`) since this feast draws on no Commune at all
+# -- see nativity-of-st-john-the-baptist.yml's own `common` field comment
+# in data/calendar/saints/.
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 1
+        antiphon: Priúsquam te formárem * in útero, novi te; et ántequam progrederéris, sanctificávi te.
+      - psalms:
+          - 2
+        antiphon: 'Ad ómnia quæ mittam te, * dicit Dóminus, ibis: ne tímeas, et quæ mandávero tibi, loquéris ad eos.'
+      - psalms:
+          - 4
+        antiphon: Ne tímeas * a fácie eórum, quia ego tecum sum, dicit Dóminus.
+      - psalms:
+          - 5
+        antiphon: Misit Dóminus * manum suam, et tétigit os meum, et prophétam in géntibus dedit me Dóminus.
+      - psalms:
+          - 8
+        antiphon: 'Ecce dedi verba mea * in ore tuo: ecce constítui te super gentes et regna.'
+      - psalms:
+          - 10
+        antiphon: Dóminus * ab útero vocávit me, de ventre matris meæ recordátus est nóminis mei.
+    versicle:
+      v: Fuit homo missus a Deo.
+      r: Cui nomen erat Joánnes.
+  nocturn2:
+    groups:
+      - psalms:
+          - 14
+        antiphon: 'Pósuit os meum * Dóminus quasi gládium acútum: sub umbra manus suæ protéxit me.'
+      - psalms:
+          - 20
+        antiphon: 'Formans me * ex útero servum sibi Dóminus, dicit: Dedi te in lucem géntium, ut sis salus mea usque ad extrémum terræ.'
+      - psalms:
+          - 33
+        antiphon: Reges vidébunt, * et consúrgent príncipes et adorábunt Dóminum Deum tuum, qui elégit te.
+      - psalms:
+          - 63
+        antiphon: 'Nazarǽus * vocábitur puer iste: vinum et síceram non bibet, et omne immúndum non manducábit ex útero matris suæ.'
+      - psalms:
+          - 64
+        antiphon: 'Erit enim * magnus coram Dómino: nam et manus ejus cum ipso est.'
+      - psalms:
+          - 91
+        antiphon: Ipse præíbit * ante illum in spíritu et virtúte Elíæ paráre Dómino plebem perféctam.
+    versicle:
+      v: Inter natos mulíerum non surréxit major.
+      r: Joánne Baptísta.
+  nocturn3:
+    antiphon: 'Descéndit * angelus Dómini ad Zacharíam, dicens: Accípe púerum in senectúte tua, et habébit nomen Joánnes Baptísta.'
+    canticles:
+      - refs:
+          - book: sir
+            chapter: 14
+            verses: '22'
+          - book: sir
+            chapter: 15
+            verses: 3-4
+          - book: sir
+            chapter: 15
+            verses: '6'
+      - refs:
+          - book: jer
+            chapter: 17
+            verses: 7-8
+      - refs:
+          - book: sir
+            chapter: 31
+            verses: 8-11
+    versicle:
+      v: Elísabeth Zacharíæ magnum virum génuit.
+      r: Joánnem Baptístam, præcursórem Dómini.
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-06-24, clean year.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Elísabeth Zacharíæ * magnum virum génuit, Joánnem Baptístam, præcursórem Dómini.
+    - psalms:
+        - 99
+      antiphon: 'Innuébant patri ejus * quem vellet vocári eum: et scripsit dicens: Joánnes est nomen ejus.'
+    - psalms:
+        - 62
+      antiphon: 'Joánnes vocábitur * nomen ejus: et in nativitáte ejus multi gaudébunt.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Inter natos mulíerum * non surréxit major Joánne Baptísta.
+  laudate:
+    antiphon: Tu, puer, * Prophéta Altíssimi vocáberis; præíbis ante Dóminum paráre vias ejus.
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-06-24). Second Vespers uses only 4 psalms
+# (109/110/111/112), not the 5 slots a naive reading of Sancti/06-24.txt's
+# own raw `[Ant Vespera]` (5 antiphons) would suggest -- Monastic Sunday
+# Vespers has one psalm slot fewer than secular, confirmed by the live
+# render, not just read off the static file (whose 5th listed antiphon,
+# "Nazarǽus vocábitur", isn't used here at all; the engine's own 4th slot
+# antiphon is instead "Tu, puer, Prophéta Altíssimi vocáberis", reused
+# from `[Ant Laudes]`'s own 5th entry).
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Elísabeth Zacharíæ * magnum virum génuit, Joánnem Baptístam, præcursórem Dómini.
+    - psalms:
+        - 110
+      antiphon: 'Innuébant patri ejus * quem vellet vocári eum: et scripsit dicens: Joánnes est nomen ejus.'
+    - psalms:
+        - 111
+      antiphon: 'Joánnes vocábitur * nomen ejus: et in nativitáte ejus multi gaudébunt.'
+    - psalms:
+        - 112
+      antiphon: Tu, puer, * Prophéta Altíssimi vocáberis; præíbis ante Dóminum paráre vias ejus.
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 06-24
+# nativity-of-st-john-the-baptist. First Vespers psalm antiphons; the other evening's set is
+# nativity-of-st-john-the-baptist.yml. See vespers-psalmody-overrides.ts's getVespersSaintOverride.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Ipse præíbit * ante illum in spíritu et virtúte Elíæ paráre Dómino plebem perféctam.
+    - psalms:
+        - 110
+      antiphon: 'Joánnes * est nomen ejus: vinum et síceram non bibet, et multi in nativitáte ejus gaudébunt.'
+    - psalms:
+        - 111
+      antiphon: Ex útero senectútis * et stérili Joánnes natus est, præcúrsor Dómini.
+    - psalms:
+        - 112
+      antiphon: 'Iste puer * magnus coram Dómino: nam et manus ejus cum ipso est.'
+
+# Matins Nocturn 2-3 readings for the Nativity of St. John the Baptist
+# (Jun 24) — SanctiM/06-24.txt's own Lectio4-9 all resolve back to
+# `@Sancti/06-24:LectioN` (resliced), so this feast's own proper
+# content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/06-24.txt, English/Sancti/06-24.txt.
+#
+# Nocturn 2: Lectio4-6 (St. Augustine's sermon) combined into one
+# reading, one continuous excerpt.
+# Nocturn 3: Lectio7's Gospel citation (Luke 1:57-69) quotes only the
+# opening sentence before "Et réliqua", not the full pericope, so —
+# per the pre-1955 pass's convention of not transcribing bare incipits
+# — only the homily portion was originally authored (not marked
+# isGospel), combined with Lectio8-9 as one continuous excerpt of
+# St. Ambrose's commentary.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily), sourced from the
+# day's own Missale [Evangelium] in web/www/missa/Latin/Sancti/06-24.txt
+# (full text given there, not a redirect). That source gives the
+# pericope as Luke 1:57-68 (through Zachary's Benedictus opening verse)
+# — one verse short of the homily's own declared "on Luke 1:57-69" —
+# but is otherwise the same pericope the homily discusses, so it is
+# used as found rather than extended by guesswork.
+#
+# Both reading entries below carry their closing proper responsory:
+# Nocturn 2's is [Responsory6] (the last of Lectio4-6); Nocturn 3's is
+# [Responsory8] (the last of Lectio7-9 that has one — [Responsory9]
+# doesn't exist, since Te Deum is sung after Lectio9 at this
+# Duplex-1-classis rank).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Sermon 20 on the Saints
+      text: |-
+        Post illum sacrosánctum Dómini natális diem, nullíus hóminum nativitátem légimus celebrári, nisi solíus beáti Joánnis Baptístæ. In áliis Sanctis et eléctis Dei nóvimus illum diem coli, quo illos, post consummatiónem labórum et devíctum triumphatúmque mundum, in perpétuas æternitátes præsens hæc vita partúriit. In áliis consummáta últimi diéi mérita celebrántur: in hoc étiam prima dies, et ipsa étiam hóminis inítia consecrántur; pro hac absque dúbio causa, quia per hunc Dóminus advéntum suum, ne súbito hómines insperátum non agnóscerent, vóluit esse testátum. Joánnes autem figúra fuit véteris Testaménti, et in se formam prǽtulit legis; et ídeo Joánnes prænuntiávit Salvatórem, sicut lex grátiam præcucúrrit.
+
+        Quod autem nondum natus de secréto matérni úteri prophetávit, et expers lucis jam testis est veritátis; hoc est intellegéndum, quod latens sub velámine et carne lítteræ, et Redemptórem mundo spíritu prædicávit, et nobis Dóminum nostrum de quodam legis útero proclamávit. Ergo quia Judǽi erravérunt a ventre, id est, a lege quæ a Christo grávida erat, erravérunt a ventre, locúti sunt falsa; ídeo hic venit in testimónium, ut testimónium perhibéret de lúmine.
+
+        Quod autem Joánnes in cárcere constitútus ad Christum discípulos suos órdinat; lex ad Evangélium transmíttit. Quæ lex juxta typum Joánnis, quasi ignorántiæ clausa cárcere, in obscúro et in occúlto jacébat, et Judáica cæcitáte sensus intra lítteram tenebátur inclúsus. De hoc beátus Evangelísta prolóquitur: Ille erat lucérna ardens, id est, Spíritus Sancti igne succénsus, ut mundo ignorántiæ nocte possésso lumen salútis osténderet, et quasi inter densíssimas delictórum ténebras splendidíssimus justítiæ solem lucis suæ rádio demonstráret, et de seípso dicens: Ego vox clamántis in desérto.
+      status: verified
+      responsory: |-
+        R. Innuébant patri ejus quem vellet vocári eum: et póstulans pugillárem, scripsit dicens: * Joánnes est nomen ejus.
+        V. Apértum est os Zacharíæ, et prophetávit dicens.
+        R. Joánnes est nomen ejus.
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 1:57-68
+      text: 'Elísabeth implétum est tempus pariéndi, et péperit fílium. Et audiérunt vicíni et cognáti ejus, quia magnificávit Dóminus misericórdiam suam cum illa, et congratulabántur ei. Et factum est in die octávo, venérunt circumcídere púerum, et vocábant eum nómine patris sui Zacharíam. Et respóndens mater ejus, dixit: Nequáquam, sed vocábitur Joánnes. Et dixérunt ad illam: Quia nemo est in cognatióne tua, qui vocétur hoc nómine. Innuébant autem patri ejus, quem vellet vocári eum. Et póstulans pugillárem, scripsit, dicens: Joánnes est nomen ejus. Et miráti sunt univérsi. Apértum est autem illico os ejus et lingua ejus, et loquebátur benedícens Deum. Et factus est timor super omnes vicínos eórum: et super ómnia montána Judææ divulgabántur ómnia verba hæc: et posuérunt omnes, qui audíerant in corde suo, dicéntes: Quis, putas, puer iste erit? Etenim manus Dómini erat cum illo. Et Zacharías, pater ejus, repletus est Spíritu Sancto, et prophetávit, dicens: Benedíctus Dóminus, Deus Israël, quia visitávit et fecit redemptiónem plebis suæ.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Commentary on Luke, Bk. 2 (on Luke 1:57-69)
+      text: |-
+        Péperit fílium Elísabeth, et congratulabántur vicíni. Habet Sanctórum edítio lætítiam plurimórum, quia commúne est bonum; justítia enim commúnis est virtus. Et ídeo in ortu justi futúræ vitæ insígne præmíttitur, et grátia secutúræ virtútis exsultatióne vicinórum præfiguránte signátur. Pulchre autem tempus, quo fuit in útero Prophéta, descríbitur, ne Maríæ præséntia taceátur; sed tempus silétur infántiæ, eo quia infántiæ impediménta nescívit. Et ídeo in Evangélio nihil super eo légimus, nisi ortum ejus, et oráculum, exsultatiónem in útero, vocem in desérto.
+
+        Neque enim ullam infántiæ sensit ætátem, qui supra natúram, supra ætátem in útero pósitus matris, a mensúra cœpit ætátis plenitúdinis Christi. Mire sanctus Evangelísta præmitténdum putávit, quod plúrimi infántem patris nómine Zacharíam appellándum putáverint; ut advértas matri non nomen alicújus displicuísse degéneris, sed id Sancto infúsum Spíritu, quod ab Angelo ante Zacharíæ fúerat prænuntiátum. Et quidem ille mutus intimáre vocábulum fílii nequívit uxóri; sed per prophetíam Elísabeth dídicit, quod non didícerat a maríto.
+
+        Joánnes est, inquit, nomen ejus; hoc est, non nos ei nomen impónimus, qui jam a Deo nomen accépit. Habet vocábulum suum, quod agnóvimus, non quod elégimus. Habent hoc mérita Sanctórum, ut a Deo nomen accípiant. Sic Jacob Israël dícitur, quia Deum vidit. Sic Dóminus noster Jesus nominátus est, ántequam natus; cui non Angelus, sed Pater nomen impósuit. Vides Angelos quæ audíerint, non quæ usurpáverint, nuntiáre. Nec miréris, si nomen múlier, quod non audívit, asséruit; quando Spíritus ei Sanctus, qui Angelo mandáverat, revelávit.
+      status: verified
+      responsory: |-
+        R. Gábriel Angelus appáruit Zacharíæ dicens: Nascétur tibi fílius, nomen ejus Joánnes vocábitur: * Et multi in nativitáte ejus gaudébunt.
+        V. Erit enim magnus coram Dómino, vinum et síceram non bibet.
+        R. Et multi in nativitáte ejus gaudébunt.
+
+# Verified against Divinum Officium (Sancti/06-25oct.txt, "Die secunda infra
+# Octavam Nativitatis S. Joannis Baptistae"), 2026-10-16. Lessons 4-9
+# collapsed into one continuous reading per project convention (Augustine's
+# sermon, the Gospel incipit, Ambrose on Luke). The source has no English
+# for this day at all, so the English is a translation done for this
+# project, draft, not verified against any source (same precedent as
+# assumption-octave-day-2.yml). Days 3, 5, 6 and 7 read the feast's own
+# lessons in the source and have no reading of their own here.
+octave-readings/~-octave-day-2:
+  source: Sermo sancti Augustini Episcopi et Homilia sancti Ambrosii
+  text: |
+    Natálem sancti Joánnis, fratres caríssimi, hódie celebrámus: quod nulli umqua Sanctórum légimus fuísse concéssum. Solíus enim Dómini, et beáti Joánnis dies nativitátis in univérso mundo celebrátur et cólitur. Hunc enim stérilis péperit, illum virgo concépit: in Elísabeth sterílitas víncitur, in beáta María conceptiónis consuetúdo mutátur. Elísabeth virum cognoscéndo, fílium génuit: María Angelo crédidit, et concépit. Hóminem concépit Elísabeth, hóminem et María: sed Elísabeth solum hóminem, María Deum et hóminem.
+
+    Magnus ígitur Joánnes, cujus magnitúdini étiam Salvátor testimónium perhibet, dicens: Non surréxit inter natos mulíerum major Joánne Baptísta. Præcéllit céteros, éminet univérsis: antecéllit Prophétas, supergréditur Patriárchas: et quisquis de mulíere natus est, inférior est Joánne. Dicet fortásse áliquis: Si inter natos mulíerum Joánnes major est, major est Salvatóre? Absit. Joánnes enim natus mulíeris, Christus autem vírginis natus est. Ille corruptíbilis úteri sínibus effúsus est, iste impollútæ vírginis flore progénitus.
+
+    Si ergo intellígimus mystérium, fratres mei, Joánnes homo est, Christus Deus est. Humiliétur homo, ut exaltétur Deus, secúndum illud quod de Dómino ipse Joánnes dixit: Illum opórtet créscere, me autem mínui. Ut humiliarétur homo, hódie natus est Joánnes, quo incípiunt decréscere dies: ut exaltétur Deus, eо die natus est Christus, quo incípiunt créscere dies. Magnum sacraméntum, fratres caríssimi. Ideo celebrámus natálem Joánnis sicut et Christi, quia et ipsa natívitas plena est mystério. Quo mystério, nisi humilitátis nostræ, sicut natívitas Christi plena est mystério altitúdinis nostræ?
+
+    Elísabeth implétum est tempus pariéndi, et péperit fílium. Et audiérunt vicíni et cognáti ejus quia magnificávit Dóminus misericórdiam suam cum illa, et congratulabántur ei. Et réliqua.
+
+    Joánnes est, inquit, nomen ejus. Non póterat Elísabeth Dómini ignoráre prænúntium, quæ prophetáuerat Christum. Et bene ádditur: Quia nemo in cognatióne ejus vocabátur hoc nómine: ut intélligas nomen non géneris esse, sed vatis. Zacharías quoque nutu interrogátor: sed quia incredúlitas ei affátum eripúerat et audítum, quod voce non póterat, manu et lítteris est locútus.
+
+    Scripsit autem dicens: Joánnes est nomen ejus. Et hic nomen non impónitur, sed astrúitur. Meritóque contínuo resolúta est lingua ejus: quia quam vínxerat incredúlitas, fides solvit. Credámus et nos ígitur, ut loquámur; ut lingua nostra, quæ incredulitátis vínculis est ligáta, ratiónis voce solvátur.
+
+    Scribámus spíritu mystéria, si vólumus loqui: scribámus prænúntium Christi, non in tábulis lapidéis, sed in tábulis cordis carnálibus. Etenim qui Joánem lóquitur, Christum prophétat. Loquámur Joánnem, loquámur et Christum: ut nostrum quoque os possit aperíri, quod in sacerdóte tanto, irrationális modo pécudis, fræna nutántis fídei coërcebant.
+  responsory: |
+    R. Fuit homo missus a Deo, cui nomen erat Joánnes: * Hic venit in testimónium, ut testimónium perhibéret de lúmine, et paráret Dómino plebem perféctam. V. Erat Joánnes in desérto prǽdicans baptísmum pœniténtiæ. R. Hic venit in testimónium, ut testimónium perhibéret de lúmine, et paráret Dómino plebem perféctam.
+  status: verified
+
+# Verified against Divinum Officium (Sancti/06-27oct.txt, "Quarta die infra
+# Octavam Nativitatis S. Joannis Baptistae"), 2026-10-16. Lessons 4-9
+# collapsed into one continuous reading per project convention (Basil's
+# homily on Psalm 28, the Gospel incipit, Ambrose on Luke). The source's
+# own English is used, with its stray bracket and tilde markers removed.
+# Opening responsory is the feast's own Responsory1 (Nativity day), per the
+# convention in vu-octave-reading-responsory-sweep.
+octave-readings/~-octave-day-4:
+  source: Sermo sancti Basilii Magni et Homilia sancti Ambrosii
+  text: |
+    Vox Dómini super aquas. Qualis vox? super quas aquas? Velut prophetíam accipiámus quod dictum est. Memíneris Joánnis, qui interrogátus a Judǽis: Tu quis es? quod respónsum dábimus iis, qui misérunt nos? respóndit: Ego vox clamántis in desérto. Igitur vox Dómini est Joánnes, Angelus a Deo missus ante fáciem Dómini, ut paráret Dómino plebem perféctam. Hæc ígitur vox super aquas, erat super Jordánem, in quo baptizábat prǽdicans pœniténtiæ baptísmum, et non solum in Jordáne, sed étiam in Ænon prope Salim, quia aquæ multæ erant illic.
+
+    Igitur vox Dómini super aquas, Joánnes est super baptísmum. Illic et Deus majestátis intónuit: venit enim vox de cælo, dicens: Hic est Fílius meus diléctus, in quo mihi complácui. Tunc étiam Dóminus super aquas multas dignátus est descéndere in baptísma Joánnis, ut compléret omnem justítiam quæ in lege est. Vox Dómini in virtúte. Auferet enim debilitátes pópuli per pœniténtiæ baptísmum, per ipsum baptízans in aqua ad pœniténtiam. In virtúte est vox, dicens: Pœniténtiam ágite, appropinquávit enim regnum cælórum: et, Fácite fructus dignos pœniténtiæ.
+
+    Vox Dómini confringéntis cedros. Potest dici, quod parans Dómino pópulum perféctum, elátas impietátes et contra cognitiónem Dei exaltátas confríngens, ac cónterens, oblíqua faciébat recta. Qui enim omnem collem ac montem humíliat, hic erat qui confringébat cedros, et Dómino viam adæquábat, per hoc quod ad pœniténtiam inducébat altum, et elátum, et supérbum cor. Unde ejus præparatiónem suscípiens Dóminus, suo advéntu confrégit oppósitas poténtias, cedros Líbani figuráte dictas. Opórtet enim Dóminum regnáre, donec ponat inimícos sub pedes suos, et cedros istas commínuat.
+
+    Elísabeth implétum est tempus pariéndi, et péperit fílium. Et audiérunt vicíni et cognáti ejus quia magnificávit Dóminus misericórdiam suam cum illa, et congratulabántur ei. Et réliqua.
+
+    Et Zacharías pater ejus implétus est Spíritu Sancto, et prophetábat. Vide quam bonus Deus, et fácilis indulgére peccátis; non solum abláta restítuit, sed étiam insperáta concédit. Ille dudum mutus prophétat; hæc enim grátia Dei máxima, quod eum, qui negáverat, confitétur. Nemo ergo diffídat, nemo véterum cónscius delictórum prǽmia divína despéret. Novit Dóminus mutáre senténtiam, si tu nóveris emendáre delíctum.
+
+    Et tu puer, prophéta Altíssimi vocáberis. Pulchre, cum de Dómino prophetáret, ad prophétam sua verba convértit, ut hoc quoque benefícium esse Dómini designáret: ne cum públice enumeráret sua, quasi ingrátus tacuísse viderétur quæ agnoscébat in fílio. Sed fortásse áliqui quasi irrationábilem mentis excéssum putent, quod octo diérum allóquitur infántem. Verum, si teneámus, intelligémus profécto quod pótuit vocem patris natus audíre, qui Maríæ salutatiónem ántequam nascerétur audívit.
+
+    Sciébat profécto álias esse aures prophétæ, quæ Spíritu Dei, non córporis ætáte reserántur. Habébat intelligéndi sensum, qui exsultándi habébat afféctum. Simul illud advérte, quam paucis Elísabeth, quam multis Zacharías prophétet: et utérque Sancto replétus Spíritu loquebátur: sed disciplína servátur, ut múlier díscere magis quæ divína sunt, stúdeat, quam docére.
+  responsory: |
+    R. Fuit homo missus a Deo, cui nomen erat Joánnes: * Hic venit in testimónium, ut testimónium perhibéret de lúmine, et paráret Dómino plebem perféctam. V. Erat Joánnes in desérto prǽdicans baptísmum pœniténtiæ. R. Hic venit in testimónium, ut testimónium perhibéret de lúmine, et paráret Dómino plebem perféctam.
+  status: verified
+
+# Verified against Divinum Officium (Sancti/07-01t.txt, "In Octava S.
+# Joannis Baptistae", Duplex), 2026-10-16. The octave day's own 9-lesson
+# office (Maximus of Turin, the Gospel incipit, Ambrose on Luke), collapsed
+# into one continuous reading per project convention. The source's own
+# English is used, with its tilde markers removed. In Continua this day is
+# also the Most Precious Blood (Duplex I), which outranks it, so the
+# octave day is normally only commemorated.
+octave-readings/~-octave-day-8:
+  source: Sermo sancti Maximi Episcopi et Homilia sancti Ambrosii
+  text: |
+    Festivitatem præsentis diei, fratres carissimi, venerandi Joannis Baptistæ genuina nativitas consecravit: qui idcirco in hoc sæculum superna dispensatione directus est, ut non solum ipse prophetali sublimaretur gloria, sed ut et omnium étiam per eum prophetarum præconia firmarentur. Nec immerito illum præcipuo honore nunc veneramur, qui speciali quadam gratia, ob hoc Redemptorem mundi novissimus prophetavit, ut ostenderet eum primus. Hic enim solus est prophetarum, qui Dominum nostrum Jesum Christum, quem alii in longa tempora futurum præscierunt, propriis oculis videre meruit, et annuntiare præsentem.
+
+    Hic est ille, quem, inspirante Deo, præscius annuntiat Isaias, dicens: Vox clamantis in deserto, Parate viam Domini. Quam congrue fratres carissimi beatus Joannes prædicatus est vox, qui cælestis Verbi et præco mittebatur, et testis. Hic est ille, cujus per Angelum Gabrielem prænuntiatur nativitas, et nomen, et meritum. Hic est, qui judicio cælestis sententiæ cunctis mortalibus antefertur, dicente Domino: Non surrexit inter natos mulierum major Joanne Baptista. Quam pulchre dictum est, inter natos mulierum non esse majorem: quia ille omnimodis major erat Joanne, qui de Virgine nascebatur.
+
+    Quibus perspectis, advertite dilectissimi, quantam huic reverentiam, quantum devotionis debeamus impendere: qui ut honorabilis sit, a sancto est Spiritu prophetatus, promissus ab Angelo, laudatus a Domino, et perpetua sanctæ mortis gloria consecratus. Decebat namque, ut mysticam nativitatem ejus mirabilis vita sequeretur, et sanctam perfectamque vitam mors Deo devota concluderet. Propter quod, fratres, rectissime toto hodie orbe, Christi Ecclesia primordia nativitatis ejus lætissima festivitate concelebrat, qui æterna mortalibus adesse gaudia, stupenti mundo testis fidelissimus revelavit.
+
+    Elisabeth impletum est tempus pariendi, et peperit filium. Et audierunt vicini et cognati ejus. quia magnificavit Dominus misericordiam suam cum illa, et congratulabantur ei. Et réliqua.
+
+    Joannes est, inquit, nomen ejus. Non poterat Elisabeth Domini ignorare prænuntium, quæ prophetaverat Christum. Bene additur: Quia nemo in cognatione ejus vocabatur hoc nomine, ut intelligas nomen non generis esse, sed vatis. Zacharias quoque nutu interrogatur: sed quia incredulitas ei affatum eripuerat et auditum; quod voce non poterat, manu et litteris est locutus.
+
+    Scripsit enim dicens: Joannes est nomen ejus. Et hic nomen non imponitur, sed astruitur: meritoque continuo resoluta est lingua ejus: quia quam vinxerat incredulitas, fides solvit. Credamus et nos igitur, ut loquamur; ut lingua nostra, quæ incredulitatis vinculis est ligata, rationis voce solvatur.
+
+    Scribamus spiritu mysteria, si volumus loqui: scribamus prænuntium Christi, non in tabulis lapideis, sed in tabulis cordis carnalibus. Etenim qui Joánnem loquitur, Christum prophetat. Loquamur Joánnem, loquamur et Christum: ut nostrum quoque os possit aperiri, quod in sacerdote tanto, irrationabilis modo pecudis, fræna nutantis fidei coërcebant.
+  responsory: |
+    R. Fuit homo missus a Deo, cui nomen erat Joánnes: * Hic venit in testimónium, ut testimónium perhibéret de lúmine, et paráret Dómino plebem perféctam. V. Erat Joánnes in desérto prǽdicans baptísmum pœniténtiæ. R. Hic venit in testimónium, ut testimónium perhibéret de lúmine, et paráret Dómino plebem perféctam.
+  status: verified

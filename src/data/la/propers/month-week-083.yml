@@ -1,0 +1,28 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2028-08-12 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: Omnis sapiéntia * a Dómino Deo est, et cum illo fuit semper, et est ante ævum.
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "3rd Sunday of August" (Tempora/083-0.txt) — see
+# month-week-081.yml's header for the id scheme. Responsory reuses 081's
+# own Responsory4 (source's own cross-reference).
+# Checked 2026-09-05: horas/Latin/Tempora/083-0.txt has only Lectio1-6
+# (no Nocturn 3/Gospel slot) — see month-week-081.yml's header. No
+# pairing added.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, On the Duties of the Clergy, Book 1, ch. 28-29
+      text: |-
+        Magnus justítiæ splendor, quæ áliis pótius nata quam sibi, communitátem et societátem nostram ádjuvat, excelsitátem tenet, ut suo judício ómnia subjécta hábeat, opem áliis ferat, pecúniam cónferat, offícia non ábnuat, perícula suscípiat aliéna. Quis non cúperet hanc virtútis arcem tenére, nisi prima avarítia infirmáret atque inflécteret tantæ virtútis vigórem? Etenim dum augére opes, aggregáre pecúnias, occupáre terras possessiónibus cúpimus, præstáre divítiis; justítiæ formam exúimus, beneficéntiam commúnem amíttimus.
+
+        Quanta autem justítia sit, ex hoc intélligi potest, quod nec locis, nec persónis, nec tempóribus excípitur, quæ étiam hóstibus reservátur: ut si constitútus sit cum hoste aut locus aut dies prǽlio, advérsus justítiam putétur aut loco præveníre aut témpore. Interest enim utrum áliquis pugna áliqua et conflíctu gravi capiátur, an superióre grátia, vel áliquo evéntu. Si ergo in bello justítia valet, quanto magis in pace servánda est?
+
+        Fundaméntum ergo est justítiæ fides. Justórum enim corda meditántur fidem: et qui se justus accúsat, justítiam supra fidem cóllocat. Nam tunc justítia ejus appáret, si vera fateátur. Dénique et Dóminus per Isaíam: Ecce, inquit, mitto lápidem in fundaméntum Sion: id est, Christum in fundaméntum Ecclésiæ. Fides enim ómnium Christus: Ecclésia autem quædam forma justítiæ est, commúne jus ómnium: in commúne orat, in commúne operátur, in commúne tentátur. Dénique qui seípsum sibi ábnegat, ipse justus, ipse dignus Christo est. Ideo et Paulus fundaméntum pósuit Christum, ut supra eum ópera justítiæ locarémus, quia fides fundaméntum est.
+      responsory: |-
+        R. Da mihi, Dómine, sédium tuárum assistrícem sapiéntiam, et noli me reprobáre a púeris tuis: * Quóniam servus tuus sum ego, et fílius ancíllæ tuæ.
+        V. Mitte illam de sede magnitúdinis tuæ, ut mecum sit et mecum labóret.
+        R. Quóniam servus tuus sum ego, et fílius ancíllæ tuæ.
+      status: verified

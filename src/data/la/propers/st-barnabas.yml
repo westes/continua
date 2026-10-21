@@ -1,0 +1,234 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2035-06-11).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos beáti Bárnabæ Apóstoli tui méritis et intercessióne lætíficas: concéde propítius; ut, qui tua per eum benefícia póscimus, dono tuæ grátiæ consequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-barnabas-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-apostle (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-barnabas-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vos qui reliquístis ómnia, et secúti estis me, céntuplum accipiétis, et vitam ætérnam possidébitis.
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+    Orémus.
+    Deus, qui nos beáti Bárnabæ Apóstoli tui méritis et intercessióne lætíficas: concéde propítius; ut, qui tua per eum benefícia póscimus, dono tuæ grátiæ consequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2035-06-11, clean year.
+lauds-capitulum:
+  text: 'Fratres: Jam non estis hóspites et ádvenæ: sed estis cives Sanctórum et doméstici Dei: superædificáti super fundaméntum Apostolórum, et Prophetárum, ipso summo angulári lápide Christo Jesu.'
+  citation: Eph 2:19-20
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2035-06-11, clean year.
+lauds-hymn:
+  text: |
+    Exsúltet cælum láudibus,
+    Resúltet terra gáudiis:
+    Apostolórum glóriam
+    Sacra canunt solémnia.
+
+    Vos sæcli justi júdices,
+    Et vera mundi lúmina,
+    Votis precámur córdium,
+    Audíte preces súpplicum.
+
+    Qui cælum verbo cláuditis,
+    Serásque ejus sólvitis:
+    Nos a peccátis ómnibus
+    Sólvite jussu, quǽsumus.
+
+    Quorum præcépto súbditur,
+    Salus, et languor ómnium:
+    Sanáte ægros móribus,
+    Nos reddéntes virtútibus.
+
+    Ut, cum Judex advénerit
+    Christus in fine sǽculi,
+    Nos sempitérni gáudii
+    Fáciat esse cómpotes.
+
+    * Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2035-06-11, clean year.
+lauds-responsory:
+  text: |
+    R.br. In omnem terram * Exívit sonus eórum.
+    R. In omnem terram * Exívit sonus eórum.
+    V. Et in fines orbis terræ verba eórum.
+    R. Exívit sonus eórum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. In omnem terram * Exívit sonus eórum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2035-06-11, clean year.
+lauds-versicle:
+  text: |-
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2035-06-11, the same clean date already used for lauds-capitulum-st-barnabas.yml.
+vespers-hymn:
+  text: |
+    Exsúltet cælum láudibus,
+    Resúltet terra gáudiis:
+    Apostolórum glóriam
+    Sacra canunt solémnia.
+
+    Vos sæcli justi júdices,
+    Et vera mundi lúmina,
+    Votis precámur córdium,
+    Audíte preces súpplicum.
+
+    Qui cælum verbo cláuditis,
+    Serásque ejus sólvitis:
+    Nos a peccátis ómnibus
+    Sólvite jussu, quǽsumus.
+
+    Quorum præcépto súbditur,
+    Salus, et languor ómnium:
+    Sanáte ægros móribus,
+    Nos reddéntes virtútibus.
+
+    Ut, cum Judex advénerit
+    Christus in fine sǽculi,
+    Nos sempitérni gáudii
+    Fáciat esse cómpotes.
+
+    * Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2035-06-11, the same clean date already used for lauds-capitulum-st-barnabas.yml.
+vespers-responsory:
+  text: |
+    R.br. Constítues eos príncipes * Super omnem terram.
+    R. Constítues eos príncipes * Super omnem terram.
+    V. Mémores erunt nóminis tui, Dómine.
+    R. Super omnem terram.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Constítues eos príncipes * Super omnem terram.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2035-06-11, the same clean date already used for lauds-capitulum-st-barnabas.yml.
+vespers-versicle:
+  text: |-
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 06-11
+# st-barnabas (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. In omnem terram exívit sonus eórum.
+    R. Et in fines orbis terræ verba eórum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Barnabas's own day (2027-06-11 -- 2026's own June 11 is
+# blocked by Corpus Christi's octave, transferring him to the 12th that
+# year instead). The Benedictus antiphon (Matt 19:27ff, same verse as
+# St. Matthias's own). The source's own English existed but was
+# jarringly modern next to every other antiphon's archaic register --
+# reworded to match (the underlying verse's standard Douay-Rheims
+# wording, same as st-matthias-antiphon.yml), marked draft rather than
+# a straight source transcription.
+benedictus-antiphon:
+  text: Vos qui reliquístis ómnia, et secúti estis me, céntuplum accipiétis, et vitam ætérnam possidébitis.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2035-06-11, clean year.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Hoc est præcéptum meum, * ut diligátis ínvicem, sicut diléxi vos.
+    - psalms:
+        - 99
+      antiphon: Majórem caritátem * nemo habet, ut ánimam suam ponat quis pro amícis suis.
+    - psalms:
+        - 62
+      antiphon: Vos amíci mei estis, * si fecéritis quæ præcípio vobis, dicit Dóminus.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Beáti pacífici, * beáti mundo corde: quóniam ipsi Deum vidébunt.'
+  laudate:
+    antiphon: In patiéntia vestra * possidébitis ánimas vestras.
+
+# Matins Nocturn 2 reading for St. Barnabas, Apostle (Jun 11) —
+# SanctiM/06-11.txt's own Lectio4-6 resolve back to `@Sancti/06-11:Lectio3-5`
+# (resliced), so this saint's own proper content is sourced from the
+# Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/06-11.txt, English/Sancti/06-11.txt.
+# Lectio4-6 combined into one reading, one continuous account drawn
+# from Acts. No responsory given in the source.
+#
+# Verified 2026-09-05 (Gospel-pairing sweep): the secular Sancti/06-11.txt
+# file (9-lesson day) DOES carry a genuine Nocturn 3 Gospel+homily —
+# Lectio7 gives the pericope incipit (Matt 10:16-22, "Ecce ego mitto vos
+# sicut oves in medio luporum. Et reliqua.") followed by St. John
+# Chrysostom's homily on it, which continues across Lectio8-9 (combined
+# below into one reading, a single continuous excerpt from his Homily 34
+# on Matthew). SanctiM/06-11.txt's own 12-lesson scheme never reaches this
+# far (its Lectio7-12 all resolve back to Sancti's earlier Lectio6-9's
+# vita material, resliced differently), so this Gospel+homily pairing is
+# pulled from the secular track exactly as the rest of this saint's
+# proper content already is.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Bárnabas Levítes, Cýprius génere, qui et Joseph, cum Paulo Géntium Apóstolus ordinátus est ad prædicándum Jesu Christi Evangélium. Is, agro véndito quem habébat, redáctam ex eo pecúniam áttulit Apóstolis. Missus autem Antiochíam prædicatiónis causa, cum ibi multos ad Christi Dómini fidem convérsos esse comperísset, incredibíliter lætátus, eos hortabátur ut in Christi fide permanérent. Qua cohortatióne multum proficiébat, quod ab ómnibus vir bonus et Spíritu Sancto plenus habebátur.
+
+        Proféctus inde Tarsum ut quæreret Paulum, cum eo Antiochíam venit. In ejus urbis ecclésia annum commoráti, christiánæ fídei et vitæ illis homínibus præcépta dedérunt: ubi étiam Jesu Christi cultóres primum Christiáni sunt appelláti. Discípuli autem Pauli et Bárnabæ, suis facultátibus Christiános, qui in Judǽa erant, sustentábant, eo mitténtes pecúniam per Paulum et Bárnabam. Qui perfúncti illo caritátis offício, adhíbito Joánne, cui cognómen erat Marcus, rediérunt Antiochíam.
+
+        Cum autem Antiochíæ in Ecclésia, cum céteris prophétis et doctóribus, Paulus et Bárnabas in jejúnio et oratióne Dómino deservírent, dixit Spíritus Sanctus: Segregáte mihi Saulum et Bárnabam in opus, ad quod assúmpsi eos. Tunc jejunántes et orántes, imponentésque eis manus, dimisérunt illos. Itaque Seleucíam venérunt, inde in Cyprum; ac multas prætérea urbes regionésque, prædicántes Evangélium summa cum audéntium utilitáte, peragrárunt. Postrémo Bárnabas digréssus a Paulo, una cum Joánne, qui cognominátus est Marcus, navigávit in Cyprum; ibíque círciter séptimum Nerónis annum, tértio Idus Júnii ad apostólici múneris laudem, martyrii corónam adjúnxit. Ejus corpus, Zenóne imperatóre, repértum est in ínsula Cypro; ad cujus pectus erat Evangélium Matthæi, Bárnabæ manu conscríptum.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 10:16-22
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Ecce ego mitto vos sicut oves in médio lupórum. Et réliqua.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. John Chrysostom, Patriarch of Constantinople, Homily 34 on Matthew
+      text: |-
+        Cum Dóminus omnem sollicitúdinem a discipulórum córdibus ejécerit, et ostensióne signórum armáverit, atque, ab ómnibus negótiis sæculáribus alienátos et ab omni temporálium rerum cura liberátos, férreos quodámmodo atque adamántinos fécerit, tum dénique eventúra illis advérsa prædicit. Multa enim ex hac prædicatióne futurárum rerum cómmoda consequebántur. Primum, ut ejus præsciéntiæ vim edíscerent. Deínde, ut nemo suspicarétur, ex Magístri infirmitáte tam grávia mala descéndere. Prætérea, ne, qui ea passúri erant, súbito ac inopináto rerum evéntu perturbaréntur. Dénique, ne, cum ista sub ipsum passiónis suæ tempus audírent, nímium commoveréntur.
+
+        Jam vero, ut intélligant novum hoc esse belli genus et insólitum præliándi morem, cum illos nudos mítteret, una indútos túnica, sine cálceis, absque virga et absque zona et pera, et ab excipiéntibus ali jubéret; non fecit hic dicéndi finem, sed inexplicábilem virtútem suam próferens, Etiam sic eúntes, inquit, mansuetúdinem tamen óvium osténdite, quamvis ad lupos itúri, nec simplíciter ad lupos, sed étiam in médio lupórum: (neque vero óvium tantum mansuetúdinem habére jubet, sed étiam colúmbæ simplicitátem); sic enim virtútem meam máxime osténdam, cum ab óvibus lupi superabúntur; et quamvis illæ sint in médio lupórum, et innúmeris móribus laceréntur, non modo non consúmptæ fúerint, verum étiam illos in sui natúram transmutáverint.
+
+        Majus certe atque admirabílius est mentem adversariórum commutáre, et ánimum in divérsum transférre, quam illos occídere; præsértim cum duódecim tantum essent, et lupis plenus esset orbis univérsus. Erubescámus ígitur, qui, longe divérsa faciéntes, tamquam lupi in adversários rúimus. Nam, quámdiu oves fuérimus, víncimur; tunc enim a nobis pastóris auxílium recédit, qui non lupos, sed oves pascit.
+      status: verified

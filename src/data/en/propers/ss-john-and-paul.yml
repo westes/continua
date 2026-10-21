@@ -1,0 +1,74 @@
+collect:
+  text: |
+    Let us pray.
+    Almighty God, fill us, we beseech thee, with the twofold gladness which doth flow down upon this bright day from the glory of thy blessed servants John and Paul, whom one faith and one suffering made to be brothers indeed.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+commemoration:
+  text: |
+    Ant. These are the holy ones * who for the love of Christ, recked nothing of the threats of men. In the kingdom of heaven the holy martyrs are filled with joy in the company of Angels. O how precious in the sight of the Lord was the death of these His saints who now stand day and night in His presence and are not divided the one from the other.
+    V. The saints shall rejoice in glory:
+    R. They shall be joyful in their beds.
+    Let us pray.
+    Almighty God, fill us, we beseech thee, with the twofold gladness which doth flow down upon this bright day from the glory of thy blessed servants John and Paul, whom one faith and one suffering made to be brothers indeed.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+benedictus-antiphon:
+  text: These are the holy ones * who for the love of Christ, recked nothing of the threats of men. In the kingdom of heaven the holy martyrs are filled with joy in the company of Angels. O how precious in the sight of the Lord was the death of these His saints who now stand day and night in His presence and are not divided the one from the other.
+  status: verified
+
+magnificat-antiphon:
+  text: These are two olive trees * and two candlesticks, giving light in the presence of the Lord; these have power to shut heaven with clouds, and have power again to open the gates thereof, for their tongues are become keys of heaven.
+  status: verified
+
+magnificat-antiphon/~-first:
+  text: The righteous stand * in the Presence of the Lord, and are not divided the one from the other; they drank of the Lord's Cup, and they are called Friends of God.
+  status: verified
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: 'Paul and John * said unto Julian: We worship One God, Who hath made heaven and earth.'
+    - psalms:
+        - 99
+      antiphon: 'Paul and John * said unto Terentian: If thy Lord be Julian, keep thou at peace with him, but as for us, we have no other Lord but the Lord Jesus Christ.'
+    - psalms:
+        - 62
+      antiphon: John and Paul, * when they had heard the tyrannous command of Julian, began to disperse abroad their goods among the poor.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: O ye holy Spirits and Souls of the righteous, * bless ye the Lord. Alleluia.
+  laudate:
+    antiphon: 'John and Paul * said unto Gallican: Make thy vow unto the God of heaven, and thou shalt be yet a greater conqueror than ever thou hast been heretofore.'
+
+vespers-psalmody/~-second:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'Paul and John * said unto Julian: We worship One God, Who hath made heaven and earth.'
+    - psalms:
+        - 110
+      antiphon: 'Paul and John * said unto Terentian: If thy Lord be Julian, keep thou at peace with him, but as for us, we have no other Lord but the Lord Jesus Christ.'
+    - psalms:
+        - 111
+      antiphon: John and Paul, * when they had heard the tyrannous command of Julian, began to disperse abroad their goods among the poor.
+    - psalms:
+        - 116
+      antiphon: 'John and Paul * said unto Gallican: Make thy vow unto the God of heaven, and thou shalt be yet a greater conqueror than ever thou hast been heretofore.'
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        John and Paul were two Roman brethren, the godly and trustworthy servants of Constantia, daughter of Constantine. At her death they spent in feeding Christ's poor the property which she left them. Julian the Apostate asked them to enter his household, but they bravely answered that they would not be servants to one who had run away from the service of Jesus Christ. Julian gave them ten days to consider on their choice, whether, at the end of that time, they would cleave to him, and sacrifice to Jupiter, or most surely die.
+
+        This interval they spent in distributing to poor creatures all that remained of their goods, that they might be quite free to depart hence to the Lord, and so succoured many by whom they have long since been received into everlasting habitations. On the tenth day Terentian, Prefect of the Praetorian Cohort, was sent to them, bringing with him the image of Jupiter. He explained to them the command of the Emperor, that they should worship the said image or die. They were engaged in prayer, but answered him that for their loyalty to Christ, Whom their understanding acknowledged and their mouths confessed to be God, they felt no hesitation in choosing to suffer death.
+
+        Terentian, to avoid the uproar, which might have been caused by their public execution, caused their heads to be cut off at home where they then were. They lifted up their last earthly testimony upon the 26th day of June. They were privately buried, and a story set about that they had been sent into exile. The fact of their death was made generally known by the unclean spirits by whom the bodies of many were tormented, and among others that of Terentian's own son, who was possessed with a devil, and delivered by being brought to the grave of the Martyrs. By this miracle he was led to believe in Christ, and so likewise was his father Terentian, who is said to have been the writer of the life of these blessed Martyrs.
+      status: verified

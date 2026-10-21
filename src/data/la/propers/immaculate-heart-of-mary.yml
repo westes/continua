@@ -1,0 +1,339 @@
+# Read directly from web/www/horas/Latin/Sancti/08-22.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui in Corde beátæ Maríæ Vírginis dignum
+    Spíritus Sancti habitáculum præparásti: concéde propítius; ut ejúsdem
+    immaculáti Cordis festivitátem devóta mente recoléntes, secúndum Cor tuum
+    vívere valeámus.
+    Per Dóminum ejúsdem Fílii tui: qui tecum vivit et regnat in unitáte Spíritus
+    Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# The Immaculate Heart (Sancti/08-22.txt, `ex C11`) has no Matins hymn of its own;
+# it takes the Common of the BVM's, byte-identical to matins-hymn-common-of-the-bvm.yml
+# (same convention as this feast's existing lauds-/vespers-hymn files), but with
+# the secular default "sídera" in stanza 1 (C11.txt's own [Hymnus Matutinum]), matching
+# this feast's secular Lauds hymn, rather than the Monastic "ǽthera".
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Matins
+# `votive=C11` live query, 2026-08 -- "Quem terra, pontus, ǽthera," the
+# classic Common-of-the-BVM Matins hymn. Final stanza corrected 2026-09-10:
+# the live query had baked in the *Lauds* hymn's own ending ("Glória tibi,
+# Dómine... Cum Patre, et Sancto Spíritu"), not Matins' real default
+# ("Jesu, tibi sit glória... Cum Patre, et almo Spíritu" -- C11.txt's own
+# `[Hymnus Matutinum]`, marked with a leading `*` there and carried through
+# unaffected by `[HymnusM Matutinum]`'s `sídera`->`ǽthera` substitution).
+# English was already correct either way (same text either ending).
+matins-hymn:
+  text: |
+    Quem terra, pontus, sídera
+    Colunt, adórant, prædicant,
+    Trinam regéntem máchinam,
+    Claustrum Maríæ bájulat.
+
+    Cui luna, sol, et ómnia
+    Desérviunt per témpora,
+    Perfúsa cæli grátia,
+    Gestant puéllæ víscera.
+
+    Beáta Mater múnere,
+    Cujus supérnus ártifex
+    Mundum pugíllo cóntinens,
+    Ventris sub arca clausus est.
+
+    Beáta cæli núntio,
+    Fœcúnda sancto Spíritu,
+    Desiderátus géntibus,
+    Cujus per alvum fusus est.
+
+    * Jesu, tibi sit glória,
+    Qui natus es de Vírgine,
+    Cum Patre, et almo Spíritu
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayLaudes, 2026-08-22); Latin and English both taken from the page.
+lauds-capitulum:
+  text: Sir 24:14 Ab inítio et ante sǽcula creáta sum, et usque ad futúrum sǽculum non désinam, et in habitatióne sancta coram ipso ministrávi.
+  citation: ''
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayLaudes, 2026-08-22); Latin and English both taken from the page.
+lauds-hymn:
+  text: |
+    O gloriósa vírginum,
+    Sublímis inter sídera,
+    Qui te creávit, párvulum
+    Lacténte nutris úbere.
+
+    Quod Heva tristis ábstulit,
+    Tu reddis almo gérmine:
+    Intrent ut astra flébiles,
+    Cæli reclúdis cárdines.
+
+    Tu Regis alti jánua
+    Et aula lucis fúlgida:
+    Vitam datam per Vírginem,
+    Gentes redémptæ, pláudite.
+
+    Jesu, tibi sit glória,
+    Qui natus es de Vírgine,
+    Cum Patre et almo Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayLaudes, 2026-08-22); Latin and English both taken from the page.
+lauds-responsory:
+  text: ''
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayLaudes, 2026-08-22); Latin and English both taken from the page.
+lauds-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayPrima, 2026-08-22); Latin and English both taken from the page.
+prime-antiphon:
+  text: Dum esset Rex * in accúbitu suo, nardus mea dedit odórem suavitátis.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayTertia, 2026-08-22); Latin and English both taken from the page.
+terce-antiphon:
+  text: Læva ejus * sub cápite meo, et déxtera illíus amplexábitur me.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayTertia, 2026-08-22); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    Sir 24:14 Ab inítio et ante sǽcula creáta sum, et usque ad futúrum sǽculum non désinam, et in habitatióne sancta coram ipso ministrávi.
+    R. Deo grátias.
+    V. Adjuvábit eam Deus vultu suo.
+    R. Deus in médio ejus, non commovébitur.
+  citation: ''
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=praySexta, 2026-08-22); Latin and English both taken from the page.
+sext-antiphon:
+  text: Nigra sum, * sed formósa, fíliæ Jerúsalem; ídeo diléxit me Rex, et introdúxit me in cubículum suum.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=praySexta, 2026-08-22); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    Sir 24:15-16 Et sic in Sion firmáta sum, et in civitáte sanctificáta simíliter requiévi, et in Jerúsalem potéstas mea. Et radicávi in pópulo honorificáto, et in parte Dei mei heréditas illíus, et in plenitúdine sanctórum deténtio mea.
+    R. Deo grátias.
+    V. Elégit eam Deus, et præelégit eam.
+    R. In tabernáculo suo habitáre facit eam.
+  citation: ''
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayNona, 2026-08-22); Latin and English both taken from the page.
+none-antiphon:
+  text: Speciósa * facta es et suávis in delíciis tuis, sancta Dei Génitrix.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayNona, 2026-08-22); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    Sir 24:19-20 In platéis sicut cinnamómum et bálsamum aromatízans odórem dedi: quasi myrrha elécta, dedi suavitátem odóris.
+    R. Deo grátias.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  citation: ''
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayVespera, 2026-08-22); Latin and English both taken from the page.
+vespers-hymn:
+  text: |
+    Prima stropha sequentis hymni dicitur flexis genibus.
+    Ave maris stella,
+    Dei Mater alma,
+    Atque semper Virgo,
+    Felix cæli porta.
+
+    Sumens illud Ave
+    Gabriélis ore,
+    Funda nos in pace,
+    Mutans Hevæ nomen.
+
+    Solve vincla reis,
+    Profer lumen cæcis,
+    Mala nostra pelle,
+    Bona cuncta posce.
+
+    Monstra te esse matrem,
+    Sumat per te preces,
+    Qui pro nobis natus,
+    Tulit esse tuus.
+
+    Virgo singuláris,
+    Inter omnes mitis,
+    Nos culpis solútos
+    Mites fac et castos.
+
+    Vitam præsta puram,
+    Iter para tutum,
+    Ut vidéntes Jesum,
+    Semper collætémur.
+
+    Sit laus Deo Patri,
+    Summo Christo decus,
+    Spirítui Sancto,
+    Tribus honor unus.
+    Amen.
+  status: verified
+
+# Engine render (Divino Afflatu - 1954, command=prayVespera, 2026-08-22); Latin and English both taken from the page.
+vespers-responsory:
+  text: ''
+  status: verified
+
+# Divino Afflatu 1954 engine render, 2026-08-22 immaculate-heart-of-mary second. Paschaltide Alleluia is left
+# to hours/paschal-alleluia.ts.
+vespers-versicle:
+  text: |
+    V. Dignáre me laudáre te, Virgo sacráta.
+    R. Da mihi virtútem contra hostes tuos.
+  status: verified
+
+# Divino Afflatu 1954 engine render, 2026-08-21 immaculate-heart-of-mary first. Paschaltide Alleluia is left
+# to hours/paschal-alleluia.ts.
+vespers-versicle/~-first:
+  text: |
+    V. Dignáre me laudáre te, Virgo sacráta.
+    R. Da mihi virtútem contra hostes tuos.
+  status: verified
+
+# Read directly from web/www/horas/Latin/Sancti/08-22.txt's own
+# [Ant 1] and its English counterpart -- a real, proper antiphon of
+# this feast, not a Common substitution. Duplicated as both Benedictus
+# and Magnificat antiphon (see the -magnificat- sibling file): the
+# source only carries this single [Ant 1], and the temporal propers
+# store keys the two separately, unlike the sanctoral store's single
+# shared `${propers}-antiphon`.
+benedictus-antiphon:
+  text: Exsultávit cor meum * in Dómino, et exaltátum est cornu meum in Deo meo, quia lætáta sum in salutári tuo.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Sancti/08-22.txt's own
+# [Ant 1] and its English counterpart -- a real, proper antiphon of
+# this feast, not a Common substitution. Duplicated as both Benedictus
+# and Magnificat antiphon (see the -benedictus- sibling file): the
+# source only carries this single [Ant 1], and the temporal propers
+# store keys the two separately, unlike the sanctoral store's single
+# shared `${propers}-antiphon`.
+magnificat-antiphon:
+  text: Exsultávit cor meum * in Dómino, et exaltátum est cornu meum in Deo meo, quia lætáta sum in salutári tuo.
+  status: verified
+  temporal: true
+
+# Divino Afflatu 1954 engine render, 2026-08-21 immaculate-heart-of-mary first (post-1617 feast; no Monastic
+# render exists).
+magnificat-antiphon/~-first:
+  text: Exsultávit cor meum * in Dómino, et exaltátum est cornu meum in Deo meo, quia lætáta sum in salutári tuo.
+  status: verified
+  temporal: true
+
+# Engine render (Divino Afflatu - 1954, command=prayLaudes, 2026-08-22); Latin and English both taken from the page. Antiphons only; the psalm numbers are the Monastic Sunday scheme (92/99/62, canticle, Laudate).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Dum esset Rex * in accúbitu suo, nardus mea dedit odórem suavitátis.
+    - psalms:
+        - 99
+      antiphon: Læva ejus * sub cápite meo, et déxtera illíus amplexábitur me.
+    - psalms:
+        - 62
+      antiphon: Nigra sum, * sed formósa, fíliæ Jerúsalem; ídeo diléxit me Rex, et introdúxit me in cubículum suum.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Jam hiems tránsiit, * imber ábiit et recéssit: surge, amíca mea, et veni.'
+  laudate:
+    antiphon: Speciósa * facta es et suávis in delíciis tuis, sancta Dei Génitrix.
+
+# Post-1617 feast: no Monastic render exists, so this is the Divino Afflatu 1954 engine render (2026-08-22
+# immaculate-heart-of-mary second (Divino Afflatu 1954 engine render; Monastic reduction 1,2,3,5)), Sunday-style
+# psalm numbers. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Dum esset Rex * in accúbitu suo, nardus mea dedit odórem suavitátis.
+    - psalms:
+        - 112
+      antiphon: Læva ejus * sub cápite meo, et déxtera illíus amplexábitur me.
+    - psalms:
+        - 121
+      antiphon: Nigra sum, * sed formósa, fíliæ Jerúsalem; ídeo diléxit me Rex, et introdúxit me in cubículum suum.
+    - psalms:
+        - 126
+      antiphon: Speciósa * facta es et suávis in delíciis tuis, sancta Dei Génitrix.
+
+# Post-1617 feast: no Monastic render exists, so this is the Divino Afflatu 1954 engine render (2026-08-21
+# immaculate-heart-of-mary first (Divino Afflatu 1954 engine render; Monastic reduction 1,2,3,5)), Sunday-style
+# psalm numbers. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Dum esset Rex * in accúbitu suo, nardus mea dedit odórem suavitátis.
+    - psalms:
+        - 112
+      antiphon: Læva ejus * sub cápite meo, et déxtera illíus amplexábitur me.
+    - psalms:
+        - 121
+      antiphon: Nigra sum, * sed formósa, fíliæ Jerúsalem; ídeo diléxit me Rex, et introdúxit me in cubículum suum.
+    - psalms:
+        - 126
+      antiphon: Speciósa * facta es et suávis in delíciis tuis, sancta Dei Génitrix.
+
+# Matins Nocturn 2-3 readings for the Immaculate Heart of the Blessed
+# Virgin Mary (Aug 22). Sourced directly from
+# web/www/horas/Latin/Sancti/08-22.txt, English/Sancti/08-22.txt.
+# Nocturn 2: Lectio4-6, a sermon of St. Bernardine of Siena on the
+# Visitation and an excerpt from ecclesiastical documents on the
+# feast's own institution history (Pius VII, 1801; Pius IX; Pius XII,
+# 1942), combined into one reading, not Gospel-tied. Nocturn 3:
+# Lectio7-9, St. Robert Bellarmine's homily on the Seven Words of
+# Christ on the Cross.
+#
+# Update (2026-09-05): the Gospel pericope itself (John 19:25-27, Our
+# Lord entrusting Mary to St. John from the Cross) is now authored too
+# (isGospel: true, immediately before the Bellarmine homily) -- sourced
+# from missa/Latin/Sancti/08-22.txt's own [Evangelium] (this same
+# feast's own Mass Gospel) and its English parallel, not guessed at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Bernardine of Siena, Sermon 9 on the Visitation; ecclesiastical documents on the feast's institution
+      text: |-
+        Quis mortálium, nisi divíno tutus oráculo, de vera Dei et hóminis Genetríce quidquam módicum, sive grande præsúmat incircumcísis, immo pollútis lábiis nomináre, quam Pater ante sǽcula Deus perpétuam prædestinávit in Vírginem, digníssimam Fílius elégit in Matrem, Spíritus Sanctus omnis grátiæ domicílium præparávit? Quibus verbis ego homúnculus sensus altíssimos virgínei Cordis, sanctíssimo ore prolátos, éfferam, quibus non súfficit lingua ómnium Angelórum? Dóminus enim ait: Bonus homo de bono thesáuro cordis profert bona; quod verbum potest étiam esse thesáurus. Quis inter puros hómines mélior homo potest excogitári, quam illa, quæ méruit éffici Mater Dei, quæ novem ménsibus in corde et in útero suo ipsum Deum hospitáta est? Quis thesáurus mélior, quam ipse divínus amor quo fornáceum cor Vírginis ardens erat?
+
+        De hoc ígitur Corde quasi de fornáce divíni ardóris Virgo beáta prótulit verba bona, id est, verba ardentíssimæ caritátis. Sicut enim a vase summo et óptimo vino pleno, non potest exíre nisi óptimum vinum; aut sicut a fornáce summi ardóris non egréditur nisi incéndium fervens; sic quippe a Christi Matre exíre non pótuit verbum, nisi summi summéque divíni amóris atque ardóris. Sapiéntis quoque dóminæ et matrónæ est pauca verba, sólida tamen atque sententiósa habére; proínde septem vícibus quasi septem verba tantum miræ senténtiæ et virtútis a Christi benedictíssima Matre legúntur dicta, ut mýstice ostendátur ipsam fuísse plenam grátia septifórmi. Cum Angelo bis tantúmmodo est locúta. Cum Elísabeth bis étiam. Cum Fílio étiam bis, semel in templo, secúndo in núptiis. Cum minístris semel. Et in his ómnibus semper valde parum locúta est; excépto quod in laude Dei et gratiárum actióne se ámplius dilatávit, scílicet, quum ait: Magníficat ánima mea Dóminum. Ubi non cum hómine, sed cum Deo locúta fuit.
+
+        Cultum litúrgicum, quo Cordi Immaculáto Vírginis Maríæ débitus tribúitur honor, cuíque plures viri sancti ac mulíeres viam parárunt, ipsa Apostólica Sedes primum approbávit ineúnte sǽculo undevicésimo, cum Pius Papa séptimus festum Puríssimi Cordis Maríæ Vírginis instítuit, ab ómnibus diœcésibus et religiósis famíliis, quæ id petiíssent, pie sanctéque agéndum: quod póstmodum Pius Papa nonus Offício ac Missa própria auxit. Ardens autem stúdium atque optátum, jam sǽculo décimo séptimo exórtum et in dies invaléscens, ut nempe ejúsmodi festum, majóri solemnitáte donátum, totíus Ecclésiæ commúne efficerétur, Summus Póntifex Pius duodécimus benígne excípiens anno millésimo nongentésimo quadragésimo secúndo, bello atrocíssimo per orbem fere totum ingravescénte, infínitas populórum ærúmnas míserans, pro sua in Matrem cæléstem pietáte ac fidúcia genus hóminum univérsum illíus Cordi benigníssimo obsecratióne solémni eníxe commendávit, atque in honórem ejúsdem Immaculáti Cordis festum cum Offício et Missa própriis in perpétuum ubíque celebrándum indíxit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joann 19:25-27
+      text: 'In illo témpore: Stabant juxta crucem Jesu mater ejus, et soror matris ejus María Cléophæ, et María Magdaléne. Cum vidísset ergo Jesus matrem, et discípulum stantem, quem diligébat, dicit matri suæ: Múlier, ecce fílius tuus. Deinde dicit discípulo: Ecce mater tua. Et ex illa hora accépit eam discípulus in sua.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Robert Bellarmine, On the Seven Words of Christ on the Cross, ch. 12
+      text: |-
+        Onus et jugum impósitum a Dómino sancto Joánni, ut Vírginis Matris curam géreret, vere fuit jugum suáve et onus leve. Quis enim non libentíssime cohabitáret Matri illi, quæ Verbum incarnátum in útero novem ménsibus portávit, et illi totos trigínta annos devotíssime dulcissiméque cohabitávit? Quis non invídeat dilécto Dómini, qui in abséntia Fílii Dei præséntiam obtínuit Matris Dei? Sed, nisi fallor, póssumus et nos a benignitáte Verbi nostri causa incarnáti et ex dilectióne nímia nostri causa crucifíxi, précibus impetráre, ut dicat et nobis: Ecce Mater tua; et Matri suæ de nobis dicat: Ecce fílius tuus.
+
+        Non est avárus pius Dóminus gratiárum, dúmmodo ad thronum grátiæ ejus cum fide et fidúcia et non ficto corde, sed vero et sincéro accedámus. Qui nos coherédes esse vóluit regni Patris sui, non dedignábitur certe nos coherédes habére amóris Matris suæ. Sed nec ipsa Virgo benigníssima gravábitur multitúdine filiórum, cum sinum amplíssimum hábeat et valde cúpiat, nullum períre ex his, quos Fílius suus tam pretióso sánguine et tam pretiósa morte redémit. Adeámus ergo cum fidúcia ad thronum grátiæ Christi, et supplíciter nec sine lácrimis ab eo petámus, ut de unoquóque nostrum Matri suæ dicat: Ecce fílius tuus; et unicuíque nostrum de Matre sua dicat: Ecce Mater tua.
+
+        Quam bene nobis erit sub præsídio tantæ Matris? Quis nos detráhere audébit de sinu ejus? Quæ nos tentátio superáre póterit, confidéntes in patrocínio Matris Dei et nostræ? neque nos primi érimus in tanti consecutióne benefícii. Multi nos præcessérunt; multi, inquam, ad singuláre et plane matérnum patrocínium tantæ Vírginis accessérunt, et nemo confúsus aut tristis dimíssus est, sed omnes hílares et gaudéntes, freti patrocínio tantæ Matris.
+      status: verified

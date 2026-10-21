@@ -1,0 +1,378 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Matins
+# `votive=C7` live query, 2026-08 -- a genuinely shorter form than
+# Common-of-a-Virgin(-Martyr)'s own Matins hymn: just its closing two
+# stanzas (doxology included), not the full five-stanza "Vírginis
+# Proles." Confirmed identical across `C7`/`C7a`/`C7b` (the same three
+# sub-variants already seen for this category at Lauds/Vespers).
+matins-hymn:
+  text: |
+    Hujus obténtu, Deus alme, nostris
+    Parce jam culpis, vítia remíttens,
+    Quo tibi puri resonémus almum
+    Péctoris hymnum.
+
+    Glória Patri genitǽque Proli,
+    Et tibi compar utriúsque semper
+    Spíritus alme, Deus unus, omni
+    Témpore sæcli. Amen.
+  status: verified
+
+# Common-of-a-Widow's invitatory: the reference engine's Sancti files for widows (Bridget 10-08, Jane Frances de Chantal 08-21 via C7a) take Commune/C7's name-template antiphon, same text as matins-invitatory-common-of-a-holy-woman.yml. Each saint supplies SaintRecord.invitatoryName for the {N}. Found missing 2026-10-08 (Bridget fell to the ferial antiphon).
+matins-invitatory:
+  text: Laudémus Deum nostrum * In confessióne beátæ {N}.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds,
+# St. Anne's own real day (2026-07-26, clean/un-outranked) -- genuinely
+# distinct from Common-of-a-Virgin(-Martyr): different chapter and hymn,
+# though the responsory pattern and versicle are byte-identical to that
+# category's own (see lauds-responsory-common-of-a-widow.yml and
+# lauds-versicle-common-of-a-widow.yml). Same chapter reused for
+# Vespers -- no separate vespers-capitulum-<id> file authored, per
+# vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
+#
+# Also live-verified (St. Monica, May 4) that `common-of-a-widow`'s real
+# content is identical to this -- duplicated verbatim under that id too,
+# same no-alias-mechanism reasoning as `common-of-a-confessor`'s own
+# header. `common` for both categories' saints already points
+# to `common-of-a-virgin` (a separate, established choice for the minor
+# hours specifically, not touched here).
+lauds-capitulum:
+  text: Mulíerem fortem quis invéniet? Procul et de últimis fínibus prétium ejus. Confídit in ea cor viri sui, et spóliis non indigébit.
+  citation: Prov 31:10-11
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds,
+# St. Anne's own real day (2026-07-26) -- see lauds-capitulum-common-of-
+# a-holy-woman.yml's header. "Fortem viríli péctore" -- the classic
+# Common-of-a-Holy-Woman hymn, same text both hours here.
+lauds-hymn:
+  text: |-
+    Fortem viríli péctore
+    Laudémus omnes féminam,
+    Quæ sanctitátis glória
+    Ubíque fulget ínclita.
+
+    Hæc Christi amóre sáucia,
+    Dum mundi amórem nóxium
+    Horréscit, ad cæléstia
+    Iter perégit árduum.
+
+    Carnem domans jejúniis,
+    Dulcíque mentem pábulo
+    Oratiónis nútriens,
+    Cæli potítur gáudiis.
+
+    Rex Christe, virtus fórtium,
+    Qui magna solus éfficis,
+    Hujus precátu, quǽsumus,
+    Audi benígnus súpplices.
+
+    * Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Nunc, et per omne sǽculum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds,
+# St. Anne's own real day (2026-07-26) -- byte-identical to Common-of-a-
+# Virgin(-Martyr)'s own Lauds responsory, see lauds-capitulum-common-of-
+# a-holy-woman.yml's header.
+lauds-responsory:
+  text: |
+    R.br. Spécie tua * Et pulchritúdine tua.
+    R. Spécie tua * Et pulchritúdine tua.
+    V. Inténde, próspere procéde, et regna.
+    R. Et pulchritúdine tua.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Spécie tua * Et pulchritúdine tua.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds,
+# St. Anne's own real day (2026-07-26) -- byte-identical to Common-of-a-
+# Virgin(-Martyr)'s own versicle -- see vespers-versicle-common-of-a-
+# holy-woman.yml's header.
+lauds-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# New file, 2026-09-15: the Common-category tier of Prime's Lectio
+# Brevis override (see hours/resolve-common.ts's getPrimeLectioBrevis) --
+# a saint with no proper Lectio Prima of her own, but who belongs to a
+# Common category, uses that category's own text rather than falling all
+# the way to the generic per-annum default. Sourced directly from
+# web/www/horas/Latin/Commune/C7.txt's own [Lectio Prima] tag and its
+# English counterpart.
+prime-lectio:
+  text: Laudábit usque ad mortem ánima mea Dóminum, quóniam éruis sustinéntes te, et líberas eos de manu angústiæ, Dómine, Deus noster.
+  citation: Sir 51:8; 51:12
+  status: verified
+
+# Commune/C7a.txt [Capitulum Laudes] (a widow takes C7a; several women martyrs take C7b->C7). Terce takes the Lauds chapter and None takes Lectio Prima per the engine. The V/R pair after the chapter is the responsory breve inherited from Commune/C6. Replaced a copy of the Virgin's chapter (2 Cor 10:17 etc.), which the reference does not use for this Common.
+terce-capitulum:
+  text: |
+    Mulíerem fortem quis invéniet? Procul et de últimis fínibus prétium ejus. Confídit in ea cor viri sui, et spóliis non indigébit.
+    R. Deo grátias.
+    V. Spécie tua et pulchritúdine tua.
+    R. Inténde, próspere procéde, et regna.
+  citation: Prov 31:10-11
+  status: verified
+
+# Commune/C7a.txt [Capitulum Sexta] (a widow takes C7a; several women martyrs take C7b->C7). Terce takes the Lauds chapter and None takes Lectio Prima per the engine. The V/R pair after the chapter is the responsory breve inherited from Commune/C6. Replaced a copy of the Virgin's chapter (2 Cor 10:17 etc.), which the reference does not use for this Common.
+sext-capitulum:
+  text: |
+    Manum suam apéruit ínopi, et palmas suas exténdit ad páuperem. Non timébit dómui suæ a frigóribus nivis.
+    R. Deo grátias.
+    V. Adjuvábit eam Deus vultu suo.
+    R. Deus in médio ejus, non commovébitur.
+  citation: Prov 31:20-21
+  status: verified
+
+# Commune/C7a.txt [Capitulum Nona] (a widow takes C7a; several women martyrs take C7b->C7). Terce takes the Lauds chapter and None takes Lectio Prima per the engine. The V/R pair after the chapter is the responsory breve inherited from Commune/C6. Replaced a copy of the Virgin's chapter (2 Cor 10:17 etc.), which the reference does not use for this Common.
+none-capitulum:
+  text: |
+    Multæ fíliæ congregavérunt divítias: tu supergréssa es univérsas. Fallax grátia, et vana est pulchritúdo: múlier timens Dóminum, ipsa laudábitur.
+    R. Deo grátias.
+    V. Elégit eam Deus, et præelégit eam.
+    R. In tabernáculo suo habitáre facit eam.
+  citation: Prov 31:29-30
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers,
+# St. Anne's own real day (2026-07-26) -- byte-identical to the Lauds
+# hymn ("Fortem viríli péctore") -- see lauds-capitulum-common-of-a-holy-
+# woman.yml's header for the fuller gap/sourcing writeup.
+vespers-hymn:
+  text: |-
+    Fortem viríli péctore
+    Laudémus omnes féminam,
+    Quæ sanctitátis glória
+    Ubíque fulget ínclita.
+
+    Hæc Christi amóre sáucia,
+    Dum mundi amórem nóxium
+    Horréscit, ad cæléstia
+    Iter perégit árduum.
+
+    Carnem domans jejúniis,
+    Dulcíque mentem pábulo
+    Oratiónis nútriens,
+    Cæli potítur gáudiis.
+
+    Rex Christe, virtus fórtium,
+    Qui magna solus éfficis,
+    Hujus precátu, quǽsumus,
+    Audi benígnus súpplices.
+
+    * Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Nunc, et per omne sǽculum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers,
+# St. Anne's own real day (2026-07-26) -- byte-identical to Common-of-a-
+# Virgin(-Martyr)'s own Vespers responsory, see lauds-capitulum-common-
+# of-a-holy-woman.yml's header.
+vespers-responsory:
+  text: |
+    R.br. Adjuvábit eam * Deus vultu suo.
+    R. Adjuvábit eam * Deus vultu suo.
+    V. Deus in médio ejus, non commovébitur.
+    R. Deus vultu suo.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Adjuvábit eam * Deus vultu suo.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers,
+# St. Anne's own real day (2026-07-26) -- same versicle as Lauds (see
+# lauds-versicle-common-of-a-widow.yml).
+vespers-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# First Vespers versicle of the Common of a Holy Woman / Widow:
+# Latin/Commune/C7.txt [Versum 1] (inherited by C7a) is "Specie tua"; Second
+# Vespers [Versum 3] is "Diffusa est gratia" (the default file). Confirmed
+# against the local reference engine on St. Martha (2025-07-28 First Vespers
+# "Specie tua", 2025-07-29 Second Vespers "Diffusa est"). See hours/
+# resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Spécie tua et pulchritúdine tua.
+    R. Inténde, próspere procéde, et regna.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- the
+# widow Common (C7) references C6 (virgin) for its Benedictus antiphon;
+# content is byte-identical to benedictus-antiphon-common-of-a-virgin.yml.
+benedictus-antiphon:
+  text: 'Símile est regnum cælórum * hómini negotiatóri quærénti bonas margarítas: invénta una pretiósa, dedit ómnia sua, et comparávit eam.'
+  status: verified
+
+# Second Vespers Magnificat antiphon for `common-of-a-widow`.
+# Content identical to magnificat-antiphon-common-of-a-virgin.yml --
+# the widow Common (C7) references C6 (virgin) for its Magnificat
+# antiphon; same "Veni, Sponsa Christi" text.
+magnificat-antiphon:
+  text: Veni, Sponsa Christi, * áccipe corónam, quam tibi Dóminus præparávit in ætérnum.
+  status: verified
+
+# Generic Common-of-a-Widow (`C7a`, "Commune non Virginum non Martyrum")
+# Matins psalmody. Genuinely sourced from the SECULAR track, by explicit
+# user authorization (2026-08-28): "there is nothing at all wrong with
+# using text from secular sources" -- this project already blends
+# Monastic 1617 structure with secular/Tridentine 1906 and Divino Afflatu
+# content elsewhere by design (see this repo's own design notes, "Not a
+# reconstruction"). Two prior passes found this Common genuinely blocked
+# in the Monastic-1617 track alone: `CommuneM/C7a.txt` redirects Matins
+# content to `@CommuneM/C7` ("Commune Unius non Virginis Martyris"), a
+# 12-lesson structure stitched from secular fragments with psalm-number
+# substitutions, and no real saint anywhere in the Monastic (`SanctiM/`)
+# corpus ever invokes it -- so there was no live Monastic rendering to
+# check a hand-resolution against.
+#
+# Resolved this pass by combining a direct source-read of the Monastic
+# substitution rule with a live SECULAR query to fill in the actual text:
+#
+# 1. `CommuneM/C7.txt`'s own `[Ant Matutinum]` directive is
+#    `@Commune/C7:: s/95/84/ s/96/86/ s/97/95/` followed by
+#    `@CommuneM/C6:AntMatutinumM:1-3` -- i.e. take secular `Commune/C7`'s
+#    own 9-antiphon Matins list, renumber its LAST THREE psalms
+#    (95->84, 96->86, 97->95), then append the first 3 of
+#    `common-of-a-virgin-martyr.yml`'s own `AntMatutinumM` source block.
+#    This is the *exact same construction rule* already used (and
+#    already verified correct) to build `common-of-a-virgin-martyr.yml`
+#    itself from `CommuneM/C6.txt`'s own directive of the same shape --
+#    confirmed by cross-checking that this rule's own predicted tail
+#    (psalms 96/97/98, "Unguéntum effúsum.../Pulchra es et decóra.../
+#    Accínxit fortitúdine lumbos suos...") is BYTE-IDENTICAL to that
+#    already-authored file's own Nocturn 2 tail -- not a coincidence,
+#    both Commons literally append the same 3-entry block.
+# 2. Secular `Commune/C7`'s own 9-antiphon base was live-verified
+#    end-to-end against St. Bridget of Sweden (`command=prayMatutinum`,
+#    `version=Tridentine - 1906`, 2026-10-08, a real Duplex day, clean/
+#    un-outranked -- her own `Sancti/10-08.txt` reads plain "vide C7a").
+#    Her rendered page confirms 9 psalms (8,18,23,44,45,47,95,96,97) with
+#    real La/En antiphon text for each -- applying rule 1's substitution
+#    (95->84,96->86,97->95) to her own last 3 gives the psalm numbers
+#    below.
+#
+# Net result: Nocturn 1 and the Nocturn 1/2-closing versicles are
+# BYTE-IDENTICAL to `common-of-a-virgin-martyr.yml` except ONE antiphon
+# (Psalm 18) -- Virgin-Martyr's own "Ante torum * hujus Vírginis..."
+# literally names her a Virgin, inappropriate for a Widow, so this
+# Common substitutes a different (still Song-of-Songs-sourced) text for
+# that one slot, live-confirmed. Nocturn 2 is fully byte-identical to
+# Virgin-Martyr's own (same construction tail, rule 1 above). NOT
+# aliased to `common-of-a-virgin-martyr.yml` despite the near-total
+# overlap, because that one antiphon is a real, live-verified difference
+# -- same "too close to alias, not close enough to merge" situation as
+# `common-of-a-confessor` vs. `common-of-a-confessor-bishop`.
+#
+# Nocturn 3 antiphon is genuinely Widow-specific and NOT part of the
+# Nocturn-1/2 substitution above: `CommuneM/C7.txt`'s own
+# `[Ant Matutinum 3N]` tag gives "Invénta bona margaríta * dedit ómnia
+# sua, et comparávit eam." directly (read from source, not queried) --
+# the Parable of the Pearl of Great Price (Matt 13:45-46), distinct from
+# Virgin-Martyr's own Nocturn 3 antiphon (the Parable of the Ten
+# Virgins, Matt 25). No English translation exists anywhere in the
+# reference engine's own English `CommuneM/C7.txt` for this antiphon
+# (the file skips straight to Responsory12) -- translated here directly
+# from the Vulgate/Douay-Rheims wording of the parable it quotes, marked
+# as this file's own draft-quality English per this project's "prefer
+# text over missing" convention. The Nocturn 3 versicle IS
+# byte-identical to Virgin-Martyr's own (`Elégit eam Deus...`),
+# live-confirmed via St. Bridget's own page.
+#
+# Nocturn 3 canticle: the real Lectio10-12 content behind this Common
+# (`CommuneM/C7.txt`'s own directives, ultimately secular `Commune/C7`'s
+# Lectio8/9) is St. Gregory the Great's homiletic commentary on the same
+# parable (Homilia 11 in Evangelia), not a distinct OT/Apocryphal
+# canticle triplet the way Virgin-Martyr's own Sirach/Isaiah set is --
+# genuinely a different kind of content than this schema's `canticles`
+# field is shaped for. Cited here as the Gospel pericope itself
+# (Matt 13:44-46, the Parables of the Hidden Treasure and the Pearl),
+# which is what `Commune/C7.txt`'s own `[Lectio7]` reads before Gregory's
+# homily begins, and what the Nocturn 3 antiphon itself directly quotes
+# -- the closest honest citation available, flagged here as a
+# best-effort mapping rather than a literal canticle-triplet match.
+#
+# `aliases` also registers `common-of-several-women-martyrs` (`C7b`)
+# here: `CommuneM/C7b.txt` whole-file inherits `@CommuneM/C7` too (this
+# file's own Monastic base), and its own overrides
+# (`[Versum 1]`/`[Ant 1]`/etc., from secular `Commune/C7b.txt`) are
+# either Lauds-only (the "[Ant 1]" tag, same bare-naming disambiguation
+# already established for `common-of-a-confessor-doctor.yml`'s own `C4a`
+# case) or an explicit `[Nocturn 1 Versum]` override that redirects to
+# `Commune/C6:Versum 1` -- read directly, that resolves to "Spécie tua et
+# pulchritúdine tua. / Inténde, próspere procéde, et regna.", the exact
+# same Nocturn 1 versicle already in this file, so the override changes
+# nothing. No genuine Matins-nocturn-antiphon override exists anywhere in
+# `C7b.txt`. Not live-verifiable against a real Monastic-calendar saint
+# (same reasoning as the Widow case above), but the redirect chain is
+# unambiguous and directly traceable, same confidence level already used
+# to alias `common-of-a-confessor-pope` in the prior pass.
+matins-psalmody:
+  aliases:
+    - common-of-several-women-martyrs
+  nocturn1:
+    groups:
+      - psalms:
+          - 8
+        antiphon: O quam pulchra * est casta generátio cum claritáte!
+      - psalms:
+          - 18
+        antiphon: Læva ejus * sub cápite meo, et déxtera illíus amplexábitur me.
+      - psalms:
+          - 23
+        antiphon: Revértere, * revértere, Sunamítis; revértere, ut intueámur te.
+      - psalms:
+          - 44
+        antiphon: Spécie tua * et pulchritúdine tua inténde, próspere procéde, et regna.
+      - psalms:
+          - 45
+        antiphon: 'Adjuvábit eam * Deus vultu suo: Deus in médio ejus, non commovébitur.'
+      - psalms:
+          - 47
+        antiphon: Aquæ multæ * non potuérunt exstínguere caritátem.
+    versicle:
+      v: Spécie tua et pulchritúdine tua.
+      r: Inténde, próspere procéde, et regna.
+  nocturn2:
+    groups:
+      - psalms:
+          - 84
+        antiphon: Nigra sum, * sed formósa, fíliæ Jerúsalem; ídeo diléxit me Rex, et introdúxit me in cubículum suum.
+      - psalms:
+          - 86
+        antiphon: 'Trahe me post te, * in odórem currémus unguentórum tuórum: óleum effúsum nomen tuum.'
+      - psalms:
+          - 95
+        antiphon: Veni, Sponsa Christi, * áccipe corónam, quam tibi Dóminus præparávit in ætérnum.
+      - psalms:
+          - 96
+        antiphon: Unguéntum effúsum * nomen tuum; ideo adolescéntulæ dilexérunt te nimis.
+      - psalms:
+          - 97
+        antiphon: Pulchra es * et decóra fília Jerúsalem, terríbilis ut castrórum ácies ordináta.
+      - psalms:
+          - 98
+        antiphon: Accínxit * fortitúdine lumbos suos, et roborávit bráchium suum; ideóque lucérna ejus non exstinguétur in sempitérnum.
+    versicle:
+      v: Adjuvábit eam Deus vultu suo.
+      r: Deus in médio ejus, non commovébitur.
+  nocturn3:
+    antiphon: Invénta bona margaríta * dedit ómnia sua, et comparávit eam.
+    canticles:
+      - refs:
+          - book: matt
+            chapter: 13
+            verses: 44-46
+    versicle:
+      v: Elégit eam Deus, et præelégit eam.
+      r: In tabernáculo suo habitáre facit eam.

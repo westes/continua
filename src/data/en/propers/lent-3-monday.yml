@@ -1,0 +1,45 @@
+collect:
+  text: |
+    Let us pray.
+    O Lord, we beseech thee mercifully to shed abroad thy grace into our hearts, that we who are now denying carnal meats to our bodily cravings, may have power likewise to withhold from the same all yielding to the deathful lusts of sin.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+collect/~-vespers:
+  text: |
+    Let us pray.
+    Let our help, O Lord, be in thy mercy, that we over whom thy wrath doth most justly hang because of our sins, may in all dangers worthily be shielded by thy protection and delivered by thy salvation.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+benedictus-antiphon:
+  text: Amen I say unto you, * no Prophet is accepted in his own country.
+  status: verified
+
+magnificat-antiphon:
+  text: But Jesus, * passing through the midst of them, went His way.
+  status: verified
+
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Luke 4:23-30
+      text: At that time, Jesus said to the Pharisees, "You will surely quote me this proverb, 'Physician, cure Yourself! Whatever things we have heard of as done in Capharnaum, do here also in Your own country!'" But He said, "Amen I say to you, no prophet is acceptable in his own country. In truth I say to you, there were many widows in Israel in the days of Elias, when heaven was shut up for three years and six months, and a great famine came over all the land; and to none of them was Elias sent, but rather to a widowed woman in Sarepta of Sidon. And there were many lepers in Israel in the time of Eliseus the prophet; and not one of them was cleansed, but only Naaman the Syrian." And all in the synagogue, as they heard these things, were filled with wrath. And they rose up and put Him forth out of the town, and led Him to the brow of the hill, on which their town was built, that they might throw Him down headlong. But He, passing through their midst, went His way.
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Book 4 on Luke iv
+      text: |-
+        Here we have a display of a spite not very common. Their hatred of Christ, and their desire to find grounds for that hatred in what in Him appealed for their love, had made them forget their local friendliness to a fellow-citizen. By this example as well as by God's declaration, thou mayest learn that thou wilt wait in vain to be helped of His mercy, whilst thou art envious of the spiritual good of thy neighbour. Yea, the Lord turneth Him away from the envious, and will not show the mighty works of His power to such as are bitter against His gifts to others. The example of Himself which God hath been pleased to set before us is that of His doings in the Flesh, and it is by these His doings which He suffered to be seen, that we are taught touching those which are unseen.
+
+        The Saviour then doth not lightly excuse Himself that He had wrought none of His mighty works in His own country, lest perchance any should thence learn to think lightly of our duty to love our Fatherland. Neither was it possible that He Who loved all, should not love His own countrymen; they it was who failed in that love because of their very envy. I tell you of a truth, many widows were in Israel in the days of Elias. The days of Elias not that the said days belonged to Elias, but either because those were the days when Elias lived and worked; or, else, this is a mystic phrase, meaning that Elias by his works made many souls to awake spiritually from the night of sin to the day of grace, and turn to the Lord. In this latter sense that holy Prophet was a mean whereby heaven was opened to such as looked to the eternal and mysterious things of God, and again was shut, (and there was a famine,) when there were no means of knowing God through outward ordinances. This subject, however, I have treated before at full length, when I was writing on the subject of widows.
+
+        And many lepers were in Israel in the days of Eliseus the Prophet, and none of them was cleansed, saving Naaman the Syrian. By these words of the Lord our great Physician, we are plainly taught and urged to put our trust in the Adorable God, since we see that none was healed, or cleansed from bodily plague-spots, save him who took a religious means to regain health. For the blessings of God are not given to them who close their eyes in sleep, but to them that look to Him. We have remarked in our other book, (alluded to above,) that the widow to whom Elias was sent was a type of the Church. And next after (the mention of the type of) the Church cometh meetly the (mention of him who was a type of the Gentile) people, (her converts.) Yea, the Gentiles were a people foreigners by birth, leprous, and covered with plague-spots, till they were baptized in the stream of the mystic Jordan; but from the sacramental waters they rise, lepers no more, but cleansed in body and soul, a glorious virgin Church, not having spot, or wrinkle, or any such thing.
+      responsory: |-
+        R. Take hence presents with you, and go unto the lord of the land, and when ye be come into his presence, bow yourselves to him to the earth. * And my God give you mercy before the man, that he may send away again this your brother, and him which he keepeth in ward.
+        V. Take of the best fruits of the land in your vessels, and carry down the man a present.
+        R. And my God give you mercy before the man, that he may send away again this your brother, and him which he keepeth in ward.
+      status: verified

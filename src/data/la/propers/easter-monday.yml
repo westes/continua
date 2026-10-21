@@ -1,0 +1,68 @@
+# Transcribed directly from the reference engine's own Office file
+# (web/www/horas/Latin/Tempora/Pasc0-1.txt's [Oratio], English parallel in
+# web/www/horas/English/Tempora/Pasc0-1.txt) -- not the Missal track, but
+# the same collect either way (Easter Monday's proper is identical
+# Office/Mass). Marked `draft`, not `verified`, per this repo's convention
+# for a direct transcription without a live Divine-Office-engine
+# cross-check. "$Per Dominum" expanded from Ordo/Prayers.txt's own [Per
+# Dominum] macro.
+collect:
+  text: |
+    Orémus.
+    Deus, qui solemnitáte pascháli, mundo remédia contulísti: pópulum tuum, quǽsumus, cælésti dono proséquere; ut et perféctam libertátem cónsequi mereátur, et ad vitam profíciat sempitérnam.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-03-29); Latin and English both taken from the page.
+benedictus-antiphon:
+  text: 'Jesus junxit se * discípulis suis in via, et ibat cum illis: óculi autem eórum tenebántur, ne eum agnóscerent: et increpávit eos, dicens: O stulti et tardi corde ad credéndum in his, quæ locúti sunt Prophétæ, allelúia.'
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-03-29); Latin and English both taken from the page.
+magnificat-antiphon:
+  text: Qui sunt hi sermónes * quos confértis ad ínvicem ambulántes, et estis tristes? allelúia.
+  status: verified
+  temporal: true
+
+# Matins content for Easter Monday (temporalId easter-monday, Pasc0-1 --
+# "Die II infra octavam Paschæ"). Sourced from web/www/horas/Latin/
+# Tempora/Pasc0-1.txt (Latin homily) / English/Tempora/Pasc0-1.txt
+# (English homily), and the Gospel pericope itself from the Missal's own
+# [Evangelium] (missa/Latin/Tempora/Pasc0-1.txt / missa/English/Tempora/
+# Pasc0-1.txt), same convention as easter-sunday.yml's own Update note --
+# the Office file's own Lectio1 only carries a bare incipit ("Et
+# réliqua"), so the full pericope is pulled from the Mass propers for the
+# same day, not guessed at.
+#
+# Single-nocturn source form (Duplex I classis cum Octava Privilegiata I
+# collapses to 1 nocturn/3 lessons, same structural note as easter-
+# sunday.yml) -- Lectio1's homily portion (incipit dropped) combined with
+# Lectio2-3 into one continuous reading, same pattern used throughout this
+# project's sweep. Responsory: the source's own [Responsory1] ("María
+# Magdaléne, et áltera María") -- also reused verbatim by easter-
+# octave.yml's own Nocturn 2, a genuine cross-reference already present in
+# the source, not a duplication error.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Lucas 24:13-35
+      text: 'In illo témpore: Duo ex discípulis Jesu ibant ipsa die in castéllum, quod erat in spátio stadiórum sexagínta ab Jerúsalem, nómine Emmaus. Et ipsi loquebántur ad ínvicem de his ómnibus, quæ accíderant. Et factum est, dum fabularéntur et secum quǽrerent: et ipse Jesus appropínquans ibat cum illis: óculi autem illórum tenebántur, ne eum agnóscerent. Et ait ad illos: Qui sunt hi sermónes, quos confértis ad ínvicem ambulántes, et estis tristes? Et respóndens unus, cui nomen Cléophas, dixit ei: Tu solus peregrínus es in Jerúsalem, et non cognovísti, quæ facta sunt in illa his diébus? Quibus ille dixit: Quæ? Et dixérunt: De Jesu Nazaréno, qui fuit vir Prophéta potens in ópere et sermóne, coram Deo et omni pópulo: et quómodo eum tradidérunt summi sacerdótes et príncipes nostri in damnatiónem mortis, et crucifixérunt eum. Nos autem sperabámus, quia ipse esset redemptúrus Israël: et nunc super hæc ómnia tértia dies est hódie, quod hæc facta sunt. Sed et mulíeres quædam ex nostris terruérunt nos, quæ ante lucem fuérunt ad monuméntum, et, non invénto córpore ejus, venérunt, dicéntes se étiam visiónem Angelórum vidísse, qui dicunt eum vívere. Et abiérunt quidam ex nostris ad monuméntum: et ita invenérunt, sicut mulíeres dixérunt, ipsum vero non invenérunt. Et ipse dixit ad eos: O stulti et tardi corde ad credéndum in ómnibus, quæ locúti sunt Prophétæ! Nonne hæc opórtuit pati Christum, et ita intráre in glóriam suam? Et incípiens a Móyse et ómnibus Prophétis, interpretabátur illis in ómnibus Scriptúris, quæ de ipso erant. Et appropinquavérunt castéllo, quo ibant: et ipse se finxit lóngius ire. Et coëgérunt illum, dicéntes: Mane nobiscum, quóniam advesperáscit et inclináta est jam dies. Et intrávit cum illis. Et factum est, dum recúmberet cum eis, accépit panem, et benedíxit, ac fregit, et porrigébat illis. Et apérti sunt óculi eórum, et cognovérunt eum: et ipse evánuit ex óculis eórum. Et dixérunt ad ínvicem: Nonne cor nostrum ardens erat in nobis, dum loquerétur in via, et aperíret nobis Scriptúras? Et surgéntes eádem hora regréssi sunt in Jerúsalem: et invenérunt congregátas úndecim, et eos, qui cum illis erant, dicéntes: Quod surréxit Dóminus vere, et appáruit Simóni. Et ipsi narrábant, quæ gesta erant in via: et quómodo cognovérunt eum in fractióne panis.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 23 on the Gospels
+      text: |-
+        Audístis, fratres caríssimi, quia duóbus discípulis ambulántibus in via, non quidem credéntibus, sed tamen de se loquéntibus, Dóminus appáruit: sed eis spéciem, quam recognóscerent, non osténdit. Hoc ergo egit foris Dóminus in óculis córporis, quod apud ipsos agebátur intus in óculis cordis. Ipsi namque apud semetípsos intus et amábant, et dubitábant: eis autem Dóminus foris et præsens áderat, et quis esset non ostendébat. De se ergo loquéntibus præséntiam exhíbuit: sed de se dubitántibus cognitiónis suæ spéciem abscóndit.
+
+        Verba quidem cóntulit, durítiam intelléctus increpávit, sacræ Scriptúræ mystéria, quæ de seípso erant, apéruit: et tamen quia adhuc in eórum córdibus peregrínus erat a fide, se ire lóngius finxit. Fíngere namque, compónere dícimus: unde et compositóres luti, fígulos vocámus. Nihil ergo simplex Véritas per duplicitátem fecit: sed talem se eis exhíbuit in córpore, qualis apud illos erat in mente. Probándi autem erant, si hi, qui eum etsi necdum ut Deum dilígerent, saltem ut peregrínum amáre potuíssent.
+
+        Sed quia esse extránei a caritáte non póterant hi, cum quibus Véritas gradiebátur: eum ad hospítium quasi peregrínum vocant. Cur autem dícimus, vocant, cum illic scriptum sit: Et coëgérunt eum? Ex quo nimírum exémplo collígitur, quia peregríni ad hospítium non solum invitándi sunt, sed étiam trahéndi. Mensam ígitur ponunt, panes cibósque ófferunt: et Deum, quem in Scriptúræ sacræ expositióne non cognóverant, in panis fractióne cognóscunt. Audiéndo ergo præcépta Dei illumináti non sunt, faciéndo illumináti sunt: quia scriptum est: Non auditóres legis justi sunt apud Deum, sed factóres legis justificabúntur. Quisquis ergo vult audíta intellégere, festínet ea, quæ jam audíre pótuit, ópere implére. Ecce Dóminus non est cógnitus dum loquerétur, et dignátus est cognósci, dum páscitur.
+      responsory: |-
+        R. María Magdaléne, et áltera María ibant dilúculo ad monuméntum: * Jesum quem quǽritis, non est hic, surréxit sicut locútus est, præcédet vos in Galilǽam, ibi eum vidébitis, allelúia, allelúia.
+        V. Et valde mane una sabbatórum véniunt ad monuméntum, orto jam sole: et introëúntes vidérunt júvenem sedéntem in dextris, qui dixit illis.
+        R. Jesum quem quǽritis, non est hic, surréxit sicut locútus est, præcédet vos in Galilǽam, ibi eum vidébitis, allelúia, allelúia.
+      status: verified

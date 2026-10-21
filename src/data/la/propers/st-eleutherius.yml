@@ -1,0 +1,57 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2038-05-26).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Infirmitátem nostram réspice, omnípotens Deus: et, quia pondus própriæ actiónis gravat, beáti Eleuthérii Mártyris tui atque Pontíficis intercéssio gloriósa nos prótegat.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-eleutherius-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-martyr-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-eleutherius-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Infirmitátem nostram réspice, omnípotens Deus: et, quia pondus própriæ actiónis gravat, beáti Eleuthérii Mártyris tui atque Pontíficis intercéssio gloriósa nos prótegat.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Eleutherius's own day (2038-05-26 -- see
+# st-urban-i-antiphon.yml's note on why so late a year was needed). The
+# Benedictus antiphon -- see st-john-before-the-latin-gate-antiphon.yml's
+# note on the shared Eastertide Common text.
+benedictus-antiphon:
+  text: Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Eleutherius, Pope and Martyr (May 26)
+# — pre-1955-but-post-1617. Plain Sancti/05-26.txt is a different, later
+# saint (St. Philip Neri, canonized 1622) who displaced Eleutherius on
+# the general calendar's own May 26 slot; his content survives at the
+# suffixed sibling file (see memory vu-matins-pre1955-saints's "critical
+# wrinkle").
+# web/www/horas/Latin/Sancti/05-26o.txt, English/Sancti/05-26o.txt.
+# Single lesson (simplex-feast Lectio93), no responsory in the source.
+# Note: the Latin and English texts here are noticeably not a literal
+# 1:1 translation of each other (the English is considerably more
+# detailed) — both are transcribed as-given from their respective source
+# files rather than reconciled, same as elsewhere in this project when
+# the two language tracks diverge.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Eleutherius, Nicopoli in Græcia natus, Aniceti Pontificis diaconus, Commodo imperatóre, præfuit Ecclésiæ. Huic, inítio pontificatus, supplices litteræ venérunt a Lucio Britannórum rege, ut se ac suos in Christianórum númerum reciperet. Quam ob rem Fugatium et Damianum, doctos et pios viros, misit in Britanniam, per quos rex et réliqui fidem susciperent. Hoc Pontifice, Irenæus Polycarpi discipulus, Romam veniens, ab eo benígne acceptus est. Quo témpore summa pace et quiete fruebátur Ecclésia Dei; ac per totum orbem terrárum, maxime Romæ, fides propagabátur. Vixit Eleutherius in pontificatu annos quindecim, dies viginti tres. Fecit ordinatiónes tres mense Decembri, quibus creávit presbyteros duodecim, diaconos octo, episcopos per diversa loca quindecim: sepultúsque est in Vaticano prope corpus sancti Petri.'
+      status: verified

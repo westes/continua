@@ -1,0 +1,85 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2043-04-29).
+# Same convention as data/propers/temporal/*-collect.yml. One correction
+# to the source's own English translation: it left his name in the Latin
+# genitive ("blessed Robérti") rather than translating it — fixed to
+# "Robert" here as an evident transcription artifact, not a deliberate
+# stylistic choice (unlike the archaic English kept verbatim elsewhere in
+# this project).
+collect:
+  text: |
+    Orémus.
+    Intercéssio nos, quǽsumus, Dómine, beáti Robérti Abbátis comméndet: ut, quod nostris méritis non valémus, ejus patrocínio assequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-robert-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-abbot (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-robert-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui, allelúia.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Intercéssio nos, quǽsumus, Dómine, beáti Robérti Abbátis comméndet: ut, quod nostris méritis non valémus, ejus patrocínio assequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 04-29
+# st-robert (new saint-level second). See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle:
+  text: |
+    V. Justum dedúxit Dóminus per vias rectas, allelúia.
+    R. Et osténdit illi regnum Dei, allelúia.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 04-29
+# st-robert (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Amávit eum Dóminus, et ornávit eum, allelúia.
+    R. Stolam glóriæ índuit eum, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Robert's own day (2026-04-29). The Benedictus antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui, allelúia.
+  status: verified
+
+# Matins Nocturn reading for St. Robert of Molesme, Abbot, founder of
+# Cîteaux (Apr 29) — a genuine Monastic-only saint: no `Sancti/04-29*.txt`
+# names him at all (that plain file is St. Peter Martyr — see
+# `st-peter-martyr.yml`'s own note on the date swap between this app's
+# calendar and the general Tridentine one); his own proper vita exists
+# only at web/www/horas/Latin/SanctiM/04-29oM.txt. Lectio1-4 (Nocturn
+# 1) fall back to Common of a Confessor; Lectio5-8 are his own vita
+# (the founding of Cîteaux), one continuous account, combined into a
+# single reading, no genuine source break.
+# No English/SanctiM/04-29oM.txt exists in the reference engine at
+# all, so `en` is this project's own translation, marked `draft` per
+# vu-prefer-text-over-missing. Two evident OCR slips in the Latin
+# source ("matri su@" for "matri suæ"; "ad quibusdam Eremitis" for "a
+# quibusdam Eremitis") silently corrected in transcription. No
+# responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Robertus in Campania, nobilibus ortus parentibus, cum matri suæ de illo prægnanti, Dei Mater apparuisset, et digitum ejus annulo subarrasset dicens, velle, ut suus esset sponsus filius, quem in utero portabat: quod fuit causa, ut omnia sua Monasteria ipsius Dei Matris nomini consecrarentur: annum agens undecimum apud sanctum Petrum de Cella suscepit habitum regularem. Ubi jejuniis, et orationibus vacans nocte, et die gratum Deo exhibebat obsequium, carnem spiritui, spiritum Creatori subjiciens. Ipso sic disponente, a Monachis illius Monasterii electus in Priorem, a Tornodorensibus in Abbatem cooptatur.
+
+        Postea a quibusdam Eremitis fuit rogatus, ut idem munus super eis admitteret; quorum votis satisfecisset, nisi Tornodorenses Monachi reclamassent. Dimittens nuntios spem illis certam dedit se quam cito facultas tribueretur ei a Domino, ad eos profecturum. Assumptis posteà duobus sociis, iit ad nemus, cujus nomen Molismus erat, ubi propriis manibus laborantes, ex ramis arborum domicilia, et oratorium construxerunt, in eoque Domino salutares hostias, et sacrificium contriti cordis offerebant. Sed cum maxime desideraret ubicumque servi Dei reperiebantur, ipse quoque reperiri, venit ad locum Hauz, et devote ab istis Monachis susceptus, paulo post Abbatem illum elegerunt.
+
+        De suo tamen secessu Molismenses contristati Summum Pontificem adjerunt; ejusque auctoritate freti virum Dei revocavere Molismum, in quo aliqui, ut Albericus, et Stephanus, et alii duo, cum Eremiticam vitam appeterent, ad locum, Vivicus dictum profecti sunt; sed ab illo pulsi, ad sylvam Cistertium vocatam, devenerunt, ubi ædificato Oratorio in honorem Beatæ Mariæ, perseveraverunt. Audiens autem beatus Robertus sanctam ipsorum conversationem, assumptis secum vigintiduobus monachis perrexit ad eos, ut sancti eorum propositi esset particeps, et adjutor, a quibuscum summa devotione susceptus, eisdem aliquandiu paterna solicitudine præfuit.
+
+        Tanto pastore destitui ægre ferentes Monachi Molismi, Summum Pontificem adjerunt, ut beatum Robertum Molismum regredi cogeret. Annuens eis pontifex Cabilonensi Episcopo scripsit, quatenus alio Abbate Cisterciensibus ordinato, Robertum cogeret reverti Molismum. Dispositis ergo quæ ad observantiam, secundum regulam sancti Benedicti pertinebant, Abbatem eis loco sui præfecit Albericum, et eo mortuo Stephanum subrogavit. Sicque novellæ illius plantationis institutor existens beatus Robertus, cum utriusque Monasterii, Molismensis scilicet, et Cisterciensis, regimen haberet, Molismum secundo rediit. Tandem cum jam suum obitum appeteret, ejus horam illi Dominus revelavit, et anno ætatis suæ nonagesimotertio, clarus miraculis spiritum transmisit ad cælos, tertio Kalendas Maii, anno Domini millesimo nonagesimo octavo.
+      status: verified

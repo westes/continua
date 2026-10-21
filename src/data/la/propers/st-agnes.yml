@@ -1,0 +1,415 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2029-01-21, a
+# year that date doesn't collide with a Sunday). Same convention as
+# data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui infírma mundi éligis, ut fórtia quæque confúndas: concéde propítius; ut, qui beátæ Agnétis Vírginis et Mártyris tuæ solémnia cólimus, ejus apud te patrocínia sentiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-agnes-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-virgin-martyr (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (st-agnes-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Ecce, quod concupívi, jam vídeo: quod sperávi, jam téneo: ipsi sum juncta in cælis, quem in terris pósita, tota devotióne diléxi.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Omnípotens sempitérne Deus, qui infírma mundi éligis, ut fórtia quæque confúndas: concéde propítius; ut, qui beátæ Agnétis Vírginis et Mártyris tuæ solémnia cólimus, ejus apud te patrocínia sentiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-01-21 (clean year, per st-agnes.yml's own comment).
+# Byte-identical to St. Agatha's own override (Sir 51:1-3, "Confitébor
+# tibi, Dómine, Rex") -- confirmed a real, saint-specific shared
+# override between these two ancient Roman virgin martyrs specifically,
+# not the general Common-of-a-Virgin-Martyr default: St. Lucy (also one
+# of the Canon-of-the-Mass virgin martyrs) uses the plain 2 Cor 10:17-18
+# Common chapter on her own clean day (2025-12-13), so this isn't a
+# rank-tier variant of the Common either. Responsory, hymn, and versicle
+# are the same Common-of-a-Virgin-Martyr content reused (byte-identical
+# at both Agatha's and Agnes's own days). Same chapter reused for
+# Vespers -- no separate vespers-capitulum-<id> file authored, per
+# vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
+lauds-capitulum:
+  text: 'Confitébor tibi, Dómine, Rex, et collaudábo te Deum Salvatórem meum. Confitébor nómini tuo: quóniam adjútor et protéctor factus es mihi, et liberásti corpus meum a perditióne.'
+  citation: Eccli 51:1-3
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C6` live query, 2026-08 -- see lauds-capitulum-common-of-a-
+# virgin-martyr.yml's header for why the votive-office view was used.
+# "Jesu, coróna Vírginum" -- the classic Common-of-Virgins Lauds/Vespers
+# hymn (same text both hours here), a single genuine recension found in
+# the reference engine.
+lauds-hymn:
+  text: |-
+    Jesu, coróna Vírginum,
+    Quem Mater illa cóncipit
+    Quæ sola Virgo párturit,
+    Hæc vota clemens áccipe:
+
+    Qui pascis inter lília
+    Septus choréis Vírginum,
+    Sponsus decórus glória
+    Sponsísque reddens prǽmia.
+
+    Quocúmque pergis, Vírgines
+    Sequúntur, atque láudibus
+    Post te canéntes cúrsitant,
+    Hymnósque dulces pérsonant;
+
+    Te deprecámur lárgius,
+    Nostris adáuge sénsibus
+    Nescíre prorsus ómnia
+    Corruptiónis vúlnera.
+
+    Laus, honor, virtus, glória
+    Deo Patri et Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C6` live query, 2026-08 -- see lauds-capitulum-common-of-a-
+# virgin-martyr.yml's header for why the votive-office view was used.
+lauds-responsory:
+  text: |
+    R.br. Spécie tua * Et pulchritúdine tua.
+    R. Spécie tua * Et pulchritúdine tua.
+    V. Inténde, próspere procéde, et regna.
+    R. Et pulchritúdine tua.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Spécie tua * Et pulchritúdine tua.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C6` live query, 2026-08 -- same versicle as Vespers -- see
+# vespers-versicle-st-agnes.yml's header.
+lauds-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 1, per the established
+# Prime=Lauds-Ant1 minor-hours-borrow-from-Lauds convention.
+prime-antiphon:
+  text: Ingréssa Agnes * turpitúdinis locum, Angelum Dómini præparátum invénit.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 2, per the established
+# Terce=Lauds-Ant2 minor-hours-borrow-from-Lauds convention.
+terce-antiphon:
+  text: Mecum enim hábeo * custódem córporis mei, Angelum Dómini.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 3, per the established
+# Sext=Lauds-Ant3 minor-hours-borrow-from-Lauds convention.
+sext-antiphon:
+  text: Anulo suo * subarrhávit me Dóminus meus Jesus Christus, et tamquam sponsam decorávit me coróna.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/01-21.txt's own [Capitulum
+# Sexta] and English/Sancti/01-21.txt's own translation.
+sext-capitulum:
+  text: Liberásti me secúndum multitúdinem misericórdiæ nóminis tui a rugiéntibus, præparátis ad escam, de mánibus quæréntium ánimam meam, et de multis tribulatiónibus quæ circumdedérunt me.
+  citation: Sir 51:4-5
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 5, per the established
+# None=Lauds-Ant5 minor-hours-borrow-from-Lauds convention.
+none-antiphon:
+  text: Congaudéte mecum * et congratulámini, quia cum his ómnibus lúcidas sedes accépi.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/01-21.txt's own [Capitulum
+# Nona] and English/Sancti/01-21.txt's own translation.
+none-capitulum:
+  text: Laudábit usque ad mortem ánima mea Dóminum, quóniam éruis sustinéntes te, et líberas eos de manu angústiæ, Dómine, Deus noster.
+  citation: Sir 51:8; 51:12
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C6` live query, 2026-08 -- byte-identical to the Lauds hymn
+# ("Jesu, coróna Vírginum") -- see lauds-capitulum-common-of-a-virgin-
+# martyr.yml's header for the fuller gap/sourcing writeup.
+vespers-hymn:
+  text: |-
+    Jesu, coróna Vírginum,
+    Quem Mater illa cóncipit
+    Quæ sola Virgo párturit,
+    Hæc vota clemens áccipe:
+
+    Qui pascis inter lília
+    Septus choréis Vírginum,
+    Sponsus decórus glória
+    Sponsísque reddens prǽmia.
+
+    Quocúmque pergis, Vírgines
+    Sequúntur, atque láudibus
+    Post te canéntes cúrsitant,
+    Hymnósque dulces pérsonant;
+
+    Te deprecámur lárgius,
+    Nostris adáuge sénsibus
+    Nescíre prorsus ómnia
+    Corruptiónis vúlnera.
+
+    Laus, honor, virtus, glória
+    Deo Patri et Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C6` live query, 2026-08 -- see lauds-capitulum-common-of-a-
+# virgin-martyr.yml's header for why the votive-office view was used.
+vespers-responsory:
+  text: |
+    R.br. Adjuvábit eam * Deus vultu suo.
+    R. Adjuvábit eam * Deus vultu suo.
+    V. Deus in médio ejus, non commovébitur.
+    R. Deus vultu suo.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Adjuvábit eam * Deus vultu suo.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C6` live query, 2026-08 -- same versicle as Lauds (see lauds-
+# versicle-st-agnes.yml).
+vespers-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Agnes's own day (2026-01-21) -- the Benedictus antiphon.
+# Corrects the previous version of this file, which had been sourced
+# from the Roman/secular rite's Sancti/01-21.txt's own [Ant 1] instead:
+# confirmed, like St. Lawrence's own antiphon before it, to be real but
+# different text from what Monastic 1617 actually renders at Lauds.
+benedictus-antiphon:
+  text: 'Ecce, quod concupívi, jam vídeo: quod sperávi, jam téneo: ipsi sum juncta in cælis, quem in terris pósita, tota devotióne diléxi.'
+  status: verified
+
+# Magnificat antiphon for both Vespers of St. Agnes in the Monastic rite:
+# web/www/horas/Latin/SanctiM/01-21.txt's `[Ant 3] (nisi rubrica
+# cisterciensis)` is `@Sancti/01-21:Ant 1`, i.e. the Monastic Second Vespers
+# takes the plain [Ant 1] ("Beáta Agnes in médio flammárum"), and Sancti's
+# own [Ant 3] ("Stans beáta Agnes", the Roman rite's Second Vespers
+# antiphon) applies only to the Cistercian rubric. This file previously
+# held that Roman [Ant 3]; corrected 2026-10-07. First Vespers uses [Ant 1]
+# too, so no `-first` variant is needed. English from English/Sancti/
+# 01-21.txt's [Ant 1].
+magnificat-antiphon:
+  text: 'Beáta Agnes * in médio flammárum expánsis mánibus orábat: Te déprecor, omnípotens, adoránde, colénde, Pater metuénde, quia per sanctum Fílium tuum evási minas sacrílegi tyránni, et carnis spurcítias immaculáto calle transívi: et ecce vénio ad te, quem amávi, quem quæsívi, quem semper optávi.'
+  status: verified
+
+# Monastic 6+6+3 per SanctiM/01-21.txt over Sancti/01-21.txt. Sancti's own
+# [Ant Matutinum] is 9 proper antiphons (psalms 1/2/3/4/5/8/14/44/45).
+# SanctiM interleaves 3 [AntMatutinumM] antiphons ("Christi Virgo" ;;10,
+# "Jam corpus ejus" ;;45, "Stans a dextris ejus" ;;84) and re-tags the
+# secular ones with the substitutions in its own [Ant Matutinum] block:
+#   lines 1-5, s/5/8/ s/4/5/ s/3/4/  -> Discéde 1, Déxteram 2, Pósuit 4,
+#                                       Induit 5, Mel et lac 8
+#   AntMatutinumM:1                  -> Christi Virgo 10
+#   lines 8-9, s/44/14/ s/45/44/     -> Christus circúmdedit 14,
+#                                       Ipsi sum desponsáta 44
+#   AntMatutinumM:2                  -> Jam corpus ejus 45
+#   line 7, s/14/47/                 -> Cujus pulchritúdinem 47
+#   AntMatutinumM:3                  -> Stans a dextris ejus 84
+#   line 6, s/8/86/                  -> Ipsi soli servo fidem 86
+# giving Nocturn 1 = Ps 1/2/4/5/8/10 and Nocturn 2 = Ps 14/44/45/47/84/86
+# (these psalm tags are the source's own, not the generic Common-of-a-
+# Virgin set). Nocturn 3 is [Ant Matutinum 3N] ("Misit Dóminus") with the
+# source's `;;249;250;251` canticles, the same three Sir 39 / Isa 61-62
+# canticles common-of-a-virgin-martyr.yml uses. The source has no
+# [Nocturn N Versum] of its own, so the three nocturn-closing versicles
+# are that Common's, unchanged. English from English/Sancti/01-21.txt and
+# English/SanctiM/01-21.txt; the source's English antiphons carry no
+# asterisk, so none is inserted.
+matins-psalmody:
+  category: common-of-a-virgin
+  nocturn1:
+    groups:
+      - psalms:
+          - 1
+        antiphon: Discéde a me, * pábulum mortis, quia jam ab álio amatóre prævénta sum.
+      - psalms:
+          - 2
+        antiphon: Déxteram meam * et collum meum cinxit lapídibus pretiósis, trádidit áuribus meis inæstimábiles margarítas.
+      - psalms:
+          - 4
+        antiphon: Pósuit signum * in fáciem meam, ut nullum præter eum amatórem admíttam.
+      - psalms:
+          - 5
+        antiphon: Induit me Dóminus * cýclade auro texta, et imménsis monílibus ornávit me.
+      - psalms:
+          - 8
+        antiphon: Mel et lac * ex ejus ore suscépi, et sanguis ejus ornávit genas meas.
+      - psalms:
+          - 10
+        antiphon: Christi Virgo * nec terróre concútitur, nec blandiméntis sedúcitur.
+    versicle:
+      v: Spécie tua et pulchritúdine tua.
+      r: Inténde, próspere procéde, et regna.
+  nocturn2:
+    groups:
+      - psalms:
+          - 14
+        antiphon: Christus circúmdedit me * vernántibus atque coruscántibus gemmis pretiósis.
+      - psalms:
+          - 44
+        antiphon: Ipsi sum desponsáta, * cui Angeli sérviunt, cujus pulchritúdinem sol et luna mirántur.
+      - psalms:
+          - 45
+        antiphon: Jam corpus ejus * córpori meo sociátum est, et sanguis ejus ornávit genas meas.
+      - psalms:
+          - 47
+        antiphon: Cujus pulchritúdinem * sol et luna mirántur, ipsi soli servo fidem.
+      - psalms:
+          - 84
+        antiphon: Stans a dextris ejus * Agnus nive candídior, Christus sibi sponsam et Mártyrem consecrávit.
+      - psalms:
+          - 86
+        antiphon: Ipsi soli servo fidem, * ipsi me tota devotióne commítto.
+    versicle:
+      v: Adjuvábit eam Deus vultu suo.
+      r: Deus in médio ejus, non commovébitur.
+  nocturn3:
+    antiphon: Misit Dóminus * Angelum suum, et liberávit me de médio ignis, et non sum æstuáta.
+    canticles:
+      - refs:
+          - book: sir
+            chapter: 39
+            verses: 17-21
+      - refs:
+          - book: isa
+            chapter: 61
+            verses: 10-11
+          - book: isa
+            chapter: 62
+            verses: 1-3
+      - refs:
+          - book: isa
+            chapter: 62
+            verses: 4-7
+    versicle:
+      v: Elégit eam Deus, et præelégit eam.
+      r: In tabernáculo suo habitáre facit eam.
+
+# Sourced from web/www/horas/Latin/Sancti/01-21.txt's own [Ant Laudes]
+# and English/Sancti/01-21.txt's own translation. Below duplex-majus, so
+# hours/lauds.ts's mergeFerialNumbersWithProperAntiphons only takes this
+# file's antiphon text, not its psalm numbers -- the numbers below are
+# placeholders (the standard 92/99/62 scheme most Virgin-Martyr-shaped
+# feasts use), not independently confirmed for this feast, since they
+# have no functional effect at this rank.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Ingréssa Agnes * turpitúdinis locum, Angelum Dómini præparátum invénit.
+    - psalms:
+        - 99
+      antiphon: Mecum enim hábeo * custódem córporis mei, Angelum Dómini.
+    - psalms:
+        - 62
+      antiphon: Anulo suo * subarrhávit me Dóminus meus Jesus Christus, et tamquam sponsam decorávit me coróna.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Benedíco te, * Pater Dómini mei Jesu Christi, quia per Fílium tuum ignis exstínctus est a látere meo.
+  laudate:
+    antiphon: Congaudéte mecum * et congratulámini, quia cum his ómnibus lúcidas sedes accépi.
+
+# Sourced from web/www/horas/Latin/Sancti/01-21.txt's own [Ant Vespera]
+# ("@:Ant Laudes" -- Vespers reuses the Lauds antiphons verbatim), same
+# text and English as lauds-psalmody-overrides/st-agnes.yml. Below
+# duplex-majus, so hours/vespers.ts's mergeFerialNumbersWithProperAntiphons
+# only takes this file's antiphon text, not its psalm numbers.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Ingréssa Agnes * turpitúdinis locum, Angelum Dómini præparátum invénit.
+    - psalms:
+        - 110
+      antiphon: Mecum enim hábeo * custódem córporis mei, Angelum Dómini.
+    - psalms:
+        - 111
+      antiphon: Anulo suo * subarrhávit me Dóminus meus Jesus Christus, et tamquam sponsam decorávit me coróna.
+    - psalms:
+        - 112
+      antiphon: Benedíco te, * Pater Dómini mei Jesu Christi, quia per Fílium tuum ignis exstínctus est a látere meo.
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera,
+# 2026-01-21, "Vespera de præcedenti"): St. Agnes Second Vespers psalm antiphons -- the source's explicit
+# SanctiM/01-21.txt [Ant Vespera 3] set (lines 1, 2, 3 and 5 of her Lauds antiphons at Ps 109/111/112/126). The
+# other evening's set is st-agnes.yml (the default; her First Vespers psalm antiphons cannot be read from the
+# engine, whose Jan 20 evening is "a capitulo de sequenti" -- Ss. Fabian and Sebastian's psalms). See
+# vespers-psalmody-overrides.ts's getVespersSaintOverride.
+vespers-psalmody/~-second:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Ingréssa Agnes * turpitúdinis locum, Angelum Dómini præparátum invénit.
+    - psalms:
+        - 111
+      antiphon: Mecum enim hábeo * custódem córporis mei, Angelum Dómini.
+    - psalms:
+        - 112
+      antiphon: Anulo suo * subarrhávit me Dóminus meus Jesus Christus, et tamquam sponsam decorávit me coróna.
+    - psalms:
+        - 126
+      antiphon: Congaudéte mecum * et congratulámini, quia cum his ómnibus lúcidas sedes accépi.
+
+# Matins Nocturn 2 reading for St. Agnes, Virgin and Martyr (Jan 21) —
+# SanctiM/01-21.txt inherits the whole day (`@Sancti/01-21`), overriding
+# only some antiphon/versicle numbering by simple arithmetic
+# substitution (renumbering, not new text) — Lectio4-6 carry through
+# unchanged as this feast's own proper content, same as a pre-1955
+# saint (see memory vu-matins-pre1955-saints).
+# web/www/horas/Latin/Sancti/01-21.txt, English/Sancti/01-21.txt.
+# Lectio4-6 (St. Ambrose's sermon on virgins, discussing Agnes) combined
+# into one reading, one continuous excerpt. The source's own
+# Responsory4/5/6 follow these three lessons; the last (Responsory6, the
+# one with Gloria Patri that closes the nocturn's lessons) is attached to
+# the combined reading, the same one-responsory-per-combined-reading
+# convention the octave readings use (added 2026-10-07).
+#
+# Checked 2026-09-05 for a Gospel pairing: this reading (Ambrose's On
+# Virgins Bk. 1, Lectio4-6) is Nocturn 2 -- a panegyric on Agnes's
+# virginity and martyrdom generally, not an exegesis of any Gospel
+# pericope, so no isGospel pairing applies. 01-21.txt's own [Rule]
+# ("vide C6-1") has no Lectio7-9 of its own at all (Nocturn 3 inherited
+# wholesale, bare, from the Common of Virgins), the same
+# already-accepted "bare cross-reference, not transcribed" convention
+# used elsewhere in this store (e.g. ss-cyril-and-methodius.yml) -- not
+# a new finding.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, On Virgins, Bk. 1
+      text: |-
+        Hódie natális est Vírginis, integritátem sequámur. Natális est Mártyris, hóstias immolémus. Natális est sanctæ Agnétis, miréntur viri, non despérent párvuli, stúpeant nuptæ, imiténtur innúptæ. Sed quid dignum ea loqui póssumus, cujus ne nomen quidem vácuum laudis est? Devótio supra ætátem, virtus supra natúram: ut mihi videátur non hóminis habuísse nomen, sed oráculum Mártyris, quod indicávit, quid esset futúra. Nomen Vírginis títulus est pudóris. Appellábo Mártyrem: prædicávi satis. Prolíxa laudátio est, quæ non quǽritur, sed tenétur. Nemo est laudabílior, quam qui ab ómnibus laudári potest. Quot hómines, tot præcónes, qui Mártyrem prædícant, dum loquúntur.
+
+        Hæc trédecim annórum martýrium fecísse tráditur. Quo detestabílior crudélitas quæ nec minúsculæ pepércit ætáti; immo magna vis fídei, quæ étiam ab illa testimónium invénit ætáte. Fuítne in illo corpúsculo vúlneri locus? Et quæ non hábuit quo ferrum recíperet, hábuit quo ferrum vínceret. Hæc inter cruéntas carníficum impávida manus, hæc stridéntium grávibus immóbilis tráctibus catenárum, nunc furéntis mucróni mílitis totum offérre corpus, mori adhuc néscia, sed paráta, vel si ad aras invíta raperétur, téndere Christo inter ignes manus, atque in ipsis sacrílegis focis trophǽum Dómini signáre victóris: nunc ferrátis colla manúsque ambas insérere néxibus. Sed nullus tam tenúia membra póterat nexus inclúdere. Novum martýrii genus! Nondum idónea pœnæ, et jam matúra victóriæ; certáre diffícilis, fácilis coronári: magistérium virtútis implévit, quæ præjudícium vehébat ætátis.
+
+        Non sic ad thálamum nupta properáret, ut ad supplícii locum, læta succéssu, gradu festína Virgo procéssit. Flere omnes, ipsa sine fletu. Mirári pleríque, quod tam fácile vitæ suæ pródiga, quam nondum háuserat, jam quasi perfúncta donáret. Stupére univérsi, quod jam divinitátis testis exsísteret, quæ adhuc árbitra sui per ætátem esse non posset. Quanto terróre egit cárnifex ut timerétur, quantis blandítiis ut suadéret, quantórum vota, ut sibi ad núptias proveníret! At illa: Et hæc Sponsi injúria est, inquit, exspectáre placitúram. Qui me sibi prior elégit, accípiet: quid, percússor, moráris? Péreat corpus, quod amári potest óculis, quibus nolo. Stetit, orávit, cervícem infléxit. Cérneres trepidáre carníficem, quasi ipse addíctus fuísset, trémere percussóris déxteram, pallére ora aliéno timéntis perículo, cum puélla non timéret suo. Habétis ígitur in una hóstia duplex martýrium, pudóris et religiónis. Et virgo permánsit, et martýrium obtínuit.
+      responsory: |-
+        R. Jam corpus ejus córpori meo sociátum est, et sanguis ejus ornávit genas meas: * Cujus mater virgo est, cujus pater féminam nescit.
+        V. Ipsi sum desponsáta, cui Angeli serviunt, cujus pulchritúdinem sol et luna mirántur.
+        R. Cujus mater virgo est, cujus pater féminam nescit.
+      status: verified

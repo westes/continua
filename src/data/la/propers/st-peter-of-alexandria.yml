@@ -1,0 +1,17 @@
+# Matins Nocturn 2 reading for St. Peter of Alexandria, Bishop,
+# Martyr (Nov 26, sharing the date with St. Silvester Abbot — see
+# st-silvester-abbot.yml). No genuine SanctiM match: the correct
+# Tridentine file is the suffixed `Sancti/11-26t.txt` (the plain
+# `Sancti/11-26.txt` is St. Silvester Abbot instead), and no SanctiM
+# file exists for this suffix — a missed pre-1955-pool candidate
+# rather than a genuine SanctiM case (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/11-26t.txt, English/Sancti/11-26t.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Petrus, epíscopus Alexandríæ, post Theonam virum sanctíssimum, sanctitátis et doctrinæ splendore non solum illustravit Ægyptum, sed toti luxit Ecclésiæ Dei. Qui in persecutióne Maximiáni Galerii illam témporum acerbitátem ita pértulit, ut multi, admirábilem ejus patiéntiam intuéntes, plurimum in christiana virtúte proficerent. Is primus Aríum diaconum Alexandrinum, propter schisma Meletianum cui favebat, a fidelium communióne sejunxit. Ad eum, cápitis ab eodem Maximiáno damnátum, in carcere cum Achillas et Alexander presbyteri deprecatores Aríi venissent, respóndit, noctu apparuísse sibi Jesum veste discissa, causamque rei sciscitanti dixisse: Aríus vestem meam, quæ est Ecclésia, dilaceravit. Quibus étiam prædícens fore, ut sibi in episcopatu succéderent, præcepit ne umquam Aríum in communiónem recíperent, quem Deo mortuum esse sciret. Et hanc divinam prænotiónem veram fuísse, non diu post rei probavit eventus. Denique, duodecimo sui episcopátus anno, sexto Kalendas Decembris, abscisso cápite, ad martyrii corónam evolávit.'
+      status: verified

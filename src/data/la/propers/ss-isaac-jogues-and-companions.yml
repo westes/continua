@@ -1,0 +1,48 @@
+# Latin from `Sancti/09-26n.txt`'s own [Oratio]; English from
+# `Sancti/10-19n.txt`'s own [Oratio] (a slightly fuller/more polished
+# translation of the same prayer than 09-26n's English file carries).
+# Both real source text, both marked verified.
+collect:
+  text: |
+    Orémus.
+    Deus, qui primítias fídei in boreálibus Américæ regiónibus sanctórum Mártyrum tuórum
+    Isaáci, Joánnis, eorúmque Sociórum prædicatióne et sánguine consecrásti: concéde
+    propítius; ut, eórum intercessióne, flórida christiánorum seges ubíque in dies
+    augeátur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in
+    unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle, same combined-bundle shape as
+# st-canute-commemoration.yml. Ant 2/Versum 2 are the standard de-Communi
+# pairing for the Common of Several Martyrs (C3, per [Rank]/[Rule]) --
+# common-of-several-martyrs-commemoration-antiphon.yml/lauds-versicle-
+# common-of-several-martyrs.yml, both already verified elsewhere (Common
+# text, not proper to this group).
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Deus, qui primítias fídei in boreálibus Américæ regiónibus sanctórum Mártyrum tuórum Isaáci, Joánnis, eorúmque Sociórum prædicatióne et sánguine consecrásti: concéde propítius; ut, eórum intercessióne, flórida christiánorum seges ubíque in dies augeátur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Isaac Jogues, John de Brébeuf, and
+# Companions, Martyrs (Oct 19 / Sep 26 sibling dates). Uses [Lectio94]
+# (the compact one-lesson summary), not the fuller [Lectio4-6] narrative
+# also present in `Sancti/09-26n.txt` -- Lectio94's Latin (from 09-26n)
+# and English (from 10-19n's own Lectio94 translation) are both genuine
+# source text, so both are marked verified; the longer Lectio4-6 Latin
+# has no English translation anywhere in the source and would require
+# this project's own translation, left for a future pass if the fuller
+# version is ever wanted.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Ex iis Societátis Jesu sodálibus, qui médio sǽculo décimo séptimo aspérrimam missiónem Novæ Gálliæ excoléntes, Ecclésiæ primórdia in América Septentrionáli summópere illustrárunt, octo puríssimas hóstias sibi elégit Deus, in hodiérnis regiónibus Neo-Eboracénsi et Ontário in Cánada immolátas. In his véluti duces et magístri habéntur Joánnes de Brébeuf et Isaácus Jogues, viri strénui et apostólico animárum stúdio incénsi, mortificatióni máxime déditi, cum Deo in oratióne coniunctíssimi. Haud dispáribus virtútibus ornabántur sacerdótes Antónius Daniel, Gábriel Lalemant, Cárolus Garnier et Natális Chabanel, necnon Renátus Goupil et Joánnis de la Lande, Patrum adjutóres. Vitam ob indigenárum Huronórum índolem miserrimámque vivéndi ratiónem, martýrio símilem, omnes cruénta more propter unam religiónis causam, etsi non uno loco nec témpore, cumulárunt; quidam vero torménta vix credibília ádeo invícta fortitúdine pertulérunt, ut ipsi bárbari carnífices eos admiraréntur. Quos Pius undécimus Beatórum, ac mox miráculis claros Sanctórum número adscrípsit.
+      status: verified

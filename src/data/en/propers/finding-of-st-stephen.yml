@@ -1,0 +1,102 @@
+collect:
+  text: |
+    Let us pray.
+    Grant us, we beseech thee, O Lord, so to imitate what we revere, that we may learn to love even our enemies; for we celebrate the Finding of the holy body of him who knew how to pray for his very persecutors to our Lord Jesus Christ:
+    Who with thee liveth and reigneth, in the unity of the Holy Spirit, God, world without end.
+    R. Amen.
+  status: verified
+
+commemoration:
+  text: |
+    Ant. And Stephen, full of grace * and fortitude, did great signs among the people.
+    V. The righteous shall flourish like the palm tree:
+    R. He shall grow up like the cedar of Libanus.
+    Let us pray.
+    Grant us, we beseech thee, O Lord, so to imitate what we revere, that we may learn to love even our enemies; for we celebrate the Finding of the holy body of him who knew how to pray for his very persecutors to our Lord Jesus Christ:
+    Who with thee liveth and reigneth, in the unity of the Holy Spirit, God, world without end.
+    R. Amen.
+  status: draft
+
+prime-antiphon:
+  text: 'They stoned Stephen, * calling upon God, and saying: Lay not this sin to their charge.'
+  status: verified
+
+prime-lectio:
+  text: 'And falling on his knees, he cried with a loud voice, saying: Lord, lay not this sin to their charge. And when he had said this, he fell asleep in the Lord. And Saul was consenting to his death.'
+  citation: Acts 7:59
+  status: verified
+
+terce-antiphon:
+  text: The stones of the brook * were sweet to him; all the souls of the righteous follow him.
+  status: verified
+
+terce-capitulum:
+  text: |
+    And Stephen, full of grace and fortitude, did great wonders and signs among the people.
+    R. Thanks be to God.
+    V. Thou hast crowned him with glory and honour, O Lord.
+    R. And madest him to have dominion over the works of thy hands.
+  citation: Acts 6:8
+  status: verified
+
+sext-antiphon:
+  text: O my God, my soul followeth hard after thee, * for my flesh hath been stoned for thy sake.
+  status: verified
+
+sext-capitulum:
+  text: Now there arose some of that which is called the synagogue of the Libertines, and of the Cyrenians, and of the Alexandrians, and of them that were of Cilicia and Asia, disputing with Stephen. And they were not able to resist the wisdom and the spirit that spoke.
+  citation: Acts 6:9-10
+  status: verified
+
+none-antiphon:
+  text: Behold, I see * the heavens opened, and Jesus standing on the right hand of the power of God.
+  status: verified
+
+none-capitulum:
+  text: 'And falling on his knees, he cried with a loud voice, saying: Lord, lay not this sin to their charge. And when he had said this, he fell asleep in the Lord.'
+  citation: Acts 7:59
+  status: verified
+
+benedictus-antiphon:
+  text: And Stephen, full of grace * and fortitude, did great signs among the people.
+  status: verified
+
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'They stoned Stephen, * calling upon God, and saying: Lay not this sin to their charge.'
+    - psalms:
+        - 110
+      antiphon: The stones of the brook * were sweet to him; all the souls of the righteous follow him.
+    - psalms:
+        - 111
+      antiphon: O my God, my soul followeth hard after thee, * for my flesh hath been stoned for thy sake.
+    - psalms:
+        - 112
+      antiphon: Behold, I see * the heavens opened, and Jesus standing on the right hand of the power of God.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      citation: Acts 7:51-54; 55-58; 59; 8:1-2
+      text: |-
+        You stiffnecked and uncircumcised in heart and ears, you always resist the Holy Ghost: as your fathers did, so do you also. Which of the prophets have not your fathers persecuted? And they have slain them who foretold of the coming of the Just One; of whom you have been now the betrayers and murderers: who have received the law by the disposition of angels, and have not kept it. Now hearing these things, they were cut to the heart, and they gnashed with their teeth at him.
+
+        But he, being full of the Holy Ghost, looking up steadfastly to heaven, saw the glory of God, and Jesus standing on the right hand of God. And he said: Behold, I see the heavens opened, and the Son of man standing on the right hand of God. And they crying out with a loud voice, stopped their ears, and with one accord ran violently upon him. And casting him forth without the city, they stoned him; and the witnesses laid down their garments at the feet of a young man, whose name was Saul. And they stoned Stephen, invoking, and saying: Lord Jesus, receive my spirit.
+
+        And falling on his knees, he cried with a loud voice, saying: Lord, lay not this sin to their charge. And when he had said this, he fell asleep in the Lord. And Saul was consenting to his death. And at that time there was raised a great persecution against the church which was at Jerusalem; and they were all dispersed through the countries of Judea, and Samaria, except the apostles. And devout men took order for Stephen's funeral, and made great mourning over him.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        In the reign of the Emperor Honorius, a Priest named Lucian received a message from God, in consequence of which discovery was made of the bodies of the Saints Stephen the First Martyr, Gamaliel, Nicodemus, and Abibon, which had long been lying unknown and unheeded. Lucian was asleep when Gamaliel appeared to him in a dream as a tall comely old man of worshipful presence, told him where the bodies were lying, and bade him go to John, Patriarch of Jerusalem, and deal with him that they might have more honourable burial.
+
+        When the Patriarch of Jerusalem heard it, he called together Bishops and Priests from the neighbouring cities, and betook himself to the place, where he found the tombs hewn in the rock, and a right sweet savour flowing forth from them. The thing being noised abroad, a great multitude of people came together, and many that were sick and weak of diverse diseases returned home whole. The sacred body of holy Stephen was then carried with great pomp to the holy Church of Zion. Under the Emperor Theodosius the Younger it was taken to Constantinople, and during the Popedom of Pelagius I it was brought to Rome, where it has been laid in the sepulchre of the holy Martyr Lawrence in the Veranian Field.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, City of God, Book 22, ch. 8
+      text: When the Bishop Projectus brought some relics of that most glorious Martyr Stephen to Tibilis, a great multitude came together and went out to meet the shrine. A blind woman prayed to be led to the Bishop who was bearing the hallowed deposit. She laid on the relics the flowers which she was carrying, took them up again, touched her eyes with them and forthwith saw. She went forward rejoicing, at the head of the amazed procession, choosing her own path, and needing no more that any should lead her. I remember also the shrine of this same Martyr which hath been placed in the town of Synica, hard by this city of Hippo. Lucillus, Bishop of that place, was carrying it, with a multitude going before and following after when, all of a sudden, by bearing this hallowed burden, he was healed of the emerods, from which he was even then suffering, and which were being treated by a physician, an intimate friend of his, who was about to cut them.
+      status: verified

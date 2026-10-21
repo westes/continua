@@ -1,0 +1,55 @@
+# Read directly from web/www/horas/Latin/Sancti/11-20.txt's own
+# [Oratio] and its English counterpart. Doxology "$Per Dominum"
+# spelled out per the convention in st-bibiana-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátum Felícem Confessórem tuum ex erémo ad munus
+    rediméndi captívos cǽlitus vocáre dignátus es: præsta, quǽsumus; ut
+    per grátiam tuam ex peccatórum nostrórum captivitáte, ejus
+    intercessióne, liberáti, ad cæléstem pátriam perducámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et
+    regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-felix-of-valois has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-felix-of-valois-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui beátum Felícem Confessórem tuum ex erémo ad munus
+    rediméndi captívos cǽlitus vocáre dignátus es: præsta, quǽsumus; ut
+    per grátiam tuam ex peccatórum nostrórum captivitáte, ejus
+    intercessióne, liberáti, ad cæléstem pátriam perducámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et
+    regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Felix of Valois (Nov 20). Sourced
+# directly from web/www/horas/Latin/Sancti/11-20.txt,
+# English/Sancti/11-20.txt. Lectio4-6 combined into one reading, one
+# continuous vita. [Lectio7]-[Lectio9] are bare `@Commune/C5:LectioN
+# in 2 loco` cross-references -- not transcribed.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Felix, Hugo ántea dictus, ex regali Valesiórum família ortus in Gállia, ab ineunte ætate non lévia dedit futuræ sanctitátis indicia, præsertim misericórdiæ erga páuperes. Nam, adhuc infantulus, manu propria, ac si grandior esset et judícii maturitáte polleret, nummos egenis distríbuit; jam grandiúsculus, solebat ex appositis in mensa dápibus ad ipsos mittere, et ferme eo, quod sapidius erat, obsonio paupérculos púeros recreábat; adoléscens, non semel vestibus se expoliávit, ut inopes cooperíret. Ab avunculo Theobaldo, Xamphánæ et Blesii comite, vitam reo mortis impetrávit, prædicens hunc infamem háctenus sicárium, mox sanctíssimis præditum móribus evasurum: verídicum testimónium monstrávit eventus.
+
+        Post exactam laudabíliter adolescéntiam cœpit ex cæléstis contemplatiónis studio solitúdinem cogitare; prius tamen vóluit Sacris initiari, ut omnem regni, a cujus successióne jure legis Sálicæ non longe distabat, spem sibi præcideret. Sacerdos factus, et prima Missa devotíssime celebrata, non multo post in eremum secessit, ubi, summa abstinéntia víctitans, cæléstium charísmatum abundántia pascebátur. Ibi cum sancto Joánne de Matha Parisiénsi doctore, a quo ex divina inspiratióne quæsítus et invéntus, per aliquot annos sanctíssime vixit; donec ambo per Angelum a Deo admóniti Romam petiérunt, specialem a summo Pontifice vivéndi regulam impetráturi. Facta ígitur Innocentio Papæ tertio inter Missárum solemnia revelatióne religiónis et institúti de rediméndis captivis, ab ipso Pontifice, simul cum socio, cándidis vestibus bicolori cruce signátis induitur, ad eam formam qua Angelus indútus appáruit. Et ínsuper vóluit Pontifex, ut nova religio, juxta tríplicem colórem quo hábitus constat, sanctíssimæ Trinitátis titulo decorarétur.
+
+        Regula propria, ex summi Pontificis Innocentii confirmatióne, accepta, in diœcesi Meldénsi apud locum qui Cervus Frígidus dícitur, primum ordinis paulo ante a se et socio exstructum cœnobium ampliávit, ubi religiosam observantiam et redemptiónis institutum mirifice coluit, ac inde per alumnos in alias provincias diligentíssime propagávit. Illustrem hic a beáta Vírgine Matre favórem accépit; dormiéntibus síquidem cunctis frátribus et ad matutínas preces in pervigílio Nativitátis Deiparæ media nocte recitandas, Deo sic disponente, non surgéntibus, Felix, de more vigilans et horas præveniens, chorum ingréssus, réperit beátam Vírginem in médio chori, hábitu cruce ordinis insigníto indutam, ac Cælítibus simíliter indutis sociátam. Quibus permixtus Felix, præcinénte Deipara, laudes divinas concinuit ríteque persolvit. Et, quasi jam a terrestri ad cælestem chorum evocarétur, instántis mortis ab Angelo certior factus, fílios ad caritátem erga páuperes et captivos adhortans, ánimam Deo réddidit, ætate ac meritis consummatus, anno post Christum natum ducentésimo duodecimo supra millesimum, sub eodem Pontifice Innocentio tertio.
+      status: verified

@@ -1,0 +1,45 @@
+collect:
+  text: |
+    Let us pray.
+    Look down in mercy upon thy people, O Lord, we beseech thee, and grant unto them, whom Thou commandest to abstain from fleshly meats, power to abstain also from the corruption of sin.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+collect/~-vespers:
+  text: |
+    Let us pray.
+    God, the Renewer and Lover of innocency, turn the hearts of all thy servants to thyself, that so they, being enkindled with the fire of thy Spirit, may be found ever rooted in faith, and fruitful in works.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+benedictus-antiphon:
+  text: Behold, we go up to Jerusalem, * and the Son of man shall be betrayed to be crucified.
+  status: verified
+
+magnificat-antiphon:
+  text: For He shall be delivered to the Gentiles, * to mock, and to scourge, and to crucify.
+  status: verified
+
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Matthew 20:17-28
+      text: At that time, as Jesus was going up to Jerusalem, He took the twelve disciples aside by themselves, and said to them, "Behold, we are going up to Jerusalem, and the Son of Man will be betrayed to the chief priests and the Scribes; and they will condemn Him to death, and will deliver Him to the Gentiles to be mocked and scourged and crucified; and on the third day He will rise again." Then the mother of the sons of Zebedee came to Him with her sons; and worshipping, she made a request of Him. He said to her, "What do you want?" She said to Him, "Command that these my two sons may sit, one at Your right hand and one at Your left hand, in Your kingdom." But Jesus answered and said, "You do not know what you are asking for. Can you drink of the cup of which I am about to drink?" They said to Him, "We can." He said to them, "Of My cup you shall indeed drink; but as for sitting at My right hand and at My left, that is not Mine to give you, but it belongs to those for whom it has been prepared by My Father." And when the ten heard this, they were indignant at the two brothers. But Jesus called them to Him, and said, "You know that the rulers of the Gentiles lord it over them, and their great men exercise authority over them. Not so is it among you. On the contrary, whoever wishes to become great among you shall be your servant; and whoever wishes to be first among you shall be your slave; even as the Son of Man has not come to be served but to serve, and to give His life as a ransom for many."
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Book 5 to Gratian, on Faith, ch. 2
+      text: |-
+        Consider what it was that the mother of Zebedee's children came to Christ desiring, with, and for her sons. She was a mother, who, longing for the honour of her sons, preferred a request immoderate, and yet pardonable. She was a mother who, albeit stricken in years and comfortless, at an age when she had sore need of the strength of her offspring to help and keep her, was yet so earnest in godliness and motherly love, that she had liefer suffer the loss of her sons, that they might gain the reward of following Christ still, as we read they had already done, when, at the first call of the Lord, they left their nets and their father.
+
+        She, then, yielding to the intensity of her motherly love, besought the Saviour, saying, "Grant that these my two sons may sit, the one at thy right hand and the other at thy left hand, in thy kingdom." Although it was a mistake, it was a mistake of love. For a mother's love knoweth no moderation. Yet, although it was a greedy prayer, that was a pardonable greed, which hungered, not for riches, but for grace. Neither was that request shameless which sought, not her own good, but her children's. Remember that she was a mother. Think how that she was a mother.
+
+        Christ took into His consideration that mother's love of hers, which made her sons' reward the comfort of her own old age, and which could bear the loss of her loved ones, broken as she was by a mother's yearnings. Consider also that she was a woman, that is, of the weaker sex, to which the Lord had not yet given strength by His Passion. Consider, I say, that she was an heiress of Eve, and weakened by that transmission of the unbridled covetousness of the first woman, which the Lord had not yet disarmed by His Blood, even that craving for undue dignity, wherewith all our natures are imbued, and which Christ's Bloodshedding had not yet washed away. She erred indeed, but the mistake was an inherited weakness.
+      responsory: |-
+        R. The Angel said unto Jacob: * Let me go, for the day breaketh. And he said, I will not let thee go, except thou bless me. And he blessed him there.
+        V. And when Jacob arose, behold there wrestled a man with him, until the breaking of the day and, when he saw that he prevailed not, he said unto him.
+        R. Let me go, for the day breaketh. And he said, I will not let thee go, except thou bless me. And he blessed him there.
+      status: verified

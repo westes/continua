@@ -1,0 +1,224 @@
+# Passiontide's own Matins hymn ("Pange, lingua, gloriósi prœ́lium
+# certáminis" — the Passiontide recension of Venantius Fortunatus' hymn,
+# distinct from Lent's own "Ex more docti mýstico" used up to this point).
+# Live-verified against both Passion Sunday itself (2026-03-22) and a
+# plain Passiontide feria (2026-03-24, a Tuesday) — byte-identical, so
+# this season doesn't vary its Matins hymn by weekday. This particular
+# breviary recension is 5 stanzas, ending after the Incarnation/manger
+# stanza — it does not continue into the "Lustra sex qui iam peracta..."
+# stanzas some other uses of this hymn carry. Self-contained with its own
+# closing doxology stanza baked in (a fixed, unique ending, "Glória, et
+# honor Deo..." — not the shared weekday doxology).
+matins-hymn:
+  text: |-
+    Pange, lingua, gloriósi
+    Prœlium certáminis,
+    Et super Crucis trophǽo
+    Dic triúmphum nóbilem,
+    Quáliter Redémptor orbis
+    Immolátus vícerit.
+
+    De paréntis protoplásti
+    Fraude Factor cóndolens,
+    Quando pomi noxiális
+    Morsu in mortem córruit,
+    Ipse lignum tunc notávit,
+    Damna ligni ut sólveret.
+
+    Hoc opus nostræ salútis
+    Ordo depopóscerat,
+    Multifórmis proditóris
+    Ars ut artem fálleret,
+    Et medélam ferret inde,
+    Hostis unde lǽserat.
+
+    Quando venit ergo sacri
+    Plenitúdo témporis,
+    Missus est ab arce Patris
+    Natus, orbis Cónditor,
+    Atque ventre virgináli
+    Carne amíctus pródiit.
+
+    Vagit infans inter arcta
+    Cónditus præsépia:
+    Membra pannis involúta
+    Virgo Mater álligat:
+    Et manus, pedésque, et crura
+    Stricta cingit fáscia.
+
+    Glória, et honor Deo
+    Usqueqáque Altíssimo,
+    Una Patri, Filióque;
+    Inclyto Paráclito:
+    Cui laus est et potéstas,
+    Per ætérna sǽcula. Amen.
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[Quad5 Laudes_]",
+# Psalterium/Special/Major Special.txt). Not live-query-verified (see
+# TODO.md) — read directly from source.
+lauds-capitulum:
+  text: Veníte, mittámus lignum in panem ejus, et eradámus eum de terra vivéntium, et nomen ejus non memorétur ámplius.
+  citation: Jer 11:19
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Quad5
+# Laudes]", Psalterium/Special/Major Special.txt) — "Lustris sex qui jam
+# peráctis", full separate Monastic text (not a substitution against the
+# Roman "Lustra sex qui jam perégit" — the two differ throughout, not
+# just in wording). Not live-query-verified (see TODO.md).
+lauds-hymn:
+  text: |
+    Lustris sex qui jam peráctis,
+    Tempus implens córporis,
+    Se volénte natus ad hoc,
+    Passióni déditus,
+    Agnus in Crucis levátur
+    Immolándus stípite.
+
+    Hic acétum, fel, arúndo,
+    Sputa, clavi, láncea:
+    Mite corpus perforátur,
+    Sanguis, unda prófluit:
+    Terra, pontus, astra, mundus,
+    Quo lavántur flúmine!
+
+    Crux fidélis, inter omnes
+    Arbor una nóbilis:
+    Nulla silva talem profert
+    Fronde, flore, gérmine:
+    Dulce lignum, dulces clavos,
+    Dulce pondus sústinet.
+
+    Flecte ramos, arbor alta,
+    Tensa laxa víscera,
+    Et rigor lentéscat ille,
+    Quem dedit natívitas:
+    Ut supérni membra Regis
+    Miti tendas stípite.
+
+    Sola digna tu fuísti
+    Ferre sæcli prétium,
+    Atque portum præparáre
+    Nauta mundo náufrago,
+    Quem sacer cruor perúnxit,
+    Fusus Agni córpore.
+
+    * Glória et honor Deo
+    Usquequáque altíssimo:
+    Una Patri, Filióque,
+    Inclyto Paráclito:
+    Cui laus est et potéstas
+    Per ætérna sǽcula.
+    Amen.
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block ("[Responsory Quad5
+# Laudes_]", the non-Cistercian branch "[Responsory Quad5 Laudes]"
+# resolves to — Psalterium/Special/Major Special.txt). Real Passiontide
+# practice omits the Gloria Patri here too — matches the source exactly
+# (see vespers-responsory-passiontide.yml). Not live-query-verified (see
+# TODO.md).
+lauds-responsory:
+  text: |
+    R.br. Érue a frámea * Deus ánimam meam.
+    R. Érue a frámea * Deus ánimam meam.
+    V. Et de manu canis únicam meam.
+    R. Deus ánimam meam.
+    R. Érue a frámea * Deus ánimam meam.
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block ("[Quad5 Versum 2_]",
+# Psalterium/Special/Major Special.txt). Not live-query-verified (see
+# TODO.md) — read directly from source.
+lauds-versicle:
+  text: |
+    V. Éripe me de inimícis meis, Deus meus.
+    R. Et ab insurgéntibus in me líbera me.
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block ("[Quad5 Vespera]",
+# Psalterium/Special/Major Special.txt). Not live-query-verified (see
+# TODO.md) — read directly from source.
+vespers-capitulum:
+  text: 'Tu autem, Dómine Sábaoth, qui júdicas juste, et probas renes et corda, vídeam ultiónem tuam ex eis: tibi enim revelávi causam meam, Dómine, Deus meus.'
+  citation: Jer 11:20
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Quad5
+# Vespera]", Psalterium/Special/Major Special.txt) — "Vexílla Regis
+# pródeunt", full separate Monastic text (not a substitution against the
+# Roman version, which differs meaningfully in several stanzas — caught
+# and fixed a first-pass transcription slip here where the second-to-last
+# stanza's closing lines had been copied from the Roman text instead of
+# the Monastic one actually being transcribed). The source marks that
+# stanza's third line with a seasonal branch — "Hoc Passiónis témpore"
+# (used here, for Passiontide proper) vs. "In hoc Pascháli gáudio"
+# (Paschaltide, when this same hymn is reused for a Holy Cross feast
+# falling then — not this app's concern). Also: real Passiontide practice
+# omits the Gloria Patri from the last stanza — kept that way here,
+# matching the source exactly (see vespers-responsory-passiontide.yml's
+# own note). Not live-query-verified (see TODO.md).
+vespers-hymn:
+  text: |
+    Vexílla Regis pródeunt:
+    Fulget Crucis mystérium,
+    Quo carne carnis Cónditor
+    Suspénsus est patíbulo.
+
+    Quo vulnerátus ínsuper
+    Mucróne diro lánceæ,
+    Ut nos laváret crímine,
+    Manávit unda et sánguine.
+
+    Impléta sunt quæ cóncinit
+    David fidéli cármine,
+    Dicens: In natiónibus
+    Regnávit a ligno Deus.
+
+    Arbor decóra et fúlgida,
+    Ornáta Regis púrpura,
+    Elécta digno stípite
+    Tam sancta membra tángere.
+
+    Beáta, cujus bráchiis
+    Sæcli pepéndit prétium,
+    Statéra facta córporis,
+    Prædámque tulit tártari.
+
+    O Crux, ave, spes única,
+    In hac triúmphi glória
+    Hoc Passiónis témpore
+    Auge piis justítiam,
+    Reísque dona véniam.
+
+    * Te summa, Deus, Trínitas,
+    Colláudet omnis spíritus:
+    Quos per Crucis mystérium
+    Salvas, rege per sǽcula.
+    Amen.
+  status: draft
+
+# Sourced from Divinum Officium's Monastic block ("[Responsory Quad5
+# Vespera_]", the non-Cistercian branch "[Responsory Quad5 Vespera]"
+# resolves to — Psalterium/Special/Major Special.txt). Not
+# live-query-verified (see TODO.md) — read directly from source.
+vespers-responsory:
+  text: |
+    R.br. De ore leónis * líbera me, Dómine.
+    R. De ore leónis * líbera me, Dómine.
+    V. Et a córnibus unicórnium humilitátem meam.
+    R. Líbera me, Dómine.
+    R. De ore leónis * líbera me, Dómine.
+  status: draft
+
+# The versicle right before the Magnificat, in Passiontide. Sourced from
+# Divinum Officium's Monastic block ("[Quad5 Versum 3_]", the
+# non-Cistercian branch "[Quad5 Versum 3]" resolves to — Psalterium/
+# Special/Major Special.txt). Not live-query-verified (see TODO.md) —
+# read directly from source.
+vespers-versicle:
+  text: |
+    V. Éripe me, Dómine, ab hómine malo.
+    R. A viro iníquo éripe me.
+  status: draft

@@ -1,0 +1,100 @@
+# Friday's own plain ferial Matins invitatory antiphon (Psalterium/
+# Special/Matutinum Special.txt's "Invit Trid_" block, `Feria VI=`). Its
+# English happens to be byte-identical to Sunday's own
+# (matins-invitatory-antiphon-sunday.yml) — confirmed in the source, not
+# a copy-paste slip: both weekdays' Latin renders as "Let us worship the
+# Lord, for He is our Maker" in the reference engine's own translation
+# despite slightly different Latin wording. See matins-invitatory-
+# antiphon-sunday.yml's header for the weekday-cycle mechanism this
+# belongs to; live-verified 2026-09-06.
+matins-invitatory/antiphon-~:
+  text: Adorémus Dóminum, * Quóniam ipse fecit nos.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
+lauds-hymn:
+  text: |
+    Ætérna cæli glória,
+    Beáta spes mortálium,
+    Celsi Tonántis Únice,
+    Castǽque proles Vírginis:
+
+    Da déxteram surgéntibus,
+    Exsúrgat et mens sóbria,
+    Flagrans et in laudem Dei
+    Grates repéndat débitas.
+
+    Ortus refúlget Lúcifer,
+    Sparsámque lucem núntiat:
+    Cadit calígo nóctium:
+    Lux sancta nos illúminet.
+
+    Manénsque nostris sénsibus,
+    Noctem repéllat sǽculi,
+    Omníque fine diéi
+    Purgáta servet péctora.
+
+    Quæsíta jam primum fides
+    Radícet altis sénsibus:
+    Secúnda spes congáudeat,
+    Qua major exstat cáritas.
+
+    * Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
+lauds-responsory:
+  text: |
+    R.br. Sana ánimam meam, * Quia peccávi tibi.
+    R. Sana ánimam meam, * Quia peccávi tibi.
+    V. Ego dixi: Dómine, miserére mei
+    R. Quia peccávi tibi.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Sana ánimam meam, * Quia peccávi tibi.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
+lauds-versicle:
+  text: |-
+    V. Repléti sumus mane misericórdia tua.
+    R. Exsultávimus, et delectáti sumus.
+  status: verified
+
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Day5 Vespera]",
+# Psalterium/Special/Major Special.txt): six substitutions against the base
+# "[Hymnus Day5 Vespera]" text (replacing the opening line entirely,
+# "Hóminis superne Cónditor" -> "Plasmátor hóminis Deus", and rewording
+# most of stanzas 2-3), applied by hand here — not live-query-verified
+# (see TODO.md). English has no separate Monastic variant in the source.
+vespers-hymn:
+  text: |
+    Plasmátor hóminis Deus,
+    Qui cuncta solus órdinans,
+    Humum jubes prodúcere
+    Reptántis et feræ genus:
+
+    Qui magna rerum córpora,
+    Dictu jubéntis vívida,
+    Ut sérviant per órdinem,
+    Subdens dedísti hómini:
+
+    Repélle, a servis tuis,
+    Quidquid per immundítiam
+    Aut móribus se súggerit,
+    Aut áctibus se intérserit.
+
+    Da gaudiórum prǽmia,
+    Da gratiárum múnera:
+    Dissólve litis víncula:
+    Astrínge pacis fœ́dera.
+
+    * Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum.
+    Amen.
+  status: draft

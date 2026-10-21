@@ -1,0 +1,85 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2035-06-22).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut beáti Paulíni Confessóris tui atque Pontíficis veneránda solémnitas, et devotiónem nobis áugeat et salútem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-paulinus-of-nola-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-paulinus-of-nola-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut beáti Paulíni Confessóris tui atque Pontíficis veneránda solémnitas, et devotiónem nobis áugeat et salútem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Paulinus of Nola's own day (2026-06-22). The
+# Benedictus antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+  status: verified
+
+# Matins Nocturn 2-3 readings for St. Paulinus of Nola, Bishop and
+# Confessor (June 22) — pre-1955-but-post-1617 (no SanctiM/06-22*.txt at
+# all; the "n"/"t" suffix variants at this date are a modern 20th-c.
+# saint and a duplicate of the plain file, not relevant).
+# web/www/horas/Latin/Sancti/06-22.txt, English/Sancti/06-22.txt.
+#
+# Lectio4-6 is this saint's own proper vita, one continuous account, no
+# internal break, combined into a single reading.
+#
+# Lectio7's own homily portion + Lectio8-9 is one continuous excerpt
+# from St. Paulinus's own sermon (fittingly, on almsgiving to the poor —
+# his own day, his own words), combined into a single reading. No
+# responsory given for either reading in the source.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope, previously left
+# unauthored because Lectio7 gives only the incipit ("Et réliqua"), is
+# now authored too (isGospel: true, immediately before the homily) --
+# the citation (Luke 12:32-34) comes from that same Lectio7 line; the
+# full text isn't repeated in this saint's own Missale file (no proper
+# [Evangelium] there), so it's sourced from
+# horas/Latin/Commune/C5-1.txt's own [Evangelium] (Common of a Confessor
+# Not a Bishop's own reuse of this same pericope, verbatim), not guessed
+# at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Póntius Merópius Anícius Paulínus, a claríssima cívium Romanórum família, Burdígalæ in Aquitánia natus, acri fuit ingénio ac móribus suávibus. Ausónio magístro, eloquéntiæ ac poéseos laude excélluit. Prænóbilis ac ditíssimus, honórum cursum ingréssus, florénti ætáte, senatória dignitáte potítus est. Dein Itáliam pétiit consul, et Campániam provínciam nactus, sedem Nolæ státuit. Hic divíno lúmine tactus, ob cæléstia signa, quæ Felícis presbyteri Mártyris sepúlcrum illustrábant, veræ Christi fídei, quam jam ánimo cogitábat, impénsius adhærére cœpit. Fasces ígitur ac secúrim nulla cæde maculátam depósuit, et revérsus in Gálliam, váriis ærúmnis ac magnis terra maríque labóribus jactátus, óculo cápitur; sed a beáto Martíno Turonénsi epíscopo sanitáti restitútus, lustrálibus baptísmatis aquis a beáto Delphíno Burdigalénsi antístite ablúitur.
+
+        Divítiis quibus abundábat spretis, bona véndidit pretiúmque paupéribus distríbuit, et uxórem linquens Therásiam, mutáta pátria et ruptis vínculis carnis, in Hispániam secéssit, venerándam secútus ac toto sibi pretiosiórem orbe Christi paupériem. Barcinóne dum Sacris devóte astáret, solémni die Domínicæ Nativitátis, repentíno admirátæ plebis tumúltu corréptus, ac frustra relúctans, a Lampídio epíscopo présbyter ordinátur. Inde redit in Itáliam, et Nolæ, quo sancti Felícis religióne ductus fúerat, penes illíus sepúlcrum monastérium cóndidit, et adscítis sóciis cœnobíticam vitam aggréditur. Hic vir, jam senatória et consulári dignitáte præclárus, stultítiam crucis ampléxus, toto fere orbe admiránte, vili indútus túnica, vigílias inter ac jejúnia, in assídua cæléstium rerum contemplatióne dies noctésque defíxus manébat. Sed, percrescénte sanctimóniæ fama, ad Nolánum episcopátum evéhitur, atque eódem in pastoráli múnere obeúndo, miránda pietátis, sapiéntiæ ac potíssimum caritátis exémpla relíquit.
+
+        Hæc inter, sapiéntia reférta, de religióne ac fide pertractántia edíderat scripta, sæpe étiam númeris indúlgens concínnis carmínibus Sanctórum acta concelebráverat, summam christiáni poétæ famam adéptus. Quotquot sanctitáte ac doctrína præstantíssimi viri eo témpore erant, tot sibi amicítia atque admiratióne devínxit. Quamplúrimi ad eum, ceu ad christiánæ perfectiónis magístrum, undequáquam confluébant. Vastáta a Gothis Campánia, facultátem omnem, ne relíctis quidem sibi rebus ad vitam necessáriis, in aléndos páuperes et captívos rediméndos cóntulit. Póstea vero, Vándalis eásdem regiónes infestántibus, cum ab eo pósceret vídua ut fílium sibi redímeret ab hóstibus captum; consúmptis bonis ómnibus, in offício pietátis, se ipsum pro illo tradit in servitútem, atque in víncula conjéctus in Africam rápitur. Tandem, non sine præsénti Dei ope, libertáte donátus et Nolam revérsus, diléctum ovíle bonus pastor revísit; ibíque annum agens septuagésimum octávum ætátis suæ, placidíssimo éxitu obdormívit in Dómino. Corpus, prope sancti Felícis sepúlcrum cónditum, póstea, Longobardórum témpore, Benevéntum, atque, Ottóne tértio imperatóre, Romam ad basílicam sancti Bartholomæi ad ínsulam Tiberínam translátum fuit. Pius vero Papa décimus jussit sacras Paulíni exúvias Nolæ restítui, et festum ipsíus ad ritum dúplicem pro univérsa Ecclésia evéxit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 12:32-34
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Nolíte timére, pusíllus grex, quia complácuit Patri vestro dare vobis regnum. Véndite quæ possidétis, et date eleemósynam. Fácite vobis sácculos, qui non veteráscunt, thesáurum non deficiéntem in cœlis: quo fur non apprópiat, neque tínea corrúmpit. Ubi enim thesáurus vester est, ibi et cor vestrum erit.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Paulinus, Bishop of Nola, Sermon (Epistle 34), "On the Treasury"
+      text: |-
+        Potúerat, dilectíssimi, Dóminus omnípotens æque univérsos dívites fácere, ut nemo indigéret áltero; sed infinítæ bonitátis consílio sic parávit miséricors et miserátor Dóminus, ut tuam in illis mentem probet. Fecit míserum, ut agnósceret misericórdem; fecit ínopem, ut exercéret opuléntum. Matéria divitiárum tibi est fratérna paupértas, si intélligas super egénum et páuperem, nec tibi tantum hábeas quod accepísti; quia ídeo et illíus partem tibi in hoc sæculo cóntulit Deus, ut tibi debéret quidquid de suis donis tuo voluntário afféctu indigéntibus obtulísses, ac te vicíssim in ætérna die de illíus parte ditáret. Per ipsos enim nunc áccipit Christus, et tunc pro ipsis repéndet.
+
+        Réfice esuriéntem ánimam, et non timébis in die malo ab ira superventúra. Beátus enim (inquit), qui intélligit super egénum et páuperem, in die malo liberábit eum Dóminus. Operáre ígitur et éxcole hanc regiónem terræ tuæ, frater, ut gérminet tibi frugem fértilem, plenam ádipe fruménti, magno cum fœnore centésimum tibi fructum multiplicáti séminis afferéntem. In hujus vel possessiónis vel negotiatiónis appetítum et stúdium sancta et salutáris est avarítia; nam talis cupíditas, quæ regnum cæléste merétur et bonum perénne desíderat, radix bonórum est. Tales ígitur divítias concupíscite, et hujúsmodi possidéte patrimónium, quod in centénos fructus vobis créditor pénsitet, ut vestros quoque vobíscum bonis perénnibus augeátis herédes. Posséssio enim hæc vere magna et pretiósa est, quæ possessórem suum non cúmulo sæculári ónerat, sed réditu ditat ætérno.
+
+        Verum, dilectíssimi, non solum ut bona ætérna quærátis, sed ut mala innúmera vitáre mereámini, præsénti sollicitúdine et sédula operatióne justítiæ providéte. Magno enim adjutório atque præsídio nobis opus est, et multárum atque indeficiéntium oratiónum patrocíniis indigémus. Adversárius enim noster non quiéscit, et in nostrum pérvigil hostis intéritum óbsidet omnes vias nostras. Multæ prætérea nobis in hoc sæculo cruces, innúmera discrímina, morbórum labes, fébrium ignes et dolórum tela grassántur in ánimas, cupiditátum faces accendúntur; ubíque præténti latent láquei, úndique stricti horrent gládii, inter insídias et pugnas vita transígitur, et per ignes dolóso cíneri suppósitos ambulámus. Igitur, priúsquam in áliquam tantárum ægritúdinum labem casu vel mérito actus incúrras, festína médico suscéptus et carus fíeri, ut in témpore necessitátis parátum hábeas remédium salútis. Aliud est, quando tu solus oras pro te; et áliud, quando multitúdo pro te apud Deum trépidat.
+      status: verified

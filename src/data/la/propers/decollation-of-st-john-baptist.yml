@@ -1,0 +1,169 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-08-29).
+collect:
+  text: |
+    Orémus.
+    Sancti Joánnis Baptístæ Præcursóris et Mártyris tui, quǽsumus, Dómine, veneránda festívitas: salutáris auxílii nobis præstet efféctum:
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Antiphon is his own proper Lauds antiphon (decollation-of-st-john-
+# baptist-antiphon.yml, read from Sancti/08-29.txt's own [Ant 1]) --
+# a commemoration reuses a saint's own proper antiphon when he has one,
+# same pattern as st-clare-commemoration.yml. Versicle is the standard
+# "de Communi Unius Martyris" commemoration versicle (Commune/C2.txt's
+# own [Nocturn 2 Versum], Latin + English) -- his own file cites "vide
+# C2a" for the office generally (see decollation-of-st-john-baptist.yml),
+# and this versicle is the generic one shared by that whole Common
+# category, not unique to him. Collect is his own real proper
+# (decollation-of-st-john-baptist-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Misso Heródes * spiculatóre, præcépit amputári caput Joánnis in cárcere. Quo audíto, discípuli ejus venérunt, et tulérunt corpus ejus, et posuérunt illud in monuménto.
+    V. Posuísti, Dómine, super caput ejus.
+    R. Corónam de lápide pretióso.
+    Orémus.
+    Sancti Joánnis Baptístæ Præcursóris et Mártyris tui, quǽsumus, Dómine, veneránda festívitas: salutáris auxílii nobis præstet efféctum:
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 1 (lauds-psalmody-
+# overrides/decollation-of-st-john-baptist.yml), per the established Prime=Lauds-Ant1
+# minor-hours-borrow-from-Lauds convention.
+prime-antiphon:
+  text: Heródes enim ténuit * et ligávit Joánnem et pósuit in cárcerem propter Herodíadem.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 2 (lauds-psalmody-
+# overrides/decollation-of-st-john-baptist.yml), per the established Terce=Lauds-Ant2
+# minor-hours-borrow-from-Lauds convention.
+terce-antiphon:
+  text: Dómine mi rex, * da mihi in disco caput Joánnis Baptístæ.
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 3 (lauds-psalmody-
+# overrides/decollation-of-st-john-baptist.yml), per the established Sext=Lauds-Ant3
+# minor-hours-borrow-from-Lauds convention.
+sext-antiphon:
+  text: 'Puéllæ saltánti * imperávit mater: Nihil áliud petas, nisi caput Joánnis.'
+  status: verified
+
+# Same text as her/his/their Lauds antiphon 5 (lauds-psalmody-
+# overrides/decollation-of-st-john-baptist.yml), per the established None=Lauds-Ant5
+# minor-hours-borrow-from-Lauds convention.
+none-antiphon:
+  text: Da mihi in disco * caput Joánnis Baptístæ. Et contristátus est rex propter jusjurándum.
+  status: verified
+
+# Verified against Divinum Officium (Latin/English Sancti/08-29.txt's own
+# [Ant 1] — the Lauds-hour antiphon, not Terce's.
+benedictus-antiphon:
+  text: Misso Heródes * spiculatóre, præcépit amputári caput Joánnis in cárcere. Quo audíto, discípuli ejus venérunt, et tulérunt corpus ejus, et posuérunt illud in monuménto.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2027-08-29 decollation-of-st-john-baptist second (continua had "quiuultuenirepostme"). Paschaltide Alleluia is
+# left to hours/paschal-alleluia.ts. See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon:
+  text: Misit rex incrédulus * minístros detestábiles, et amputári jussit caput Joánnis Baptístæ.
+  status: verified
+
+# Verified against Divinum Officium (Tridentine 1906/1910 and Divino
+# Afflatu 1954, `[Ant Vespera]`), Latin/Sancti/08-29.txt +
+# English/Sancti/08-29.txt, 2026-08-29 — Lauds reuses the Vespers set
+# verbatim (`[Ant Laudes]` -> `@:Ant Vespera`).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Heródes enim ténuit * et ligávit Joánnem et pósuit in cárcerem propter Herodíadem.
+    - psalms:
+        - 99
+      antiphon: Dómine mi rex, * da mihi in disco caput Joánnis Baptístæ.
+    - psalms:
+        - 62
+      antiphon: 'Puéllæ saltánti * imperávit mater: Nihil áliud petas, nisi caput Joánnis.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Arguébat * Heródem Joánnes propter Herodíadem, quam túlerat fratri suo Philíppo uxórem.
+  laudate:
+    antiphon: Da mihi in disco * caput Joánnis Baptístæ. Et contristátus est rex propter jusjurándum.
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-08-29): Ps 109/110/111/112
+# with the feast's [Ant Vespera] antiphons 1, 2, 3 and 5 -- the Monastic reduction of the secular
+# five-antiphon set drops the fourth ("Arguébat Heródem", still used at Lauds), the same rule the
+# BVM and Rosary sets follow. Earlier this file kept antiphons 1-4 on the Common-martyr
+# numbers 109/111/112/115, which the engine does not render.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Heródes enim ténuit * et ligávit Joánnem et pósuit in cárcerem propter Herodíadem.
+    - psalms:
+        - 110
+      antiphon: Dómine mi rex, * da mihi in disco caput Joánnis Baptístæ.
+    - psalms:
+        - 111
+      antiphon: 'Puéllæ saltánti * imperávit mater: Nihil áliud petas, nisi caput Joánnis.'
+    - psalms:
+        - 112
+      antiphon: Da mihi in disco * caput Joánnis Baptístæ. Et contristátus est rex propter jusjurándum.
+
+# Matins Nocturn 2-3 readings for the Decollation of St. John the
+# Baptist (Aug 29) — SanctiM/08-29.txt inherits the whole day
+# (`@Sancti/08-29`) with no Nocturn 2/3 override, so this feast's own
+# proper content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/08-29.txt, English/Sancti/08-29.txt.
+#
+# Nocturn 2: Lectio4-6 (St. Ambrose's treatise On Virgins) combined
+# into one reading, one continuous excerpt. Its closing responsory
+# ([Responsory6], marked &Gloria) is genuine proper text, not a
+# Commune reference, so it's authored below.
+# Nocturn 3: Lectio7's Gospel citation (Mark 6:17-29) is a bare
+# incipit ("Et réliqua") with no full pericope text given in this
+# saint's own file, so only the homily portion was originally authored
+# (not marked isGospel), combined with Lectio8 as one continuous
+# excerpt of St. Augustine's sermon.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — this feast's own
+# [Evangelium] carries the full pericope directly (not a redirect),
+# sourced from missa/Latin/Sancti/08-29.txt, English/Sancti/08-29.txt,
+# not guessed at.
+# [Responsory4], [Responsory7], [Responsory8] are all genuine Commune
+# references (@Commune/C2a:Responsory2/5/6 -- Common of a Martyr, per
+# decollation-of-st-john-baptist.yml's own `common` field), so Nocturn
+# 3 correctly has no proper responsory of its own.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, On Virgins, Bk. 3
+      text: |-
+        Quóniam beáti Joánnis Baptistæ non strictim prætereunda est recordátio, interest ut quis et a quibus et quam ob causam, quo modo et quo témpore sit occisus, advertere debeamus. Ab adúlteris justus occíditur, et a reis in judicem capitális sceleris pœna convértitur. Deínde præmium saltatricis, mors est Prophetæ. Postremo (quod étiam omnes bárbari horrére consuevérunt) inter epulas atque convivia consummandæ crudelitátis profertur edictum; et a convívio ad carcerem, de carcere ad convivium feralis flagitii circumfertur obsequium. Quanta in uno facínore sunt crimina!
+
+        Quis non, cum e convívio ad carcerem cursari vidéret, putaret Prophétam jussum esse dimitti? Quis, inquam, cum audísset natalem esse Herodis, solemne convivium, puellæ optiónem eligéndi quod vellet datam; missum ad Joánnem ob solutiónem non arbitrarétur? Quid crudelitáti cum deliciis? quid cum funéribus voluptati? Rápitur ad pœnam Prophéta convivali témpore, convivali præcépto, quo non cuperet vel absolvi: perímitur gládio, caput ejus affertur in disco. Hoc crudelitáti férculum debebátur, quo insatiáta épulis féritas vescerétur.
+
+        Intuére, rex acerbíssime, tuo spectacula digna convivio. Pórrige déxteram, ne quid sævítiæ tuæ desit; ut inter digitos tuos rivi défluant sacri cruoris. Et, quóniam non exsaturari épulis fames, non restingui póculis pótuit inauditæ sævítiæ sitis; bibe sánguinem scaturiéntibus adhuc venis exsecti cápitis profluentem. Cerne óculos in ipsa morte sceleris tui testes, aversántes conspéctum deliciárum. Claudúntur lúmina non tam mortis necessitate quam horrore luxuriæ. Os aureum illud exsangue, cujus senténtiam ferre non poteras, conticescit, et adhuc timétur.
+      status: verified
+      responsory: |-
+        R. Honéstum fecit illum Dóminus, et custodívit eum ab inimícis, et a seductóribus tutávit illum: * Et dedit illi claritátem ætérnam.
+        V. Descendítque cum illo in fóveam, et in vínculis non derelíquit eum.
+        R. Et dedit illi claritátem ætérnam.
+    - nocturn: 3
+      isGospel: true
+      citation: Marc 6:17-29
+      text: 'In illo témpore: Misit Heródes, ac ténuit Joánnem, et vinxit eum in cárcere propter Herodíadem, uxórem Philíppi fratris sui, quia dúxerat eam. Dicébat enim Joánnes Heródi: Non licet tibi habére uxórem fratris tui. Heródias autem insidiabátur illi, et volébat occídere eum, nec póterat. Heródes enim metuébat Joánnem, sciens eum virum justum et sanctum: et custodiébat eum, et audíto eo multa faciébat, et libénter eum audiébat. Et cum dies opportúnus accidísset, Heródes natális sui cœnam fecit princípibus et tribúnis et primis Galilææ. Cumque introísset fília ipsíus Herodíadis, et saltásset, et placuísset Heródi simúlque recumbéntibus; rex ait puéllæ: Pete a me, quod vis, et dabo tibi. Et jurávit illi: Quia quidquid petiéris dabo tibi, licet dimídium regni mei. Quæ cum exiísset, dixit matri suæ: Quid petam? At illa dixit: Caput Joánnis Baptístæ. Cumque introísset statim cum festinatióne ad regem, petívit dicens: Volo, ut protínus des mihi in disco caput Joánnis Baptístæ. Et contristátus est rex: propter jusjurándum et propter simul discumbéntes nóluit eam contristáre: sed misso spiculatóre, præcépit afférri caput ejus in disco. Et decollávit eum in cárcere. Et áttulit caput ejus in disco: et dedit illud puéllæ, et puella dedit matri suæ. Quo audíto, discípuli ejus venérunt et tulérunt corpus ejus: et posuérunt illud in monuménto.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, New Sermons (on Mark 6:17-29)
+      text: |-
+        Cum sanctum Evangélium legerétur, crudele spectaculum ante óculos nostros constitutum est: caput sancti Joánnis in disco, feralis missus crudelitátis propter ódium veritátis. Puella saltat, et sævit mater; et inter lascivias et delicias convivántium témere jurátur, et ímpie, quod jurátur, implétur. Factum est Joánni, quod ipse prædixerat; de Dómino enim Jesu Christo dixerat: Illum oportet crescere, me autem minui. Iste minutus est in cápite, ille crevit in cruce. Odium péperit véritas. Non pótuit æquo animo tolerári quod homo Dei sanctus monebat; qui útique salútem eórum quærebat, quos sic monebat. Respondérunt illi mala pro bonis.
+
+        Quid enim ille diceret, nisi quo plenus erat? et quid illi respondérent, nisi quo pleni erant? Ille tríticum seminávit, sed spinas invénit. Dicebat regi: Non licet tibi habere uxórem fratris tui. Vincebat enim regem libído: tenebat apud se prohíbitam uxórem fratris sui. Sed eum tamen sic libebat, ut non sæviret; honorábat eum, a quo verum audiebat. Sed mulier detestábilis ódium concipiebat, quod aliquándo dato témpore páreret. Quando autem parturiebat, péperit filiam, filiam saltántem.
+      status: verified

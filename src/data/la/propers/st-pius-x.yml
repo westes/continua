@@ -1,0 +1,69 @@
+# Read directly from web/www/horas/Latin/Sancti/09-03.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui ad tuéndam cathólicam fidem, et univérsa in Christo instauránda
+    sanctum Pium, Summum Pontíficem, cælésti sapiéntia et apostólica
+    fortitúdine replevísti: concéde propítius; ut, ejus institúta et
+    exémpla sectántes, prǽmia consequámur ætérna.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# No proper antiphon of his own -- standard de-Communi text, paired with the standard de-Communi commemoration versicle for common-of-a-confessor-pope (C4b -- inherits C4's own Ant2/Versum2 with no override) (not yet independently live-verified for this specific category, marked draft). Collect is the saint's own real proper (st-pius-x-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui ad tuéndam cathólicam fidem, et univérsa in Christo instauránda
+    sanctum Pium, Summum Pontíficem, cælésti sapiéntia et apostólica
+    fortitúdine replevísti: concéde propítius; ut, ejus institúta et
+    exémpla sectántes, prǽmia consequámur ætérna.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2-3 readings for St. Pius X, Pope and Confessor
+# (Sep 3). Sourced directly from web/www/horas/Latin/Sancti/09-03.txt,
+# English/Sancti/09-03.txt. Nocturn 2: Lectio4-6 combined into one
+# reading, one continuous vita.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope, previously left
+# unauthored because Lectio7 gives only the incipit ("Et réliqua"), is
+# now authored too (isGospel: true, immediately before the homily) --
+# fittingly, since St. Augustine's homily (Tractatus 123 on John, "in
+# medio") is itself a commentary on Christ's threefold charge to Peter
+# to feed His sheep, the citation is John 21:15-17, sourced from
+# missa/Latin/Sancti/09-03.txt's own [Evangelium] (the Mass Gospel and
+# the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Pius Papa décimus, cui nomen ántea Joséphus Sarto, in Venetórum pago natus est, quem Riése vocant, paréntibus quidem humílibus, sed probitáte ac pietáte conspícuus. Inter Seminárii Patavíni alúmnos adscríptus, ita pietáte ac doctrína profécit, ut condiscípulis exémplo, moderatóribus admiratióni esset. Sacerdótio initiátus, in óppido Tómbolo primum, qua vicárius cooperátor, dein Salatiáni qua párochus, per plures annos adlaborávit; quibus in obeúndis munéribus, tanta caritátis effusióne, tanto sacerdotáli zelo et sanctitáte vitæ excélluit, ut Epíscopus Tarvisínus inter canónicos cathedrális ecclésiæ eum cooptáret, eúmque Cúriæ episcopális cancellárium simúlque Seminárii diœcesáni spirituálem moderatórem renuntiáret. Hæc offícia tam egrégie persecútus, a Leóne tértio décimo, cui erat probatíssimus, Mantuánæ ecclésiæ Antístes fuit renuntiátus.
+
+        Boni pastóris nullam partem déserens, eo máxime conténdit, ut juvéntus in sortem Dómini vocáta rite ad sacra instituerétur, piæ consociatiónes novis augéscerent increméntis, rítibus divíni cultus plus decóris ac pietátis accéderet. Præcépta quibus cívitas christiána nítitur, áltius proclamáre non désiit, et qui vitam ínopem ipse ducébat, paupéribus numquam omísit afférre levámen. Tot ígitur suffragántibus méritis, inter purpurátos Patres adléctus et Venetiárum Patriárcha creátus est. Dénique post Leónis décimi tértii óbitum, cum Patrum Cardinálium suffrágia in eum coaléscerent, cumque ipse supplicatiónibus et lácrimis tantum munus a se avértere frustra conátus esset, suasiónibus tandem cedens, « accépto in crucem », inquit, et Summi Pontificátus ápicem ut crucem a Deo sibi oblátam, demísso sed forti ánimo suscépit.
+
+        In Petri cáthedra constitútus, nihil de prístina vitæ ratióne remísit. Humilitáte præsértim, simplicitáte ac paupertáte refúlsit, ita ut in suo testaménto scríbere potúerit: « Pauper natus sum, pauper vixi, pauper mori cúpio ». Humílitas vero ánimi fortitúdinem in eo alébat, cum de Dei glória, Ecclésiæ libertáte, animarúmque salúte agerétur. Vir acérrimi ingénii et propósiti tenax, inter vicésimi ineúntis sæculi procéllas, Ecclésiam fírmiter rexit, et præclaríssimis ornávit institútis. Músicam sacram ad prístinum splendórem ac dignitátem revocávit; sacrórum Bibliórum stúdiis príncipem sedem Romæ constítuit; Románam Cúriam sapiénter reformávit; leges de fidélibus per catechísmum instituéndis restítuit; Eucharísticæ mensæ crebriórem, imo et cotidiánam consuetúdinem indúxit, ejúsque accéssum púeris quoque a primo ratiónis usu apéruit; actiónis cathólicæ increménta sédulo promóvit; sólidæ cleri institutióni provídit, ádditis quoque semináriis per regiónes dispósitis; sacerdótes omnes ad interiórem vitam coléndam alléxit; leges Ecclésiæ in unum corpus redégit; erróres perniciosíssimos, modernísmi appellatióne comprehénsos, damnávit atque evéllit; civíle vétitum, quod dicunt, in Pontíficis Máximi electióne rejécit. Tandem labóribus fractus ac mæróre conféctus ob bellum Europæum tunc exórtum, die vicésima mensis Augústi anni millésimi nongentésimi décimi quarti, ad cæléste præmium evolávit. Eum ubíque terrárum sanctitátis fama clarum miraculísque fulgéntem, Pius Papa duodécimus, cuncto plaudénte orbe, in Sanctórum númerum rétulit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joannes 21:15-17
+      text: 'In illo témpore, dicit Jesus Simóni Petro: Simon Joánnis, díligis me plus his? Dicit ei: Etiam Dómine, tu scis quia amo te. Dicit ei: Pasce agnos meos. Dicit ei íterum: Simon Joánnis, díligis me? Ait illi: Etiam Dómine, tu scis quia amo te. Dicit ei: Pasce agnos meos. Dicit ei tértio: Simon Joánnis, amas me? Contristátus est Petrus, quia dixit ei tértio: Amas me? et dixit ei: Dómine, tu ómnia nosti, tu scis quia amo te. Dixit ei: Pasce oves meas.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine of Hippo, Tractate 123 on John (in the middle)
+      text: |-
+        Rédditur negatióni trinæ trina conféssio, ne minus amóri lingua sérviat, quam timóri: et plus vocis elicuísse videátur mors ímminens, quam vita præsens. Sit amóris offícium páscere Domínicum gregem, si fuit timóris indícium negáre pastórem. Qui hoc ánimo pascunt oves Christi, ut suas velint esse, non Christi, se convincúntur amáre, non Christum: vel gloriándi vel dominándi, vel acquiréndi cupiditáte; non obediéndi, et subveniéndi, et Deo placéndi caritáte.
+
+        Contra hos ergo vígilat tótidem inculcáta ista vox Christi, quos Apóstolos gemit sua quærere, non quæ Jesu Christi. Nam quid est áliud, si díligis me, pasce oves meas; quam si dicerétur, si me díligis, non te páscere cógita? Sed oves meas, et sicut meas pasce, non sicut tuas; glóriam meam in eis quære, non tuam; domínium meum, non tuum; lucra mea, non tua; ne sis in eórum societáte qui pértinent ad témpora periculósa, seípsos amántes, et cétera quæ huic malórum inítio connectúntur.
+
+        Mérito dícitur Petro: díligis me, et respóndet, amo te, eíque refértur, pasce agnos meos, et hoc íterum, hoc tértio. Ubi étiam demonstrátur unum atque idem esse amórem et dilectiónem; nam étiam Dóminus novíssime non ait, díligis me, sed amas me. Non ergo nos, sed ipsum amémus, et in pascéndis óvibus ejus ea quæ sunt ejus, non ea quæ sunt nostra, quærámus. Néscio enim quo inexplicábili modo, quisquis seípsum, non Deum amat, non se amat: et quisquis Deum, non seípsum, amat, ipse se amat. Qui enim non potest vívere de se, móritur útique amándo se: non ergo se amat, qui ne vivat se amat.
+      status: verified

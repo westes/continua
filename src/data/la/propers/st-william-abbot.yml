@@ -1,0 +1,58 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2035-06-25).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui infirmitáti nostræ ad teréndam salútis viam in Sanctis tuis exémplum et præsídium collocásti: da nobis, ita beáti Guliélmi abbátis mérita venerári; ut ejúsdem excipiámus suffrágia, et vestígia prosequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-william-abbot-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-abbot (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-william-abbot-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui infirmitáti nostræ ad teréndam salútis viam in Sanctis tuis exémplum et præsídium collocásti: da nobis, ita beáti Guliélmi abbátis mérita venerári; ut ejúsdem excipiámus suffrágia, et vestígia prosequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. William Abbot's own day (2026-06-25). The Benedictus
+# antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+  status: verified
+
+# Matins Nocturn 2 reading for St. William of Vercelli (Montevergine),
+# Abbot (Jun 25) — William is on both tracks: SanctiM/06-25.txt has its
+# own Lectio5-8 vita (Nocturn 1's Lectio1-4 fall back to Common of an
+# Abbot), a separately-transcribed but essentially identical account to
+# Sancti/06-25.txt's own Lectio4-6 — since only the Tridentine file has
+# an available English translation, this saint's content is sourced
+# from that track here, same as a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/06-25.txt, English/Sancti/06-25.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. No responsory given in the source for these lessons.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Guliélmus nobílibus paréntibus Vercéllis in Insúbria natus, vix quartum décimum ætátis annum expléverat, cum miro quodam pietátis ardóre flagrans, Compostellánam peregrinatiónem ad celebérrimum sancti Jacóbi templum aggréssus est, Quod iter una amíctus túnica, ac dúplici férreo círculo præcínctus, nudísque pédibus prosecútus, aspérrima frígoris et æstus, famis et sitis summo cum vitæ discrímine perpéssus est incómmoda. Revérsus in Itáliam, novam ad sanctum Dómini sepúlcrum peregrinatiónem molítur: sed quo minus propósitum exsequátur, vária atque gravíssima intercédunt impediménta, divíno númine ad altióra, et sanctióra religiósam júvenis índolem retrahénte. Porro in solículo monte biénnium inter assíduas preces, vigílias, chameúnias, et jejúnia commorátus, divína subníxus ope, cæco lumen restítuit. Cujus miráculi fama percrebrescénte, jam Guliélmus latére non póterat: quare íterum Jerosólymam cógitat, et álacris se itíneri commíttit.
+
+        Dei autem mónitu, qui eídem appáruit, a propósito revocátur, utílior ac fructuósior tam apud Italos, quam apud éxteras natiónes futúrus. Tum monastérium in Virgiliáni montis cacúmine, quod deínde Vírginis est appellátum, loco áspero, et inaccésso miránda exædíficat celeritáte. Sócios deínde viros, et religiósos ascíscit, eósque ad vivéndi normam evangélicis præcéptis et consíliis summópere accommodátam tum certis légibus ex beáti Benedícti institútis magna ex parte desúmptis, tum verbo et sanctíssimæ vitæ exémplis infórmat.
+
+        Aliis deínde monastériis eréctis, clárior in dies Guliélmi facta sánctitas multos ad eum úndique viros perdúcit, sanctitátis odóre, et miraculórum fama alléctos. Nam muti loquélam, surdi audítum, áridi vigórem, varióque et immedicábili morbo laborántes, sanitátem ipsíus intercessióne recepérunt. Aquam in vinum convértit, aliáque complúra mirabília patrávit: inter quæ illud non siléndum, quod, muliércula ad ejus castitátem tentándam missa, in ardéntibus prunis humi stratis illǽsum se volutávit. De qua re cértior factus Rogérius Neápolis rex, in summam viri Dei veneratiónem addúcitur. Demum témpore sui óbitus regi, aliísque prænuntiáto, innúmeris virtútibus et miráculis clarus obdormívit in Dómino, anno salútis millésimo centésimo quadragésimo secúndo.
+      status: verified

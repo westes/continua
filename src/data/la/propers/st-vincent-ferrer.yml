@@ -1,0 +1,51 @@
+# Read directly from web/www/horas/Latin/Sancti/04-05.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui Ecclésiam tuam beáti Vincéntii Confessóris tui méritis et prædicatióne
+    illustráre dignátus es: concéde nobis fámulis tuis; ut et ipsíus instruámur exémplis
+    et ab ómnibus ejus patrocínio liberémur advérsis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-vincent-ferrer has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-vincent-ferrer-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui Ecclésiam tuam beáti Vincéntii Confessóris tui méritis et prædicatióne
+    illustráre dignátus es: concéde nobis fámulis tuis; ut et ipsíus instruámur exémplis
+    et ab ómnibus ejus patrocínio liberémur advérsis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Vincent Ferrer, Confessor (Apr 5).
+# Sourced directly from web/www/horas/Latin/Sancti/04-05.txt,
+# English/Sancti/04-05.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in the source (6-lesson office).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Vincentius, honesta stirpe Valentiæ in Hispania natus, ab ineunte ætate cor gessit senile. Qui dum caliginosi hujus sæculi labilem cursum pro ingenii sui modulo consideraret, religionis habitum in ordine Prædicatorum decimo octavo ætatis suæ anno suscepit; et emissa solemni professione, sacris litteris sedulo incumbens, theologiæ lauream summa cum laude consecutus est. Mox obtenta a superioribus licentia, verbum Dei prædicare, Judæorum perfidiam arguere, Saracenorum errores confutare tanta virtute et efficacia cœpit, ut ingentem ipsorum infiddlium multitudinem ad Christi fidem perduxerit, et multa Christianorum millia a peccatis ad pœnitentiam, a vitus ad virtutem revocarit. Electus enim a Deo, ut monita salutis in omnes gentes, tribus et linguas difunderet, et extremi tremendique judicii diem appropinquare ostenderet, omnium auditorum animos terrore concussos, atque a terrenis affectibus avulsos, ad Dei amórem excitabat.
+
+        In hoc autem apostolico munere hic vitæ ejus tenor perpetuus fuit quotidie Missam summo mane cum cantu celebravit. Quotidie ad populum concionem habuit; inviolabile semper jejunium, nisi urgens adesset necessitas, servavit; sancta et recta consilia nulli denegavit, carnes numquam comedit, nec vestem lineam induit: populorum jurgia sedavit, dissidentia regna pace composuit: et cum vestis inconsutilis Ecclesiæ diro schismate scinderetur, ut uniretur, et unita servaretur, plurimum laboravit. Virtutibus omnibus claruit, suosque detractores et persecutores, in simplicitate et humilitate ambulans, cum mansuetudine recepit, et amplexus est.
+
+        Per ipsum divina virtus, in confirmationem vitæ et prædicationis ejus, multa signa et miracula fecit. Nam frequentissime super ægros manus imposuit, et sanitatem adepti sunt: spiritus immundos e corporibus expulit: surdis auditum, mutis loquelam, cæcis visum restituit, leprosos mundavit, mortuos suscitavit. Senio tandem et morbo confectus infatigabilis Evangelii præco, plurimis Europæ provinciis cum ingenti animarum fructu peragratis, Venetiæ in Britannia minori prædicationis et vitæ cursum feliciter consummavit, anno salutis millesimo quadringentesimo decimo nono: quem Callistus tertius sanctorum numero ascripsit.
+      status: verified

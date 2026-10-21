@@ -1,0 +1,49 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2027-06-09).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Fac nos, quǽsumus, Dómine, sanctórum Mártyrum tuórum Primi et Feliciáni semper festa sectári: quorum suffrágiis protectiónis tuæ dona sentiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-primus-and-felicianus-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (ss-primus-and-felicianus-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Fac nos, quǽsumus, Dómine, sanctórum Mártyrum tuórum Primi et Feliciáni semper festa sectári: quorum suffrágiis protectiónis tuæ dona sentiámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Primus and Felicianus's own day (2027-06-09). The
+# Benedictus antiphon.
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Primus and Felicianus, Martyrs (Jun
+# 9) — SanctiM/06-09.txt inherits the whole day (`@Sancti/06-09`) with
+# no Nocturn 2/3 override, so this feast's own proper content is
+# sourced from the Tridentine track exactly as for a pre-1955 saint
+# (see memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/06-09.txt, English/Sancti/06-09.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Primus et Felicianus fratres, in persecutióne Diocletiáni et Maximiáni accusáti christianæ religiónis, in víncula conjiciúntur; quibus soluti, inde eripiúntur ab Angelo. Mox ad prætorem adducti, cum christianam fidem acerrime tueréntur, alter ab altero distracti sunt; ac primum varie tentáta est constántia Feliciáni. Sed, cum suasores impietátis se posse quidquam verbis proficere desperárent, affixis stipiti mánibus ejus et pédibus, ipsum sine cibo et potu inde triduum pendentem reliquérunt. Postridie ejus diéi, prætor vocátum ad se Primum sic affátur: Vides quanto sit prudentior, quam tu, frater tuus, qui obsecutus imperatóribus, apud ipsos est honoratus? Quem si tu quoque imitari volueris, particeps eris ejus honoris et gratiæ. Cui Primus: Qui factum sit fratri meo, cognóvi ex Angelo. Utinam, quemádmodum sum cum eo voluntáte conjunctíssimus, sic ab eodem ne martyrio disjungar. Quo dicto excanduit prætor, et ad ceteros cruciatus, quibus Primum affecit, præsénte jam Feliciáno, liquátum igne plumbum in os ejus jussit infundi. Mox utrumque perduci imperat in theatrum, in eosque immitti duos leónis; qui, prostráti ad eórum genua, cápite et cauda ipsis blandiebántur. Ad id spectaculum cum ámplius duódecim míllia hóminum convenissent, quingénti cum suis familiis christianam religiónem suscepérunt. Quibus rebus permotus prætor, eos secúri pércuti jussit.'
+      status: verified

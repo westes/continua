@@ -1,0 +1,250 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25 run.
+# On Sundays/feasts the Roman office substitutes the day's own collect here —
+# not modeled yet (milestone 4); this fixed ferial collect is used for now
+# regardless of day.
+collect-prime:
+  text: |
+    Orémus.
+    Dómine Deus omnípotens, qui ad princípium hujus diéi nos perveníre fecísti: tua nos hódie salva virtúte; ut in hac die ad nullum declinémus peccátum, sed semper ad tuam justítiam faciéndam nostra procédant elóquia, dirigántur cogitatiónes et ópera. Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+    V. Benedicámus Dómino.
+    R. Deo grátias.
+  status: verified
+
+# Verified against Divinum Officium ("Prima Special.txt", [Dominica] section).
+# 1 Tim 1:17 — used on Sundays and feast days (see calendar/isSundayOrFeast).
+# Fixed year-round, no seasonal variants.
+prime-capitulum-dominica:
+  text: Regi sæculórum immortáli et invisíbili, soli Deo honor et glória in sǽcula sæculórum. Amen.
+  citation: 1 Tim. 1:17
+  status: verified
+
+# Verified against Divinum Officium ("Prima Special.txt", [Feria] section).
+# Zach 8:19 — used on plain ferial days (see calendar/isSundayOrFeast).
+# Fixed year-round, no seasonal variants.
+prime-capitulum-feria:
+  text: Pacem et veritátem dilígite, ait Dóminus omnípotens.
+  citation: Zach. 8:19
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25 run.
+# The "De Officio Capituli" mini-office — a second Deus in adiutorium/Kyrie/
+# Pater/versicle/collect cluster, sandwiched between the Martyrology and the
+# Regula reading. Real to 1617; the 1960 monastic rubrics dropped it. Kept
+# per explicit decision (adds real time, but is authentic to this version).
+prime-chapter-office:
+  text: |
+    V. Deus in adjutórium meum inténde.
+    R. Dómine, ad adjuvándum me festína.
+    V. Deus in adjutórium meum inténde.
+    R. Dómine, ad adjuvándum me festína.
+    V. Deus in adjutórium meum inténde.
+    R. Dómine, ad adjuvándum me festína.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen.
+
+    Kýrie, eléison. Christe, eléison. Kýrie, eléison.
+
+    Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum quotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris:
+    V. Et ne nos indúcas in tentatiónem:
+    R. Sed líbera nos a malo.
+
+    V. Réspice in servos tuos, Dómine, et in ópera tua, et dírige fílios eórum.
+    R. Et sit splendor Dómini Dei nostri super nos, et ópera mánuum nostrárum dírige super nos, et opus mánuum nostrárum dírige.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen.
+
+    Orémus.
+    Dirígere et sanctificáre, régere et gubernáre dignáre, Dómine Deus, Rex cæli et terræ, hódie corda et córpora nostra, sensus, sermónes et actus nostros in lege tua, et in opéribus mandatórum tuórum: ut hic et in ætérnum, te auxiliánte, salvi et líberi esse mereámur, Salvátor mundi: Qui vivis et regnas in sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25 run.
+prime-conclusio:
+  text: |
+    V. Adjutórium nostrum ✠ in nómine Dómini.
+    R. Qui fecit cælum et terram.
+    V. Benedícite.
+    R. Deus.
+    Benedictio. Dóminus nos benedícat, ✠ et ab omni malo deféndat, et ad vitam perdúcat ætérnam. Et fidélium ánimæ per misericórdiam Dei requiéscant in pace.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25 run.
+# The "Pretiosa" — said immediately after the day's Martyrology reading,
+# before the chapter-office block.
+prime-martyrology-close:
+  text: |
+    V. Pretiósa in conspéctu Dómini.
+    R. Mors Sanctórum ejus.
+    Sancta María et omnes Sancti intercédant pro nobis ad Dóminum, ut nos mereámur ab eo adjuvári et salvári, qui vivit et regnat in sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Prime's Preces, part 2 of 2 (secular Tridentine; see
+# prime-preces-prelude.yml): Adjutorium, Confiteor, Misereatur, Indulgentiam,
+# "Dignare, Domine, die isto..." / "Miserere nostri..." and Domine exaudi.
+# [Preces Dominicales Prima 2] plus [Preces dominicales secundae].
+#
+# The Confiteor keeps "beato Patri nostro Benedicto" in the saint list —
+# real secular/Roman Confiteors omit this (it's a Monastic-only addition
+# naming St. Benedict), but vu keeps it by explicit choice.
+prime-preces-conclusion:
+  text: |
+    V. Adjutórium nostrum ✠ in nómine Dómini.
+    R. Qui fecit cælum et terram.
+
+    Confíteor Deo omnipoténti, beátæ Maríæ semper Vírgini, beáto Michaéli Archángelo, beáto Joánni Baptístæ, sanctis Apóstolis Petro et Paulo, beáto Patri nostro Benedícto, et ómnibus Sanctis, quia peccávi nimis, cogitatióne, verbo et ópere: mea culpa, mea culpa, mea máxima culpa. Ídeo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum, beátum Joánnem Baptístam, sanctos Apóstolos Petrum et Paulum, beátum Patrem nostrum Benedíctum, et omnes Sanctos, oráre pro me ad Dóminum Deum nostrum.
+
+    Misereátur nostri omnípotens Deus, et dimíssis peccátis nostris, perdúcat nos ad vitam ætérnam. Amen.
+
+    Indulgéntiam, ✠ absolutiónem et remissiónem peccatórum nostrórum tríbuat nobis omnípotens et miséricors Dóminus. Amen.
+
+    V. Dignáre, Dómine, die isto.
+    R. Sine peccáto nos custodíre.
+    V. Miserére nostri, Dómine.
+    R. Miserére nostri.
+    V. Fiat misericórdia tua, Dómine, super nos.
+    R. Quemádmodum sperávimus in te.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+  status: verified
+
+# Verified against Divinum Officium ("Psalterium/Special/Preces.txt",
+# [Preces feriales Prima] section) — the ferial-only middle block of Prime's
+# Preces ("Eripe me..."). Said between prime-preces-prelude and
+# prime-preces-conclusion on ferial days (and Vigils); see hours/prime.yml's
+# header. By explicit choice, currently *every* ferial day, not just the
+# Advent/Lent/vigils/Ember days later rubrics actually restricted it to.
+prime-preces-feriales:
+  text: |
+    V. Éripe me, Dómine, ab hómine malo.
+    R. A viro iníquo éripe me.
+    V. Éripe me de inimícis meis, Deus meus.
+    R. Et ab insurgéntibus in me líbera me.
+    V. Éripe me de operántibus iniquitátem.
+    R. Et de viris sánguinum salva me.
+    V. Sic psalmum dicam nómini tuo in sǽculum sǽculi.
+    R. Ut reddam vota mea de die in diem.
+    V. Exáudi nos, Deus, salutáris noster.
+    R. Spes ómnium fínium terræ, et in mari longe.
+    V. Deus in adjutórium meum inténde.
+    R. Dómine, ad adjuvándum me festína.
+    V. Sanctus Deus, Sanctus fortis, Sanctus immortális.
+    R. Miserére nobis.
+    V. Bénedic, ánima mea, Dómino.
+    R. Et ómnia, quæ intra me sunt, nómini sancto ejus.
+    V. Bénedic, ánima mea, Dómino.
+    R. Et noli oblivísci omnes retributiónes ejus.
+    V. Qui propitiátur ómnibus iniquitátibus tuis.
+    R. Qui sanat omnes infirmitátes tuas.
+    V. Qui rédimit de intéritu vitam tuam.
+    R. Qui corónat te in misericórdia et miseratiónibus.
+    V. Qui replet in bonis desidérium tuum.
+    R. Renovábitur ut áquilæ juvéntus tua.
+  status: verified
+
+# Prime's Preces, part 1 of 2 (secular Tridentine, verified against
+# Divinum Officium, version "Tridentine - 1906", 2026-08-25 run): Kyrie,
+# Pater noster, Credo, and the "Et ego ad te, Domine, clamavi" versicle
+# block. [Preces Dominicales Prima 1] in the reference engine.
+#
+# Said every day Preces are said. On Sundays/feasts it is followed directly
+# by prime-preces-conclusion; on ferial days the ferial "Eripe me" block
+# (prime-preces-feriales) sits between the two — all three sets, per the
+# reference engine. See data/hours/prime.yml's header.
+#
+# Chosen over Monastic Prime's own shorter Dominicales form by explicit
+# preference: it keeps the "Et ego ad te, Domine, clamavi..." block and the
+# fuller "Miserere nostri..." close (in the conclusion) Monastic drops.
+prime-preces-prelude:
+  text: |
+    Kýrie, eléison. Christe, eléison. Kýrie, eléison.
+
+    Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum quotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris:
+    V. Et ne nos indúcas in tentatiónem:
+    R. Sed líbera nos a malo.
+
+    Credo in Deum, Patrem omnipoténtem, Creatórem cæli et terræ. Et in Jesum Christum, Fílium ejus únicum, Dóminum nostrum: qui concéptus est de Spíritu Sancto, natus ex María Vírgine, passus sub Póntio Piláto, crucifíxus, mórtuus, et sepúltus: descéndit ad ínferos; tértia die resurréxit a mórtuis; ascéndit ad cælos; sedet ad déxteram Dei Patris omnipoténtis: inde ventúrus est judicáre vivos et mórtuos. Credo in Spíritum Sanctum, sanctam Ecclésiam cathólicam, Sanctórum communiónem, remissiónem peccatórum.
+    V. Carnis resurrectiónem.
+    R. Vitam ætérnam. Amen.
+
+    V. Et ego ad te, Dómine, clamávi.
+    R. Et mane orátio mea prævéniet te.
+    V. Repleátur os meum laude.
+    R. Ut cantem glóriam tuam, tota die magnitúdinem tuam.
+    V. Dómine, avérte fáciem tuam a peccátis meis.
+    R. Et omnes iniquitátes meas dele.
+    V. Cor mundum crea in me, Deus.
+    R. Et spíritum rectum ínnova in viscéribus meis.
+    V. Ne projícias me a fácie tua.
+    R. Et spíritum sanctum tuum ne áuferas a me.
+    V. Redde mihi lætítiam salutáris tui.
+    R. Et spíritu principáli confírma me.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25 run.
+# Precedes the day's Regula reading — fixed regardless of which chapter is
+# read that day.
+prime-regula-blessing:
+  text: |
+    V. Jube, domne, benedícere.
+    Benedictio. Dies et actus nostros in sua pace dispónat Dóminus omnípotens.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25 run.
+# Monastic Prime has no separate short responsory ("Christe, Fili Dei vivi")
+# the way secular/Roman Prime does — straight from chapter to this versicle.
+prime-versicle:
+  text: |
+    V. Exsúrge, Christe, ádjuva nos.
+    R. Et líbera nos propter nomen tuum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25
+# run. The final (5th) stanza is marked with a leading "* " — Divinum
+# Officium's own marker for a hymn's variable doxology (hymni.pl's
+# gethymn()), ported here directly; see hours/resolve-common.ts's
+# substituteDoxology and hours/hymn-doxology.ts. When no override applies,
+# this stanza (with the marker itself stripped) stands as Prime's own
+# per-annum default.
+hymn-iam-lucis-orto-sidere:
+  text: |
+    Jam lucis orto sídere,
+    Deum precémur súpplices,
+    Ut in diúrnis áctibus
+    Nos servet a nocéntibus.
+
+    Linguam refrénans témperet,
+    Ne litis horror ínsonet:
+    Visum fovéndo cóntegat,
+    Ne vanitátes háuriat.
+
+    Sint pura cordis íntima,
+    Absístat et vecórdia;
+    Carnis terat supérbiam
+    Potus cibíque párcitas.
+
+    Ut, cum dies abscésserit,
+    Noctémque sors redúxerit,
+    Mundi per abstinéntiam
+    Ipsi canámus glóriam.
+
+    * Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc et in perpétuum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (prayer id "Conclmart") — a fixed closing
+# line appended after every day's Martyrology reading, not day-variable
+# content, so it's a common proper rather than baked into each day's file.
+martyrology-close:
+  text: |
+    V. Et álibi aliórum plurimórum sanctórum Mártyrum et Confessórum, atque sanctárum Vírginum.
+    R. Deo grátias.
+  status: verified

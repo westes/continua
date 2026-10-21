@@ -1,0 +1,64 @@
+# Lauds collect ([Oratio 2] in the source) — read from
+# web/www/horas/{Latin,English}/Tempora/Quad1-4.txt.
+collect:
+  text: |
+    Orémus.
+    Devotiónem pópuli tui, quǽsumus, Dómine, benígnus inténde: ut, qui per abstinéntiam macerántur in córpore, per fructum boni óperis reficiántur in mente.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Vespers collect ([Oratio 3] in the source), distinct from Lauds' own —
+# read from web/www/horas/{Latin,English}/Tempora/Quad1-4.txt.
+collect/~-vespers:
+  text: |
+    Orémus.
+    Da, quǽsumus, Dómine, pópulis christiánis: et, quæ profiténtur, agnóscere, et cæléste munus dilígere, quod frequéntant.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad1-4.txt's own
+# [Ant 2] and its English counterpart.
+benedictus-antiphon:
+  text: 'Egréssus Jesus * secéssit in partes Tyri et Sidónis: et ecce múlier Chananǽa a fínibus illis egréssa, clamábat dicens: Miserére mei, Fili David.'
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quad1-4.txt's own
+# [Ant 3] and its English counterpart.
+magnificat-antiphon:
+  text: 'O múlier, * magna est fides tua: fiat tibi sicut petísti.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for Thursday of Lent week 1 — read from
+# web/www/horas/{Latin,English}/Tempora/Quad1-4.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quad1-4.txt's own [Evangelium].
+# Recombined into one reading (Lectio1-3 are one continuous Jerome
+# excerpt split only to fill the fixed 3-lesson slot count). Responsory1
+# is given directly in this file (not a cross-reference).
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Matt 15:21-28
+      text: 'In illo témpore: Egréssus Jesus secéssit in partes Tyri et Sidónis. Et ecce, múlier Chananǽa a fínibus illis egréssa clamávit, dicens ei: Miserére mei, Dómine, fili David: fília mea male a dæmónio vexátur. Qui non respóndit ei verbum. Et accedéntes discípuli ejus rogábant eum, dicéntes: Dimítte eam; quia clamat post nos. Ipse autem respóndens, ait: Non sum missus nisi ad oves, quæ periérunt domus Israël. At illa venit, et adorávit eum, dicens: Dómine, ádjuva me. Qui respóndens, ait: Non est bonum súmere panem filiórum, et míttere cánibus. At illa dixit: Etiam, Dómine: nam et catélli edunt de micis, quæ cadunt de mensa dominórum suórum. Tunc respóndens Jesus, ait illi: O múlier, magna est fides tua: fiat tibi, sicut vis. Et sanáta est fília ejus ex illa hora.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Jerome, Priest, Book 2, Commentary on Matthew, ch. 15
+      text: |-
+        Scribis et pharisǽis calumniatóribus derelíctis, transgréditur in partes Tyri et Sidónis, ut Týrios Sidoniósque curáret. Múlier autem Chananǽa egréditur de fínibus prístinis, ut clamans fíliæ ímpetret sanitátem. Obsérva quod in quintodécimo loco fília Chananǽæ sanétur. Miserére mei, Dómine, Fili David. Inde novit vocáre Fílium David, quia egréssa jam fúerat de fínibus suis, et errórem Tyriórum ac Sidoniórum loci et fídei commutatióne dimíserat.
+
+        Fília mea male a dæmónio vexátur. Ego fíliam Chananǽæ puto ánimas esse credéntium, quæ male a dæmónio vexabántur, ignorántes Creatórem, et adorántes lápidem. Qui non respóndit ei verbum: non de supérbia pharisáica, nec de scribárum supercílio: sed ne ipse senténtiæ suæ viderétur esse contrárius, per quam jússerat: In viam géntium ne abiéritis, et in civitátes Samaritanórum ne intravéritis. Nolébat enim occasiónem calumniatóribus dare: perfectámque salútem géntium passiónis et resurrectiónis témpori reservábat.
+
+        Et accedéntes discípuli ejus, rogábant eum, dicéntes: Dimítte eam, quia clamat post nos. Discípuli illo adhuc témpore mystéria Dómini nesciéntes, vel misericórdia commóti, rogábant pro Chananǽa mulíere, quam alter Evangelísta Syrophœníssam appéllat: vel importunitáte ejus carére cupiéntes, quia non ut cleméntem, sed ut durum médicum crébrius inclamáret. Ipse autem respóndens ait: Non sum missus, nisi ad oves quæ periérunt domus Israël. Non quo et ad gentes non missus sit, sed quo primum missus sit ad Israël: ut illis non recipiéntibus Evangélium, justa fíeret ad gentes transmigrátio.
+      responsory: |-
+        R. Tribulárer, si nescírem misericórdias tuas, Dómine; tu dixísti: Nolo mortem peccatóris, sed ut magis convertátur et vivat: * Qui Chananǽam et publicánum vocásti ad pœniténtiam.
+        V. Secúndum multitúdinem dolórum meórum in corde meo, consolatiónes tuæ lætificavérunt ánimam meam.
+        R. Qui Chananǽam et publicánum vocásti ad pœniténtiam.
+      status: verified

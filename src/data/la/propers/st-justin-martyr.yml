@@ -1,0 +1,51 @@
+# Read from the reference engine: web/www/horas/Latin/Sancti/04-14.txt [Oratio];
+# English from English/Sancti/04-14.txt.
+collect:
+  text: |
+    Orémus.
+    Deus, qui per stultítiam crucis eminéntem Jesu Christi sciéntiam beátum Justínum Mártyrem mirabíliter docuísti: ejus nobis intercessióne concéde; ut, errórum circumventióne depúlsa, fídei firmitátem consequámur.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# No proper antiphon of his own -- standard de-Communi text and versicle for
+# common-of-a-martyr; collect is the saint's own (collect-st-justin-martyr.yml). Not
+# independently live-verified for this category, so marked draft.
+commemoration:
+  text: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Deus, qui per stultítiam crucis eminéntem Jesu Christi sciéntiam beátum Justínum Mártyrem mirabíliter docuísti: ejus nobis intercessióne concéde; ut, errórum circumventióne depúlsa, fídei firmitátem consequámur.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 and 3 reading for St. Justin, Martyr. Sourced directly from
+# web/www/horas/Latin/Sancti/04-14.txt, English/Sancti/04-14.txt.
+# Lectio4-6 combined into one reading, one continuous vita. Nocturn 3: the Gospel pericope then the saint's own homily.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Justínus, Prisci fílius, ex Græco genere Flaviæ Neápolis in Syria Palæstina natus, adolescéntiam in litterárum ómnium stúdiis transegit. Vir factus adeo philosophíæ amóre correptus est, ut ad veritátem assequéndam, quotquot aderant, philosophórum sectis nomen déderit, eorúmque præcépta scrutátus sit. Cum in his fallacem tantum sapiéntiam errorémque reperísset, superna illustratióne per senem quemdam ignotum aspectuque venerábilem edoctus, veræ christianæ fídei philosophíam amplexus est. Hinc sacræ Scripturæ libros diu noctuque præ mánibus habens, ita ex eórum meditatióne divinus ignis in ánima ejus exársit, ut ea qua pollébat eruditiónis vi, eminentem Jesu Christi sciéntiam adeptus, plurima conscripserit volúmina ad christiánam fidem exponéndam magisque propagandam.
+
+        Inter præclaríssima Justini ópera binæ eminent fídei christianæ apologíæ, quas cum coram senatu, imperatóribus Antonino Pio ejúsque fíliis nec non Marco Antonino Vero et Lucio Aurelio Cómmodo Christi ásseclas sævíssime divexántibus, porrexísset, eamdemque fidem disputándo strenue propugnasset, obtinuit, ut a Christianórum cæde publico príncipum edícto temperátum fúerit. Verum Justino haud parcitum est. Nam Crescéntis cynici, cujus vitam et mores nefarios redargúerat, insídiis accusatus, a satellítibus comprehénsus est. Adductus autem ad Romæ præsidem nómine Rústicum, cum hic ab eo quæsivísset, quænam essent Christianórum præcépta, hanc bonam confessiónem coram multis testibus conféssus est: Rectum dogma, quod nos christiáni hómines cum pietáte servamus, hoc est: ut Deum unum existimémus Factórem atque Creatórem ómnium quæ vidéntur, quæque corpóreis óculis non cernúntur; et Dóminum Jesum Christum Dei Fílium confiteámur, olim a prophétis prænuntiátum, qui et humani generis Judex ventúrus est.
+
+        Quóniam Justinus in prima sua apología exposúerat quómodo Christiáni convenírent ad Sacra celebranda, et quænam fúerint sacri hujus convéntus mysteria, ad repelléndas ethnicórum calumnias; exquisívit ab eo præses, in quonam loco conveníret ipse et ceteri hujus Urbis Christifidéles. Justinus autem réticens convéntuum loca, ne sancta et fratres próderet cánibus, domicílium tantum suum indicávit, ubi manére et discípulos excólere solébat penes célebrem títulum Pastoris in ædibus Pudéntis. Demum præses optiónem ei dedit vel ut diis sacrificaret, vel per totum corpus flagellis cædi perferret. Cum invictus fídei vindex assereret se in votis semper habuísse cruciátus pérpeti propter Dóminum Jesum Christum, a quo magnam in cælis mercédem cónsequi expectabat, præses in eum capitálem senténtiam pronuntiávit. Itaque mirábilis philósophus Deum collaudans, post vérbera, fuso pro Christo sánguine, glorióso martyrio coronátus est. Quidam vero fidéles clam illíus sustulérunt corpus, et in loco idoneo condidérunt. Leo décimus tertius Póntifex maximus ejúsdem Offícium et Missam ab univérsa Ecclésia celebrári præcepit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 12:2-8
+      text: 'Nihil autem opertum est, quod non reveletur: neque absconditum, quod non sciatur. Quoniam quae in tenebris dixistis, in lumine dicentur: et quod in aurem locuti estis in cubiculis, praedicabitur in tectis. Dico autem vobis amicis meis: Ne terreamini ab his qui occidunt corpus, et post haec non habent amplius quid faciant. Ostendam autem vobis quem timeatis: timete eum qui, postquam occiderit, habet potestatem mittere in gehennam: ita dico vobis, hunc timete. Nonne quinque passeres veneunt dipondio, et unus ex illis non est in oblivione coram Deo? sed et capilli capitis vestri omnes numerati sunt. Nolite ergo timere: multis passeribus pluris estis vos. Dico autem vobis: Omnis quicumque confessus fuerit me coram hominibus, et Filius hominis confitebitur illum coram angelis Dei:'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. John Chrysostom, Patriarch of Constantinople, On Matthew x. 26
+      text: |-
+        Nihil est opertum quod non revelábitur, nec occultum quod non sciétur. Quod autem dicit, hujúsmodi est: Sufficit quidem vobis ad consolatiónem, si ego Magister et Dóminus consors sim conviciórum. Si vero adhuc doletis hæc audiéntes, illud quoque animo reputate, vos non multum póstea ab hac suspicióne liberátum iri. Cur enim id ægre fertis? quia præstigiatores et deceptores vos vocant? At paululum exspectáte, et servatores benefactoresque orbis vos prædicábunt omnes. At enim tempus illa ómnia, quæ subobscura erant, revelabit, et illórum calumniam déteget, virtutémque vestram conspicuam reddet. Cum enim ex rebus ipsis comprobabímini salvatores esse et benefici, et omni virtúte conspicui, illórum dictis hómines non attendent, sed rei veritáti; ac illi quidam sycophantæ, mendáces, malédici, vos vero ipso sole splendidióres deprehendémini. Multum quippe témporis spatium vos notos reddet, prædicabit, et tuba clariórem emíttet vocem, vestræque virtútis testes univérsos hómines exhibétur. Ne ítaque ea, quæ nunc dicúntur, vos dejíciant, sed spes futurórum bonórum érigat. Non possunt enim ea, quæ ad vos spectant, occultári.
+
+        Deínde, postquam illos omni angore, timóre et sollicitúdine liberávit, et probris ómnibus superióres réddidit, demum illos opportune de libertáte prædicándi allóquitur; nam dicit: Quod dico vobis in ténebris, dícite in lúmine; et quod in aure audítis, prædicate super tecta. Quamquam non erant ténebræ cum hæc diceret, neque ad aurem loquebátur: sed hæc hyperbólice dicta sunt. Quia enim solos alloquebátur, et in parvo Palæstinæ angulo, ídeo dicit, In ténebris et In aure; hunc loquéndi modum cómparans cum loquéndi fiducia, qua illos póstea instructurus erat. Ne in una, duabus tribusque civitátibus, sed per totum orbem prædicate, terram máreque peragrántes, habitátam, non habitátam; ac tyrannis, pópulus, philosophis, rhetóribus cum magna fiducia ómnia dícite. Ideo dixit super tecta et in lúmine; sine ullo subterfugio, et cum omni libertáte.
+      status: verified

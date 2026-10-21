@@ -1,0 +1,25 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2026-09-26 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: Dómine Rex omnípotens, * in dicióne tua cuncta sunt pósita, et non est qui possit tuæ resístere voluntáti.
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "5th Sunday of September" (Tempora/095-0.txt) — see
+# month-week-081.yml's header for the id scheme. Own Responsory4 (not a
+# cross-reference).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, On the Duties of the Clergy, Book 3, ch. 15-16
+      text: |-
+        Quid Esther regína, nonne ut pópulum suum perículo erúeret (quod erat decórum atque honéstum) morti se óbtulit, nec immítis regis trepidávit furórem? Ipse quoque rex Persárum, ferox atque túmido corde, tamen decórum judicávit índici insidiárum, quæ sibi parátæ forent, grátiam repræsentáre, populúmque líberum a servitúte erípere, erúere neci, nec párcere neci ejus, qui tam indecóra suasísset. Dénique quem secúndum a se, ac præcípuum inter omnes amícos habéret, cruci trádidit, quod dehonestátum se ejus frauduléntis consíliis animadvertísset.
+
+        Ea enim amicítia probábilis, quæ honestátem tuétur, præferénda sane ópibus, honóribus, potestátibus; honestáti vero præférri non solet, sed honestátem sequi. Qualis fuit Jónathæ, qui pro pietáte nec offénsam patris, nec salútis perículum refugiébat. Qualis fuit Achímelech, qui pro hospitális grátiæ offíciis necem pótius sibi, quam proditiónem fugiéntis amíci, subeúndam arbitrabátur. Nihil ígitur præferéndum honestáti; quæ tamen ne amicítiæ stúdio prætereátur, étiam hoc Scriptúra ádmonet.
+
+        Sunt enim plerǽque philosophórum quæstiónes: Utrum amíci causa quisquam contra pátriam sentíre necne débeat, ut amíco obédiat: utrum opórteat ut fidem déserat, dum indúlget atque inténdit amíci commoditátibus. Et Scriptúra quidem ait: Clava, et gládius, et sagítta ferráta, sic homo est testimónium dans falsum advérsus amícum suum. Sed consídera quid ástruat. Non testimónium reprehéndit dictum in amícum, sed falsum testimónium. Quid enim si Dei causa, quid si pátriæ, cogátur áliquis dícere testimónium? Numquid præponderáre debet amicítia religióni, præponderáre caritáti vítium?
+      responsory: |-
+        R. Meménto mei, Dómine Deus, in bonum: * Et ne déleas miseratiónes meas, quas feci in domo Dei mei et in cæremóniis ejus.
+        V. Recordáre mei, Dómine, Deus meus.
+        R. Et ne déleas miseratiónes meas, quas feci in domo Dei mei et in cæremóniis ejus.
+      status: verified

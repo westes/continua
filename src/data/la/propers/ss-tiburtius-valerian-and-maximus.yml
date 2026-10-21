@@ -1,0 +1,56 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2043-04-14).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, qui sanctórum Mártyrum tuórum Tibúrtii, Valeriáni et Máximi sollémnia cólimus; eórum étiam virtútes imitémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-tiburtius-valerian-and-maximus-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (ss-tiburtius-valerian-and-maximus-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, qui sanctórum Mártyrum tuórum Tibúrtii, Valeriáni et Máximi sollémnia cólimus; eórum étiam virtútes imitémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Tiburtius, Valerian, and Maximus's own day (2027-04-14).
+# The Benedictus antiphon -- shared word-for-word with St. George's,
+# St. Vitalis's, and St. Peter Martyr's own (all draw on the same
+# Eastertide Common of Several Martyrs text, confirmed independently for
+# each rather than assumed).
+benedictus-antiphon:
+  text: Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Tiburtius, Valerian, and Maximus,
+# Martyrs (Apr 14, sharing the date with St. Justin in the general
+# Tridentine calendar). No SanctiM/04-14t*.txt at all (the only
+# SanctiM file for this date, plain SanctiM/04-14.txt, bases
+# `@Sancti/04-14` i.e. Justin, not these martyrs) — same "the shared
+# plain file isn't necessarily yours" wrinkle as the pre-1955 pass
+# (memory vu-matins-pre1955-saints); another missed pre-1955-pool
+# candidate rather than a genuine SanctiM case (see memory
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/04-14t.txt, English/Sancti/04-14t.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Valerianus Romanus nobili genere ortus, Alexandro Sevéro imperatóre, hortatu beátæ Cæcíliæ Vírginis, quam sibi pari nobilitate uxórem desponderat, una cum Tiburtio fratre a sancto Urbano Papa baptizátur. Quos ubi præfectus Urbis Almachius Christiános esse cognóvit, et patrimonio paupéribus distributo, Christianórum córpora sepelire; accersítos gráviter reprehéndit: atque ubi Christum Deum constanter confiténtes, deos autem dæmoniórum inánia simulácra prædicántes videt, virgis cædi jubet. Sed cum verbéribus cogi non possent, ut Jovis simulacrum veneraréntur, immo fortes in fídei veritáte permanérent, ad quartum ab Urbe lápidem secúri feriúntur. Quorum virtútem admirátus Maximus præfecti cubicularius, qui eos ad supplícium perduxerat, Christiánum se esse proféssus est, cum multis præterea præfecti minístris: qui paulo post plumbátis contusi, omnes ex diaboli minístris, Christi Dómini Mártyres evasérunt.'
+      status: verified

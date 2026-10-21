@@ -1,0 +1,78 @@
+# Read directly from web/www/horas/Latin/Sancti/05-28.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui Anglórum gentes, prædicatióne et miráculis beáti Augustíni Confessóris tui
+    atque Pontíficis, veræ fídei luce illustráre dignátus es: concéde; ut, ipso
+    interveniénte, errántium corda ad veritátis tuæ rédeant unitátem, et nos in tua
+    simus voluntáte concórdes.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor-bishop (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-augustine-of-canterbury has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-augustine-of-canterbury-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui Anglórum gentes, prædicatióne et miráculis beáti Augustíni Confessóris tui
+    atque Pontíficis, veræ fídei luce illustráre dignátus es: concéde; ut, ipso
+    interveniénte, errántium corda ad veritátis tuæ rédeant unitátem, et nos in tua
+    simus voluntáte concórdes.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2-3 readings for St. Augustine of Canterbury, Bishop
+# and Confessor (May 28). Sourced directly from
+# web/www/horas/Latin/Sancti/05-28.txt, English/Sancti/05-28.txt.
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope, previously left
+# unauthored because horas/Latin/Sancti/05-28.txt's own Lectio7 gives
+# only the incipit ("Et réliqua"), is now authored too (isGospel: true,
+# immediately before the homily) -- the citation (Luke 10:1-9) comes
+# from that same Lectio7 line; the full text isn't repeated in this
+# saint's own Missale file (its [Evangelium] redirects to `@Sancti/
+# 02-06`), so it's sourced from that redirect target,
+# missa/Latin/Sancti/02-06.txt's own [Evangelium] (the same Common of a
+# Confessor Bishop pericope, not guessed at).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Augustinus Romæ in Lateranensi cœnobio monachus, a Gregorio Magno cum secus monachis fere quadraginta in Angliam missus est anno quingentesimo nonagesimo septimo, ut gentes illas ad Christum converteret. Erat eo tempore rex Ethelbertus in Cantio potentissimus, qui audita adventus Augustíni causa, eum cum sociis Cantuariam, sui regni metropolim, invitavit; ibique manendi et Christum prædicandi facultatem eidem liberaliter concessit. Quare sanctus vir prope Cantuariam oratorium exstruxit, ubi ipse aliquamdiu consedit, atque apostolicam vivendi rationem cum suis æmulatus est.
+
+        Cælestis doctrina prædicatione plurimis firmata miraculis, ac vitai exemplo sic insulanos illos demulsit, ut eorum plerosque ad christianam fidem perduxerit, ac demum regem ipsum, quem cum innumero suorum comitatu sacro fonte lustravit, summa cum lætitia Berthæ regiæ uxoris, quæ christiana erat. Olim in Natali Domini, cum decem millibus et amplius baptismum in alveo fluminis Eboraci contulisset, quotquot ex iis morbo aliquo affecti erant, cum animæ salute, corporis quoque sanitatem recepisse memoriæ proditum est. Jussu Gregorii ordinatus episcopus, sedem Cantuariæ instituit in ecclesia Salvatoris a se erecta, in qua monachos operis sui subsidiarios collocavit; et sancti Petri monasterium, quod postea et a suo nomine dictum est, in suburbanis construxit. Idem Gregorius usum pallii cum facultate ecclesiasticæ hierarchiæ in Anglia instituendas ei concessit, quo novam étiam operariorum manum misit, nempe Mellitum, Justum, Paulinum, et Rufinianum.
+
+        Dispositis ejus ecclesiæ rebus, synodum habuit Augustinus cum episcopis atque doctoribus veterum Britonum, qui in Paschæ celebratione aliusque ritibus ab Ecclesia Romana jamdudum dissidebant. Sed cum eos neque Apostolicæ Sedis auctoritate, neque miraculis movere posset ut dissidio cessarent, prophetico spiritu eis excidium prænuntiavit. Denique maximis pro Christo exantlutis laboribus, miraculis clarus, cum Mellitum Londinensi ecclesiæ præfecisset, Justum Roffensi, suæ Laurentium, in cælum migravit septimo Kalendas Junias, Ethelberto regnante, ac sepultus est in monasterio sancti Petri, quod exinde Cantuariensium Antistitum et aliquot regum conditorium fuit. Ejus cultum ferventi studio prosecutæ sunt Anglorum gentes, ac Leo decimus tertius Pontifex Maximus ejus Oificium et Missam ad universam extendit Ecclesiam.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 10:1-9
+      text: 'In illo témpore: Designávit Dóminus et álios septuagínta duos: et misit illos binos ante fáciem suam in omnem civitátem et locum, quo erat ipse ventúrus. Et dicebat illis: Messis quidem multa, operárii autem pauci. Rogáte ergo Dóminum messis, ut mittat operários in messem suam. Ite: ecce, ego mitto vos sicut agnos inter lupos. Nolíte portáre sácculum neque peram neque calceaménta; et néminem per viam salutavéritis. In quamcúmque domum intravéritis, primum dícite: Pax huic dómui: et si ibi fúerit fílius pacis, requiéscet super illum pax vestra: sin autem, ad vos revertétur. In eádem autem domo manéte, edéntes et bibéntes quæ apud illos sunt: dignus est enim operárius mercéde sua. Nolíte transíre de domo in domum. Et in quamcúmque civitátem intravéritis, et suscéperint vos, manducáte quæ apponúntur vobis: et curáte infírmos, qui in illa sunt, et dícite illis: Appropinquávit in vos regnum Dei.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 17 on the Gospels
+      text: |-
+        Dominus et Salvator noster, fratres carissimi, aliquando nos sermonibus, aliquando vero operibus admonet. Ipsa etenim facta ejus præcepta sunt: quia dum aliquid tacitus facit, quid agere debeamus innotescit. Ecce enim binos in prædicationem discipulos mittit: quia duo sunt præcepta caritatis, Dei videlicet amor, et proximi: et minus quam inter duos caritas haberi non potest. Nemo enim proprie ad semetipsum habere caritatem dicitur: sed dilectio in alterum tendit, ut caritas esse possit.
+
+        Ecce enim binos ad prædicandum discipulos Dominus mittit: quatenus hoc nobis tacitus innuat, quia qui caritatem erga alterum non habet, prædicationis officium suscipere nullatenus debet. Bene autem dicitur, quia misit eos ante faciem suam in omnem civitatem et locum, quo erat ipse venturus. Prædicatores enim suos Dominus sequitur: quia prædicatio prævenit, et tunc ad mentis nostræ habitaculum Dominus venit, quando verba exhortationis præcurrunt: atque per hoc veritas in mente suscipitur.
+
+        Hinc namque eisdem prædicatoribus Isaias dicit: Parate viam Domini, rectas facite semitas Dei nostri. Hinc filiis Psalmista ait: Iter facite ei, qui ascendit super occasum. Super occasum namque Dominus ascendit: quia unde in passione occubuit, inde majorem suam gloriam resurgendo manifestavit. Super occasum videlicet ascendit; quia mortem quam pertulit, resurgendo calcavit. Ei ergo qui ascendit super occasum, iter facimus, cum nos ejus gloriam vestris mentibus prædicamus, ut eas et ipse post veniens, per amoris sui præsentiam illustret.
+      status: verified

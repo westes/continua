@@ -1,0 +1,114 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Sancti nóminis tui, Dómine, timórem páriter et amórem fac nos habére perpétuum: quia nunquam tua gubernatióne destítuis, quos in soliditáte tuæ dilectiónis instítuis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Sourced from web/www/horas/Latin/Tempora/Pent02-0.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: Filíoli mei, non diligámus verbo neque lingua, sed ópere et veritáte.
+  citation: 1 Joann. 3:18
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-05-30 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Homo quidam * fecit cenam magnam, et vocávit multos: et misit servum suum hora cenæ dícere invitátis ut venírent, quia ómnia paráta sunt, allelúia.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-05-30 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: 'Exi cito * in platéas et vicos civitátis: et páuperes ac débiles, cæcos et claudos compélle intráre, ut impleátur domus mea, allelúia.'
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-06-21 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: Puer Sámuel * ministrábat ante Deum coram Heli, et sermo Dómini erat pretiósus cum eo.
+  status: verified
+  temporal: true
+
+# Nocturn 2-3 content for the 2nd Sunday after Pentecost (temporalId
+# post-pentecost-02), sourced from the reference engine's own Tempora/
+# Pent02-0.txt (Latin) / English/Tempora/Pent02-0.txt. Part of the
+# temporal-cycle nocturn-readings sweep (2026-08) that extended the single
+# post-pentecost-15 proof date to the rest of the post-Pentecost season —
+# see TODO.md and memory vu-temporal-nocturn-sweep-progress.
+#
+# Nocturn 2 (Lectio4-6): one continuous homily by St. John Chrysostom on
+# the Eucharist ("Hoc est corpus meum") - no source break, combined into
+# one reading. Responsory: Lectio4's own (Responsory4, which the source
+# itself cross-references to Pent01-2's Responsory1 - the same responsory
+# reused every week of this season for the Nocturn 2 slot; text transcribed
+# directly rather than left as a cross-reference).
+#
+# Nocturn 3 (Lectio7-9): Lectio7 is a bare "Et réliqua" Gospel incipit only
+# (Luke 14:16-24, the parable of the great supper) - per this project's
+# convention, not authored as its own Gospel reading. Lectio8-9 is one
+# continuous homily by Pope St. Gregory the Great, combined into one
+# reading, isGospel: false. Responsory: Lectio8's own (Responsory8, again
+# a cross-reference in the source to Pent01-0's own "Duo Séraphim" -
+# reused every week of the season for this slot).
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. John Chrysostom, Homily 60 to the People of Antioch
+      text: |-
+        Quóniam Verbum dicit: Hoc est corpus meum; et assentiámur et credámus et intellectuálibus ipsum óculis intueámur. Nihil enim sensíbile nobis Christus trádidit; sed sensibílibus quidem rebus, at ómnia intelligibília. Itidem et in baptísmate: per rem nempe sensíbilem, aquam, donum confértur; intelligíbile vero quod perfícitur, generátio et renovátio. Si enim incorpóreus esses, nuda et incorpórea tibi dedísset ipse dona; sed quóniam ánima córpori consérta est, in sensibílibus intelligibília tibi præbet. Quot nunc dicunt: Vellem ipsíus formam aspícere, figúram, vestiménta, calceaménta? Ecce eum vides, ipsum tangis, ipsum mandúcas. Et tu quidem vestiménta cupis vidére; ipse vero tibi concédit non tantum vidére, verum et manducáre, et tángere, et intra te súmere.
+
+        Igitur accédat nemo cum náusea, nemo resolútus; omnes accénsi, omnes fervéntes et excitáti. Nam si Judǽi stantes, et calceaménta in pédibus habéntes, et báculos mánibus gestántes, agnum cum festinatióne comedébant; te multo magis opórtet esse solértem. Nam illi quidem in Palæstínam erant profectúri, et proptérea viatórum figúram habébant: tu vero debes in cælum migráre. Quaprópter in ómnibus opórtet te vigiláre; nec enim parva pœna propónitur indígne suméntibus. Cógita quantum advérsus proditórem indignáris, et contra eos qui illum crucifixérunt: ítaque consídera, ne tu quoque sis reus córporis et sánguinis Christi. Illi sanctíssimum corpus occidérunt, tu vero pollúta súscipis ánima, post tot benefícia. Neque enim illi satis fuit, hóminem fíeri, cólaphis cædi, et crucifígi; verum et semetípsum nobis commíscet; et non fide tantum, verum et ipsa re, nos suum éfficit corpus.
+
+        Quo non opórtet ígitur esse puriórem, tali fruéntem sacrifício? quo solári rádio non splendidiórem manum, carnem hanc dividéntem? os quod igni spiritáli replétur, linguam quæ treméndo nimis sánguine rubéscit? Cógita quali sis insignítus honóre, quali mensa fruáris. Quod Angeli vidéntes horréscunt, neque líbere audent intuéri propter emicántem inde splendórem; hoc nos páscimur, huic nos unímur, et facti sumus unum Christi corpus, et una caro.
+      responsory: |-
+        R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.
+        V. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?
+        R. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 14:16-24
+      text: 'In illo témpore: Dixit Jesus pharisǽis parábolam hanc: Homo quidam fecit cœnam magnam, et vocávit multos. Et misit servum suum hora cœnæ dícere invitátis, ut venírent, quia jam paráta sunt ómnia. Et cœpérunt simul omnes excusáre. Primus dixit ei: Villam emi, et necésse hábeo exíre et vidére illam: rogo te, habe me excusátum. Et alter dixit: Juga boum emi quinque et eo probáre illa: rogo te, habe me excusátum. Et álius dixit: Uxórem duxi, et ídeo non possum veníre. Et revérsus servus nuntiávit hæc dómino suo. Tunc irátus paterfamílias, dixit servo suo: Exi cito in pláteas et vicos civitátis: et páuperes ac débiles et cæcos et claudos íntroduc huc. Et ait servus: Dómine, factum est, ut imperásti, et adhuc locus est. Et ait dóminus servo: Exi in vias et sepes: et compélle intrare, ut impleátur domus mea. Dico autem vobis, quod nemo virórum illórum, qui vocáti sunt, gustábit cœnam meam.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 36 on the Gospels
+      text: |-
+        Hoc distáre, fratres caríssimi, inter delícias córporis et cordis solet: quod corporáles delíciæ, cum non habéntur, grave in se desidérium accéndunt; cum vero ávide edúntur, comedéntem prótinus in fastídium per satietátem vertunt. At contra, spiritáles delíciæ, cum non habéntur, in fastídio sunt; cum vero habéntur, in desidério: tantóque a comedénte ámplius esuriúntur, quanto et ab esuriénte ámplius comedúntur. In illis appetítus placet, experiéntia dísplicet; in istis appetítus saturitátem, satúritas fastídium génerat: in istis autem appetítus saturitátem, satúritas appetítum parit.
+
+        Augent enim spiritáles delíciæ desidérium in mente, dum sátiant: quia quanto magis eárum sapor percípitur, eo ámplius cognóscitur quod avídius amétur; et idcírco non hábitæ amári non possunt, quia eárum sapor ignorátur. Quis enim amáre váleat quod ignórat? Proínde Psalmísta nos ádmonet, dicens: Gustáte et vidéte, quóniam suávis est Dóminus. Ac si apérte dicat: Suavitátem ejus non cognóscitis, si hanc mínime gustátis; sed cibum vitæ ex paláto cordis tángite, ut probántes ejus dulcédinem, amáre valeátis. Has autem homo delícias tunc amísit, cum in paradíso peccávit; extra éxiit, cum os a cibo ætérnæ dulcédinis clausit.
+
+        Unde nos quoque, nati in hujus peregrinatiónis ærúmna, huc fastidiósi jam vénimus, nescímus quid desideráre debeámus. Tantóque se ámplius fastídii nostri morbus exággerat, quanto se magis ab esu illíus dulcédinis ánimus elóngat; et eo jam intérnas delícias non áppetit, quo eas comédere, diu longéque desuévit. Fastídio ergo nostro tabéscimus, et longa inédiæ peste fatigámur. Et quia gustáre intus nólumus parátam dulcédinem, amámus foris míseri famem nostram.
+      responsory: |-
+        R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.
+        V. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.
+        R. Plena est omnis terra glória ejus.
+      status: verified

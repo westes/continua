@@ -1,0 +1,93 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Protéctor in te sperántium, Deus, sine quo nihil est válidum, nihil sanctum; multíplica super nos misericórdiam tuam; ut, te rectóre, te duce, sic transeámus per bona temporália, ut non amittámus ætérna.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-06-06 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: Quis ex vobis * homo, qui habet centum oves et, si perdíderit unam ex illis, nonne dimíttit nonagínta novem in desérto et vadit ad illam quæ períerat, donec invéniat eam? Allelúia.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-06-06 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: Quæ múlier * habens drachmas decem, et si perdíderit drachmam unam, nonne accéndit lucérnam et evérrit domum et quærit diligénter, donec invéniat?
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2029-06-09 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: Cognovérunt omnes * a Dan usque Bersabée, quod fidélis Sámuel prophéta esset Dómini.
+  status: verified
+  temporal: true
+
+# Nocturn 2-3 for the 3rd Sunday after Pentecost. Sourced from Tempora/
+# Pent03-0.txt (Latin) / English/Tempora/Pent03-0.txt. Part of the
+# temporal-cycle nocturn-readings sweep (2026-08) — see post-pentecost-02.yml
+# for the full method note (same responsory-reuse pattern applies here).
+# Nocturn 2 (Lectio4-6): one continuous excerpt from Pius XI's encyclical on
+# reparation to the Sacred Heart. Nocturn 3: Lectio7 bare incipit (Luke
+# 15:1-10, lost sheep/lost coin) skipped; Lectio8-9 one continuous homily by
+# Pope St. Gregory the Great, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: Pope Pius XI, Encyclical Letter (Miserentissimus Redemptor)
+      text: |-
+        At certe inter cétera illa, quæ próprie ad sacratíssimi Cordis cultum pértinent, pia éminet ac memoránda est consecrátio, qua, nos nostráque ómnia ætérnæ Núminis caritáti accépta referéntes, divíno Jesu Cordi devovémus. Verum, áliud accédat opórtet, honéstæ satisfactiónis, ínquimus, seu reparatiónis, quam dicunt, offícium sacratíssimo Cordi Jesu præstándum. Nam, si illud est in consecratióne primum ac præcípuum ut amóri Creatóris creatúræ amor rependátur, álterum sponte hinc séquitur, ut eídem increáto Amóri, si quando aut oblivióne negléctus, aut offénsa violátus sit, illátæ quoquo modo injúriæ compensári débeant: quod quidem débitum reparatiónem vulgáto nómine vocámus.
+
+        Quodsi ad utrámque rem iísdem prorsus ratiónibus impéllimur, reparándi tamen expiandíque offício ob validiórem quemdam justítiæ et amóris títulum tenémur: justítiæ quidem, ut irrogáta Deo nostris flagítiis expiétur offénsa et violátus ordo pœniténtia redintegrétur; amóris vero, ut Christo patiénti ac « saturáto oppróbriis » compatiámur eíque nonníhil solácii pro tenuitáte nostra afferámus. Peccatóres enim cum simus omnes, multísque oneráti culpis, non eo solo cultu Deus noster nobis est honorándus, quo vel ejus summam Majestátem débitis obséquiis adorémus, vel ejus suprémum domínium precándo agnoscámus, vel ejus infinítam largitátem gratiárum actiónibus laudémus; sed prætérea Deo justo víndici satisfaciámus opórtet « pro innumerabílibus peccátis et offensiónibus et negligéntiis » nostris.
+
+        Hoc autem expiatiónis offícium humáno géneri univérso incúmbit, quippe quod, ut christiána docémur fide, post Adæ miserándum casum, hereditária labe inféctum, concupiscéntiis obnóxium et misérrime depravátum, in perníciem detrudéndum fuísset sempitérnam.
+      responsory: |-
+        R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.
+        V. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?
+        R. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 15:1-10
+      text: 'In illo témpore: Erant appropinquántes ad Jesum publicáni et peccatóres, ut audírent illum. Et murmurábant pharisǽi et scribæ, dicéntes: Quia hic peccatóres recipit et mandúcat cum illis. Et ait ad illos parábolam istam, dicens: Quis ex vobis homo, qui habet centum oves: et si perdíderit unam ex illis, nonne dimíttit nonagínta novem in desérto, et vadit ad illam, quæ períerat, donec invéniat eam? Et cum invénerit eam, impónit in húmeros suos gaudens: et véniens domum, cónvocat amícos et vicínos, dicens illis: Congratulámini mihi, quia invéni ovem meam, quæ períerat? Dico vobis, quod ita gáudium erit in cœlo super uno peccatóre pœniténtiam agénte, quam super nonagínta novem justis, qui non índigent pœniténtia. Aut quæ múlier habens drachmas decem, si perdíderit drachmam unam, nonne accéndit lucérnam, et evérrit domum, et quærit diligénter, donec invéniat? Et cum invénerit, cónvocat amícas et vicínas, dicens: Congratulámini mihi, quia invéni drachmam, quam perdíderam? Ita dico vobis: gáudium erit coram Angelis Dei super uno peccatóre pœniténtiam agénte.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 34 on the Gospels
+      text: |-
+        Audístis in lectióne evangélica, fratres mei, quia peccatóres et publicáni accessérunt ad Redemptórem nostrum; et non solum ad colloquéndum, sed étiam ad convescéndum recépti sunt. Quod vidéntes pharisǽi dedignáti sunt. Ex qua re collígite quia vera justítia compassiónem habet, falsa justítia dedignatiónem. Quamvis et justi sóleant recte peccatóribus dedignári: sed áliud est quod ágitur typho supérbiæ, áliud quod zelo disciplínæ.
+
+        Dedignántur étenim, sed non dedignántes: despérant, sed non desperántes: persecutiónem cómmovent, sed amántes: quia etsi foris increpatiónes per disciplínam exággerant, intus tamen dulcédinem per caritátem servant. Præpónunt sibi in ánimo ipsos plerúmque quos córrigunt: melióres exístimant eos quoque quos júdicant. Quod vidélicet agéntes, et per disciplínam súbditos, et per humilitátem custódiunt semetípsos.
+
+        At contra, hi qui de falsa justítia superbíre solent, céteros quosque despíciunt, nulla infirmántibus misericórdia condescéndunt: quo se peccatóres esse non credunt, eo detérius peccatóres fiunt. De quorum profécto número pharisǽi exstíterant, qui diiudicántes Dóminum quod peccatóres suscíperet, arénti corde ipsum fontem misericórdiæ reprehendébant. Sed quia ægri erant, ita ut ægros se esse nescírent; quátenus quod erant agnóscerent, cæléstis eos médicus blandis foméntis curat, benígnum paradígma óbjicit, et in eórum corde vúlneris tumórem premit.
+      responsory: |-
+        R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.
+        V. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.
+        R. Plena est omnis terra glória ejus.
+      status: verified

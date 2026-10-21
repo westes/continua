@@ -1,0 +1,150 @@
+# Read directly from web/www/horas/Latin/Sancti/10-20.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut, sancti Joánnis Confessóris exémplo
+    in sciéntia Sanctórum proficiéntes, atque áliis misericórdiam
+    exhibéntes; ejus méritis, indulgéntiam apud te consequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-john-cantius has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-john-cantius-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut, sancti Joánnis Confessóris exémplo
+    in sciéntia Sanctórum proficiéntes, atque áliis misericórdiam
+    exhibéntes; ejus méritis, indulgéntiam apud te consequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# St. John Cantius: proper Matins hymn, Latin/Sancti/10-20.txt's [Hymnus Matutinum]. English from English/Sancti/10-20.txt.
+# Before this file the saint fell to the Common's hymn.
+matins-hymn:
+  text: |
+    Corpus domas jejúniis,
+    Cædis cruénto vérbere,
+    Ut castra pœniténtium
+    Miles sequáris ínnocens.
+
+    Sequámur et nos sédulo
+    Gressus paréntis óptimi,
+    Sequámur, ut licéntiam
+    Carnis refrénet spíritus.
+
+    Rigénte bruma, próvidum
+    Præbes amíctum páuperi,
+    Sitim famémque egéntium
+    Esca potúque súblevas.
+
+    O qui negásti némini
+    Opem rogánti, pátrium
+    Regnum tuére, póstulant
+    Cives Polóni et éxteri.
+
+    Sit laus Patri, sit Fílio,
+    Tibíque, Sancte Spíritus;
+    Preces Joánnis ímpetrent
+    Beáta nobis gáudia.
+    Amen.
+  status: verified
+
+# St. John Cantius: proper Lauds hymn, Latin/Sancti/10-20.txt's [Hymnus Laudes]. English from English/Sancti/10-20.txt.
+# Before this file the saint fell to the Common's hymn.
+lauds-hymn:
+  text: |
+    Te deprecánte, córporum
+    Lues recédit, ímprobi
+    Morbi fugántur, prístina
+    Rédeunt salútis múnera.
+
+    Phthisi febríque et úlcere
+    Diram redáctos ad necem,
+    Sacrátas morti víctimas,
+    Ejus rapis e fáucibus.
+
+    Te deprecánte, túmido
+    Merces abáctæ flúmine,
+    Tractæ Dei poténtia,
+    Sursum fluunt retrógradæ.
+
+    Cum tanta possis, sédibus
+    Cæli locátus, póscimus:
+    Respónde votis súpplicum,
+    Et invocátus súbveni.
+
+    O una semper Trínitas,
+    O trina semper Únitas:
+    Da, supplicánte Cántio,
+    Ætérna nobis prǽmia. 
+    Amen.
+  status: verified
+
+# St. John Cantius: proper Vespers hymn, Latin/Sancti/10-20.txt's [Hymnus Vespera]. English from English/Sancti/10-20.txt.
+# Before this file the saint fell to the Common's hymn.
+vespers-hymn:
+  text: |
+    Gentis Polónæ glória,
+    Cleríque splendor nóbilis,
+    Decus Lycǽi, et pátriæ
+    Pater, Joánnes ínclite.
+
+    Legem supérni Núminis
+    Doces magíster, et facis.
+    Nil scire prodest: sédulo
+    Legem nitámur éxsequi.
+
+    Apostolórum límina
+    Pedes viátor vísitas; 
+    Ad pátriam, ad quam téndimus,
+    Gressus viámque dírige.
+
+    Urbem petis Jerúsalem:
+    Signáta sacra Sánguine
+    Christi colis vestígia
+    Rigásque fusis flétibus.
+
+    Acérba Christi vúlnera,
+    Hæréte nostris córdibus,
+    Ut cogitémus cónsequi
+    Redemptiónis prétium.
+
+    Te prona mundi máchina,
+    Clemens, adoret, Trínitas,
+    Et nos novi per grátiam
+    Novum canámus cánticum.
+    Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. John Cantius, Confessor (Oct 20).
+# Sourced directly from web/www/horas/Latin/Sancti/10-20.txt,
+# English/Sancti/10-20.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in his own file (his `[Rule]` is `vide
+# C5`) -- defers to the Common's own Nocturn 3, not transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Joánnes, in oppido Kenty Cracoviénsis diœcesis, a quo Cantii cognomen duxit, Stanislao et Anna piis et honestis paréntibus natus, morum suavitáte, innocéntia, gravitáte, ab ipsa infántia spem fecit maximæ virtútis. In universitáte Cracoviénsi philosophíæ ac theologíæ primum auditor, tum, per omnes academíæ gradus ascendendo, professor ac doctor, sacra, quam annis multis trádidit, doctrina mentes audiéntium non illustrábat modo, sed et ad omnem pietátem inflammabat, simul docens scilicet et fáciens. Sacerdos factus, nihil de litterárum studio remíttens, studium auxit christianæ perfectiónis. Utque passim offéndi Deum maxime dolebat, sic eum sibi et pópulo placare, oblato quotídie non sine multis lácrimis incruento sacrifício, satagebat. Ilkusiensem parochiam annis aliquot egregie administrávit; sed animárum periculo commótus, póstea dimísit, ac, postulante academía, ad prístinum docéndi offícium rediit.
+
+        Quotidie témporis ab studio supérerat, partim salúti proximórum sacris præsertim conciónibus curandæ, partim oratióni dabat, in qua cæléstibus quandoque visiónibus et colloquiis dignátus fertur. Christi vero passióne sic afficiebátur, ut in ea contemplanda totas intérdum noctes dúceret insomnes, ejusque causa mélius recolendæ Jerosolymam peregrinátus sit; ubi, et martyrii desidério flagrans, Turcis ipsis Christum crucifixum prædicáre non dubitávit. Quater étiam ad Apostolórum limina, pedes atque viaria onustus sárcina, Romam venit, tum ut Sedem apostolicam, cui maxime addictus fuit, honoraret, tum ut sui (sic enim ajebat) purgatorii pœnas expósita illic quotídie peccatórum venia redímeret. Quo in itinere a latrónibus olim spoliátus et num quid haberet præterea interrogátus, cum negasset, aureos deínde aliquot suo insutos pallio recordatus, fugiéntibus hos étiam clamans óbtulit latrónibus; qui, viri sancti candórem simul et largitátem admirati, étiam ablatos ultro reddidére. Alienæ famæ ne quis detraheret, descriptis, beáti Augustíni exemplo, in pariete versiculis, se atque alios perpetuo vóluit admónitos. Famélicos de suo étiam obsonio satiábat; nudos autem non emptis modo sed detractis quoque sibi vestibus et calceis operiebat, demisso ipse interim usque ad terram pallio, ne domum núdipes redire viderétur.
+
+        Brevis illi somnus, atque humi; vestis, quæ nuditátem, cibus, qui mortem dumtaxat, arcéret. Virginalem pudicítiam, velut lílium inter spinas, áspero cilício, flagellis atque jejuniis custodívit. Quin et per annos ante óbitum trigínta circiter et quinque, ab esu carnium perpetuo abstinuit. Tandem diérum juxta ac meritórum plenus, cum vicinæ, quam præsensit, morti se diu diligenterque præparasset, ne qua re ámplius tenerétur, si quid domi supérerat, id omnino paupéribus distríbuit. Tum Ecclésiæ sacramentis rite munítus, dissolvi jam cupiens et esse cum Christo, pridie Nativitátis ejus, in cælum evolávit, miraculis ante et post mortem clarus. Mortuus ad próximam academíæ ecclésiam sanctæ Annæ delátus est, ibique honorifice sepúltus. Auctáque in dies pópuli veneratióne ac frequéntia, inter primarios Poloniæ ac Lithuaniæ patronos religiosíssime cólitur.
+      status: verified

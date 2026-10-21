@@ -1,0 +1,30 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2026-08-08 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Ego in altíssimis * hábito: et thronus meus in colúmna nubis.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "2nd Sunday of August" (Tempora/082-0.txt) — see
+# month-week-081.yml's header for the full explanation of this id scheme.
+# Responsory: no own Responsory4 in the source; reuses 081's (the "first
+# one when several collapse" convention), per the source's own
+# @Tempora/081-0:Responsory4 cross-reference.
+# Checked 2026-09-05: horas/Latin/Tempora/082-0.txt has only Lectio1-6
+# (no Nocturn 3/Gospel slot) — see month-week-081.yml's header. No
+# pairing added.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. John Chrysostom, Sermon Against Those Who Keep Concubines
+      text: |-
+        Sálomon cum sæculárium rerum concupiscéntia tenerétur, magnas eas et admirándas putábat, multúmque in eis labóris et sollicitúdinis insumébat, magníficas ædificándo domos, copiósum coacervándo aurum, congregándo cantórum choros, vária génera ministrórum mensæ et popínæ, quæréndo ánimæ suæ voluptátem ab hortórum et córporum formosórum grátia, et omnem, ut ita dicam, oblectatiónis et refrigérii viam sectándo.
+
+        At ubi inde ad se revérsus, et quasi ex umbrósa quadam abýsso ad lumen veræ sapiéntiæ respícere váluit, tunc sublímem illam et cælis dignam emísit vocem: Vánitas vanitátum, dicens, et ómnia vánitas. Hanc et vos, et hac sublimiórem, si voluéritis, efferétis senténtiam de intempestíva hac voluptáte, si aliquantísper a mala consuetúdine vos sequestravéritis.
+
+        Quamvis autem a Salomóne sǽculis superióribus non tam multa sapiéntiæ exigebátur diligéntia: neque enim delícias lex vetus prohibébat, neque áliis frui supervácuis dicébat vanum: áttamen et sic se habéntibus rebus, in ipsis contuéri licébit, quam viles et vanitáti obnóxiæ res sint. Nos vero ad majórem vocáti vitam, et ad excelléntius fastígium ascéndimus, et in majóribus exercémur palǽstris: et quid áliud, quam quod, sicut supérnæ virtútes intellectuáles et incorpóreæ illæ, vitam institúere jubémur?
+      responsory: |-
+        R. Da mihi, Dómine, sédium tuárum assistrícem sapiéntiam, et noli me reprobáre a púeris tuis: * Quóniam servus tuus sum ego, et fílius ancíllæ tuæ.
+        V. Mitte illam de sede magnitúdinis tuæ, ut mecum sit et mecum labóret.
+        R. Quóniam servus tuus sum ego, et fílius ancíllæ tuæ.
+      status: verified

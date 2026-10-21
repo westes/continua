@@ -1,0 +1,47 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08.
+# Pulled from the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt + M1617.txt, own title
+# "S. Donati Ep et Mart") and its own source file, not the merged per-date
+# files those tables' fileref points at directly -- see TODO.md.
+collect:
+  text: |
+    Orémus.
+    Deus, tuórum glória sacerdótum: præsta, quǽsumus, ut sancti Martyris tui et Epíscopi Donáti, cujus festa gérimus, sentiámus auxílium.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-martyr-bishop (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-donatus has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-donatus-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Deus, tuórum glória sacerdótum: præsta, quǽsumus, ut sancti Martyris tui et Epíscopi Donáti, cujus festa gérimus, sentiámus auxílium.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Donatus, Bishop and Martyr (Aug 7) —
+# pre-1955-but-post-1617. Plain Sancti/08-07.txt is a different, later
+# saint (St. Cajetan, canonized 1671) who displaced Donatus on the
+# general calendar's own Aug 7 slot; his content survives at the
+# suffixed sibling file (see memory vu-matins-pre1955-saints's "critical
+# wrinkle").
+# web/www/horas/Latin/Sancti/08-07o.txt, English/Sancti/08-07o.txt.
+# Single lesson (simplex-feast Lectio93), no responsory in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Donatus, paréntibus propter Jesu Christi fidem interfectis, Arrétium in Etrúriam cum Hilarino monacho ex fuga se cóntulit: cujus étiam urbis epíscopus creátus est. Ubi, cum a Quadratiáno præfecto in Juliáni persecutióne uterque idola venerari juberétur, negántibus illis se tam nefárium scelus commissuros, Hilarinus in óculis Quadratiáni tamdiu fustibus cæsus est, dum efflaret ánimam; Donatus, veheménter et ipse cruciatus, gládio percússus est. Quorum córpora a Christiánis prope eam urbem honorifice sepúlta sunt.'
+      status: verified

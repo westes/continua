@@ -1,0 +1,69 @@
+# Read directly from web/www/horas/Latin/Sancti/09-17.txt's own
+# [Oratio] and its English counterpart. Doxology "$Qui vivis" spelled
+# out per the convention in st-bibiana-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Dómine Jesu Christe, qui, frigescénte mundo, ad inflammándum corda
+    nostra tui amóris igne, in carne beatíssimi Francísci passiónis tuæ
+    sacra Stígmata renovásti: concéde propítius; ut ejus méritis et
+    précibus crucem júgiter ferámus, et dignos fructus pæniténtiæ
+    faciámus.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). stigmata-of-st-francis has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (stigmata-of-st-francis-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Dómine Jesu Christe, qui, frigescénte mundo, ad inflammándum corda
+    nostra tui amóris igne, in carne beatíssimi Francísci passiónis tuæ
+    sacra Stígmata renovásti: concéde propítius; ut ejus méritis et
+    précibus crucem júgiter ferámus, et dignos fructus pæniténtiæ
+    faciámus.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for the Impression of the Sacred Stigmata
+# of St. Francis (Sep 17). Sourced directly from
+# web/www/horas/Latin/Sancti/09-17.txt, English/Sancti/09-17.txt --
+# Lectio4-6, St. Bonaventure's own Legenda of St. Francis (ch. 13),
+# combined into one reading. No Lectio7-9 own content (a direct
+# `@Commune/C2:LectioN in 2 loco` cross-reference) -- not transcribed,
+# per the bare-cross-reference convention.
+#
+# Checked 2026-09-05 for a missing Gospel pairing: unlike the other
+# files revisited in this pass, this day genuinely has no saint-proper
+# Nocturn 3 Gospel+homily at all -- Lectio7-9 is a bare cross-reference
+# to the whole Common of a Confessor Bishop "in 2 loco" (its second
+# occurrence within that Common), not a citation tied to this feast.
+# There's nothing saint-specific to pair a Gospel with here; the
+# Common's own generic Gospel is a separate, shared text out of scope
+# for this per-saint store. No Gospel entry added.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Bonaventure, Legenda of St. Francis, ch. 13
+      text: |-
+        Fidelis revera famulus et minister Christi, Franciscus, biennio antequam spíritum redderet cælo, cum in loco excélso seorsum, qui mons Alverniæ dícitur, quadragenárium ad honórem Archangeli Michaélis jejunium inchoasset, supernæ contemplatiónis dulcédine abundantius sólito superfusus ac cæléstium desideriórum ardentiori flamma succénsus, supernárum cœpit immissiónum cumulatius dona sentire. Dum ígitur seráphicis desideriórum ardóribus sursum agerétur in Deum, et afféctus compassiva teneritúdine in eum transformarétur, cui ex caritate nimia crucifigi complácuit; quodam mane circa festum Exaltatiónis sanctæ Crucis, in látere montis orans, vidit quasi spéciem uníus Séraphim, sex alas tam fúlgidas quam ignítas habentem, de cælórum sublimitate descendere. Qui, volatu celerrimo ad áëris locum viro Dei propinquum perveniens, non solum alatus, sed et crucifixus appáruit; manus quidem et pedes habens extensos et cruci affixos, alas vero sic miro modo hinc inde dispositas, ut duas supra caput erigeret, duas ad volándum extenderet, duabus vero réliquis totum corpus circumplecténdo velaret. Hoc videns veheménter obstupuit, mixtumque dolori gáudium mens ejus incurrit, dum et in gratióso ejus aspectu, sibi tam mirabíliter quam familiáriter apparentis, excessivam quamdam concipiebat lætítiam, et dira conspecta crucis affixio ipsíus ánimam compassívi dolóris gládio pertransívit.
+
+        Intelléxit quidem, illo docénte interius qui et apparebat exterius, quod, licet passiónis infirmitas cum immortalitate spíritus seráphici nullátenus conveníret, ideo tamen hujusmodi visio suis fuerat præsentáta conspéctibus, ut amícus ipse Christi prænosceret, se, non per martyrium carnis sed per incendium mentis, totum in Christi Jesu crucifixi expressam similitúdinem transformándum. Dispárens ítaque visio, post arcanum ac familiare collóquium, mentem ipsíus seráphico interius inflammávit ardore; carnem vero Crucifixo conformi exterius insignívit effigie, tamquam si ad ignis liquefactivam virtútem præámbulam sigillativa quædam esset impréssio subsecuta. Statim namque in mánibus et pédibus ejus apparere cœpérunt signa clavórum, ipsórum capítibus in inferióri parte mánuum et superiori pedum apparéntibus, et eórum acumínibus exsisténtibus ex adverso. Dextrum quoque latus, quasi lancea transfixum, rubra cicatrice obductum erat, quod sæpe, sánguinem sacrum effúndens, túnicam et femoralia respergebat.
+
+        Postquam ígitur novus homo Franciscus novo et stupéndo miraculo cláruit, cum singulari privilegio retroactis sæculis non concesso insignítus appáruit, sacris vidélicet Stigmátibus decoratus, descéndit de monte secum ferens Crucifixi effigiem, non in tábulis lapídeis vel ligneis manu figuratam artíficis, sed in carneis membris descriptam digito Dei vivi. Quóniam sacraméntum regis seráphicus vir abscóndere bonum esse optime norat, secreti regalis cónscius, signácula illa sacra pro víribus occultábat. Verum, quia Dei est ad glóriam suam magna revelare quæ facit, Dóminus ipse, qui signácula illa secrete impresserat, miracula quædam aperte per ipsa monstrávit; ut illórum occúlta et mira vis Stígmatum manifesta patéret claritáte signórum. Rem admirábilem ac tantopere testatam atque in pontificiis diplomátibus præcipuis laudibus et favóribus exáltatam, Benedíctus Papa undecimus anniversaria solemnitate celebrari vóluit; quam póstea Paulus quintus Pontifex maximus, ut corda fidelium in Christi crucifixi accenderéntur amórem, ad universam Ecclésiam propagávit.
+      status: verified

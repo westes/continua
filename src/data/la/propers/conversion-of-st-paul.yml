@@ -1,0 +1,294 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2029-01-25, a
+# year that date doesn't collide with a Sunday). Same convention as
+# data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui univérsum mundum beáti Pauli Apóstoli prædicatióne docuísti: da nobis, quǽsumus; ut, qui ejus hódie Conversiónem cólimus, per ejus ad te exémpla gradiámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (conversion-of-st-paul-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-apostle (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (conversion-of-st-paul-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vos qui secúti estis me, sedébitis super sedes, judicántes duódecim tribus Israël, dicit Dóminus.
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+    Orémus.
+    Deus, qui univérsum mundum beáti Pauli Apóstoli prædicatióne docuísti: da nobis, quǽsumus; ut, qui ejus hódie Conversiónem cólimus, per ejus ad te exémpla gradiámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Read from web/www/horas/Latin/Sancti/01-25.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Laudémus Deum nostrum, * In conversióne Doctóris géntium.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-01-25, clean year.
+lauds-capitulum:
+  text: 'Saulus autem adhuc spirans minárum et cædis in discípulos Dómini, accéssit ad príncipem sacerdótum, et pétiit ab eo epístolas in Damáscum ad synagógas: ut si quos invenísset hujus viæ viros ac mulíeres, vinctos perdúceret in Jerúsalem.'
+  citation: Act 9:1-2
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-01-25, clean year.
+lauds-hymn:
+  text: |
+    Exsúltet cælum láudibus,
+    Resúltet terra gáudiis:
+    Apostolórum glóriam
+    Sacra canunt solémnia.
+
+    Vos sæcli justi júdices,
+    Et vera mundi lúmina,
+    Votis precámur córdium,
+    Audíte preces súpplicum.
+
+    Qui cælum verbo cláuditis,
+    Serásque ejus sólvitis:
+    Nos a peccátis ómnibus
+    Sólvite jussu, quǽsumus.
+
+    Quorum præcépto súbditur,
+    Salus, et languor ómnium:
+    Sanáte ægros móribus,
+    Nos reddéntes virtútibus.
+
+    Ut, cum Judex advénerit
+    Christus in fine sǽculi,
+    Nos sempitérni gáudii
+    Fáciat esse cómpotes.
+
+    Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-01-25, clean year.
+lauds-responsory:
+  text: |
+    R.br. In omnem terram * Exívit sonus eórum.
+    R. In omnem terram * Exívit sonus eórum.
+    V. Et in fines orbis terræ verba eórum.
+    R. Exívit sonus eórum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. In omnem terram * Exívit sonus eórum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-01-25, clean year.
+lauds-versicle:
+  text: |-
+    V. Tu es vas electiónis, sancte Paule Apóstole.
+    R. Prædicátor veritátis in univérso mundo.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, Conversion of St. Paul's own day (2026-01-25, clean year).
+prime-antiphon:
+  text: Ego plantávi * Apóllo rigávit, Deus autem increméntum dedit. Allelúia.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/01-25.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: Saulus autem multo magis convalescébat, et confundébat Judǽos qui habitábant Damásci, affírmans quóniam hic est Christus.
+  citation: Act 9:22
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, Conversion of St. Paul's own day (2026-01-25, clean year).
+terce-antiphon:
+  text: Libénter gloriábor * in infirmitátibus meis, ut inhábitet in me virtus Christi.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, Conversion of St. Paul's own day (2026-01-25, clean year).
+terce-capitulum:
+  text: |
+    Saulus autem adhuc spirans minárum et cædis in discípulos Dómini, accéssit ad príncipem sacerdótum, et pétiit ab eo epístolas in Damáscum ad synagógas: ut si quos invenísset hujus viæ viros ac mulíeres, vinctos perdúceret in Jerúsalem.
+    R. Deo grátias.
+    V. In omnem terram exívit sonus eórum.
+    R. Et in fines orbis terræ verba eórum.
+  citation: Act 9:1-2
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, Conversion of St. Paul's own day (2026-01-25, clean year).
+sext-antiphon:
+  text: Grátia Dei * in me vácua non fuit, sed grátia ejus semper in me manet.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, Conversion of St. Paul's own day (2026-01-25, clean year).
+sext-capitulum:
+  text: |
+    Surréxit autem Saulus de terra, apertísque óculis nihil vidébat. Ad manus autem illum trahéntes, introduxérunt Damáscum. Et erat ibi tribus diébus non videns, et non manducávit neque bibit.
+    R. Deo grátias.
+    V. Constítues eos príncipes super omnem terram.
+    R. Mémores erunt nóminis tui, Dómine.
+  citation: Act 9:8-9
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, Conversion of St. Paul's own day (2026-01-25, clean year).
+none-antiphon:
+  text: Ter virgis cæsus sum, * semel lapidátus sum, ter naufrágium pértuli pro Christi nómine.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, Conversion of St. Paul's own day (2026-01-25, clean year).
+none-capitulum:
+  text: |
+    Saulus autem multo magis convalescébat, et confundébat Judǽos qui habitábant Damásci, affírmans quóniam hic est Christus.
+    R. Deo grátias.
+    V. Nimis honoráti sunt amíci tui, Deus.
+    R. Nimis confortátus est principátus eórum.
+  citation: Act 9:22
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-01-25, the same clean date already used for lauds-capitulum-conversion-of-st-paul.yml.
+vespers-hymn:
+  text: |
+    Doctor egrégie Paule, mores ínstrue,
+    Et mente polum non transférre sátage:
+    Donec perféctum largiátur plénius,
+    Evacuáto quod ex parte gérimus.
+
+    Sit Trinitáti sempitérna glória,
+    Honor, potéstas, atque jubilátio,
+    In unitáte, cui manet impérium,
+    Ex tunc et modo, per ætérna sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-01-25, the same clean date already used for lauds-capitulum-conversion-of-st-paul.yml.
+vespers-responsory:
+  text: |
+    R.br. Constítues eos príncipes * Super omnem terram.
+    R. Constítues eos príncipes * Super omnem terram.
+    V. Mémores erunt nóminis tui, Dómine.
+    R. Super omnem terram.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Constítues eos príncipes * Super omnem terram.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-01-25, the same clean date already used for lauds-capitulum-conversion-of-st-paul.yml.
+vespers-versicle:
+  text: |-
+    V. Tu es vas electiónis, sancte Paule Apóstole.
+    R. Prædicátor veritátis in univérso mundo.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, the Conversion of St. Paul's own day (2026-01-25) -- the
+# Benedictus antiphon. Corrects the previous version of this file, which
+# had been sourced from the Roman/secular rite's Sancti/01-25.txt's own
+# [Ant 1] instead: confirmed, like St. Lawrence's own antiphon before it,
+# to be real but different text from what Monastic 1617 actually renders
+# at Lauds.
+benedictus-antiphon:
+  text: Vos qui secúti estis me, sedébitis super sedes, judicántes duódecim tribus Israël, dicit Dóminus.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 01-25
+# conversion-of-st-paul (new saint-level second; continua had "estotefortes"). See hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon:
+  text: Sancte Paule Apóstole, * prædicátor veritátis et doctor géntium, intercéde pro nobis ad Deum, qui te elégit.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 01-25
+# conversion-of-st-paul (saint file = second). First Vespers variant; the default (second Vespers) file is the
+# same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: 'Vade, Anania, * et quære Saulum: ecce enim orat: quia vas electiónis est mihi, ut portet nomen meum coram géntibus, et régibus, et fíliis Israël.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-01-25, clean year.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Ego plantávi, * Apóllo rigávit, Deus autem increméntum dedit. Allelúia.
+    - psalms:
+        - 99
+      antiphon: Libénter gloriábor * in infirmitátibus meis, ut inhábitet in me virtus Christi.
+    - psalms:
+        - 62
+      antiphon: Grátia Dei * in me vácua non fuit, sed grátia ejus semper in me manet.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Damásci, præpósitus * gentis Arétæ regis vóluit me comprehéndere: a frátribus per murum demíssus sum in sporta, et sic evási manus ejus in nómine Dómini.'
+  laudate:
+    antiphon: Ter virgis cæsus sum, * semel lapidátus sum, ter naufrágium pértuli pro Christi nómine.
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-01-25, own day -- outside Paschaltide, no
+# seasonal-alleluia contamination risk). His own proper antiphons, not
+# `common-of-an-apostle`'s generic ones; psalms 109/112/115/138.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Ego plantávi, * Apóllo rigávit, Deus autem increméntum dedit. Allelúia.
+    - psalms:
+        - 112
+      antiphon: Libénter gloriábor * in infirmitátibus meis, ut inhábitet in me virtus Christi.
+    - psalms:
+        - 115
+      antiphon: Grátia Dei * in me vácua non fuit, sed grátia ejus semper in me manet.
+    - psalms:
+        - 138
+      antiphon: Ter virgis cæsus sum, * semel lapidátus sum, ter naufrágium pértuli pro Christi nómine.
+
+# Matins Nocturn 2 reading for the Conversion of St. Paul (Jan 25) —
+# SanctiM/01-25.txt inherits the whole day (`@Sancti/01-25`) with no
+# Nocturn 2/3 override, so this feast's own proper content is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints). A second Tridentine suffix variant
+# (`Sancti/01-25r.txt`) also exists for this same feast, but is a later
+# rubric variant with less of its own text (its Lectio4 is itself
+# `@Sancti/01-25:Lectio3`) — the plain `01-25.txt` has the fuller,
+# earlier proper text and is used here.
+# web/www/horas/Latin/Sancti/01-25.txt, English/Sancti/01-25.txt.
+# Lectio4-6 (St. Augustine's sermon on Paul's conversion) combined into
+# one reading, one continuous excerpt — Lectio7-9 fall back to Common
+# of an Apostle (`Commune/C1`), not proper text, so not authored here.
+# No responsory given in the source for these lessons.
+#
+# Checked 2026-09-05 for a missing Gospel pairing: confirmed via
+# horas/Latin/Sancti/01-25.txt directly — Augustine's Sermon 14 is
+# genuinely Nocturn 2, not Gospel-tied; this feast's own Nocturn 3
+# (Lectio7-9) isn't proper text at all (falls to Commune/C1, an
+# Apostle's Common), so there is no proper Gospel pericope of this
+# feast's own to pair against. No pairing added.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Sermon 14 on the Saints
+      text: |-
+        Hódie de Actibus Apostolórum léctio hæc pronuntiáta est, ubi Paulus Apóstolus, ex persecutóre Christianórum, annuntiátor factus est Christi. Prostrávit enim Christus persecutórem, ut fáceret Ecclésiæ doctórem: percútiens eum, et sanans; occídens, et vivíficans: occísus agnus a lupis, et fáciens agnos de lupis. Ita enim in præclára prophetía cum Jacob Patriárcha benedíceret fíliis suis (præséntes tangens, futúra prospíciens) prædíctum erat quod in Paulo cóntigit. Erat autem Paulus, sicut ipse testátur, de tribu Bénjamin. Cum autem Jacob, benedícens fílios suos, venísset ad benedicéndum Bénjamin, ait de illo: Bénjamin lupus rapax.
+
+        Quid ergo? lupus rapax semper? Absit; sed qui mane rapit prædam, ad vésperam dívidit escas. Hoc in Apóstolo Paulo implétum est, quia et de illo dictum erat. Jam, si placet, audiámus illum mane rapiéntem, ad vésperam escas dividéntem. Mane et véspere pósita sunt pro eo, ac si dicerétur, prius et póstea. Sic ergo accipiámus: Prius rápiet, póstea dívidet escas. Atténdite raptórem: Saulus, inquit, accéptis epístolis a princípibus sacerdótum, ibat, ut ubicúmque inveníret Christiános, ad sacerdótes attráheret et addúceret, útique puniéndos.
+
+        Ibat spirans et anhélans cædes: hoc est, mane rápiens. Nam et quando lapidátus est Stéphanus primus Martyr pro nómine Christi, evidéntius áderat et Saulus; et sic áderat lapidántibus, ut non ei suffíceret, si tantum suis mánibus lapidáret. Ut enim esset in ómnium lapidántium mánibus, ipse ómnium vestiménta servábat; magis sǽviens omnes adjuvándo, quam suis mánibus lapidándo. Audívimus, mane rápiet: videámus ad vésperam quáliter dívidat escas. Voce Christi prostrátus de cælo, et accípiens désuper interdíctum jam sæviéndi, cécidit in fáciem suam, prius prosternéndus, póstea erigéndus; prius percutiéndus, póstea sanándus.
+      status: verified

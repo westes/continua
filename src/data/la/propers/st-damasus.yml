@@ -1,0 +1,66 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- Latin
+# read directly from the reference engine's own real-date output
+# (2025-12-11). No English translation exists in this reference project at
+# all (checked both the live query and the raw English Sancti/12-11.txt
+# file directly -- only the biographical Lectios are translated, not the
+# Oratio). Since it's short, formulaic prose, this English is a
+# translation done for this project rather than left missing (2026-09-12
+# decision, same "prefer draft over missing" precedent already used for
+# assumption-octave-day-4.yml) -- draft, not verified against any source.
+collect:
+  text: |
+    Orémus.
+    Exáudi, Dómine, preces nostras: et interveniénte beáto Dámaso Confessóre tuo atque Pontífice, indulgéntiam nobis tríbue placátus et pacem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-damasus-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-damasus-collect.yml), unchanged.
+#
+# 2026-09-12: `en` had never actually included the collect at all (it cut
+# off right after the V/R, before "Let us pray") -- st-damasus-collect.yml
+# itself had no English yet at the time this file was authored. Filled in
+# now that that collect has its own (draft) translation.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Exáudi, Dómine, preces nostras: et interveniénte beáto Dámaso Confessóre tuo atque Pontífice, indulgéntiam nobis tríbue placátus et pacem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Damasus I's own day (2026-12-11). The Benedictus
+# antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Damasus I, Pope, Confessor
+# (Dec 11) — SanctiM/12-11.txt inherits the whole day (`@Sancti/12-11`)
+# with no Nocturn 2 override, so this feast's own proper content is
+# sourced from the Tridentine track exactly as for a pre-1955 saint
+# (see memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/12-11.txt, English/Sancti/12-11.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no
+# genuine source break.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Dámasus Hispánus, vir egrégius et erudítus in Scriptúris, indícto primo Constantinopolitáno concílio nefáriam Eunómii et Macedónii hæresim exstínxit. Idem Ariminénsem convéntum a Libério jam ante rejéctum, íterum condemnávit: in quo, ut scribit sanctus Hierónymus, Valéntis potíssimum et Ursácii fráudibus damnátio Nicænæ fídei conclamáta fuit: et ingemíscens orbis terrárum, se Ariánum esse mirátus est.
+
+        Basílicas duas ædificávit, álteram sancti Lauréntii nómine ad theátrum Pompéji, quam máximis munéribus auxit, eíque domos et prædia attríbuit: álteram via Ardeatína ad Catacúmbas. Platóniam étiam, ubi córpora sanctórum Petri et Pauli aliquámdiu jacuérunt, dedicávit, et exornávit elegántibus vérsibus. Idémque prosa et versu scripsit de virginitáte, múltaque ália metro édidit.
+
+        Pœnam taliónis constítuit iis, qui álterum falsi críminis accusássent. Státuit, ut, quod plúribus jam locis erat in usu, Psalmi per omnes ecclésias die noctúque ab altérnis caneréntur; et in fine cujúsque Psalmi dicerétur: Glória Patri, et Fílio, et Spirítui Sancto. Ejus jussu sanctus Hierónymus novum testaméntum Græcæ fídei réddidit. Cum Ecclésiam rexísset annos decem et septem, menses duos, dies vigínti sex, et habuísset ordinatiónes quinque mense Decémbri, quibus creávit presbyteros trigínta unum, diáconos úndecim, epíscopos per divérsa loca sexagínta duos; virtúte, doctrína, ac prudéntia clarus, prope octogenárius, Theodósio senióre imperánte, obdormívit in Dómino: et via Ardeatína una cum matre et soróre sepúltus est in basílica, quam ipse ædificáverat. Illíus relíquiæ póstea translátæ sunt in ecclésiam sancti Lauréntii, ab ejus nómine in Dámaso vocátam.
+      status: verified

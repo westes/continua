@@ -1,0 +1,56 @@
+# Read directly from web/www/horas/Latin/Sancti/07-15.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui hodiérna die beátum Henrícum Confessórem tuum e terréni cúlmine
+    impérii ad regnum ætérnum transtulísti: te súpplices exorámus; ut, sicut
+    illum, grátiæ tuæ ubertáte prævéntum, illécebras sǽculi superáre fecísti,
+    ita nos fácias, ejus imitatióne, mundi hujus blandiménta vitáre, et ad te
+    puris méntibus perveníre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-henry has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-henry-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui hodiérna die beátum Henrícum Confessórem tuum e terréni cúlmine
+    impérii ad regnum ætérnum transtulísti: te súpplices exorámus; ut, sicut
+    illum, grátiæ tuæ ubertáte prævéntum, illécebras sǽculi superáre fecísti,
+    ita nos fácias, ejus imitatióne, mundi hujus blandiménta vitáre, et ad te
+    puris méntibus perveníre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Henry, Emperor and Confessor
+# (July 15). Sourced directly from web/www/horas/Latin/Sancti/07-15.txt,
+# English/Sancti/07-15.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in his own file (his `[Rule]` is `vide
+# C5`) -- defers to the Common's own Nocturn 3, not transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Henrícus, cognoménto Pius, e duce Baváriæ rex Germániæ ac póstmodum Romanórum imperátor, temporális regni non conténtus angústiis, pro adipiscénda immortalitátis coróna sédulam ætérno Regi exhíbuit servitútem. Adépto enim império, religióni amplificándæ studióse incúmbens, ecclésias ab infidélibus destrúctas magnificéntius reparávit, plurimísque largitiónibus et prǽdiis locupletávit. Monastéria aliáque loca pia vel ipse ædificávit, vel assignátis redítibus auxit. Episcopátum Bambergénsem, hereditáriis ópibus fundátum, beáto Petro Romanóque Pontífici vectigálem fecit. Benedíctum octávum, a quo impérii corónam accéperat, prófugum excépit, suǽque Sedi restítuit.
+
+        In Cassinénsi monastério, gravi deténtus infirmitáte, a sancto Benedícto, insígni miráculo, sanátus est. Románam Ecclésiam amplíssimo diplómate munerátus, eídem tuéndæ bellum advérsus Græcos suscépit, et Apúliam, diu ab illis posséssam, recuperávit. Nihil sine précibus ággredi sólitus, Angelum Dómini sanctósque Mártyres tuteláres pro se pugnántes ante áciem intérdum vidit. Divína autem protéctus ope, bárbaras natiónes précibus magis quam armis expugnávit. Pannóniam adhuc infidélem, trádita Stéphano regi soróre sua in uxórem, eóque baptizáto, ad Christi fidem perdúxit. Virginitátem raro exémplo matrimónio junxit, sanctámque Cunegúndam, cónjugem suam, propínquis ejus, morti próximus, illibátam restítuit.
+
+        Dénique, rebus ómnibus, quæ ad impérii honórem et utilitátem pertinébant, summa prudéntia dispósitis, et illústribus per Gálliam, Itáliam et Germániam religiósæ munificéntiæ vestígiis passim relíctis; postquam heróicæ virtútis suavíssimum odórem longe latéque diffúderat, sanctitáte quam sceptro clárior, ad regni cæléstis prǽmia, consummátis vitæ labóribus, a Dómino vocátus est anno salútis millésimo vigésimo quarto. Cujus corpus in ecclésia beatórum Apostolórum Petri et Pauli Bambergæ cónditum fuit; statímque ad ejus túmulum multa mirácula, Deo ipsum glorificánte, patráta sunt. Quibus póstea rite probátis, Eugénius tértius Sanctórum número illum adscrípsit.
+      status: verified

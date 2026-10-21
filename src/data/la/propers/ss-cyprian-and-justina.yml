@@ -1,0 +1,50 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2025-09-26).
+collect:
+  text: |
+    Orémus.
+    Beatórum Mártyrum Cypriáni et Justínæ nos, Dómine, fóveant continuáta præsídia: quia non désinis propítius intuéri, quos tálibus auxíliis concésseris adjuvári.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-cyprian-and-justina-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (ss-cyprian-and-justina-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Beatórum Mártyrum Cypriáni et Justínæ nos, Dómine, fóveant continuáta præsídia: quia non désinis propítius intuéri, quos tálibus auxíliis concésseris adjuvári.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Cyprian and Justina's own day (2028-09-26 -- 2026/2027
+# are Our Lady's Saturday / an ordinary Sunday respectively). The
+# Benedictus antiphon.
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Cyprian and Justina, Martyrs (Sep 26)
+# — pre-1955-but-post-1617 (no SanctiM/09-26*.txt at all; the "n" suffix
+# variant at this date is a modern 20th-c. feast, not relevant).
+# web/www/horas/Latin/Sancti/09-26.txt, English/Sancti/09-26.txt.
+# Lectio2-3 is one continuous account, no internal break, combined into
+# a single reading. No responsory given.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Cypriánus, primum magus, póstea Martyr, cum Justínam, christiánam Vírginem, quam júvenis quidam ardénter amábat, cantiónibus ac venefíciis ad ejus libídinis assénsum allícere conarétur, dæmonem consúluit quanam id re cónsequi posset. Cui dæmon respóndit nullam illi artem processúram advérsus eos, qui vere Christum cólerent. Quo respónso commótus Cypriánus, veheménter dolére cœpit vitæ superióris institútum. Itaque, relíctis mágicis ártibus, se totum ad Christi Dómini fidem convértit.
+
+        Quam ob causam una cum Vírgine Justína comprehénsus est, et ambo cólaphis flagellísque cæsi sunt; mox in cárcerem conjécti, si forte senténtiam commutárent. Verum, inde póstea emíssi, cum in christiána religióne constantíssimi reperiréntur, in sartáginem plenam fervéntis picis, ádipis et ceræ injécti sunt. Demum Nicomedíæ secúri feriúntur. Quorum projécta córpora cum sex dies inhumáta jacuíssent noctu quidam nautæ clam ea in navem impósita Romam portavérunt. Ac primum in prædio Rufínæ nóbilis féminæ sepúlta sunt; póstea, transláta in Urbem, in basílica Constantiniána cóndita sunt prope baptistérium.
+      status: verified

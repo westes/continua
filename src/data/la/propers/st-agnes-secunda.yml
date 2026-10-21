@@ -1,0 +1,53 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08.
+# Pulled from the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt + M1617.txt, own title
+# "S. Agnetis Virginis et Martyris secundo") and its own source file, not the merged per-date
+# files those tables' fileref points at directly -- see TODO.md.
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos ánnua beátæ Agnétis Vírginis et Mártyris tuæ solemnitáte lætíficas: da, quǽsumus; ut, quam venerámur offício, étiam piæ conversatiónis sequámur exémplo.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-agnes-secunda-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-virgin-martyr (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (st-agnes-secunda-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Ecce, quod concupívi, * jam vídeo: quod sperávi, jam téneo: ipsi sum juncta in cælis, quem in terris pósita, tota devotióne diléxi.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Deus, qui nos ánnua beátæ Agnétis Vírginis et Mártyris tuæ solemnitáte lætíficas: da, quǽsumus; ut, quam venerámur offício, étiam piæ conversatiónis sequámur exémplo.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query (2026-01-28, winner outright) -- the Benedictus antiphon.
+# Own proper text (her second, "secundo" commemoration, distinct from
+# St. Agnes's own Jan 21 feast).
+benedictus-antiphon:
+  text: 'Ecce, quod concupívi, * jam vídeo: quod sperávi, jam téneo: ipsi sum juncta in cælis, quem in terris pósita, tota devotióne diléxi.'
+  status: verified
+
+# Matins Nocturn 2 reading for St. Agnes, Virgin and Martyr, Second Feast
+# (Jan 28) — pre-1955-but-post-1617. Plain Sancti/01-28.txt is a
+# different, later saint (St. Peter Nolasco) who displaced this second
+# Agnes feast on the general calendar's own Jan 28 slot; her content
+# survives at the suffixed sibling file (see memory
+# vu-matins-pre1955-saints's "critical wrinkle").
+# web/www/horas/Latin/Sancti/01-28t.txt, English/Sancti/01-28t.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Beáta Agnes, paréntibus ad ejus sepúlcrum assidue vigilántibus, quadam nocte choro vírginum comitáta cum apparuísset, sic ad eos locuta dícitur: Ne me, paréntes, mortuam lugeátis; nam una cum his virgínibus vivo apud illum in cælis, quem in terris tota mente diléxi. Cum aliquot post annos Constantia, Constantini imperatóris fília, insanábili úlceri medicinam quærens, nondum christiana ad idem sepúlcrum accessísset; obdórmiscens sibi audíre visa est vocem hanc Agnetis: Constanter age, Constántia: crede in Jesum Christum Fílium Dei, qui te sanam fáciet. Quæ sanata, paulo post una cum multis ex família imperatóris baptismum suscípiens, ibi ecclésiam nómine beátæ Agnétis ædificávit.'
+      status: verified

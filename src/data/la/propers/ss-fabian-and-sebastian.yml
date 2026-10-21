@@ -1,0 +1,59 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2029-01-20, a
+# year that date doesn't collide with a Sunday). Same convention as
+# data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Infirmitátem nostram réspice, omnípotens Deus: et, quia pondus própriæ actiónis gravat, beatórum Mártyrum tuórum Fabiáni et Sebastiáni intercéssio gloriósa nos prótegat.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-fabian-and-sebastian-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (ss-fabian-and-sebastian-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Infirmitátem nostram réspice, omnípotens Deus: et, quia pondus própriæ actiónis gravat, beatórum Mártyrum tuórum Fabiáni et Sebastiáni intercéssio gloriósa nos prótegat.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Fabian and Sebastian's own day (2026-01-20). The
+# Benedictus antiphon.
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Matins Nocturn 2 readings for Ss. Fabian, Pope, and Sebastian, Martyrs
+# (Jan 20) — SanctiM/01-20.txt inherits the whole day (`@Sancti/01-20`)
+# with no Nocturn 2/3 override, so this feast's own proper content is
+# sourced from the Tridentine track exactly as for a pre-1955 saint
+# (see memory vu-matins-pre1955-saints).
+# web/www/horas/Latin/Sancti/01-20.txt, English/Sancti/01-20.txt.
+# Lectio4 (Fabian's own vita) and Lectio5-6 (Sebastian's, one
+# continuous account) are genuinely distinct martyrs, kept split.
+# Lectio7-9 fall back to Common of Several Martyrs (`Commune/C3`), not
+# proper text, so not authored here. No responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Fabiánus Románus, a Maximíno usque ad Décium regens Ecclésiam, septem diáconis regiónes divísit, qui páuperum curam habérent. Tótidem subdiáconos creávit, qui res gestas Mártyrum a septem notáriis scriptas collígerent. Idem státuit, ut quotánnis féria quinta in Cœna Dómini, vétere combústo, chrisma renovarétur. Dénique décimo tértio Kaléndas Februárii in persecutióne Décii martýrio coronátus, in cœmetério Callísti via Appia sepelítur, cum sedísset annos quíndecim, dies quátuor. Hic fecit ordinatiónes quinque mense Decémbri, quibus creávit presbýteros vigínti duos, diáconos septem, epíscopos per divérsa loca úndecim.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Sebastiánus ex patre Narbonénsi, matre Mediolanénsi natus, ob géneris nobilitátem et virtútem Diocletiáno carus fuit. Dux primæ cohórtis, Christiános, quorum fidem clam colébat, ópera et facultátibus adjuvábat; et qui ex eis tormentórum vim reformidáre videbántur, cohortatióne sic confirmábat, ut pro Jesu Christo multi se ultro tortóribus offérrent. In illis fuére Marcus et Marcelliánus fratres, qui Romæ in custódia erant apud Nicóstratum: cujus uxor Zoë vocem, quam amíserat, Sebastiáni oratióne recuperávit. Quibus Diocletiáno delátis, Sebastiánum accérsit, et veheméntius objurgátum ómnibus artifíciis a Christi fide conátur avértere. Sed cum nihil nec pollicéndo, nec terréndo profíceret, ad palum alligátum sagíttis confígi jubet.
+
+        Quem ómnium opinióne mórtuum noctu sancta múlier Iréne sepeliéndi grátia jussit auférri; sed vivum repértum domi suæ curávit. Itaque paulo post confirmáta valetúdine, Diocletiáno óbviam factus, ejus impietátem libérius accusávit. Cujus aspéctu cum ille primum obstupuísset, quod mórtuum créderet; rei novitáte et acri Sebastiáni reprehensióne excandéscens, eum támdiu virgis cædi imperávit, donec ánimam Deo rédderet. Ejus corpus in cloácam dejéctum Lucína, a Sebastiáno in somnis admónita ubi esset et quo loco humári vellet, ad Catacúmbas sepelívit, ubi sancti Sebastiáni nómine célebris ecclésia est ædificáta.
+      status: verified

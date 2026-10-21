@@ -1,0 +1,1174 @@
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-01-06); Latin and English both taken from the page.
+collect:
+  text: |
+    Kýrie, eléison. Christe, eléison. Kýrie, eléison.
+    Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum quotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris:
+    V. Et ne nos indúcas in tentatiónem:
+    R. Sed líbera nos a malo.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+    Orémus.
+    Deus, qui hodiérna die Unigénitum tuum géntibus stella duce revelásti: concéde propítius; ut qui jam te ex fide cognóvimus, usque ad contemplándam spéciem tuæ celsitúdinis perducámur.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect/post-~-1:
+  text: |
+    Orémus.
+    Vota, quǽsumus, Dómine, supplicántis pópuli cælésti pietáte proséquere: ut et quæ agénda sunt, vídeant, et ad implénda quæ víderint, convaléscant.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+#
+# A real saint outranks this Sunday on every candidate year checked (2020-
+# 2060), so this was read directly from the Latin/English Tempora source
+# file plus the standard closing-formula macro
+# (Psalterium/Common/Prayers.txt's [Per Dominum]/[Per eumdem]) rather than
+# a live date query.
+collect/post-~-2:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui cæléstia simul et terréna moderáris: supplicatiónes pópuli tui cleménter exáudi; et pacem tuam nostris concéde tempóribus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect/post-~-3:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, infirmitátem nostram propítius réspice: atque, ad protegéndum nos, déxteram tuæ majestátis exténde.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect/post-~-4:
+  text: |
+    Orémus.
+    Deus, qui nos in tantis perículis constitútos, pro humána scis fragilitáte non posse subsístere: da nobis salútem mentis et córporis; ut ea, quæ pro peccátis nostris pátimur, te adjuvánte vincámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+#
+# A real saint outranks this Sunday on every candidate year checked (2020-
+# 2060), so this was read directly from the Latin/English Tempora source
+# file plus the standard closing-formula macro
+# (Psalterium/Common/Prayers.txt's [Per Dominum]/[Per eumdem]) rather than
+# a live date query.
+collect/post-~-5:
+  text: |
+    Orémus.
+    Famíliam tuam, quǽsumus, Dómine, contínua pietáte custódi: ut, quæ in sola spe grátiæ cœléstis innítitur, tua semper protectióne muniátur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect/post-~-6:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, semper rationabília meditántes, quæ tibi sunt plácita, et dictis exsequámur et factis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayMatutinum, 2027-01-06); Latin and English both taken from the page.
+matins-hymn:
+  text: |
+    Hostis Heródes ímpie,
+    Christum veníre quid times?
+    Non éripit mortália,
+    Qui regna dat cæléstia.
+
+    Ibant magi, quam víderant,
+    Stellam sequéntes prǽviam:
+    Lumen requírunt lúmine:
+    Deum faténtur múnere.
+
+    Lavácra puri gúrgitis
+    Cæléstis Agnus áttigit:
+    Peccáta, quæ non détulit,
+    Nos abluéndo sústulit.
+
+    Novum genus poténtiæ:
+    Aquæ rubéscunt hýdriæ,
+    Vinúmque jussa fúndere,
+    Mutávit unda oríginem.
+
+    * Glória tibi, Dómine,
+    Qui apparuísti hódie,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayMatutinum, 2027-01-06); Latin and English both taken from the page.
+matins-invitatory:
+  text: Christus appáruit nobis, * Veníte adorémus.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-01-06); Latin and English both taken from the page.
+lauds-capitulum:
+  text: Isa 60:1 Surge, illumináre Jerúsalem, quia venit lumen tuum, et glória Dómini super te orta est.
+  status: verified
+  citation: ''
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-01-06); Latin and English both taken from the page.
+lauds-hymn:
+  text: |
+    O sola magnárum úrbium
+    Major Bethlem, cui cóntigit
+    Ducem salútis cǽlitus
+    Incorporátum gígnere.
+
+    Quem stella, quæ solis rotam
+    Vincit decóre, ac lúmine;
+    Venísse terris núntiat
+    Cum carne terréstri Deum.
+
+    Vidére postquam illum Magi,
+    Eóa promunt múnera:
+    Stratíque votis ófferunt
+    Thus, myrrham, et aurum régium.
+
+    Regem Deúmque annúntiant
+    Thesáurus, et fragrans odor
+    Thuris Sabǽi, ac mýrrheus
+    Pulvis sepúlcrum prǽdocet.
+
+    * Glória tibi, Dómine,
+    Qui apparuísti hódie,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-01-06); Latin and English both taken from the page.
+lauds-responsory:
+  text: |
+    R.br. Reges Tharsis et ínsulæ múnera ófferent, * Allelúia, allelúia.
+    R. Reges Tharsis et ínsulæ múnera ófferent, * Allelúia, allelúia.
+    V. Reges Arabum et Saba dona addúcent.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Reges Tharsis et ínsulæ múnera ófferent, * Allelúia, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-01-06); Latin and English both taken from the page.
+lauds-versicle:
+  text: |
+    V. Adoráte Deum, allelúia.
+    R. Omnes Angeli ejus, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayPrima, 2027-01-06); Latin and English both taken from the page.
+prime-antiphon:
+  text: Ante lucíferum génitus, * et ante sǽcula, Dóminus Salvátor noster hódie mundo appáruit.
+  status: verified
+
+# Verified against Divinum Officium (Latin/English "Prima Special.txt").
+# Seasonal variant of prime-chapter-responsory-per-annum.yml — same fixed
+# responsory, with just the "V." verse line swapped for the season.
+prime-chapter/responsory-epi:
+  text: |
+    R.br. Christe, Fili Dei vivi, * Miserére nobis.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+    V. Qui apparuísti hódie.
+    R. Miserére nobis.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/01-06.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: Omnes de Saba vénient, aurum et thus deferéntes, et laudem Dómino annuntiántes.
+  citation: Isa 60:6
+  status: verified
+  temporal: true
+
+# New file, 2026-09-15: closes the seasonal-variant gap
+# `prime-lectio-per-annum.yml`'s own header already flagged, wrongly
+# attributed to "milestone 4" (that blocker was stale -- see the dated
+# TODO.md entry this sweep came out of; calendar/temporal.ts's resolveSeason
+# has been a complete, real implementation for a while). Sourced directly
+# from web/www/horas/Latin/Psalterium/Special/Prima Special.txt's own [Epi]
+# tag and its English counterpart.
+prime-lectio/epi:
+  text: Omnes de Saba vénient, aurum et thus deferéntes, et laudem Dómino annuntiántes.
+  citation: Isa 60:6
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2027-01-06); Latin and English both taken from the page.
+terce-antiphon:
+  text: Venit lumen tuum * Jerúsalem, et glória Dómini super te orta est, et ambulábunt gentes in lúmine tuo, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayTertia, 2027-01-06); Latin and English both taken from the page.
+terce-capitulum:
+  text: |
+    Isa 60:1 Surge, illumináre Jerúsalem, quia venit lumen tuum, et glória Dómini super te orta est.
+    R. Deo grátias.
+    V. Reges Tharsis et ínsulæ múnera ófferent, allelúia.
+    R. Reges Arabum et Saba dona addúcent, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2027-01-06); Latin and English both taken from the page.
+sext-antiphon:
+  text: Apértis thesáuris suis * obtulérunt Magi Dómino aurum, thus, et myrrham, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=praySexta, 2027-01-06); Latin and English both taken from the page.
+sext-capitulum:
+  text: |
+    Isa 60:4 Leva in circúitu óculos tuos, et vide: omnes isti congregáti sunt, venérunt tibi: fílii tui de longe vénient, et fíliæ tuæ de látere surgent.
+    R. Deo grátias.
+    V. Omnes de Saba vénient, allelúia.
+    R. Aurum et thus deferéntes, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2027-01-06); Latin and English both taken from the page.
+none-antiphon:
+  text: 'Stella ista * sicut flamma corúscat, et Regem regum Deum demónstrat: Magi eam vidérunt, et magno Regi múnera obtulérunt.'
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayNona, 2027-01-06); Latin and English both taken from the page.
+none-capitulum:
+  text: |
+    Isa 60:6 Omnes de Saba vénient, aurum et thus deferéntes, et laudem Dómino annuntiántes.
+    R. Deo grátias.
+    V. Adoráte Dóminum, allelúia.
+    R. In aula sancta ejus, allelúia.
+  citation: ''
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-01-06); Latin and English both taken from the page.
+vespers-hymn:
+  text: |
+    Hostis Heródes ímpie,
+    Christum veníre quid times?
+    Non éripit mortália,
+    Qui regna dat cæléstia.
+
+    Ibant magi, quam víderant,
+    Stellam sequéntes prǽviam:
+    Lumen requírunt lúmine:
+    Deum faténtur múnere.
+
+    Lavácra puri gúrgitis
+    Cæléstis Agnus áttigit:
+    Peccáta, quæ non détulit,
+    Nos abluéndo sústulit.
+
+    Novum genus poténtiæ:
+    Aquæ rubéscunt hýdriæ,
+    Vinúmque jussa fúndere,
+    Mutávit unda oríginem.
+
+    * Glória tibi, Dómine,
+    Qui apparuísti hódie,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-01-06); Latin and English both taken from the page.
+vespers-responsory:
+  text: |
+    R.br. Omnes de Saba vénient, * Allelúia, allelúia.
+    R. Omnes de Saba vénient, * Allelúia, allelúia.
+    V. Aurum et thus deferéntes.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Omnes de Saba vénient, * Allelúia, allelúia.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-01-06); Latin and English both taken from the page.
+vespers-versicle:
+  text: |
+    V. Reges Tharsis et ínsulæ múnera ófferent.
+    R. Reges Arabum et Saba dona addúcent.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-01-06); Latin and English both taken from the page.
+benedictus-antiphon:
+  text: 'Hódie * cælésti Sponso juncta est Ecclésia, quóniam in Jordáne lavit Christus ejus crímina: currunt cum munéribus Magi ad regáles núptias, et ex aqua facto vino lætántur convívæ, allelúia.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-01-10 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon/post-~-1:
+  text: 'Remánsit puer Jesus * in Jerúsalem, et non cognovérunt paréntes ejus existimántes illum esse in comitátu: et requirébant eum inter cognátos et notos.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2028-01-16 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon/post-~-2:
+  text: Núptiæ factæ sunt * in Cana Galilǽæ, et erat ibi Jesus cum María matre sua.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2028-01-23 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon/post-~-3:
+  text: 'Cum descendísset Jesus * de monte, ecce leprósus véniens adorábat eum, dicens: Dómine, si vis, potes me mundáre: et exténdens manum, tétigit eum, dicens: Volo, mundáre.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2028-01-30 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon/post-~-4:
+  text: 'Ascendénte Jesu * in navículam, ecce motus magnus factus est in mari: et suscitavérunt eum discípuli ejus, dicéntes: Dómine, salva nos, perímus.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2028-02-06 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon/post-~-5:
+  text: 'Dómine, * nonne bonum semen seminásti in agro tuo? unde ergo habet zizánia? Et ait illis: Hoc fecit inimícus homo.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2038-02-14 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon/post-~-6:
+  text: 'Símile est * regnum cælórum grano sinápis, quod mínimum est ómnibus semínibus: cum autem créverit, majus est ómnibus oléribus.'
+  status: verified
+  temporal: true
+
+# Per-day proper of the Epiphany octave's counted day 2: Sancti/01-07.txt's [Ant 2] and the reference engine's English (Monastic Tridentinum 1617, 2027-01-07).
+# Picked by hours/resolve-common.ts's octaveDayProper (`-d<N>` = counted octave day, Sundays not counted -- see OctaveConfig.skipsSunday).
+benedictus-antiphon/~-d2:
+  text: 'Ab Oriénte * venérunt Magi in Béthlehem adoráre Dóminum: et apértis thesáuris suis, pretiósa múnera obtulérunt: aurum, sicut Regi magno; thus, sicut Deo vero; myrrham, sepultúræ ejus, allelúia.'
+  status: verified
+  temporal: true
+
+# Per-day proper of the Epiphany octave's counted day 3: Sancti/01-08.txt's [Ant 2] and the reference engine's English (Monastic Tridentinum 1617, 2027-01-08).
+# Picked by hours/resolve-common.ts's octaveDayProper (`-d<N>` = counted octave day, Sundays not counted -- see OctaveConfig.skipsSunday).
+benedictus-antiphon/~-d3:
+  text: Tria sunt múnera, * quæ obtulérunt Magi Dómino, aurum, thus et myrrham, Fílio Dei, Regi magno, allelúia.
+  status: verified
+  temporal: true
+
+# Per-day proper of the Epiphany octave's counted day 4: Sancti/01-09.txt's [Ant 2] and the reference engine's English (Monastic Tridentinum 1617, 2027-01-09).
+# Picked by hours/resolve-common.ts's octaveDayProper (`-d<N>` = counted octave day, Sundays not counted -- see OctaveConfig.skipsSunday).
+benedictus-antiphon/~-d4:
+  text: Vídimus stellam ejus * in Oriénte, et vénimus cum munéribus adoráre Dóminum.
+  status: verified
+  temporal: true
+
+# Per-day proper of the Epiphany octave's counted day 5: Sancti/01-10.txt's [Ant 2] and the reference engine's English (Monastic Tridentinum 1617, 2027-01-11).
+# Picked by hours/resolve-common.ts's octaveDayProper (`-d<N>` = counted octave day, Sundays not counted -- see OctaveConfig.skipsSunday).
+benedictus-antiphon/~-d5:
+  text: Omnes natiónes * vénient a longe, portántes múnera sua, allelúia.
+  status: verified
+  temporal: true
+
+# Per-day proper of the Epiphany octave's counted day 6: Sancti/01-11.txt's [Ant 2] and the reference engine's English (Monastic Tridentinum 1617, 2027-01-12).
+# Picked by hours/resolve-common.ts's octaveDayProper (`-d<N>` = counted octave day, Sundays not counted -- see OctaveConfig.skipsSunday).
+benedictus-antiphon/~-d6:
+  text: Vénient ad te, * qui detrahébant tibi, et adorábunt vestígia pedum tuórum.
+  status: verified
+  temporal: true
+
+# Per-day proper of the Epiphany octave's counted day 7: Sancti/01-12.txt's [Ant 2] and English/Sancti/01-12.txt. Said when no Sunday falls in Jan 7-12 (e.g. 2030); see OctaveConfig.skipsSunday.
+benedictus-antiphon/~-d7:
+  text: Maniféste magnum est * pietátis sacraméntum, quod manifestátum est in carne, justificátum est in spíritu, appáruit Angelis, prædicátum est Géntibus, créditum est in mundo, assúmptum est in glória, allelúia.
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-01-06); Latin and English both taken from the page.
+magnificat-antiphon:
+  text: 'Tribus miráculis * ornátum diem sanctum cólimus: hódie stella Magos duxit ad præsépium: hódie vinum ex aqua factum est ad núptias: hódie in Jordáne a Joánne Christus baptizári vóluit, ut salváret nos, allelúia.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-01-10 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon/post-~-1:
+  text: Fili, quid fecísti * nobis sic? Ego et pater tuus doléntes quærebámus te. Quid est quod me quærebátis? nesciebátis quia in iis, quæ Patris mei sunt, opórtet me esse?
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-01-11 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/post-~-1-first:
+  text: 'Remánsit puer Jesus * in Jerúsalem, et non cognovérunt paréntes ejus existimántes illum esse in comitátu: et requirébant eum inter cognátos et notos.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2028-01-16 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon/post-~-2:
+  text: Deficiénte vino, * jussit Jesus impléri hýdrias aqua, quæ in vinum convérsa est, allelúia.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2028-01-23 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon/post-~-3:
+  text: 'Dómine, * si vis, potes me mundáre: et ait Jesus: Volo, mundáre.'
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2028-01-22 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/post-~-3-first:
+  text: 'Suscépit Deus * Israël, púerum suum: sicut locútus est ad Ábraham, et semen ejus: exaltáre húmiles usque in sǽculum.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2028-01-30 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon/post-~-4:
+  text: 'Dómine, salva nos, * perímus: ímpera, et fac, Deus, tranquillitátem.'
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2028-01-29 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/post-~-4-first:
+  text: 'Suscépit Deus * Israël, púerum suum: sicut locútus est ad Ábraham, et semen ejus: exaltáre húmiles usque in sǽculum.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2028-02-06 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon/post-~-5:
+  text: 'Collígite * primum zizánia, et alligáte ea in fascículos ad comburéndum: tríticum autem congregáte in hórreum meum, dicit Dóminus.'
+  status: verified
+  temporal: true
+
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-02-08 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/post-~-5-first:
+  text: 'Suscépit Deus * Israël, púerum suum: sicut locútus est ad Ábraham, et semen ejus: exaltáre húmiles usque in sǽculum.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2038-02-14 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon/post-~-6:
+  text: Símile est * regnum cælórum ferménto, quod accéptum múlier abscóndit in farínæ satis tribus, donec fermentátum est totum.
+  status: verified
+  temporal: true
+
+# Per-day proper of the Epiphany octave's counted day 2: Sancti/01-07.txt's [Ant 3] and the reference engine's English (Monastic Tridentinum 1617, 2027-01-07).
+# Picked by hours/resolve-common.ts's octaveDayProper (`-d<N>` = counted octave day, Sundays not counted -- see OctaveConfig.skipsSunday).
+magnificat-antiphon/~-d2:
+  text: 'Vidéntes stellam Magi, * gavísi sunt gáudio magno: et intrántes domum, obtulérunt Dómino aurum, thus, et myrrham, allelúia.'
+  status: verified
+  temporal: true
+
+# Per-day proper of the Epiphany octave's counted day 3: Sancti/01-08.txt's [Ant 3] and the reference engine's English (Monastic Tridentinum 1617, 2027-01-08).
+# Picked by hours/resolve-common.ts's octaveDayProper (`-d<N>` = counted octave day, Sundays not counted -- see OctaveConfig.skipsSunday).
+magnificat-antiphon/~-d3:
+  text: Lux de luce * apparuísti, Christe, cui Magi múnera ófferunt, allelúia, allelúia, allelúia.
+  status: verified
+  temporal: true
+
+# Per-day proper of the Epiphany octave's counted day 5: Sancti/01-10.txt's [Ant 3] and the reference engine's English (Monastic Tridentinum 1617, 2027-01-11).
+# Picked by hours/resolve-common.ts's octaveDayProper (`-d<N>` = counted octave day, Sundays not counted -- see OctaveConfig.skipsSunday).
+magnificat-antiphon/~-d5:
+  text: Omnes de Saba * vénient, aurum et thus deferéntes, allelúia, allelúia.
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-01-05); Latin and English both taken from the page. First Vespers variant.
+magnificat-antiphon/~-first:
+  text: 'Magi vidéntes * stellam, dixérunt ad ínvicem: Hoc signum magni Regis est: eámus et inquirámus eum, et offerámus ei múnera, aurum, thus, et myrrham, allelúia.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Latin/English Doxologies.txt, the
+# Monastic "T"-suffixed variant). Seasonal doxology for "Iam lucis orto
+# sidere" and any other hymn ending "* Deo Patri sit gloria..." — see
+# hours/hymn-doxology.ts.
+hymn-doxology/epi:
+  text: |-
+    Glória tibi, Dómine,
+    Qui apparuísti hódie,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-01-06); Latin and English both taken from the page. Antiphons only; the psalm numbers are the Monastic Sunday scheme (92/99/62, canticle, Laudate).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Ante lucíferum génitus, * et ante sǽcula, Dóminus Salvátor noster hódie mundo appáruit.
+    - psalms:
+        - 99
+      antiphon: Venit lumen tuum * Jerúsalem, et glória Dómini super te orta est, et ambulábunt gentes in lúmine tuo, allelúia.
+    - psalms:
+        - 62
+      antiphon: Apértis thesáuris suis * obtulérunt Magi Dómino aurum, thus, et myrrham, allelúia.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Mária et flúmina * benedícite Dómino: hymnum dícite fontes Dómino, allelúia.'
+  laudate:
+    antiphon: 'Stella ista * sicut flamma corúscat, et Regem regum Deum demónstrat: Magi eam vidérunt, et magno Regi múnera obtulérunt.'
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-01-06); Latin and English both taken from the page. Second Vespers psalm antiphons.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Ante lucíferum génitus, * et ante sǽcula, Dóminus Salvátor noster hódie mundo appáruit.
+    - psalms:
+        - 110
+      antiphon: Venit lumen tuum * Jerúsalem, et glória Dómini super te orta est, et ambulábunt gentes in lúmine tuo, allelúia.
+    - psalms:
+        - 111
+      antiphon: Apértis thesáuris suis * obtulérunt Magi Dómino aurum, thus, et myrrham, allelúia.
+    - psalms:
+        - 112
+      antiphon: 'Stella ista * sicut flamma corúscat, et Regem regum Deum demónstrat: Magi eam vidérunt, et magno Regi múnera obtulérunt.'
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-01-05); Latin and English both taken from the page. First Vespers psalm antiphons.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Ante lucíferum génitus, * et ante sǽcula, Dóminus Salvátor noster hódie mundo appáruit.
+    - psalms:
+        - 110
+      antiphon: Venit lumen tuum * Jerúsalem, et glória Dómini super te orta est, et ambulábunt gentes in lúmine tuo, allelúia.
+    - psalms:
+        - 111
+      antiphon: Apértis thesáuris suis * obtulérunt Magi Dómino aurum, thus, et myrrham, allelúia.
+    - psalms:
+        - 112
+      antiphon: 'Stella ista * sicut flamma corúscat, et Regem regum Deum demónstrat: Magi eam vidérunt, et magno Regi múnera obtulérunt.'
+
+# Matins Nocturn 2/3 readings for epiphany, generated from the engine render (Monastic Tridentinum 1617, 2027-01-06); Latin and English both from the page.
+# Nocturn 1's scripture slot is the user's own reading plan (see DESIGN.md), so the Isaiah lessons are not authored here. Contiguous lessons of the source are folded into one reading, with the responsory of the last lesson of the group (the same convention the Rosary and Circumcision files follow).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: From the Sermons of Pope St. Leo (the Great), 2nd for Twelfth-Day.
+      text: |
+        Gaudéte in Dómino, dilectíssimi, íterum dico, gaudéte: quóniam brevi intervállo témporis, post solemnitátem Nativitátis Christi, festívitas declaratiónis ejus illúxit: et quem in illo die Virgo péperit, in hoc mundus agnóvit. Verbum enim caro factum, sic susceptiónis nostræ temperávit exórdia, ut natus Jesus et credéntibus maniféstus, et persequéntibus esset occúltus.
+
+        Jam tunc ergo cæli enarravérunt glóriam Dei, et in omnem terram sonus veritátis exívit, quando et pastóribus exércitus Angelórum Salvatóris éditi annuntiátor appáruit, et Magos ad eum adorándum prǽvia stella perdúxit: ut a solis ortu usque ad occásum veri Regis generátio coruscáret, cum rerum fidem et regna Oriéntis per Magos díscerent, et Románum impérium non latéret.
+
+        Nam et sævítia Heródis volens primórdia suspécti sibi Regis exstínguere, huic dispensatíoni nésciens serviébat: ut dum atróci inténtus facínori, ignótum sibi púerum indiscréta infántium cæde perséquitur, annuntiátum cǽlitus dominatóris ortum insígnior ubíque fama loquerétur: quam promptiórem ad narrándum, diligentiorémque faciébat et supérnæ significatiónis nóvitas, et cruentíssimi persecutóris impíetas. Tunc autem étiam Ægýpto Salvátor illátus est, ut gens antíquis erróribus dédita, jam ad vicínam salútem per occúltam grátiam signarétur: et quæ nondum ejécerat ab ánimo superstitiónem, jam hospítio recíperet veritátem.
+
+        Agnoscámus ergo, dilectíssimi, in Magis adoratóribus Christi, vocatiónis nostræ fideíque primítias: et exsultántibus ánimis beátæ spei inítia celebrémus. Exínde enim in ætérnam hereditátem cœ́pimus introíre: exínde nobis Christum loquéntia Scripturárum arcána patuérunt, et véritas, quam Judæórum obcæcátio non récipit, ómnibus natiónibus lumen suum invéxit. Honorétur ítaque a nobis sacratíssimus dies, in quo salútis nostræ Auctor appáruit: et quem Magi infántem veneráti sunt in cunábulis, nos omnipoténtem adorémus in cælis. Ac sicut illi de thesáuris suis mýsticas Dómino múnerum spécies obtulérunt, ita et nos de córdibus nostris, quæ Deo sunt digna, promámus.
+      responsory: |-
+        R. Interrogábat Magos Heródes: Quod signum vidístis super natum Regem? † Stellam vídimus fulgéntem, cujus splendor illúminat mundum: * Et nos cognóvimus et vénimus adoráre Dóminum.
+        V. Magi véniunt ab Oriénte inquiréntes fáciem Dómini et dicéntes.
+        R. Et nos cognóvimus et vénimus adoráre Dóminum.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 2:1-12
+      text: 'Cum natus esset Jesus in Béthlehem Juda in diébus Heródis regis, ecce Magi ab Oriénte venérunt Jerosólymam, dicéntes: Ubi est qui natus est Rex Judæórum? Et réliqua.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: Homily by Pope St. Gregory the Great., 10th on the Gospels
+      text: |
+        Sicut in lectióne evangélica, fratres caríssimi, audístis, cæli Rege nato, rex terræ turbátus est: quia nimírum terréna altitúdo confúnditur, cum celsitúdo cæléstis aperítur. Sed quæréndum nobis est, quidnam sit, quod, Redemptóre nato, pastóribus in Judǽa Angelus appáruit, atque ad adorándum hunc ab Oriénte Magos non Angelus, sed stella perdúxit?
+
+        Quia vidélicet Judǽis, tamquam ratióne uténtibus, rationále ánimal, id est, Angelus prædicáre débuit: gentíles vero, quia uti ratióne nesciébant, ad cognoscéndum Dóminum non per vocem, sed per signa perducúntur. Unde étiam per Paulum dícitur: Prophetíæ fidélibus datæ sunt, non infidélibus: signa autem infidélibus, non fidélibus. Quia et illis prophetíæ tamquam fidélibus, non infidélibus: et istis signa tamquam infidélibus, non fidélibus data sunt. Et notándum, quod Redemptórem nostrum, cum jam perféctæ esset ætátis, eísdem gentílibus Apóstoli prǽdicant, eúmque párvulum, et necdum per humáni córporis offícium loquéntem, stella géntibus denúntiat: quia nimírum ratiónis ordo poscébat, ut et loquéntem jam Dóminum loquéntes nobis prædicatóres innotéscerent, et necdum loquéntem eleménta muta prædicárent. Sed in ómnibus signis, quæ vel nascénte Dómino, vel moriénte eo monstráta sunt, considerándum nobis est, quanta fúerit in quorúmdam Judæórum corde durítia, qui hunc nec per prophetíæ donum, nec per mirácula agnovérunt. Omnia quippe eleménta auctórem suum venísse testáta sunt. Ut enim de eis quiddam usu humáno loquar: Deum hunc cæli esse cognovérunt, quia prótinus stellam misérunt. Mare cognóvit, quia sub plantis ejus se calcábile prǽbuit. Terra cognóvit, quia eo moriénte contrémuit. Sol cognóvit, quia lucis suæ rádios abscóndit. Saxa et paríetes cognovérunt, quia témpore mortis ejus scissa sunt. Inférnus agnóvit, quia hos, quos tenébat mórtuos, réddidit. Et tamen hunc, quem Dóminum ómnia insensibília eleménta sensérunt, adhuc infidélium Judæórum corda Deum esse mínime cognóscunt, et durióra saxis, scindi ad pœniténdum nolunt.
+      responsory: |-
+        R. Hic est dies præclárus in quo Salvátor mundi appáruit, † quem prophétæ predixérunt, Angeli annuntiavérunt: * Cujus stellam Magi vidéntes gavísi sunt, et múnera ei obtulérunt.
+        V. Dies sanctificátus illúxit nobis: † veníte gentes et adoráte Dóminum.
+        R. Cujus stellam Magi vidéntes gavísi sunt, et múnera ei obtulérunt.
+      status: verified
+
+# Nocturn 2-3, First Sunday after Epiphany (temporalId post-epiphany-1).
+# Sourced from Tempora/Epi1-0a.txt (Latin) / English/Tempora/Epi1-0a.txt -
+# NOT Epi1-0.txt, which the reference engine reassigns to the (1893/1921)
+# feast of the Holy Family, a feast this project doesn't model (see
+# TODO.md's temporal-cycle survey note on Holy Family as a still-open
+# pre-1955 gap). Epi1-0a.txt carries the older "Dominica infra Octavam
+# Epiphaniæ" office underneath - confirmed via Epi1-0b.txt, which
+# cross-references Epi1-0a for its own Nocturn 1 lessons under the title
+# "Dominica I post Epiphaniam". See advent-1.yml for the general sweep
+# method.
+#
+# Real structural gap in the source itself, not a transcription choice:
+# Epi1-0a.txt's own [Rule] reads "Initia cum responsory" and it carries no
+# [Responsory4]-[Responsory9] tags at all (unlike every other Epiphany-season
+# Sunday) - its Nocturn 2/3 responsories are drawn from the continuous
+# weekly "Historia" responsory cycle rather than being proper to this
+# Sunday, which isn't transcribed per-Sunday in the static source files
+# (would need live-CGI queries, same class of gap as the post-Pentecost
+# season's un-sourced Nocturn 2 weeks - see TODO.md). Both readings below
+# are authored without a `responsory` field for this reason (the field is
+# optional in the schema) rather than inventing one.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Leo the Great's
+# 4th Sermon on the Epiphany.
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Luke 2:42-51, the boy Jesus found in the Temple, "Et
+# réliqua") - St. Ambrose's own homily (Bk. 2 on Luke ii) begins within
+# Lectio7 itself, same pattern used throughout this sweep. Combined
+# Lectio7's homily portion (incipit dropped) with Lectio8-9.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings/post-~-1:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Leo the Great, Sermon 4 on the Epiphany
+      text: |-
+        Justum et rationábile, dilectíssimi, veræ pietátis obséquium est, in diébus, qui divínæ ópera misericórdiæ protestántur, toto corde gaudére, et honorífice ea, quæ ad salútem nostram gesta sunt, celebráre, vocánte nos ad hanc devotiónem ipsa recurréntium témporum lege, quæ nobis post diem, in quo coætérnus Patri Fílius Dei natus ex Vírgine est, brevi intervállo Epiphaníæ íntulit festum, ex apparitióne Dómini consecrátum.
+
+        In quo fídei nostræ magnum præsídium providéntia divína constítuit: ut, dum solémni veneratióne recólitur adoráta in exórdiis suis Salvatóris infántia, per ipsa originália documénta probarétur veri hóminis in Christo orta natúra. Hoc enim est, quod justíficat ímpios: hoc est, quod ex peccatóribus facit sanctos, si in uno eodémque Dómino nostro Jesu Christo et vera Déitas, et vera credátur humánitas: Déitas, qua ante ómnia sǽcula in forma Dei æquális est Patri: humánitas, qua novíssimis diébus in forma servi unítus est hómini.
+
+        Ad roborándum ergo hanc fidem, quæ contra omnes pronuntiabátur erróres, ex magna gestum est divíni pietáte consílii, ut gens in longínqua Orientális plagæ regióne consístens, quæ spectandórum síderum arte pollébat, signum nati púeri, qui supra omnem Israël esset regnatúrus, accíperet. Nova étenim cláritas apud Magos stellæ illustrióris appáruit, et intuéntium ánimos ita admiratióne sui splendóris implévit, ut nequáquam sibi créderent negligéndum, quod tanto nuntiabátur indício.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 2:42-52
+      text: 'Cum factus esset Jesus annórum duódecim, ascendéntibus illis Jerosólymam secúndum consuetúdinem diéi festi, consummatísque diébus, cum redírent, remánsit puer Jesus in Jerúsalem, et non cognovérunt paréntes ejus. Existimántes autem illum esse in comitátu, venérunt iter diéi, et requirébant eum inter cognátos et notos. Et non inveniéntes, regréssi sunt in Jerúsalem, requiréntes eum. Et factum est, post tríduum invenérunt illum in templo sedéntem in médio doctórum, audiéntem illos et interrogántem eos. Stupébant autem omnes, qui eum audiébant, super prudéntia et respónsis ejus. Et vidéntes admiráti sunt. Et dixit Mater ejus ad illum: Fili, quid fecísti nobis sic? Ecce, pater tuus et ego doléntes quærebámus te. Et ait ad illos: Quid est, quod me quærebátis? Nesciebátis, quia in his, quæ Patris mei sunt, opórtet me esse? Et ipsi non intellexérunt verbum, quod locútus est ad eos. Et descéndit cum eis, et venit Názareth: et erat súbditus illis. Et Mater ejus conservábat ómnia verba hæc in corde suo. Et Jesus proficiébat sapiéntia et ætáte et grátia apud Deum et hómines.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Ambrose, Bishop of Milan, Commentary on Luke, Book 2
+      text: |-
+        A duodécimo anno, ut légimus, Domínicæ súmitur disputatiónis exórdium. Hic enim prædicándæ fídei evangelizántium númerus debebátur. Nec otióse ímmemor suórum secúndum carnem paréntum, qui secúndum carnem útique sapiéntia Dei implebátur et grátia, post tríduum reperítur in templo: ut esset indício, quia post tríduum triumphális illíus passiónis, in sede cælésti, et honóre divíno, fídei nostræ se suscitátus offérret, qui mórtuus credebátur.
+
+        Quid est quod me quærebátis? Duæ sunt in Christo generatiónes: una est patérna, matérna áltera. Patérna illa divínior; matérna vero, quæ in nostrum labórem usúmque descéndit. Et ídeo quæ supra natúram, supra ætátem, supra consuetúdinem fiunt, non humánis assignánda virtútibus, sed divínis referénda sunt potestátibus. Alibi eum ad ministérium mater impéllit, hic mater arguitur, quia adhuc quæ humána sunt, éxigat. Sed cum hic duódecim describátur annórum, illic discípulos habére dicátur; vides matrem didicísse a fílio, ne exígeret a validióre ministérium, quæ stupébat in junióre miráculum.
+
+        Et venit Názareth, et erat súbditus illis. Quid enim magíster virtútis, nisi offícium pietátis impléret? Et mirámur, si Patri defert, qui súbditur matri? Non útique infirmitátis, sed pietátis ista subjéctio est: attóllat licet sævis emíssus látebris cóluber perfídiæ caput, et serpentínis évomat venéna pectóribus. Cum dicit se Fílius missum, majórem hæréticus appéllet Patrem, ut imperféctum Fílium dicat, qui potest habére majórem: ut aliénis auxíliis ásserat eum, qui míttitur, indigére. Numquid et humáno egébat auxílio, ut matérno servíret império?
+      status: verified
+
+# Nocturn 2-3, Second Sunday after Epiphany (temporalId post-epiphany-2).
+# Sourced from Tempora/Epi2-0.txt (Latin) / English/Tempora/Epi2-0.txt.
+# See advent-1.yml/post-epiphany-1.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. John Chrysostom's
+# Preface to the Epistles of St. Paul. Responsory: Lectio4's own
+# (Responsory4, "Notas mihi fecísti, Dómine, vias vitæ").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (John 2:1-11, the marriage at Cana, "Et réliqua") - St.
+# Augustine's own Tractate 9 on John begins within Lectio7 itself, same
+# pattern used throughout this sweep. Combined Lectio7's homily portion
+# (incipit dropped) with Lectio8-9, using Responsory7 ("Ad te, Dómine,
+# levávi ánimam meam") - the source's own [Responsory8] is itself a
+# cross-reference to Trinity Sunday's "Duo Séraphim" (@Tempora/Pent01-0:
+# Responsory8), reused generically as a Nocturn-3 filler responsory rather
+# than being proper to this Sunday, so Responsory7 (the first of the
+# group this combined reading spans) represents it here instead.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings/post-~-2:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. John Chrysostom, Preface to the Epistles of St. Paul
+      text: |-
+        Beáti Pauli Epistolárum lectiónem dum assídue auscúlto, perque hebdómadas síngulas bis sæpe, et ter et quater, quotiescúmque sanctórum Mártyrum memórias celebrámus, gáudio exsúlto, tuba illa spiritáli pérfruens, et éxcitor, ac desidério incalésco, vocem mihi amícam agnóscens, et fere præséntem ipsum intuéri, et disseréntem audíre vídeor. Sed tamen dóleo et moléste fero, quod virum hunc non omnes, sicut par est, cognóscunt: verum ita illum nonnúlli ignórant, ut ne Epistolárum quidem ejus númerum plane sciant. Hoc vero non imperítia facit: sed quod nolint beáti hujus viri scripta in mánibus habére.
+
+        Neque enim nos, quæ scimus, si quid scimus, ab ingénii bonitáte atque acúmine scimus: sed quod erga hunc virum impénse affécti, ab illíus lectióne numquam discédimus: síquidem qui amant, ii plus quam céteri omnes eórum facta norunt, quos amant, ut qui de iis ipsis sint sollíciti. Id quod beátus hic véluti osténdens, ad Philippénses ait: Sicut est mihi justum, ut hoc de vobis ómnibus séntiam, eo quod hábeam vos in corde, et in vínculis meis, et in defensióne et confirmatióne Evangélii.
+
+        Quaprópter si et vos quoque lectióni diligénter atténdere voluéritis, nihil áliud vobis erit requiréndum. Verax est enim Christi sermo dicéntis: Quǽrite, et inveniétis: pulsáte, et aperiétur vobis. Céterum, quandóquidem complúres ex iis, qui huc nobíscum convéniunt, et liberórum educatiónem, et uxóris curam, et famíliæ providéntiam suscepére, ob idque totos sese huic labóri dare non sústinent: at certe ipsi vos excitáte ad ea saltem capiénda, quæ álii collégerint; stúdii tantúmdem iis, quæ dicta fúerint, auscultándis, quantum pecúniis colligéndis impertiéntes. Nam etsi turpe sit, non nisi tantum stúdii a vobis exígere: optábile tamen erit, si tantum saltem tribuátis.
+      responsory: |-
+        R. Notas mihi fecísti, Dómine, vias vitæ: * Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem.
+        V. Tu es qui restítues hereditátem meam mihi.
+        R. Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joann 2:1-11
+      text: 'In illo témpore: Núptiæ factæ sunt in Cana Galilǽæ: et erat Mater Jesu ibi. Vocátus est autem et Jesus, et discípuli ejus ad núptias. Et deficiénte vino, dicit Mater Jesu ad eum: Vinum non habent. Et dicit ei Jesus: Quid mihi et tibi est, mulier? nondum venit hora mea. Dicit Mater ejus minístris: Quodcúmque díxerit vobis, fácite. Erant autem ibi lapídeæ hýdriæ sex pósitæ secúndum purificatiónem Judæórum, capiéntes síngulæ metrétas binas vel ternas. Dicit eis Jesus: Implete hýdrias aqua. Et implevérunt eas usque ad summum. Et dicit eis Jesus: Hauríte nunc, et ferte architriclíno. Et tulérunt. Ut autem gustávit architriclínus aquam vinum fáctam, et non sciébat unde esset, minístri autem sciébant, qui háuserant aquam: vocat sponsum architriclínus, et dicit ei: Omnis homo primum bonum vinum ponit: et cum inebriáti fúerint, tunc id, quod detérius est. Tu autem servásti bonum vinum usque adhuc. Hoc fecit inítium signórum Jesus in Cana Galilǽæ: et manifestávit glóriam suam, et credidérunt in eum discípuli ejus.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Tractate 9 on the Gospel of John
+      text: |-
+        Quod Dóminus invitátus venit ad núptias, étiam excépta mýstica significatióne, confirmáre vóluit, quod ipse fecit núptias. Futúri enim erant, de quibus dixit Apóstolus, prohibéntes núbere, et dicéntes quod malum essent núptiæ, et quod diábolus eas fecísset: cum idem Dóminus dicat in Evangélio interrogátus, utrum líceat hómini dimíttere uxórem suam ex quálibet causa, non licére, excépta causa fornicatiónis. In qua responsióne, si meminístis, hoc ait: Quod Deus conjúnxit, homo non séparet.
+
+        Et qui bene erudíti sunt in fide catholica novérunt, quod Deus fécerit nuptias: et sicut conjúnctio a Deo, ita divortium a diabolo sit. Sed proptérea in causa fornicatiónis licet uxórem dimíttere: quia ipsa esse uxor prior nóluit, quæ fidem conjugalem maríto non servávit. Nec illæ, quæ virginitátem Deo vovent, quamquam ampliórem gradum honoris et sanctitátis in Ecclésia teneant, sine nuptiis sunt: nam et ipsæ pertinent ad nuptias cum tota Ecclésia, in quibus nuptiis sponsus est Christus.
+
+        Ac per hoc ergo Dóminus invitátus venit ad nuptias, ut conjugális cástitas firmarétur, et ostenderétur sacraméntum nuptiárum: quia et illárum nuptiárum sponsus personam Dómini figurábat cui dictum est: Servásti vinum bonum usque adhuc. Bonum enim vinum Christus servávit usque adhuc, id est, Evangélium suum.
+      responsory: |-
+        R. Ad te, Dómine, levávi ánimam meam: * Deus meus, in te confído, non erubéscam.
+        V. Custódi ánimam meam, et éripe me.
+        R. Deus meus, in te confído, non erubéscam.
+      status: verified
+
+# Nocturn 2-3, Third Sunday after Epiphany (temporalId post-epiphany-3).
+# Sourced from Tempora/Epi3-0.txt (Latin) / English/Tempora/Epi3-0.txt.
+# See advent-1.yml/post-epiphany-1.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Augustine's
+# Exposition of the Epistle to the Galatians. Responsory: the source's own
+# [Responsory4] is a cross-reference to Epi2-0's Responsory4 ("Notas mihi
+# fecísti, Dómine, vias vitæ" - already transcribed in
+# post-epiphany-2.yml), reused here directly rather than left unresolved.
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Matt 8:1-13, the cleansing of the leper, "Et réliqua") -
+# St. Jerome's Commentary on Matthew, Book 1, begins within Lectio7
+# itself, same pattern used throughout this sweep. Combined Lectio7's
+# homily portion (incipit dropped) with Lectio8-9, using the source's own
+# [Responsory7] - again a cross-reference, to Epi2-0's Responsory7 ("Ad te,
+# Dómine, levávi ánimam meam" - already transcribed in
+# post-epiphany-2.yml).
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings/post-~-3:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Exposition of the Epistle to the Galatians
+      text: |-
+        Causa, propter quam scribit Apóstolus ad Gálatas, hæc est: ut intélligant grátiam Dei id secum ágere, ut sub lege jam non sint. Cum enim prædicáta eis esset Evangélii grátia, non defuérunt quidam ex circumcisióne, quamvis Christiáni nómine, nondum tamen tenéntes ipsum gratiæ benefícium, et adhuc voléntes esse sub onéribus legis, quæ Dóminus Deus imposúerat non justítiæ serviéntibus, sed peccáto, justam scílicet legem injústis homínibus dando ad demonstranda peccáta eórum, non auferenda. Non enim aufert peccáta, nisi grátia fidei, quæ per dilectiónem operátur.
+
+        Sub hac ergo grátia jam Gálatas constitútos illi volébant constitúere sub onéribus legis, asseverántes nihil eis prodésse Evangélium, nisi circumcideréntur, et céteras carnáles Judáici ritus observatiónes subírent. Et ídeo Paulum Apóstolum suspéctum habére cœ́perant, a quo illis Evangélium prædicátum erat, tamquam non tenéntem disciplínam ceterórum Apostolórum, qui gentes cogébant judaizáre.
+
+        Talis quidem quǽstio est et in Epístola ad Romános: verúmtamen vidétur áliquid interésse, quod ibi contentiónem ipsam dírimit, litémque compónit, quæ inter eos, qui ex Judǽis, et eos, qui ex Géntibus credíderant, orta erat: cum illi tamquam ex méritis óperum legis, sibi rédditum Evangélii prǽmium arbitraréntur, quod prǽmium incircumcísis tamquam imméritis nolébant dari: illi contra Judǽis se præférre gestírent, tamquam interfectóribus Dómini. In hac vero epístola ad eos scribit, qui jam commóti erant auctoritáte illórum, qui ex Judǽis erant, et ad observatiónes legis cogébant.
+      responsory: |-
+        R. Notas mihi fecísti, Dómine, vias vitæ: * Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem.
+        V. Tu es qui restítues hereditátem meam mihi.
+        R. Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 8:1-13
+      text: 'In illo témpore: Cum descendísset Jesus de monte, secútæ sunt eum turbæ multæ: et ecce, leprósus véniens adorábat eum, dicens: Dómine, si vis, potes me mundáre. Et exténdens Jesus manum, tétigit eum, dicens: Volo. Mundáre. Et conféstim mundáta est lepra ejus. Et ait illi Jesus: Vide, némini díxeris: sed vade, osténde te sacerdóti, et offer munus, quod præcépit Móyses, in testimónium illis. Cum autem introísset Caphárnaum, accéssit ad eum centúrio, rogans eum et dicens: Dómine, puer meus jacet in domo paralýticus, et male torquetur. Et ait illi Jesus: Ego véniam, et curábo eum. Et respóndens centúrio, ait: Dómine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanábitur puer meus. Nam et ego homo sum sub potestáte constitútus, habens sub me mílites, et dico huic: Vade, et vadit; et alii: Veni, et venit; et servo meo: Fac hoc, et facit. Audiens autem Jesus, mirátus est, et sequéntibus se dixit: Amen, dico vobis, non inveni tantam fidem in Israël. Dico autem vobis, quod multi ab Oriénte et Occidénte vénient, et recúmbent cum Abraham et Isaac et Jacob in regno cœlórum: fílii autem regni ejiciéntur in ténebras exterióres: ibi erit fletus et stridor déntium. Et dixit Jesus centurióni: Vade et, sicut credidísti, fiat tibi. Et sanátus est puer in illa hora.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Commentary on Matthew, Book 1
+      text: |-
+        De monte Dómino descendénte, occúrrunt turbæ, quia ad altióra ascéndere non valuérunt. Et primus ei occúrrit leprósus: necdum enim póterat cum lepra tam multíplicem in monte Salvatóris audíre sermónem. Et notándum, quod hic primus speciáliter curátus sit: secúndo, puer centuriónis: tértio, socrus Petri fébriens in Caphárnaum: quarto loco, qui obláti sunt ei a dæmónio vexáti: quorum spíritus verbo eiciébat, quando et omnes male habéntes curávit.
+
+        Et ecce leprósus véniens adorábat eum, dicens. Recte post prædicatiónem atque doctrínam, signi offértur occásio, ut per virtútem miráculi, prætéritus apud audiéntes sermo firmétur. Dómine, si vis, potes me mundáre. Qui voluntátem rogat, de virtúte non dúbitat. Et exténdens Jesus manum tétigit eum, dicens: Volo, mundáre. Extendénte manum Dómino, statim lepra fugit. Simúlque consídera, quam húmilis, et sine jactántia respónsio. Ille díxerat, Si vis: Dóminus respóndit, Volo. Ille præmíserat, Potes me mundáre: Dóminus jungit, et dicit, Mundáre. Non ergo, ut pleríque Latinórum putant, jungéndum est, et legéndum, Volo mundáre: sed separátim, ut primum dicat, Volo; deínde ímperet, Mundáre.
+
+        Et ait illi Jesus: Vide, némini díxeris. Et revéra quid erat necésse ut sermóne jactáret, quod córpore præferébat? Sed vade, osténde te sacerdóti. Várias ob causas mittit eum ad sacerdótem: primum propter humilitátem, ut sacerdótibus deférre honórem videátur. Erat enim lege præcéptum, ut, qui mundáti fúerant a lepra, offérrent múnera sacerdótibus. Deínde, ut mundátum vidéntes leprósum, aut créderent Salvatóri, aut non créderent: si créderent, salvaréntur; si non créderent, inexcusábiles forent. Et simul, ne, quod in eo sæpíssime criminabántur, legem viderétur infríngere.
+      responsory: |-
+        R. Ad te, Dómine, levávi ánimam meam: * Deus meus, in te confído, non erubéscam.
+        V. Custódi ánimam meam, et éripe me.
+        R. Deus meus, in te confído, non erubéscam.
+      status: verified
+
+# Nocturn 2-3, Fourth Sunday after Epiphany (temporalId post-epiphany-4).
+# Sourced from Tempora/Epi4-0.txt (Latin) / English/Tempora/Epi4-0.txt.
+# See advent-1.yml/post-epiphany-1.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from Pope St. Gregory the
+# Great's Moralia in Job, Book 4. Responsory: the source's own
+# [Responsory4] is a cross-reference to Epi2-0's Responsory4 ("Notas mihi
+# fecísti, Dómine, vias vitæ"), reused here directly (same pattern as
+# post-epiphany-3.yml).
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Matt 8:23-27, the calming of the storm, "Et réliqua") -
+# St. Jerome's Commentary on Matthew, Book 1, begins within Lectio7
+# itself, same pattern used throughout this sweep. Combined Lectio7's
+# homily portion (incipit dropped) with Lectio8-9, using the source's own
+# [Responsory7] - again a cross-reference, to Epi2-0's Responsory7 ("Ad te,
+# Dómine, levávi ánimam meam").
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings/post-~-4:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: Pope St. Gregory the Great, Moralia in Job, Book 4
+      text: |-
+        Replémus refectiónibus corpus, ne extenuátum defíciat; extenuámus abstinéntia, ne nos replétum premat: vegetámus hoc mótibus, ne situ immobilitátis intéreat; sed cítius hoc collocándo sístimus, ne ipsa sua vegetatióne succúmbat: adjuméntis hoc véstium tégimus, ne frigus intérimat; et quæsíta adjuménta projícimus, ne calor exúrat. Tot ígitur diversitátibus occurréntes, quid ágimus, nisi corruptibilitáti sérvimus, ut saltem multiplícitas impénsi obséquii corpus sustíneat, quod anxíetas infírmæ mutabilitátis gravat?
+
+        Unde bene per Paulum dícitur: Vanitáti enim subjécta est creatúra non volens, sed propter eum qui subjécit eam in spe: quia et ipsa creatúra liberábitur a servitúte corruptiónis, in libertátem glóriæ filiórum Dei. Vanitáti quippe creatúra non volens súbditur: quia homo, qui ingénitæ constántiæ statum volens deséruit, pressus justæ mortalitátis póndere, nolens mutabilitátis suæ corruptióni servit. Sed creatúra hæc tunc a servitúte corruptiónis erípitur, cum ad filiórum Dei glóriam incorrúpta resurgéndo sublevátur.
+
+        Hic ítaque elécti moléstia vincti sunt, quia adhuc corruptiónis suæ pœna deprimúntur: sed cum corruptíbili carne exúimur, quasi ab his, quibus nunc astríngimur, moléstiæ vínculis relaxámur. Præsentári namque jam Deo cúpimus, sed adhuc mortális córporis obligatióne præpedímur. Jure ergo vincti dícimur, quia adhuc incéssum nostri desidérii ad Deum líberum non habémus. Unde bene Paulus, ætérna desíderans, sed tamen adhuc corruptiónis suæ sárcinam portans, vinctus clamat: Cúpio dissólvi, et esse cum Christo. Dissólvi enim non quǽreret, nisi se proculdúbio vinctum vidéret.
+      responsory: |-
+        R. Notas mihi fecísti, Dómine, vias vitæ: * Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem.
+        V. Tu es qui restítues hereditátem meam mihi.
+        R. Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 8:23-27
+      text: 'In illo témpore: Ascendénte Jesu in navículam, secúti sunt eum discípuli ejus: et ecce, motus magnus factus est in mari, ita ut navícula operirétur flúctibus, ipse vero dormiébat. Et accessérunt ad eum discípuli ejus, et suscitavérunt eum, dicéntes: Dómine, salva nos, perímus. Et dicit eis Jesus: Quid tímidi estis, módicæ fídei? Tunc surgens, imperávit ventis et mari, et facta est tranquíllitas magna. Porro hómines miráti sunt, dicéntes: Qualis est hic, quia venti et mare obœ́diunt ei?'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Commentary on Matthew, Book 1
+      text: |-
+        Quintum signum fecit, quando ascéndens navem de Caphárnaum, ventis imperávit et mari. Sextum, quando in regióne Gerasenórum dedit potestátem dæmónibus in porcos. Séptimum, quando ingrédiens civitátem suam, paralýticum secúndum curávit in léctulo. Primus enim paralýticus est puer centuriónis.
+
+        Ipse vero dormiébat: et accessérunt ad eum, et suscitavérunt eum, dicéntes: Dómine, salva nos. Hujus signi typum in Jona légimus, quando céteris periclitántibus, ipse secúrus est, et dormit, et suscitátur; et império ac sacraménto passiónis suæ líberat suscitántes. Tunc surgens imperávit ventis et mari. Ex hoc loco intellígimus, quod omnes creatúræ séntiant Creatórem. Quas enim increpávit, et quibus imperávit, sentiunt imperántem: non erróre hæreticórum qui ómnia putant animántia, sed majestáte Conditóris, quæ apud nos insensibília, illi sensibília sunt.
+
+        Porro hómines miráti sunt, dicéntes: Qualis est hic, quia venti et mare obédiunt ei? Non discípuli, sed nautæ, et céteri, qui in navi erant, mirabántur. Sin autem quis contentióse volúerit, eos, qui mirabántur, fuísse discípulos: respondébimus, recte hómines appellátos, qui necdum nóverant poténtiam Salvatóris.
+      responsory: |-
+        R. Ad te, Dómine, levávi ánimam meam: * Deus meus, in te confído, non erubéscam.
+        V. Custódi ánimam meam, et éripe me.
+        R. Deus meus, in te confído, non erubéscam.
+      status: verified
+
+# Nocturn 2-3, Fifth Sunday after Epiphany (temporalId post-epiphany-5).
+# Sourced from Tempora/Epi5-0.txt (Latin) / English/Tempora/Epi5-0.txt.
+# See advent-1.yml/post-epiphany-1.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Augustine's
+# Sermon 8 on the Words of the Apostle. Responsory: the source's own
+# [Responsory4] is a cross-reference to Epi2-0's Responsory4 ("Notas mihi
+# fecísti, Dómine, vias vitæ"), reused here directly (same pattern as the
+# earlier post-Epiphany Sundays).
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Matt 13:24-30, the parable of the wheat and the tares,
+# "Et réliqua") - St. Augustine's own Questions on the Gospels (on Matthew
+# 11) begins within Lectio7 itself, same pattern used throughout this
+# sweep. Combined Lectio7's homily portion (incipit dropped) with
+# Lectio8-9, using the source's own [Responsory7] - again a
+# cross-reference, to Epi2-0's Responsory7 ("Ad te, Dómine, levávi ánimam
+# meam").
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings/post-~-5:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Sermon 8 on the Words of the Apostle
+      text: |-
+        Humánus sermo, et omni acceptióne dignus, quia Christus Jesus venit in hunc mundum peccatóres salvos fácere. Atténde Evangélium: Venit enim Fílius hóminis quærére, et salváre, quod períerat. Si homo non periísset, Fílius hóminis non venísset. Ergo períerat homo: venit Deus homo, et invéntus est homo. Períerat homo per líberam voluntátem: venit Deus homo per grátiam liberatrícem.
+
+        Quæris, quid váleat ad malum líberum arbítrium? Recóle hóminem peccántem. Quæris, quid váleat ad auxílium Deus et homo? Atténde in eo grátiam liberántem. Nusquam pótuit sic osténdi, quantum váleat volúntas hóminis usurpáta per supérbiam, ad uténdum sine adjutório Dei: malum non pótuit plus, et maniféstius éxprimi, quam in hómine primo. Ecce perit primus homo, et ubi esset, nisi venísset secúndus homo? quia et ille homo, ídeo et iste homo; et ídeo humánus sermo.
+
+        Prorsus nusquam sic appáret benígnitas grátiæ, et liberálitas omnipoténtiæ Dei, quam in hómine mediatóre Dei et hóminum, hómine Christo Jesu. Quid enim dícimus, fratres mei? In fide cathólica nutrítis loquor, vel in pacem cathólicam lucrátis. Nóvimus et tenémus, mediatórem Dei et hóminum, hóminem Christum Jesum, in quantum homo erat, ejus esse natúræ, cujus et nos sumus. Non enim altérius natúræ caro nostra, et caro illíus: nec altérius natúræ ánima nostra, et ánima illíus. Hanc suscépit natúram, quam salvándam esse judicávit.
+      responsory: |-
+        R. Notas mihi fecísti, Dómine, vias vitæ: * Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem.
+        V. Tu es qui restítues hereditátem meam mihi.
+        R. Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 13:24-30
+      text: 'In illo témpore: Dixit Jesus turbis parábolam hanc: Símile factum est regnum cœlórum hómini, qui seminávit bonum semen in agro suo. Cum autem dormírent hómines, venit inimícus ejus, et superseminávit zizánia in médio trítici, et ábiit. Cum autem crevísset herba et fructum fecísset, tunc apparuérunt et zizánia. Accedéntes autem servi patrisfamílias, dixérunt ei: Dómine, nonne bonum semen seminásti in agro tuo? Unde ergo habet zizánia? Et ait illis: Inimícus homo hoc fecit. Servi autem dixérunt ei: Vis, imus, et collígimus ea? Et ait: Non: ne forte colligéntes zizánia eradicétis simul cum eis et tríticum. Sínite utráque créscere usque ad messem, et in témpore messis dicam messóribus: Collígite primum zizánia, et alligáte ea in fascículos ad comburéndum, tríticum autem congregáte in hórreum meum.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Questions on the Gospels (on Matthew 11)
+      text: |-
+        Cum negligéntius ágerent præpósiti Ecclésiæ, aut cum dormitiónem mortis accíperent Apóstoli, venit diábolus, et superseminávit eos, quos malos fílios Dóminus interpretátur. Sed quǽritur: utrum hærétici sint, an male vivéntes cathólici? Possunt enim dici fílii mali étiam hærétici, quia ex eódem Evangélii sémine, et Christi nómine procreáti, pravis opiniónibus ad falsa dógmata convertúntur.
+
+        Sed quod dicit eos in médio trítici seminátos, quasi vidéntur illi significári, qui uníus communiónis sunt. Verúmtamen quóniam Dóminus agrum ipsum, non Ecclésiam, sed hunc mundum interpretátus est: bene intelligúntur hærétici, quia non societáte uníus Ecclésiæ, vel uníus fídei, sed societáte solíus nóminis christiáni in hoc mundo permiscéntur bonis. At illi, qui in eádem fide mali sunt, pálea pótius quam zizánia reputántur: quia pálea étiam fundaméntum ipsum habet cum fruménto, radicémque commúnem.
+
+        In illa plane sagéna, qua concludúntur et mali et boni pisces, non absúrde mali cathólici intelligúntur. Aliud est enim mare, quod magis mundum istum signíficat: áliud sagéna, quæ uníus fídei, vel uníus Ecclésiæ communiónem vidétur osténdere. Inter hæréticos et malos cathólicos hoc ínterest, quod hærétici falsa credunt: illi autem, vera credéntes, non vivunt ita ut credunt.
+      responsory: |-
+        R. Ad te, Dómine, levávi ánimam meam: * Deus meus, in te confído, non erubéscam.
+        V. Custódi ánimam meam, et éripe me.
+        R. Deus meus, in te confído, non erubéscam.
+      status: verified
+
+# Nocturn 2-3, Sixth Sunday after Epiphany (temporalId post-epiphany-6).
+# Sourced from Tempora/Epi6-0.txt (Latin) / English/Tempora/Epi6-0.txt.
+# See advent-1.yml/post-epiphany-1.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Athanasius'
+# 2nd Oration against the Arians. Responsory: the source's own
+# [Responsory4] is a cross-reference to Epi2-0's Responsory4 ("Notas mihi
+# fecísti, Dómine, vias vitæ"), reused here directly (same pattern as the
+# earlier post-Epiphany Sundays).
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Matt 13:31-32, the parable of the mustard seed, "Et
+# réliqua") - St. Jerome's Commentary on Matthew, Book 2, begins within
+# Lectio7 itself, same pattern used throughout this sweep. Combined
+# Lectio7's homily portion (incipit dropped) with Lectio8-9, using the
+# source's own [Responsory7] - again a cross-reference, to Epi2-0's
+# Responsory7 ("Ad te, Dómine, levávi ánimam meam").
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings/post-~-6:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Athanasius, Bishop of Alexandria, 2nd Oration against the Arians
+      text: |-
+        Si persónam, rem, tempus apostólici dicti cognóscerent hærétici, numquam humána in Deitátem transferéntes, tam ímpie et stulte advérsus Christum sese habuíssent. Id intuéri licébit, si inítium lectiónis dénuo repetítum probe excípias. Dicit enim Apóstolus: Multifáriam, multísque modis olim Deus locútus est pátribus nostris per Prophétas: últimis autem diébus locútus est nobis in Fílio. Atque ita paulo post dicit: Perfécta ab eo nostrórum peccatórum purificatióne, ipsum sedére ad déxteram majestátis in excélsis, tanto meliórem Angelis factum, quanto præstántius nomen præ illis sortítus est. De eo ígitur témpore, quo nobis per Fílium locútus est, cum peccatórum purgátio fíeret, apostólicum dictum mentiónem facit. Quando autem nobis locútus est in Fílio, aut quando purgátio peccatórum facta, aut quando natus est homo, nisi post Prophétas, idque in últimis diébus?
+
+        Deínde cum narrátio institúta esset de humána Verbi dispensatióne, deque últimis tempóribus: consequénter commemorávit, Deum neque superióribus ætátibus tacuísse, sed locútum esse per Prophétas: et postquam Prophétæ suo offício perfúncti sunt, et lex per Angelos pronuntiáta est, et Fílius étiam ad nos descéndit, et ad ministrándum accéssit; tunc demum necessário subíntulit: Tanto mélior Angelis factus: osténdere volens, quanto Fílius præ servo excéllit, tanto functióne officióque servórum, Fílii administratiónem meliórem fuísse.
+
+        Functiónem ígitur discérnens Apóstolus, tum véterem, tum novam, magna dicéndi libertáte útitur, ad Judǽos scribens et loquens. Propter hoc ígitur non in univérsum ex própria comparatiónis ratióne dixit, quod major aut honorátior esset: ne quis quasi de ejúsdem géneris, et cum eo commúnibus rebus hæc verba intellígeret: sed ídeo meliórem illum dixit, ut discrímen natúræ Fílii ad res creátas indicáret.
+      responsory: |-
+        R. Notas mihi fecísti, Dómine, vias vitæ: * Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem.
+        V. Tu es qui restítues hereditátem meam mihi.
+        R. Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 13:31-35
+      text: 'In illo témpore: Dixit Jesus turbis parábolam hanc: Símile est regnum cœlórum grano sinápis, quod accípiens homo seminávit in agro suo: quod mínimum quidem est ómnibus semínibus: cum autem créverit, majus est ómnibus oléribus, ¶ et fit arbor, ita ut vólucres cœli véniant et hábitent in ramis ejus. Aliam parábolam locútus est eis: Símile est regnum cœlórum ferménto, quod accéptum múlier abscóndit in farínæ satis tribus, donec fermentátum est totum. Hæc ómnia locútus est Jesus in parábolis ad turbas: et sine parábolis non loquebátur eis: ut implerétur quod dictum erat per Prophétam dicéntem: Apériam in parábolis os meum, eructábo abscóndita a constitutióne mundi.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Jerome, Commentary on Matthew, Book 2
+      text: |-
+        Regnum cælórum prædicátio Evangélii est, et notítia Scripturárum, quæ ducit ad vitam, et de qua dícitur ad Judǽos: Auferétur a vobis regnum Dei, et dábitur genti faciénti fructus ejus. Símile est ergo hujuscémodi regnum grano sinápis, quod accípiens homo seminávit in agro suo. Homo qui séminat in agro suo, a plerísque Salvátor intellégitur, quod in ánimis credéntium séminet: ab áliis ipse homo séminans in agro suo, hoc est in semetípso, et in corde suo.
+
+        Quis est iste, qui séminat, nisi sensus noster et ánimus; qui suscípiens granum prædicatiónis, et fovens seméntem, humóre fídei facit in agro sui péctoris pulluláre? Prædicátio Evangélii mínima est ómnibus disciplínis. Ad primam quippe doctrínam, fidem non habet veritátis, hóminem Deum, Christum mórtuum, et scándalum crucis prǽdicans. Confer hujuscémodi doctrínam dogmátibus philosophórum, et libris eórum, et splendóri eloquéntiæ, et compositióni sermónum: et vidébis quanto minor sit céteris semínibus seméntis Evangélii.
+
+        Sed illa cum créverint, nihil mordax, nihil vívidum, nihil vitále demónstrant: sed totum fláccidum marcidúmque et mollítum ebúllit in ólera et in herbas, quæ cito aréscunt et córruunt. Hæc autem prædicátio, quæ parva videbátur in princípio, cum vel in ánima credéntis, vel in tot mundo sata fúerit, non exsúrgit in ólera, sed crescit in árborem: ita ut vólucres cæli (quas vel ánimas credéntium, vel fortitúdines, Dei servítio mancipátas, sentíre debémus) véniant et hábitent in ramis ejus. Ramos puto evangélicæ árboris, quæ de grano sinápis créverit, dógmatum esse diversitátes, in quibus supradictárum vólucrum unaquǽque requiéscit.
+      responsory: |-
+        R. Ad te, Dómine, levávi ánimam meam: * Deus meus, in te confído, non erubéscam.
+        V. Custódi ánimam meam, et éripe me.
+        R. Deus meus, in te confído, non erubéscam.
+      status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/Sancti/01-07.txt): the Epiphany octave's counted day 2 (Sundays not counted -- see OctaveConfig.skipsSunday). Lectio4-6 plus the Lectio7-9 continuation, bare Gospel incipit dropped, collapsed into one reading as every octave reading here is.
+octave-readings/~-octave-day-2:
+  source: Sermo sancti Augustíni Epíscopi; Homilía sancti Gregórii Papæ
+  text: |
+    Ad partum Vírginis adorándum Magi ab Oriénte venérunt. Hunc diem hódie celebrámus: huic debitum solemnitáti sermónem persolvimus. Illis dies iste primus illuxit, anniversaria nobis festivitate rediit. Illi erant primítiæ Géntium, nos pópulus Géntium. Nobis hoc lingua nuntiávit Apostolórum, stella illis tamquam lingua cælórum; et nobis iídem Apóstoli, tamquam alii cæli, enarravérunt glóriam Dei.
+
+    Magnum sacraméntum: in præsepi jacebat, et Magos ab Oriénte ducebat. Abscondebátur in stábulo, et agnoscebátur in cælo: ut ágnitus in cælo manifestarétur in stábulo, et appellarétur Epiphanía dies iste, quod Latine manifestátio dici potest: simul ejus celsitúdinem humilitatémque commendans, ut qui in aperto cælo signis sidéreis monstrabátur magnus, in angusto diversorio quæsítus invenirétur inválidus, infantílibus in membris natus, infantilibúsque pannis involutus, adorarétur a Magis, timerétur a malis.
+
+    Tímuit enim eum rex Herodes, eisdem sibi Magis nuntiántibus, cum adhuc quærerent párvulum, quem cognóverant cælo teste jam natum. Quid erit tribúnal judicántis, quando supérbos reges cunábula terrébant infantis? Quanto consultius reges, non sicut Heródes interfícere quærant, sed sicut Magi potius adorare delecténtur; jam præsertim eum, qui et ipsam mortem, quam cupiebat inimícus inférre, étiam pro ipsis inimícis ab inimícis sustinuit, eamque in suo corpore occisus occídit. Pie timeant reges ad Patris déxteram jam sedéntem, quem rex ímpius tímuit adhuc matris úbera lambéntem.
+
+    Nativitáte Regis nostri cógnita, Heródes ad callida arguménta convértitur; et ne terreno regno privarétur, renuntiari sibi ubi puer inveniátur, postulat. Adorare eum velle se símulat, ut hunc, si inveníri possit, exstinguat. Sed quanta est humana malítia contra consílium divinitátis? Scriptum quippe est: Non est sapiéntia, non est prudéntia, non est consílium contra Dóminum. Nam ea, quæ appáruit stella, Magos perducit: natum Regem reperiunt, múnera déferunt: et ne redire ad Heródem debeant, in somnis admonéntur. Sicque fit, ut Jesum, quem quærit Heródes, inveníre non possit. Cujus persona qui alii, quam hypócritæ designántur, qui dum ficte quærunt, inveníre Dóminum numquam merentur?
+
+    Sed inter hæc sciéndum, quod Priscilliánistæ hæretici nasci unumquemque hóminem sub constitutiónibus stellárum putant: et hoc in adjutórium sui erroris assumunt, quod nova stella éxiit cum Dóminus in carne appáruit; cujus fuísse fatum eamdem, quæ appáruit, stellam putant. Sed si Evangélii verba pensamus, quibus de eádem stella dícitur: Usque dum veniens staret supra, ubi erat puer: dum non puer ad stellam, sed stella ad púerum cucúrrit, si dici liceat, non stella fatum púeri, sed fatum stellæ is, qui appáruit puer fuit.
+
+    Sed a fidelium córdibus absit, ut aliquid esse fatum dicant. Vitam quippe hóminum solus hic Cónditor, qui creávit, adminístrat. Neque enim propter stellas homo, sed stellæ propter hóminem factæ sunt: et si stella fatum hóminis dícitur, ipsis suis ministériis subesse homo perhibétur. Certe cum Jacob de útero egrédiens, prioris fratris plantam tenéret manu, prior perfecte nequáquam égredi pótuit, nisi súbsequens inchoasset: et tamen cum uno témpore, eodémque momento utrumque mater fúderit, non una utriusque vitæ qualitas fuit.
+  responsory: |
+    R. Tria sunt múnera pretiósa, quæ obtulérunt Magi Dómino in die ista, et habent in se divína mystéria: * In auro, ut ostendátur Regis poténtia: in thure, Sacerdótem magnum consídera: et in myrrha, Domínicam sepultúram. V. Salútis nostræ auctórem Magi veneráti sunt in cunábulis, et de thesáuris suis mýsticas ei múnerum spécies obtulérunt. R. In auro, ut ostendátur Regis poténtia: in thure, Sacerdótem magnum consídera: et in myrrha, Domínicam sepultúram.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/Sancti/01-08.txt): the Epiphany octave's counted day 3 (Sundays not counted -- see OctaveConfig.skipsSunday). Lectio4-6 plus the Lectio7-9 continuation, bare Gospel incipit dropped, collapsed into one reading as every octave reading here is.
+octave-readings/~-octave-day-3:
+  source: Sermo sancti Augustíni Epíscopi; Homilía sancti Gregórii Papæ
+  text: |
+    Cum tam multi jam nati, atque defuncti essent reges Judæórum, numquid quemquam eórum adorándum Magi quæsiérunt? Non, quia nec quemquam eórum cælo loquénte didicérunt. Verúmtamen, quod prætereundum non est, hæc Magórum illuminátio magnum testimónium cæcitátis exstitit Judæórum. In terra eórum isti requirébant, quem illi in sua non agnoscebant.
+
+    Apud eos isti infántem invenérunt, quem illi apud se negavérunt. In his terris de longinquo isti et peregrini púerum Christum nondum verba proméntem adoravérunt, ubi cives illi juvenem miracula faciéntem crucifixérunt. Isti in membris parvis Deum adoravérunt, illi in magnis factis nec tamquam hómini pepercérunt: quasi plus fúerit vidére novam stellam in ejus nativitáte fulgéntem, quam solem ejus in morte lugéntem.
+
+    Jam vero quod éadem stella, quæ Magos perdúxit ad locum, ubi erat cum matre Vírgine Deus infans, quæ útique póterat eos ad ipsam perducere civitátem, se tamen subtraxit, nec eis prorsus appáruit, donec de civitáte, in qua Christus nascerétur, iídem ipsi interrogaréntur Judæi, et ipsi eam secúndum divinæ Scripturæ testimónium nominárent, ipsi dicerent: In Bethlehem Judæ. Sic enim scriptum est: Et tu Bethlehem terra Juda, non es minima in princípibus Juda: ex te enim éxiet Dux, qui regat pópulum meum Israël. Quid aliud hic significávit divina providéntia, nisi apud Judæos solas divinas litteras remansuras, quibus gentes instrueréntur, illi excæcarentur?
+
+    Magi vero aurum, thus et myrrham déferunt. Aurum quippe Regi congruit, thus vero in Dei sacrifícium pónitur, myrrha autem mortuórum córpora condiúntur. Eum ergo Magi, quem adorant, étiam mysticis munéribus prædicant: auro Regem, thure Deum, myrrha mortalem. Sunt vero nonnulli hæretici, qui hunc Deum credunt, sed ubíque regnare nequáquam credunt. Hi profecto ei thus ófferunt, sed offerre étiam aurum nolunt. Et sunt nonnulli, qui hunc Regem existimant, sed Deum negant. Hi videlicet ei aurum ófferunt, sed offerre thus nolunt.
+
+    Et sunt nonnulli, qui hunc et Deum et Regem faténtur, sed assumpsísse carnem mortalem negant. Hi nimirum ei aurum et thus ófferunt, sed offerre myrrham assumptæ mortalitátis nolunt. Nos ítaque nato Dómino offerámus aurum, ut hunc ubíque regnare fateámur: offerámus thus, ut credamus, quod is, qui in témpore appáruit, Deus ante témpora éxstitit: offerámus myrrham, ut eum, quem crédimus in sua divinitate impassibilem, credámus étiam in nostra fuísse carne mortalem.
+
+    Quamvis in auro, thure, et myrrha intelligi et aliud potest. Auro namque sapiéntia designátur, Salomone attestante, qui ait: Thesaurus desiderábilis requiescit in ore sapiéntis. Thure autem, quod Deo incénditur, virtus oratiónis exprímitur, Psalmista testante, qui dicit: Dirigátur orátio mea sicut incensum in conspéctu tuo. Per myrrham vero carnis nostræ mortificátio figurátur. Unde sancta Ecclésia de suis operariis usque ad mortem pro Deo certántibus dicit: Manus meæ distillavérunt myrrham.
+  responsory: |
+    R. Tria sunt múnera pretiósa, quæ obtulérunt Magi Dómino in die ista, et habent in se divína mystéria: * In auro, ut ostendátur Regis poténtia: in thure, Sacerdótem magnum consídera: et in myrrha, Domínicam sepultúram. V. Salútis nostræ auctórem Magi veneráti sunt in cunábulis, et de thesáuris suis mýsticas ei múnerum spécies obtulérunt. R. In auro, ut ostendátur Regis poténtia: in thure, Sacerdótem magnum consídera: et in myrrha, Domínicam sepultúram.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/Sancti/01-09.txt): the Epiphany octave's counted day 4 (Sundays not counted -- see OctaveConfig.skipsSunday). Lectio4-6 plus the Lectio7-9 continuation, bare Gospel incipit dropped, collapsed into one reading as every octave reading here is.
+octave-readings/~-octave-day-4:
+  source: Sermo sancti Leónis Papæ; Homilía sancti Gregórii Papæ
+  text: |
+    Celebrato próximo die, quo intemeráta virginitas humani generis edidit Salvatórem, Epiphaníæ nobis, dilectíssimi, veneranda festívitas dat perseverantiam gaudiórum: ut inter cognatárum solemnitátum vicina sacramenta, exsultatiónis vigor, et fervor fidei non tepescat. Ad ómnium enim hóminum spectat salútem, quod infántia mediatoris Dei et hóminum, jam universo declarabátur mundo, cum adhuc exíguo detinerétur oppídulo.
+
+    Quamvis enim Israëliticam gentem, et ipsíus gentis unam familiam delegísset, de qua natúram univérsæ humanitátis assumeret: nóluit tamen intra maternæ habitatiónis angustias ortus sui latére primordia: sed mox ab ómnibus vóluit agnosci, qui dignátus est pro ómnibus nasci. Tribus ígitur Magis in regióne Oriéntis stella novæ claritátis appáruit, quæ illustrior ceteris pulchriorque sidéribus, fácile in se intuéntium óculos animosque convérteret: ut conféstim adverterétur, non esse otiosum, quod tam insólitum videbátur.
+
+    Dedit ergo aspiciéntibus intelléctum, qui præstitit signum: et quod fecit intelligi, fecit inquiri, et se inveniéndum óbtulit requisítus. Sequúntur tres viri superni lúminis ductum, et prævii fulgoris indícium inténta contemplatióne comitántes, ad agnitiónem veritátis, gratiæ splendore ducúntur: qui humano sensu significátum sibi Regis ortum æstimavérunt in civitáte regia esse quæréndum. Sed qui servi susceperat formam, et non judicáre vénerat, sed judicári, Bethlehem præelégit nativitáti, Jerosolymam passióni.
+
+    Magnum vero nobis aliquid Magi ínnuunt, quod in regiónem suam per aliam viam revertúntur. In eo namque quod admóniti faciunt, nobis profecto insinuant quid faciámus. Regio quippe nostra paradisus est: ad quam, Jesu cógnito, redire per viam, qua vénimus, prohibemur. A regióne étenim nostra superbiéndo, inobediendo, visibília sequéndo, cibum vétitum gustando discessimus: sed ad eam necesse est, ut flendo, obediendo, visibília contemnendo, atque appetítum carnis refrenando redeamus.
+
+    Per aliam ergo viam ad regiónem nostram regrédimur: quóniam qui a paradisi gaudiis per delectaménta discessimus, ad hæc per laménta revocamur. Unde necesse est, fratres caríssimi, ut semper pávidi, semperque suspecti, ponámus ante óculos cordis, hinc culpas operis, illinc judícium extremæ districtiónis. Pensemus, quam districtus judex véniat, qui judícium minátur, et latet: terróres peccatóribus intentat, et tamen adhuc sústinet: et idcirco veníre citius differt, ut minus invéniat quod condemnet.
+
+    Puniámus fletibus culpas, et cum Psalmistæ voce, præveniámus fáciem ejus in confessione. Voluptátum nos ergo fallacia nulla decipiat, nulla vana lætítia seducat. In próximo namque est judex, qui dixit: Væ vobis, qui ridetis nunc; quia lugébitis et flébitis. Hinc enim Sálomon ait: Risus dolori miscébitur: et, Extrema gaudii luctus óccupat. Hinc íterum dicit: Risum deputávi errórem, et gáudio dixi, Quid frustra decíperis? Hinc rursus ait: Cor sapiéntium ubi tristítia est: et cor stultórum ubi lætítia.
+  responsory: |
+    R. Tria sunt múnera pretiósa, quæ obtulérunt Magi Dómino in die ista, et habent in se divína mystéria: * In auro, ut ostendátur Regis poténtia: in thure, Sacerdótem magnum consídera: et in myrrha, Domínicam sepultúram. V. Salútis nostræ auctórem Magi veneráti sunt in cunábulis, et de thesáuris suis mýsticas ei múnerum spécies obtulérunt. R. In auro, ut ostendátur Regis poténtia: in thure, Sacerdótem magnum consídera: et in myrrha, Domínicam sepultúram.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/Sancti/01-10.txt): the Epiphany octave's counted day 5 (Sundays not counted -- see OctaveConfig.skipsSunday). Lectio4-6 plus the Lectio7-9 continuation, bare Gospel incipit dropped, collapsed into one reading as every octave reading here is.
+octave-readings/~-octave-day-5:
+  source: Sermo sancti Máximi Epíscopi; Homilía sancti Hierónymi Presbýteri
+  text: |
+    In hac, dilectíssimi, celebritate, sicut relatu paternæ traditiónis instrúimur, multíplici nobis est festivitate lætándum. Ferunt enim, hódie Christum Dóminum nostrum vel stella duce a Géntibus adorátum: vel invitátum ad nuptias, aquas in vina vertisse; vel suscepto a Joánne baptismate, consecrasse fluénta Jordánis, suumque simul purificasse Baptistam.
+
+    Sed quid potíssimum præsénti hoc factum sit die, nóverit ipse qui fecit: nos tamen crédere, nec dubitare debemus, quidquid illud est, factum esse pro nobis. Nam quod eum fulgentioris stellæ radiis incitáti adoravére Chaldæi, Deum verum Géntibus spes data est adorandi. Quod aquæ novo sunt ordine in vina mutátæ, novi nobis póculi prælibátum est sacraméntum. Quod autem baptizátus est Agnus Dei, regenerántis baptismi salutáre nobis munus est dedicátum.
+
+    Oportet ítaque nos, fratres, ad honórem Salvatoris nostri, cujus nativitátem débita nuper cum exsultatióne transégimus, omni cum devotióne étiam hunc virtútum ejus celebrare natalem. Et quam recte tria hæc nobis uno acta in die mysteria prædicántur, qui ineffábilis Trinitátis arcanum uno Dei sub nómine confitemur! Per hæc ergo miracula Christus Dóminus Redémptor noster óculis se vóluit revelare mortalium, quátenus invisibilis ejus divinitas, quæ latebat in hómine, in opere non latéret.
+
+    Vídimus enim stellam ejus in Oriénte. Ad confusiónem Judæórum, ut nativitátem Christi a Géntibus díscerent, óritur in Oriénte stella; quam futuram, Bálaam, cujus successores erant, vaticinio nóverant. Lege Numerórum librum. Deferúntur autem Magi stellæ indicio in Judǽam, ut sacerdótes a Magis interrogati, ubi Christus nascerétur, inexcusábiles fíerent de adventu ejus.
+
+    At illi dixérunt ei: In Bethlehem Judææ. Librariórum hic error est. Putámus enim ab Evangelista primum éditum, sicut in ipso Hebráico légimus, Judæ, non Judææ. Quæ est enim aliárum géntium Bethlehem, ut ad distinctiónem ejus, hic Judææ ponerétur? Judæ autem idcirco scribitur, quia est et alia Bethlehem in Galilæa. Lege librum Jesu fílii Nave. Dénique et in ipso testimonio, quod de Michææ prophetía sumptum est, ita habétur: Et tu Bethlehem terra Juda.
+
+    Et, apertis thesáuris suis, obtulérunt ei múnera, aurum, thus et myrrham. Pulcherrime munerum sacraménta Juvencus Presbyter uno versículo comprehéndit: Thus, aurum, myrrham, Regíque, hominíque, Deóque dona ferunt. Et responso accepto in somnis, ne redirent ad Herodem, per aliam viam reversi sunt in regiónem suam. Qui múnera obtulerant Dómino, consequenter responsum accipiunt, non per Angelum, sed per ipsum Dóminum: ut meritórum Joseph privilegium demonstrarétur. Revertúntur autem per aliam viam: quia infidelitáti miscéndi non erant Judæórum.
+  responsory: |
+    R. Tria sunt múnera pretiósa, quæ obtulérunt Magi Dómino in die ista, et habent in se divína mystéria: * In auro, ut ostendátur Regis poténtia: in thure, Sacerdótem magnum consídera: et in myrrha, Domínicam sepultúram. V. Salútis nostræ auctórem Magi veneráti sunt in cunábulis, et de thesáuris suis mýsticas ei múnerum spécies obtulérunt. R. In auro, ut ostendátur Regis poténtia: in thure, Sacerdótem magnum consídera: et in myrrha, Domínicam sepultúram.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/Sancti/01-11.txt): the Epiphany octave's counted day 6 (Sundays not counted -- see OctaveConfig.skipsSunday). Lectio4-6 plus the Lectio7-9 continuation, bare Gospel incipit dropped, collapsed into one reading as every octave reading here is.
+octave-readings/~-octave-day-6:
+  source: Sermo sancti Fulgéntii Epíscopi; Homilía sancti Ambrósii Epíscopi
+  text: |
+    Ipse Deus, qui sibi in véteri testaménto primítias offérri mandávit, homo natus Géntium primítias suo cultui dedicávit. Pastóres fuérunt primítiæ Judæórum: Magi facti sunt primítiæ Géntium. Illi de próximo addúcti, isti de longínquo redúcti. Ubi est, ínquiunt, qui natus est Rex Judæórum? De Heróde rege Judæórum fílii jam fúerant nati. Archeláus natus est in palátio, Christus in diversório. Archeláus natus, est in lecto argénteo pósitus, Christus autem natus, in præsépio est brevíssimo collocátus: et tamen ille natus in palátio contémnitur, iste natus in diversório quæritur: ille a Magis nullátenus nominátur, iste invéntus supplíciter adorátur.
+
+    Quis est iste Rex Judæórum? Páuperet dives, húmilis et sublímis. Quis est iste Rex Judæórum, qui portátur ut párvulus, adorátur ut Deus? Parvus in præsépio, imménsus in cælo: vilis in pannis, pretiósus in stellis. Quid est quod sic turbáris, Heródes? Rex iste, qui natus est, non venit reges pugnándo superáre, sed moriéndo mirabíliter subjugáre. Nec ídeo natus est, ut tibi succédat, sed ut in eum mundus fidéliter credat. Venit ergo, non ut pugnet vivus, sed ut triúmphet occísus.
+
+    Puer iste, qui nunc a Magis dícitur Rex Judæórum, idem Creátor est, et Dóminus Angelórum. Quaprópter cujus times infántiam nascéntis, magis timére debes omnipoténtiam judicántis. Noli eum timére regni tui successórem, sed time infidelitátis tuæ justíssimum damnatórem. Ite, inquit, et renuntiáte mihi, ut et ego véniens adórem eum. O callíditas ficta, o incredúlitas ímpia, o nequítia fraudulénta! Sanguis Innocéntium, quem crudéliter effudísti, attestátur quid de hoc púero voluísti.
+
+    Quæ sunt ista veræ fídei múnera? Aurum Regi, thus Deo, myrrha defúncto. Aliud enim Regis insígne, áliud divínæ sacraméntum potestátis, áliud honor est sepultúræ, quæ non corrúmpat corpus mórtui, sed resérvet. Nos quoque, qui hæc audímus et légimus, de thesáuris nostris tália, fratres, múnera proferámus. Habémus enim thesáurum in vasis fictílibus. Si ígitur in teípso quod es, non ex te debes æstimáre, sed ex Christo: quanto magis in Christo non tua debes æstimáre, sed Christi?
+
+    Ergo Magi de thesáuris suis ófferunt múnera. Vultis scire quam bonum méritum hábeant? Stella ab his vidétur: ubi Heródes est, non vidétur; ubi Christus est, rursus vidétur, et viam demónstrat. Ergo stella hæc via est, et via Christus: quia secúndum incarnatiónis mystérium Christus est stella. Oriétur enim stella ex Jacob, et exsúrget homo ex Israël. Dénique ubi Christus, et stella est. Ipse enim est stella spléndida et matutína. Sua ígitur ipse luce se signat.
+
+    Accipe áliud documéntum. Alia venérunt via Magi, ália rédeunt. Qui enim Christum víderant, Christum intelléxerant; melióres útique, quam vénerant, revertúntur. Duæ quippe sunt viæ: una, quæ ducit ad intéritum; alia, quæ ducit ad regnum. Illa peccatórum est, quæ ducit ad Heródem: hæc Christus est, qua redítur ad pátriam. Hic enim temporális est incolátus, sicut scriptum est: Multum íncola facta est ánima mea.
+  responsory: |
+    R. Tria sunt múnera pretiósa, quæ obtulérunt Magi Dómino in die ista, et habent in se divína mystéria: * In auro, ut ostendátur Regis poténtia: in thure, Sacerdótem magnum consídera: et in myrrha, Domínicam sepultúram. V. Salútis nostræ auctórem Magi veneráti sunt in cunábulis, et de thesáuris suis mýsticas ei múnerum spécies obtulérunt. R. In auro, ut ostendátur Regis poténtia: in thure, Sacerdótem magnum consídera: et in myrrha, Domínicam sepultúram.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/Sancti/01-12.txt): the Epiphany octave's counted day 7 (Sundays not counted -- see OctaveConfig.skipsSunday). Lectio4-6 plus the Lectio7-9 continuation, bare Gospel incipit dropped, collapsed into one reading as every octave reading here is.
+octave-readings/~-octave-day-7:
+  source: Sermo sancti Leónis Papæ; Homilía sancti Joánnis Chrysóstomi
+  text: |
+    Justum et rationábile, dilectíssimi, veræ pietátis obséquium est in diébus, qui divínæ misericórdiæ ópera protestántur, toto corde gaudére, et honorífice ea, quæ ad salútem nostram gesta sunt, celebráre, vocánte nos ad hanc devotiónem ipsa recurréntium témporum lege, quæ nobis post diem, in quo coætérnus Patri Fílius Dei natus ex Vírgine est, brevi intervállo Epiphaníæ íntulit festum, ex apparitióne Dómini consecrátum.
+
+    In quo fídei nostræ magnum præsídium providéntia divína constítuit: ut, dum solémni veneratióne recólitur adoráta in exórdiis suis Salvatóris infántia, per ipsa originália documénta probarétur veri hóminis in ipso orta natúra. Hoc enim est quod justíficat ímpios, hoc est quod ex peccatóribus facit sanctos, si in uno eodémque Dómino nostro Jesu Christo et vera Déitas, et vera credátur humánitas: Déitas, qua ante ómnia sæcula in forma Dei æquális est Patri: humánitas, qua novíssimis diébus in forma servi unítus est hómini.
+
+    Ad roborándam ergo hanc fidem, quæ contra omnes præmuniebátur erróres, ex magna gestum est divíni pietáte consílii ut gens in longínqua Orientális plagæ regióne consístens, quæ spectandórum síderum arte pollébat, signum nati púeri, qui supra omnem Israël esset regnatúrus, accíperet. Nova étenim cláritas apud Magos stellæ illustrióris appáruit, et intuéntium ánimos ita admiratióne sui splendóris implévit, ut nequáquam sibi créderent negligéndum, quod tanto nuntiabátur indício.
+
+    Magi, intrántes domum, vidérunt púerum cum María, matre ejus. Et procidéntes adoravérunt eum; et, apértis thesáuris, obtulérunt ei múnera, aurum, thus et myrrham. Verum quid illos ad púerum adorándum indúxit? Neque enim Virgo insígne quídpiam præ se ferébat, neque domus magnífica erat, neque istic áliquid áliud erat quod posset illos vel percéllere vel allícere. Illi vero non modo adórant, sed, apértis thesáuris suis, múnera ófferunt, múnera, inquam, non quasi hómini, sed quasi Deo. Thus enim et myrrha máxime Dei symbolum erat. Quid ígitur hoc illis suásit? Idípsum quod excitávit illos, ut, relícta domo, tantum iter suscíperent: nimírum stella et illustrátio mentis a Deo ipsis índita, quæ paulátim illos ad perfectiórem notítiam dedúxit.
+
+    Nisi enim res ita se habéret, cum ómnia quæ istic videbántur, vília essent, non ei tantum exhibuíssent honórem. Ideo autem nihil eórum, quæ sub sensum cadunt, ibi magnum erat, sed præsépe, tugúrium, mater inops; ut nudam Magórum philosophíam perspícias, atque discas, eos non ut hóminem purum, sed ut Deum, et ipsum benéficum, adivísse. Quaprópter nullo eórum quæ extrínsecus videbántur, offénsi sunt, sed adorárunt; et dona obtulérunt, quæ dona multum a Judáica crassítie differébant. Neque enim oves et vítulos immolárunt, sed quæ ecclesiásticæ philosophíæ vicína erant; síquidem sciéntiam, obediéntiam et dilectiónem ipsi offerébant.
+
+    Et, respónso accépto in somnis, ne redírent ad Heródem, per áliam viam revérsi sunt in regiónem suam. Hic mihi vide fidem ipsórum, quómodo non offendántur, sed sint quiéti et obtemperántes, neque turbéntur, neque tália mútuo loquántur: Sane, si magnus hic puer est, et si quam habet poténtiam, quid opus fuga et occúlto discéssu? cur vero nos, qui palam et cum fidúcia accéssimus ad pópulum tantum, et coram furénte rege stétimus, quasi fugitívos ex civitáte dimíttit Angelus? At nihil tale vel dixérunt vel cogitárunt. Illud enim máxime ad fidem pértinet, ut nulla mandatórum exquirátur rátio, sed jussis tantum obediátur.
+  responsory: |
+    R. Tria sunt múnera pretiósa, quæ obtulérunt Magi Dómino in die ista, et habent in se divína mystéria: * In auro, ut ostendátur Regis poténtia: in thure, Sacerdótem magnum consídera: et in myrrha, Domínicam sepultúram. V. Salútis nostræ auctórem Magi veneráti sunt in cunábulis, et de thesáuris suis mýsticas ei múnerum spécies obtulérunt. R. In auro, ut ostendátur Regis poténtia: in thure, Sacerdótem magnum consídera: et in myrrha, Domínicam sepultúram.
+  status: verified
+
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/Sancti/01-13.txt): the Epiphany octave's counted day 8 (Sundays not counted -- see OctaveConfig.skipsSunday). Lectio4-6 plus the Lectio7-9 continuation, bare Gospel incipit dropped, collapsed into one reading as every octave reading here is.
+octave-readings/~-octave-day-8:
+  source: Sermo sancti Gregórii Nazianzéni; Homilía sancti Augustíni Epíscopi
+  text: |
+    Non possum cohibére lætítiæ voluptátem, sed mente extóllor, et affícior: et própriæ pusillitátis oblítus, offícium magni Joánnis, immo pótius famulátum subíre conténdo, ac géstio: et licet non sim præcúrsor, de erémo tamen vénio. Christus ergo illuminátur, immo pótius fulgóre suo nos illúminat: Christus baptizátur, simul et nos descendámus, ut cum ipso páriter ascendámus.
+
+    Joánnes baptízat, et accédit Jesus, sanctíficans quidem et ipsum, qui baptízat, præcípue tamen ut et véterem Adam sepéliat in aquis, et ante ómnia, ut per hæc sanctificéntur aquæ Jordánis: ut sicut erat spíritus et caro, ita et his, qui baptizándi erant, in spíritu et aqua sanctificatiónis succéssio traderétur. Non súscipit Baptísta, conténdit Jesus. Ego, inquit, opus hábeo a te baptizári. Lucérna dicit ad Solem, et vox lóquitur ad Verbum.
+
+    Ascéndit Jesus de aqua, secum quodámmodo demérsum edúcens et élevans mundum: et vidit non dívidi cælum, sed aperíri, quod sibi ac nobis post se aliquándo Adam ille conclúserat; sicut et ígneo gládio paradísus fúerat conclúsus. Spíritus Sanctus testimónium pérhibet: simília namque sibi ipsa concúrrunt. De cælo testimónium defértur: inde enim erat ille, cui testimónium perhibétur.
+
+    Antequam veníret Dóminus ut baptizarétur a Joánne in Jordáne, nóverat eum illis vócibus, ubi ait: Tu ad me venis baptizári? ego a te débeo baptizári. Sed ecce Dóminum nóverat, nóverat Fílium Dei. Unde probámus quod jam nóverat, quia ipse baptizáret in Spíritu Sancto? Antequam veníret ad flúvium, cum multi ad Joánnem cúrrerent baptizári, ait illis: Ego quidem baptízo vos in aqua: qui autem post me venit, major me est: cujus non sum dignus corrígiam calceaménti sólvere: ipse vos baptizábit in Spíritu Sancto, et igni. Jam et hoc nóverat.
+
+    Quid ergo per colúmbam dídicit, ne mendax póstea inveniátur, (quod avértat a nobis Deus opinári) nisi quamdam proprietátem in Christo talem futúram, ut quamvis multi minístri baptizatúri essent, sive justi, sive injústi, non tribuerétur sánctitas baptísmi nisi illi, super quem descéndit colúmba, de quo dictum est: Hic est qui baptízat in Spíritu Sancto? Petrus baptízet, hic est qui baptízat: Paulus baptízet, hic est qui baptízat: Judas baptízet, hic est qui baptízat. Nam si pro diversitáte meritórum baptísma sanctum est: quia divérsa sunt mérita, divérsa erunt baptísmata: et tanto quisque áliquid mélius putátur accípere, quanto a melióre vidétur accepísse.
+
+    Ipsi sancti, (intellégite, fratres) boni pertinéntes ad colúmbam, pertinéntes ad sortem civitátis illíus Jerúsalem, ipsi boni in Ecclésia, de quibus dicit Apóstolus: Novit Dóminus qui sunt ejus; diversárum gratiárum sunt, non omnes pária mérita habent. Sunt álii áliis sanctióres, sunt álii áliis melióres. Quare ergo si unus ab illo, verbi grátia, justo, sancto baptizétur, álius ab álio inferióris mériti apud Deum, inferióris gradus, inferióris continéntiæ, inferióris vitæ; unum tamen et par et æquále est quod accepérunt, nisi quia hic est, qui baptízat?
+  responsory: |
+    R. Hódie in Jordáne baptizáto Dómino apérti sunt cæli, et sicut colúmba super eum Spíritus mansit, et vox Patris intónuit: * Hic est Fílius meus diléctus, in quo mihi bene complácui. V. Descéndit Spíritus Sanctus corporáli spécie sicut colúmba in ipsum, et vox de cælo facta est. R. Hic est Fílius meus diléctus, in quo mihi bene complácui.
+  status: verified

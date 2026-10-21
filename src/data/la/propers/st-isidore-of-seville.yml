@@ -1,0 +1,45 @@
+# Matins Nocturn 2-3 readings for St. Isidore of Seville, Bishop,
+# Confessor, Doctor of the Church (Apr 4). Sourced directly from
+# web/www/horas/Latin/Sancti/04-04.txt, English/Sancti/04-04.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
+# Nocturn 3: Lectio7's Gospel citation (Matt 5:13-19) was previously a bare
+# incipit ("Et réliqua") with only the homily authored, St. Isidore's own
+# homily (Lectio7's homily + Lectio8-9 combined).
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily). Isidore's own Missale
+# Evangelium (Latin/Sancti/04-04.txt) redirects to the Common of a Doctor
+# (@Commune/C4a); the *horas* track's own C4a.txt gives only a bare
+# incipit, but the *missa* (Mass) track's own Common of a Doctor — found
+# only under obsolete/missa/Latin+English/Commune/C4a.txt in this copy of
+# the reference engine, not the live missa/ tree — carries the full
+# pericope in both languages. Sourced from there verbatim (a first pass
+# had reconstructed this from a raw Vulgate text store plus an ad-hoc
+# English rendering before this obsolete-tree copy was found; replaced).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Isidorus, natione Hispanus, Doctor egregius, ex nova Carthagine Severiano patre provinciæ duce natus, a sanctis episcopis Leandro Hispalensi, et Fulgentio Carthaginiensi fratribus suis pie et liberaliter educatus, Latinis, Græcis, et Hebraicis litteris, divinisque et humanis legibus instructus, omni scientiarum, atque christianarum virtutum genere præstantissimus evasit. Adhuc adolescens hæresim Arianam, quæ gentem Gotharum Hispaniæ latissime dominantem jampridem invaserat, tanta constantia palam oppugnavit, ut parum abfuerit, quin ab hæreticis necaretur. Leandro vita functo ad Hispalensem cathedram invitus quidem, sed urgente in primis Reccaredo rege, magnoque étiam cleri populique consensu assumitur, ejtisque electionem sanctus Gregorius Magnus, nedum auctoritate apostolica confirmasse, sed et electum transmisso de more pallio decorasse, quin étiam suum et apostolicæ Sedis in universa Hispania Vicarium constituisse perhibetur.
+
+        In episcopatu quantum fuerit constans, humilis, patiens, misericors, in christiana et ecclesiastica disciplina instauranda sollicitus, edque verbo et scriptis stabilienda indefessus, atque omni demum virtutum ornamento insignitus, nullius lingua enarrare sufficeret. Monastici quoque instituti per Hispaniam promotor et amplificator eximius plura construxit monasteria, collegia itidem ædificavit, ubi studiis sacris et lectionibus vacans, plurimos discipulos, qui ad eum confluebant, erudivit, quos inter sancti Ildefonsus Toletanus, et Brauho Cæsaraugustanus episcopi emicuerunt. Coacto Hispali concilio, Acephalorum hæresim Hispaniæ jam minitantem, acri et eloquenti disputatidne fregit atque contrivit. Tantam apud omnes sanctitatis et doctrinæ famam adeptus est, ut elapso vix ab ejus obitu sextodecimo anno, universa Toletana synodo duorum supra quinquaginta episcoporum plaudente, ipsoque étiam sancto Ildefonso suffragante, Doctor egregius, catholicæ Ecclesiæ novissimum decus, in sæculorum fine doctissimus, et cum reverentia nominandus appellari meruerit; eumque sanctus Braulio non modo Gregorio Magno comparaverit, sed et erudiendæ Hispaniæ loco Jacobi Apostoli cælitus datum esse censuerit.
+
+        Scripsit Isidorus libros etymologiarum, et de ecclesiasticis officiis, aliosque quam plurimos christianæ, et ecclesiasticæ disciplinæ adeo utiles, ut sanctus Leo Papa quartus ad episcopos Britanniæ scribere non dubitaverit, sicut Hierónymi et Augustíni, ita Isidori dicta retinenda esse, ubi contigerit inusitatum negotium, quod per Canones minime definiri possit. Plures étiam ex ejusdem scriptis sententiæ inter canonicas Ecclesiæ leges relatæ conspiciuntur. Præfuit concilio Toletano quarto, omnium Hispaniæ celeberrimo. Denique cum ab Hispania Arianam hæresim eliminasset, morte sua, et regni vastatione a Saracenorum armis publice prænuntiata, postquam quadraginta circiter annos suam rexisset ecclesiam, Hispali migravit in cælum anno sexcentesimo trigesimo sexto. Ejus corpus inter Leandrum fratrem, et Florentinam sororem, ut ipse mandaverat, primo conditum, Ferdinandus primus Castellæ et Legionis rex, ab Eneto Saraceno Hispali dominante, magno pretio redemptum Legionem transtulit, et in ejus honorem templum ædificatum est, ubi miraculis clarus magna populi devotione colitur.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 5:13-19
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Vos estis sal terræ. Quod si sal evanúerit, in quo saliétur? Ad níhilum valet ultra, nisi ut mittátur foras, et conculcétur ab homínibus. Vos estis lux mundi. Non potest cívitas abscóndi supra montem pósita. Neque accéndunt lucérnam, et ponunt eam sub módio, sed super candelábrum, ut lúceat ómnibus, qui in domo sunt. Sic luceat lux vestra coram homínibus, ut vídeant ópera vestra bona, et gloríficent Patrem vestrum, qui in cœlis est. Nolíte putáre, quóniam veni sólvere legem aut prophétas: non veni sólvere, sed adimplére. Amen, quippe dico vobis, donec tránseat cœlum et terra, jota unum aut unus apex non præteríbit a lege, donec ómnia fiant. Qui ergo sólverit unum de mandátis istis mínimis, et docúerit sic hómines, mínimus vocábitur in regno cœlórum: qui autem fécerit et docúerit, hic magnus vocábitur in regno cœlórum.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Isidore of Seville, On the Ecclesiastical Offices, Book II, ch. 5 (on Matt 5:13-19)
+      text: |-
+        Qui in erudiendis, atque instituendis ad virtutem populis præerit, necesse est, ut in omnibus sanctus sit, et in nullo reprehensibihs habeatur. Qui enim alium de peccatis arguit, ipse a peccato debet esse alienus. Nam qua fronte subjectos arguere poterit, cum illi statim possit correctus ingerere: Ante doce te quæ recta sunt? Primitus quippe semetipsum corrigere debet, qui alios ad bene vivendum admonere studet; ita ut in omnibus semetipsum formam vivendi præbeat, cunctosque ad bonum opus, et doctrina et opere provocet. Cui étiam scientia Scripturarum necessaria est: quia si episcopi tantum sancta sit vita, sibi soli prodest, sic vivens. Porro si et doctrina et sermone fuerit eruditus, potest ceteros quoque instruiere, et docere suos, et adversarios repercutere, qui nisi refutati fuerint atque convicti, facile possunt simplicium corda pervertere.
+
+        Hujus sermo debet esse purus, simplex, apertus, plenus gravitatis et honestatis, plenus suavitatis et gratiæ, tractans de mysterio legis, de doctrina fidei, de virtute continentiæ, de disciplina justitiæ: unumquemque admonens diversa exhortatione, juxta professionem, morumque qualitatem: scilicet ut prænoscat quid, cui, quando, vel quomodo proferat. Cujus præ ceteris speciale officium est, Scripturas legere, percurrere Canones, exempla sanctorum imitari, vigiliis, jejuniis, orationibus incumbere, cum fratribus pacem habere, nec quemquam de membris suis discerpere; nullum damnare, nisi comprobatum, nullum excommunicare nisi discussum. Quique ita humilitate pariter, et auctoritate præesse debet, ut neque per nimiam humilitatem suam subditorum vitia convalescere faciat, neque per immoderantiam severitatis potestatem exerceat, sed tanto cautius erga commissos sibi, quanto durius a Christo indagari formidat.
+
+        Tenebit quoque illam supereminentem donis omnibus caritatem, sine qua omnis virtus nihil est. Custos enim castitatis, caritas; locus autem hujus custodis humilitas. Habebit étiam inter hæc omnia castitatis eminentiam: ita ut mens Christo dedita, ab omni inquinamento carnis sit munda et libera. Inter hæc oportebit cum sollicita dispensatione curam pauperum gerere, esurientes pascere, vestire nudos, suscipere peregrinos, captivos redimere, viduas ac pupillos tueri, pervigilem in cunctis exhibere curam, providentiam habere distributione discreta. In quo étiam hospitalitas ita erit præcipua, ut omnes cum benignitate et caritate suscipiat. Si enim omnes fideles illud Evangelium audire desiderant: Hospes fui, et suscepistis me; quanto magis episcopus, cujus diversorium cunctorum debet esse receptaculum?
+      status: verified

@@ -1,22 +1,19 @@
 import { describe, expect, it } from 'vitest';
+import { properEntries } from '../../src/propers/store';
 
 // Some Common invitatory antiphons are name templates ("beátæ {N}"). Any saint
 // on such a Common needs invitatoryName, or a literal {N} shows the moment its
 // rank reaches the doubled-antiphon tier -- so every saint carries one, not
 // only those currently ranked high enough to need it.
-const invitatories = import.meta.glob<string>('../../src/data/propers/common/matins-invitatory-*.yml', {
-  query: '?raw',
-  import: 'default',
-  eager: true,
-});
+const invitatoryEntries = [...properEntries].filter(([id]) => id.startsWith('matins-invitatory-'));
 const saints = import.meta.glob<{ default: { id: string; common?: string; invitatoryName?: { la: string[]; en: string[] } } }>(
   '../../src/data/calendar/saints/*.yml',
   { eager: true },
 );
 
-const templateCommons = Object.entries(invitatories)
-  .filter(([, raw]) => raw.includes('{N}'))
-  .map(([path]) => path.replace(/^.*matins-invitatory-/, '').replace(/\.yml$/, ''));
+const templateCommons = invitatoryEntries
+  .filter(([, entry]) => Object.values(entry.text).some((t) => t?.includes('{N}')))
+  .map(([id]) => id.replace(/^matins-invitatory-/, ''));
 
 describe('invitatoryName coverage', () => {
   it('finds the name-template Commons', () => {

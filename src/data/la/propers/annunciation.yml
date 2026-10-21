@@ -1,0 +1,277 @@
+# Read directly from web/www/horas/Latin/Sancti/03-25.txt's own [Oratio]
+# and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui de beátæ Maríæ Vírginis útero Verbum tuum, Angelo nuntiánte, carnem suscípere
+    voluísti: præsta supplícibus tuis; ut, qui vere eam Genetrícem Dei crédimus, ejus apud
+    te intercessiónibus adjuvémur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in
+    unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (annunciation-antiphon.yml), paired with the standard BVM commemoration versicle already verified elsewhere in this app (propers/common/lauds-suffrage-bvm.yml -- 'V. Ora pro nobis sancta Dei Genitrix'). Collect is the saint's own real proper (annunciation-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Spíritus Sanctus * in te descéndet, María, et virtus Altíssimi obumbrábit tibi. (Allelúia.)
+    V. Ora pro nobis sancta Dei Génitrix.
+    R. Ut digni efficiámur promissiónibus Christi.
+    Orémus.
+    Deus, qui de beátæ Maríæ Vírginis útero Verbum tuum, Angelo nuntiánte, carnem suscípere
+    voluísti: præsta supplícibus tuis; ut, qui vere eam Genetrícem Dei crédimus, ejus apud
+    te intercessiónibus adjuvémur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in
+    unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/03-25.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: 'Ave, María, grátia plena: * Dóminus tecum. (Allelúia.)'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-03-25 (real fixed date, always winnable). Own proper
+# chapter (Isa 7:14-15, "Ecce virgo concípiet"). Lauds responsory and
+# both hours' hymns turn out byte-identical to Common-of-the-BVM's own
+# already-authored content, but both versicles ("Ave, María, grátia
+# plena") and the Vespers responsory ("Ángelus Dómini") are genuinely
+# her own, distinct from the Common's -- authored explicitly under her
+# own id rather than left to fall through (resolveOfficeBundle resolves
+# a whole bundle per id, not per part). Same chapter reused for Vespers
+# -- no separate vespers-capitulum-<id> file authored, per vespers.ts's
+# lookupPart (Vespers chapter, Lauds sibling) fallback.
+lauds-capitulum:
+  text: Ecce virgo concípiet, et páriet fílium, et vocábitur nomen ejus Emmánuel. Butýrum et mel cómedet, ut sciat reprobáre malum, et elígere bonum.
+  citation: Isa 7:14-15
+  status: verified
+
+# Reused verbatim from Common-of-the-BVM's own Lauds hymn (2026-08-26):
+# live-verified byte-identical on the Annunciation's own real day
+# (2026-03-25). See lauds-capitulum-annunciation.yml's header.
+#
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C11` live query, 2026-08 -- see lauds-capitulum-common-of-the-
+# bvm.yml's header. "O gloriósa Dómina" -- the same pre-Urban VIII hymn
+# text already found for the Annunciation's own proper (a separate,
+# individually-imported saint, not this Common) -- a real, confirmed
+# overlap between the two, not a mix-up.
+lauds-hymn:
+  text: |-
+    O gloriósa Dómina,
+    Excélsa super sídera:
+    Qui te creávit, próvide
+    Lactásti sacro úbere.
+
+    Quod Heva tristis ábstulit,
+    Tu reddis almo gérmine:
+    Intrent ut astra flébiles,
+    Cæli fenéstra facta es.
+
+    Tu Regis alti jánua,
+    Et porta lucis fúlgida:
+    Vitam datam per Vírginem,
+    Gentes redémptæ, pláudite.
+
+    Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-03-25 -- byte-identical to Common-of-the-BVM's own
+# Lauds responsory, reused verbatim. See lauds-capitulum-annunciation.yml's
+# header.
+lauds-responsory:
+  text: |
+    R.br. Ave María, grátia plena, * Dóminus tecum.
+    R. Ave María, grátia plena, * Dóminus tecum.
+    V. Benedícta tu in muliéribus, et benedíctus fructus ventris tui.
+    R. Dóminus tecum.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ave María, grátia plena, * Dóminus tecum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-03-25 -- her own versicle, distinct from Common-of-
+# the-BVM's own ("Diffúsa est grátia"). Same versicle as Vespers -- see
+# vespers-versicle-annunciation.yml.
+lauds-versicle:
+  text: |
+    V. Ave, María, grátia plena.
+    R. Dóminus tecum.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/03-25.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: Egrediétur virga de radíce Jesse, et flos de radíce ejus ascéndet. Et requiéscet super eum Spíritus Dómini.
+  citation: Isa 11:1-2
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C11` live query, 2026-08 -- "Ave maris stella," the classic
+# Common-of-the-BVM Vespers hymn, genuinely distinct from the Lauds hymn
+# (unlike some other categories this session where the two hours shared
+# one hymn text) -- see lauds-capitulum-common-of-the-bvm.yml's header
+# for the fuller gap/sourcing writeup.
+# Reused verbatim from Common-of-the-BVM's own Vespers hymn (2026-08-26):
+# live-verified byte-identical on the Annunciation's own real day
+# (2026-03-25). See lauds-capitulum-annunciation.yml's header.
+vespers-hymn:
+  text: |-
+    Ave maris stella,
+    Dei Mater alma,
+    Atque semper Virgo,
+    Felix cæli porta.
+
+    Sumens illud Ave
+    Gabriélis ore,
+    Funda nos in pace,
+    Mutans Hevæ nomen.
+
+    Solve vincla reis,
+    Profer lumen cæcis,
+    Mala nostra pelle,
+    Bona cuncta posce.
+
+    Monstra te esse matrem,
+    Sumat per te preces,
+    Qui pro nobis natus,
+    Tulit esse tuus.
+
+    Virgo singuláris,
+    Inter omnes mitis,
+    Nos culpis solútos
+    Mites fac et castos.
+
+    Vitam præsta puram,
+    Iter para tutum,
+    Ut vidéntes Jesum,
+    Semper collætémur.
+
+    Sit laus Deo Patri,
+    Summo Christo decus,
+    Spirítui Sancto,
+    Tribus honor unus. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-03-25 -- her own proper responsory ("Ángelus Dómini *
+# Nuntiávit Maríæ," the opening line of the Angelus), distinct from
+# Common-of-the-BVM's own. No English rendering exists in the reference
+# engine for this text -- own translation of this well-known, standard
+# Angelus wording, marked draft. See lauds-capitulum-annunciation.yml's
+# header.
+vespers-responsory:
+  text: |
+    R.br. Ángelus Dómini * Nuntiávit Maríæ.
+    R. Ángelus Dómini * Nuntiávit Maríæ.
+    V. Et concépit de Spíritu Sancto.
+    R. Nuntiávit Maríæ.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ángelus Dómini * Nuntiávit Maríæ.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-03-25 -- same versicle as Lauds (see lauds-versicle-
+# annunciation.yml).
+vespers-versicle:
+  text: |
+    V. Ave, María, grátia plena.
+    R. Dóminus tecum.
+  status: verified
+
+# Lauds' Benedictus antiphon, read from web/www/horas/Latin/Sancti/
+# 03-25.txt's own [Ant 2] and its English counterpart -- corrected
+# 2026-09-14: this file previously held [Ant 1] (this feast's own First
+# Vespers Magnificat antiphon, "Spíritus Sanctus in te descéndet..."),
+# the same Ant1-for-Benedictus mis-tagging bug already found for the
+# Exaltation of the Holy Cross and the Seven Sorrows (TODO.md).
+benedictus-antiphon:
+  text: 'Quómodo fiet istud, * Angele Dei, quóniam virum non cognósco? Audi, María Virgo: Spíritus Sanctus supervéniet in te, et virtus Altíssimi obumbrábit tibi. (Allelúia.)'
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/03-25.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast, not a Common
+# substitution.
+magnificat-antiphon:
+  text: 'Gábriel Angelus * locútus est Maríæ dicens: Ave, grátia plena; Dóminus tecum: benedícta tu in muliéribus. (Allelúia.)'
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 03-25
+# annunciation (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: 'Spíritus Sanctus * in te descéndet, María, et virtus Altíssimi obumbrábit tibi. '
+  status: verified
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-03-25, own day). Same four psalm numbers as
+# her Common (common-of-the-bvm.yml: 109/112/121/126), but her own
+# proper antiphons throughout, not the Common's generic ones -- same
+# "proper antiphons, borrowed psalm numbers" pattern as most feasts with
+# a distinct proper here.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Missus est * Gábriel Angelus ad Maríam Vírginem desponsátam Joseph.
+    - psalms:
+        - 112
+      antiphon: 'Ave, María, * grátia plena; Dóminus tecum: benedícta tu in muliéribus.'
+    - psalms:
+        - 121
+      antiphon: 'Ne tímeas, María, * invenísti grátiam apud Dóminum: ecce concípies et páries fílium.'
+    - psalms:
+        - 126
+      antiphon: 'Ecce ancílla Dómini: * fiat mihi secúndum verbum tuum.'
+
+# Matins Nocturn 2-3 readings for the Annunciation of the Blessed
+# Virgin Mary (Mar 25). Sourced directly from
+# web/www/horas/Latin/Sancti/03-25.txt, English/Sancti/03-25.txt.
+# (Lectio1-3, Isa 11:1-5, left to the bible-plan store as usual.)
+#
+# Nocturn 2: Lectio4-6 combined into one reading, Pope St. Leo the
+# Great's sermon.
+# Nocturn 3: Lectio7's Gospel citation (Luke 1:26-38) is a bare incipit
+# ("Et réliqua"), so only the homily was originally authored (not marked
+# isGospel), St. Ambrose's homily (Lectio7's homily + Lectio8-9 combined).
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — this feast's own
+# [Evangelium] redirects `@Commune/C10a`, which itself redirects
+# `@Tempora/Adv3-3` (Advent Ember Wednesday's Mass Gospel), sourced from
+# missa/Latin/Tempora/Adv3-3.txt, English/Tempora/Adv3-3.txt, not
+# guessed at.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: Pope St. Leo the Great, Sermon 2 on the Nativity
+      text: |-
+        Deus omnípotens et clemens, cujus natúra bónitas, cujus volúntas poténtia, cujus opus misericórdia est, statim ut nos diabólica malígnitas venéno suæ mortificávit invídiæ, prædestináta renovándis mortálibus suæ pietátis remédia, inter ipsa mundi primórdia præsignávit; denúntians serpénti futúrum semen mulíeris, quod nóxii cápitis elatiónem sua virtúte contéreret, Christum scílicet in carne ventúrum; Deum hominémque signans, qui natus ex Vírgine, violatórem humánæ propáginis incorrúpta nativitáte damnáret.
+
+        Nam quia gloriabátur diábolus hóminem sua fraude decéptum divínis caruísse munéribus, et immortalitátis dote nudátum, duram mortis subísse senténtiam, seque in malis suis quoddam de prævaricatóris consórtio invenísse solátium; Deum quoque, justæ severitátis exigénte ratióne, erga hóminem, quem in tanto honóre condíderat, antíquam mutásse senténtiam: opus fuit, dilectíssimi, secréti dispensatióne consílii ut incommutábilis Deus, cujus volúntas non potest sua benignitáte privári, primam pietátis suæ dispositiónem sacraménto occultióre compléret; et homo diabólicæ iniquitátis versútia actus in culpam, contra Dei propósitum non períret.
+
+        Adveniéntibus ergo tempóribus, dilectíssimi, quæ redemptióni hóminum fúerant præstitúta, ingréditur hæc ínfima Jesus Christus, Dóminus noster, de cælésti sede descéndens, et a patérna glória non recédens, novo órdine, nova nativitáte generátus: novo órdine, quia, invisíbilis in suis, visíbilis factus est in nostris; incomprehensíbilis, vóluit comprehéndi; ante témpora manens, esse cœpit ex témpore; universitátis Dóminus servílem formam, obumbráta majestátis suæ dignitáte, suscépit; impassíbilis Deus, non dedignátus est homo esse passíbilis; et immortális, mortis légibus subjacére.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 1:26-38
+      text: 'In illo témpore: Missus est Angelus Gábriel a Deo in civitátem Galilǽæ, cui nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, de domo David, et nomen Vírginis María. Et ingréssus Angelus ad eam, dixit: Ave, grátia plena; Dóminus tecum: benedícta tu in muliéribus. Quæ cum audísset, turbáta est in sermóne ejus: et cogitábat, qualis esset ista salutátio. Et ait Angelus ei: Ne tímeas, María, invenísti enim grátiam apud Deum: ecce, concípies in útero, et páries fílium, et vocábis nomen ejus Jesum. Hic erit magnus, et Fílius Altíssimi vocábitur, et dabit illi Dóminus Deus sedem David, patris ejus: et regnábit in domo Jacob in ætérnum, et regni ejus non erit finis. Dixit autem María ad Angelum: Quómodo fiet istud, quóniam virum non cognósco? Et respóndens Angelus, dixit ei: Spíritus Sanctus supervéniet in te, et virtus Altíssimi obumbrábit tibi. Ideóque et quod nascétur ex te Sanctum, vocábitur Fílius Dei. Et ecce, Elísabeth, cognáta tua, et ipsa concépit fílium in senectúte sua: et hic mensis sextus est illi, quæ vocátur stérilis: quia non erit impossíbile apud Deum omne verbum. Dixit autem María: Ecce ancílla Dómini, fiat mihi secúndum verbum tuum.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Ambrose, Commentary on Luke, Book II (on Luke 1:26-38)
+      text: |-
+        Latent quidem divína mystéria, nec fácile, juxta prophéticum dictum, quisquam hóminum potest scire consílium Dei. Sed tamen ex céteris factis, atque præcéptis Dómini Salvatóris póssumus intellégere, et hoc propensióris fuísse consílii, quod ea potíssimum elécta est, ut Dóminum páreret, quæ erat desponsáta viro. Cur autem non ántequam desponsarétur, impléta est? Fortásse ne dicerétur quod concéperat ex adultério.
+
+        Et ingréssus ad eam Angelus. Disce vírginem móribus, disce vírginem verecúndia, disce oráculo, disce mystério. Trepidáre vírginum est, et ad omnes viri ingréssus pavére, omnes viri affátus veréri. Discant mulíeres propósitum pudóris imitári. Sola in penetrálibus, quam nemo virórum víderit, solus Angelus repérerit: sola sine cómite, sola sine teste, ne quo degénere depravarétur affátu, ab Angelo salutátur.
+
+        Tanti namque mandáti mystérium non hóminis fuit, sed Angeli ore proméndum. Hódie primum audítur: Spíritus Sanctus supervéniet in te. Et audítur, et créditur. Dénique, Ecce, inquit, ancílla Dómini: contíngat mihi secúndum verbum tuum. Vide humilitátem, vide devotiónem. Ancíllam se dicit Dómini, quæ mater elígitur: nec repentíno exaltáta promísso est.
+      status: verified

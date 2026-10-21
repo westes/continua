@@ -1,0 +1,28 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2029-08-18 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Sapiéntia * clámitat in platéis: Si quis díligit sapiéntiam, ad me declínet, et eam invéniet: et, cum invénerit, beátus erit si tenúerit eam.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "4th Sunday of August" (Tempora/084-0.txt) — see
+# month-week-081.yml's header for the id scheme. Responsory reuses 081's
+# own Responsory4 (source's own cross-reference).
+# Checked 2026-09-05: horas/Latin/Tempora/084-0.txt has only Lectio1-6
+# (no Nocturn 3/Gospel slot) — see month-week-081.yml's header. No
+# pairing added.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Gregory the Great, Moralia in Job, Book 1, ch. 10
+      text: |-
+        Sunt nonnúlli qui vitam suam négligunt et, dum transitória áppetunt, dum ætérna vel non intélligunt, vel intellécta contémnunt, nec dolórem séntiunt, nec habére consílium sciunt; cumque supérna quæ amisérunt, non consíderant, esse se (heu míseri) in bonis felíces putant. Nequáquam enim ad veritátis lucem, cui cónditi fúerant, mentis óculos érigunt; nequáquam ad contemplatiónem pátriæ ætérnæ desidérii áciem tendunt; sed semetípsos in his, ad quæ projécti sunt, deseréntes, vice pátriæ díligunt exsílium quod patiúntur, et in cæcitáte quam tólerant, quasi in claritáte lúminis exsúltant.
+
+        At contra, electórum mentes, dum transitória cuncta nulla esse conspíciunt, ad quæ sint cónditæ exquírunt: cumque eórum satisfactióni nihil extra Deum súfficit, ipsa inquisitiónis exercitatióne fatigáta illórum cogitátio, in Conditóris sui spe et contemplatióne requiéscit, supérnis intérseri cívibus áppetit; et unusquísque eórum adhuc in mundo córpore pósitus, mente tamen extra mundum surgit: ærúmnam exsílii, quam tólerat, deplórat, et ad sublímem pátriam incessántibus se amóris stímulis éxcitat. Cum ergo dolens videt, quam sit ætérnum quod pérdidit, ínvenit salúbre consílium, temporále hoc despícere quod percúrrit: et quo magis crescit consílii sciéntia ut peritúra déserat, eo augétur dolor, quod necdum ad mansúra pertíngat.
+
+        Intuéndum quoque est, quod nullus dolor mentis sit in actióne præcipitatiónis. Qui enim sine consíliis vivunt, qui seípsos rerum evéntibus præcípites déserunt, nullo ínterim cogitatiónum dolóre fatigántur. Nam qui solérter in vitæ consílio figit mentem, caute sese in omni actióne circumspiciéndo consíderat; et ne ex re quæ ágitur, repentínus finis adversúsque surrípiat, hunc prius mólliter pósito pede cogitatiónis palpat: pensat, ne ab his quæ agénda sunt, præpédiat formído; ne in his quæ differénda sunt, præcipitátio impéllat; ne prava per concupiscéntiam apérto bello súperent; ne recta per inánem glóriam insidiándo supplántent.
+      responsory: |-
+        R. Da mihi, Dómine, sédium tuárum assistrícem sapiéntiam, et noli me reprobáre a púeris tuis: * Quóniam servus tuus sum ego, et fílius ancíllæ tuæ.
+        V. Mitte illam de sede magnitúdinis tuæ, ut mecum sit et mecum labóret.
+        R. Quóniam servus tuus sum ego, et fílius ancíllæ tuæ.
+      status: verified

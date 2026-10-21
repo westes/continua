@@ -1,0 +1,58 @@
+# Transcribed directly from the reference engine's own Office file
+# (web/www/horas/Latin/Tempora/Pasc0-3.txt's [Oratio], English parallel in
+# web/www/horas/English/Tempora/Pasc0-3.txt; "$Per eumdem" expanded from
+# Ordo/Prayers.txt's own [Per eumdem] macro). See easter-monday-collect.yml's
+# own header for sourcing/status convention.
+collect:
+  text: |
+    Orémus.
+    Deus, qui nos resurrectiónis Domínicæ ánnua solemnitáte lætíficas: concéde propítius; ut per temporália festa quæ ágimus, perveníre ad gáudia ætérna mereámur.
+    Per eúndem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-03-31); Latin and English both taken from the page.
+benedictus-antiphon:
+  text: Míttite in déxteram * navígii rete, et inveniétis, allelúia.
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-03-31); Latin and English both taken from the page.
+magnificat-antiphon:
+  text: 'Dixit Jesus * discípulis suis: Afférte de píscibus, quos prendidístis nunc. Ascéndit autem Simon Petrus, et traxit rete in terram plenum magnis píscibus, allelúia.'
+  status: verified
+  temporal: true
+
+# Matins content for Easter Wednesday (temporalId easter-wednesday,
+# Pasc0-3 -- "Die IV infra octavam Paschæ"). Sourced from web/www/horas/
+# Latin/Tempora/Pasc0-3.txt (Latin homily) / English/Tempora/Pasc0-3.txt
+# (English homily); Gospel pericope from the Missal's own [Evangelium]
+# (missa/Latin+English/Tempora/Pasc0-3.txt), same convention as
+# easter-monday.yml.
+#
+# Single-nocturn source form, same structural note as easter-monday.yml.
+# Lectio1's homily portion (incipit dropped) combined with Lectio2-3 into
+# one continuous reading. Responsory: the source's own [Responsory1]
+# ("Ecce vicit leo de tribu Juda").
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Joannes 21:1-14
+      text: 'In illo témpore: Manifestávit se íterum Jesus discípulis ad mare Tiberíadis. Manifestávit autem sic. Erant simul Simon Petrus et Thomas, qui dícitur Dídymus, et Nathánaël, qui erat a Cana Galilǽæ, et fílii Zebedǽi et álii ex discípulis ejus duo. Dicit eis Simon Petrus: Vado piscári. Dicunt ei: Venímus et nos tecum. Et exiérunt et ascendérunt in navim: et illa nocte nihil prendidérunt. Mane autem facto, stetit Jesus in lítore: non tamen cognovérunt discípuli, quia Jesus est. Dixit ergo eis Jesus: Púeri, numquid pulmentárium habétis? Respondérunt ei: Non. Dicit eis: Míttite in déxteram navígii rete, et inveniétis. Misérunt ergo: et jam non valébant illud tráhere præ multitúdine píscium. Dixit ergo discípulus ille, quem diligébat Jesus, Petro: Dóminus est. Simon Petrus cum audísset, quia Dóminus est, túnica succínxit se - erat enim nudus, - et misit se in mare. Alii autem discípuli navígio venérunt - non enim longe erant a terra, sed quasi cúbitis ducéntis, - trahéntes rete píscium. Ut ergo descendérunt in terram, vidérunt prunas pósitas, et piscem superpósitum, et panem. Dicit eis Jesus: Afférte de píscibus, quos prendidístis nunc. Ascéndit Simon Petrus, et traxit rete in terram, plenum magnis píscibus centum quinquagínta tribus. Et cum tanti essent, non est scissum rete. Dicit eis Jesus: Veníte, prandéte. Et nemo audébat discumbéntium interrogáre eum: Tu quis es? sciéntes, quia Dóminus est. Et venit Jesus, et áccipit panem, et dat eis, et piscem simíliter. Hoc jam tértio manifestátus est Jesus discípulis suis, cum resurrexísset a mórtuis.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: Pope St. Gregory the Great, Homily 24 on the Gospels
+      text: |-
+        Dilectíssimi fratres, léctio sancti Evangélii, quæ modo in áuribus vestris lecta est, quæstióne ánimum pulsat, sed pulsatióne sua vim discretiónis índicat. Quæri étenim potest, cur Petrus, qui piscátor ante conversiónem fuit, post conversiónem ad piscatiónem rédiit: et cum Véritas dicat: Nemo mittens manum suam ad arátrum, et aspíciens retro, aptus est regno Dei: cur repétiit quod derelíquit? Sed si virtus discretiónis inspícitur, cítius vidétur: quia nimírum negótium, quod ante conversiónem sine peccáto éxstitit, hoc étiam post conversiónem repétere culpa non fuit.
+
+        Nam piscatórem Petrum, Matthǽum vero teloneárium scimus: et post conversiónem suam ad piscatiónem Petrus rédiit, Matthǽus vero ad telónei negótium non resédit: quia áliud est victum per piscatiónem quǽrere, áliud autem telónei lucris pecúnias augére. Sunt enim pléraque negótia, quæ sine peccátis exhibéri aut vix, aut nullátenus possunt. Quæ ergo ad peccátum ímplicant, ad hæc necésse est, ut post conversiónem ánimus non recúrrat.
+
+        Quæri étiam potest, cur discípulis in mari laborántibus, post resurrectiónem suam Dóminus in líttore stetit, qui ante resurrectiónem suam coram discípulis in flúctibus maris ambulávit. Cujus rei rátio festíne cognóscitur, si ipsa, quæ tunc ínerat, causa pensétur. Quid enim mare, nisi præsens sǽculum signat, quod se cásuum tumúltibus, et undis vitæ corruptíbilis illídit? Quid per soliditátem líttoris, nisi illa perpetúitas quiétis ætérnæ figurátur? Quia ergo discípuli adhuc flúctibus mortális vitæ ínerant, in mari laborábant: quia autem Redémptor noster jam corruptiónem carnis excésserat, post resurrectiónem suam in líttore stabat.
+      responsory: |-
+        R. Ecce vicit leo de tribu Juda, radix David, aperíre librum, et sólvere septem signácula ejus: * Allelúia, allelúia, allelúia.
+        V. Dignus est Agnus, qui occísus est, accípere virtútem, et divinitátem, et sapiéntiam, et fortitúdinem, et honórem, et glóriam, et benedictiónem.
+        R. Allelúia, allelúia, allelúia.
+      status: verified

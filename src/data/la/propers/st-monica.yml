@@ -1,0 +1,98 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2029-05-04).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, mæréntium consolátor et in te sperántium salus, qui beátæ Mónicæ pias lácrimas in conversióne fílii sui Augustíni misericórditer suscepísti: da nobis utriúsque intervéntu; peccáta nostra deploráre, et grátiæ tuæ indulgéntiam inveníre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-monica-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-widow (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (st-monica-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Date ei de fructu mánuum suárum, et laudent eam in portis ópera ejus, allelúia.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Deus, mæréntium consolátor et in te sperántium salus, qui beátæ Mónicæ pias lácrimas in conversióne fílii sui Augustíni misericórditer suscepísti: da nobis utriúsque intervéntu; peccáta nostra deploráre, et grátiæ tuæ indulgéntiam inveníre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/05-04.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Laudémus Deum nostrum * In confessióne beátæ Mónicæ.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Monica's own day (2026-05-04). The Benedictus antiphon
+# (Prov 31:31).
+benedictus-antiphon:
+  text: Date ei de fructu mánuum suárum, et laudent eam in portis ópera ejus, allelúia.
+  status: verified
+
+# Matins Nocturn 2-3 readings for St. Monica, Widow (May 4) —
+# pre-1955-but-post-1617 (no SanctiM/05-04*.txt at all).
+# web/www/horas/Latin/Sancti/05-04.txt, English/Sancti/05-04.txt.
+#
+# Lectio4-5 (Monica's own vita and death) combined into one reading, no
+# internal source break. Lectio6 (St. Augustine's own account of her
+# death, Confessions Bk. 9, ch. 12) is a genuinely distinct source, kept
+# separate.
+#
+# Nocturn 3's Gospel+homily is the same pairing already authored for
+# post-pentecost-15.yml (Luke 7:11-16, the raising of the widow's son at
+# Naim, + St. Augustine's Sermon 44 on it) — this saint's own file gives
+# only the Gospel incipit ("Et réliqua"), so the full pericope text is
+# reused verbatim from that already-live-verified transcription rather
+# than re-sourced here (same citation, not fabricated). The homily
+# excerpt (Lectio7-9) is transcribed fresh from this saint's own file,
+# since its wording differs slightly from post-pentecost-15's own
+# (different old translation of the same sermon). Responsories reused
+# from post-pentecost-15.yml for the same reason — this file gives none
+# of its own.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Monica, sancti Augustíni dupliciter mater, quia eum et mundo et cælo péperit, maríto mortuo, quem senectute confectum Jesu Christo conciliávit, castam et opéribus misericórdiæ exercitam viduitátem agebat; in assiduis vero ad Deum oratiónibus pro fílio, qui in Manichæórum sectam inciderat, lácrimas effundébat. Quem étiam Mediolanum secuta est; ubi ipsum frequenter hortabátur, ut ad episcopum Ambrosium se conferret. Quod cum ille fecísset, ejus et publicis conciónibus et privátis colloquiis catholicæ fidei veritátem edoctus, ab eodem baptizátus est.
+
+        Mox in Africam redeuntes, cum ad Ostia Tiberina constitissent, incidit in febrem. Quo in morbo cum eam quodam die ánima defecísset, ut se collegit, Ubi, inquit, eram? Et astántes íntuens, Ponite hic matrem vestram: tantum vos rogo, ut ad altáre Dómini meminéritis mei. Nono autem die beáta mulier ánimam Deo réddidit. Ejus corpus ibi in ecclésia sanctæ Aureæ sepúltum est: quod póstea, Martino quinto summo Pontifice, Romam translátum, in ecclésia sancti Augustíni honorifice cónditum est.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Confessions, Book 9, ch. 12
+      text: 'Neque enim decére arbitrabámur funus illud quéstubus lacrimosis gemitibúsque celebrare, quia illa nec mísere, nec omnino moriebátur: hoc et documéntis morum ejus, et fide non ficta rationibúsque certis tenebamus. Atque inde paulatim reducébam in prístinum sensum ancíllam tuam, conversationémque ejus piam in te et sanctam, in nos blandam atque morígeram, qua súbito destitútus sum; et libuit flere de illa et pro illa. Et si quis peccátum invenerit, flevisse me matrem meam exígua parte horæ, matrem óculis meis mortuam, quæ me multos annos fleverat, ut óculis suis viverem, non irrideat; sed potius, si est grandi caritate, pro peccátis meis fleat ipse ad te Patrem ómnium fratrum Christi tui.'
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 7:11-16
+      text: 'In illo témpore: Ibat Jesus in civitátem, quæ vocátur Naim: et ibant cum eo discípuli ejus: et turba copiósa. Cum autem appropinquáret portæ civitátis, ecce, defúnctus efferebátur fílius únicus matris suæ: et hæc vídua erat, et turba civitátis multa cum illa. Quam cum vidísset Dóminus, misericórdia motus super eam, dixit illi: Noli flere. Et accéssit et tétigit lóculum. Hi autem, qui portábant, stetérunt. Et ait: Adoléscens, tibi dico, surge. Et resédit, qui erat mórtuus, et cœpit loqui. Et dedit illum matri suæ. Accépit autem omnes timor: et magnificábant Deum, dicéntes: Quia Prophéta magnus surréxit in nobis: et quia Deus visitávit plebem suam.'
+      responsory: |-
+        R. Quis mihi tríbuat, ut in inférno prótegas me et abscóndas me, donec pertránseat furor tuus, Dómine, nisi tu, qui solus es Deus? * Et constítuas mihi tempus, in quo recordéris mei?
+        V. Numquid sicut dies hóminis dies tui, ut quæras iniquitátem meam; cum sit nemo, qui de manu tua possit erúere.
+        R. Et constítuas mihi tempus, in quo recordéris mei?
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Sermon 44 on the Words of the Lord
+      text: |-
+        De juvene illo resuscitato gavisa est mater vidua; de homínibus in spíritu quotídie suscitátis gaudet mater Ecclésia. Ille quidem mórtuus erat corpore; illi autem mente. Illius mors visibilis visibíliter plangebátur; illórum mors invisibilis nec quærebátur, nec videbátur. Quæsívit ille, qui nóverat mórtuos. Ille solus nóverat mórtuos, qui poterat fácere vivos. Nisi enim ad mórtuos suscitándos venísset, Apóstolus non diceret: Surge, qui dormis, et exsúrge a mórtuis, et illuminábit te Christus.
+
+        Tres autem mórtuos invenímus a Dómino resuscitatos visibíliter, míllia invisibíliter. Quot autem mórtuos visibíliter suscitaverit, quis novit? Non enim ómnia, quæ fecit, scripta sunt. Joánnes hoc dixit: Multa alia fecit Jesus, quæ si scripta essent, árbitror totum mundum non posse libros cápere. Multi ergo sunt alii sine dubio suscitati, sed non tres frustra commemorati. Dóminus enim noster Jesus Christus ea, quæ faciebat corporáliter, étiam spiritáliter volebat intelligi. Neque enim tantum miracula propter miracula faciebat; sed ut illa, quæ faciebat, mira essent vidéntibus, vera essent intelligéntibus.
+
+        Quemádmodum qui videt litteras in códice óptime scripto, et non novit légere, laudat quidem antiquarii manum, admirans ápicum pulchritúdinem; sed quid sibi velint, quid índicent illi ápices, nescit, et est óculis laudator, mente non cógnitor. Alius autem et laudat artifícium, et capit intelléctum: ille útique, qui non solum vidére quod commune est ómnibus potest, sed étiam légere; quod qui non dídicit, non potest. Ita qui vidérunt Christi miracula, et non intellexérunt quid sibi vellent, et quid intelligéntibus quodámmodo innúerent, miráti sunt tantum quia facta sunt; alii vero et facta mirati, et intellecta assecuti. Tales nos in schola Christi esse debemus.
+      responsory: |-
+        R. Numquid supplántat judícium? aut Omnípotens subvértit quod iustum est? † Líbera me, Dómine, et pone me juxta te: * Et cujúsvis manus pugnet contra me.
+        V. Apprehénde arma et scutum, et exsúrge in adjutórium mihi.
+        R. Et cujúsvis manus pugnet contra me.
+      status: verified

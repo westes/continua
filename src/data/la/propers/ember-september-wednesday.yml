@@ -1,0 +1,97 @@
+# Read directly from web/www/horas/Latin/Tempora/093-3.txt's own [Oratio]
+# and its English counterpart. Standard "Per Dóminum..." closing spelled
+# out in full (the source abbreviates it), matching every other collect
+# in this store.
+collect:
+  text: |
+    Orémus.
+    Misericórdiæ tuæ remédiis, quǽsumus, Dómine, fragílitas nostra subsístat: ut, quæ sua conditióne attéritur, tua cleméntia reparétur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2023-09-20 -- the one clean year in range where September
+# Ember Wednesday itself wins outright (no competing saint), labeled
+# "Antiphona ex Proprio de Tempore". Same text as Tempora/093-3.txt's own
+# [Ant 2] ("Hoc genus...", echoing Lectio3's Gospel line): the app's
+# Lauds psalmody itself stays entirely on the plain ferial Wednesday
+# antiphons (Ps 50/63/64 + canticle + Laudate all confirmed unchanged
+# live) -- only the Benedictus antiphon is genuinely proper to the Ember
+# day, not the whole psalm-antiphon block TODO.md's 2026-08-22 entry
+# loosely called "Lauds antiphons."
+benedictus-antiphon:
+  text: Hoc genus * dæmoniórum in nullo potest exíre, nisi in oratióne et jejúnio.
+  status: verified
+  temporal: true
+
+# Same source as the sibling -benedictus-antiphon.yml: Tempora/093-3.txt's
+# [Ant 3] is a bare "@:Ant 2" cross-reference, i.e. the identical text
+# reused for both Lauds and Vespers on this day -- not independently
+# authored content, but the reference engine's own real choice, not a
+# simplification on this app's part.
+magnificat-antiphon:
+  text: Hoc genus * dæmoniórum in nullo potest exíre, nisi in oratióne et jejúnio.
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for September Ember Wednesday (Feria IV Quattuor
+# Temporum Septembris) — read directly from
+# web/www/horas/Latin/Tempora/093-3.txt, English/Tempora/093-3.txt, and
+# their Monastic-track override web/www/horas/Latin/TemporaM/093-3.txt
+# (which inherits Lectio1-3/Oratio/Ant unchanged from the secular file but
+# substitutes its own Responsory2/3, drawn from TemporaM/093-0's own
+# Tobias-sermon responsories — used here per this project's Monastic
+# 1617-first structure preference; Responsory1 is identical in both
+# tracks).
+#
+# Lectio1's Gospel citation (Mark 9:16-28) is a bare incipit ("Et
+# réliqua") with no full pericope text given in this day's own file, so
+# — per this store's own established convention (see st-lawrence.yml/
+# st-andrew.yml) — only the homily portion was originally authored, not
+# marked isGospel.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — still an open item
+# for ember-september-friday.yml's own header's "not yet revisited"
+# note as of that date, now closed here too: this day's own
+# [Evangelium] carries the full pericope directly (not a redirect),
+# sourced from missa/Latin/Tempora/093-3.txt, English/Tempora/093-3.txt,
+# not guessed at.
+#
+# Recombined into one reading 2026-09-04 (previously kept as 3 separate
+# readings): Lectio1-3 are one continuous, unbroken Bede homily, split
+# only to fill the fixed 3-lesson Nocturn slot count — the "source
+# doesn't genuinely split" case this store's own established default
+# (see post-pentecost-15.yml's own doc comment) recombines, same fix
+# already applied to ember-september-friday.yml the same day (see that
+# file's own header for the fuller rationale — the original "genuinely
+# distinct proper responsory" justification for staying split doesn't
+# hold up against that established default, which already collapses
+# readings with their own distinct responsories elsewhere). Responsory
+# here is Lectio1's own (Responsory1 = identical in both tracks) per the
+# "the first one, when several collapse" convention; Lectio2/3's own
+# distinct responsories (drawn from TemporaM/093-0's own Tobias-sermon
+# texts) are dropped, same as every other collapsed-reading case.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Marc 9:16-28
+      text: 'In illo témpore: Respóndens unus de turba, dixit ad Jesum: Magíster, áttuli fílium meum ad te, habéntem spíritum mutum: qui, ubicúmque eum apprehénderit, allídit illum, et spumat et stridet déntibus et aréscit: et dixi discípulis tuis, ut ejícerent illum, et non potúerunt. Qui respóndens eis, dixit: O generátio incrédula, quámdiu apud vos ero? quámdiu vos pátiar? Afférte illum ad me. Et attúlerunt eum. Et cum vidísset eum, statim spíritus conturbávit illum: et elísus in terram, volutabátur spumans. Et interrogávit patrem ejus: Quantum témporis est, ex quo ei hoc áccidit? At ille ait: Ab infántia: et frequénter eum in ignem et in aquas misit, ut eum pérderet. Sed si quid potes, ádjuva nos, misértus nostri. Jesus autem ait illi: Si potes crédere, ómnia possibília sunt credénti. Et contínuo exclámans pater púeri, cum lácrimis ajébat: Credo, Dómine: ádjuva incredulitátem meam. Et cum vidéret Jesus concurréntem turbam, comminátus est spirítui immúndo, dicens illi: Surde et mute spíritus, ego præcípio tibi, exi ab eo: et ámplius ne intróëas in eum. Et exclámans et multum discérpens eum, éxiit ab eo, et factus est sicut mórtuus, ita ut multi dícerent: Quia mórtuus est. Jesus autem tenens manum ejus, elevávit eum, et surréxit. Et cum introísset in domum, discípuli ejus secréto interrogábant eum: Quare nos non potúimus ejícere eum? Et dixit illis: Hoc genus in nullo potest exíre nisi in oratióne et jejúnio.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: The Venerable Bede, Priest, homily on Mark 9:16-28
+      text: |-
+        Dæmoníacum hunc, quem descéndens de monte Dóminus sanávit, Marcus quidem surdum mutúmque, Matthǽus vero lunáticum fuísse commémorat. Signíficat autem eos, de quibus scriptum est: Stultus ut luna mutátur. Qui nunquam in eódem statu permanéntes, nunc ad illa vítia mutáti, crescunt atque decréscunt. Qui muti sunt, non confiténdo fidem; surdi, nec ipsum aliquátenus veritátis audiéndo sermónem. Spumant autem, cum stultítia tabéscunt; stultórum namque et languéntium atque hébetum est, spumas salivárum ex ore dimíttere. Strident déntibus, cum iracúndiæ furóre flamméscunt: aréscunt, cum ótio torpénte languéscunt, et nulla virtútis indústria confortáti enérviter vivunt.
+
+        Quod autem ait: Et dixi discípulis tuis ut eícerent illum, et non potuérunt; laténter Apóstolos accúsat, cum impossibílitas curándi, intérdum non ad imbecillitátem curántium, sed ad eórum, qui curándi sunt, fidem referátur, dicénte Dómino: Fiat tibi secúndum fidem tuam. Qui respóndens eis, dixit: O generátio incrédula, quámdiu apud vos ero? quámdiu vos pátiar? Non quod tǽdio superátus sit mansuétus ac mitis, qui non apéruit sicut agnus coram tondénte os suum, nec in verba furóris erúpit; sed quo in similitúdinem médici, si ægrótum vídeat contra sua præcépta se gérere, dicat: Usquequo accédam ad domum tuam? quoúsque artis meæ perdam indústriam, me áliud jubénte, et te áliud perpetránte?
+
+        Et dixit illis: Hoc genus in nullo potest exíre, nisi in oratióne et jejúnio. Dum docet Apóstolos quómodo dæmon nequíssimus débeat expélli, omnes instítuit ad vitam; ut scílicet novérimus, gravíssima quæque vel immundórum spirítuum, vel hóminum tentaménta jejúniis et oratiónibus esse superánda: iram quoque Dómini, cum in ultiónem nostrórum scélerum fúerit accénsa, hoc remédio singulári posse placári. Jejúnium autem generále est, non solum ab escis, sed et a cunctis illécebris abstinére carnálibus, immo ab ómnibus vitiórum continére se passiónibus. Sic et orátio generális non in verbis solum est, quibus divínam cleméntiam invocámus, verum étiam in ómnibus, quæ in obséquium nostri Conditóris fídei devotióne gérimus.
+      responsory: |-
+        R. Tribulatiónes civitátum audívimus, quas passæ sunt, et defécimus: timor et hebetúdo mentis cécidit super nos et super líberos nostros: ipsi montes nolunt recípere fugam nostram: * Dómine, miserére.
+        V. Peccávimus cum pátribus nostris, injúste égimus, iniquitátem fécimus.
+        R. Dómine, miserére.
+      status: verified

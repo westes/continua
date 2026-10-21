@@ -1,0 +1,456 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2029-02-10, a
+# year that date doesn't collide with a Sunday). Same convention as
+# data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui ánimam beátæ Vírginis tuæ Scholásticæ ad ostendéndam innocéntiæ viam in colúmbæ spécie cælum penetráre fecísti: da nobis ejus méritis et précibus ita innocénter vívere; ut ad ætérna mereámur gáudia perveníre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-scholastica-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-virgin (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (st-scholastica-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. O quam præclára sunt mérita beátæ Scholásticæ! O quanta virtus lacrimárum, per quas ínclyta Virgo áeris serenitátem ad plúviæ traxit inundatiónem.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Deus, qui ánimam beátæ Vírginis tuæ Scholásticæ ad ostendéndam innocéntiæ viam in colúmbæ spécie cælum penetráre fecísti: da nobis ejus méritis et précibus ita innocénter vívere; ut ad ætérna mereámur gáudia perveníre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-02-10, clean year. Same reading and English translation
+# already used at her Terce capitulum (terce-capitulum-st-scholastica.yml)
+# -- no English rendering exists in the reference engine's data, translated
+# there per Douay-Rheims Cant 2:13-14, reused here as the same text.
+lauds-capitulum:
+  text: 'Surge, amíca mea, speciósa mea, et veni, colúmba mea, in foramínibus petræ, in cavérna macériæ, osténde mihi fáciem tuam, sonet vox tua in áuribus meis: vox enim tua dulcis, et fácies tua decóra.'
+  citation: Cant 2:13-14
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-02-10, clean year. "Jam noctis umbræ cóncidunt" -- no
+# English rendering exists in the reference engine's data, translated
+# here, status: draft.
+lauds-hymn:
+  text: |
+    Jam noctis umbræ cóncidunt,
+    Dies cupíta náscitur,
+    Qua vírgini Scholásticæ
+    Sponsus perénnis júngitur.
+
+    Brumæ recédit tǽdium,
+    Fugántur imbres núbibus,
+    Vernántque campi síderum
+    Æternitátis flóribus.
+
+    Amóris auctor évocat,
+    Dilécta pennas índuit;
+    Ardens ad oris óscula
+    Colúmba velox évolat.
+
+    Quam pulchra gressum prómoves,
+    O chara proles Príncipis!
+    Nursínus Abbas áspicit,
+    Grates repéndit Númini.
+
+    Ampléxa Sponsi déxteram,
+    Metit corónas débitas,
+    Immérsa rivis glóriæ,
+    Deíque pota gáudiis.
+
+    Te, Christe, flos convállium,
+    Patrémque cum Paráclito,
+    Cunctos per orbis cárdines
+    Adóret omne sǽculum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-02-10, clean year.
+lauds-responsory:
+  text: |
+    R.br. Spécie tua * Et pulchritúdine tua.
+    R. Spécie tua * Et pulchritúdine tua.
+    V. Inténde, próspere procéde, et regna.
+    R. Et pulchritúdine tua.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Spécie tua * Et pulchritúdine tua.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-02-10, clean year. No English rendering exists in the
+# reference engine's data -- translated here per Douay-Rheims Cant 1:14
+# (Vulgate numbering; "Ecce tu pulchra es amica mea, ecce tu pulchra,
+# oculi tui columbarum"), status: draft.
+lauds-versicle:
+  text: |-
+    V. Ecce tu pulchra es, amíca mea.
+    R. Ecce tu pulchra es; óculi tui columbárum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, St. Scholastica's own day (2026-02-10, clean year).
+# Latin (with chant asterisk) confirmed against source data file
+# web/www/horas/Latin/SanctiM/02-10.txt. No English rendering exists for
+# this antiphon in the reference engine's data (English/SanctiM/02-10.txt
+# only covers Matins for this saint) -- English translated here, status: draft.
+prime-antiphon:
+  text: 'Egrédere modo, frater: * egrédere, si potes: et dímissa, ad monastérium recéde.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, St. Scholastica's own day (2026-02-10, clean year).
+# Latin (with chant asterisk) confirmed against source data file
+# web/www/horas/Latin/SanctiM/02-10.txt. No English rendering exists for
+# this antiphon in the reference engine's data -- English translated here,
+# status: draft.
+terce-antiphon:
+  text: 'Parcat tibi, soror, * omnípotens Deus: quid est quod fecísti?'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, St. Scholastica's own day (2026-02-10, clean year).
+# The reading body has no English rendering in the reference engine's data
+# (only the R./V. versicle-response was given in English); reading body
+# translated here per Douay-Rheims Cant 2:13-14, status: draft.
+terce-capitulum:
+  text: |
+    Surge, amíca mea, speciósa mea, et veni, colúmba mea, in foramínibus petræ, in cavérna macériæ, osténde mihi fáciem tuam, sonet vox tua in áuribus meis: vox enim tua dulcis, et fácies tua decóra.
+    R. Deo grátias.
+    V. Spécie tua et pulchritúdine tua.
+    R. Inténde, próspere procéde, et regna.
+  citation: Cant 2:13-14
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, St. Scholastica's own day (2026-02-10, clean year).
+# Latin (with chant asterisk) confirmed against source data file
+# web/www/horas/Latin/SanctiM/02-10.txt. No English rendering exists for
+# this antiphon in the reference engine's data -- English translated here,
+# status: draft.
+sext-antiphon:
+  text: Ecce te rogávi, * et audíre me noluísti; rogávi Dóminum meum, et audívit me.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, St. Scholastica's own day (2026-02-10, clean year).
+# The reading body has no English rendering in the reference engine's data
+# (only the R./V. versicle-response was given in English); reading body
+# translated here per Douay-Rheims Cant 6:8, status: draft.
+sext-capitulum:
+  text: |
+    Una est colúmba mea, perfécta mea: vidérunt eam fíliæ Sion, et beatíssimam prædicavérunt et regínæ laudavérunt eam.
+    R. Deo grátias.
+    V. Adjuvábit eam Deus vultu suo.
+    R. Deus in médio ejus, non commovébitur.
+  citation: Cant 6:8
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, St. Scholastica's own day (2026-02-10, clean year).
+# Latin (with chant asterisk) confirmed against source data file
+# web/www/horas/Latin/SanctiM/02-10.txt. No English rendering exists for
+# this antiphon in the reference engine's data -- English translated here,
+# status: draft.
+none-antiphon:
+  text: Cum sanctus Benedíctus * post tríduum in cella consísteret, elevátis óculis, vidit soróris ánimam, de córpore egréssam, in colúmbæ spécie cæli secréta penetráre.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, St. Scholastica's own day (2026-02-10, clean year).
+# The reading body has no English rendering in the reference engine's data
+# (only the R./V. versicle-response was given in English); reading body
+# translated here per Douay-Rheims Cant 5:12, status: draft.
+none-capitulum:
+  text: |
+    Óculi ejus sicut colúmbæ super rívulos aquárum, quæ lacte sunt lotæ, et résident juxta fluénta pleníssima.
+    R. Deo grátias.
+    V. Elégit eam Deus, et præelégit eam.
+    R. In tabernáculo suo habitáre facit eam.
+  citation: Cant 5:12
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-02-10, the same clean date already used for
+# lauds-capitulum-st-scholastica.yml. "Te beáta sponsa Christi" -- no
+# English rendering exists in the reference engine's data (same gap as her
+# Lauds/Terce/Sext/None content), translated here -- status: draft.
+# Stanza 3 alludes to the legend of her final visit with St. Benedict
+# ("the father of Nursia"): her tears brought on a storm that kept him
+# with her through the night, in which he spoke of the joys of heaven.
+vespers-hymn:
+  text: |
+    Te beáta sponsa Christi,
+    Te, colúmba vírginum,
+    Síderum tollunt colóni
+    Láudibus, Scholástica:
+    Nostra te lætis salútant
+    Vócibus præcórdia.
+
+    Sceptra mundi cum corónis
+    Docta quondam spérnere,
+    Dogma fratris insecúta
+    Atque sanctæ Régulæ,
+    Ex odóre gratiárum,
+    Astra nosti quǽrere.
+
+    O potens virtus amóris!
+    O decus vitóriæ!
+    Dum fluéntis lacrymárum
+    Cogis imbres cúrrere,
+    Ore Nursíni paréntis
+    Verba cœli súscipis.
+
+    Luce fulges expetíta
+    In polórum vértice,
+    Clara flammis caritátis
+    Cum nitóre grátiæ:
+    Juncta Sponso conquiéscis
+    In decóre glóriæ.
+
+    Nunc benígna pelle nubes
+    Córdibus fidélium,
+    Ut seréna fronte splendens
+    Sol perénnis lúminis,
+    Sempitérne claritátis
+    Ímpleat nos gáudiis.
+
+    Glóriam Patri canámus
+    Unícoque Fílio;
+    Par tribútum proferámus
+    Inclyto Paráclito,
+    Nútibus cujus creántur,
+    Et regúntur sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-02-10, the same clean date already used for
+# lauds-capitulum-st-scholastica.yml. No English rendering exists in the
+# reference engine's data (same gap as her Lauds/Terce/Sext/None content),
+# translated here -- status: draft. Alludes to the legend of her death:
+# St. Benedict, praying at the window, saw his sister's soul ascend to
+# heaven in the form of a dove.
+vespers-responsory:
+  text: |
+    R.br. In colúmbæ spécie * Scholásticæ ánima visa est.
+    R. In colúmbæ spécie * Scholásticæ ánima visa est.
+    V. Fratérna mens lætáta est.
+    R. Scholásticæ ánima visa est.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. In colúmbæ spécie * Scholásticæ ánima visa est.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-02-10, the same clean date already used for
+# lauds-capitulum-st-scholastica.yml. No English rendering exists in the
+# reference engine's data (same gap as her Lauds/Terce/Sext/None content),
+# translated here -- status: draft. Echoes Isaiah 60:8 ("Who are these
+# that fly as clouds, and as doves to their windows?"), sung in the
+# singular of Scholastica herself.
+vespers-versicle:
+  text: |-
+    V. Qua est ista, quæ ut nubes volat?
+    R. Et quasi colúmba ad fenéstras suas?
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Scholastica's own day (2026-02-10) -- the Benedictus
+# antiphon. The source's own English page didn't render a translation
+# (silently duplicated the Latin); translated here in the same register
+# as the rest of this project's antiphons, so marked `draft` rather than
+# `verified`. Alludes to the legend of her prayer bringing on the storm
+# that kept St. Benedict from leaving her that night (Gregory the Great,
+# Dialogues II.33).
+benedictus-antiphon:
+  text: O quam præclára sunt mérita beátæ Scholásticæ! O quanta virtus lacrimárum, per quas ínclyta Virgo áeris serenitátem ad plúviæ traxit inundatiónem.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 02-10
+# st-scholastica (new saint-level second; continua had "hodiegloriosacaeliregina"). See
+# hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon:
+  text: 'Hódie * sacra virgo Scholástica in spécie colúmbæ, ad ǽthera tota festíva perréxit: hódie cœlestis vitæ gáudiis cum fratre suo pérfrui merétur in sempitérnum.'
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 02-10
+# st-scholastica (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Exsúltet ómnium * turba fidélium pro glória vírginis almæ Scholásticæ; læténtur præcípue catérvæ vírginum, celebrántes ejus solemnitátem, quæ fundens lácrymas, Dóminum rogávit, et ab eo plus pótuit, quia plus amávit.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query, 2029-02-10 (her own real day, confirmed clean --
+# no Sunday collision -- per her own calendar-file comment). Her own
+# `[Rank]` says "vide C6a" (Common-of-a-Virgin, plain), but the rendered
+# page is explicitly headed "{Antiphonæ et Psalmi ex Proprio Sanctorum}"
+# -- proper antiphons, not the generic Common text -- confirmed against
+# `SanctiM/02-10.txt`'s own `[Ant Matutinum]`-family blocks, which
+# override the Common wholesale with 9 antiphons narrating her own
+# life/miracle (the "prodigious rainstorm" episode with St. Benedict).
+# Psalm numbers and all three nocturn-closing versicles, though, are
+# byte-identical to `common-of-a-virgin-martyr.yml`'s own (see that
+# file's header) -- confirming they really are the shared Common-of-a-
+# Virgin pool, only the antiphon text itself is proper to her.
+matins-psalmody:
+  category: common-of-a-virgin
+  nocturn1:
+    groups:
+      - psalms:
+          - 8
+        antiphon: O quam admirábile * nomen Dómini! In cujus virtúte beáta Virgo Scholástica tam ingéntem plúviam obtinére méruit.
+      - psalms:
+          - 18
+        antiphon: Cæli * enárrant glóriam Dei, et annúntiant mérita sanctæ Scholásticæ Vírginis.
+      - psalms:
+          - 23
+        antiphon: Hæc accépit * benedictiónem a Dómino, et misericórdiam a Deo salutári suo.
+      - psalms:
+          - 44
+        antiphon: Dilexísti * justítiam, et odísti iniquitátem; proptérea unxit te Deus, Deus tuus, óleo lætítiæ.
+      - psalms:
+          - 45
+        antiphon: Flúminis ímpetus * lætíficat Scholásticam, Sponsam Dei.
+      - psalms:
+          - 47
+        antiphon: Circúmdate * Scholásticam, et narráte virtútes ejus.
+    versicle:
+      v: Spécie tua et pulchritúdine tua.
+      r: Inténde, próspere procéde, et regna.
+  nocturn2:
+    groups:
+      - psalms:
+          - 84
+        antiphon: Dóminus * Scholásticæ dedit benignitátem et terra dedit fructum.
+      - psalms:
+          - 86
+        antiphon: Sicut lætántium ómnium * habitátio est in te, o beáta mater Scholástica.
+      - psalms:
+          - 95
+        antiphon: Conféssio * et pulchritúdo in conspéctu Dómini; sanctimónia et magnificéntia in sanctificatióne Scholásticæ sponsæ suæ.
+      - psalms:
+          - 96
+        antiphon: Illuxérunt * fúlgura Dei, dum oráret ad eum sancta Virgo Scholástica.
+      - psalms:
+          - 97
+        antiphon: Cantáte * Dómino cánticum novum, quia mirabília fecit in dilécta fília Scholástica.
+      - psalms:
+          - 98
+        antiphon: Invocábat * Scholástica Dóminum; et exaudiébat eam.
+    versicle:
+      v: Adjuvábit eam Deus vultu suo.
+      r: Deus in médio ejus, non commovébitur.
+  nocturn3:
+    antiphon: Dóminus * Scholásticam quasi sponsum decorávit coróna, et ornávit monílibus suis.
+    canticles:
+      - refs:
+          - book: sir
+            chapter: 39
+            verses: 17-21
+      - refs:
+          - book: isa
+            chapter: 61
+            verses: 10-11
+          - book: isa
+            chapter: 62
+            verses: 1-3
+      - refs:
+          - book: isa
+            chapter: 62
+            verses: 4-7
+    versicle:
+      v: Elégit eam Deus, et præelégit eam.
+      r: In tabernáculo suo habitáre facit eam.
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-02-10, clean year. No English rendering exists for
+# these antiphons in the reference engine's data (same gap already found
+# for her Prime/Terce/Sext/None content, see terce-antiphon-st-scholastica
+# .yml etc.) -- antiphons 1/2/3/5 reuse the English already translated
+# and verified there (same Latin text, since Prime/Terce/Sext/None share
+# this Lauds antiphon pool); antiphon 4 (the canticle's own) is new,
+# translated here. NOTE: the Lauds psalmody-override schema
+# (hours/lauds.ts's BilingualText) has no per-language status field the
+# way hours/resolve-common.ts's ResolvedText does, so this self-translated
+# English can't carry a "draft" marker here the way it does at Prime/
+# Terce/Sext/None -- flagged in TODO.md as a real gap, not silently
+# smoothed over.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: 'Egrédere modo, frater: * egrédere, si potes: et dímissa, ad monastérium recéde.'
+    - psalms:
+        - 99
+      antiphon: 'Parcat tibi, soror, * omnípotens Deus: quid est quod fecísti?'
+    - psalms:
+        - 62
+      antiphon: Ecce te rogávi, * et audíre me noluísti; rogávi Dóminum meum, et audívit me.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Loquámur nunc * usque mane de cælestibus per sacra spritualis vitæ colloquia.
+  laudate:
+    antiphon: Cum sanctus Benedíctus * post tríduum in cella consísteret, elevátis óculis, vidit soróris ánimam, de córpore egréssam, in colúmbæ spécie cæli secréta penetráre.
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-02-10, own day). No English rendering exists
+# in the reference engine's data for these antiphons (same gap already
+# found for her Lauds/Prime/Terce/Sext/None content) -- antiphons 1/2/3
+# here are byte-identical to her already-authored Lauds antiphons 1/2/3
+# (and Prime's own), reusing that already-translated English; antiphon 4
+# is byte-identical to her Lauds "laudate" antiphon, likewise reused.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: 'Egrédere modo, frater: * egrédere, si potes: et dímissa, ad monastérium recéde.'
+    - psalms:
+        - 112
+      antiphon: 'Parcat tibi, soror, * omnípotens Deus: quid est quod fecísti?'
+    - psalms:
+        - 121
+      antiphon: Ecce te rogávi, * et audíre me noluísti; rogávi Dóminum meum, et audívit me.
+    - psalms:
+        - 126
+      antiphon: Cum sanctus Benedíctus * post tríduum in cella consísteret, elevátis óculis, vidit soróris ánimam, de córpore egréssam, in colúmbæ spécie cæli secréta penetráre.
+
+# Matins Nocturn 2 reading for St. Scholastica, Virgin (Feb 10) —
+# SanctiM/02-10.txt inherits the whole day (`@Sancti/02-10`) with no
+# Nocturn 2/3 override, so this saint's own vita is sourced from the
+# Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/02-10.txt, English/Sancti/02-10.txt.
+# Lectio4-6 (St. Gregory the Great's account, from the Dialogues, of
+# her final visit with St. Benedict) combined into one reading, one
+# continuous excerpt. No responsory given in the source.
+#
+# Checked 2026-09-05 for a missing Gospel pairing: the plain Tridentine
+# Sancti/02-10.txt has no Lectio7-9 at all (only Lectio4-6) -- Nocturn
+# 3 isn't proper to this day and falls through to the Common of
+# Virgins (C6a) undifferentiated, same as the day's own [Evangelium]
+# tag (`@Commune/C6`) confirms. This reading is Nocturn 2 (the
+# biographical excerpt from Gregory's Dialogues), which was never
+# Gospel-paired in the first place -- that's Nocturn 3's role. No
+# Gospel entry is added; there is no saint-specific one to pair.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: Pope St. Gregory the Great, Dialogues, Bk. 2, ch. 33
+      text: |-
+        Scholástica, venerábilis patris Benedícti soror, omnipoténti Dómino ab ipso infántiæ témpore dedicáta, ad eum semel per annum veníre consuéverat; ad quam vir Dei non longe extra jánuam in possessióne monastérii descendébat. Quadam vero die venit ex more, atque ad eam, cum discípulis venerábilis ejus descéndit frater; qui totum diem in Dei láudibus sacrísque collóquiis ducéntes, incumbéntibus jam noctis ténebris, simul accepérunt cibum. Cumque adhuc ad mensam sedérent, et inter sacra collóquia tárdior se hora protráheret, éadem sanctimoniális fémina soror ejus eum rogávit, dicens: Quæso te, ut ista nocte me non déseras, ut usque mane de cæléstis vitæ gáudiis loquámur. Cui ille respóndit: Quid est quod lóqueris, soror? manére extra cellam nullátenus possum. Tanta vero erat cæli serénitas, ut nulla in áëre nubes appareret. Sanctimoniális autem fémina, cum verba fratris negántis pósuit, et caput in mánibus omnipoténtem Dóminum rogatúra declinávit. Cumque leváret de mensa caput, tanta coruscatiónis et tonítrui virtus, tántaque inundátio plúviæ erúpit, ut neque venerábilis Benedíctus, neque fratres, qui cum eo áderant, extra loci limen, quo conséderant, pedem movére potúerint.
+
+        Sanctimoniális quippe fémina caput in mánibus declínans, lacrimárum flúvium in mensam fúderat, per quas serenitátem áëris ad plúviam traxit. Nec paulo tárdius post oratiónem inundátio illa secúta est; sed tanta fuit conveniéntia oratiónis et inundatiónis, ut de mensa caput jam cum tonítruo leváret; quátenus unum idémque esset moméntum, et leváre caput, et plúviam depónere. Tunc vir Dei inter corúscos et tonítruos atque ingéntis plúviæ inundatiónem, videns se ad monastérium non posse remeáre, cœpit cónqueri contristátus, dicens: Parcat tibi omnípotens Deus, soror: quid est quod fecísti? Cui illa respóndit: Ecce rogávi te et audíre me noluísti; rogávi Deum meum, et audívit me: modo ergo, si potes, egrédere et, me dimíssa, ad monastérium recéde. Ipse autem exíre extra tectum non valens, qui remanére sponte nóluit in loco, mansit invítus. Sicque factum est, ut totam noctem pervígilem dúcerent, atque per sacra spiritális vitæ collóquia, sese vicária relatióne satiárent.
+
+        Cumque die áltero éadem venerábilis fémina ad cellam própriam recessísset, vir Dei ad monastérium rédiit. Cum ecce post tríduum, in cella consístens, elevátis in áëra óculis vidit ejúsdem soróris suæ ánimam de córpore egréssam in colúmbæ spécie cæli secréta penetráre. Qui, tantæ ejus glóriæ congáudens, omnipoténti Deo in hymnis et láudibus grátias réddidit, ejúsque óbitum frátribus denuntiávit. Quos étiam prótinus misit, ut ejus corpus ad monastérium deférrent, atque in sepúlcro, quod sibi ipsi paráverat, pónerent. Quo facto cóntigit, ut, quorum mens una semper in Deo fúerat, eórum quoque córpora nec sepultúra separáret.
+      status: verified

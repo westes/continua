@@ -1,0 +1,355 @@
+# Read directly from web/www/horas/Latin/Sancti/07-01.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui unigénitum Fílium tuum mundi Redemptórem
+    constituísti, ac ejus Sánguine placári voluísti: concéde, quǽsumus, salútis
+    nostræ prétium solémni cultu ita venerári, atque a præséntis vitæ malis ejus
+    virtúte deféndi in terris; ut fructu perpétuo lætémur in cælis.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Fully proper feast -- own real [Ant 2]/[Versum 2] read directly from the reference engine's own Sancti file (Latin + English), not a Common-category substitute. Collect is the saint's own real proper (most-precious-blood-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Erit sanguis Agni * vobis in signum, dicit Dóminus; et vidébo sánguinem, et transíbo vos nec erit in vobis plaga dispérdens.
+    V. Justificáti in sánguine Christi.
+    R. Salvi érimus ab ira per ipsum.
+    Orémus.
+    Omnípotens sempitérne Deus, qui unigénitum Fílium tuum mundi Redemptórem
+    constituísti, ac ejus Sánguine placári voluísti: concéde, quǽsumus, salútis
+    nostræ prétium solémni cultu ita venerári, atque a præséntis vitæ malis ejus
+    virtúte deféndi in terris; ut fructu perpétuo lætémur in cælis.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Sancti/07-01.txt [Hymnus Matutinum] ("Ira justa Conditóris"), both languages; SanctiM/07-01.txt does not override it. 'Imbr[e]' in the source is a variant-letter marker, rendered 'Imbre'. Before this file the Precious Blood's Matins hymn fell to the ferial one.
+matins-hymn:
+  text: |
+    Ira justa Conditóris,
+    Imbre aquárum víndice,
+    Criminósum mersit orbem
+    Noë in arca sóspite:
+    Mira tandem vis amóris
+    Lavit orbem sánguine.
+
+    Tam salúbri terra felix
+    Irrigáta plúvia,
+    Ante spinas quæ scatébat,
+    Germinávit flósculos;
+    Inque néctaris sapórem
+    Transiére absýnthia.
+
+    Triste prótinus venénum
+    Dirus anguis pósuit,
+    Et cruénta belluárum
+    Désiit ferócia:
+    Mitis Agni vulneráti
+    Hæc fuit victória.
+
+    O sciéntiæ supérnæ
+    Altitúdo impérvia!
+    O suávitas benígni
+    Prædicánda péctoris!
+    Servus erat morte dignus,
+    Rex luit pœnam óptimus.
+
+    Quando culpis provocámus
+    Ultiónem júdicis,
+    Tunc loquéntis protegámur
+    Sánguinis præséntia;
+    Ingruéntium malórum
+    Tunc recédant ágmina.
+
+    Te redémptus laudet orbis
+    Grata servans múnera,
+    O salútis sempitérnæ
+    Dux et Auctor ínclite,
+    Qui tenes beáta regna
+    Cum Parénte et Spíritu.
+    Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/07-01.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Christum Dei Fílium, qui suo nos redémit sánguine, * Veníte, adorémus.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/07-01.txt's own [Capitulum
+# Laudes] and English/Sancti/07-01.txt's own translation. Authoring this
+# was necessary for the feast's own hymn (lauds-hymn-most-precious-
+# blood.yml) to actually be reached at all: hours/resolve-common.ts's
+# resolveOfficeBundle is all-or-nothing per id -- an id with no chapter
+# of its own falls through its *whole* bundle to the Common's, hymn
+# included, so a proper hymn with no matching proper chapter is silently
+# unreachable dead content.
+lauds-capitulum:
+  text: 'Christus assístens Póntifex futurórum bonórum, per ámplius et perféctius tabernáculum non manufáctum, id est, non hujus creatiónis: neque per sánguinem hircórum aut vitulórum, sed per próprium sánguinem introívit semel in Sancta, ætérna redemptióne invénta.'
+  citation: Hebr 9:11-12
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/07-01.txt's own [Hymnus Laudes]
+# and English/Sancti/07-01.txt's own translation ("Salvete, Christi
+# vulnera").
+lauds-hymn:
+  text: |-
+    Salvéte, Christi vúlnera,
+    Imménsi amoris pígnora
+    Quibus perénnes rívuli
+    Manant rubéntis sánguinis.
+
+    Nitóre stellas víncitis
+    Rosas odóre et bálsama,
+    Prétio lapíllos Indicos,
+    Mellis favos dulcédine.
+
+    Per vos patet gratíssimum
+    Nostris asýlum méntibus;
+    Non huc furor minántium
+    Umquam penétrat hóstium.
+
+    Quot Jesus in prætório
+    Flagélla nudus éxcipit!
+    Quot scissa pellis úndique
+    Stillat cruóris gúttulas!
+
+    Frontem venústam, proh dolor!
+    Coróna pungit spínea,
+    Clavi retúsa cúspide
+    Pedes manúsque pérforant.
+
+    Postquam sed ille trádidit
+    Amans volénsque spíritum,
+    Pectus ferítur láncea,
+    Geminúsque liquor éxsilit.
+
+    Ut plena sit redémptio,
+    Sub torculári stríngitur;
+    Suíque Jesus ímmemor,
+    Sibi nil resérvat sánguinis.
+
+    Veníte quotquot críminum
+    Funésta labes ínficit;
+    In hoc salútis bálneo
+    Qui se lavat, mundábitur.
+
+    Summi ad Paréntis déxteram
+    Sedénti habénda est grátia,
+    Qui nos redémit sánguine,
+    Sanctóque firmat Spíritu. Amen.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/07-01.txt's own [Versum 2],
+# positioned directly after [Hymnus Laudes] -- the Lauds closing versicle.
+# Authoring this was necessary once lauds-capitulum-most-precious-
+# blood.yml made the feast's own bundle reachable (see that file's own
+# note): the bundle's versicle slot is unconditionally rendered, not
+# gated on missing status the way responsory is, so an unauthored one
+# would otherwise render empty rather than falling back to anything.
+lauds-versicle:
+  text: |
+    V. Justificáti in sánguine Christi.
+    R. Salvi érimus ab ira per ipsum.
+  status: verified
+
+# New file, 2026-09-15: per-feast variant of prime-chapter-responsory-
+# per-annum.yml -- same fixed responsory, with just the "V." verse line
+# swapped for the feast's own [Versum Prima] (web/www/horas/Latin/Sancti/
+# 07-01.txt), found while checking whether the by-feast responsory table
+# (prime-chapter-responsory-by-feast.yml) needed real content -- most of
+# the 36 Lectio-Prima-bearing saints have no [Versum Prima] of their own
+# at all (season/per-annum already covers them); only two do, this feast
+# and Christ the King.
+prime-chapter/responsory-~:
+  text: |
+    R.br. Christe, Fili Dei vivi, * Miserére nobis.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+    V. Qui tuo nos sánguine redemísti.
+    R. Miserére nobis.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+  status: verified
+
+# New file, 2026-09-15: part of the same Prime Lectio Brevis sweep that
+# built getPrimeLectioBrevis (see TODO.md's dated Work Log entry). Sourced
+# directly from web/www/horas/Latin/Sancti/07-01.txt's own [Lectio Prima]
+# tag and its English counterpart.
+prime-lectio:
+  text: 'Accípiens Móyses sánguinem vitulórum, et hircórum cum aqua et lana coccínea et hyssópo: ipsum quoque librum, et omnem pópulum aspérsit, dicens: Hic sanguis testaménti, quod mandávit ad vos Deus.'
+  citation: Heb 9:19-20
+  status: verified
+
+# Sancti/07-01.txt [Capitulum Laudes] and [Responsory Breve Tertia].
+terce-capitulum:
+  text: |
+    Fratres: Christus assístens Póntifex futurórum bonórum, per ámplius et perféctius tabernáculum non manufáctum, id est, non hujus creatiónis: neque per sánguinem hircórum aut vitulórum, sed per próprium sánguinem introívit semel in Sancta, ætérna redemptióne invénta.
+    R. Deo grátias.
+    V. Redemísti nos, Dómine in sánguine tuo.
+    R. Ex omni tribu, et lingua, et pópulo, et natióne.
+  citation: Heb 9:11-12
+  status: verified
+
+# Sancti/07-01.txt [Capitulum Sexta] and [Responsory Breve Sexta].
+sext-capitulum:
+  text: |
+    Si sanguis hircórum, et taurórum, et cinis vítulæ aspérsus inquinátos sanctíficat ad emundatiónem carnis: quanto magis sanguis Christi, qui per Spíritum Sanctum semetípsum óbtulit immaculátum Deo, emundábit consciéntiam nostram ab opéribus mórtuis, ad serviéndum Deo vivénti?
+    R. Deo grátias.
+    V. Sanguis Jesu Christi Fílii Dei emúndat nos.
+    R. Ab omni peccáto.
+  citation: Heb 9:13-14
+  status: verified
+
+# Sancti/07-01.txt [Capitulum Nona] and [Responsory Breve Nona].
+none-capitulum:
+  text: |
+    Accípiens Móyses sánguinem vitulórum, et hircórum cum aqua et lana coccínea et hyssópo: ipsum quoque librum, et omnem pópulum aspérsit, dicens: Hic sanguis testaménti, quod mandávit ad vos Deus.
+    R. Deo grátias.
+    V. Christus diléxit nos, et lavit nos in sánguine suo.
+    R. Et fecit nos regnum, et sacerdótes Deo, et Patri.
+  citation: Heb 9:19-20
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/07-01.txt's own [Hymnus
+# Vespera] and English/Sancti/07-01.txt's own translation ("Festivis
+# resonent compita vocibus").
+vespers-hymn:
+  text: |-
+    Festívis résonent cómpita vócibus,
+    Cives lætítiam fróntibus éxplicent,
+    Tædis flammíferis órdine pródeant
+    Instrúcti púeri et senes.
+
+    Quem dura móriens Christus in árbore
+    Fudit multíplici vúlnere sánguinem,
+    Nos facti mémores dum cólimus, decet
+    Saltem fúndere lácrimas.
+
+    Humáno géneri pernícies gravis
+    Adámi véteris crímine cóntigit:
+    Adámi intégritas et píetas novi
+    Vitam réddidit ómnibus.
+
+    Clamórem válidum summus ab ǽthere
+    Languéntibus Géniti si Pater áudiit,
+    Placári pótius sánguine débuit,
+    Et nobis véniam dare.
+
+    Hoc quicúmque stolam sánguine próluit,
+    Abstérgit máculas; et róseum decus,
+    Quo fiat símilis prótinus Angelis
+    Et Regi pláceat, capit.
+
+    A recto instábilis trámite póstmodum
+    Se nullus rétrahat, meta sed última
+    Tangátur; tríbuet nóbile prǽmium,
+    Qui cursum Deus ádjuvat.
+
+    Nobis propítius sis, Génitor potens,
+    Ut, quos unígenæ sánguine Fílii
+    Emísti, et plácido Flámine récreas,
+    Cæli ad cúlmina tránsferas. Amen.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/07-01.txt's own [Versum 1],
+# positioned directly after [Hymnus Vespera] -- the Vespers closing
+# versicle. Authoring this was necessary once lauds-capitulum-most-
+# precious-blood.yml made the feast's own bundle reachable (Vespers falls
+# back to Lauds' own capitulum, see lookupPart (Vespers chapter, Lauds sibling) in
+# hours/vespers.ts): the bundle's versicle slot is unconditionally
+# rendered, not gated on missing status, so an unauthored one would
+# otherwise render empty.
+vespers-versicle:
+  text: |
+    V. Redemísti nos, Dómine, in sánguine tuo.
+    R. Et fecísti nos Deo nostro regnum.
+  status: verified
+
+# Read directly from web/www/horas/Latin/Sancti/07-01.txt's own
+# [Ant 1] and its English counterpart -- a real, proper antiphon of
+# this feast, not a Common substitution.
+benedictus-antiphon:
+  text: Accessístis * ad Sion montem, et civitátem Dei vivéntis, Jerúsalem cæléstem, et Testaménti novi mediatórem Jesum, et sánguinis aspersiónem mélius loquéntem quam Abel.
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/07-01.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this fully proper Festum
+# Domini, not a Common substitution.
+magnificat-antiphon:
+  text: 'Habébitis autem * hunc diem in monuméntum: et celebrábitis eum solémnem Dómino in generatiónibus vestris cultu sempitérno.'
+  status: verified
+
+# First Vespers Magnificat antiphon: web/www/horas/Latin/Sancti/07-01.txt's own [Ant 1]
+# and its English counterpart. Second Vespers' [Ant 3] is
+# most-precious-blood-magnificat-antiphon.yml (the default); see hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Accessístis * ad Sion montem, et civitátem Dei vivéntis, Jerúsalem cæléstem, et Testaménti novi mediatórem Jesum, et sánguinis aspersiónem mélius loquéntem quam Abel.
+  status: verified
+
+# Sancti/07-01.txt [Ant Laudes] (both languages), the five Lauds antiphons by position: three psalm groups, the canticle, Laudate. Psalmody is the 'Psalmi Dominica' scheme these feasts' [Rule] names (Ps 92 / 99 / 62, the Three Young Men, Ps 148-150), the same shape as apparition-of-st-michael.yml. Before this file the psalm antiphons fell to the ferial ones.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Hi qui amícti sunt * stolis albis, qui sunt, et unde venérunt?
+    - psalms:
+        - 99
+      antiphon: Hi sunt * qui venérunt de tribulatióne magna et lavérunt stolas suas in sánguine Agni.
+    - psalms:
+        - 62
+      antiphon: Ideo sunt * ante thronum Dei et sérviunt ei die ac nocte.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Et ipsi vicérunt * dracónem propter sánguinem Agni et propter testaméntum Verbi sui.
+  laudate:
+    antiphon: Beáti * qui lavant stolas suas in sánguine Agni.
+
+# Matins Nocturn 2-3 readings for the Most Precious Blood of Our Lord
+# Jesus Christ (July 1). Sourced directly from
+# web/www/horas/Latin/Sancti/07-01.txt, English/Sancti/07-01.txt.
+# Nocturn 2: Lectio4-6, St. John Chrysostom's homily on the Blood of
+# Christ (including the note on Pius XI's 1933 elevation of this feast
+# to Duplex I Classis for the Jubilee of the Redemption), combined into
+# one reading. Nocturn 3: the Gospel pericope (John 19:30-35, full text)
+# is now authored too (isGospel: true, immediately before St. Augustine
+# of Hippo's homily, Lectio7-9) -- sourced from
+# missa/Latin/Sancti/07-01.txt's own [Evangelium] and
+# missa/English/Sancti/07-01.txt, matching the convention set by
+# post-pentecost-16.yml (2026-09-05). Nocturn 2's own homily (St. John
+# Chrysostom) is not Gospel-paired -- it stays as-is.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. John Chrysostom, Homily 84 on John, ch. 19
+      text: |-
+        Vis sánguinis Christi audíre virtútem? Redeámus ad ejus exémplum, et priórem typum recordémur, et prístinam Scriptúram narrémus. In Ægýpto, nocte média, Ægýptiis Deus plagam décimam minabátur, ut eórum primogénita deperírent, quia primogénitum ejus pópulum detinébant. Sed, ne amáta plebs Judæórum una cum illis periclitarétur, quia unus locus continébat univérsos, remédium discretiónis invéntum est. Proínde exémplum mirábile, ut discas in veritáte virtútem. Ira divínæ indignatiónis operabátur, et domos síngulas mórtifer circuíbat. Quid ígitur Móyses? Occídite, inquit, agnum annículum, et sánguine ejus liníte jánuas. Quid ais, Móyses? Sanguis ovis rationálem hóminem liberáre consuévit? Valde, inquit; non eo quod sanguis est, sed quia Domínici sánguinis per eum demonstrátur exémplum.
+
+        Nam, sicut regnántium státuæ, quæ sine causa sunt et sermóne, nonnúmquam ad se confugiéntibus homínibus, ánima et ratióne decorátis, subveníre consuevérunt, non quia sunt ære conféctæ, sed quia rétinent imáginem principálem; ita et sanguis ille, qui irrationális fuit, ánimas habéntes hómines liberávit, non quia sanguis fuit, sed quia hujus sánguinis ostendébat advéntum. Et tunc Angelus ille vastátor, cum linítos postes atque áditus pervidéret, transjécit gressus et non est ausus intráre. Nunc ergo si víderit inimícus, non póstibus impósitum sánguinem typi, sed fidélium ore lucéntem sánguinem veritátis Christi, templi póstibus dedicátum, multo magis se súbtrahet. Si enim Angelus cessit exémplo, quanto magis terrébitur inimícus, si ipsam perspéxerit veritátem? Vis et áliam hujus sánguinis scrutári virtútem? Volo. Unde primum occúrrit, inspícias, et de quo fonte manávit. De ipsa primum cruce procéssit; latus illud Domínicum inítium fuit. Latus miles apéruit, et templi sancti paríetem patefécit; et ego thesáurum præclárum invéni, et fulgéntes divítias me grátulor reperíre.
+
+        Sic et de illo agno factum est: Judǽi ovem occidérunt, et ego fructum de sacraménto cognóvi. De látere sanguis et aqua. Nolo tam fácile, audítor, tránseas tanti secréta mystérii; restat enim mihi mýstica atque secretális orátio. Dixi baptísmatis sýmbolum et mysteriórum, aquam illam et sánguinem demonstráre. Ex his enim sancta fundáta est Ecclésia per lavácri regeneratiónem, et renovatiónem Spíritus Sancti. Per baptísma, inquam, et mystéria, quæ ex látere vidéntur esse proláta. Ex látere ígitur suo Christus ædificávit Ecclésiam, sicut de látere Adam ejus conjux Heva proláta est. Nam hac de causa Paulus quoque testátur dicens: De córpore ejus et de óssibus ejus sumus; latus vidélicet illud signíficans. Nam, sicut de illo látere Deus fecit féminam procreári, sic et de suo látere Christus aquam nobis et sánguinem dedit, unde repararétur Ecclésia.
+
+        Recurrénte autem anno ab humáni géneris redemptióne undevícies centenário, quem ad tam ineffábile benefícium recoléndum solémni præ ómnibus sacro Jubilǽo summus Póntifex Pius undécimus celebrátum vóluit; ut pretiósi sánguinis quo redémpti sumus, Agni Immaculáti Christi uberióres dimanárent in hómines fructus, ejúsque memória fidélibus, vivídius commendarétur, idem summus Póntifex Pretiosíssimi Sánguinis Dómini nostri Jesu Christi festum, quotánnis ab univérsa Ecclésia peragéndum, ad ritum dúplicem primæ classis evéxit.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Joann 19:30-35
+      text: 'In illo témpore: Cum accepísset Jesus acétum, dixit: Consummátum est. Et inclináto cápite trádidit spíritum. Judæi ergo -- quóniam Parascéve erat --, ut non remanérent in cruce córpora sábbato -- erat enim magnus dies ille sábbati --, rogavérunt Pilátum, ut frangeréntur eórum crura et tolleréntur. Venérunt ergo mílites: et primi quidem fregérunt crura et altérius, qui crucifíxus est cum eo. Ad Jesum autem cum venissent, ut vidérunt eum jam mórtuum, non fregérunt ejus crura, sed unus mílitum láncea latus ejus apéruit, et contínuo exívit sanguis et aqua. Et qui vidit, testimónium perhíbuit; et verum est testimónium ejus.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine of Hippo, Tractate 120 on John
+      text: |-
+        Vigilánti verbo Evangelísta usus est, ut non díceret: Latus ejus percússit, aut vulnerávit, aut quid áliud, sed Apéruit; ut illic quodámmodo vitæ óstium panderétur, unde sacraménta Ecclésiæ manavérunt, sine quibus ad vitam, quæ vera vita est, non intrátur. Ille sanguis qui fusus est, in remissiónem fusus est peccatórum. Aqua illa salutáre témperat póculum; hæc et lavácrum præstat et potum. Hoc prænuntiábat quod Noë in látere arcæ óstium fácere jussus est, quo intrárent animália quæ non erant dilúvio peritúra, quibus præfigurabátur Ecclésia. Propter hoc prima múlier facta est de látere viri dormiéntis, et appelláta est vita matérque vivórum. Magnum quippe significávit bonum, ante magnum prævaricatiónis malum. Hic secúndus Adam, inclináto cápite, in cruce dormívit, ut inde formarétur ei conjux, quæ de látere dormiéntis efflúxit. O mors, unde mórtui revivíscunt! Quid isto sánguine múndius? Quid vúlnere isto salúbrius?
+
+        Tenebántur hómines captívi sub diábolo, et dæmónibus serviébant; sed redémpti sunt a captivitáte. Véndere enim se potuérunt, sed redímere non potuérunt. Venit Redémptor, et dedit prétium; fudit sánguinem suum, et emit orbem terrárum. Quǽritis quid émerit? Vidéte quid déderit, et inveniétis quid émerit. Sanguis Christi prétium est. Tanti quid valet? quid, nisi totus orbis? quid, nisi omnes gentes? Valde ingráti sunt prétio suo, aut multum supérbi sunt, qui dicunt, aut illud tam parum esse ut solos Afros émerit, aut se tam magnos esse pro quibus solis illud sit datum. Non ergo exsúltent, non supérbiant. Pro toto dedit, quantum dedit.
+
+        Hábuit ille sánguinem, unde nos redímeret; et ad hoc accépit sánguinem, ut esset quem pro nobis rediméndis effúnderet. Sanguis Dómini tui, si vis, datus est pro te; si nolúeris esse, non est datus pro te. Forte enim dicis: Hábuit sánguinem Deus meus, quo me redímeret, sed jam, cum passus est, totum dedit; quid illi remánsit, quod det et pro me? Hoc est magnum, quia semel dedit, et pro ómnibus dedit. Sanguis Christi volénti est salus, nolénti supplícium. Quid ergo dúbitas, qui mori non vis, a secúnda pótius morte liberári? Qua liberáris, si vis tóllere crucem tuam, et sequi Dóminum; quia ille tulit suam, et quæsívit servum.
+      status: verified

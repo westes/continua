@@ -1,0 +1,63 @@
+# Read directly from web/www/horas/Latin/Sancti/09-24.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui per gloriosíssimam Fílii tui Matrem, ad liberándos Christi
+    fidéles a potestáte paganórum nova Ecclésiam tuam prole amplificáre
+    dignátus es: præsta, quǽsumus; ut, quam pie venerámur tanti operis
+    institutrícem, ejus páriter méritis et intercessióne, a peccátis
+    ómnibus et captivitáte dǽmonis liberémur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-the-bvm's own C11 ("In Festis
+# Beatae Mariae Virginis") -- her own file cites "ex C11" and has no proper
+# antiphon of her own, so this reuses C11's own [Ant 2] (Latin+English sourced
+# directly) + [Versum 2] (an explicit `@Commune/C6` cross-reference in the source,
+# matching the same "Diffúsa est grátia" versicle already independently
+# live-verified for st-clare-commemoration.yml/st-sabina-commemoration.yml).
+# Collect is her own real proper (our-lady-of-ransom-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Beáta es, * María, quæ credidísti: perficiéntur in te, quæ dicta sunt tibi a Dómino, allelúia.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Deus, qui per gloriosíssimam Fílii tui Matrem, ad liberándos Christi
+    fidéles a potestáte paganórum nova Ecclésiam tuam prole amplificáre
+    dignátus es: præsta, quǽsumus; ut, quam pie venerámur tanti operis
+    institutrícem, ejus páriter méritis et intercessióne, a peccátis
+    ómnibus et captivitáte dǽmonis liberémur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat
+    in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for Our Lady of Ransom (Sep 24). Sourced
+# directly from web/www/horas/Latin/Sancti/09-24.txt,
+# English/Sancti/09-24.txt. Lectio4-6 combined into one reading, one
+# continuous account of the founding of the Order of Our Lady of
+# Ransom. No Lectio7-9 in her own file -- defers to the Common's own
+# Nocturn 3, not transcribed here.
+#
+# Checked 2026-09-05 for a missing Gospel pairing: confirmed via
+# horas/Latin/Sancti/09-24.txt directly — the Rule ("ex C11") gives
+# only Lectio4-6 as this feast's own proper text; Lectio7-9 aren't
+# present at all, falling wholesale to Commune/C11's own Nocturn 3.
+# No SanctiM/09-24*.txt exists either, so there's no Monastic-track
+# override to check. No proper Gospel pericope of this feast's own
+# exists to pair against. No pairing added.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Quo témpore major feliciorque Hispaniárum pars diro Saracenórum opprimebátur jugo, innumerique fidéles sub immani servitute, maximo cum periculo christianæ fidei abjurandæ, amittendæque salútis ætérnæ, infeliciter detinebántur, beatíssima cælórum Regína, tot tantisque benigniter occurrens malis, nimiam caritátem suam in iis rediméndis osténdit. Nam sancto Petro Nolasco, pietáte et opibus florenti, qui, sanctis vacans meditatiónibus, jugiter animo recogitábat qua ratióne tot Christianórum ærumnis sub Maurórum captivitáte degéntium succurri posset, ípsamet beatíssima Virgo, serena fronte, se conspiciéndam dedit; et acceptíssimum sibi ac unigenito suo Fílio fore dixit, si suum in honórem institueréntur ordo religiosórum, quibus cura incumberet captivos e Turcárum tyrannide liberandi. Qua cælésti visióne vir Dei recreatus, mirum est quo caritátis ardore flagrare cœperit, hoc unum servans in corde suo, ut ipse ac instituénda ab eo religio maximam illam caritátem sedulo exercerent, ut quisque ánimam suam póneret pro amicis et próximis suis.
+
+        Ea ipsa nocte éadem Virgo sanctíssima beato Raymundo de Péñafort et Jacobo Aragoniæ regi appáruit, idípsum de religiosis instituéndis ádmonens, suadensque ut opem pro constructióne tanti operis ferrent. Petrus autem statim ad Raymundi pedes, qui ipsi erat a sacris confessiónibus, ádvolans, ei rem omnem apéruit; quem étiam cælitus instructum réperit, ejusque directióni se humillime subjécit. At, superveniens Jacobus rex, quam et ipse acceperat a beatíssima Vírgine, revelatiónem éxsequi státuit. Unde, collátis inter se consíliis, et consentiéntibus ánimis, in honórem ejusdem Vírginis Matris ordinem institúere aggressi sunt, sub invocatióne sanctæ Maríæ de Mercede redemptiónis captivórum.
+
+        Die ígitur décima Augusti anno Dómini millesimo ducentésimo décimo octavo, rex idem Jacobus eam institutiónem, jamprídem ab iisdem sanctis viris conceptam, éxsequi státuit, sodálibus quarto voto adstrictis manéndi in pignus sub paganórum potestate, si pro Christianórum liberatióne opus fúerit. Quibus rex ipsa arma sua regia in péctore deferre concessit, et a Gregório nono illud tam præcellentis erga próximum caritátis institutum et religiónem confírmari curávit. Sed et ipse Deus per Vírginem Matrem increméntum dedit, ut talis institútio celerius ac felicius totum per orbem divulgarétur, sanctisque viris florúerit caritate ac pietáte insígnibus, qui eleemósynas a Christi fidelibus collectas in prétium redemptiónis suórum proximórum expénderent, seque ipsos intérdum darent in redemptiónem multórum.
+      status: verified

@@ -1,0 +1,532 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C2a.txt and its English counterpart,
+# 2026-08. A Common-collect template — `{N}` stands for the saint's own
+# name, substituted by getDayCollect (hours/resolve-common.ts) via
+# SaintRecord.collectCommon/collectName.
+collect/c2a:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, qui beáti {N} Mártyris tui natalítia cólimus, intercessióne ejus in tui nóminis amóre roborémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C2a-1.txt and its English counterpart,
+# 2026-08. A Common-collect template — `{N}` stands for the saint's own
+# name, substituted by getDayCollect (hours/resolve-common.ts) via
+# SaintRecord.collectCommon/collectName.
+collect/c2a-1:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, intercedénte beáto {N} Mártyre tuo, et a cunctis adversitátibus liberémur in córpore, et a pravis cogitatiónibus mundémur in mente.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C7.txt ("Commune Unius non Virginis
+# Martyris") — its own [Oratio] is `@Commune/C6::s/Vírginis et //`, i.e.
+# collect-c6's own text with "Vírginis et " stripped (a matron/widow
+# martyr, not a virgin) — resolved here by hand rather than building
+# general sed-directive support for one saint (st-sabina). A
+# Common-collect template — `{N}` stands for the saint's own name,
+# substituted by getDayCollect (hours/resolve-common.ts) via
+# SaintRecord.collectCommon/collectName.
+collect/c7:
+  text: |
+    Orémus.
+    Deus, qui inter cétera poténtiæ tuæ mirácula étiam in sexu frágili victóriam martýrii contulísti: concéde propítius; ut, qui beátæ {N} Mártyris tuæ natalícia cólimus, per ejus ad te exémpla gradiámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Commune Martyris non Pontificis (C2a) is a bare alias of C2 (no own [Ant 2]/[Versum 2] override in Latin/Commune/C2a.txt) -- same Ant 2 as the Martyr-Bishop Common, matching the already-shared lauds-versicle-common-of-a-martyr.yml text.
+commemoration-antiphon:
+  text: |
+    Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+  status: verified
+
+# Authored 2026-09-10, closing a real content gap found while auditing
+# hymn-doxology markers: `hours/matins.ts`'s `resolveMatinsHymn` looks up
+# `matins-hymn-common-of-a-martyr.yml` for any winning Martyr-Common saint
+# with no proper Matins hymn of his own, but this file never existed --
+# any such saint silently fell straight through to the plain ferial Matins
+# hymn instead. Divinum Officium's own `Commune/C2.txt` `[Hymnus
+# Matutinum]` is a straight `@:Hymnus Vespera` cross-reference -- Matins
+# reuses the same "Deus tuórum mílitum" hymn as Vespers verbatim (see
+# vespers-hymn-common-of-a-martyr.yml, byte-identical text/status). Final
+# stanza marked with a leading "* " -- Divinum Officium's own marker for a
+# hymn's variable doxology; see hours/resolve-common.ts's substituteDoxology
+# and hours/hymn-doxology.ts.
+matins-hymn:
+  text: |-
+    Deus tuórum mílitum
+    Sors, et córona, prǽmium,
+    Laudes canéntes Mártyris
+    Absólve nexu críminis.
+
+    Hic nempe mundi gáudia,
+    Et blandiménta nóxia
+    Cadúca rite députans,
+    Pervénit ad cæléstia.
+
+    Pœnas cucúrrit fórtiter,
+    Et sústulit viríliter,
+    Pro te effúndens sánguinem,
+    Ætérna dona póssidet.
+
+    Ob hoc precátu súpplici
+    Te póscimus, piíssime;
+    In hoc triúmpho Mártyris
+    Dimítte noxam sérvulis.
+
+    * Laus et perénnis glória
+    Deo Patri, et Fílio,
+    Sancto simul Paráclito,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# The Common-of-a-Martyr's own invitatory antiphon ("Regem Mártyrum
+# Dóminum" / "The Lord, the King of Martyrs"), read from the reference
+# engine's own Commune/C2.txt [Invit] line (both languages) — C3 (Several
+# Martyrs) inherits this verbatim (`[Invit]` line is a literal
+# `@Commune/C2` redirect, no own text), matching this Common's own
+# Matins psalmody precedent (matins-psalmody-overrides.ts's own
+# Common-of-a-Martyr-Bishop-redirects-to-Common-of-a-Martyr note).
+# Duplicated under common-of-a-martyr and common-of-a-martyr-bishop
+# (both real SaintRecord.common ids in use) rather than aliased, per this
+# project's established convention. Any winning martyr with no proper
+# invitatory antiphon of his own authored falls to this Common tier
+# (hours/matins.ts's resolveMatinsInvitatoryText).
+matins-invitatory:
+  text: Regem Mártyrum Dóminum, * Veníte, adorémus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C2` live query, 2026-08 -- used instead of a real saint's own
+# day for the same reason recorded in vespers-hymn-common-of-a-martyr-
+# bishop.yml's header (every real Common-of-a-Martyr-Bishop saint either
+# has proper content of his own -- St. Lawrence, St. Stephen -- or never
+# reaches the rank needed to keep his own hour un-outranked -- St.
+# Zephyrinus, St. Callistus). Byte-identical to `votive=C2`/`C2a` (plain
+# Common of a Martyr), confirming TODO.md's earlier finding that these
+# categories share real content, not just their Matins psalmody. Same
+# chapter reused for Vespers -- no separate vespers-capitulum-<id> file
+# authored, per vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback (see
+# its own doc comment) -- same convention as Common-of-a-Confessor-Not-
+# Bishop's identical Lauds/Vespers chapter.
+lauds-capitulum:
+  text: 'Beátus vir, qui suffert tentatiónem: quóniam cum probátus fúerit, accípiet corónam vitæ, quam repromísit Deus diligéntibus se.'
+  citation: Jac 1:12
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C2` live query, 2026-08 -- see lauds-capitulum-common-of-a-
+# martyr-bishop.yml's header for why the votive-office view was used.
+# "Martyr Dei, qui únicum" -- the classic Common-of-a-Martyr Lauds hymn,
+# a single genuine recension (no Urban VIII variant text found for this
+# one in the reference engine, unlike Iste Confessor's).
+lauds-hymn:
+  text: |-
+    Martyr Dei, qui únicum
+    Patris sequéndo Fílium,
+    Victis triúmphas hóstibus,
+    Victor fruens cæléstibus.
+
+    Tui precátus múnere
+    Nostrum reátum dílue,
+    Arcens mali contágium,
+    Vitæ rémovens tǽdium.
+
+    Solúta sunt jam víncula
+    Tui sacráti córporis:
+    Nos solve vinclis sǽculi,
+    Amóre Fílii Dei.
+
+    * Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C2` live query, 2026-08 -- see lauds-capitulum-common-of-a-
+# martyr-bishop.yml's header for why the votive-office view was used.
+lauds-responsory:
+  text: |
+    R.br. Glória et honóre * Coronásti eum, Dómine.
+    R. Glória et honóre * Coronásti eum, Dómine.
+    V. Et constituísti eum super ópera mánuum tuárum.
+    R. Coronásti eum, Dómine.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Glória et honóre * Coronásti eum, Dómine.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C2` live query, 2026-08 -- see lauds-capitulum-common-of-a-
+# martyr-bishop.yml's header for why the votive-office view was used.
+# Same versicle as Vespers -- see vespers-versicle-common-of-a-martyr-
+# bishop.yml's header.
+lauds-versicle:
+  text: |
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Anacletus, 07-13-2028) -- common-of-a-martyr.
+# Covers both `common-of-a-martyr-bishop` and `common-of-a-martyr`
+# saints (SaintRecord.common) -- live-verified identical P/T/S/N across
+# both (the Bishop/non-Bishop distinction only affects the collect's
+# own wording, not these Scripture-antiphons), cross-checked against
+# St. Anicetus/St. Simeon/St. Blaise/St. Pantaleon.
+prime-antiphon:
+  text: Qui me conféssus fúerit * coram homínibus, confitébor et ego eum coram Patre meo.
+  status: verified
+
+# New file, 2026-10-04: the Common-category tier of Prime's Lectio
+# Brevis override (see hours/resolve-common.ts's getPrimeLectioBrevis) --
+# a saint with no proper Lectio Prima of her own, but who belongs to a
+# Common category, uses that category's own text rather than falling all
+# the way to the generic per-annum default. Sourced directly from
+# web/www/horas/Latin/Commune/C2.txt's own [Lectio Prima] tag and its
+# English counterpart.
+prime-lectio:
+  text: Justus cor suum trádidit ad vigilándum dilúculo ad Dóminum, qui fecit illum, et in conspéctu Altíssimi deprecábitur.
+  citation: Sir 39:6
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Anacletus, 07-13-2028) -- common-of-a-martyr.
+# Covers both `common-of-a-martyr-bishop` and `common-of-a-martyr`
+# saints (SaintRecord.common) -- live-verified identical P/T/S/N across
+# both (the Bishop/non-Bishop distinction only affects the collect's
+# own wording, not these Scripture-antiphons), cross-checked against
+# St. Anicetus/St. Simeon/St. Blaise/St. Pantaleon.
+terce-antiphon:
+  text: Qui séquitur me, * non ámbulat in ténebris, sed habébit lumen vitæ, dicit Dóminus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Anacletus, 07-13-2028) -- common-of-a-martyr.
+# Covers both `common-of-a-martyr-bishop` and `common-of-a-martyr`
+# saints (SaintRecord.common) -- live-verified identical P/T/S/N across
+# both (the Bishop/non-Bishop distinction only affects the collect's
+# own wording, not these Scripture-antiphons), cross-checked against
+# St. Anicetus/St. Simeon/St. Blaise/St. Pantaleon.
+terce-capitulum:
+  text: |
+    Beátus vir, qui suffert tentatiónem: quóniam cum probátus fúerit, accípiet corónam vitæ, quam repromísit Deus diligéntibus se.
+    R. Deo grátias.
+    V. Glória et honóre coronásti eum, Dómine.
+    R. Et constituísti eum super ópera mánuum tuárum.
+  citation: Jac 1:12
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Anacletus, 07-13-2028) -- common-of-a-martyr.
+# Covers both `common-of-a-martyr-bishop` and `common-of-a-martyr`
+# saints (SaintRecord.common) -- live-verified identical P/T/S/N across
+# both (the Bishop/non-Bishop distinction only affects the collect's
+# own wording, not these Scripture-antiphons), cross-checked against
+# St. Anicetus/St. Simeon/St. Blaise/St. Pantaleon.
+sext-antiphon:
+  text: 'Qui mihi minístrat, * me sequátur: et ubi ego sum, illic sit et miníster meus.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Anacletus, 07-13-2028) -- common-of-a-martyr.
+# Covers both `common-of-a-martyr-bishop` and `common-of-a-martyr`
+# saints (SaintRecord.common) -- live-verified identical P/T/S/N across
+# both (the Bishop/non-Bishop distinction only affects the collect's
+# own wording, not these Scripture-antiphons), cross-checked against
+# St. Anicetus/St. Simeon/St. Blaise/St. Pantaleon.
+sext-capitulum:
+  text: |
+    Cibávit illum pane vitæ et intelléctus, et aqua sapiéntiæ salutáris potávit illum Dóminus Deus noster.
+    R. Deo grátias.
+    V. Posuísti, Dómine, super caput ejus.
+    R. Corónam de lápide pretióso.
+  citation: Sir 15:3
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Anacletus, 07-13-2028) -- common-of-a-martyr.
+# Covers both `common-of-a-martyr-bishop` and `common-of-a-martyr`
+# saints (SaintRecord.common) -- live-verified identical P/T/S/N across
+# both (the Bishop/non-Bishop distinction only affects the collect's
+# own wording, not these Scripture-antiphons), cross-checked against
+# St. Anicetus/St. Simeon/St. Blaise/St. Pantaleon.
+none-antiphon:
+  text: Volo Pater, * ut ubi ego sum, illic sit et miníster meus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Anacletus, 07-13-2028) -- common-of-a-martyr.
+# Covers both `common-of-a-martyr-bishop` and `common-of-a-martyr`
+# saints (SaintRecord.common) -- live-verified identical P/T/S/N across
+# both (the Bishop/non-Bishop distinction only affects the collect's
+# own wording, not these Scripture-antiphons), cross-checked against
+# St. Anicetus/St. Simeon/St. Blaise/St. Pantaleon.
+none-capitulum:
+  text: |
+    Justus cor suum trádidit ad vigilándum dilúculo ad Dóminum, qui fecit illum, et in conspéctu Altíssimi deprecábitur.
+    R. Deo grátias.
+    V. Magna est glória ejus in salutári tuo.
+    R. Glóriam et magnum decórem impónes super eum.
+  citation: Sir 39:6
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C2` live query, 2026-08 -- the classic "Deus tuórum mílitum"
+# Common-of-a-Martyr Vespers hymn, byte-identical to `votive=C2b` (Common
+# of a Martyr Bishop) -- see vespers-hymn-common-of-a-martyr-bishop.yml's
+# header for the fuller gap/sourcing writeup (the bug report that
+# surfaced this, why the votive-office view was used instead of a real
+# saint's day, and why this is a separate file rather than an alias
+# redirect). Duplicated verbatim into this plain `common-of-a-martyr` id
+# for St. Hadrian/St. Hermes/St. Fidelis of Sigmaringen, who use it
+# directly (not the `-bishop` id).
+vespers-hymn:
+  text: |-
+    Deus tuórum mílitum
+    Sors, et córona, prǽmium,
+    Laudes canéntes Mártyris
+    Absólve nexu críminis.
+
+    Hic nempe mundi gáudia,
+    Et blandiménta nóxia
+    Cadúca rite députans,
+    Pervénit ad cæléstia.
+
+    Pœnas cucúrrit fórtiter,
+    Et sústulit viríliter,
+    Pro te effúndens sánguinem,
+    Ætérna dona póssidet.
+
+    Ob hoc precátu súpplici
+    Te póscimus, piíssime;
+    In hoc triúmpho Mártyris
+    Dimítte noxam sérvulis.
+
+    * Laus et perénnis glória
+    Deo Patri, et Fílio,
+    Sancto simul Paráclito,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C2` live query, 2026-08 -- see vespers-hymn-common-of-a-martyr-
+# bishop.yml's header for why the votive-office view was used instead of
+# a real saint's own day.
+vespers-responsory:
+  text: |
+    R.br. Posuísti, Dómine, * Super caput ejus.
+    R. Posuísti, Dómine, * Super caput ejus.
+    V. Corónam de lápide pretióso.
+    R. Super caput ejus.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Posuísti, Dómine, * Super caput ejus.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C2` live query, 2026-08 -- same versicle as Lauds (see lauds-
+# versicle-common-of-a-martyr.yml).
+vespers-versicle:
+  text: |
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+  status: verified
+
+# Content read from the reference engine (Monastic Tridentinum 1617, command=prayVespera): First Vespers variant; the default (second Vespers) file is the same id without "-first". See hours/resolve-common.ts withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Glória et honóre coronásti eum, Dómine.
+    R. Et constituísti eum super ópera mánuum tuárum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Anacletus, 07-13-2028) -- common-of-a-martyr.
+# Covers both `common-of-a-martyr-bishop` and `common-of-a-martyr`
+# saints (SaintRecord.common) -- live-verified identical P/T/S/N across
+# both (the Bishop/non-Bishop distinction only affects the collect's
+# own wording, not these Scripture-antiphons), cross-checked against
+# St. Anicetus/St. Simeon/St. Blaise/St. Pantaleon.
+benedictus-antiphon:
+  text: Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+  status: verified
+
+# Second Vespers Magnificat antiphon for `common-of-a-martyr` (Commune
+# Unius Martyris, Latin/Commune/C2.txt's own [Ant 3] -- confirmed by
+# file position and live-verified directly: St. Blaise's own Second
+# Vespers (02-03-2026, no "Vespera de sequenti") renders this exact
+# text. Ant 2 in the same file matches the already-authored
+# benedictus-antiphon-common-of-a-martyr.yml's "Qui odit" text exactly.
+# Covers `common-of-a-martyr-bishop` too, same as the Benedictus file.
+magnificat-antiphon:
+  text: Qui vult veníre post me, * ábneget semetípsum, et tollat crucem suam, et sequátur me.
+  status: verified
+
+# First Vespers Magnificat antiphon for this Common: Latin/Commune/C2.txt's own
+# [Ant 1] (and its English counterpart), where it differs from [Ant 3]. Second
+# Vespers' [Ant 3] is magnificat-antiphon-common-of-a-martyr.yml (the default); see
+# hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: 'Iste Sanctus * pro lege Dei sui certávit usque ad mortem, et a verbis impiórum non tímuit: fundátus enim erat supra firmam petram.'
+  status: verified
+
+# Generic Common-of-a-Martyr Matins psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayMatutinum,
+# 2029-02-01 -- St. Ignatius of Antioch, Common of a Martyr-Bishop, whose
+# own rule file is "vide C2" i.e. entirely from this Common, no proper
+# antiphon of his own -- so his output *is* this category's generic
+# scheme, not a saint-specific deviation). Also confirmed
+# (data/hours/CommuneM/C2a.txt in the reference engine) that
+# Common-of-a-Martyr-Bishop's own Matins psalmody redirects outright to
+# this same Common-of-a-Martyr file -- the two categories share one
+# scheme, not two.
+#
+# `aliases` registers `common-of-a-martyr-bishop` under this same scheme
+# per the redirect confirmed above, rather than duplicating this file --
+# checked all 3 Duplex+ Common-of-a-Martyr-Bishop saints on the calendar
+# (Ignatius, Callistus I, Boniface of Mainz) and none has a proper
+# antiphon of his own, so this alias is how each of them gets real
+# psalmody at all (`hours/matins-psalmody-overrides.ts`'s tiered
+# lookup falls through proper -> Common -> ferial; this is their Common
+# tier).
+#
+# Recorded so the next Common-of-a-Martyr(-Bishop) saint's own proper
+# file doesn't have to re-derive/re-verify these same shared psalm
+# numbers and versicles from scratch, and as the reference point for
+# what "differs from Common" means when authoring one (see
+# matins-psalmody-overrides/saints/st-lawrence.yml's own note on its one
+# genuine deviation, Ps 16 vs this file's Ps 64 in Nocturn 2).
+matins-psalmody:
+  aliases:
+    - common-of-a-martyr-bishop
+  nocturn1:
+    groups:
+      - psalms:
+          - 1
+        antiphon: In lege Dómini * fuit volúntas ejus die ac nocte.
+      - psalms:
+          - 2
+        antiphon: Prǽdicans * præcéptum Dómini constitútus est in monte sancto ejus.
+      - psalms:
+          - 4
+        antiphon: Fílii hóminum * scitóte quia Dóminus sanctum suum mirificávit.
+      - psalms:
+          - 5
+        antiphon: Scuto bonæ voluntátis * tuæ coronásti eum Dómine.
+      - psalms:
+          - 8
+        antiphon: In univérsa terra * glória et honóre coronásti eum.
+      - psalms:
+          - 10
+        antiphon: 'Justus Dóminus, * et justítiam diléxit: æquitátem vidit vultus ejus.'
+    versicle:
+      v: Glória et honóre coronásti eum, Dómine.
+      r: Et constituísti eum super ópera mánuum tuárum.
+  nocturn2:
+    groups:
+      - psalms:
+          - 14
+        antiphon: 'Habitábit * in tabernáculo tuo: requiéscet in monte sancto tuo.'
+      - psalms:
+          - 20
+        antiphon: Posuísti, Dómine, * super caput ejus corónam de lápide pretióso.
+      - psalms:
+          - 23
+        antiphon: Hic accípiet * benedictiónem a Dómino, et misericórdiam a Deo salutári suo; qui hæc est generátio quæréntium Dóminum.
+      - psalms:
+          - 63
+        antiphon: Lætábitur justus * in Dómino et sperábit in eo, et laudabúntur omnes recti corde.
+      - psalms:
+          - 64
+        antiphon: Beátus * quem elegísti Dómine, habitábit in átriis tuis.
+      - psalms:
+          - 91
+        antiphon: 'Justus ut palma florébit: sicut cedrus Líbani multiplicábitur.'
+    versicle:
+      v: Posuísti, Dómine, super caput ejus.
+      r: Corónam de lápide pretióso.
+  nocturn3:
+    antiphon: Qui vult veníre post me, * ábnegat semetípsum, et tollet crucem suam, et sequátur me.
+    canticles:
+      - refs:
+          - book: sir
+            chapter: 14
+            verses: '22'
+          - book: sir
+            chapter: 15
+            verses: 3-4
+          - book: sir
+            chapter: 15
+            verses: '6'
+      - refs:
+          - book: jer
+            chapter: 17
+            verses: 7-8
+      - refs:
+          - book: sir
+            chapter: 31
+            verses: 8-11
+    versicle:
+      v: Magna est glória ejus in salutári tuo.
+      r: Glóriam et magnum decórem impónes super eum.
+
+# Generic Common-of-a-Martyr Lauds psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayLaudes,
+# votive=C2). Psalm numbers (92, 99, 62, Canticum Trium Puerorum) are the
+# same fixed Duplex-majus+ set used by every Common (see
+# hours/lauds-psalmody-overrides.ts's own doc comment) -- only these
+# antiphons are Martyr-specific.
+#
+# `aliases` registers `common-of-a-martyr-bishop` under this same scheme
+# -- votive=C2b at Lauds is byte-identical to C2 for these same slots
+# (matches matins-psalmody-overrides/categories/common-of-a-martyr.yml's
+# own finding that the two categories share one Matins scheme too).
+lauds-psalmody:
+  aliases:
+    - common-of-a-martyr-bishop
+  groups:
+    - psalms:
+        - 92
+      antiphon: Qui me conféssus fúerit * coram homínibus, confitébor et ego eum coram Patre meo.
+    - psalms:
+        - 99
+      antiphon: Qui séquitur me, * non ámbulat in ténebris, sed habébit lumen vitæ, dicit Dóminus.
+    - psalms:
+        - 62
+      antiphon: 'Qui mihi minístrat, * me sequátur: et ubi ego sum, illic sit et miníster meus.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Si quis mihi ministráverit, * honorificábit eum Pater meus, qui est in cælis, dicit Dóminus.
+  laudate:
+    antiphon: Volo Pater, * ut ubi ego sum, illic sit et miníster meus.
+
+# Generic Common-of-a-Martyr Vespers psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayVespera,
+# votive=C2, 2026-08-28).
+#
+# `aliases` registers `common-of-a-martyr-bishop` under this same scheme
+# -- `votive=C2b` at Vespers returned byte-identical psalms/antiphons to
+# `votive=C2` for these same four slots (only the Magnificat antiphon
+# differs, handled separately, not this psalmody table).
+vespers-psalmody:
+  aliases:
+    - common-of-a-martyr-bishop
+  groups:
+    - psalms:
+        - 109
+      antiphon: Qui me conféssus fúerit * coram homínibus, confitébor et ego eum coram Patre meo.
+    - psalms:
+        - 111
+      antiphon: Qui séquitur me, * non ámbulat in ténebris, sed habébit lumen vitæ, dicit Dóminus.
+    - psalms:
+        - 112
+      antiphon: 'Qui mihi minístrat, * me sequátur: et ubi ego sum, illic sit et miníster meus.'
+    - psalms:
+        - 115
+      antiphon: Volo Pater, * ut ubi ego sum, illic sit et miníster meus.

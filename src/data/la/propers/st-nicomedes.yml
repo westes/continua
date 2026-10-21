@@ -1,0 +1,41 @@
+# Read directly from web/www/horas/Latin/Sancti/09-15cc.txt's own [Oratio]
+# and English/Sancti/09-15cc.txt's own translation (a stray leading "v."
+# artifact in the source English, not present in the Latin, is dropped
+# here as an evident formatting glitch, not real content).
+collect:
+  text: |
+    Orémus.
+    Adésto, Dómine, pópulo tuo: ut, beáti Nicomédis Mártyris tui mérita præclára suscípiens, ad
+    impetrándam misericórdiam tuam semper ejus patrocíniis adjuvétur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus
+    Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle, same combined-bundle shape as
+# st-gorgonius-commemoration.yml/st-canute-commemoration.yml -- Ant 2/
+# Versum 2 are the standard de-Communi pairing for the Common of a Martyr
+# not a Pontiff (C2a), already-verified Common text, not proper to
+# Nicomedes.
+commemoration:
+  text: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Adésto, Dómine, pópulo tuo: ut, beáti Nicomédis Mártyris tui mérita præclára suscípiens, ad impetrándam misericórdiam tuam semper ejus patrocíniis adjuvétur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Nicomedes, Martyr (Sep 15). Sourced
+# from web/www/horas/Latin/Sancti/09-15cc.txt, English/Sancti/09-15cc.txt.
+# The source carries only a single short lesson (Lectio93), transcribed
+# whole as one Nocturn 2 reading, same "short/single source lesson"
+# handling as st-gorgonius.yml.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Nicomédes presbyter, persequénte Christiános Domitiáno imperatóre, quod corpus Felículæ Vírginis, propter confessiónem christiánæ fídei a Flacco cómite interféctæ, sepelísset, comprehéndi jussus est; ductúsque ad státuas deórum, cum eis sacrificáre velle (quod fácere jubebátur) constánter negavísset, proptérea quod sacrifícium uni Deo vero, qui regnat in cælis, deberétur, plumbátis cæsus, in eo martýrio ánimam Deo réddidit. Cujus corpus cum idem comes in profluéntem Tíberim projíci imperásset, Justus, Nicomédis clericus dilígenter conquisítum, ad muros Urbis via Nomentána honorífice in sepúlcro cóndidit.
+      status: verified

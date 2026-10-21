@@ -1,0 +1,70 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Custódi, Dómine, quǽsumus, Ecclésiam tuam propitiatióne perpétua: et quia sine te lábitur humána mortálitas; tuis semper auxíliis et abstrahátur a nóxiis et ad salutária dirigátur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2031-09-07 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: 'Nolíte sollíciti esse * dicéntes: Quid manducábimus aut quid bibémus? scit enim Pater vester quid vobis necésse sit, allelúia.'
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2031-09-07 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: Quǽrite primum * regnum Dei et justítiam ejus, et hæc ómnia adiciéntur vobis, allelúia.
+  status: verified
+  temporal: true
+
+# Nocturn 3, 14th Sunday after Pentecost. Sourced from Tempora/Pent14-0.txt.
+# See post-pentecost-02.yml/post-pentecost-12.yml for sweep method note (no
+# proper Nocturn 2 in the source). Lectio7 bare incipit (Matt 6:24-33, "No
+# man can serve two masters") skipped; Lectio8-9 one continuous homily by
+# St. Augustine, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 6:24-33
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Nemo potest duóbus dóminis servíre: aut enim unum ódio habébit, et álterum díliget: aut unum sustinébit, et álterum contémnet. ¶ Non potéstis Deo servíre et mammónæ. Ideo dico vobis, ne sollíciti sitis ánimæ vestræ, quid manducétis, neque córpori vestro, quid induámini. Nonne ánima plus est quam esca: et corpus plus quam vestiméntum? Respícite volatília cœli, quóniam non serunt neque metunt neque cóngregant in hórrea: et Pater vester cœléstis pascit illa. Nonne vos magis pluris estis illis? Quis autem vestrum cógitans potest adjícere ad statúram suam cúbitum unum? Et de vestiménto quid sollíciti estis? Consideráte lília agri, quómodo crescunt: non labórant neque nent. Dico autem vobis, quóniam nec Sálomon in omni glória sua coopértus est sicut unum ex istis. Si autem fænum agri, quod hódie est et cras in clíbanum míttitur, Deus sic vestit: quanto magis vos módicæ fídei? Nolíte ergo sollíciti esse, dicéntes: Quid manducábimus aut quid bibémus aut quo operiémur? Hæc enim ómnia gentes inquírunt. Scit enim Pater vester, quia his ómnibus indigétis. Quǽrite ergo primum regnum Dei et justítiam ejus: et hæc ómnia adjiciéntur vobis.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop of Hippo, Book 2 on the Lord's Sermon on the Mount, ch. 14
+      text: |-
+        Nemo potest duóbus dóminis servíre. Ad hanc ipsam intentiónem referéndum est quod consequénter expónit, dicens: Aut enim unum ódio habébit, et álterum díliget; aut álterum patiétur, et álterum contémnet. Quæ verba diligénter consideránda sunt: nam, qui sint duo dómini, deínceps osténdit, cum dicit: Non potéstis Deo servíre, et mammónæ. Mammóna apud Hebrǽos divítiæ appellári dicúntur. Cóngruit et Púnicum nomen; nam lucrum Púnice mammon dícitur.
+
+        Sed qui servit mammónæ, illi útique servit, qui rebus istis terrénis mérito suæ perversitátis præpósitus, magistrátus hujus sǽculi a Dómino dícitur. Aut enim unum ódio habébit homo, et álterum díliget, id est, Deum; aut álterum patiétur, et álterum contémnet. Patiétur enim durum et perniciósum dóminum, quisquis servit mammónæ; sua enim cupiditáte implicátus, súbditur diábolo, et non eum díligit. Quis enim est qui díligat diábolum? sed tamen pátitur.
+
+        Ideo, inquit, dico vobis, non habére sollicitúdinem ánimæ vestræ quid edátis, neque córpori vestro quid induátis; ne forte, quamvis jam supérflua non quærántur, propter ipsa necessária cor duplicétur, et ad ipsa conquirénda, nostra detorqueátur inténtio, cum áliquid quasi misericórditer operámur: id est, ut cum consúlere alícui vidéri vólumus, nostrum emoluméntum ibi pótius, quam illíus utilitátem attendámus; et ídeo nobis non videámur peccáre, quia non supérflua, sed necessária sunt, quæ cónsequi vólumus.
+      responsory: |-
+        R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.
+        V. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.
+        R. Plena est omnis terra glória ejus.
+      status: verified

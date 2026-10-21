@@ -1,0 +1,510 @@
+# Read directly from web/www/horas/Latin/Sancti/10-07.txt's own [Oratio]
+# and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, cujus Unigénitus per vitam, mortem et resurrectiónem suam nobis salútis ætérnæ prǽmia comparávit: concéde, quǽsumus; ut hæc mystéria sacratíssimo beátæ Maríæ Vírginis Rosário recoléntes, et imitémur quod cóntinent, et quod promíttunt, assequámur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Lauds commemoration bundle: the feast's own [Ant 2] and [Versum 2]
+# (the Lauds/Benedictus pair, per the established commemoration-bundle
+# convention -- not [Ant 1]/[Versum 1], which are the First Vespers pair),
+# followed by the collect from our-lady-of-the-rosary-collect.yml.
+commemoration:
+  text: |
+    Ant. Solemnitátem hodiérnam * sacratíssimi Rosárii Genetrícis Dei Maríæ devóte celebrémus, ut ipsa pro nobis intercédat ad Dóminum Jesum Christum.
+    V. Elégit eam Deus, et præelégit eam.
+    R. Et habitáre eam fecit in tabernáculo suo.
+    Orémus.
+    Deus, cujus Unigénitus per vitam, mortem et resurrectiónem suam nobis salútis ætérnæ prǽmia comparávit: concéde, quǽsumus; ut hæc mystéria sacratíssimo beátæ Maríæ Vírginis Rosário recoléntes, et imitémur quod cóntinent, et quod promíttunt, assequámur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/10-07.txt's own [Hymnus
+# Matutinum_] ("In monte olívis cónsito", the Sorrowful Mysteries) and
+# English/Sancti/10-07.txt's translation (SanctiM's [HymnusM Matutinum]
+# is this same text with the Monastic "T" doxology). Doxology: see
+# lauds-hymn-our-lady-of-the-rosary.yml.
+matins-hymn:
+  text: |
+    In monte olívis cónsito
+    Redémptor orans prócidit,
+    Mæret, pavéscit, déficit,
+    Sudóre manans sánguinis.
+
+    A proditóre tráditus
+    Raptátur in pœnas Deus,
+    Durísque vinctus néxibus,
+    Flagris cruéntis cǽditur.
+
+    Intéxta acútis séntibus,
+    Coróna contuméliæ,
+    Squalénti amíctum púrpura,
+    Regem corónat glóriæ.
+
+    Molis crucem ter árduæ,
+    Sudans, anhélans, cóncidens,
+    Ad montis usque vérticem
+    Gestáre vi compéllitur.
+
+    Confíxus atro stípite
+    Inter sceléstos ínnocens,
+    Orándo pro tortóribus,
+    Exsánguis efflat spíritum.
+
+    * Glória tibi, Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/10-07.txt's own [Invit]
+# (SanctiM/10-07.txt has no override) and its English counterpart.
+matins-invitatory:
+  text: 'Solemnitátem Rosárii Vírginis Maríæ celebrémus: * Christum ejus Fílium adorémus Dóminum.'
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/10-07.txt's own [Capitulum Laudes]
+# and its English counterpart. Vespers reuses this chapter (see
+# hours/vespers.ts's lookupPart (Vespers chapter, Lauds sibling)). Without it the feast's
+# own hymn would never be reached: resolveOfficeBundle is all-or-nothing
+# per id (see lauds-capitulum-apparition-of-the-immaculate-bvm.yml).
+lauds-capitulum:
+  text: In me grátia omnis viæ et veritátis, in me omnis spes vitæ et virtútis. Ego, quasi rosa plantáta super rivos aquárum, fructificávi.
+  citation: Sir 24:25; 39:17
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/10-07.txt's own [Hymnus Laudes]
+# ("Jam morte victor obruta") and English/Sancti/10-07.txt's translation.
+# The source's closing `@Psalterium/Doxologies:Nat` is represented by the
+# standard `* ` doxology marker (see hours/resolve-common.ts's
+# substituteDoxology) with the Monastic "T" Nat ending as the default
+# text; common-of-the-bvm already sets `Doxology=Nat` via
+# hymn-doxology-by-feast.yml's byCommonId.
+lauds-hymn:
+  text: |
+    Jam morte, victor, óbruta,
+    Ab ínferis Christus redit,
+    Fractísque culpæ vínculis,
+    Cæli reclúdit límina.
+
+    Visus satis mortálibus
+    Ascéndit ad cæléstia,
+    Dextrǽque Patris ássidet
+    Consors patérnæ glóriæ.
+
+    Quem jam suis promíserat,
+    Sanctum datúrus Spíritum,
+    Linguis amóris ígneis
+    Mæstis alúmnis ímpluit.
+
+    Solúta carnis póndere
+    Ad astra Virgo tóllitur,
+    Excépta cæli júbilo
+    Et Angelórum cánticis.
+
+    Bis sena cingunt sídera
+    Almæ paréntis vérticem:
+    Throno propínqua Fílii
+    Cunctis creátis ímperat.
+
+    * Glória tibi, Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# SanctiM/10-07.txt's [Responsory Laudes] is `@Sancti/10-07:Responsory
+# Breve Nona` ("Speciósa facta es"); English from English/Sancti/10-07.txt's
+# own [Responsory Breve Nona], whose V/R are out of step with the Latin
+# (it renders "O Holy * Mother of God" / "Thou art become beautiful and
+# gentle in thy gladness" -- the N3 versicle's English, not a translation
+# of this Latin), so the English here is a direct translation of the
+# Latin, marked draft.
+lauds-responsory:
+  text: |
+    R.br. Speciósa facta es, * Et suávis.
+    R. Speciósa facta es, * Et suávis.
+    V. In delíciis tuis, sancta Dei Génetrix.
+    R. Et suávis.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Speciósa facta es, * Et suávis.
+  status: verified
+
+# web/www/horas/Latin/Sancti/10-07.txt's own [Versum 2] and English
+# counterpart.
+lauds-versicle:
+  text: |
+    V. Elégit eam Deus, et præelégit eam.
+    R. Et habitáre eam fecit in tabernáculo suo.
+  status: verified
+
+# web/www/horas/Latin/Sancti/10-07.txt's own [Lectio Prima] (Sir 24:17-18)
+# and its English counterpart.
+prime-lectio:
+  text: 'Quasi cedrus exaltáta sum in Líbano, et quasi cypréssus in monte Sion: quasi palma exaltáta sum in Cades, et quasi plantátio rosæ in Jéricho.'
+  citation: Sir 24:17-18
+  status: verified
+
+# web/www/horas/Latin/Sancti/10-07.txt's own [Capitulum Sexta] and
+# English counterpart, with SanctiM's [MM Capitulum] versicle (Nocturn 2
+# Versum, "Post partum, Virgo"). Same shape as sext-capitulum-assumption.yml.
+sext-capitulum:
+  text: |
+    Floréte flores quasi lílium et date odórem et frondéte in grátiam; collaudáte cánticum et benedícite Dóminum in opéribus suis.
+    R. Deo grátias.
+    V. Post partum, Virgo, invioláta permansísti.
+    R. Dei Génetrix, intercéde pro nobis.
+  citation: Sir 39:19
+  status: verified
+
+# web/www/horas/Latin/Sancti/10-07.txt's own [Capitulum Nona], which is
+# `@:Lectio Prima` (Sir 24:17-18) + `$Deo gratias`, with the Nocturn 3
+# Versum as the closing versicle (SanctiM's [Responsory NonaM]). English
+# of the versicle is a direct translation of the Latin: the source's
+# English [Nocturn 3 Versum] is out of step with its Latin (see
+# matins-psalmody-overrides/saints/our-lady-of-the-rosary.yml).
+none-capitulum:
+  text: |
+    Quasi cedrus exaltáta sum in Líbano, et quasi cypréssus in monte Sion: quasi palma exaltáta sum in Cades, et quasi plantátio rosæ in Jéricho.
+    R. Deo grátias.
+    V. Speciósa facta es et suávis.
+    R. In delíciis tuis, sancta Dei Génetrix.
+  citation: Sir 24:17-18
+  status: verified
+
+# Second Vespers hymn (also the default when no `-first` variant applies):
+# web/www/horas/Latin/Sancti/10-07.txt's own [Hymnus Vespera 3] ("Te
+# gestiéntem gáudiis", all five mysteries) and English/Sancti/10-07.txt's
+# translation. First Vespers' own [Hymnus Vespera] is
+# vespers-hymn-our-lady-of-the-rosary-first.yml; see hours/resolve-common.ts's
+# withVespersVariant. Doxology: see lauds-hymn-our-lady-of-the-rosary.yml.
+vespers-hymn:
+  text: |
+    Te gestiéntem gáudiis,
+    Te sáuciam dolóribus,
+    Te jugi amíctam glória,
+    O Virgo Mater, pángimus.
+
+    Ave, redúndans gáudio
+    Dum cóncipis, dum vísitas;
+    Et edis, offers, ínvenis,
+    Mater beáta, Fílium.
+
+    Ave, dolens, et íntimo
+    In corde agónem, vérbera,
+    Spinas crucémque Fílii
+    Perpéssa, princeps mártyrum.
+
+    Ave, in triúmphis Fílii,
+    In ígnibus Parácliti,
+    In regni honóre et lúmine,
+    Regína fulgens glória.
+
+    Veníte, gentes, cárpite
+    Ex his rosas mystériis,
+    Et pulchri amóris ínclitæ
+    Matri corónas néctite.
+
+    * Glória tibi, Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# First Vespers hymn: web/www/horas/Latin/Sancti/10-07.txt's own [Hymnus
+# Vespera] ("Cæléstis aulæ Núntius", the Joyful Mysteries) and English/
+# Sancti/10-07.txt's translation. Second Vespers' own [Hymnus Vespera 3]
+# is vespers-hymn-our-lady-of-the-rosary.yml (the default); see
+# hours/resolve-common.ts's withVespersVariant. Doxology: see
+# lauds-hymn-our-lady-of-the-rosary.yml.
+vespers-hymn/~-first:
+  text: |
+    Cæléstis aulæ Núntius,
+    Arcána pandens Núminis,
+    Plenam salútat grátia
+    Dei Paréntem Vírginem.
+
+    Virgo propínquam sánguine
+    Matrem Joánnis vísitat,
+    Qui, clausus alvo, géstiens
+    Adésse Christum núntiat.
+
+    Verbum, quod ante sǽcula
+    E mente Patris pródiit,
+    E Matris alvo Vírginis,
+    Mortális Infans, náscitur.
+
+    Templo puéllus sístitur,
+    Legíque paret Légifer,
+    Hic se Redémptor páupere
+    Prétio redémptus ímmolat.
+
+    Quem jam dolébat pérditum,
+    Mox læta Mater ínvenit
+    Ignóta doctis méntibus
+    Edisseréntem Fílium.
+
+    * Glória tibi, Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  status: verified
+
+# SanctiM/10-07.txt's [Responsory Vespera] is `@Sancti/10-07:Responsory
+# Breve Sexta` ("Post partum, Virgo"), with its English counterpart.
+vespers-responsory:
+  text: |
+    R.br. Post partum, Virgo, * Invioláta permansísti.
+    R. Post partum, Virgo, * Invioláta permansísti.
+    V. Dei Génetrix, intercéde pro nobis.
+    R. Invioláta permansísti.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Post partum, Virgo, * Invioláta permansísti.
+  status: verified
+
+# web/www/horas/Latin/Sancti/10-07.txt's own [Versum 1] (Second Vespers'
+# [Versum 3] is `@:Versum 1`, so the same text serves both) and English
+# counterpart.
+vespers-versicle:
+  text: |
+    V. Regína sacratíssimi Rosárii, ora pro nobis.
+    R. Ut digni efficiámur promissiónibus Christi.
+  status: verified
+
+# Lauds' Benedictus antiphon: web/www/horas/Latin/Sancti/10-07.txt's own
+# [Ant 2] and its English counterpart (not [Ant 1], which is First
+# Vespers' Magnificat antiphon -- see the same correction recorded in
+# apparition-of-the-immaculate-bvm-antiphon.yml).
+benedictus-antiphon:
+  text: Solemnitátem hodiérnam * sacratíssimi Rosárii Genetrícis Dei Maríæ devóte celebrémus, ut ipsa pro nobis intercédat ad Dóminum Jesum Christum.
+  status: verified
+
+# Second Vespers Magnificat antiphon (also the default when no `-first`
+# variant applies): web/www/horas/Latin/Sancti/10-07.txt's own [Ant 3] and
+# its English counterpart. First Vespers' [Ant 1] is
+# our-lady-of-the-rosary-magnificat-antiphon-first.yml; see hours/
+# resolve-common.ts's withVespersVariant.
+magnificat-antiphon:
+  text: Beáta Mater * et intácta Virgo, gloriósa Regína mundi, séntiant omnes tuum juvámen, quicúmque célebrant tuam sacratíssimi Rosárii solemnitátem.
+  status: verified
+
+# First Vespers Magnificat antiphon: web/www/horas/Latin/Sancti/10-07.txt's
+# own [Ant 1] and its English counterpart. Second Vespers' [Ant 3] is
+# our-lady-of-the-rosary-magnificat-antiphon.yml (the default); see
+# hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Beáta es, * Virgo María, Dei Génetrix, quæ credidísti Dómino; perfécta sunt in te quæ dicta sunt tibi, intercéde pro nobis ad Dóminum, Deum nostrum.
+  status: verified
+
+# Monastic 6+6+3 per SanctiM/10-07.txt over Sancti/10-07.txt. The secular
+# file's [Ant Matutinum] is 9 antiphons (psalms 8/18/23, 44/45/86, 95/96/97
+# -- the Joyful, Presentation/Finding, Sorrowful mysteries in order);
+# SanctiM interleaves 3 [AntMatutinumM] antiphons ("Conservábat María"
+# ;;47, "Crucis impérium... livóre ejus sanáti sumus" ;;96, "Dícite in
+# géntibus" ;;97) and renumbers the secular 6-9 (86->84, 95->86, 96->95),
+# yielding 12 antiphons: Nocturn 1 = the first six (Ps 8/18/23/44/45/47),
+# Nocturn 2 = the last six. The source's own psalm tags on Nocturn 2 do
+# not map one-to-one (they run 84/86/95/97/96/97, repeating 97), so the
+# six antiphons are assigned in the source's listed order to the BVM
+# Common's own six Nocturn 2 psalms (84/86/95/96/97/98, see
+# categories/common-of-the-bvm.yml) rather than by raw tag number.
+# Nocturn 3's antiphon is `[Ant Matutinum 3N]`, which the source builds
+# from Sancti/12-08's Responsory3 verse ("Veni de Líbano, sponsa mea...")
+# with an asterisk inserted; canticles are the BVM Common's own (the
+# source's `;;249;250;251` are the same Sir 39 / Isa 61-62 canticles).
+# Versicles from [Nocturn 1/2/3 Versum]. English for everything not in a
+# SanctiM English file (the three AntMatutinumM antiphons and the
+# Nocturn 3 versicle, whose source English is out of step with its Latin)
+# is a direct translation of the Latin, marked `status: { en: draft }`;
+# the rest is English/Sancti/10-07.txt verbatim.
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 8
+        antiphon: 'Angelus Gábriel * nuntiávit Maríæ: et concépit de Spíritu Sancto.'
+      - psalms:
+          - 18
+        antiphon: Intrávit María * in domum Zacharíæ, et salutávit Elísabeth.
+      - psalms:
+          - 23
+        antiphon: Péperit Fílium suum * primogénitum, et reclinávit eum in præsépio.
+      - psalms:
+          - 44
+        antiphon: Cum indúcerent * Jesum paréntes ejus, ut sísterent eum Dómino, Símeon accépit eum in ulnas suas, et benedíxit Deum.
+      - psalms:
+          - 45
+        antiphon: Requiréntes Jesum * paréntes ejus, invenérunt illum post tríduum in médio doctórum.
+      - psalms:
+          - 47
+        antiphon: Conservábat María * ómnia verba hæc, conferens in corde suo.
+        status: verified
+    versicle:
+      v: Sancta Dei Génetrix, semper Virgo María.
+      r: Intercéde pro nobis ad Dóminum, Deum nostrum.
+  nocturn2:
+    groups:
+      - psalms:
+          - 84
+        antiphon: Cœpit contristári, * et factus est sudor ejus in horto sicut guttæ sánguinis.
+      - psalms:
+          - 86
+        antiphon: Apprehéndit * Pilátus Jesum, et flagellávit.
+      - psalms:
+          - 95
+        antiphon: Mílites plecténtes corónam * de spinis, imposuérunt super caput ejus.
+      - psalms:
+          - 96
+        antiphon: 'Crucis impérium * super húmerum ejus: regnávit a ligno Deus.'
+      - psalms:
+          - 97
+        antiphon: 'Crucis impérium * super húmerum ejus: livóre ejus sanáti sumus.'
+        status: verified
+      - psalms:
+          - 98
+        antiphon: 'Dícite * in géntibus: quia Dóminus regnávit a ligno.'
+        status: verified
+    versicle:
+      v: Post partum, Virgo, invioláta permansísti.
+      r: Dei Génetrix, intercéde pro nobis.
+  nocturn3:
+    antiphon: Veni de Líbano, * sponsa mea, veni, coronáberis coróna gratiárum.
+    canticles:
+      - refs:
+          - book: sir
+            chapter: 39
+            verses: 17-21
+      - refs:
+          - book: isa
+            chapter: 61
+            verses: 10-11
+          - book: isa
+            chapter: 62
+            verses: 1-3
+      - refs:
+          - book: isa
+            chapter: 62
+            verses: 4-7
+    versicle:
+      v: Speciósa facta es et suávis.
+      r: In delíciis tuis, sancta Dei Génetrix.
+      status: verified
+
+# Sancti/10-07.txt's own [Ant Laudes] (5 antiphons) and English/Sancti/
+# 10-07.txt, in the same 3 psalms + canticle + laudate slotting the
+# Nativity of the BVM's own override uses (SanctiM/10-07.txt has no
+# [Ant Laudes] of its own, so the Sancti block is the Monastic one too).
+# Psalm numbers are the BVM Common's own Lauds psalmody; only the
+# antiphon text is proper here.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Lætáre, * Virgo Mater; surréxit Christus de sepúlcro.
+    - psalms:
+        - 99
+      antiphon: Ascéndit Deus * in jubilatióne, et Dóminus in voce tubæ.
+    - psalms:
+        - 62
+      antiphon: Spíritus Dómini * replévit orbem terrárum.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Assúmpta est * María in cælum: gaudent Angeli, laudántes benedícunt Dóminum, allelúia.'
+  laudate:
+    antiphon: Exaltáta est * Virgo María super choros Angelórum, et in cápite ejus coróna stellárum duódecim.
+
+# Sancti/10-07.txt's own [Ant Vespera] and English/Sancti/10-07.txt.
+# Same four psalm numbers as the BVM Common (109/112/121/126). The source
+# lists 5 antiphons (tagged 109/112/121/126/147); the Monastic four are
+# antiphons 1, 2, 3 and 5, dropping the 4th -- the same reduction every
+# other already-live-verified five-antiphon BVM feast here uses (see
+# nativity-bvm.yml, annunciation.yml, immaculate-conception.yml).
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Quæ est ista, * speciósa sicut colúmba, quasi rosa plantáta super rivos aquárum?
+    - psalms:
+        - 112
+      antiphon: 'Virgo potens, * sicut turris David: mille clípei pendent ex ea, omnis armatúra fórtium.'
+    - psalms:
+        - 121
+      antiphon: 'Ave, María, * grátia plena; Dóminus tecum: benedícta tu in muliéribus.'
+    - psalms:
+        - 126
+      antiphon: Vidérunt eam * fíliæ Sion vernántem in flóribus rosárum, et beatíssimam prædicavérunt.
+
+# Matins Nocturn 2/3 readings for Our Lady of the Rosary (Oct 7).
+# web/www/horas/Latin/Sancti/10-07.txt, English/Sancti/10-07.txt.
+# SanctiM/10-07.txt reshuffles the same content into 12 lessons (and
+# adds a handful of its own responsories); this store's recombine
+# convention (see nativity-bvm.yml) folds each source's contiguous
+# lessons into one reading instead, so the content below follows the
+# Sancti file's own 9-lesson order:
+#   Lectio3 (Sir 24:24-31)            -> Nocturn 2, scripture
+#   Lectio4-6 (Dominic, Lepanto, Clement XI/Leo XIII history) -> Nocturn 2
+#   Lectio7 (Luke 1:26-38 + St. Bernard, "Homily on Holy Mary")  -> Nocturn 3
+#   Lectio8_1 + 8_2 (St. Bernard, "Homily on the Water Course") -> Nocturn 3
+# Lectio1-2 (Sir 24:11-22) are not authored: Nocturn 1's scripture
+# slot is the user's own reading plan (see DESIGN.md), and the Lectio1-2
+# passages are cited in Prime/None (our-lady-of-the-rosary-lectio-prima.yml).
+# Responsories: Responsory3/4/7/8 of the Sancti file, one per reading, the
+# same "reuse one of the feast's own responsories across a combined
+# reading" convention the octave readings use.
+# The Gospel's full pericope text is the same as the Annunciation's
+# (annunciation.yml, itself sourced from the Missale [Evangelium]) --
+# the source's own Lectio7 carries only the bare incipit.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      citation: Sir 24:24-31
+      text: Ego mater pulchræ dilectiónis, et timóris, et agnitiónis, et sanctæ spei. In me grátia omnis viæ et veritátis, in me omnis spes vitæ et virtútis. Transíte ad me, omnes qui concupíscitis me, et a generatiónibus meis implémini; spíritus enim meus super mel dulcis, et heréditas mea super mel et favum. Memória mea in generatiónes sæculórum. Qui edunt me, adhuc esúrient, et qui bíbunt me, adhuc sítient. Qui audit me non confundétur, et qui operántur in me non peccábunt. Qui elúcidant me, vitam ætérnam habébunt.
+      responsory: |-
+        R. Quæ est ista quæ procéssit sicut sol, et formósa tamquam Jerúsalem? Vidérunt eam fíliæ Sion, et beátam dixérunt, * Et regínæ laudavérunt eam.
+        V. Et sicut dies verni circúmdabant eam flores rosárum et lília convállium.
+        R. Et regínæ laudavérunt eam.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Cum Albigénsium hǽresis per Tolosátium regiónem ímpie grassarétur, atque áltius in dies radíces ágeret, sanctus Domínicus, qui nuper Prædicatórum órdinis fundaménta jécerat, ad eam convelléndam totus incúbuit. Id ut præstáret valídius, auxílium beátæ Vírginis, cujus dígnitas illis erróribus impudentíssime petebátur, cuíque datum est cunctas hǽreses interímere in univérso mundo, eníxis précibus implorávit. A qua (ut memóriæ próditum est) cum mónitus esset ut Rosárium pópulis prædicáret, velut singuláre advérsus hǽreses ac vítia præsídium; mirum est quanto mentis fervóre et quam felíci succéssu injúnctum sibi munus sit exsecútus. Est autem Rosárium certa precándi fórmula, qua quíndecim angelicárum salutatiónum décades, oratióne Domínica interjécta, distínguimus, et ad eárum síngulas tótidem nostræ reparatiónis mystéria, pia meditatióne recólimus. Ex eo ergo témpore pius hic orándi modus mirabíliter per sanctum Domínicum promulgári augeríque cœpit. Quem ejúsdem institutórem auctorémque fuísse, summi Pontífices apostólicis lítteris passim affirmárunt.
+
+        Innumerábiles porro fructus ex hac tam salutári institutióne in christiánam rempúblicam dimanárunt. Inter quos victória illa mérito numerátur, quam sanctíssimus Póntifex Pius quintus et ab eo inflammáti christiáni príncipes apud Echínadas ínsulas de Turcárum tyránno potentíssimo reportárunt. Nam, cum illa ipsa die ea victória reláta sit, qua die sacratíssimi Rosárii sodalitátes per univérsum orbem consuétas supplicatiónes perágerent statutásque preces de more fúnderent, iis précibus haud immérito refértur accépta. Quod quidem cum étiam Gregórius tértius décimus testátus esset; ut pro tam singulári benefício beátæ Vírgini sub appellatióne Rosárii perénnes grátiæ ubíque terrárum haberéntur, in ecclésiis ómnibus, in quibus altáre Rosárii foret, Offícium, ritu dúplici majóri, perpétuo de eo celebrándum indíxit; aliíque Pontífices Rosárium recitántibus ejusdémque Rosárii sodalitátibus indulgéntias pene innúmeras concessére.
+
+        Clemens vero undécimus, ánimo réputans insígnem páriter victóriam, anno millésimo septingentésimo décimo sexto in Hungáriæ regno a Cárolo sexto in imperatórem Romanórum elécto de innúmeris Turcárum cópiis relátam, eo die contigísse quo festum Dedicatiónis sanctæ Maríæ ad Nives celebrarétur, atque eódem ferme témpore quo sacratíssimi Rosárii confrátres públicam solemnémque supplicatiónem in alma Urbe, ingénti pópuli concúrsu magnáque religióne, peragéntes, férvidas ad Deum preces pro Turcárum depressióne fúnderent ac poténtem opem Deíparæ Vírginis in auxílium Christianórum humíliter implorárent; eam ob rem, victóriam illam, nec non liberátam paulo post eorúndem Turcárum obsidióne Corcyrénsem ínsulam, ejúsdem beátæ Vírginis patrocínio pie cénsuit adscribéndam. Quam ob rem ut hujus quoque tam insígnis benefícii perénnis semper et memória exstáret et grátia, sacratíssimi Rosárii festum eódem ritu celebrándum ad Ecclésiam univérsam exténdit. Hæc ómnia Benedíctus décimus tértius in Breviário Románo appóni jussit. Leo autem tértius décimus in turbulentíssimis Ecclésiæ tempóribus, diúque preméntium malórum sæva tempestáte, cunctos in orbe fidéles, iterátis apostólicis lítteris ad Mariális Rosárii, præsértim per octóbrem mensem, frequéntiam veheménter incéndit, aucto quoque ánnui festi solemnitátis ritu, additáque litaníis Lauretánis Regínæ sacratíssimi Rosárii invocatióne, et Offício de eádem solemnitáte próprio Ecclésiæ univérsæ concésso. Sanctíssimam ergo Dei Genetrícem cultu hoc eídem gratíssimo júgiter venerémur; ut, quæ tóties Christi fidélibus, Rosárii précibus exoráta, terrénos hostes profligáre dedit ac pérdere, inférnos páriter superáre concédat.
+      responsory: |-
+        R. Tu glória Jerúsalem, tu lætítia Israël, tu honorificéntia pópuli nostri, fecísti viríliter: * Quia cunctas hǽreses sola interemísti.
+        V. Pulchra es et decóra, terríbilis ut castrórum ácies ordináta.
+        R. Quia cunctas hǽreses sola interemísti.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 1:26-38
+      text: 'In illo témpore: Missus est Angelus Gábriel a Deo in civitátem Galilǽæ, cui nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, de domo David, et nomen Vírginis María. Et ingréssus Angelus ad eam, dixit: Ave, grátia plena; Dóminus tecum: benedícta tu in muliéribus. Quæ cum audísset, turbáta est in sermóne ejus: et cogitábat, qualis esset ista salutátio. Et ait Angelus ei: Ne tímeas, María, invenísti enim grátiam apud Deum: ecce, concípies in útero, et páries fílium, et vocábis nomen ejus Jesum. Hic erit magnus, et Fílius Altíssimi vocábitur, et dabit illi Dóminus Deus sedem David, patris ejus: et regnábit in domo Jacob in ætérnum, et regni ejus non erit finis. Dixit autem María ad Angelum: Quómodo fiet istud, quóniam virum non cognósco? Et respóndens Angelus, dixit ei: Spíritus Sanctus supervéniet in te, et virtus Altíssimi obumbrábit tibi. Ideóque et quod nascétur ex te Sanctum, vocábitur Fílius Dei. Et ecce, Elísabeth, cognáta tua, et ipsa concépit fílium in senectúte sua: et hic mensis sextus est illi, quæ vocátur stérilis: quia non erit impossíbile apud Deum omne verbum. Dixit autem María: Ecce ancílla Dómini, fiat mihi secúndum verbum tuum.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Bernard, Abbot of Clairvaux, Homily on Holy Mary
+      text: Ad commendatiónem grátiæ suæ et ad destructiónem humánæ sapiéntiæ, Deus de fémina sed vírgine dignátus est carnem assúmere, ut símilem símili rédderet, contrárium contrário curáret, pestíferam spinam evélleret, peccáti chirógraphum potentíssime deléret. Heva spina fuit; María rosa éxstitit. Heva spina, vulnerándo; María rosa, ómnium afféctus mulcéndo. Heva spina, infígens ómnibus mortem; María rosa, reddens salutíferam ómnibus sortem. María rosa fuit cándida per virginitátem, rubicúnda per caritátem; cándida carne, rubicúnda mente; cándida virtútem sectándo, rubicúnda vítia calcándo; cándida afféctum purificándo, rubicúnda carnem mortificándo; cándida Deum diligéndo, rubicúnda próximo compatiéndo.
+      responsory: |-
+        R. Ego quasi vitis fructificávi suavitátem odóris, * Et flores mei fructus honóris et honestátis.
+        V. Ego mater pulchræ dilectiónis, et timóris, et agnitiónis, et sanctæ spei.
+        R. Et flores mei fructus honóris et honestátis.
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Bernard, Abbot of Clairvaux, Homily on the Water Course
+      text: |-
+        Verbum caro factum est, et hábitat jam in nobis. Hábitat in memória nostra, hábitat in cogitatióne, quia usque ad ipsam descéndit imaginatiónem. Quonam modo, inquis? Nimírum jacens in præsépio, in virgináli grémio cubans, in monte prǽdicans, in oratióne pernóctans, in cruce pendens, in morte pallens, liber inter mórtuos et in inférno ímperans, seu étiam tértia die resúrgens, et Apóstolis loca clavórum, victóriæ signa, demónstrans, novíssime coram eis cæli secréta conscéndens. Quid horum non vere, non pie, non sancte cogitátur?
+
+        Quidquid horum cógito, Deum cógito; et per ómnia est Deus meus. Hæc ego meditári dixi sapiéntiam, et prudéntiam judicávi eructáre memóriam suavitátis; quóniam in hujuscémodi núcleis virga sacerdotális copiósa prodúxit, quam, in supérnis háuriens, ubérius nobis María refúdit. In supérnis plane et ultra Angelos, quæ Verbum ex ipso Patris corde suscépit.
+      responsory: |-
+        R. Surge, própera, amíca mea; jam enim hiems tránsiit, imber ábiit et recéssit, * Flores apparuérunt in terra nostra.
+        V. Dóminus dabit benignitátem, et terra nostra dabit fructum suum.
+        R. Flores apparuérunt in terra nostra.
+      status: verified

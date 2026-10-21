@@ -1,0 +1,49 @@
+# Read directly from web/www/horas/Latin/Sancti/02-04.txt's own [Oratio]
+# and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui in Ecclésia tua, nova semper instáuras exémpla virtútum: da pópulo tuo beáti
+    Andréæ Confessóris tui atque Pontíficis ita sequi vestígia; ut assequátur et prǽmia.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-confessor-bishop (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags used for a mere
+# commemoration in every other verified category checked this pass, not
+# yet independently live-verified for this specific category). st-andrew-corsini has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper -- marked `draft` per this
+# app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-andrew-corsini-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui in Ecclésia tua, nova semper instáuras exémpla virtútum: da pópulo tuo beáti
+    Andréæ Confessóris tui atque Pontíficis ita sequi vestígia; ut assequátur et prǽmia.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading for St. Andrew Corsini, Bishop, Confessor
+# (Feb 4). Sourced directly from web/www/horas/Latin/Sancti/02-04.txt,
+# English/Sancti/02-04.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in the source (6-lesson office).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Andream, Floréntiæ ex nobili Corsinórum família natum, paréntes precibus a Deo impetrarunt et beátæ Virgini spopondérunt. Qualis autem futurus esset, divino præsagio, antequam nascerétur, ostensum est: nam mater gravida sibi visa est per quietem lupum edidisse, qui ad Carmelitárum ædem pergens, in ipso templi vestibulo statim in agnum convérsus est. Adoléscens pie et ingenue educatus, cum sensim ad vítia declináret, sæpe a matre increpátus fuit. Ubi autem cognóvit se paréntum voto Deíparæ Virgini dicátum fuísse, Dei amóre succénsus, dique visu matris admónitus, Carmelitárum institutum amplexus est; in quo variis tentatiónibus a dæmone vexatus, numquam tamen pótuit a religiónis proposito dimoveri. Mox Lutétiam missus, emenso studiórum curriculo, et laurea donatus, in pátriam revocátur, suique ordinis regímini in Etruria præfícitur.
+
+        Intérea Fesulana ecclésia, suo viduáta pastore, eum sibi episcopum elégit: quo munere se indignum æstimans, diu látuit ignotus, donec púeri voce mirabíliter loquentis próditus et extra urbem invéntus, ne divinæ contradíceret voluntati, episcopátum suscépit. Ea dignitate auctus, humilitati, quam semper colúerat, impensius incúbuit; et pastorali solicitudini misericórdiam in páuperes, liberalitátem, oratiónis assiduitátem, vigílias, aliasque virtútes adjunxit, et spíritu étiam prophetico clarus fuit; adeo ut ejus sanctitas ab ómnibus celebrarétur.
+
+        His permotus, Urbanus quintus, ad sedandas Bononiæ turbas, Andream legátum misit. Quo in munere multa perpéssus, civium odia, quæ ad interneciónem exárserant, summa prudéntia restinxit; tum restituta tranquillitate, ad propria reversus est. Nec multo post assiduis labóribus et voluntária carnis maceratióne confectus, óbitus die a beáta Vírgine sibi prædicto, ad cæléstia regna migrávit, anno Dómini millesimo tercentésimo septuagesimo tertio, ætátis suæ septuagesimo primo. Quem Urbanus octavus, multis magnisque miraculis clarum, Sanctórum número adscripsit. Ejus corpus Floréntiæ in ecclésia sui ordinis quiescit, et maxima civium veneratióne cólitur, quibus non semel in præsénti discrimine præsidio fuit.
+      status: verified

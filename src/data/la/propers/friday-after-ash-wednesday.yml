@@ -1,0 +1,67 @@
+# Lauds collect ([Oratio 2] in the source) — read from
+# web/www/horas/{Latin,English}/Tempora/Quadp3-5.txt.
+collect:
+  text: |
+    Orémus.
+    Inchoáta jejúnia, quǽsumus, Dómine, benígno favóre proséquere: ut observántiam, quam corporáliter exhibémus, méntibus étiam sincéris exercére valeámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Vespers collect ([Oratio 3] in the source), distinct from Lauds' own —
+# read from web/www/horas/{Latin,English}/Tempora/Quadp3-5.txt.
+collect/~-vespers:
+  text: |
+    Orémus.
+    Tuére, Dómine, pópulum tuum et ab ómnibus peccátis cleménter emúnda: quia nulla ei nocébit advérsitas, si nulla ei dominétur iníquitas.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quadp3-5.txt's own
+# [Ant 2] and its English counterpart.
+benedictus-antiphon:
+  text: Cum facis * eleemósynam nésciat sinístra tua quid fáciat déxtera tua.
+  status: verified
+  temporal: true
+
+# Read directly from web/www/horas/Latin/Tempora/Quadp3-5.txt's own
+# [Ant 3_] (the secular-rubric text; [Ant 3C]'s Cistercian-rubric
+# alternate is not modeled here, same "secular track by default" choice
+# made throughout this store) and its English counterpart.
+magnificat-antiphon:
+  text: 'Tu autem cum oráveris, * intra in cubículum tuum: et clauso óstio, ora Patrem tuum.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn content for the Friday after Ash Wednesday — read from
+# web/www/horas/{Latin,English}/Tempora/Quadp3-5.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quadp3-5.txt's own [Evangelium].
+# Recombined into one reading (Lectio1-3 are one continuous Jerome
+# homily split only to fill the fixed 3-lesson slot count). Responsory1
+# is a cross-reference (@Tempora/Quadp3-0:Responsory4) — used here per
+# the "the first one, when several collapse" convention.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Matt 5:43-48; 6:1-4
+      text: 'In illo témpore: Dixit Jesus discípulis suis: Audístis, quia dictum est: Díliges próximum tuum, et ódio habébis inimícum tuum. Ego autem dico vobis: Dilígite inimícos vestros, benefácite his, qui odérunt vos, et oráte pro persequéntibus et calumniántibus vos, ut sitis fílii Patris vestri, qui in cœlis est: qui solem suum oriri facit super bonos et malos, et pluit super justos et injústos. Si enim dilígitis eos, qui vos díligunt, quam mercédem habébitis? nonne et publicáni hoc fáciunt? Et si salutavéritis fratres vestros tantum, quid ámplius fácitis? nonne et éthnici hoc fáciunt? Estóte ergo vos perfécti, sicut et Pater vester cœléstis perféctus est. Atténdite, ne justítiam vestram faciátis coram homínibus, ut videámini ab eis: alióquin mercédem non habébitis apud Patrem vestrum, qui in cœlis est. Cum ergo facis eleemósynam, noli tuba cánere ante te, sicut hypócritæ fáciunt in synagógis et in vicis, ut honorificéntur ab homínibus. Amen, dico vobis, recepérunt mercédem suam. Te autem faciénte eleemósynam, nésciat sinístra tua, quid fáciat déxtera tua, ut sit eleemósyna tua in abscóndito, et Pater tuus, qui videt in abscóndito, reddet tibi.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Jerome, Priest, Book 1, Commentary on Matthew, ch. 5 and 6
+      text: |-
+        Ego autem dico vobis: Dilígite inimícos vestros; benefácite his qui odérunt vos. Multi præcépta Dei, imbecillitáte sua, non Sanctórum víribus æstimántes, putant esse impossibília quæ præcépta sunt: et dicunt suffícere virtútibus, non odísse inimícos: céterum dilígere, plus prǽcipi, quam humána natúra patiátur. Sciéndum est ergo, Christum non impossibília præcípere, sed perfécta. Quæ fecit David in Saul, et in Absalom: Stéphanus quoque Martyr pro inimícis lapidántibus deprecátus est: et Paulus anáthema cupit esse pro persecutóribus suis. Hæc autem Jesus et dócuit et fecit, dicens: Pater, ignósce illis: quod enim fáciunt, nésciunt.
+
+        Ut sitis fílii Patris vestri, qui in cælis est. Si Dei præcépta custódiens, fílius quis effícitur Dei: ergo non est natúra fílius, sed arbítrio suo. Cum ergo facis eleemósynam, noli tuba cánere ante te, sicut hypócritæ fáciunt in synagógis et in vicis, ut honorificéntur ab homínibus. Qui tuba canit, eleemósynam fáciens, hypócrita est. Qui jejúnans demolítur fáciem suam, ut ventris inanitátem monstret in vultu, et hic hypócrita est. Qui in synagógis et in ángulis plateárum orat, ut videátur ab homínibus, hypócrita est.
+
+        Ex quibus ómnibus collígitur hypócritas esse, qui quódlibet fáciunt ut ab homínibus glorificéntur. Mihi vidétur et ille, qui dicit fratri suo: Dimítte ut tollam festúcam de óculo tuo: nam propter glóriam hoc fácere vidétur, ut ipse justus esse videátur. Unde dícitur ei a Dómino: Hypócrita, éice primum trabem de óculo tuo. Non ítaque virtus, sed causa virtútis apud Deum mercédem habet. Et si a recta via páululum declináveris, non ínterest, utrum ad déxteram vadas, an ad sinístram, cum verum iter amíseris.
+      responsory: |-
+        R. Angelus Dómini vocávit Abraham, dicens: * Ne exténdas manum tuam super púerum, eo quod tímeas Dóminum.
+        V. Cumque extendísset manum ut immoláret fílium, ecce Angelus Dómini de cælo clamávit, dicens.
+        R. Ne exténdas manum tuam super púerum, eo quod tímeas Dóminum.
+      status: verified

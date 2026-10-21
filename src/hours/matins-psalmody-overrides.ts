@@ -1,4 +1,5 @@
 import { resolveCommonCategoryId } from './psalmody-common-category';
+import { psalmodyRecords } from '../propers/store';
 
 /** Matins' own analogue of hours/lauds-psalmody-overrides.ts. Two data
  * stores, both keyed by id, consulted in a three-tier fallback by
@@ -6,7 +7,7 @@ import { resolveCommonCategoryId } from './psalmody-common-category';
  * gated on rank — this module is only ever consulted for a Sunday/
  * Duplex+ three-nocturn day, never a plain ferial one):
  *
- * 1. **Proper** — `data/hours/matins-psalmody-overrides/saints/*.yml`,
+ * 1. **Proper** — the matins-psalmody section of `data/<lang>/propers/*.yml`,
  *    real proper antiphon text for one specific saint (only authored
  *    where a saint genuinely has proper text of their own, confirmed
  *    against the live engine, not merely inherited Common text). Each
@@ -17,8 +18,8 @@ import { resolveCommonCategoryId } from './psalmody-common-category';
  *    category default too (see `saints/st-lawrence.yml`'s own note), so
  *    per-saint files stay authoritative rather than being computed as a
  *    diff.
- * 2. **Common** — `data/hours/matins-psalmody-overrides/categories/
- *    *.yml`, the generic Common-of-* Matins psalmody (psalm numbers,
+ * 2. **Common** — the matins-psalmody section of
+ *    `data/<lang>/commons/*.yml`, the generic Common-of-* Matins psalmody (psalm numbers,
  *    versicles, canticle refs, and the plain Common antiphon text), one
  *    file per `SaintRecord.common` category, live-verified against a
  *    saint with no proper antiphon of his own (so his own output *is*
@@ -74,25 +75,14 @@ export interface MatinsPsalmodyCategory extends MatinsPsalmodyScheme {
   aliases?: string[];
 }
 
-const saintModules = import.meta.glob<{ default: MatinsPsalmodyOverride }>(
-  '../data/hours/matins-psalmody-overrides/saints/*.yml',
-  { eager: true },
-);
-const categoryModules = import.meta.glob<{ default: MatinsPsalmodyCategory }>(
-  '../data/hours/matins-psalmody-overrides/categories/*.yml',
-  { eager: true },
-);
-
-const overrides = new Map<string, MatinsPsalmodyOverride>();
-for (const mod of Object.values(saintModules)) {
-  overrides.set(mod.default.id, mod.default);
-}
+const matinsRecords = psalmodyRecords<MatinsPsalmodyCategory>('matins');
+const overrides = matinsRecords.saints as Map<string, MatinsPsalmodyOverride>;
 
 const categories = new Map<string, MatinsPsalmodyCategory>();
-for (const mod of Object.values(categoryModules)) {
-  categories.set(mod.default.id, mod.default);
-  for (const alias of mod.default.aliases ?? []) {
-    categories.set(alias, mod.default);
+for (const category of matinsRecords.categories.values()) {
+  categories.set(category.id, category);
+  for (const alias of category.aliases ?? []) {
+    categories.set(alias, category);
   }
 }
 

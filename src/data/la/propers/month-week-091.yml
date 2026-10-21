@@ -1,0 +1,25 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-08-30 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+magnificat-antiphon/~-first:
+  text: 'Cum audísset Job * nuntiórum verba, sustínuit patiénter, et ait: Si bona suscépimus de manu Dómini, mala autem quare non sustineámus? In ómnibus his non peccávit Job lábiis suis, neque stultum áliquid contra Deum locútus est.'
+  status: verified
+  temporal: true
+
+# Matins Nocturn 2 for "1st Sunday of September" (Tempora/091-0.txt) — see
+# month-week-081.yml's header for the id scheme. Own Responsory4 (not a
+# cross-reference).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Gregory the Great, Moralia in Job, Book 2, ch. 1
+      text: |-
+        Scriptúra sacra mentis óculis quasi quoddam spéculum oppónitur, ut intérna nostra fácies in ipsa videátur. Ibi étenim fœda, ibi pulchra nostra cognóscimus: ibi sentímus quantum profícimus, ibi a proféctu quam longe distámus. Narrat autem gesta Sanctórum, et ad imitatiónem corda próvocat infirmórum; dumque illórum victrícia facta commémorat, contra vitiórum prǽlia, debília nostra confírmat: fitque verbis illíus, ut eo mens minus inter certámina trépidet, quo ante se pósitos tot virórum fórtium triúmphos videt.
+
+        Nonnúmquam vero non solum nobis eórum virtútes ásserit, sed étiam casus innotéscit; ut et in victória fórtium, quod imitándo arrípere, et rursum videámus in lápsibus quid debeámus timére. Ecce enim Job descríbitur tentatióne auctus, sed David tentatióne prostrátus; ut et majórum virtus spem nostram fóveat, et majórum casus ad cautélam nos humilitátis accíngat: quátenus dum illa gaudéntes súblevant, ista metuéntes premant; et audiéntis ánimus illinc spei fidúcia, hinc humilitáte timóris erudítus, nec temeritáte supérbiat, quia formídine prémitur; nec pressus timóre despéret, quia ad spei fidúciam virtútis exémplo roborátur.
+
+        Vir erat in terra Hus, nómine Job. Idcírco sanctus vir ubi habitáverit dícitur, ut ejus méritum virtútis exprimátur. Hus namque quis nésciat quod sit in terra Gentílium? Gentílitas autem eo obligáta vítiis éxstitit, quo cognitiónem sui Conditóris ignorávit. Dicátur ítaque ubi habitáverit; ut hoc ejus láudibus profíciat, quod bonus inter malos fuit. Neque enim valde laudábile est, bonum esse cum bonis, sed bonum esse cum malis. Sicut enim gravióris culpæ est, inter bonus bonum non esse; ita imménsi est præcónii, bonum étiam inter malos exstitísse.
+      responsory: |-
+        R. Indúta est caro mea putrédine, et sórdibus púlveris cutis mea áruit et contrácta est: * Meménto mei, Dómine, quóniam ventus est vita mea.
+        V. Dies mei velócius transiérunt quam a texénte tela succíditur, et consúmpti sunt absque ulla spe.
+        R. Meménto mei, Dómine, quóniam ventus est vita mea.
+      status: verified

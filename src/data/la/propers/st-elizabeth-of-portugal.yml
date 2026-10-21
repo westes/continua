@@ -1,0 +1,117 @@
+# Read directly from web/www/horas/Latin/Sancti/07-08.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Clementíssime Deus, qui beátam Elísabeth regínam, inter céteras egrégias dotes,
+    béllici furóris sedándi prærogatíva decorásti: da nobis, ejus intercessióne;
+    post mortális vitæ, quam supplíciter pétimus, pacem, ad ætérna gáudia
+    perveníre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-elizabeth-of-portugal-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-widow (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (st-elizabeth-of-portugal-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Et nunc, reges, * intellígite, erudímini, qui judicátis terram.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Clementíssime Deus, qui beátam Elísabeth regínam, inter céteras egrégias dotes,
+    béllici furóris sedándi prærogatíva decorásti: da nobis, ejus intercessióne;
+    post mortális vitæ, quam supplíciter pétimus, pacem, ad ætérna gáudia
+    perveníre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/07-08.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Laudémus Deum nostrum * In sanctis opéribus beátæ Elísabeth.
+  status: verified
+
+# St. Elizabeth of Portugal: proper Lauds hymn, Latin/Sancti/07-08.txt's [Hymnus Laudes]. English from English/Sancti/07-08.txt.
+# Before this file the saint fell to the Common's hymn.
+lauds-hymn:
+  text: |
+    Opes decúsque régium relíqueras,
+    Elísabeth, Dei dicáta númini:
+    Recépta nunc beáris inter Angelos;
+    Libens ab hóstium tuére nos dolis.
+
+    Præi, viámque, dux salútis, índica:
+    Sequémur: O sit una mens fidélium,
+    Odor bonus sit omnis áctio, tuis
+    Id ínnuit rosis opérta cáritas.
+
+    Beáta cáritas, in arce síderum
+    Potens locáre nos per omne sǽculum:
+    Patríque, Filióque summa glória,
+    Tibíque laus perénnis, alme Spíritus. 
+    Amen.
+  status: verified
+
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayTertia), 2026-07-08, own day -- her real proper Terce
+# antiphon, distinct from the raw source file's own [Ant 1] tag (which
+# turned out to be unrelated content, per TODO.md's note on this). Sext/
+# None live-queried empty (no proper antiphon at those hours).
+terce-antiphon:
+  text: Clamávi, et exaudívit me.
+  status: verified
+
+# St. Elizabeth of Portugal: proper Vespers hymn, Latin/Sancti/07-08.txt's [Hymnus Vespera]. English from English/Sancti/07-08.txt.
+# Before this file the saint fell to the Common's hymn.
+vespers-hymn:
+  text: |
+    Domáre cordis ímpetus Elísabeth
+    Fortis, inópsque Deo
+    Servíre, regno prǽtulit.
+
+    En fúlgidis recépta cæli sédibus,
+    Sidereǽque domus
+    Ditáta sanctis gáudiis,
+
+    Nunc regnat inter cǽlites beátior,
+    Et premit astra, docens
+    Quæ vera sint regni bona.
+
+    Patri potéstas, Filióque glória,
+    Perpetuúmque decus
+    Tibi sit alme Spíritus.
+    Amen.
+  status: verified
+
+# Read directly from web/www/horas/Latin/Sancti/07-08.txt's own
+# [Ant 1] and its English counterpart -- a real, proper antiphon of
+# this feast, not a Common substitution.
+benedictus-antiphon:
+  text: Et nunc, reges, * intellígite, erudímini, qui judicátis terram.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Elizabeth of Portugal, Queen and
+# Widow (July 8). Sourced directly from
+# web/www/horas/Latin/Sancti/07-08.txt, English/Sancti/07-08.txt.
+# Lectio4-6 combined into one reading, one continuous vita. No
+# Lectio7-9 in her own file (her `[Rule]` is `vide C7a`) -- defers to
+# the Common's own Nocturn 3, not transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Elísabeth Aragoniæ régibus ortam, Christi anno millesimo ducentésimo septuagesimo primo, in præsagium futuræ sanctimoniæ, paréntes, præter morem relícto matris aviæque nómine, a magna ejus matértera, Thuringiæ domina, sancta Elísabeth, in baptismo nominátam voluére. Ubi nata est, statim pátuit quam felix regum regnorúmque esset futura pacatrix; natalícia enim ejus lætítia perniciosas ávi patrisque dissensiónes in concordiam convértit. Pater vero, crescentis póstea fíliæ admirátus índolem, affirmábat fore, ut una Elísabeth réliquas Aragoniórum regum sánguine creatas feminas virtúte longe superáret. Sic cælestem ipsíus vitam in contemnéndo corporis ornatu, in fugiéndis voluptátibus, in jejuniis frequentandis, in divinis precibus assidue recitandis, in caritátis opéribus exercendis, veneratus, rerum suárum regnique felicitátem uníus fíliæ meritis referebat acceptam. Tandem, ubíque nota et a multis princípibus exoptata, Dionysio Lusitaniæ regi christiánis cæremoniis rite est in matrimónium collocata.
+
+        Juncta conjugio, non minórem excoléndis virtútibus quam liberis educandis operam dabat, viro placére studens, sed magis Deo. Mediam fere anni partem solo pane tolerábat et aqua; quæ in quodam ipsíus morbo divinitus versa est in vinum, cum id a médicis præscriptum bíbere recusasset. Páuperis feminæ ulcus horréndum exosculata, derepénte sanávit. Pecunias paupéribus distribuendas, ut regem latérent, hiberno témpore in rosas convértit. Vírginem cæcam a nativitáte illuminávit; multos alios solo crucis signo a gravíssimis morbis liberávit; plurima id genus miracula patrávit. Monasteria, collegia et templa non modo exstruxit, sed étiam magnifice dotávit. In regum discordiis componéndis admirábilis fuit; in privátis publicisque mortalium sublevandis calamitátibus indefessa.
+
+        Defuncto rege Dionysio, sicut virgínibus in prima ætate, in matrimonio conjugibus, ita viduis in solitúdine fuit ómnium virtútem exemplar. Illico enim religiosis sanctæ Claræ vestibus induta, regio fúneri constanter intérfuit, ac paulo post, Compostellam proficiscens, multa ex holosérico, argénto, auro, gemmisque donaria pro regis ánima óbtulit. Inde reversa domum, quidquid sibi carum aut pretiósum supérerat, in sacros ac pios usus convértit; absolvendóque suo vere regio Conimbricénsi vírginum cœnobio, et aléndis paupéribus, et protegéndis viduis, defendéndis pupillis, miseris omnibus juvandis intenta, non sibi, sed Deo, et mortalium ómnium commodis vivebat. Reges duos, fílium et generum, pacificatúra Stremotium nóbile oppidum veniens, morbo ex itinere contracto, ibidem a Vírgine Deípara, visitata, sanctíssime obiit, anno millesimo trecentésimo trigesimo sexto die quarta Julii. Post mortem multis miraculis cláruit, præsertim suavíssimo corporis jam per annos fere trecentos incorrúpti odore; semper étiam reginæ sanctæ cognomento celebris. Tandem anno jubilæi, et nostræ salútis millesimo sexcentésimo vigesimo quinto, totius christiáni orbis concursu et applausu, ab Urbano octavo rite inter Sanctos adscripta est.
+      status: verified

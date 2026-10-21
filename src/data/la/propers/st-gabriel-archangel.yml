@@ -1,0 +1,424 @@
+# Read directly from web/www/horas/Latin/Sancti/03-24.txt's own
+# [Oratio] and its English counterpart.
+collect:
+  text: |
+    Orémus.
+    Deus, qui inter céteros Angelos, ad annuntiándum Incarnatiónis tuæ mystérium, Gabriélem
+    Archángelum elegísti: concéde propítius; ut qui festum ejus celebrámus in terris,
+    ipsíus patrocínium sentiámus in cælis.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-gabriel-archangel-antiphon.yml), paired with the standard de-Communi commemoration versicle for common-of-an-angel (inferred from the C4 "structural category" citation in the saint's own file) (not yet independently live-verified for this specific category, marked draft). Collect is the saint's own real proper (st-gabriel-archangel-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Angelus Gábriel * appáruit Daniéli et dixit illi: Ab exórdio precum tuárum egréssus est sermo; ego autem veni ut indicárem tibi; tu ergo animadvérte sermónem et intéllige visiónem.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui inter céteros Angelos, ad annuntiándum Incarnatiónis tuæ mystérium, Gabriélem
+    Archángelum elegísti: concéde propítius; ut qui festum ejus celebrámus in terris,
+    ipsíus patrocínium sentiámus in cælis.
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
+    sæculórum.
+    R. Amen.
+  status: draft
+
+# Corrected 2026-09-10: this file previously contained "Tibi Christe
+# splendor Patris" -- St. Michael's own Apparition hymn (May 8), which is
+# indeed the correct source for Gabriel's Lauds/Vespers hymn (Sancti/
+# 03-24.txt has no own `[HymnusM ...]` override there, so it falls back to
+# 05-08's), BUT Gabriel's own file DOES carry its own distinct `[Hymnus
+# Matutinum]` -- `@:Hymnus Vespera`, i.e. reusing *this file's own*
+# Vespers hymn ("Christe, sanctórum decus Angelórum"), not 05-08's. That
+# hymn has a customizable middle stanza naming the specific archangel
+# ("Angelus fortis Gábriel..."), confirming it's genuinely Gabriel's own
+# text, not a shared template. No separate Monastic recension exists.
+# Final stanza is fixed -- no `*` marker anywhere in the source.
+matins-hymn:
+  text: |-
+    Christe, sanctórum decus Angelórum,
+    Gentis humánæ Sator et Redémptor,
+    Cǽlitum nobis tríbuas beátas
+    Scándere sedes.
+
+    Angelus fortis Gábriel, ut hostes
+    Pellat antíquos, et amíca cælo,
+    Quæ triumphátor státuit per orbem,
+    Templa revísat.
+
+    Virgo dux pacis, Genitríxque lucis,
+    Et sacer nobis chorus Angelórum
+    Semper assístat, simul et micántis
+    Régia cæli.
+
+    Præstet hoc nobis Déitas beáta
+    Patris, ac Nati, paritérque Sancti
+    Spíritus, cujus résonat per omnem
+    Glória mundum. Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/03-24.txt's own [Invit] (no
+# Monastic override exists) and its English counterpart.
+matins-invitatory:
+  text: Regem Archangelórum Dóminum * Veníte, adorémus.
+  status: verified
+
+# Was a copy-paste bug carrying Apparition of St. Michael's own capitulum
+# ("Significávit Deus...") under Gabriel's id -- found in passing while
+# authoring his Matins psalmody (see matins-psalmody-overrides/saints/
+# st-gabriel-archangel.yml's own header). His real capitulum, read
+# directly from the reference engine's `web/www/horas/{Latin,English}/
+# Sancti/03-24.txt` (`[Capitulum Laudes]`), is proper to Gabriel
+# specifically -- Daniel's own account of the angel's visitation, not
+# shared with Apparition. `03-24.txt`'s whole-file default is "ex
+# Sancti/05-08" but this block is one of its own explicit overrides,
+# same pattern as his Matins antiphons.
+lauds-capitulum:
+  text: 'Ecce vir Gábriel, quem víderam in visióne a princípio, cito volans tétigit me in témpore sacrifícii vespertíni. Et dócuit me, et locútus est mihi, dixítque: Dániel, nunc egréssus sum ut docérem te, et intellégeres.'
+  citation: Dan 9:21-22
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-05-08, clean year.
+lauds-hymn:
+  text: |
+    Christe sanctórum decus Angelórum,
+    Rector humáni géneris et auctor:
+    Nobis ætérnum tríbue benígnus
+    Scándere cælum.
+
+    Angelum pacis Míchaël ad istam
+    Cǽlitus mitti rogitámus aulam,
+    Nobis ut crebro veniénte crescant
+    Próspera cuncta.
+
+    Angelus fortis Gábriel, ut hostem
+    Pellat antíquum, vólitet ab alto,
+    Sǽpius templum véniens ad istud
+    Vísere nostrum.
+
+    Angelum nobis médicum salútis
+    Mitte de cælis Ráphaël, ut omnes
+    Sanet ægrótos, paritérque nostros
+    Dírigat actus.
+
+    Hinc Dei nostri Génitrix María,
+    Totus et nobis chorus Angelórum
+    Semper assístat, simul et beáta
+    Cóncio tota.
+
+    Præstet hoc nobis Déitas beáta
+    Patris, ac Nati, paritérque Sancti
+    Spíritus, cujus réboat in omni
+    Glória mundo. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-05-08, clean year.
+lauds-responsory:
+  text: |
+    R.br. Stetit Angelus juxta aram templi, * Allelúia, allelúia.
+    R. Stetit Angelus juxta aram templi, * Allelúia, allelúia.
+    V. Habens thuríbulum áureum in manu sua.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Stetit Angelus juxta aram templi, * Allelúia, allelúia.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-05-08, clean year.
+lauds-versicle:
+  text: |-
+    V. Stetit Angelus juxta aram templi.
+    R. Habens thuríbulum áureum in manu sua.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-05-08, clean year.
+lauds-versicle/~-paschaltide:
+  text: |-
+    V. Stetit Angelus juxta aram templi, allelúia.
+    R. Habens thuríbulum áureum in manu sua, allelúia.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/03-24.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: 'Scito ergo et animadvérte: Ab éxitu sermónis, ut íterum ædificétur Jerúsalem, usque ad Christum ducem, hebdómades septem et hebdómades sexagínta duæ erunt.'
+  citation: Dan 9:25
+  status: verified
+
+# Sancti/03-24.txt [Capitulum Laudes] (Terce takes Lauds' chapter, None takes Lectio Prima, per the reference engine); versicle pair from Sancti/05-08.txt [Responsory Breve Tertia], which 03-24 inherits ('ex Sancti/05-08').
+terce-capitulum:
+  text: |
+    Ecce vir Gábriel, quem víderam in visióne a princípio, cito volans tétigit me in témpore sacrifícii vespertíni. Et dócuit me, et locútus est mihi, dixítque: Dániel, nunc egréssus sum ut docérem te, et intellégeres.
+    R. Deo grátias.
+    V. Stetit Angelus juxta aram templi.
+    R. Habens thuríbulum áureum in manu sua.
+  citation: Dan 9:21-22
+  status: verified
+
+# Sancti/03-24.txt [Capitulum Sexta] (Terce takes Lauds' chapter, None takes Lectio Prima, per the reference engine); versicle pair from Sancti/05-08.txt [Responsory Breve Sexta], which 03-24 inherits ('ex Sancti/05-08').
+sext-capitulum:
+  text: |
+    Ego autem veni, ut indicárem tibi, quia vir desideriórum es. Septuagínta hebdómades abbreviátæ sunt, ut finem accípiat peccátum, et impleátur vísio et prophetía, et ungátur Sanctus sanctórum.
+    R. Deo grátias.
+    V. Ascéndit fumus arómatum in conspéctu Dómini.
+    R. De manu Angeli.
+  citation: Dan 9:23-24
+  status: verified
+
+# Sancti/03-24.txt [Capitulum Nona] (Terce takes Lauds' chapter, None takes Lectio Prima, per the reference engine); versicle pair from Sancti/05-08.txt [Responsory Breve Nona], which 03-24 inherits ('ex Sancti/05-08').
+none-capitulum:
+  text: |
+    Scito ergo et animadvérte: Ab éxitu sermónis, ut íterum ædificétur Jerúsalem, usque ad Christum ducem, hebdómades septem et hebdómades sexagínta duæ erunt.
+    R. Deo grátias.
+    V. In conspéctu Angelórum psallam tibi, Deus meus.
+    R. Adorábo ad templum sanctum tuum, et confitébor nómini tuo.
+  citation: Dan 9:25
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-05-08, the same clean date already used for lauds-capitulum-st-gabriel-archangel.yml.
+vespers-hymn:
+  text: |
+    Tibi Christe splendor Patris,
+    Vita, virtus córdium,
+    In conspéctu Angelórum,
+    Votis, voce psállimus:
+    Alternántes concrepándo
+    Melos damus vócibus.
+
+    Collaudámus venerántes
+    Omnes cæli mílites,
+    Sed præcípue Primátem
+    Cæléstis exércitus:
+    Michaélem in virtúte
+    Conteréntem zábulum.
+
+    Quo custóde procul pelle,
+    Rex Christe piíssime,
+    Omne nefas inimíci:
+    Mundo corde et córpore,
+    Paradíso redde tuo
+    Nos sola cleméntia.
+
+    Glóriam Patri melódis
+    Personémus vócibus,
+    Glóriam Christo canámus,
+    Glóriam Paráclito,
+    Qui trinus et unus Deus
+    Exstat ante sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-05-08, the same clean date already used for lauds-capitulum-st-gabriel-archangel.yml.
+vespers-responsory:
+  text: |
+    R.br. Ascéndit fumus arómatum in conspéctu Dómini, * Allelúia, allelúia.
+    R. Ascéndit fumus arómatum in conspéctu Dómini, * Allelúia, allelúia.
+    V. De manu Angeli.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Ascéndit fumus arómatum in conspéctu Dómini, * Allelúia, allelúia.
+  status: verified
+
+# Divino Afflatu 1954 engine render (2026-10-02, second Vespers; post-1617 feast, no Monastic render exists). Replaces a text that was either the Common BVM's versicle or the Apparition of St. Michael's with its Paschal Alleluia baked in. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+vespers-versicle:
+  text: |
+    V. In conspéctu Angelórum psallam tibi, Deus meus.
+    R. Adorábo ad templum sanctum tuum, et confitébor nómini tuo.
+  status: verified
+
+# Divino Afflatu 1954 engine render, 2026-10-23 st-gabriel-archangel first (DA 1954; second Vespers of the
+# Raphael file borrows the Guardian Angels' same Angel-Common versicle). Paschaltide Alleluia is left to
+# hours/paschal-alleluia.ts.
+vespers-versicle/~-first:
+  text: |
+    V. Stetit Angelus juxta aram templi.
+    R. Habens thuríbulum áureum in manu sua.
+  status: verified
+
+# Read directly from web/www/horas/Latin/Sancti/03-24.txt's own [Ant 1]
+# and its English counterpart.
+benedictus-antiphon:
+  text: 'Angelus Gábriel * appáruit Daniéli et dixit illi: Ab exórdio precum tuárum egréssus est sermo; ego autem veni ut indicárem tibi; tu ergo animadvérte sermónem et intéllige visiónem.'
+  status: verified
+
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/03-24.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast (own First Vespers
+# [Ant 1] already covers st-gabriel-archangel-antiphon.yml, used for the
+# Benedictus), not a Common substitution.
+magnificat-antiphon:
+  text: 'Archángelus Gábriel * ait ad Maríam: Non erit impossíbile apud Deum omne verbum. Dixit autem María: Ecce ancílla Dómini, fiat mihi secúndum verbum tuum. Et discéssit ab ea Angelus.'
+  status: verified
+
+# First Vespers Magnificat antiphon: web/www/horas/Latin/Sancti/03-24.txt's own [Ant 1]
+# and its English counterpart. Second Vespers' [Ant 3] is
+# st-gabriel-archangel-magnificat-antiphon.yml (the default); see hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon/~-first:
+  text: 'Angelus Gábriel * appáruit Daniéli et dixit illi: Ab exórdio precum tuárum egréssus est sermo; ego autem veni ut indicárem tibi; tu ergo animadvérte sermónem et intéllige visiónem.'
+  status: verified
+
+# Transcribed directly from the reference engine's own source files
+# (Latin: web/www/horas/Latin/Sancti/03-24.txt, English:
+# web/www/horas/English/Sancti/03-24.txt), Monastic Tridentinum 1617
+# rubric. Companion file to ../apparition-of-st-michael.yml — see that
+# file's own header for the "Common-of-an-Angel doesn't exist" context.
+# `03-24.txt`'s own [Rank]/[Rule] read "ex Sancti/05-08" as a whole-file
+# default, but its own [Ant Matutinum] block overrides with 9 fully
+# distinct proper antiphons narrating the Gabriel episodes (Daniel,
+# Zachary, the Annunciation) -- genuinely proper, matching this saint's
+# own calendar-file comment ("Real, unique collect/antiphon/Nocturn 2-3
+# content"). Nocturn 1/2/3 Versum are NOT overridden, so they fall back
+# to Apparition of St. Michael's own (see apparition-of-st-michael.yml),
+# without her Paschaltide alleluias -- March 24 falls within Paschaltide
+# only in the vanishingly rare years Easter itself lands on March 22-23
+# (its earliest possible date), so treated as permanently non-Paschal
+# here, matching the plain (non-alleluia) Versum 1/Nocturn-2-Versum text.
+#
+# Sourced directly from these files rather than a live CGI query, since
+# an existing sibling file (`data/propers/common/lauds-capitulum-st-
+# gabriel-archangel.yml`) turns out to already carry Apparition's own
+# capitulum text ("Significávit Deus...") under Gabriel's id by mistake
+# -- his own real capitulum is "Ecce vir Gábriel, quem víderam in
+# visióne..." (Dan 9:21-22, see [Capitulum Laudes] in 03-24.txt above).
+# Flagged here as a pre-existing data bug found in passing, not fixed in
+# this pass (out of scope -- this pass only covers Matins psalmody).
+#
+# The English source file's parenthetical "(Alleluia.)" tags scattered
+# inconsistently across a few of these antiphons (e.g. psalms 8, 14, 18,
+# 33, 95) have no Latin counterpart anywhere in the Latin source and
+# don't correlate with any liturgical season -- treated as a translation-
+# file artifact and dropped here, keeping the English antiphons in step
+# with the (alleluia-free) Latin.
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 8
+        antiphon: 'Dixit Angelus Gábriel * ad Daniélem: Intéllige, fílii hóminis, quóniam in témpore finis implébitur vísio.'
+      - psalms:
+          - 10
+        antiphon: Ecce vir Gábriel * quem víderam in visióne cito volans tétigit me in témpore sacrifícii vespertíni et dócuit me.
+      - psalms:
+          - 14
+        antiphon: Cumque Gábriel * loquerétur ad me collápsus sum pronus in terram et tétigit me, et státuit me in gradu meo.
+      - psalms:
+          - 18
+        antiphon: 'Gábriel Angelus * appáruit Zacharíæ, dicens: Uxor tua Elísabeth páriet tibi fílium, et vocábitur nomen ejus Joánnem.'
+      - psalms:
+          - 23
+        antiphon: 'Et dixit Zacharías * ad Angelum: Unde hoc sciam? ego enim sum senex, et uxor mea procéssit in diébus suis.'
+      - psalms:
+          - 33
+        antiphon: 'Respóndens autem Angelus * dixit ei: Ego sum Gábriel, qui asto ante Deum: et missus sum loqui ad te, et hæc tibi evangelizáre.'
+    versicle:
+      v: Stetit Angelus juxta aram templi.
+      r: Habens thuríbulum áureum in manu sua.
+  nocturn2:
+    groups:
+      - psalms:
+          - 95
+        antiphon: Missus est * Gábriel Angelus ad Maríam Vírginem desponsátam Joseph.
+      - psalms:
+          - 96
+        antiphon: 'Gábriel Angelus * Maríæ dixit: Ecce Elísabeth cognáta tua, et ipsa concépit fílium in senectúte sua.'
+      - psalms:
+          - 102
+        antiphon: Súscipe Verbum * Virgo María, quod tibi a Dómino per Angelum Gabriélem transmíssum est.
+    versicle:
+      v: Ascéndit fumus arómatum in conspéctu Dómini.
+      r: De manu Angeli.
+  nocturn3:
+    versicle:
+      v: In conspéctu Angelórum psallam tibi, Deus meus.
+      r: Adorábo ad templum sanctum tuum, et confitébor nómini tuo.
+
+# Sourced from web/www/horas/Latin/Sancti/03-24.txt's own [Ant Vespera]
+# block ("ex Sancti/05-08", "Psalmi Dominica" -- Sunday psalm numbers,
+# same shape as st-michael.yml's own Sept 29 finding). This 1921 feast
+# doesn't exist in the Monastic 1617 calendar at all (a live "Hodie"
+# query for 2026-03-24 renders the Annunciation Vigil instead). The raw
+# file's own "(Allelúia.)" on every antiphon is parenthetical/seasonal,
+# not fixed text -- dropped here for the plain non-Paschaltide baseline,
+# same convention already applied to finding-of-the-holy-cross.yml.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Ingrésso Zacharía * templum Dómini, appáruit ei Gábriel Angelus, stans a dextris altáris incénsi.
+    - psalms:
+        - 110
+      antiphon: 'Ait autem Angelus: * Ne tímeas, Zacharía, quóniam exaudíta est deprecátio tua.'
+    - psalms:
+        - 111
+      antiphon: Ego sum Gábriel * Angelus, qui asto ante Deum, et missus sum loqui ad te.
+    - psalms:
+        - 112
+      antiphon: 'Gábriel Angelus * locútus est Maríæ, dicens: Ecce concípies in útero, et páries fílium, et vocábis nomen ejus Jesum.'
+
+# Matins Nocturn 2-3 readings for St. Gabriel the Archangel (Mar 24).
+# Sourced directly from web/www/horas/Latin/Sancti/03-24.txt,
+# English/Sancti/03-24.txt. (Lectio1-3, Dan 9:20-27, left to the
+# bible-plan store as usual.)
+#
+# Nocturn 2: Lectio4-6 combined into one reading, the Venerable Bede's
+# exposition on Gabriel's appearance to Zachary (Luke 1:11-20).
+# Nocturn 3: Lectio7's Gospel citation (Luke 1:26-38, "Et réliqua" in the
+# horas file) is authored in full from web/www/missa/Latin+English/
+# Sancti/03-24.txt's own [Evangelium] (the Annunciation Gospel, reused
+# verbatim for this feast); St. Bernard of Clairvaux's homily (Lectio7's
+# homily + Lectio8-9 combined).
+#
+# Update (2026-09-05): both Gospel pericopes now authored in full
+# (isGospel: true, immediately before each homily) — these are two
+# distinct, adjacent pericopes within the same Zachary/Annunciation
+# narrative, not a single bare incipit to skip. Luke 1:26-38 (nocturn 3)
+# comes straight from that Missale Evangelium above. Luke 1:11-20
+# (nocturn 2, Zachary's vision) has no continuous Missale/horas
+# transcription anywhere in the reference engine; its text is assembled
+# from genuine reference-engine fragments that are themselves verbatim
+# Vulgate/Douay-Rheims-register wording: vv. 11-17 from
+# missa/Latin+English/Sancti/06-23.txt's own Vigil-of-St.-John-Baptist
+# Evangelium (Luke 1:5-17, trimmed to its 11-17 tail), and vv. 18-20 from
+# this same file's own Ant Matutinum + Responsory5/Responsory6 (Latin
+# and English), which quote those verses directly.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: true
+      citation: Luc 1:11-20
+      text: 'In illo témpore: Appáruit autem illi Angelus Dómini, stans a dextris altáris incénsi. Et Zacharías turbátus est, videns, et timor írruit super eum. Ait autem ad illum Angelus: Ne tímeas, Zacharía, quóniam exaudíta est deprecátio tua: et uxor tua Elísabeth páriet tibi fílium, et vocábis nomen ejus Joánnem: et erit gáudium tibi et exsultátio, et multi in nativitáte ejus gaudébunt: erit enim magnus coram Dómino: et vinum, et síceram non bibet, et Spíritu Sancto replébitur adhuc ex útero matris suæ: et multos filiórum Israël convértet ad Dóminum, Deum ipsórum: et ipse præcédet ante illum in spíritu et virtúte Elíæ: ut convértat corda patrum in fílios, et incrédulos ad prudéntiam justórum, paráre Dómino plebem perféctam. Et dixit Zacharías ad Angelum: Unde hoc sciam? ego enim sum senex, et uxor mea procéssit in diébus suis. Et respóndens Angelus, dixit ei: Ego sum Gábriel, qui asto ante Deum: et missus sum loqui ad te, et hæc tibi evangelizáre. Et ecce eris tacens, et non póteris loqui usque in diem quo hæc fiant, pro eo quod non credidísti verbis meis, quæ implebúntur in témpore suo.'
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      source: The Venerable Bede, Exposition on Luke 1:11-20
+      text: |-
+        Appáruit Zacharíæ Angelus, stans a dextris altáris incénsi. Bene Angelus et in templo, et juxta altáre, et dextris appáret; quia vidélicet et veri sacerdótis advéntum, et mystérium sacrifícii universális, et cæléstis doni gáudium prǽdicat. Nam, sicut per sinístram præséntia, sic per déxteram sæpe bona prænuntiántur ætérna. Juxta quod in sapiéntiæ laude cánitur: Longitúdo diérum in déxtera ejus; in sinístra illíus divítiæ et glória. Treméntem Zacharíam confórtet Angelus, quia, sicut humánæ fragilitátis est spiritális creatúræ visióne turbári, ita et angélicas benignitátis est pavéntes de aspéctu suo mortáles mox blandiéndo solári. At contra dæmónicæ est ferocitátis, quos sui præséntia térritos sénserit, amplióri semper horróre concútere, qua nulla mélius ratióne quam fide superátur intrépida.
+
+        Angelus, deprecatiónem dicens exaudítam, partum contínuo promíttit uxóris. Non quod ille, qui pro pópulo oblatúrus intráverat, relíctis públicis votis, pro accipiéndis fíliis oráre potúerit, præsértim quia nemo orat quod se acceptúrum despérat. Adeo autem ille, jam suæ ætátis et infœcúndæ cónjugis memor, nasci sibi fílios desperábat, ut nec Angelo hoc promitténti créderet. Sed quod dicit: Exaudíta est deprecátio tua, pro pópuli redemptióne signíficat; Et uxor tua páriet tibi fílium, ejúsdem redemptiónis órdinem pandit, quod vidélicet natus Zacharíæ fílius Redemptóri illíus pópuli præconándo sit iter factúrus. Quia enim Zacharíam, pro plebe supplicántem, díxerat exaudítum, docet quo órdine plebs eádem salvári et pérfici débeat, ad prædicatiónem vidélicet Joánnis pæniténdo et credéndo in Christum.
+
+        Zacharías ob altitúdinem promissórum hǽsitans, signum quo crédere váleat, inquírit cui sola Angeli vísio vel allocútio pro signo suffícere debúerat. Unde méritam diffidéntiæ tacéndo pœnam luit, cui tacitúrnitas eádem et signum fídei quod quæsívit, et infidelitátis esset pœna quem méruit. Vult intélligi quod si homo tália promítteret, impúne signum flagitáre licéret, at cum ángelus promíttat, jam dubitári non déceat. Datque signum quod rogátur, ut qui discredéndo locútus est, jam tacéndo crédere discat. Ubi notándo quod Angelus se et ante Deum adstáre, et ad evangelizándum Zacharíæ missum esse testátur; quia et cum ad nos véniunt Angeli, sic extérius implent ministérium, ut tamen nunquam desint intérius per contemplatiónem. Et mittúntur ígitur et assístunt, quia, et si circumscríptus est angélicus spíritus, summus tamen spíritus ipse qui Deus est, circumscríptus non est. Angeli ítaque et missi ante ipsum sunt, quia, quólibet missi véniunt, intra ipsum currunt.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Luc 1:26-38
+      text: 'In illo témpore: Missus est Angelus Gábriel a Deo in civitátem Galilææ, cui nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, de domo David, et nomen Vírginis María. Et ingréssus Angelus ad eam, dixit: Ave, grátia plena; Dóminus tecum: benedícta tu in muliéribus. Quæ cum audísset, turbáta est in sermóne ejus: et cogitábat, qualis esset ista salutátio. Et ait Angelus ei: Ne tímeas, María, invenísti enim grátiam apud Deum: ecce, concípies in útero et páries fílium, et vocábis nomen ejus Jesum. Hic erit magnus, et Fílius Altíssimi vocábitur, et dabit illi Dóminus Deus sedem David, patris ejus: et regnábit in domo Jacob in ætérnum, et regni ejus non erit finis. Dixit autem María ad Angelum: Quómodo fiet istud, quóniam virum non cognósco? Et respóndens Angelus, dixit ei: Spíritus Sanctus supervéniet in te, et virtus Altíssimi obumbrábit tibi. Ideóque et quod nascétur ex te Sanctum, vocábitur Fílius Dei. Et ecce, Elísabeth, cognáta tua, et ipsa concépit fílium in senectúte sua: et hic mensis sextus est illi, quæ vocátur stérilis: quia non erit impossíbile apud Deum omne verbum. Dixit autem María: Ecce ancílla Dómini, fiat mihi secúndum verbum tuum.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Bernard of Clairvaux, Homily 1 on the text "Missus est" (on Luke 1:26-38)
+      text: |-
+        Non árbitror hunc ángelum de minóribus esse, qui quálibet ex causa crebra sóleant ad terras fungi legatióne. Quod ex ejus nómine palam intélligi dícitur, quod interpretátio Fortitúdo Dei dícitur; et quia non ab álio áliquo forte excellentióre se (ut ássolet) spíritu, sed ab ipso Deo mitti perhibétur. Propter hoc ergo pósitum est, A Deo. Vel ídeo dictum est, A Deo, ne cui, vel beatórum spirítuum suum Deus, ántequam Vírgini, revelásse putétur consílium, excépto dumtáxat Archángelo Gabriéle; qui útique tantæ inter suos inveníri potúerit excelléntiæ, ut tali et nómine dignus haberétur et núntio.
+
+        Nec discórdat nomen a núntio. Dei quippe virtútem Christum quem mélius nuntiáre decébat quam hunc, quem símile nomen honórat? Nam quid est áliud fortitúdo, quam virtus? Non autem dedécens aut incóngruum videátur, Dóminum et núntium commúni censéri vocábulo; cum símilis in utróque appellatiónis, non sit tamen utriúsque símilis causa. Aliter quippe Christus fortitúdo vel virtus Dei dícitur, áliter Angelus; Angelus enim tantum nuncupatíve, Christus autem étiam substantíve.
+
+        Christus Dei virtus et dícitur et est, qui forti armáto, qui suum átrium in pace custodíre solébat, fórtior supervéniens, ipsum suo bráchio debellávit: et sic ei vasa captivitátis poténter erípuit. Angelus vero fortitúdo Dei appellátus est, vel quod hujúsmodi merúerit, prærogatívam offícii, quo ejúsdem nuntiáret advéntum virtútis: vel quia vírginem natúra pávidam, símplicem, verecúndam, de miráculi novitáte ne expavésceret, confortáre debéret; quod et fecit, Ne tímeas, ínquiens, María, invenísti enim grátiam apud Deum. Conveniénter ítaque Gábriel ad hoc opus elígitur, immo quia tale illi negótium injúngitur, recte tali nómine designátur.
+      status: verified

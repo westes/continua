@@ -1,0 +1,70 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+collect:
+  text: |
+    Orémus.
+    Deus, refúgium nostrum et virtus: adésto piis Ecclésiæ tuæ précibus, auctor ipse pietátis, et præsta; ut, quod fidéliter pétimus, efficáciter consequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-10-17 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+benedictus-antiphon:
+  text: Magíster, * scimus quia verax es et viam Dei in veritáte doces, allelúia.
+  status: verified
+  temporal: true
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-10-17 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+magnificat-antiphon:
+  text: Réddite ergo * quæ sunt Cǽsaris Cǽsari, et quæ sunt Dei Deo, allelúia.
+  status: verified
+  temporal: true
+
+# Nocturn 3, 22nd Sunday after Pentecost. Sourced from Tempora/Pent22-0.txt.
+# See post-pentecost-02.yml/post-pentecost-12.yml for sweep method note (no
+# proper Nocturn 2 in the source). Lectio7 bare incipit (Matt 22:15-21,
+# "Render unto Caesar") skipped; Lectio7-9's homily by St. Hilary of
+# Poitiers is one continuous work, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
+nocturn-readings:
+  readings:
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 22:15-21
+      text: 'In illo témpore: Abeúntes pharisǽi consílium iniérunt, ut cáperent Jesum in sermóne. Et mittunt ei discípulos suos cum Herodiánis, dicéntes: Magíster, scimus, quia verax es et viam Dei in veritáte doces, et non est tibi cura de áliquo: non enim réspicis persónam hóminum: dic ergo nobis, quid tibi vidétur, licet censum dare Cǽsari, an non? Cógnita autem Jesus nequítia eórum, ait: Quid me tentátis, hypócritæ? Osténdite mihi numísma census. At illi obtulérunt ei denárium. Et ait illis Jesus: Cujus est imágo hæc et superscríptio? Dicunt ei: Cǽsaris. Tunc ait illis: Réddite ergo, quæ sunt Cǽsaris, Cǽsari; et, quæ sunt Dei, Deo.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Hilary, Bishop of Poitiers, Commentary on Matthew, Canon 23
+      text: |-
+        Frequénter pharisǽi commovéntur, et occasiónem insimulándi eum habére ex prætéritis non possunt. Cádere enim vítium in gesta ejus et dicta non póterat; sed de malítiæ afféctu, in omnem se inquisitiónem reperiúndæ accusatiónis exténdunt. Namque a sǽculi vítiis, atque a superstitiónibus humanárum religiónum, univérsos ad spem regni cæléstis vocábat. Igitur an violáret sǽculi potestátem, de propósitæ interrogatiónis condicióne perténtant; an vidélicet reddi tribútum Cǽsari oportéret.
+
+        Qui intérna cognitiónum secréta cognóscens (Deus enim nihil eórum quæ intra hóminem sunt abscónsa, non speculátur) afférri sibi denárium jussit, et quæsívit cujus et inscríptio esset et forma. Pharisǽi respondérunt: Cǽsaris eam esse. Quibus ait: Cǽsari redhibénda esse quæ Cǽsaris sunt; Deo autem reddénda esse, quæ Dei sunt. O plenam miráculi responsiónem, et perféctam dicti cæléstis absolutiónem! Ita ómnia inter contémptum sǽculi, et contuméliam lædéndi Cǽsaris temperávit, ut curis ómnibus et offíciis humánis devótas Deo mentes absólveret, cum Cǽsari quæ ejus essent, reddénda decérnit.
+
+        Si enim nihil ejus penes nos reséderit, conditióne reddéndi ei quæ sua sunt, non tenébimur. Porro autem si rebus illíus incubámus, si jure potestátis ejus útimur, et nos tamquam mercenários aliéni patrimónii procuratióni subjícimus; extra querélam injúriæ est, Cǽsari redhibéri quod Cǽsaris est, Deo autem quæ ejus própria, réddere nos oportére, corpus, ánimam, voluntátem. Ab eo enim hæc profécta atque aucta retinémus: proínde condígnum est, ut ei se totum reddant, cui debére se récolunt et oríginem et proféctum.
+      responsory: |-
+        R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.
+        V. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.
+        R. Plena est omnis terra glória ejus.
+      status: verified

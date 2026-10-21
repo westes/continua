@@ -1,0 +1,57 @@
+# Transcribed directly from the reference engine's own Office file
+# (web/www/horas/Latin/Tempora/Pasc0-5.txt's [Oratio], English parallel in
+# web/www/horas/English/Tempora/Pasc0-5.txt). See easter-monday-collect.yml's
+# own header for sourcing/status convention.
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui paschále sacraméntum in reconciliatiónis humánæ fœ́dere contulísti: da méntibus nostris; ut quod professióne celebrámus, imitémur efféctu.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-04-02); Latin and English both taken from the page.
+benedictus-antiphon:
+  text: Undecim discípuli * in Galilǽa vidéntes Dóminum adoravérunt, allelúia.
+  status: verified
+  temporal: true
+
+# Engine render (Monastic Tridentinum 1617, command=prayVespera, 2027-04-02); Latin and English both taken from the page.
+magnificat-antiphon:
+  text: Data est mihi * omnis potéstas in cælo et in terra, allelúia.
+  status: verified
+  temporal: true
+
+# Matins content for Easter Friday (temporalId easter-friday, Pasc0-5 --
+# "Die VI infra octavam Paschæ"). Sourced from web/www/horas/Latin/
+# Tempora/Pasc0-5.txt (Latin homily) / English/Tempora/Pasc0-5.txt
+# (English homily); Gospel pericope from the Missal's own [Evangelium]
+# (missa/Latin+English/Tempora/Pasc0-5.txt), same convention as
+# easter-monday.yml.
+#
+# Single-nocturn source form, same structural note as easter-monday.yml.
+# Lectio1's homily portion (incipit dropped) combined with Lectio2-3 into
+# one continuous reading. Responsory: the source's own [Responsory1]
+# ("Surgens Jesus Dóminus noster").
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: true
+      citation: Matthæus 28:16-20
+      text: 'In illo témpore: Undecim discípuli abiérunt in Galilǽam, in montem, ubi constitúerat illis Jesus. Et vidéntes eum adoravérunt: quidam autem dubitavérunt. Et accédens Jesus locútus est eis, dicens: Data est mihi omnis potéstas in cœlo, et in terra. Eúntes ergo, docéte omnes gentes, baptizántes eos in nómine Patris, et Fílii, et Spíritus Sancti: docéntes eos serváre ómnia, quæcúmque mandávi vobis. Et ecce, ego vobíscum sum ómnibus diébus usque ad consummatiónem sǽculi.'
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      source: St. Jerome, Priest, Book 4, Commentary on the end of Matthew
+      text: |-
+        Post resurrectiónem Jesus in monte Galilǽæ conspícitur, ibíque adorátur; licet quidam dúbitent, et dubitátio eórum nostram áugeat fidem. Tunc maniféstius osténditur Thomæ, et latus láncea vulnerátum, et manus fixas demónstrat clavis. Accédens Jesus locútus est eis, dicens: Data est mihi omnis potéstas in cælo et in terra. Illi potéstas data est, qui paulo ante crucifíxus, qui sepúltus in túmulo, qui mórtuus jacúerat, qui póstea resurréxit. In cælo autem et in terra potéstas data est: ut qui ante regnábat in cælo, per fidem credéntium regnet et in terris.
+
+        Eúntes autem docéte omnes gentes, baptizántes eos in nómine Patris, et Fílii, et Spíritus Sancti. Primum docent omnes gentes, deínde doctas intíngunt aqua. Non enim potest fíeri, ut corpus baptísmi recípiat sacraméntum, nisi ante ánima fídei suscéperit veritátem. Baptizántur autem in nómine Patris, et Fílii, et Spíritus Sancti: ut quorum una est divínitas, una sit largítio: noménque Trinitátis, unus Deus est.
+
+        Docéntes eos serváre ómnia, quæcúmque mandávi vobis. Ordo præcípuus: jussit Apóstolis, ut primum docérent univérsas gentes, deínde fídei intíngerent sacraménto, et post fidem ac baptísma, quæ essent observánda præcíperent. Ac ne putémus lévia esse, quæ jussa sunt, et pauca, áddidit: Omnia quæcúmque mandávi vobis: ut quicúmque credíderint, qui in Trinitáte fúerint baptizáti, ómnia fáciant, quæ præcépta sunt. Et ecce ego vobíscum sum usque ad consummatiónem sǽculi. Qui usque ad consummatiónem sǽculi cum discípulis se futúrum esse promíttit, et illos osténdit semper esse victúros, et se nunquam a credéntibus recessúrum.
+      responsory: |-
+        R. Surgens Jesus Dóminus noster, stans in médio discipulórum suórum, dixit: * Pax vobis, allelúia: gavísi sunt discípuli viso Dómino, allelúia.
+        V. Una ergo sabbatórum, cum fores essent clausæ, ubi erant discípuli congregáti, venit Jesus, et stetit in medio eórum, et dixit eis.
+        R. Pax vobis, allelúia: gavísi sunt discípuli viso Dómino, allelúia.
+      status: verified

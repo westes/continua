@@ -11,6 +11,7 @@
 // activeOctavesFor(date) entry, not just the office winner, per the
 // user's own "be generous, not winner-takes-all" instruction (2026-08).
 import type { LanguageCode, TranslationStatus } from '../psalter/types';
+import { nocturnReadingRecords } from './store';
 
 export interface NocturnReading {
   nocturn: number;
@@ -29,13 +30,9 @@ interface NocturnReadingsFile {
   readings: NocturnReading[];
 }
 
-const modules = import.meta.glob<{ default: NocturnReadingsFile }>('../data/propers/nocturn-readings/*.yml', {
-  eager: true,
-});
-
 const readingsById = new Map<string, NocturnReading[]>();
-for (const mod of Object.values(modules)) {
-  readingsById.set(mod.default.id, mod.default.readings);
+for (const [id, record] of nocturnReadingRecords) {
+  readingsById.set(id, (record as unknown as NocturnReadingsFile).readings);
 }
 
 /** Empty array, not undefined — a saint/temporal id with nothing authored

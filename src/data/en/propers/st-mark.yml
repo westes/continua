@@ -1,0 +1,163 @@
+collect:
+  text: |
+    Let us pray.
+    O God, Who didst exalt thy blessed Evangelist Mark, by giving him grace to preach thine Evangel, grant unto us, we beseech thee, ever to follow more and more what he teacheth, and ever to be shielded from all evil by his prayers.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: verified
+
+commemoration:
+  text: |
+    Ant. Daughters of Jerusalem, come and see the crowned martyrs, the Lord crowned them in his solemnity and delight, alleluia, alleluia.
+    V. They have declared the works of God:
+    R. And have wisely considered of his doings.
+    Let us pray.
+    O God, Who didst exalt thy blessed Evangelist Mark, by giving him grace to preach thine Evangel, grant unto us, we beseech thee, ever to follow more and more what he teacheth, and ever to be shielded from all evil by his prayers.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+  status: draft
+
+lauds-capitulum:
+  text: Then shall the just stand with great constancy against those that have afflicted them, and taken away their labours.
+  citation: Wis 5:1
+  status: verified
+
+lauds-hymn:
+  text: |
+    In this our bright and Paschal day
+    The sun shines out with purer ray,
+    When Christ, to earthly sight made plain,
+    The glad Apostles see again.
+
+    The wounds, the riven wounds He shows
+    In that His flesh with light that glows,
+    In loud accord both far and nigh
+    The Lord's arising testify.
+
+    O Christ, the King Who lovest to bless,
+    Do Thou our hearts and souls possess;
+    To Thee our praise that we may pay,
+    To Whom our praise is due for aye.
+
+    We pray Thee, King with glory decked,
+    In this our Paschal joy, protect
+    From all that death would fain effect
+    Thy ransomed flock, Thine own elect.
+
+    * To Thee Who, dead, again dost live,
+    All glory, Lord, Thy people give;
+    All glory, as is ever meet,
+    To Father and to Paraclete. Amen.
+  status: verified
+
+lauds-responsory:
+  text: |
+    R.br. Saints and just, rejoice in the Lord, * Alleluia, alleluia.
+    R. Saints and just, rejoice in the Lord, * Alleluia, alleluia.
+    V. The Lord has chosen you for his inheritance.
+    R. Alleluia, alleluia.
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. Saints and just, rejoice in the Lord, * Alleluia, alleluia.
+  status: verified
+
+lauds-versicle:
+  text: |-
+    V. Precious in the sight of the Lord, alleluia.
+    R. Is the death of his saints, alleluia.
+  status: verified
+
+vespers-hymn:
+  text: |
+    While Christ's disciples, grieving, sad,
+    Their master's painful death deplore,
+    Whom faithless servants' cruel hands,
+    Had bathed in his own crimson gore;
+
+    Quick from the happy realms above,
+    An angel comes on joyful wing,
+    And to the women tells the joy
+    That to his flock their Lord will bring.
+
+    As they with eager steps make haste,
+    Their joyous message to repeat,
+    Their master's glorious form they see,
+    And falling clasp his sacred feet.
+
+    Cheered by this tale, his faithful flock
+    The Galilean mount ascend,
+    And there with loving awe behold
+    Their heart's sole wish, their truest friend.
+
+    That thou mayst be our Paschal joy
+    Through happy, never-ending years,
+    thine own poor children, Jesu, free
+    From sin's sad death with all its fears.
+
+    * To Thee Who, dead, again dost live,
+    All glory, Lord, Thy people give;
+    All glory, as is ever meet,
+    To Father and to Paraclete.
+    Amen.
+  status: verified
+
+vespers-responsory:
+  text: |
+    R.br. Eternal light will shine over your saints, O Lord, * Alleluia, alleluia.
+    R. Eternal light will shine over your saints, O Lord, * Alleluia, alleluia.
+    V. And the eternity of times.
+    R. Alleluia, alleluia.
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. Eternal light will shine over your saints, O Lord, * Alleluia, alleluia.
+  status: verified
+
+vespers-versicle:
+  text: |-
+    V. Precious in the sight of the Lord, alleluia.
+    R. Is the death of his saints, alleluia.
+  status: verified
+
+vespers-versicle/~-first:
+  text: |
+    V. Saints and just, rejoice in the Lord.
+    R. The Lord has chosen you for his inheritance.
+  status: verified
+
+benedictus-antiphon:
+  text: Daughters of Jerusalem, come and see the crowned martyrs, the Lord crowned them in his solemnity and delight, alleluia, alleluia.
+  status: verified
+
+magnificat-antiphon:
+  text: Saints and just * rejoice in the Lord, alleluia, the Lord has chosen you for his inheritance.
+  status: verified
+
+magnificat-antiphon/~-first:
+  text: Eternal light will shine * over your saints, O Lord, and the eternity of times.
+  status: verified
+
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: 'Your saints, O Lord, * flourish like lilies, alleluia: and like the smell of balsam are before you, alleluia.'
+    - psalms:
+        - 99
+      antiphon: 'In the heavenly kingdom is the habitation of the saints, alleluia: and they rest in the eternity, alleluia.'
+    - psalms:
+        - 62
+      antiphon: Protected by a veil * your saints turn to you, O Lord, alleluia, alleluia.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Spirits and souls * of the just, sing hymns to our Lord, alleluia, alleluia.
+  laudate:
+    antiphon: The just shine * like the sun at the face of God, alleluia.
+
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: St. Jerome, Priest, On Illustrious Men, ch. 8
+      text: |-
+        Mark was the disciple and interpreter of Peter, and it was from what he had heard Peter tell, that, at the request of the brethren at Rome, he wrote the shortest of the Gospels. When Peter had heard it, he approved it, and gave it to the Church to be read, by his authority. Mark betook himself to Egypt, with the Gospel which he had compiled, and was the first man who preached Christ at Alexandria. There he founded a Church with such teaching and austerity of life, that all who followed Christ were constrained to imitate him.
+
+        Last of all, Philo, that most learned Jew, observing that the first Church of Alexandria still kept the law of Moses, wrote a book concerning their manners, as if in praise of his own nation, wherein he saith that under the teaching of Mark, the Christians of Alexandria had all things in common, just as Luke telleth us was the case with all them that believed at Jerusalem. Mark died in the eighth year of Nero, and was buried at Alexandria. Anianus succeeded him.
+      status: verified

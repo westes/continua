@@ -1,0 +1,241 @@
+# Read directly from web/www/horas/Latin/Sancti/11-16.txt's own
+# [Oratio] and its English counterpart. Doxology "$Per Dominum"
+# spelled out per the convention in st-bibiana-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui in corde beátæ Gertrúdis Vírginis jucúndam tibi mansiónem
+    præparásti: ipsíus méritis et intercessióne; cordis nostri máculas
+    cleménter abstérge, et ejúsdem tríbue gaudére consórtio.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et
+    regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Standard de-Communi commemoration for common-of-a-virgin (`[Ant 2]`+`[Versum 2]`
+# from the reference engine's Commune files -- the tags actually used for
+# a mere commemoration, confirmed against this exact category via an
+# independently live-verified precedent elsewhere in this app). st-gertrude has
+# no proper antiphon of his/her own in the source (a plain "vide C..."
+# reference), so this reuses the Common's own text, same as every other
+# saint of this category with nothing proper. Collect is the saint's own
+# real proper (st-gertrude-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Símile est regnum cælórum * hómini negotiatóri quærénti bonas margarítas: invénta una pretiósa, dedit ómnia sua, et comparávit eam.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Deus, qui in corde beátæ Gertrúdis Vírginis jucúndam tibi mansiónem
+    præparásti: ipsíus méritis et intercessióne; cordis nostri máculas
+    cleménter abstérge, et ejúsdem tríbue gaudére consórtio.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et
+    regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# St. Gertrude: proper Matins hymn, Latin/SanctiM/11-16.txt's [Hymnus Matutinum]. The reference has no English for it, so the English is a fresh translation, marked draft.
+# Before this file the saint fell to the Common's hymn.
+matins-hymn:
+  text: |
+    Mira noctúrnis, modulánte lingua,
+    Gesta Gertrúdis celebrémus horis,
+    Quæ sacris instans précibus perégit
+    Témpora noctis.
+
+    Illíus votis Deus obsecúndans,
+    Mox repentínas plúvias profúdit,
+    Moxque suspénsos grávidis coércet
+    Núbibus imbres.
+
+    Arva jam dudum glácie rigébant,
+    Corde cum mœsto míserans colónos,
+    Férvidis Virgo lácrimis resólvit
+    Frígora brumæ.
+
+    Ne seges largo vitiétur imbre,
+    Sédulis cælum précibus serénat,
+    Et graves læsi gemebúnda placat
+    Núminis iras.
+
+    Ignéis mentes pénetrat sagíttis,
+    Lánguidis confert ánimis medélam,
+    Atque succéndit sceleráta castis
+    Péctora flammis.
+
+    Vírginum sponsum superúmque Regem
+    Vírginum sanctæ célebrent choréæ,
+    Et sacram supplex Tríadem per ævum
+    Orbis adóret.
+    Amen.
+  status: verified
+
+# Sourced from web/www/horas/Latin/SanctiM/11-16.txt's own [Capitulum
+# Laudes]. No English rendering exists in the reference engine's data;
+# using the standard Douay-Rheims wording for Cant 3:4.
+lauds-capitulum:
+  text: 'Invéni quem díligit ánima mea: ténui eum, nec dimíttam, donec introdúcam illum in domum matris meæ, et in cubículum genetrícis meæ.'
+  citation: Cant 3:4
+  status: verified
+
+# Sourced from web/www/horas/Latin/SanctiM/11-16.txt's own [Hymnus
+# Laudes]. No English rendering exists in the reference engine's data;
+# translated here directly.
+lauds-hymn:
+  text: |
+    Ad sacros virgo thálamos anhélans
+    Núptias cælo celebráre gestit,
+    Et piis votis nímium morántem
+    Próvocat horam.
+
+    Ægra cum languet, maniféstus adstat
+    Cǽlitum turma comitánte Christus,
+    Atque divíni récreat jacéntem
+    Lúmine vultus.
+
+    Surge, conclámat, soror atque sponsa,
+    En tibi pando penetrále cordis,
+    Ut triumpháli reseráta scandas
+    Sídera curru.
+
+    Ista vox omnes pénetrat medúllas
+    Atque compáges ánimi resólvit:
+    Spíritus liber volat in reclúsa
+    Víscera Christi.
+
+    Régios Agni thálamos peténtem
+    Júbilans stipat súperum coróna,
+    Atque compléxus et amíca cantat
+    Óscula Sponsi.
+
+    Vírginum Sponsum, superúmque regem
+    Vírginum sanctæ célebrent choréæ,
+    Et sacram supplex Tríadem per ævum
+    Orbis adóret. Amen.
+  status: verified
+
+# No distinct Lauds versicle exists in the reference source for this
+# feast; reusing common-of-a-virgin's own Lauds versicle. Authored to
+# make her own bundle (needed for her genuinely proper Lauds hymn) render
+# a real versicle instead of an unconditionally-rendered empty one.
+lauds-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# Sourced from web/www/horas/Latin/SanctiM/11-16.txt's own [Hymnus
+# Vespera]. No English rendering exists in the reference engine's data;
+# translated here directly.
+vespers-hymn:
+  text: |
+    Gertrúdis, arca Núminis,
+    Sponsóque juncta Vírginum,
+    Da nuptiális pángere
+    Castos amóres fœ́deris.
+
+    Quadríma Christo núbilis
+    In claustra prompte cónvolas;
+    Spretóque nutrícis sinu,
+    Sponsi requíris óscula.
+
+    Candéntis instar lílii
+    Odóre mulces sídera,
+    Et virgináli cǽlitum
+    Regem decóre pértrahis.
+
+    Qui vivit in sinu Patris
+    Cinctus perénni glória,
+    Amánter, ut sponsus, tua
+    Recúmbit inter úbera.
+
+    Amóre Christum vúlneras;
+    Hic te vicíssim vúlnerat,
+    Tuóque cordi própria
+    Inúrit alte stígmata.
+
+    O singuláris cáritas,
+    Et mira commutátio!
+    Hic corde respírat tuo:
+    Tu vivis hujus spíritu.
+
+    Te, sponse Jesu vírginum,
+    Beáta laudent ágmina:
+    Patri, simul Paráclito,
+    Par sit per ævum glória. Amen.
+  status: verified
+
+# No distinct Vespers versicle exists in the reference source for this
+# feast; reusing common-of-a-virgin's own Vespers versicle. Authored to
+# make her own bundle (needed for her genuinely proper Vespers hymn)
+# render a real versicle instead of an unconditionally-rendered empty one.
+vespers-versicle:
+  text: |
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+  status: verified
+
+# Sourced from web/www/horas/Latin/SanctiM/11-16.txt's own [Ant Laudes]
+# block (5 antiphons run together, one per line, older un-numbered format
+# -- same as st-benedict.yml's own file). No English rendering exists in
+# the reference engine's data for these at all; translated here directly.
+# Below duplex-majus (semiduplex), so hours/lauds.ts's
+# mergeFerialNumbersWithProperAntiphons only takes this file's antiphon
+# text, not its psalm numbers -- the numbers below are placeholders
+# (the standard 92/99/62 scheme most Virgin-shaped feasts use), not
+# independently confirmed for this feast, since they have no functional
+# effect at this rank.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Lauda * et lætáre, fília Sion, quia ecce ego vénio, et habitábo in médio tui, dicit Dóminus.
+    - psalms:
+        - 99
+      antiphon: O beáta ánima, * quæ méruit esse sedes sapiéntiæ, cujus delíciæ sunt esse cum fíliis hóminum!
+    - psalms:
+        - 62
+      antiphon: Ánnulis septem subarrhávit me * Dóminus meus Jesus Christus, et tamquam sponsam decorávit me coróna.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Hábuit Gertrúdis * potestátem cláudere cælum núbibus, et aperíre portas ejus: quia lingua ejus clavis cæli facta est.'
+  laudate:
+    antiphon: Ancílla fidélis * et sponsa elécta intrávit in cor et gáudium Dómini sui, cujus amóre languébat.
+
+# Sourced from web/www/horas/Latin/SanctiM/11-16.txt's own [Ant Vespera]
+# block (the first/default one -- a second, rubric-conditional block
+# follows it in the source, not used here). No English rendering exists
+# in the reference engine's data at all; translated here directly.
+# Distinct from her own Lauds antiphons. Below duplex-majus, so hours/
+# vespers.ts's mergeFerialNumbersWithProperAntiphons only takes this
+# file's antiphon text, not its psalm numbers.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Casta colúmba * nidíficans in cavérna macériæ sacri láteris Jesu Christi, mel suavíssimum de petra sugébat.
+    - psalms:
+        - 112
+      antiphon: Loquebátur Christus * ad diléctam Gertrúdem fácie ad fáciem, sicut solet loqui homo ad amícum suum.
+    - psalms:
+        - 121
+      antiphon: 'Beátæ Gertrúdis verba * divíni erant amóris jácula: lámpades ejus, lámpades ignis atque flammárum.'
+    - psalms:
+        - 126
+      antiphon: Diléctæ ánimam * e cárcere córporis exeúntem accépit Christus in ulnas suas, et cor suum illi amánter apéruit.
+
+# Matins Nocturn 2 reading for St. Gertrude (Nov 16). Sourced directly
+# from web/www/horas/Latin/Sancti/11-16.txt, English/Sancti/11-16.txt.
+# Lectio4-6 combined into one reading, one continuous vita. No
+# [Lectio7] in the source -- no own Nocturn 3.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: |-
+        Gertrúdis, Islébii in Saxónia nobili genere nata, quinquénnis in monastério Rodardénsi, ordinis sancti Benedicti, virginitátem suam ac seipsam Jesu Christo óbtulit. Quo ex témpore a mundanis rebus prorsus aliena, virtútique sedulo intenta, cæléstis vitæ genus instituit. Ad humaniórum litterárum notítiam, rerum divinárum cognitiónem adjunxit; quarum meditatióne vehementius ad virtútem incensa, brevi christianam perfectiónem adepta est. De Christo ejusque vitæ mystériis sæpenúmero pio cum animi sensu loquebátur, unamque Dei glóriam cogitans, ad illam vota sua ómnia et actiónes referebat. Quamvis autem multis exímiis natúræ et gratiæ donis a Deo aucta esset, ita tamen sibi ipsa vilescebat, ut, inter præcipua divinæ bonitátis miracula, hoc item memoráret, quod se indigníssimam misericorditer sustinéret.
+
+        Trigesimum ætátis annum agens, primum Rodardénsis monasterii, ubi religiosam vitam est professa, deínde Elpediáni præses electa, quadragínta annórum spátio, ea caritate, prudéntia, et regularis disciplinæ studio munus obívit, ut cœnobium religiosæ perfectiónis domicílium viderétur. Utrobíque vero, licet esset ómnium mater et magistra, ómnium tamen minima haberi volebat, ac demissióne pari ministram se exhibebat. Quo liberius Deo vacaret, vigiliis, abstinéntia aliisque cruciátibus corpus afflixit; semperque sui símilis, morum innocéntiam, mansuetúdinem ac patiéntiam prætulit singularem. Proximórum salúti omni ope studuit, piæque curæ copiósum fructum rétulit. Divini amoris vi frequéntes patiebátur éxstases, altissimǽque contemplatiónis et divinæ uniónis donum obtinuit.
+
+        Ut meritum acceptíssimæ sibi sponsæ Christus osténderet, in corde Gertrudis jucundam sibi esse mansiónem testátus est. Deiparam Vírginem, véluti matrem et curatricem a Jesu acceptam, pietáte præcipua prosequebátur, ab eáque multa accépit beneficia. Erga diviníssimum Eucharistiæ sacraméntum et passiónem Dómini tanto amóre cum grati animi sensu afficiebátur, ut intérdum ubéribus lácrimis perfunderétur. Justórum ánimas, piacularibus flammis addictas, quotidiánis subsidiis et precibus juvábat. Multa ad confovéndam pietátem scripsit. Divinárum étiam revelatiónum et prophetíæ dono cláruit. Dénique, flagrantíssimo Dei amóre potius quam morbo languéscens, anno Dómini millesimo ducentésimo nonagesimo secundo vita decessit. Miraculis vivens et post mortem a Deo illustráta est.
+      status: verified

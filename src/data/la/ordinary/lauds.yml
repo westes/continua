@@ -1,0 +1,123 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live
+# query. Real practice: a second Our Father, said entirely in silence
+# ("dicitur totum secreto"), comes right before this versicle — by explicit
+# choice its text isn't rendered here (it's silent, and its text was
+# already rendered once, aloud, at lauds-short-litany.yml); only the
+# versicle that follows it is.
+lauds-closing-versicle:
+  text: |
+    V. Dóminus det nobis suam pacem.
+    R. Et vitam ætérnam. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live
+# query. Fixed short close after the suffrages, before the final silent
+# Our Father — see lauds-closing-versicle.yml for what comes next.
+lauds-conclusio:
+  text: |
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+    V. Benedicámus Dómino.
+    R. Deo grátias.
+    V. Fidélium ánimæ per misericórdiam Dei requiéscant in pace.
+    R. Amen.
+  status: verified
+
+# Reference engine (horasscripts.pl Benedicamus_Domino): at Lauds and Vespers
+# during Easter week, and at Vespers on the Saturday before Septuagesima
+# (the farewell to the Alleluia), the dismissal V/R each take ", allelúia,
+# allelúia". Otherwise identical to lauds-conclusio.
+lauds-conclusio-alleluia:
+  text: |
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+    V. Benedicámus Dómino, allelúia, allelúia.
+    R. Deo grátias, allelúia, allelúia.
+    V. Fidélium ánimæ per misericórdiam Dei requiéscant in pace.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium ("Tridentine - 1906", i.e. `version=
+# Tridentine 1910`), Lauds live query, clean Advent feria 2026-12-17.
+# Monastic 1617 has no ferial Preces at Lauds at all -- sourced from this
+# different track per direct instruction, same as lauds-suffrage-
+# joseph.yml. Replaces `lauds-short-litany` (the short Sunday/feast form)
+# on a ferial or vigil day -- see hours/types.ts's 'lauds-preces' doc
+# comment for the exact day-kind predicate and how it differs from the
+# real 1906/1910 rubric (which restricts this further, to Advent/Lent/
+# Ember days specifically) by direct, explicit choice.
+#
+# The Pope/Bishop versicle pair and the benefactors' versicle, both
+# present in the underlying template (Psalterium/Special/Preces.txt), are
+# both actually omitted in the live Tridentine 1910 render for this date
+# -- transcribed as rendered, not reconstructed from the template's own
+# conditional markup. The King/nation versicle pair, by contrast, *is*
+# rendered live despite the template's own rubric note suggesting
+# otherwise -- same live-over-template discipline.
+#
+# Psalm 129 (De profundis), which the live render embeds between the first
+# and second V/R blocks with its own Gloria Patri, is deliberately dropped
+# here per direct instruction (2026-08) -- not a transcription gap.
+lauds-preces-feriales:
+  text: |
+    Kýrie, eléison. Christe, eléison. Kýrie, eléison.
+    Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum quotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris:
+    V. Et ne nos indúcas in tentatiónem:
+    R. Sed líbera nos a malo.
+    V. Ego dixi: Dómine, miserére mei.
+    R. Sana ánimam meam quia peccávi tibi.
+    V. Convértere, Dómine, úsquequo?
+    R. Et deprecábilis esto super servos tuos.
+    V. Fiat misericórdia tua, Dómine, super nos.
+    R. Quemádmodum sperávimus in te.
+    V. Sacerdótes tui induántur justítiam.
+    R. Et sancti tui exsúltent.
+    V. Dómine, salvum fac regem.
+    R. Et exáudi nos in die, qua invocavérimus te.
+    V. Salvum fac pópulum tuum, Dómine, et bénedic hereditáti tuæ.
+    R. Et rege eos, et extólle illos usque in ætérnum.
+    V. Meménto Congregatiónis tuæ.
+    R. Quam possedísti ab inítio.
+    V. Fiat pax in virtúte tua.
+    R. Et abundántia in túrribus tuis.
+    V. Orémus pro fidélibus defúnctis.
+    R. Réquiem ætérnam dona eis, Dómine, et lux perpétua lúceat eis.
+    V. Requiéscant in pace.
+    R. Amen.
+    V. Pro frátribus nostris abséntibus.
+    R. Salvos fac servos tuos, Deus meus, sperántes in te.
+    V. Pro afflíctis et captívis.
+    R. Líbera eos, Deus Israël, ex ómnibus tribulatiónibus suis.
+    V. Mitte eis, Dómine, auxílium de sancto.
+    R. Et de Sion tuére eos.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+
+    V. Dómine, Deus virtútum, convérte nos.
+    R. Et osténde fáciem tuam, et salvi érimus.
+    V. Exsúrge, Christe, ádjuva nos.
+    R. Et líbera nos propter nomen tuum.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live
+# query. What Benedict calls the "Kyrie eleison" (RB 9, 17) plus the Lord's
+# Prayer said aloud with the choir completing only the last line — the
+# fixed lead-in that always precedes the day's own collect (see
+# hours/resolve-common.ts's getDayCollects for the collect(s) themselves,
+# not stored here). Distinct from the second, fully silent Pater Noster
+# near the very end of Lauds — see lauds-closing-versicle.yml.
+#
+# Used on Sundays and feasts specifically — see hours/lauds.ts's
+# 'lauds-preces' case, which swaps in the fuller lauds-preces-feriales.yml
+# instead on a ferial or vigil day.
+lauds-short-litany:
+  text: |
+    Kýrie, eléison. Christe, eléison. Kýrie, eléison.
+    Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum quotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris:
+    V. Et ne nos indúcas in tentatiónem:
+    R. Sed líbera nos a malo.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+  status: verified

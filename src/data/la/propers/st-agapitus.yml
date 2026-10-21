@@ -1,0 +1,47 @@
+# Read directly from web/www/horas/Latin/Sancti/08-18r.txt's own [Oratio]
+# and its English counterpart, English/Sancti/08-18r.txt.
+collect:
+  text: |
+    Orémus.
+    Lætétur Ecclésia tua, Deus, beáti Agapíti Mártyris tui confísa suffrágiis: atque, ejus
+    précibus gloriósis, et devóta permáneat et secúra consístat.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Ant+V/R+collect commemoration bundle, same combined-bundle shape as
+# st-gorgonius-commemoration.yml/st-canute-commemoration.yml -- see
+# hours/resolve-common.ts's sanctoralCommemorationPart, falling back to
+# the bare collect (st-agapitus-collect.yml) when this file didn't exist.
+# Ant 2/Versum 2 are the standard de-Communi pairing for the Common of a
+# Martyr not a Pontiff (C2a-1, his own real common per [Rank]/[Rule]) --
+# common-of-a-martyr-commemoration-antiphon.yml/lauds-versicle-common-of-a-
+# martyr.yml, both already verified elsewhere (same text st-gorgonius-
+# commemoration.yml/st-canute-commemoration.yml use, since it's Common
+# text, not proper to any one saint).
+commemoration:
+  text: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Lætétur Ecclésia tua, Deus, beáti Agapíti Mártyris tui confísa suffrágiis: atque, ejus précibus gloriósis, et devóta permáneat et secúra consístat.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Agapitus, Martyr (Aug 18). Sourced
+# from web/www/horas/Latin/Sancti/08-18r.txt, English/Sancti/08-18r.txt.
+# The source carries only a single short lesson (Lectio93, headed
+# "Commemoration of S. Agapitus, Martyr" in the English -- he never had a
+# full proper 9-lesson Matins even historically), transcribed whole as one
+# Nocturn 2 reading, same "short/single source lesson" handling as
+# st-gorgonius.yml/ss-gordian-and-epimachus.yml. No Nocturn 3 of his own --
+# defers to the Common of a Martyr's own, not transcribed here.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Agapítus Prænestínus, quíndecim annos natus, Aureliáno imperatóre, martýrii cupidíssimus, cum propter constántiam religiónis, imperatóris jussu, primum nervis diutíssime cæsus, deínde in tetrum cárcerem conjéctus esset, ut nihil omníno per quátuor dies gustáret, e custódia est edúctus. Et, ardéntibus carbónibus cápiti ejus impósitis, Deo agens grátias, íterum afféctus verbéribus, nudus ita pédibus suspénsus est, ut ingens fumus e subjécto igne os ejus obrúeret. Tum férvens aqua in ejus ventrem effúsa est, maxillǽque confráctæ. Quo témpore judex, e tribunáli lapsus, paulo post mórtuus est. Ea re incénso imperatóre, sanctum júvenem jubénte féris objíci, cum illæ non audérent attíngere, Prænéste gládio percússus est.
+      status: verified

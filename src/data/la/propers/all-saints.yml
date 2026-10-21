@@ -1,0 +1,693 @@
+# Verified against Divinum Officium (web/www/horas/Latin+English/Sancti/
+# 11-01.txt) directly -- the live prayTertia query's English side didn't
+# render an Oratio translation for this date for reasons not fully
+# understood (the Latin side rendered correctly; every other saint this
+# pull has queried the same way), so the raw source files were read
+# directly instead this one time. The closing formula ("$Per Dominum" in
+# the raw file) is expanded to the standard form used throughout this
+# project, matching every other Duplex-rank collect.
+collect:
+  text: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui nos ómnium Sanctórum tuórum mérita sub una tribuísti celebritáte venerári: quǽsumus; ut desiderátam nobis tuæ propitiatiónis abundántiam, multiplicátis intercessóribus, largiáris.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (all-saints-antiphon.yml), paired with All Saints' own real versicle (Sancti/11-01.txt's own [Versum 0] -- 'V. Oráte pro nobis, omnes Sancti Dei', no English source found for this exact line so the English side is a direct, standard translation, not independently sourced). Collect is the saint's own real proper (all-saints-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Te gloriósus Apostolórum chorus, te Prophetárum laudábilis númerus, te Mártyrum candidátus laudat exércitus, te omnes Sancti et elécti voce confiténtur unánimes, beáta Trínitas, unus Deus.
+    V. Oráte pro nobis, omnes Sancti Dei.
+    R. Ut digni efficiámur promissiónibus Christi.
+    Orémus.
+    Omnípotens sempitérne Deus, qui nos ómnium Sanctórum tuórum mérita sub una tribuísti celebritáte venerári: quǽsumus; ut desiderátam nobis tuæ propitiatiónis abundántiam, multiplicátis intercessóribus, largiáris.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Commemoratio Octavæ Omnium Sanctorum -- said at Lauds/Vespers on a day
+# within All Saints' octave (Nov 1-8) where All Saints itself doesn't win
+# the day outright. Live-verified directly against the reference engine
+# (local officium.pl, Divino Afflatu - 1954, prayLaudes/prayVesperae,
+# Nov 4/5 2026 -- St. Charles Borromeo/Sts. Vitalis and Agricola, both
+# Duplex, beat the octave's own Semiduplex threshold that week): the real
+# commemoration genuinely differs by hour -- Lauds uses the "Te gloriósus
+# Apostolórum chorus..." antiphon (same text as all-saints-antiphon.yml)
+# with V/R "Exsultábunt Sancti in glória. / Lætabúntur in cubílibus
+# suis.", while Vespers uses the distinct "Ángeli, Archángeli..." antiphon
+# (All Saints' own First Vespers antiphon) with V/R "Lætámini in Dómino,
+# et exsultáte justi. / Et gloriámini omnes recti corde." -- notably
+# *neither* is the "Oráte pro nobis, omnes Sancti Dei" versicle
+# all-saints-commemoration.yml uses (that one belongs to All Saints' own
+# primary office when it wins outright, not to this commemoration). Both
+# hours share the same collect. Per the already-flagged simplification
+# noted on hours/resolve-common.ts's getDayCollects and matching
+# christmas-day-octave-commemoration.yml's own precedent (that one picked
+# its Second Vespers text as the single canonical version for both hours;
+# assumption-octave-commemoration.yml picked its Lauds text) -- this file
+# picks the Lauds version as the single canonical block.
+commemoration/octave-~:
+  text: |
+    Ant. Te gloriósus Apostolórum chorus, te Prophetárum laudábilis númerus, te Mártyrum candidátus laudat exércitus, te omnes Sancti et elécti voce confiténtur unánimes, beáta Trínitas, unus Deus.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Omnípotens sempitérne Deus, qui nos ómnium Sanctórum tuórum mérita sub una tribuísti celebritáte venerári: quǽsumus; ut desiderátam nobis tuæ propitiatiónis abundántiam, multiplicátis intercessóribus, largiáris.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# All Saints' Matins hymn: the older pre-Urban VIII text, same as Vespers'
+# (vespers-hymn-all-saints.yml) -- Latin/Sancti/11-01.txt's [HymnusM Matutinum]
+# is "@Sancti/11-01:HymnusM Vespera" ("Christe Redemptor omnium"), and the
+# Monastic and 1570 versions take [HymnusM ...] over [Hymnus ...]. Until
+# 2026-10 this file kept "Placare, Christe, servulis" (the Urban VIII
+# revision) as a deliberate split from Vespers; it now follows the standing
+# preference for the older recension.
+matins-hymn:
+  text: |
+    Christe Redémptor ómnium,
+    Consérva tuos fámulos,
+    Beátæ semper Vírginis
+    Placátus sanctis précibus.
+
+    Beáta quoque ágmina
+    Cæléstium Spirítuum,
+    Prætérita, præséntia,
+    Futúra mala péllite.
+
+    Vates ætérni Júdicis,
+    Apostolíque Dómini,
+    Supplíciter expóscimus
+    Salvári vestris précibus.
+
+    Mártyres Dei ínclyti,
+    Confessorésque lúcidi,
+    Vestris oratiónibus
+    Nos ferte in cæléstibus.
+
+    Chorus sanctárum Vírginum,
+    Monachorúmque ómnium,
+    Simul cum Sanctis ómnibus,
+    Consórtes Christi fácite.
+
+    Gentem auférte pérfidam
+    Credéntium de fínibus,
+    Ut Christo laudes débitas
+    Persolvámus alácriter.
+
+    * Glória Patri ingénito,
+    Ejúsque Unigénito,
+    Una cum Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Read from web/www/horas/Latin/Sancti/11-01.txt's own [Invit] (the
+# Monastic SanctiM/11-01.txt has no override of its own, so the secular
+# Sancti text is what actually governs here) and English/Sancti/11-01.txt.
+matins-invitatory:
+  text: 'Regem regum Dóminum veníte adorémus: * Quia ipse est coróna Sanctórum ómnium.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-11-01, clean year.
+lauds-capitulum:
+  text: 'Ecce ego Joánnes vidi álterum Angelum ascendéntem ab ortu solis, habéntem signum Dei vivi: et clamávit voce magna quátuor Ángelis, quibus datum est nocére terræ et mari, dicens: Nolíte nocére terræ et mari, neque arbóribus, quoadúsque signémus servos Dei nostri in fróntibus eórum.'
+  citation: Apo 7:2-3
+  status: verified
+
+# All Saints' Lauds hymn, the older pre-Urban VIII text: Latin/Sancti/11-01.txt's
+# [HymnusM Laudes] ("Jesu Salvator saeculi"), which the Monastic and 1570
+# versions take in place of [Hymnus Laudes] ("Salutis aeternae dator", the
+# Urban VIII revision) -- see tryoldhymn in the reference's specials.pl. The
+# English below, from English/Sancti/11-01.txt, translates this text. An
+# earlier version of this file carried "Salutis aeternae dator" and a header
+# claiming the reverse.
+lauds-hymn:
+  text: |
+    Jesu Salvátor sǽculi,
+    Redémptis ope súbveni:
+    Et pia Dei Génitrix,
+    Salútem posce míseris.
+
+    Cœtus omnes angélici,
+    Patriarchárum cúnei,
+    Et Prophetárum mérita
+    Nobis precéntur véniam.
+
+    Baptísta Christi prǽvius,
+    Et Cláviger æthéreus,
+    Cum céteris Apóstolis,
+    Nos solvant nexu críminis.
+
+    Chorus sacrátus Mártyrum,
+    Conféssio Sacerdótum,
+    Et virginális cástitas
+    Nos a peccátis ábluant.
+
+    Monachórum suffrágia,
+    Omnésque cives cǽlici
+    Annuant votis súpplicum,
+    Et vitæ poscant prǽmium.
+
+    Laus, honor, virtus, glória
+    Deo Patri, et Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-11-01, clean year.
+lauds-responsory:
+  text: |
+    R.br. Lætámini in Dómino, * Et exsultáte justi.
+    R. Lætámini in Dómino, * Et exsultáte justi.
+    V. Et gloriámini omnes recti corde.
+    R. Et exsultáte justi.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Lætámini in Dómino, * Et exsultáte justi.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-11-01, clean year.
+lauds-versicle:
+  text: |-
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, All Saints' own day (2026-11-01, clean year).
+prime-antiphon:
+  text: Vidi turbam magnam, * quam dinumeráre nemo póterat, ex ómnibus géntibus, stantes ante thronum.
+  status: verified
+
+# Sourced from web/www/horas/Latin/Sancti/11-01.txt's own [Lectio Prima] and its
+# English counterpart.
+prime-lectio:
+  text: Benedíctio, et cláritas, et sapiéntia, et gratiárum áctio, honor, virtus, et fortitúdo Deo nostro, in sǽcula sæculórum. Amen.
+  citation: Apo 7:12
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, All Saints' own day (2026-11-01, clean year).
+terce-antiphon:
+  text: Et omnes Ángeli * stabant in circúitu throni, et cecidérunt in conspéctu throni in fácies suas, et adoravérunt Deum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Terce
+# live query, All Saints' own day (2026-11-01, clean year).
+terce-capitulum:
+  text: |
+    Ecce ego Joánnes vidi álterum Angelum ascendéntem ab ortu solis, habéntem signum Dei vivi: et clamávit voce magna quátuor Ángelis, quibus datum est nocére terræ et mari, dicens: Nolíte nocére terræ et mari, neque arbóribus, quoadúsque signémus servos Dei nostri in fróntibus eórum.
+    R. Deo grátias.
+    V. Lætámini in Dómino, et exsultáte justi.
+    R. Et gloriámini omnes recti corde.
+  citation: Apo 7:2-3
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, All Saints' own day (2026-11-01, clean year).
+sext-antiphon:
+  text: Redemísti nos, * Dómine Deus, in sánguine tuo ex omni tribu, et lingua, et pópulo, et natióne, et fecísti nos Deo nostro regnum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, All Saints' own day (2026-11-01, clean year).
+sext-capitulum:
+  text: |
+    Post hæc vidi turbam magnam, quam dinumeráre nemo póterat ex ómnibus géntibus, et tríbubus, et pópulis, et linguis, stantes ante thronum Dei, in conspéctu Agni, amícti stolis albis, et palmæ in mánibus eórum.
+    R. Deo grátias.
+    V. Exsúltent justi in conspéctu Dei.
+    R. Et delecténtur in lætítia.
+  citation: Apo 7:9
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, All Saints' own day (2026-11-01, clean year).
+none-antiphon:
+  text: 'Hymnus * ómnibus Sanctis ejus: fíliis Israël, pópulo appropinquánti sibi: glória hæc est ómnibus sanctis ejus.'
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, All Saints' own day (2026-11-01, clean year).
+none-capitulum:
+  text: |
+    Benedíctio, et cláritas, et sapiéntia, et gratiárum áctio, honor, virtus, et fortitúdo Deo nostro, in sǽcula sæculórum. Amen.
+    R. Deo grátias.
+    V. Justi autem in perpétuum vivent.
+    R. Et apud Dóminum est merces eórum.
+  citation: Apo 7:12
+  status: verified
+
+# All Saints' Vespers hymn, the older pre-Urban VIII text: Latin/Sancti/11-01.txt's
+# [HymnusM Vespera] ("Christe Redemptor omnium"), which the Monastic and 1570
+# versions take in place of [Hymnus Vespera] ("Placare Christe servulis", the
+# Urban VIII revision) -- see tryoldhymn in the reference's specials.pl. Both
+# the local engine's 2027-11-01 output and English/Sancti/11-01.txt's own
+# translation ("O Christ, thy guilty people spare") are of this text. An
+# earlier version of this file carried "Placare" and a header claiming the
+# reverse; the English below was always this hymn's.
+vespers-hymn:
+  text: |
+    Christe Redémptor ómnium,
+    Consérva tuos fámulos,
+    Beátæ semper Vírginis
+    Placátus sanctis précibus.
+
+    Beáta quoque ágmina
+    Cæléstium Spirítuum,
+    Prætérita, præséntia,
+    Futúra mala péllite.
+
+    Vates ætérni Júdicis,
+    Apostolíque Dómini,
+    Supplíciter expóscimus
+    Salvári vestris précibus.
+
+    Mártyres Dei ínclyti,
+    Confessorésque lúcidi,
+    Vestris oratiónibus
+    Nos ferte in cæléstibus.
+
+    Chorus sanctárum Vírginum,
+    Monachorúmque ómnium,
+    Simul cum Sanctis ómnibus,
+    Consórtes Christi fácite.
+
+    Gentem auférte pérfidam
+    Credéntium de fínibus,
+    Ut Christo laudes débitas
+    Persolvámus alácriter.
+
+    * Glória Patri ingénito,
+    Ejúsque Unigénito,
+    Una cum Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-11-01, the same clean date already used for lauds-capitulum-all-saints.yml.
+vespers-responsory:
+  text: |
+    R.br. Exsúltent justi * In conspéctu Dei.
+    R. Exsúltent justi * In conspéctu Dei.
+    V. Et delecténtur in lætítia.
+    R. In conspéctu Dei.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Exsúltent justi * In conspéctu Dei.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-11-01, the same clean date already used for lauds-capitulum-all-saints.yml.
+vespers-versicle:
+  text: |-
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 11-01
+# all-saints (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+vespers-versicle/~-first:
+  text: |
+    V. Lætámini in Dómino, et exsultáte justi.
+    R. Et gloriámini omnes recti corde.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, All Saints' own day (2026-11-01). The Benedictus antiphon
+# (echoes the Te Deum's own "Te gloriosus Apostolorum chorus..."). Her
+# Lauds psalmody override (see hours/lauds-psalmody-overrides.ts,
+# TODO.md) is still unauthored -- this is only the Benedictus antiphon,
+# a separate lookup.
+benedictus-antiphon:
+  text: Te gloriósus Apostolórum chorus, te Prophetárum laudábilis númerus, te Mártyrum candidátus laudat exércitus, te omnes Sancti et elécti voce confiténtur unánimes, beáta Trínitas, unus Deus.
+  status: verified
+
+# All Saints (Nov 1), Second Vespers Magnificat antiphon — Divino Afflatu
+# 1954 track, "[Ant 3]" in web/www/horas/Latin/Sancti/11-01.txt,
+# English/Sancti/11-01.txt. (First Vespers has its own distinct "[Ant 1]"
+# text, "Ángeli, Archángeli...", not modeled separately here — no saint
+# in this codebase yet splits First/Second Vespers into two Magnificat
+# antiphon files; this one text is used for both, same convention as
+# every other single-antiphon saint file.)
+magnificat-antiphon:
+  text: O quam gloriósum est regnum, * in quo cum Christo gaudent omnes Sancti, amícti stolis albis sequúntur Agnum quocúmque íerit!
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 11-01
+# all-saints (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Ángeli, * Archángeli, Throni et Dominatiónes, Principátus et Potestátes, Virtútes cælórum, Chérubim atque Séraphim, Patriárchæ et Prophétæ, sancti legis Doctóres, Apóstoli, omnes Christi Mártyres, sancti Confessóres, Vírgines Dómini, Anachorítæ, Sanctíque omnes, intercédite pro nobis.
+  status: verified
+
+# Restructured from secular 3+3+3 to Monastic 6+6+3 per SanctiM/11-01.txt.
+# The secular Sancti/11-01.txt has 9 antiphons (psalms 1/4/8, 14/23/31,
+# 33/60/96 -- the 3+3+3 this file previously used). SanctiM/11-01.txt
+# interleaves 3 [AntMatutinumM] antiphons (psalms 5, 30, 83) into the secular
+# set, yielding 12 psalms: N1 = Ps 1/4/5/8/14/23, N2 = Ps 30/31/33/60/83/96,
+# N3 = canticles 259/254/255 (Sap 3:1-6, 3:7-9, 10:17-21) under the [Ant
+# Matutinum 3N] antiphon. English for the AntMatutinumM antiphons from
+# English/SanctiM/11-01.txt; N3 antiphon English from same file; N3 versicle
+# unchanged. Secular antiphon text (N1 psalms 1/4/8/14/23, N2 psalms 31/33/
+# 60/96) unchanged from the prior live-verified version of this file.
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 1
+        antiphon: Novit Dóminus * viam iustórum, qui in lege ejus meditántur die ac nocte.
+      - psalms:
+          - 4
+        antiphon: Mirificávit * Dóminus Sanctos suos, et exaudívit eos clamántes ad se.
+      - psalms:
+          - 5
+        antiphon: 'Læténtur * omnes, qui sperant in te, Dómine: in ætérnum exsultábunt: et habitábis in eis, et gloriabúntur in te omnes qui díligent nomen tuum.'
+        status: verified
+      - psalms:
+          - 8
+        antiphon: 'Admirábile est * nomen tuum, Dómine: quia glória et honóre coronásti Sanctos tuos, et constituísti eos super ópera mánuum tuárum.'
+      - psalms:
+          - 14
+        antiphon: Dómine, * qui operáti sunt justítiam, habitábunt in tabernáculo tuo, et requiéscent in monte sancto tuo.
+      - psalms:
+          - 23
+        antiphon: Hæc est generátio * quæréntium Dóminum, quæréntium fáciem Dei Iacob.
+    versicle:
+      v: Lætámini in Dómino, et exsultáte justi.
+      r: Et gloriámini omnes recti corde.
+  nocturn2:
+    groups:
+      - psalms:
+          - 30
+        antiphon: 'Dilígite * Dóminum, omnes sancti ejus: quóniam veritátem requíret Dóminus.'
+        status: verified
+      - psalms:
+          - 31
+        antiphon: Lætámini in Dómino, * et exsultáte justi, et gloriámini omnes recti corde.
+      - psalms:
+          - 33
+        antiphon: 'Timéte Dóminum * omnes Sancti ejus, quóniam nihil deest timéntibus eum: ecce óculi Dómini super justos, et aures ejus ad preces eórum.'
+      - psalms:
+          - 60
+        antiphon: Dómine, spes Sanctórum * et turris fortitúdinis eórum, dedísti hereditátem timéntibus nomen tuum, et habitábunt in tabernáculo tuo in sǽcula.
+      - psalms:
+          - 83
+        antiphon: 'Dómine, * Deus virtútum, beati omnes, qui sperant in te: non privábis bonis eos, qui ámbulant in æquitáte: in sǽcula sæculórum laudábunt te.'
+        status: verified
+      - psalms:
+          - 96
+        antiphon: Qui dilígitis Dóminum, * lætámini in Dómino, et confitémini memóriæ sanctitátis ejus.
+    versicle:
+      v: Exsúltent justi in conspéctu Dei.
+      r: Et delecténtur in lætítia.
+  nocturn3:
+    antiphon: 'Laudem dícite * Deo nostro omnes Sancti ejus: et qui timétis eum pusílli et magni: quóniam regnávit Dóminus Deus noster omnípotens. Gaudeámus, et exsultémus: et demus glóriam ei.'
+    canticles:
+      - refs:
+          - book: sap
+            chapter: 3
+            verses: 1-6
+      - refs:
+          - book: sap
+            chapter: 3
+            verses: 7-9
+      - refs:
+          - book: sap
+            chapter: 10
+            verses: 17-21
+    versicle:
+      v: Justi autem in perpétuum vivent.
+      r: Et apud Dóminum est merces eórum.
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-11-01, clean year.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Vidi turbam magnam, * quam dinumeráre nemo póterat, ex ómnibus géntibus, stantes ante thronum.
+    - psalms:
+        - 99
+      antiphon: Et omnes Ángeli * stabant in circúitu throni, et cecidérunt in conspéctu throni in fácies suas, et adoravérunt Deum.
+    - psalms:
+        - 62
+      antiphon: Redemísti nos, * Dómine Deus, in sánguine tuo ex omni tribu, et lingua, et pópulo, et natióne, et fecísti nos Deo nostro regnum.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: 'Benedícite Dóminum * omnes elécti ejus: ágite dies lætítiæ, et confitémini illi.'
+  laudate:
+    antiphon: 'Hymnus * ómnibus Sanctis ejus: fíliis Israël, pópulo appropinquánti sibi: glória hæc est ómnibus sanctis ejus.'
+
+# Re-verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-11-01 (command=prayVespera, version=Monastic): exactly 4
+# psalm slots -- 109, 111, 112, 115 (110 genuinely skipped, not shifted) --
+# the ordinary Monastic 4-psalm Vespers scheme, same shape as
+# nativity-of-st-john-the-baptist.yml, not an exception. Corrects a prior
+# version of this file (2026-08) that had 5 groups: mislabeled the 2nd/3rd
+# psalm numbers as 110/111 (should be 111/112) and included a spurious
+# 5th antiphon ("Benedícite Dóminum omnes elécti ejus") that live-verified
+# does not belong at Vespers at all -- it's Lauds' own antiphon
+# (lauds-psalmody-overrides/all-saints.yml), apparently copy-pasted in by
+# mistake in that earlier pass. The secular Sancti/11-01.txt's "Psalm5
+# Vespera=116" note (a real 5th Roman-rite slot) doesn't apply here either
+# -- Roman Vespers is 5 psalms, Monastic Vespers is 4, and the live
+# Monastic render is authoritative for this app's own track.
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Vidi turbam magnam, * quam dinumeráre nemo póterat, ex ómnibus géntibus, stantes ante thronum.
+    - psalms:
+        - 111
+      antiphon: Et omnes Ángeli * stabant in circúitu throni, et cecidérunt in conspéctu throni in fácies suas, et adoravérunt Deum.
+    - psalms:
+        - 112
+      antiphon: Redemísti nos, * Dómine Deus, in sánguine tuo ex omni tribu, et lingua, et pópulo, et natióne, et fecísti nos Deo nostro regnum.
+    - psalms:
+        - 115
+      antiphon: 'Hymnus * ómnibus Sanctis ejus: fíliis Israël, pópulo appropinquánti sibi: glória hæc est ómnibus sanctis ejus.'
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 11-01
+# all-saints. First Vespers psalm antiphons; the other evening's set is all-saints.yml. See
+# vespers-psalmody-overrides.ts's getVespersSaintOverride.
+vespers-psalmody/~-first:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Vidi turbam magnam, * quam dinumeráre nemo póterat, ex ómnibus géntibus, stantes ante thronum.
+    - psalms:
+        - 110
+      antiphon: Et omnes Ángeli * stabant in circúitu throni, et cecidérunt in conspéctu throni in fácies suas, et adoravérunt Deum.
+    - psalms:
+        - 111
+      antiphon: Redemísti nos, * Dómine Deus, in sánguine tuo ex omni tribu, et lingua, et pópulo, et natióne, et fecísti nos Deo nostro regnum.
+    - psalms:
+        - 112
+      antiphon: 'Hymnus * ómnibus Sanctis ejus: fíliis Israël, pópulo appropinquánti sibi: glória hæc est ómnibus sanctis ejus.'
+
+# Matins Nocturn 2 reading for All Saints (Nov 1) — SanctiM/11-01.txt
+# inherits the whole day (`@Sancti/11-01`) with no Nocturn 2/3
+# override, so this feast's own proper content is sourced from the
+# Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/11-01.txt, English/Sancti/11-01.txt.
+# Lectio4-6 combined into one reading, one continuous excerpt of the
+# Venerable Bede's sermon. No responsory given in the source for these
+# lessons.
+#
+# Update (2026-09-05, corrected): the 2026-09-05 note above was itself
+# the gap -- Nocturn 3's own Gospel (Matt 5:1-12, the Beatitudes) and
+# St. Augustine's homily on it (Lib. 1 De Sermone Domini in Monte,
+# Lectio7-9 combined into one continuous excerpt, same "combine the
+# split lessons" treatment Lectio4-6/Nocturn 2 already got above) were
+# left unauthored on the mistaken assumption that a duplex-1-classis
+# feast like this one shouldn't carry its own Gospel/homily pairing.
+# Per direct instruction (user, 2026-09-05): a duplex-majus+ feast's
+# own real scripture reading -- which may well be a Gospel -- is fine
+# to include, so it's added here now. Homily sourced directly from
+# horas/Latin/Sancti/11-01.txt:212-230, English/Sancti/11-01.txt:120-132.
+# The Gospel pericope itself is Matins' own Lectio7 gives only the bare
+# incipit ("Et réliqua") -- same pattern as annunciation.yml's own
+# 2026-09-05 update -- so the full Matt 5:1-12 text is instead pulled
+# from the Mass propers, which give it in full: Latin from
+# missa/Latin/Sancti/06-05.txt:42 (All Saints' own
+# missa/Latin/Sancti/11-01.txt's [Evangelium] redirects there,
+# `@Sancti/06-05`), English from missa/English/Sancti/11-01.txt:27-30
+# (given directly, not by redirect).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      source: The Venerable Bede, Priest, Sermon 18 on the Saints
+      text: |-
+        Hódie, dilectíssimi, ómnium Sanctórum sub una solemnitátis lætítia celebrámus festivitátem: quorum societáte cælum exsúltat, quorum patrocíniis terra lætátur, triúmphis Ecclésia sancta coronátur, quorum conféssio quanto in passióne fórtior, tanto est clárior in honóre: quia, dum crevit pugna, crevit et pugnántium glória, et martýrii triúmphus multíplici passiónum génere adornátur: perque gravióra torménta, gravióra fuére et prǽmia: dum cathólica mater Ecclésia, quæ per totum orbem longe latéque diffúsa est, in ipso cápite suo Christo Jesu edúcta est, contumélias, cruces et mortem non timére; magis magísque roboráta, non resisténdo, sed perferéndo, univérsis, quos ágmine ínclito carcer pœnális inclúsit, pari et símili calóre virtútis ad geréndum certámen, glóriam triumphálem inspirávit.
+
+        O vere beáta mater Ecclésia, quam sic honor divínæ dignatiónis illúminat, quam vincéntium gloriósus Mártyrum sanguis exórnat, quam inviolátæ confessiónis cándida índuit virgínitas! Flóribus ejus nec rosæ nec lília desunt. Certent nunc caríssimi, sínguli, ut ad utrósque honóres amplíssimam accípiant dignitátem, corónas, vel de virginitáte cándidas, vel de passióne purpúreas. In cæléstibus castris pax et ácies habent flores suos, quibus mílites Christi coronántur.
+
+        Dei enim ineffábilis et imménsa bónitas étiam hoc provídit, ut labórum quidem tempus et agónis non exténderet, nec longum fáceret, aut ætérnum, sed breve, et ut ita dicam, momentáneum: ut in hac brevi et exígua vita agónes essent et labóres; in illa vero quæ ætérna est, corónæ et prǽmia meritórum: ut labóres quidem cito finiréntur, meritórum vero prǽmia sine fine durárent: ut post hujus mundi ténebras visúri essent candidíssimam lucem, et acceptúri majórem passiónum cunctárum acerbitátibus beatitúdinem, testánte hoc idem Apóstolo, ubi ait: Non sunt condígnæ passiónes hujus témporis ad superventúram glóriam, quæ revelábitur in nobis.
+      status: verified
+    - nocturn: 3
+      isGospel: true
+      citation: Matt 5:1-12
+      text: 'In illo témpore: Videns Jesus turbas, ascéndit in montem, et cum sedísset, accessérunt ad eum discípuli ejus, et apériens os suum, docébat eos, dicens: Beáti páuperes spíritu: quóniam ipsórum est regnum cœlórum. Beáti mites: quóniam ipsi possidébunt terram. Beáti, qui lugent: quóniam ipsi consolabúntur. Beáti, qui esúriunt et sítiunt justítiam: quóniam ipsi saturabúntur. Beáti misericórdes: quóniam ipsi misericórdiam consequántur. Beáti mundo corde: quóniam ipsi Deum vidébunt. Beáti pacífici: quóniam fílii Dei vocabúntur. Beáti, qui persecutiónem patiúntur propter justítiam: quóniam ipsórum est regnum cœlórum. Beáti estis, cum maledíxerint vobis et persecúti vos fúerint, et díxerint omne malum advérsum vos, mentiéntes, propter me: gaudete et exsultáte, quóniam merces vestra copiósa est in cœlis.'
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      source: St. Augustine, Bishop, Book 1 on the Lord's Sermon on the Mount
+      text: |-
+        Si quǽritur quid signíficet mons, bene intellégitur significáre majóra præcépta justítiæ, quia minóra erant quæ Judǽis data sunt. Unus tamen Deus per sanctos prophétas et fámulos suos, secúndum ordinatíssimam distributiónem témporum, dedit minóra præcépta pópulo, quem adhuc timóre alligári oportébat: et per Fílium suum majóra pópulo, quem caritáte jam liberári convénerat. Cum autem minóra minóribus, majóra majóribus dantur, ab eo dantur, qui solus novit congruéntem suis tempóribus géneri humáno exhibére medicínam.
+
+        Nec mirum est, quod dantur præcépta majóra propter regnum cælórum, et minóra data sunt propter regnum terrénum, ab eódem uno Deo, qui fecit cælum et terram. De hac ergo justítia, quæ major est, per prophétam dícitur: Justítia tua sicut montes Dei: et hoc bene signíficat, quod ab uno magístro, solo docéndis tantis rebus idóneo, docétur in monte. Sedens autem docet, quod pértinet ad dignitátem magistérii. Et accédunt ad eum discípuli ejus, ut audiéndis illíus verbis hi essent étiam córpore vicinióres, qui præcéptis adimpléndis étiam ánimo propinquábant. Et apériens os suum docébat eos, dicens. Ista circumlocútio, qua scríbitur, Et apériens os suum, fortássis ipsa mora comméndat aliquánto longiórem futúrum esse sermónem. Nisi forte non vacet, quod nunc eum dictum est aperuísse os suum, quod ipse in lege véteri aperíre soléret ora prophetárum.
+
+        Quid ergo dicit? Beáti páuperes spíritu: quóniam ipsórum est regnum cælórum. Légimus scriptum de appetitióne rerum temporálium: Omnia vánitas, et præsúmptio spíritus. Præsúmptio autem spíritus, audáciam et supérbiam signíficat. Vulgo étiam magnos spíritus supérbi habére dicúntur: et recte, quandóquidem spíritus étiam ventus vocátur. Unde scriptum est: Ignis, grando, nix, glácies, spíritus procellárum. Quis vero nésciat supérbos inflátos dici, tamquam vento disténtos? Unde est étiam illud Apóstoli: Sciéntia inflat, cáritas vero ædíficat. Quaprópter recte hic intellegúntur páuperes spíritu, húmiles et timéntes Deum, id est, non habéntes inflántem spíritum.
+      status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2026-11-02, year adjusted to avoid a Sunday collision).
+# Matins reading for day 2 of All Saints' own octave -- a direct Scripture
+# reading (Ezekiel 1:1-9), resolved from data/scripture/ezek-1.yml (2026-08
+# decision). A continuous reading from Ezekiel, read straight through across
+# the whole octave (a different excerpt each day), confirmed via each day's
+# own Invitatory.
+octave-readings/~-octave-day-2:
+  source: Incipit liber Ezechiélis Prophétæ
+  passages:
+    - book: ezek
+      chapter: 1
+      verses: 1-3
+    - book: ezek
+      chapter: 1
+      verses: 4-6
+    - book: ezek
+      chapter: 1
+      verses: 7-9
+  responsory: |
+    R. Vidi Dóminum sedéntem super sólium excélsum et elevátum, et plena erat omnis terra majestáte ejus: * Et ea, quæ sub ipso erant, replébant templum. V. Séraphim stabant super illud: sex alæ uni, et sex alæ álteri. R. Et ea, quæ sub ipso erant, replébant templum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-11-03). Matins reading for day 3 of All Saints'
+# own octave -- a direct Scripture reading (Ezekiel 2:2-9), resolved from
+# data/scripture/ezek-2.yml.
+octave-readings/~-octave-day-3:
+  source: De Ezechiéle Prophéta
+  passages:
+    - book: ezek
+      chapter: 2
+      verses: 2-5
+    - book: ezek
+      chapter: 2
+      verses: 6-7
+    - book: ezek
+      chapter: 2
+      verses: 8-9
+  responsory: |
+    R. Vidi Dóminum sedéntem super sólium excélsum et elevátum, et plena erat omnis terra majestáte ejus: * Et ea, quæ sub ipso erant, replébant templum. V. Séraphim stabant super illud: sex alæ uni, et sex alæ álteri. R. Et ea, quæ sub ipso erant, replébant templum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-11-04). Matins reading for day 4 of All Saints'
+# own octave -- a direct Scripture reading (Ezekiel 3:1-13), resolved from
+# data/scripture/ezek-3.yml.
+octave-readings/~-octave-day-4:
+  source: De Ezechiéle Prophéta
+  passages:
+    - book: ezek
+      chapter: 3
+      verses: 1-4
+    - book: ezek
+      chapter: 3
+      verses: 5-9
+    - book: ezek
+      chapter: 3
+      verses: 10-13
+  responsory: |
+    R. Vidi Dóminum sedéntem super sólium excélsum et elevátum, et plena erat omnis terra majestáte ejus: * Et ea, quæ sub ipso erant, replébant templum. V. Séraphim stabant super illud: sex alæ uni, et sex alæ álteri. R. Et ea, quæ sub ipso erant, replébant templum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-11-05). Matins reading for day 5 of All Saints'
+# own octave -- a direct Scripture reading (Ezekiel 7:1-13), resolved from
+# data/scripture/ezek-7.yml.
+octave-readings/~-octave-day-5:
+  source: De Ezechiéle Prophéta
+  passages:
+    - book: ezek
+      chapter: 7
+      verses: 1-4
+    - book: ezek
+      chapter: 7
+      verses: 5-9
+    - book: ezek
+      chapter: 7
+      verses: 10-13
+  responsory: |
+    R. Vidi Dóminum sedéntem super sólium excélsum et elevátum, et plena erat omnis terra majestáte ejus: * Et ea, quæ sub ipso erant, replébant templum. V. Séraphim stabant super illud: sex alæ uni, et sex alæ álteri. R. Et ea, quæ sub ipso erant, replébant templum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-11-06). Matins reading for day 6 of All Saints'
+# own octave -- a direct Scripture reading (Ezekiel 13:1-14), resolved from
+# data/scripture/ezek-13.yml.
+octave-readings/~-octave-day-6:
+  source: De Ezechiéle Prophéta
+  passages:
+    - book: ezek
+      chapter: 13
+      verses: 1-6
+    - book: ezek
+      chapter: 13
+      verses: 7-10
+    - book: ezek
+      chapter: 13
+      verses: 11-14
+  responsory: |
+    R. Vidi Dóminum sedéntem super sólium excélsum et elevátum, et plena erat omnis terra majestáte ejus: * Et ea, quæ sub ipso erant, replébant templum. V. Séraphim stabant super illud: sex alæ uni, et sex alæ álteri. R. Et ea, quæ sub ipso erant, replébant templum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-11-07). Matins reading for day 7 of All Saints'
+# own octave -- spans two chapters (Ezekiel 15:1-8 and 16:1-5), resolved from
+# data/scripture/ezek-15.yml and ezek-16.yml.
+octave-readings/~-octave-day-7:
+  source: De Ezechiéle Prophéta
+  passages:
+    - book: ezek
+      chapter: 15
+      verses: 1-5
+    - book: ezek
+      chapter: 15
+      verses: 6-8
+    - book: ezek
+      chapter: 16
+      verses: 1-5
+  responsory: |
+    R. Vidi Dóminum sedéntem super sólium excélsum et elevátum, et plena erat omnis terra majestáte ejus: * Et ea, quæ sub ipso erant, replébant templum. V. Séraphim stabant super illud: sex alæ uni, et sex alæ álteri. R. Et ea, quæ sub ipso erant, replébant templum.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-11-08). Matins reading for day 8 of All Saints'
+# own octave -- a direct Scripture reading (Ezekiel 19:1-14), resolved from
+# data/scripture/ezek-19.yml.
+octave-readings/~-octave-day-8:
+  source: De Ezechiéle Prophéta
+  passages:
+    - book: ezek
+      chapter: 19
+      verses: 1-7
+    - book: ezek
+      chapter: 19
+      verses: 8-11
+    - book: ezek
+      chapter: 19
+      verses: 12-14
+  responsory: |
+    R. Vidi Dóminum sedéntem super sólium excélsum et elevátum, et plena erat omnis terra majestáte ejus: * Et ea, quæ sub ipso erant, replébant templum. V. Séraphim stabant super illud: sex alæ uni, et sex alæ álteri. R. Et ea, quæ sub ipso erant, replébant templum.
+  status: verified

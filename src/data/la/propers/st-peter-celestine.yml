@@ -1,0 +1,66 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2038-05-19).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Deus, qui beátum Petrum Cælestínum ad summi pontificátus ápicem sublimásti, quique illum humilitáti postpónere docuísti: concéde propítius; ut ejus exémplo cuncta mundi despícere, et ad promíssa humílibus prǽmia perveníre felíciter mereámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (st-peter-celestine-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-peter-celestine-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus, allelúia.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui beátum Petrum Cælestínum ad summi pontificátus ápicem sublimásti, quique illum humilitáti postpónere docuísti: concéde propítius; ut ejus exémplo cuncta mundi despícere, et ad promíssa humílibus prǽmia perveníre felíciter mereámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Peter Celestine's own day (2026-05-19). The Benedictus
+# antiphon.
+benedictus-antiphon:
+  text: Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus, allelúia.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 05-19
+# st-peter-celestine (new saint-level second; continua had "amaviteumdominus"). See hours/resolve-common.ts's
+# withVespersVariant.
+magnificat-antiphon:
+  text: Dum esset Summus Póntifex, * terréna non métuit, sed ad cæléstia regna gloriósus migrávit.
+  status: verified
+
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 05-19
+# st-peter-celestine (new saint-level first). First Vespers variant; the default (second Vespers) file is the
+# same id without "-first". See hours/resolve-common.ts's withVespersVariant.
+magnificat-antiphon/~-first:
+  text: Sacérdos et Póntifex, * et virtútum ópifex, pastor bone in pópulo, ora pro nobis Dóminum.
+  status: verified
+
+# Matins Nocturn 2 reading for St. Peter Celestine, Pope, Confessor
+# (May 19, sharing the date with St. Pudentiana — see
+# st-pudentiana.yml) — SanctiM/05-19.txt inherits the whole day
+# (`@Sancti/05-19`) with no Nocturn 2/3 override, so this saint's own
+# vita is sourced from the Tridentine track exactly as for a pre-1955
+# saint (see memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/05-19.txt, English/Sancti/05-19.txt.
+# Single lesson (Lectio4 — Lectio5-6 fall back to Common of a
+# Confessor-Pope, not proper text, so not authored here). No responsory
+# given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: Petrus, a nomine quo Pontifex est appellatus, Cælestinus dictus, honestis catholicisque parentibus Aeserniæ in Samnitibus natus, adolescentiam vix ingressus, ut ánimum a mundi illecebris custodiret, in solitudinem secessit. Ibi contemplationibus mentem mitriens, corpus in servitutem redigens, ferream catenam ad nudam carnem adhibebat. Congregationem, quæ postea Cælestinorum dicta est, sub regula sancti Benedicti instituit. Hinc quasi lucerna supra candelabrum posita, cum abscondi nequiret, (Romana Ecclesia diu viduata pastore) in Petri cathedram ignorans et absens ascitus, magna novitatis admiratione non minus quam repentino gaudio cunctos affecit. Cum autem in pontificatus sublimitate collocatus, variis distentus curis, assuitis incumbere meditationibus vix posse cognosceret, oneri pariter et honori voluntarie cessit. Indeque priscam vitæ rationem repetens, obdormivit in Domino, ejusque pretiosam mortem crux præfulgens in aëre ante cubiculi ostium reddidit amplius gloriosam. Miraculis multis tam vivens, quam post obitum claruit; quibus rite examinatis, Clemens quintus anno postquam decessit undecimo, sanctorum numero adscripsit.
+      status: verified

@@ -1,0 +1,54 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) — read
+# directly from the reference engine's own real-date output (2035-06-18).
+# Same convention as data/propers/temporal/*-collect.yml.
+collect:
+  text: |
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, qui sanctórum Mártyrum tuórum Marci et Marcelliáni natalítia cólimus; a cunctis malis imminéntibus eórum intercessiónibus liberémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Own proper antiphon (ss-mark-and-marcellian-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-several-martyrs (`[Versum 2]`, the tag
+# actually paired with `[Ant 2]` in the reference engine's Commune files
+# for a mere commemoration -- confirmed against this exact category via
+# an independently live-verified precedent elsewhere in this app). Collect
+# is the saint's own real proper (ss-mark-and-marcellian-collect.yml), unchanged.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Præsta, quǽsumus, omnípotens Deus: ut, qui sanctórum Mártyrum tuórum Marci et Marcelliáni natalítia cólimus; a cunctis malis imminéntibus eórum intercessiónibus liberémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Mark and Marcellian's own day (2026-06-18). The
+# Benedictus antiphon.
+benedictus-antiphon:
+  text: 'Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.'
+  status: verified
+
+# Matins Nocturn 2 reading for Ss. Mark and Marcellian, Martyrs (Jun
+# 18). No genuine SanctiM match: the correct Tridentine file is the
+# suffixed `Sancti/06-18t.txt` (the plain `Sancti/06-18.txt` is St.
+# Ephrem the Syrian instead, a different saint occupying the general
+# calendar's own June 18 slot), and the only SanctiM file for this
+# date, `SanctiM/06-18.txt`, bases `@Sancti/06-18` (Ephrem, not Mark
+# and Marcellian) — same "don't trust the plain file" wrinkle as the
+# pre-1955 pass (memory vu-matins-pre1955-saints); a missed
+# pre-1955-pool candidate rather than a genuine SanctiM case (see
+# memory vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/06-18t.txt, English/Sancti/06-18t.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Marcus et Marcellianus fratres Romani, propter christianam fidem a Fabiano duce comprehensi, ad stipitem alligati sunt, pedibus clavis confixis. Ad quos cum ita loqueretur judex: Resipiscite miseri, et vos ipsos ab his cruciatibus eripite: responderunt: Numquam tam jucunde epulati sumus, quam hæc libenter Jesu Christi causa perferimus, in cujus amóre nunc fixi esse cœpimus: utinam tamdiu nos hæc pati sinat, quamdiu hoc corruptibili corpore vestiti erimus. Qui diem noctemque in tormentis divinas laudes canentes, denique telis transfixi, ad martyrii gloriam pervenerunt. Quorum corpora via Ardeatina sepulta sunt.'
+      status: verified
