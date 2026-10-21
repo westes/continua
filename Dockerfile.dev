@@ -1,0 +1,9 @@
+# Dev image for docker-compose.dev.yml. git is baked in (the dev server shows
+# the live commit), so the container never needs root at run time and nothing
+# it writes into the bind-mounted repo is root-owned.
+FROM node:26-alpine
+RUN apk add --no-cache git
+# The anonymous node_modules volume inherits this ownership on first creation.
+RUN mkdir -p /app/node_modules && chown -R node:node /app
+USER node
+WORKDIR /app
