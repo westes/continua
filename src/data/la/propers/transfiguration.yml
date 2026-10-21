@@ -332,3 +332,49 @@ nocturn-readings:
 
         Tu vero Matthǽi philosophíam consídera, qui non celávit nómina eórum qui præpósiti fúerant. Quod et Joánnes sǽpius facit, cum exímias Petri laudes veríssime ac diligentíssime descríbat. Nullum enim in hoc Apostolórum consórtio livor aut inánis glória locum habébat. Primos ígitur Apostolórum seórsum assúmpsit. Quam ob rem eos solos accépit? Quia excellentióres céteris vidélicet erant. Cur autem non íllico, sed post sex dies hoc fecit? Ne céteri scílicet discípuli seu hómines moveréntur; qua de re nec eos nominávit, quos acceptúrus erat.
       status: verified
+
+# Matins psalmody, from the reference's Sancti/08-06.txt [Ant Matutinum] (antiphons with their psalm
+# numbers; nocturn versicles).
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 8
+        antiphon: Paulo minus * ab Angelis minorátus, glória et honóre coronátus est, et constitútus super ópera mánuum Dei.
+      - psalms:
+          - 28
+        antiphon: Revelávit Dóminus * condénsa, et in templo ejus omnes dicent glóriam.
+      - psalms:
+          - 44
+        antiphon: Speciósus forma * præ fíliis hóminum, diffúsa est grátia in lábiis tuis.
+    versicle:
+      v: Gloriósus apparuísti in conspéctu Dómini.
+      r: Proptérea decórem índuit te Dóminus.
+  nocturn2:
+    groups:
+      - psalms:
+          - 75
+        antiphon: 'Illúminans * tu mirabíliter a móntibus ætérnis: turbáti sunt omnes insipiéntes corde.'
+      - psalms:
+          - 83
+        antiphon: Mélior est * dies una in átriis tuis, super míllia.
+      - psalms:
+          - 86
+        antiphon: Gloriósa * dicta sunt de te, cívitas Dei.
+    versicle:
+      v: Glória et honóre coronásti eum, Dómine.
+      r: Et constituísti eum super ópera mánuum tuárum.
+  nocturn3:
+    groups:
+      - psalms:
+          - 88
+        antiphon: 'Thabor et Hermon * in nómine tuo exsultábunt: tuum brácchium cum poténtia.'
+      - psalms:
+          - 96
+        antiphon: Lux orta est * justo, et rectis corde lætítia.
+      - psalms:
+          - 103
+        antiphon: Confessiónem * et decórem índuit, amíctus lúmine sicut vestiménto.
+    versicle:
+      v: Magna est glória ejus in salutári tuo.
+      r: Glóriam et magnum decórem impónes super eum.

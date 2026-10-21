@@ -1,5 +1,6 @@
 import { resolveCommonCategoryId } from './psalmody-common-category';
 import { psalmodyRecords } from '../propers/store';
+import { sharedOfficeId } from './office-source';
 
 /** Matins' own analogue of hours/lauds-psalmody-overrides.ts. Two data
  * stores, both keyed by id, consulted in a three-tier fallback by
@@ -97,7 +98,10 @@ export function getMatinsPsalmodyOverride(id: string | undefined): MatinsPsalmod
  * which treats "proper exists" and "only Common exists" differently). */
 export function getMatinsSaintOverride(id: string | undefined): MatinsPsalmodyOverride | undefined {
   if (!id) return undefined;
-  return overrides.get(id);
+  // A feast that shares another's office (the Octave Day of All Saints,
+  // `propers: all-saints`) takes that office's psalmody, as Lauds and Vespers do.
+  const shared = sharedOfficeId(id);
+  return overrides.get(id) ?? (shared ? overrides.get(shared) : undefined);
 }
 
 /** Common-category lookup only, skipping the saint-specific `overrides`

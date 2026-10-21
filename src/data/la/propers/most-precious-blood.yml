@@ -353,3 +353,91 @@ nocturn-readings:
 
         Hábuit ille sánguinem, unde nos redímeret; et ad hoc accépit sánguinem, ut esset quem pro nobis rediméndis effúnderet. Sanguis Dómini tui, si vis, datus est pro te; si nolúeris esse, non est datus pro te. Forte enim dicis: Hábuit sánguinem Deus meus, quo me redímeret, sed jam, cum passus est, totum dedit; quid illi remánsit, quod det et pro me? Hoc est magnum, quia semel dedit, et pro ómnibus dedit. Sanguis Christi volénti est salus, nolénti supplícium. Quid ergo dúbitas, qui mori non vis, a secúnda pótius morte liberári? Qua liberáris, si vis tóllere crucem tuam, et sequi Dóminum; quia ille tulit suam, et quæsívit servum.
       status: verified
+
+# Matins psalmody, from the reference's Sancti/07-01.txt [Ant Matutinum] (antiphons with their psalm
+# numbers; nocturn versicles).
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 2
+        antiphon: Postquam consummáti sunt * dies octo, ut circumciderétur Puer, vocátum est nomen ejus Jesus.
+      - psalms:
+          - 3
+        antiphon: Factus in agonía * prolíxius orábat, et factus est sudor ejus sicut guttæ sánguinis decurréntis in terram.
+      - psalms:
+          - 15
+        antiphon: 'Judas, qui eum trádidit, * pœniténtia ductus rétulit trigínta argénteos, dicens: Peccávi tradens sánguinem justum.'
+    versicle:
+      v: Redemísti nos, Dómine.
+      r: In sánguine tuo.
+  nocturn2:
+    groups:
+      - psalms:
+          - 22
+        antiphon: Pilátus, * volens pópulo satisfácere, trádidit illis Jesum flagéllis cæsum.
+      - psalms:
+          - 29
+        antiphon: 'Videns autem * quia nihil profíceret, accépta aqua, lavit manus coram pópulo dicens: Innocens ego sum a sánguine Justi hujus.'
+      - psalms:
+          - 63
+        antiphon: 'Et respóndens * univérsus pópulus dixit: Sanguis ejus super nos et super fílios nostros.'
+    versicle:
+      v: Sanguis Jesu Christi Fílii Dei.
+      r: Emúndat nos ab omni peccáto.
+  nocturn3:
+    groups:
+      - psalms:
+          - 73
+        antiphon: 'Exívit ergo Jesus * portans corónam spíneam et purpúreum vestiméntum. Et dixit eis: Ecce homo.'
+      - psalms:
+          - 87
+        antiphon: Et bájulans sibi crucem, * exívit in eum, qui dícitur Calváriæ, locum, ubi crucifixérunt eum.
+      - psalms:
+          - 93
+        antiphon: Ut vidérunt eum jam mórtuum, * non fregérunt ejus crura, sed unus mílitum láncea latus ejus apéruit, et contínuo exívit sanguis et aqua.
+    versicle:
+      v: Christus diléxit nos.
+      r: Et lavit nos a peccátis nostris in sánguine suo.
+
+# Vespers psalmody: Sunday's 109-112 with the fifth psalm replaced by 116
+# (`Psalm5 Vespera=116`), antiphons from Sancti/07-01.txt [Ant Vespera].
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Quis est iste * qui venit de Edom tinctis véstibus de Bosra? iste formósus in stola sua.
+    - psalms:
+        - 110
+      antiphon: Ego * qui loquor justítiam et propugnátor sum ad salvándum.
+    - psalms:
+        - 111
+      antiphon: Vestítus erat * veste aspérsa sánguine, et vocátur nomen ejus Verbum Dei.
+    - psalms:
+        - 112
+      antiphon: Quare ergo * rubrum est induméntum tuum, et vestiménta tua sicut calcántium in torculári?
+    - psalms:
+        - 116
+      antiphon: Tórcular * calcávi solus, et de géntibus non est vir mecum.
+
+# Responsories from the reference's SanctiM/07-01.txt: [Responsory Vespera] is the
+# Sancti file's Breve Tertia, [Responsory Laudes] its Breve Nona.
+lauds-responsory:
+  text: |
+    R.br. Christus diléxit nos, et lavit nos * In sánguine suo.
+    R. Christus diléxit nos, et lavit nos * In sánguine suo.
+    V. Et fecit nos regnum, et sacerdótes Deo, et Patri.
+    R. In sánguine suo.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Christus diléxit nos, et lavit nos * In sánguine suo.
+  status: verified
+
+vespers-responsory:
+  text: |
+    R.br. Redemísti nos, Dómine, * In sánguine tuo.
+    R. Redemísti nos, Dómine, * In sánguine tuo.
+    V. Ex omni tribu, et lingua, et pópulo, et natióne.
+    R. In sánguine tuo.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Redemísti nos, Dómine, * In sánguine tuo.
+  status: verified
