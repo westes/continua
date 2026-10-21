@@ -80,12 +80,14 @@ const commemorationIds = [
 ]
 
 describe('sanctoral commemoration bundles (bulk 2026-08 sweep)', () => {
-  it.each(commemorationIds)('%s has a real antiphon+versicle+collect, never bare/missing', (id) => {
-    const proper = getCommonProper(id);
-    expect(proper.status.la).not.toBe('missing');
-    expect(proper.text.la).toContain('Ant.');
-    expect(proper.text.la).toMatch(/V\.|℣\./);
-    expect(proper.text.la).toContain('Orémus');
+  it('every bundle has a real antiphon+versicle+collect, never bare/missing', () => {
+    const bad: string[] = [];
+    for (const id of commemorationIds) {
+      const proper = getCommonProper(id);
+      const la = proper.text.la ?? '';
+      if (proper.status.la === 'missing' || !la.includes('Ant.') || !/V\.|℣\./.test(la) || !la.includes('Orémus')) bad.push(id);
+    }
+    expect(bad).toEqual([]);
   });
 });
 

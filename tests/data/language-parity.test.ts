@@ -18,11 +18,14 @@ describe('per-language data files', () => {
   it('finds sections present in more than one language', () => {
     expect(shared.length).toBeGreaterThan(0);
   });
-  it.each(shared.map((s) => [`${s.slot} ${s.key} (${s.first}/${s.other})`, s] as const))('%s has the same structure in both languages', (_name, s) => {
+  it('every section has the same structure in both languages', () => {
     const strip = (body: unknown) => {
       const { temporal, ...rest } = (body ?? {}) as Record<string, unknown>;
       return rest;
     };
-    expect(languageNeutralShape(s.key, strip(s.a))).toEqual(languageNeutralShape(s.key, strip(s.b)));
+    const mismatched = shared
+      .filter((s) => JSON.stringify(languageNeutralShape(s.key, strip(s.a))) !== JSON.stringify(languageNeutralShape(s.key, strip(s.b))))
+      .map((s) => `${s.slot} ${s.key} (${s.first}/${s.other})`);
+    expect(mismatched).toEqual([]);
   });
 });

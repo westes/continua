@@ -19,9 +19,12 @@ describe('invitatoryName coverage', () => {
   it('finds the name-template Commons', () => {
     expect(templateCommons.length).toBeGreaterThan(0);
   });
-  it.each(Object.values(saints).map((m) => m.default))('$id', (saint) => {
-    if (!saint.common || !templateCommons.includes(saint.common)) return;
-    expect(saint.invitatoryName?.la.length).toBeGreaterThan(0);
-    expect(saint.invitatoryName?.en.length).toBeGreaterThan(0);
+  it('every saint on a name-template Common carries an invitatoryName in both languages', () => {
+    const missing = Object.values(saints)
+      .map((m) => m.default)
+      .filter((saint) => saint.common && templateCommons.includes(saint.common))
+      .filter((saint) => !saint.invitatoryName?.la.length || !saint.invitatoryName?.en.length)
+      .map((saint) => saint.id);
+    expect(missing).toEqual([]);
   });
 });
