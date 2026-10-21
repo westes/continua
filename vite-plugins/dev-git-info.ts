@@ -31,7 +31,10 @@ function computeGitInfo(root: string): GitInfo {
     })
       .toString()
       .trim();
-    const status = execSync('git status --porcelain', {
+    // --no-optional-locks: plain `git status` takes .git/index.lock to refresh
+    // the index, and in the root-run dev container that left a root-owned
+    // stale lock (and a root-owned index) that blocked the host's own git.
+    const status = execSync('git --no-optional-locks status --porcelain', {
       cwd: root,
       stdio: ['ignore', 'pipe', 'ignore'],
     }).toString();
