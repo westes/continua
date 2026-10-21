@@ -81,6 +81,9 @@ export default defineConfig({
     }),
   ],
   test: {
+    // Vitest ignores .gitignore and walks hidden dirs, so without this it
+    // also ran the test copies inside .claude/worktrees/*.
+    include: ['tests/**/*.test.ts'],
     // Only tests/ui exercises the DOM (opts into jsdom itself via a
     // `// @vitest-environment jsdom` docblock); jsdom setup is real
     // overhead so the other 48 files stay on the plain node environment.
