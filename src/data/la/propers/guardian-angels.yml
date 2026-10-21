@@ -396,3 +396,22 @@ nocturn-readings:
 
         Vidéte ne contemnátis unum de pusíllis istis, qui credunt in me. Aptíssimus vínculum mútui amóris impósuit, ad eos præcípue qui vere in Dómino credidíssent. Pusillórum enim Angeli quotídie Deum vident: quia Fílius hóminis venit salváre quæ pérdita sunt. Ergo et Fílius hóminis salvat, et Deum Angeli vident, et Angeli pusillórum præsunt fidélium oratiónibus. Præésse Angelos absolúta auctóritas est. Salvatórum ígitur per Christum oratiónes Angeli quotídie Deo ófferunt. Ergo periculóse ille contémnitur, cujus desidéria ac postulatiónes ad ætérnum et invisíbilem Deum, ambitióso Angelórum famulátu ac ministério, pervehúntur.
       status: verified
+
+# Lauds psalmody: the usual Duplex-majus set (92, 99, 62, Canticum Trium
+# Puerorum, Laudate) with antiphons from the reference's Sancti/10-02.txt [Ant Laudes] (which is its [Ant Vespera]).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Angelis suis * Deus mandávit de te, ut custódiant te in ómnibus viis tuis.
+    - psalms:
+        - 99
+      antiphon: Laudémus Dóminum, * quem laudant Angeli, quem Chérubim et Séraphim, sanctus, sanctus, sanctus proclámant.
+    - psalms:
+        - 62
+      antiphon: Angeli eórum * semper vident fáciem Patris mei, qui est in cælis.
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Benedíctus Deus, * qui misit Angelum suum, et éruit servos suos qui credidérunt in eum.
+  laudate:
+    antiphon: 'Laudáte Deum, * omnes Angeli ejus: laudáte eum, omnes Virtútes ejus.'

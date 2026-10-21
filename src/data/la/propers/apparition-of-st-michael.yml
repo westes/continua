@@ -421,3 +421,22 @@ nocturn-readings:
 
         Vidéte ne contemnátis unum de pusíllis istis, qui credunt in me. Aptíssimum vínculum mútui amóris impósuit, ad eos præcípue qui vere in Dómino credidíssent. Pusillórum enim Angeli quotídie Deum vident: quia Fílius hóminis venit salváre quæ pérdita sunt. Ergo et Fílius hóminis salvat, et Deum Angeli vident, et Angeli pusillórum præsunt fidélium oratiónibus. Præésse Angelos absolúta auctóritas est. Salvatórum ígitur per Christum oratiónes Angeli quotídie Deo ófferunt. Ergo periculóse ille contémnitur, cujus desidéria ac postulatiónes ad ætérnum et invisíbilem Deum, ambitióso Angelórum famulátu ac ministério, pervehúntur.
       status: verified
+
+# Vespers psalmody, moved here from the retired common-of-an-angel.yml
+# (the reference has no Angel Common; St. Michael's own SanctiM rule says plain
+# "Psalmi Dominica", Sunday's Vespers psalms 109-112, with his own proper
+# antiphons).
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 109
+      antiphon: Stetit Angelus * iuxta aram templi, habens thuríbulum áureum in manu sua.
+    - psalms:
+        - 110
+      antiphon: 'Dum præliarétur * Míchaël Archángelus cum dracóne, audíta est vox dicéntium: Salus Deo nostro, allelúia.'
+    - psalms:
+        - 111
+      antiphon: Archángele Míchaël, * constítui te príncipem super omnes ánimas suscipiéndas.
+    - psalms:
+        - 112
+      antiphon: Angeli, Archángeli, * Throni et Dominatiónes, Principátus et Potestátes, Virtútes cælórum, laudáte Dóminum de cælis, allelúia.

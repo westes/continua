@@ -364,3 +364,28 @@ nocturn-readings:
 
         Circa hanc piscinam jacebat multitúdo magna infirmórum, cæcórum, claudórum, aridórum, aquæ motum exspectántium. Sed tunc infirmitas impediménto erat quóminus is qui vellet, sanarétur; nunc autem unusquísque potestátem accedéndi habet. Non enim Angelus est qui aquam movet, sed Angelórum Dóminus ómnia éfficit. Nec dicere póssumus: Dum ego accedo, alius ante me descéndit. Sed, si totus orbis venerit, grátia non consúmitur, neque vis vel operátio déficit, sed semper éadem manet. Ac, quemádmodum solares radii quotídie illúminant, nec absumúntur, neque, quod multis subministréntur, lucis quídpiam amittunt; sic, immo multo minus, Spíritus operátio minúitur a multitúdine accipiéntium.
       status: verified
+
+# Lauds psalmody: the usual Duplex-majus set (92, 99, 62, Canticum Trium
+# Puerorum, Laudate) with antiphons from the reference's Sancti/10-24.txt [Ant Laudes] (which is its [Ant Vespera]).
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 92
+      antiphon: Missus est * Angelus Ráphaël ad Tobíam et Saram, ut curáret eos.
+    - psalms:
+        - 99
+      antiphon: 'Ingréssus Angelus * ad Tobíam, salutávit eum, et dixit: Gáudium sit tibi semper.'
+    - psalms:
+        - 62
+      antiphon: 'Forti ánimo * esto, Tobía: in próximo enim est ut a Deo curéris.'
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: Benedícite Deum cæli, * et coram ómnibus vivéntibus confitémini illi, quia fecit vobíscum misericórdiam suam.
+  laudate:
+    antiphon: 'Pax vobis, * nolíte timére: Deum benedícite, et cantáte illi.'
+
+# Matins invitatory, moved here from the retired common-of-an-angel.yml
+# (Raphael, 'ex Sancti/05-08', takes St. Michael's archangel invitatory).
+matins-invitatory:
+  text: Regem Archangelórum Dóminum, * Veníte, adorémus.
+  status: verified

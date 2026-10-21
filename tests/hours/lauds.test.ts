@@ -378,19 +378,15 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(numbers).toEqual([66, 50, 63, 64, 148, 149, 150]);
   });
 
-  it("uses Common-of-an-Angel's own psalmody (reusing St. Michael's own proper text) on Guardian Angels' own day", () => {
-    // Guardian Angels (Oct 2, Duplex Majus) has no proper text of her own
-    // -- live-verified (2026-08-28) that her real Lauds antiphons are St.
-    // Michael's own, byte-for-byte, which is exactly what this category's
-    // content is (see data/hours/lauds-psalmody-overrides/categories/
-    // common-of-an-angel.yml's own header). Psalm numbers stay the usual
-    // fixed Duplex-majus+ set (92, 99, 62), unlike this Common's Vespers
-    // psalmody, which substitutes "Psalmi Dominica" instead.
+  it("uses Guardian Angels' own Lauds antiphons, not St. Michael's", () => {
+    // Sancti/10-02.txt's [Ant Laudes] is its own [Ant Vespera]; there is no
+    // Angel Common to borrow Michael's from. Psalm numbers stay the usual
+    // fixed Duplex-majus+ set (92, 99, 62).
     const ordo = resolveOrdo('lauds', '2026-10-02');
     const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
     expect(numbers).toEqual([66, 92, 99, 62, 148, 149, 150]);
     const secondPsalm = ordo.parts.filter((p) => p.kind === 'psalm')[1];
-    expect(secondPsalm?.kind === 'psalm' ? secondPsalm.antiphon?.text.la : undefined).toContain('Stetit Angelus');
+    expect(secondPsalm?.kind === 'psalm' ? secondPsalm.antiphon?.text.la : undefined).toContain('Angelis suis');
   });
 
   it('aliases common-of-an-evangelist onto common-of-an-apostle for Lauds psalmody', () => {
