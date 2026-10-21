@@ -12,8 +12,8 @@
 #
 # DATE: Oct 23, a free date in this calendar (the Redemptorist feast's date).
 #
-# No Lauds or Vespers responsory: the source has none and it names no Common to
-# take one from (same `noParts` as the Apparition of the Immaculate BVM).
+# No Lauds or Vespers responsory of its own: the source has none and it names no
+# Common to take one from, so the day's ferial responsory is sung.
 #
 # Rank: source Duplex majus, taken at face value. `common` is a fake `proper-to-*`
 # category like the Most Precious Blood's: nothing keys on it, every part is the
@@ -24,7 +24,6 @@ nameLa: "Sanctissimus Redemptor"
 rank: duplex-majus
 common: proper-to-the-most-holy-redeemer
 propers: "most-holy-redeemer"
-noParts: [lauds-responsory, vespers-responsory]
 # Announced at Prime the evening before, when this is the day's winner
 # (hours/martyrology-announcement.ts); the wording is generated from `name`.
 martyrologyAnnouncement: true

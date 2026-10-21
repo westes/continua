@@ -114,10 +114,8 @@ lauds-capitulum:
 # this track. Self-contained — its own final stanza is the hymn's
 # natural theological close, not a separate swappable doxology.
 #
-# This day's own Lauds genuinely has no responsory in the source at all
-# (straight from chapter to hymn) — see lauds-capitulum-sacred-heart.yml
-# and hours/lauds.ts's own resolveOffice, which omits the responsory
-# part entirely rather than rendering an empty one.
+# This day's Lauds has no responsory of its own in the source, so the day's
+# ordinary Lauds responsory is sung.
 lauds-hymn:
   text: |-
     Cor, arca legem cóntinens
@@ -149,11 +147,6 @@ lauds-hymn:
     Qui Corde fundis grátiam,
     Cum Patre, et almo Spíritu,
     In sempitérna sǽcula. Amen.
-  status: verified
-
-# Engine render (Divino Afflatu - 1954, command=prayLaudes, 2026-06-12); Latin and English both taken from the page.
-lauds-responsory:
-  text: ''
   status: verified
 
 # The Sacred Heart's own versicle — identical at both Lauds and Vespers
@@ -245,9 +238,8 @@ none-capitulum:
 # this track. Self-contained — its own final stanza is the hymn's
 # natural theological close, not a separate swappable doxology.
 #
-# This day's own Vespers genuinely has no responsory in the source at
-# all (straight from chapter to hymn), same as its own Lauds — see
-# hours/vespers.ts's own resolveOffice, which omits the responsory part
+# This day's Vespers has no responsory of its own in the source, so the day's
+# ordinary Vespers responsory is sung.
 # entirely rather than rendering an empty one.
 vespers-hymn:
   text: |-
@@ -280,11 +272,6 @@ vespers-hymn:
     Qui Corde fundis grátiam,
     Cum Patre, et almo Spíritu,
     In sempitérna sǽcula. Amen.
-  status: verified
-
-# Engine render (Divino Afflatu - 1954, command=prayVespera, 2026-06-12); Latin and English both taken from the page.
-vespers-responsory:
-  text: ''
   status: verified
 
 # The Sacred Heart's own versicle — identical at both Vespers and Lauds

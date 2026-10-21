@@ -346,3 +346,25 @@ nocturn-readings:
 
         Solus enim per ómnia ex natis de fémina sanctus Dóminus Jesus, qui terrénæ contágia corruptélæ, immaculáti partus novitáte non sénserit, et cælésti majestáte depúlerit. Nam si lítteram sequámur: quómodo sanctus omnis másculus, cum multos sceleratíssimos fuísse non láteat? Numquid sanctus Achab? numquid sancti pseudoprophétæ, quos ad Elíæ preces ultor cæléstis injúriæ ignis absúmpsit? Sed ille sanctus, quem in figúra futúri mystérii pia legis divínæ præscrípta signábant; eo quod solus sanctæ Ecclésiæ vírginis ad generándos pópulos Dei, immaculátæ fecunditátis aperíret genitále secrétum.
       status: verified
+
+# SanctiM/01-01.txt: [Responsory Vespera 1] is Sancti/12-25's Breve Tertia; Lauds
+# takes its Breve Sexta (the feast is `ex Sancti/12-25`).
+lauds-responsory:
+  text: |
+    R.br. Notum fecit Dóminus, * Allelúia, allelúia.
+    R. Notum fecit Dóminus, * Allelúia, allelúia.
+    V. Salutáre suum.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Notum fecit Dóminus, * Allelúia, allelúia.
+  status: verified
+
+vespers-responsory:
+  text: |
+    R.br. Verbum caro factum est, * Allelúia, allelúia.
+    R. Verbum caro factum est, * Allelúia, allelúia.
+    V. Et habitávit in nobis.
+    R. Allelúia, allelúia.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Verbum caro factum est, * Allelúia, allelúia.
+  status: verified

@@ -54,7 +54,7 @@ const VESPERS_OFFICE_OVERRIDE_DATES: Record<string, string> = {
 // pattern as the Sacred Heart's own Lauds/Vespers, which resolveOffice
 // deliberately omits the responsory part for rather than rendering an
 // empty one.
-const NO_VESPERS_RESPONSORY = new Set(['apparition-of-the-immaculate-bvm']);
+const NO_VESPERS_RESPONSORY = new Set<string>();
 
 describe('resolveOrdo("vespers", ...) office-override sweep', () => {
   it.each(Object.entries(VESPERS_OFFICE_OVERRIDE_DATES))(

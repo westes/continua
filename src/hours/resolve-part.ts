@@ -225,8 +225,10 @@ export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignor
   }
   // A saint is not a ferial day (a Vigil is: it takes the weekday's text): if
   // nothing of its own or its Common is authored, that is a gap to show, not
-  // a cue to borrow the weekday's text.
-  for (const key of isFeastWinner(day, winner) && !ignoreWinner && !seasonalForSaints ? [] : temporalKeys) {
+  // a cue to borrow the weekday's text. The responsory is the exception: the
+  // monastic Lauds/Vespers responsory is the day's ordinary one whenever the
+  // feast supplies none (proper, then Common, then ferial).
+  for (const key of isFeastWinner(day, winner) && !ignoreWinner && !seasonalForSaints && part !== 'responsory' ? [] : temporalKeys) {
     const found = find(hour, key, 'temporal');
     if (found) {
       return found;
