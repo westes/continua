@@ -300,6 +300,20 @@ matins-psalmody:
       v: Ascéndit fumus arómatum in conspéctu Dómini.
       r: De manu Angeli.
   nocturn3:
+    antiphon: 'Ego enim sum Ráphaël Angelus, * unus ex septem, qui astámus ante Dóminum.'
+    canticles:
+      - refs:
+          - book: isa
+            chapter: 33
+            verses: 2-10
+      - refs:
+          - book: isa
+            chapter: 33
+            verses: 13-18
+      - refs:
+          - book: sir
+            chapter: 36
+            verses: 14-19
     versicle:
       v: Apprehéndit Angelus Ráphaël dæmónium.
       r: Et religávit illud in desérto superióris Ægýpti.

@@ -351,6 +351,20 @@ matins-psalmody:
       v: Ascéndit fumus arómatum in conspéctu Dómini, allelúia.
       r: De manu Angeli, allelúia.
   nocturn3:
+    antiphon: 'Míchaël, Gábriel, * Chérubim et Séraphim, qui non cessant clamáre quotídie, dicéntes: Dignus es, Dómine, accípere glóriam, allelúia.'
+    canticles:
+      - refs:
+          - book: isa
+            chapter: 33
+            verses: 2-10
+      - refs:
+          - book: isa
+            chapter: 33
+            verses: 13-18
+      - refs:
+          - book: sir
+            chapter: 36
+            verses: 14-19
     versicle:
       v: In conspéctu Angelórum psallam tibi, Deus meus, allelúia.
       r: Adorábo ad templum sanctum tuum, et confitébor nómini tuo, allelúia.

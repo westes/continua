@@ -248,6 +248,20 @@ matins-psalmody:
       v: The smoke of the incense ascended up before the Lord. Alleluia.
       r: Out of the Angel's hand. Alleluia.
   nocturn3:
+    antiphon: 'Michael, Gabriel, Cherubim and Seraphim, who never cease to proclaim daily, saying: Thou art worthy, O Lord, to receive glory, alleluia.'
+    canticles:
+      - refs:
+          - book: isa
+            chapter: 33
+            verses: 2-10
+      - refs:
+          - book: isa
+            chapter: 33
+            verses: 13-18
+      - refs:
+          - book: sir
+            chapter: 36
+            verses: 14-19
     versicle:
       v: Before the Angels will I sing praise unto thee, O my God. Alleluia.
       r: I will worship toward thy holy Temple, and praise thy Name. Alleluia.

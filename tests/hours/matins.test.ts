@@ -1332,3 +1332,23 @@ describe('Matins invitatory for saints on a Common with no per-saint invitatory'
     expect(psalm94?.antiphon?.text.la).toContain(expected);
   });
 });
+
+describe('Matins Nocturn 3 psalmody on a three-nocturn feast', () => {
+  // Raphael, Gabriel and the Apparition each had only a versicle in Nocturn 3
+  // (the reference gives them nine antiphons, none for the canticles), so the
+  // nocturn rendered as a heading and a V/R. They take St. Michael's Angel
+  // antiphon and canticles.
+  it.each([
+    ['2026-10-24', 'St. Raphael'],
+    ['2026-03-24', 'St. Gabriel'],
+    ['2026-05-08', 'Apparition of St. Michael'],
+  ])('%s (%s) sings an antiphon and canticles in Nocturn III', (date) => {
+    const parts = resolveOrdo('matins', date).parts;
+    const start = parts.findIndex((p) => p.kind === 'section-heading' && (p as { label?: string }).label === 'Nocturn III');
+    const end = parts.findIndex((p) => p.kind === 'te-deum');
+    expect(start).toBeGreaterThan(-1);
+    const nocturn3 = parts.slice(start, end);
+    expect(nocturn3.some((p) => p.kind === 'antiphon')).toBe(true);
+    expect(nocturn3.filter((p) => p.kind === 'psalm' || p.kind === 'canticle').length).toBeGreaterThanOrEqual(3);
+  });
+});

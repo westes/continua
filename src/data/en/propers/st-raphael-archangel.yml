@@ -237,6 +237,20 @@ matins-psalmody:
       v: The smoke of the incense ascended up before the Lord.
       r: Out of the Angel's hand.
   nocturn3:
+    antiphon: 'For I am the angel Raphael, * one of the seven, who stand before the Lord.'
+    canticles:
+      - refs:
+          - book: isa
+            chapter: 33
+            verses: 2-10
+      - refs:
+          - book: isa
+            chapter: 33
+            verses: 13-18
+      - refs:
+          - book: sir
+            chapter: 36
+            verses: 14-19
     versicle:
       v: The Angel Raphael took hold on the evil spirit.
       r: And drove him away into the desert of Upper Egypt.
