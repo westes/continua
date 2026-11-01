@@ -46,3 +46,14 @@ describe('All Souls on a Sunday', () => {
     expect(isAllSouls('2025-11-03')).toBe(true);
   });
 });
+
+describe('All Souls commemorated at Vespers of All Saints', () => {
+  it('has a clean label and text in both languages', () => {
+    const parts = resolveOrdo('vespers', '2026-11-01').parts as { label?: string; text?: { text: Record<string, string>; status: Record<string, string> } }[];
+    const part = parts.find((p) => p.label?.includes('Faithful Departed'));
+    expect(part?.label).toBe('Commemoration of All the Faithful Departed');
+    expect(part?.text?.status.la).not.toBe('missing');
+    expect(part?.text?.status.en).not.toBe('missing');
+    expect(part?.text?.text.en).toContain('Maker and the Redeemer');
+  });
+});

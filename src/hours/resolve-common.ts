@@ -978,7 +978,10 @@ function sanctoralCommemorationBase(
   commemoration: Extract<Commemoration, { kind: 'sanctoral' }>,
   weekday: Weekday,
 ): ResolvedPart {
-  const label = `Commemoration of ${commemoration.name}`;
+  // A feast already named "The Commemoration of ..." (All Souls) must not read "Commemoration of The Commemoration of ...".
+  const label = /^The Commemoration of /.test(commemoration.name)
+    ? commemoration.name.slice(4)
+    : `Commemoration of ${commemoration.name}`;
   const saint = getSaintRecord(commemoration.id);
   if (saint?.propers) {
     const combined = resolveCommon(`commemoration-${saint.propers}`);
