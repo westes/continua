@@ -1,3 +1,4 @@
+import { canonicalBook } from '../scripture';
 // Traditional liturgical incipits ("Léctio libri Sapiéntiæ" / "A reading
 // from the book of Wisdom") for every book abbreviation used under
 // src/data/scripture — keyed exactly as ScriptureCitation.book spells them
@@ -173,6 +174,14 @@ export function getScriptureIncipitFromCitation(
     if (!candidate) continue;
     for (const [pattern, book] of SCRIPTURE_CITATION_PREFIXES) {
       if (pattern.test(candidate)) return BOOK_INCIPITS[book];
+    }
+    // Any other book: its leading word ("Job", "1 Cor"), as an incipit key
+    // directly or through the Vulgate alias table.
+    const lead = /^(\d)?\s*([A-Za-z]+)/.exec(candidate);
+    if (lead) {
+      const key = `${lead[1] ?? ''}${lead[2]}`.toLowerCase();
+      const found = BOOK_INCIPITS[key] ?? BOOK_INCIPITS[canonicalBook(key)];
+      if (found) return found;
     }
   }
   return undefined;

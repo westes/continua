@@ -127,3 +127,28 @@ describe('All Souls commemorated at Vespers of All Saints', () => {
     expect(part?.text?.text.en).toContain('Maker and the Redeemer');
   });
 });
+
+describe('All Souls Matins goes through the ordinary Matins resolver', () => {
+  const parts = resolveOrdo('matins', '2026-11-02').parts;
+  const lessonsIn = (n: number) => parts.filter((p) => p.kind === 'lesson' && p.nocturn === n);
+
+  it('keeps three Requiem lessons, each with a responsory, in every nocturn', () => {
+    for (const n of [1, 2, 3]) {
+      const withResponsory = lessonsIn(n).filter((p) => p.kind === 'lesson' && p.responsory);
+      expect(withResponsory.length).toBeGreaterThanOrEqual(3);
+    }
+  });
+
+  it('reads the Bible plan first in Nocturn I, ahead of the Job lessons', () => {
+    const first = lessonsIn(1)[0];
+    expect(first?.kind === 'lesson' && first.text.citation?.en).toBeTruthy();
+    const job = lessonsIn(1).findIndex((p) => p.kind === 'lesson' && p.text.citation?.en?.startsWith('Job'));
+    expect(job).toBeGreaterThan(0);
+  });
+
+  it('has no hymn, Te Deum or opening versicle, and uses the Requiem Gloria', () => {
+    expect(parts.some((p) => p.kind === 'hymn' || p.kind === 'te-deum')).toBe(false);
+    const psalm = parts.find((p) => p.kind === 'psalm' && p.psalmNumber === 5);
+    expect(psalm?.kind === 'psalm' && psalm.gloriaPatri?.text.en).toContain('Eternal rest');
+  });
+});

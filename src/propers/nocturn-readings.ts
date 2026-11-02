@@ -19,6 +19,10 @@ export interface NocturnReading {
   /** Attribution, e.g. "St. Gregory the Great, Moralia in Job, Bk. 9" —
    * absent for a bare Gospel pericope (the citation itself is enough). */
   source?: string;
+  /** A bilingual heading authored for this reading, shown in place of one
+   * derived from `source` or `citation` (and without the "(for <occasion>)"
+   * note) -- for a day whose whole office is the occasion. */
+  label?: Partial<Record<LanguageCode, string>>;
   citation?: Partial<Record<LanguageCode, string>>;
   text: Partial<Record<LanguageCode, string>>;
   responsory?: Partial<Record<LanguageCode, string>>;

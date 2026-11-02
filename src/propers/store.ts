@@ -26,7 +26,7 @@ type Plain = Record<string, unknown>;
 const WRAPPED: Record<string, Set<string>> = {
   text: new Set(['text', 'status', 'citation']),
   psalmody: new Set(['antiphon', 'antiphonStatus', 'v', 'r', 'status']),
-  'nocturn-readings': new Set(['citation', 'responsory', 'status', 'text']),
+  'nocturn-readings': new Set(['citation', 'responsory', 'status', 'text', 'label']),
   'octave-readings': new Set(['text', 'status', 'responsory', 'source', 'citation']),
 };
 

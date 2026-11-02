@@ -35,3 +35,154 @@ commemoration:
     O God, who art thyself at once the Maker and the Redeemer of all thy faithful ones, grant unto the souls of thy servants and handmaids remission of all their sins; making of our entreaties unto our great Father a mean whereby they may have that forgiveness which they have ever hoped for. Who livest and reignest with God the Father, in the unity of the Holy Ghost, God, world without end.
     R. Amen.
   status: verified
+
+# The Office of the Dead at Matins (Commune C9, with All Souls' own Lessons 4-9).
+matins-invitatory:
+  text: Unto the Eternal King all live. * O come, let us worship Him.
+  status: verified
+matins-psalmody:
+  nocturn1:
+    groups:
+      - psalms:
+          - 5
+        antiphon: Make my way straight before thy face, * O Lord my God.
+      - psalms:
+          - 6
+        antiphon: 'Return, O Lord, deliver my soul: * O save me for thy mercy''s sake.'
+      - psalms:
+          - 7
+        antiphon: Lest he tear my soul like a lion, * while there is none to deliver, or to save.
+    versicle:
+      v: From the gates of hell.
+      r: Deliver their souls, O Lord.
+  nocturn2:
+    groups:
+      - psalms:
+          - 22
+        antiphon: He maketh me to lie down * in green pastures.
+      - psalms:
+          - 24
+        antiphon: Lord, remember not the sins of my youth, * nor my transgressions.
+      - psalms:
+          - 26
+        antiphon: I believe that I shall yet see the goodness of the Lord * in the land of the living.
+    versicle:
+      v: May the Lord set them with princes.
+      r: Even with the princes of his people.
+  nocturn3:
+    groups:
+      - psalms:
+          - 39
+        antiphon: 'Be pleased, O Lord, to deliver me: * O Lord, look upon me to help me.'
+      - psalms:
+          - 40
+        antiphon: Lord, heal my soul; * for I have sinned against thee.
+      - psalms:
+          - 41
+        antiphon: My soul thirsteth for the living God; * when shall I come and appear before God?
+    versicle:
+      v: O deliver not unto beasts the souls of them that praise thee!
+      r: And forget not the souls of thy poor for ever.
+nocturn-readings:
+  readings:
+    - nocturn: 1
+      isGospel: false
+      citation: Job 7:16-21
+      text: 'Spare me, for my days are nothing. What is a man that thou shouldst magnify him? or why dost thou set thy heart upon him? Thou visitest him early in the morning, and thou provest him suddenly. How long wilt thou not spare me, nor suffer me to swallow down my spittle? I have sinned: what shall I do to thee, O keeper of men? why hast thou set me opposite to thee, and I am become burdensome to myself? Why dost thou not remove my sin, and why dost thou not take away my iniquity? Behold now I shall sleep in the dust: and if thou seek me in the morning, I shall not be.'
+      responsory: |-
+        R. I believe that my Redeemer liveth, and that I shall stand up from the earth at the latter day,
+        * And in my flesh shall I see God my Saviour.
+        V. Whom I shall see for myself, and mine eyes shall behold, and not another.
+        R. And in my flesh shall I see God my Saviour.
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      citation: Job 10:1-7
+      text: 'My soul is weary of my life, I will let go my speech against myself, I will speak in the bitterness of my soul. I will say to God: Do not condemn me: tell me why thou judgest me so. Doth it seem good to thee that thou shouldst calumniate me, and oppress me, the work of thy own hands, and help the counsel of the wicked? Hast thou eyes of flesh: or, shalt thou see as man seeth? Are thy days as the days of man, and are thy years as the times of men: That thou shouldst inquire after my iniquity, and search after my sin? And shouldst know that I have done no wicked thing, whereas there is no man that can deliver out of thy hand.'
+      responsory: |-
+        R. Thou Who didst call up Lazarus from the grave after that he had begun to stink,
+        * Do Thou, O Lord, grant them rest and a place of forgiveness.
+        V. Thou Who shalt come to judge the quick and dead, and the world by fire.
+        R. Do Thou, O Lord, grant them rest and a place of forgiveness.
+      status: verified
+    - nocturn: 1
+      isGospel: false
+      citation: Job 10:8-12
+      text: 'Thy hands have made me, and fashioned me wholly round about, and dost thou thus cast me down headlong on a sudden? Remember, I beseech thee, that thou hast made me as the clay, and thou wilt bring me into dust again. Hast thou not milked me as milk, and curdled me like cheese? Thou hast clothed me with skin and flesh: thou hast put me together with bones and sinews: Thou hast granted me life and mercy, and thy visitation hath preserved my spirit.'
+      responsory: |-
+        R. Lord, when Thou comest to judge the earth, where shall I hide myself from the face of thy wrath?
+        * For I have sinned greatly in my life.
+        V. I dread my sins, I blush before thee: when Thou comest to judge, condemn me not.
+        R. For I have sinned greatly in my life.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      label: A reading from the book of St. Augustine, Bishop, on the Care for the Dead
+      citation: St. Augustine, On the Care for the Dead, ch. 2-3
+      text: The care taken over a man's funeral, the manner of his burial, the pomp of his obsequies, are more a consolation to the living than an aid to the dead. Yet it does not follow that the bodies of the departed, above all of just and faithful men, whose bodies the spirit has used holily as organs and vessels for all good works, are to be despised and cast aside. For if a father's garment and ring, and whatever such things, are the more dear to their posterity as their affection towards their parents was the greater, in no way should the bodies themselves be spurned, which we wear in truth more familiarly and closely than any garment. For these belong not to any adornment or aid applied from without, but to man's very nature. Whence also the funerals of the just men of old were tended with dutiful piety, their obsequies celebrated, and burial provided; and they themselves, while living, gave charge to their sons touching the burial, or even the removal, of their bodies.
+      responsory: |-
+        R. Remember, O God, that my life is wind,
+        * The eye of him that hath seen me shall see me no more.
+        V. Out of the depths have I cried unto thee, O Lord! Lord, hear my voice.
+        R. The eye of him that hath seen me shall see me no more.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      label: A reading from the book of St. Augustine, Bishop, on the Care for the Dead
+      citation: St. Augustine, On the Care for the Dead, ch. 4
+      text: 'When this affection of remembrance and prayer is shown toward the departed by those most dear to them among the faithful, there is no doubt it profits those who, while they lived in the body, merited that such things should profit them after this life. But even should some necessity, through lack of all opportunity, not allow bodies to be buried, or buried in holy places, the supplications for the spirits of the dead are not to be omitted: which the Church has taken upon herself to make for all the departed in Christian and catholic fellowship, even without naming them, under a general commemoration; so that those who lack parents, or sons, or any kindred or friends for these offices, may still have them rendered by the one common, pious mother. But were these supplications, made with right faith and piety for the dead, to be lacking, I think it would profit their spirits nothing, however their lifeless bodies were laid in holy places.'
+      responsory: |-
+        R. Woe is me, O Lord! for I have sinned greatly in my life. I am smitten: what shall I do? Whither shall I flee but unto thee, O my God?
+        * Have mercy upon me, when Thou comest at the latter day.
+        V. My soul is sore vexed, but Thou, O Lord, help me.
+        R. Have mercy upon me, when Thou comest at the latter day.
+      status: verified
+    - nocturn: 2
+      isGospel: false
+      label: A reading from the book of St. Augustine, Bishop, on the Care for the Dead
+      citation: St. Augustine, On the Care for the Dead, ch. 18
+      text: 'This being so, let us not think that anything reaches the dead for whom we care, except what we solemnly beseech for them through the sacrifices either of the altar, or of prayers, or of alms: though these do not profit all for whom they are offered, but only those for whom, while they lived, it was obtained that they should profit. But since we cannot discern who these are, it is fitting to do these things for all the regenerate, that none of them be passed over to whom these benefits may and ought to reach. For it is better that these things be done superfluously for those whom they neither hinder nor help, than that they be lacking to those whom they help. Yet each man does these things more diligently for his own kin, that the like may be done for him by his own. But whatever is spent on the burying of the body is no aid to salvation, but an office of humanity, according to that affection by which no one ever hated his own flesh. Whence it is fitting that a man take what care he can for the flesh of his neighbor, once he who bore it has departed. And if those who do not believe in the resurrection of the flesh do these things, how much more ought those to do so who believe; that this office, rendered to a body dead but yet to rise again and to abide in eternity, may also be in some sort a testimony of that same faith!'
+      responsory: |-
+        R. Hold not my sins in remembrance, O Lord,
+        * When thou comest to judge the world by fire.
+        V. Make my way straight before thy face, O Lord my God.
+        R. When thou comest to judge the world by fire.
+        V. Eternal rest grant unto them, O Lord: and let perpetual light shine upon them.
+        R. When Thou shalt come to judge the world by fire.
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      citation: 1 Cor 15:12-22
+      text: 'Now if Christ be preached, that he arose again from the dead, how do some among you say, that there is no resurrection of the dead? But if there be no resurrection of the dead, then Christ is not risen again. And if Christ be not risen again, then is our preaching vain, and your faith is also vain. Yea, and we are found false witnesses of God: because we have given testimony against God, that he hath raised up Christ; whom he hath not raised up, if the dead rise not again. For if the dead rise not again, neither is Christ risen again. And if Christ be not risen again, your faith is vain, for you are yet in your sins. Then they also that are fallen asleep in Christ, are perished. If in this life only we have hope in Christ, we are of all men most miserable. But now Christ is risen from the dead, the firstfruits of them that sleep: For by a man came death, and by a man the resurrection of the dead. And as in Adam all die, so also in Christ all shall be made alive.'
+      responsory: |-
+        R. Forasmuch as I sin daily, and repent not, the fear of death troubleth me:
+        * O God, have mercy upon me, and save me, for in hell there is no redemption.
+        V. Save me, O God, by thy name, and judge me in thy strength.
+        R. O God, have mercy upon me, and save me, for in hell there is no redemption.
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      citation: 1 Cor 15:35-44
+      text: 'But some man will say: How do the dead rise again? or with what manner of body shall they come? Senseless man, that which thou sowest is not quickened, except it die first. And that which thou sowest, thou sowest not the body that shall be; but bare grain, as of wheat, or of some of the rest. But God giveth it a body as he will: and to every seed its proper body. All flesh is not the same flesh: but one is the flesh of men, another of beasts, another of birds, another of fishes. And there are bodies celestial, and bodies terrestrial: but, one is the glory of the celestial, and another of the terrestrial. One is the glory of the sun, another the glory of the moon, and another the glory of the stars. For star differeth from star in glory. So also is the resurrection of the dead. It is sown in corruption, it shall rise in incorruption. It is sown in dishonour, it shall rise in glory. It is sown in weakness, it shall rise in power. It is sown a natural body, it shall rise a spiritual body.'
+      responsory: |-
+        R. O Lord, judge me not according to my works; for I have done nothing that can be counted in respect of thee. I beseech thy majesty therefore, that thou wouldest
+        * Blot out my transgressions, O God.
+        V. Lord, wash me thoroughly from mine iniquity and cleanse me from my sin.
+        R. Blot out my transgressions, O God.
+      status: verified
+    - nocturn: 3
+      isGospel: false
+      citation: 1 Cor 15:51-58
+      text: 'Behold, I tell you a mystery. We shall all indeed rise again: but we shall not all be changed. In a moment, in the twinkling of an eye, at the last trumpet: for the trumpet shall sound, and the dead shall rise again incorruptible: and we shall be changed. For this corruptible must put on incorruption; and this mortal must put on immortality. And when this mortal hath put on immortality, then shall come to pass the saying that is written: Death is swallowed up in victory. O death, where is thy victory? O death, where is thy sting? Now the sting of death is sin: and the power of sin is the law. But thanks be to God, who hath given us the victory through our Lord Jesus Christ. Therefore, my beloved brethren, be ye steadfast and unmoveable; always abounding in the work of the Lord, knowing that your labour is not in vain in the Lord.'
+      responsory: |-
+        R. Deliver me, O Lord, from eternal death in that awful day,
+        * when the heavens and the earth shall be shaken,
+        V. Quaking and dread take hold upon me, when I look for the coming of the trial and the wrath to come.
+        R. when the heavens and the earth shall be shaken,
+        V. That day is a day of wrath, of wasteness and desolation, a great day and exceeding bitter.
+        When Thou shalt come to judge the world by fire.
+        R. When Thou shalt come to judge the world by fire.
+      status: verified
+collect/~-matins:
+  text: O God, who art thyself at once the Maker and the Redeemer of all thy faithful ones, grant unto the souls of thy servants and handmaids remission of all their sins; making of our entreaties unto our great Father a mean whereby they may have that forgiveness which they have ever hoped for. Who livest and reignest with God the Father, in the unity of the Holy Ghost, God, world without end.
+  status: verified

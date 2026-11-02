@@ -42,6 +42,10 @@ export interface SaintRecord {
   /** Parts this feast deliberately has none of (`lauds-responsory`, ...),
    * so the lookup returns nothing instead of inheriting the Common's. */
   noParts?: string[];
+  /** `dead`: this day's office is the Office of the Dead (hours/office-of-
+   * the-dead.ts), which changes the shape of its hours -- see
+   * hours/resolve-common.ts's resolveDayRubrics. Absent for every other feast. */
+  office?: 'dead';
   /**
    * Fallback id for the day collect (`getDayCollect`) when this saint has
    * no proper collect of their own (`propers` may still be non-null —

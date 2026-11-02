@@ -86,6 +86,7 @@ import { applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
   resolveDayRubrics,
+  isOfficeOfTheDead,
   substituteDoxology,
   getDayCollect,
   resolveOfficeWinner,
@@ -114,7 +115,6 @@ import matinsSundayNamedOverridesData from '../data/hours/matins-sunday-named-no
 import matinsFerialAntiphonsData from '../data/hours/matins-ferial-antiphons.yml';
 import matinsFerialNamedOverridesData from '../data/hours/matins-ferial-named-antiphon-overrides.yml';
 import type { Weekday } from '../calendar/types';
-import { isAllSouls, buildMatinsParts } from './all-souls';
 
 type BilingualText = Partial<Record<string, string>>;
 type TextStatus = Partial<Record<string, 'verified' | 'draft' | 'missing'>>;
@@ -900,8 +900,9 @@ function nocturnReadingPart(r: NocturnReading, id: string, index: number, day: L
   const responsoryText = r.responsory ?? getResponsoryForCommon(getSaintRecord(id)?.common, index);
   return {
     kind: 'lesson',
+    nocturn: r.nocturn,
     text: { text: normalizeParagraphs(r.text), status: r.status, citation: r.citation },
-    label: withOccasion(r.source, id, day) ?? scriptureLabel(r) ?? fallbackHagiographicLabel(id),
+    label: r.label ?? withOccasion(r.source, id, day) ?? scriptureLabel(r) ?? fallbackHagiographicLabel(id),
     responsory: responsoryText ? { text: responsoryText, status: { la: 'verified', en: 'verified' } } : undefined,
   };
 }
@@ -1146,17 +1147,29 @@ function buildReadingPool(
  * historical fixed lesson-count-per-nocturn scheme. Special case: a pool
  * with only one reading total puts it in Nocturn 3, not Nocturn 1 — a bare
  * single reading reads better closing the hour than opening it. */
-function distributeIntoNocturns(pool: ResolvedPart[], nocturnCount: number): ResolvedPart[][] {
+function distributeIntoNocturns(pool: ResolvedPart[], nocturnCount: number, fixed = false): ResolvedPart[][] {
   if (nocturnCount === 1) return [pool];
+  if (fixed) {
+    // A fixed-layout office (the Office of the Dead: three readings in each
+    // nocturn) keeps the nocturn each reading was authored for. A reading
+    // with none -- the Bible plan, an octave's -- goes to the first nocturn
+    // when it comes before the authored readings in the pool, otherwise to
+    // the last.
+    const firstTagged = pool.findIndex((part) => part.kind === 'lesson' && part.nocturn !== undefined);
+    const chunks: ResolvedPart[][] = Array.from({ length: nocturnCount }, () => []);
+    pool.forEach((part, i) => {
+      const tagged = part.kind === 'lesson' ? part.nocturn : undefined;
+      const n = tagged ?? (firstTagged === -1 || i < firstTagged ? 1 : nocturnCount);
+      chunks[n - 1]!.push({ ...part, nocturn: n } as ResolvedPart);
+    });
+    return chunks;
+  }
   const chunks: ResolvedPart[][] =
     pool.length <= 1 ? [[], [], pool] : [[pool[0]!], [pool[1]!], pool.slice(2)];
   return chunks.map((chunk, i) => chunk.map((part) => ({ ...part, nocturn: i + 1 })));
 }
 
 export function resolveOrdo(date: string): ResolvedOrdo {
-  if (isAllSouls(date)) {
-    return { hourId: 'matins', date, parts: buildMatinsParts(date), dayLabel: getDayLabel(resolveDay(date)) };
-  }
   const day = resolveDay(date);
   const winner = resolveOfficeWinner(day);
   // Octave-aware: an interior octave day is judged on the octave's own
@@ -1211,9 +1224,11 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     day.weekday === 'sunday' ||
     (effectiveRank !== undefined && isAtLeast(effectiveRank, 'semiduplex')) ||
     hasTemporalNamedOverride ||
-    hasTemporalProperMatins;
+    hasTemporalProperMatins ||
+    isOfficeOfTheDead(winner);
   const pool = buildReadingPool(day, temporalId, date, threeNocturns, hasTemporalNamedOverride);
-  const [nocturn1Readings, nocturn2Readings, nocturn3Readings] = distributeIntoNocturns(pool, threeNocturns ? 3 : 1);
+  const rubrics = resolveDayRubrics(day);
+  const [nocturn1Readings, nocturn2Readings, nocturn3Readings] = distributeIntoNocturns(pool, threeNocturns ? 3 : 1, isOfficeOfTheDead(winner));
 
   // Tenebrae's real rubric: during the Sacred Triduum the whole opening
   // (versicle, Ps 3, Invitatory, hymn) is dropped, replaced by a silently-
@@ -1225,9 +1240,13 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // shorter"), so the fix here is a pure omission, not a new part kind.
   const hymnDoxologyOverrideId = getHymnDoxologyOverrideId(day);
   const hymnDoxologyOverride = hymnDoxologyOverrideId ? resolveCommon(hymnDoxologyOverrideId) : undefined;
-  const parts: ResolvedPart[] = !resolveDayRubrics(day).matinsOpening
-    ? []
-    : [
+  const invitatoryBlock: ResolvedPart[] = [{ kind: 'section-heading', label: 'Invitatory' }, ...invitatoryParts(day)];
+  const parts: ResolvedPart[] =
+    rubrics.matinsOpening === 'none'
+      ? []
+      : rubrics.matinsOpening === 'invitatory'
+        ? invitatoryBlock
+        : [
         { kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) },
         { kind: 'versicle', text: resolveCommon('opening-domine-labia') },
         plainPsalm(3),
@@ -1273,8 +1292,12 @@ export function resolveOrdo(date: string): ResolvedOrdo {
         ...block,
         ...(readings[i] ?? []),
       ]),
-      { kind: 'te-deum', text: resolveCommon('te-deum') },
-      { kind: 'versicle', text: resolveCommon('te-decet-laus') },
+      ...(rubrics.teDeum
+        ? [
+            { kind: 'te-deum', text: resolveCommon('te-deum') } as ResolvedPart,
+            { kind: 'versicle', text: resolveCommon('te-decet-laus') } as ResolvedPart,
+          ]
+        : []),
     ];
   };
   if (sundaySanctoralProperOverride ?? sundayCommonWholeScheme) {
@@ -1318,16 +1341,18 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // duplicate. Unlike Lauds' and Vespers' own preces, this is unconditional
   // here — no ferial/Sunday swap, never omitted — per the user's explicit
   // choice for Matins.
-  parts.push({ kind: 'preces', text: resolveCommon('lauds-short-litany') });
+  if (rubrics.matinsLitany) {
+    parts.push({ kind: 'preces', text: resolveCommon('lauds-short-litany') });
+  }
 
-  parts.push({ kind: 'prayer', text: getDayCollect(day) });
+  parts.push({ kind: 'prayer', text: getDayCollect(day, 'matins') });
 
   // Conclusio: live-verified against Divinum Officium (Monastic Tridentinum
   // 1617) to be byte-identical to `lauds-conclusio` (Domine exaudi / Benedicamus
   // Domino / Fidelium animae) — same reuse Vespers already makes (see
   // data/hours/vespers.yml's own header). Not dropped in the Triduum: the
   // Triduum only omits the opening block (see resolveDayRubrics).
-  parts.push({ kind: 'preces', text: resolveCommon('lauds-conclusio') });
+  parts.push({ kind: 'preces', text: rubrics.closing ?? resolveCommon('lauds-conclusio') });
 
   return { hourId: 'matins', date, parts, dayLabel: getDayLabel(day) };
 }

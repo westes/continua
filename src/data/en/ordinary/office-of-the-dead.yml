@@ -1,0 +1,16 @@
+# The Office of the Dead's fixed texts: the "Requiem gloria" said in place of
+# the Gloria Patri after every psalm and canticle, and the special closing
+# (Conclusio specialis) that ends each hour instead of Benedicamus Domino.
+requiem-gloria-patri:
+  text: |-
+    Eternal rest * grant unto them, O Lord.
+    And let perpetual light * shine upon them.
+  status: verified
+
+requiem-conclusio:
+  text: |-
+    V. Eternal rest grant unto them, O Lord.
+    R. And let perpetual light shine upon them.
+    V. May they rest in peace.
+    R. Amen.
+  status: verified

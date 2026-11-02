@@ -10,7 +10,6 @@ import { ensureSingleAlleluia } from './paschal-alleluia';
 import { resolveTemporalId } from '../calendar/temporal-id';
 import { sortCommemorations } from '../calendar/commemoration-order';
 import { isInTriduum, easterOffsetOf } from '../calendar/temporal';
-import { isAllSouls, REQUIEM_GLORIA_PATRI } from './all-souls';
 import { temporalLabel, emberDayLabel, biName } from '../calendar/day-label';
 import { splitAntiphon, isDoubleOrHigher } from './antiphon';
 import { getLaudsPsalmodyOverride } from './lauds-psalmody-overrides';
@@ -838,7 +837,7 @@ export function substituteName(text: ResolvedText, name: { la: string[]; en: str
  * not the raw `day.winner` — see its own doc comment for why those two
  * differ on an octave day.
  */
-export function getDayCollect(day: LiturgicalDay, hour?: 'lauds' | 'vespers'): ResolvedText {
+export function getDayCollect(day: LiturgicalDay, hour?: 'matins' | 'lauds' | 'vespers'): ResolvedText {
   const winner = resolveOfficeWinner(day);
   // A handful of temporal ids (Lent's own ordinary ferias, its Ember days,
   // Ash Wednesday's week, Holy Week Monday) have a genuinely distinct Vespers
@@ -848,9 +847,11 @@ export function getDayCollect(day: LiturgicalDay, hour?: 'lauds' | 'vespers'): R
   // its own file, else the governing week's.
   const found = lookupPartTiered({
     day,
-    hour: hour ?? 'lauds',
+    hour: hour === 'matins' ? 'lauds' : (hour ?? 'lauds'),
     part: 'collect',
-    suffix: hour === 'vespers' ? 'vespers' : undefined,
+    // A feast may carry a distinct collect for this hour (`collect-<id>-<hour>`);
+    // without one the base collect applies, as at Lauds.
+    suffix: hour === 'vespers' || hour === 'matins' ? hour : undefined,
     temporalKeys: winner.kind === 'temporal' ? [winner.id, resolveTemporalId(day.date)] : [],
   });
   if (found) {
@@ -1561,7 +1562,9 @@ export function splitNamedAntiphon(antiphon: ResolvedText): {
  * opening. */
 export function openingAntiphon(antiphon: ResolvedText, winner: DayWinner): ResolvedText {
   const { incipit, full } = splitNamedAntiphon(antiphon);
-  return isDoubleOrHigher(winner) ? full : incipit;
+  // The Office of the Dead never doubles its antiphons but says each in full
+  // before its psalm, whatever the day's rank.
+  return isDoubleOrHigher(winner) || isOfficeOfTheDead(winner) ? full : incipit;
 }
 
 /** Fixed wording, same as lauds.ts's weekday-canticle Gloria Patri —
@@ -1587,24 +1590,55 @@ export interface DayRubrics {
   /** The opening "Deus in adjutorium ... Glória Patri" versicle of an hour
    * (its Gloria is baked into the fixed text, so it goes whole). */
   openingVersicle: boolean;
-  /** Matins' whole opening block: versicle, Domine labia, Ps 3, Invitatory
-   * and hymn. */
-  matinsOpening: boolean;
+  /** Matins' opening block (versicle, Domine labia, Ps 3, Invitatory, hymn):
+   * all of it, only the Invitatory (the Office of the Dead), or none. */
+  matinsOpening: 'full' | 'invitatory' | 'none';
+  /** The Te Deum and its versicle after Matins' last reading. */
+  teDeum: boolean;
+  /** Matins' short litany (Kyrie, Pater noster) before its collect. */
+  matinsLitany: boolean;
+  /** Replaces the ordinary closing of an hour (Domine exaudi, Benedicamus
+   * Domino) when set. */
+  closing: ResolvedText | undefined;
   /** Compline's closing Marian antiphon. */
   marianAntiphon: boolean;
 }
 
+const PLAIN_RUBRICS = (): DayRubrics => ({
+  gloriaPatri: verifiedText(GLORIA_PATRI),
+  openingVersicle: true,
+  matinsOpening: 'full',
+  teDeum: true,
+  matinsLitany: true,
+  closing: undefined,
+  marianAntiphon: true,
+});
+
+/** Whether `winner` keeps the Office of the Dead (a feast record with
+ * `office: dead`). */
+export function isOfficeOfTheDead(winner: DayWinner): boolean {
+  return winner.kind === 'sanctoral' && getSaintRecord(winner.id)?.office === 'dead';
+}
+
 export function resolveDayRubrics(day: LiturgicalDay): DayRubrics {
   if (isInTriduum(day.date)) {
-    return { gloriaPatri: undefined, openingVersicle: false, matinsOpening: false, marianAntiphon: false };
+    return { ...PLAIN_RUBRICS(), gloriaPatri: undefined, openingVersicle: false, matinsOpening: 'none', marianAntiphon: false };
   }
-  // The Office of the Dead's "Requiem gloria" rubric -- All Souls' Day
-  // substitutes "Réquiem ætérnam/Et lux perpétua" for the ordinary Gloria
-  // Patri after every psalm and canticle, all day -- see hours/all-souls.ts.
-  if (isAllSouls(day.date)) {
-    return { gloriaPatri: REQUIEM_GLORIA_PATRI, openingVersicle: true, matinsOpening: true, marianAntiphon: true };
+  // The Office of the Dead: "Requiem gloria" in place of the Gloria Patri
+  // after every psalm and canticle, no hymn, Te Deum or short litany, and its
+  // own closing.
+  if (isOfficeOfTheDead(resolveOfficeWinner(day))) {
+    return {
+      gloriaPatri: resolveCommon('requiem-gloria-patri'),
+      openingVersicle: false,
+      matinsOpening: 'invitatory',
+      teDeum: false,
+      matinsLitany: false,
+      closing: resolveCommon('requiem-conclusio'),
+      marianAntiphon: false,
+    };
   }
-  return { gloriaPatri: verifiedText(GLORIA_PATRI), openingVersicle: true, matinsOpening: true, marianAntiphon: true };
+  return PLAIN_RUBRICS();
 }
 
 /** The closing Gloria Patri for a psalm, or `undefined` when the day omits it. */
