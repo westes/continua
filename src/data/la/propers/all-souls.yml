@@ -240,3 +240,11 @@ vespers-versicle:
 collect:
   text: 'Deus, véniæ largítor et humánæ salútis amátor: quǽsumus cleméntiam tuam; ut ánimas ómnium fidélium qui ex hoc sǽculo transiérunt, beáta María semper Vírgine intercedénte cum ómnibus Sanctis tuis, ad perpétuæ beatitúdinis consórtium perveníre concédas. Per Christum Dóminum nostrum. Amen.'
   status: verified
+
+# Prime: the day's own collect (Sancti/11-02 [Oratio mortuorum2]) and the introduction to the Martyrology.
+collect/~-prime:
+  text: 'Súpplices, Dómine, pro animábus ómnium famulórum famularúmque tuárum preces effúndimus: ut, quidquid conversatióne contraxérunt humána, clemens indúlgeas, et pœnis eórum finem benígnus impónas. Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.'
+  status: verified
+martyrology-intro:
+  text: 'Hac die Commemorátio ómnium Fidélium Defunctórum; in qua commúnis pia Mater Ecclésia, postquam univérsos fílios suos iam in cælo lætántes cóngruis stúduit celebráre præcóniis, mox et omnes adhuc in Purgatório geméntes válidis apud Dóminum et Sponsum Christum satágit suffrágiis adiuváre, ut quam cítius váleant ad societátem supernórum cívium perveníre.'
+  status: verified

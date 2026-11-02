@@ -78,18 +78,6 @@ export const GENERIC_MATINS_COLLECT = v(
 );
 
 // ---------------------------------------------------------------------
-// Prime — bare psalms + collect. Any Martyrology reading (All Souls' Day
-// keeps the day's normal daily Martyrology, with its own special
-// introduction) is layered on by the caller, not built here — a private/
-// votive recitation of this office wouldn't include a day's own
-// Martyrology announcement at all.
-// ---------------------------------------------------------------------
-
-export function buildPrimeParts(collect: ResolvedText): ResolvedPart[] {
-  return [barePsalm(87), barePsalm(27), barePsalm(31), { kind: 'prayer', text: collect }];
-}
-
-// ---------------------------------------------------------------------
 // Terce / Sext / None — bare psalms only (no antiphon, chapter, hymn, or
 // preces), each closing with the generic "Fidélium, Deus" collect (same
 // text as Matins' own closing collect) + the Requiem Conclusio.

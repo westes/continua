@@ -237,3 +237,11 @@ vespers-versicle:
 collect:
   text: 'O God the giver of pardon, and the lover of human salvation, we beseech thy clemency: that thou grant unto the souls of all the faithful who are departed out of this world, blessed Mary ever Virgin making intercession with all thy Saints, to come to the fellowship of eternal blessedness. Through Christ our Lord. Amen.'
   status: verified
+
+# Prime: the day's own collect (Sancti/11-02 [Oratio mortuorum2]) and the introduction to the Martyrology.
+collect/~-prime:
+  text: 'We suppliants, O Lord, pour forth our prayers for the souls of all thy servants and handmaids, that thou wouldst mercifully pardon whatsoever they have committed through human frailty, and graciously vouchsafe to deliver them from the pains of purgatory. Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end. Amen.'
+  status: verified
+martyrology-intro:
+  text: 'On this day, the Commemoration of all the Faithful Departed, on which day Holy Church, their common Mother, after due diligence to celebrate with fitting praise all her children who now rejoice in heaven, doth strive also to assist by her prayers all them that suffer still in Purgatory, which are of avail before Christ her Lord and Spouse, in order that as speedily as possible they may join the society of the citizens on high.'
+  status: verified

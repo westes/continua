@@ -192,3 +192,17 @@ describe('All Souls Lauds and Vespers go through the ordinary resolvers', () => 
     expect(parts.some((p) => p.kind === 'chapter')).toBe(false);
   });
 });
+
+describe('All Souls Prime goes through the ordinary Prime resolver', () => {
+  it('says three bare psalms with the Requiem Gloria, the Martyrology with its introduction, and the Rule', () => {
+    const parts = resolveOrdo('prime', '2026-11-02').parts;
+    const kinds = parts.map((p) => p.kind);
+    for (const kind of ['hymn', 'chapter', 'responsory'] as const) {
+      expect(kinds).not.toContain(kind);
+    }
+    expect(parts.flatMap((p) => (p.kind === 'psalm' ? [p.psalmNumber] : []))).toEqual([87, 27, 31]);
+    const martyrology = parts.find((p) => p.kind === 'lesson' && p.label === 'Martyrology') as { text: { text: Record<string, string> } };
+    expect(martyrology.text.text.en).toContain('Commemoration of all the Faithful Departed');
+    expect(parts.some((p) => p.kind === 'lesson' && /Rule of our Holy Father/.test(String(p.label)))).toBe(true);
+  });
+});

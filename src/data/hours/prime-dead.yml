@@ -1,0 +1,22 @@
+# Prime of the Office of the Dead (Commune C9): three bare psalms, the day's
+# collect, the Martyrology with its own versicle and collect, the Rule, and the
+# Requiem closing. No opening versicle, hymn, antiphon, Creed, chapter,
+# responsory, Preces or short reading. The Requiem Gloria after each psalm is
+# put in by resolveDayRubrics, as at every other hour of this office.
+id: prime
+parts:
+  - kind: psalm
+    psalmNumber: 87
+  - kind: psalm
+    psalmNumber: 27
+  - kind: psalm
+    psalmNumber: 31
+  - kind: day-collect
+  - kind: martyrology
+  - kind: versicle
+    textRef: { source: common, id: requiem-martyrology-versicle }
+  - kind: prayer
+    textRef: { source: common, id: requiem-collect-deus-veniae }
+  - kind: rule-reading
+  - kind: preces
+    textRef: { source: common, id: requiem-conclusio }

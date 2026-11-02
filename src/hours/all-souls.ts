@@ -1,9 +1,6 @@
-import type { ResolvedPart, ResolvedText } from './types';
-import { getMartyrologyEntryFor } from '../martyrology';
+import type { ResolvedPart } from './types';
 import * as office from './office-of-the-dead';
-import { v, versicle, type Bilingual } from './office-of-the-dead';
-import { resolveCommon } from './resolve-common';
-import { getRegulaReadingFor } from '../regula';
+import { v } from './office-of-the-dead';
 import { isAllSouls } from '../calendar/day-label';
 
 /**
@@ -40,60 +37,6 @@ export const REQUIEM_GLORIA_PATRI = office.REQUIEM_GLORIA_PATRI;
 // Matins is no longer built here: it goes through the ordinary Matins resolver
 // (hours/matins.ts), with this feast's `office: dead` setting its shape and its
 // content in data/<lang>/propers/all-souls.yml.
-
-// ---------------------------------------------------------------------
-// Prime — All Souls' Day's own "Súpplices, Dómine" collect (Sancti/
-// 11-02.txt's `[Oratio mortuorum2]`), plus the day's normal daily
-// Martyrology reading (with this office's own special introduction)
-// layered on after the engine's bare psalms+collect.
-// ---------------------------------------------------------------------
-
-const PRIME_COLLECT = v(
-  'Súpplices, Dómine, pro animábus ómnium famulórum famularúmque tuárum preces effúndimus: ut, quidquid conversatióne contraxérunt humána, clemens indúlgeas, et pœnis eórum finem benígnus impónas. Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.',
-  'We suppliants, O Lord, pour forth our prayers for the souls of all thy servants and handmaids, that thou wouldst mercifully pardon whatsoever they have committed through human frailty, and graciously vouchsafe to deliver them from the pains of purgatory. Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end. Amen.',
-);
-
-const MARTYROLOGY_VERSICLE = versicle(
-  'In memória ætérna erunt justi.',
-  'The just shall be in everlasting remembrance.',
-  'Ab auditióne mala non timébunt.',
-  'They will not fear from hearing evil.',
-);
-
-const MARTYROLOGY_COLLECT = v(
-  'Deus, véniæ largítor et humánæ salútis amátor: quǽsumus cleméntiam tuam; ut ánimas ómnium fidélium qui ex hoc sǽculo transiérunt, beáta María semper Vírgine intercedénte cum ómnibus Sanctis tuis, ad perpétuæ beatitúdinis consórtium perveníre concédas. Per Christum Dóminum nostrum. Amen.',
-  'O God the giver of pardon, and the lover of human salvation, we beseech thy clemency: that thou grant unto the souls of all the faithful who are departed out of this world, blessed Mary ever Virgin making intercession with all thy Saints, to come to the fellowship of eternal blessedness. Through Christ our Lord. Amen.',
-);
-
-const MARTYROLOGY_INTRO: Bilingual = {
-  la: 'Hac die Commemorátio ómnium Fidélium Defunctórum; in qua commúnis pia Mater Ecclésia, postquam univérsos fílios suos iam in cælo lætántes cóngruis stúduit celebráre præcóniis, mox et omnes adhuc in Purgatório geméntes válidis apud Dóminum et Sponsum Christum satágit suffrágiis adiuváre, ut quam cítius váleant ad societátem supernórum cívium perveníre.',
-  en: 'On this day, the Commemoration of all the Faithful Departed, on which day Holy Church, their common Mother, after due diligence to celebrate with fitting praise all her children who now rejoice in heaven, doth strive also to assist by her prayers all them that suffer still in Purgatory, which are of avail before Christ her Lord and Spouse, in order that as speedily as possible they may join the society of the citizens on high.',
-};
-
-export function buildPrimeParts(date: string): ResolvedPart[] {
-  const parts: ResolvedPart[] = office.buildPrimeParts(PRIME_COLLECT);
-  const entry = getMartyrologyEntryFor(date);
-  const introduced: ResolvedText = {
-    text: {
-      la: entry.text.la ? `${MARTYROLOGY_INTRO.la}\n\n${entry.text.la}` : entry.text.la,
-      en: entry.text.en ? `${MARTYROLOGY_INTRO.en}\n\n${entry.text.en}` : entry.text.en,
-    },
-    status: entry.status,
-  };
-  parts.push({ kind: 'lesson', text: introduced, label: 'Martyrology' });
-  parts.push({ kind: 'versicle', text: MARTYROLOGY_VERSICLE });
-  parts.push({ kind: 'prayer', text: MARTYROLOGY_COLLECT });
-  // The daily Rule reading is not part of the Office of the Dead proper; it is
-  // a deliberate addition so All Souls' Prime keeps what every other day has.
-  const rule = getRegulaReadingFor(date);
-  parts.push(
-    { kind: 'preces', text: resolveCommon('prime-regula-blessing') },
-    { kind: 'lesson', text: { text: rule.text, status: rule.status }, label: rule.label.en ?? rule.label.la },
-    { kind: 'preces', text: resolveCommon('lesson-close') },
-  );
-  parts.push(office.CONCLUSIO);
-  return parts;
-}
 
 // ---------------------------------------------------------------------
 // Terce / Sext / None — the engine's own generic collect applies

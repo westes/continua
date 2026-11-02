@@ -8987,3 +8987,27 @@ St. Francis of Paola.
   the commemoration of relics (not St. Robert Bellarmine), SanctiM/04-29M is Ss. Odo and companions (not St.
   Catherine of Siena), Sancti/05-01r is St. Joseph the Worker (not Ss. Philip and James). St. Catherine of
   Siena and St. Gabriel/St. Raphael have no proper hymn file of their own in the reference.
+
+### All Souls rewired onto the ordinary resolvers: Matins, Lauds, Vespers, Prime (2026-11-02)
+
+- All Souls (`office: dead` on its saint record) was a parallel engine: an `isAllSouls` early return in each
+  of the eight hour files, its text in TypeScript. Matins, Lauds and Vespers now go through the same
+  builders as every other day. Prime does too, from its own part list `data/hours/prime-dead.yml`
+  (chosen by the `ordoVariant: dead` rubric); the little hours and Compline are still to move.
+- `resolveDayRubrics` (resolve-common.ts) is the one record of what a day omits or replaces: closing Gloria,
+  opening versicle, Matins opening block, Te Deum, short litany, closing, Marian antiphons, Preces, closing
+  versicle, suffrages. The Triduum and the Office of the Dead are its two users. Output for the Triduum is
+  unchanged.
+- The Office of the Dead keeps a fixed 3/3/3 nocturn layout through authored `nocturn` tags, and the bible
+  plan reading now opens Nocturn I (it was skipped). It has its own psalm scheme at Lauds and Vespers
+  whatever its rank, drops the chapter, hymn, responsory and versicle through `noParts`, and keeps its own
+  Second Vespers whatever tomorrow's rank (calendar/vespers.ts).
+- Content moved to `data/{la,en}/propers/all-souls.yml` and `data/{la,en}/ordinary/office-of-the-dead.yml`.
+  The Hezekiah canticle comes from the shared canticle store. Lauds says Psalms 62 and 66 under one antiphon.
+- Vespers Magnificat antiphon is "Omne quod dat mihi Pater" (Commune C9 `[Ant 1]`, paired with the "Audivi
+  vocem" versicle), checked against the reference file; "Ego sum resurrectio" is Lauds' Benedictus only.
+- Also shipped on the way: nocturn headings no longer duplicated; scripture octave readings carry a citation
+  (`propers/citations.ts`); scripture lesson headings work for any book; a reading may carry an authored
+  `label`.
+- Still to do: Terce/Sext/None, Compline, then delete `all-souls.ts`, `office-of-the-dead.ts`, the
+  remaining early returns and the stale `day-label` branches.

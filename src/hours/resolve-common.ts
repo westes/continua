@@ -841,7 +841,7 @@ export function substituteName(text: ResolvedText, name: { la: string[]; en: str
  * not the raw `day.winner` — see its own doc comment for why those two
  * differ on an octave day.
  */
-export function getDayCollect(day: LiturgicalDay, hour?: 'matins' | 'lauds' | 'vespers'): ResolvedText {
+export function getDayCollect(day: LiturgicalDay, hour?: HourId): ResolvedText {
   const winner = resolveOfficeWinner(day);
   // A handful of temporal ids (Lent's own ordinary ferias, its Ember days,
   // Ash Wednesday's week, Holy Week Monday) have a genuinely distinct Vespers
@@ -851,11 +851,11 @@ export function getDayCollect(day: LiturgicalDay, hour?: 'matins' | 'lauds' | 'v
   // its own file, else the governing week's.
   const found = lookupPartTiered({
     day,
-    hour: hour === 'matins' ? 'lauds' : (hour ?? 'lauds'),
+    hour: 'lauds',
     part: 'collect',
     // A feast may carry a distinct collect for this hour (`collect-<id>-<hour>`);
     // without one the base collect applies, as at Lauds.
-    suffix: hour === 'vespers' || hour === 'matins' ? hour : undefined,
+    suffix: hour && hour !== 'lauds' ? hour : undefined,
     temporalKeys: winner.kind === 'temporal' ? [winner.id, resolveTemporalId(day.date)] : [],
   });
   if (found) {
@@ -1606,6 +1606,10 @@ export interface DayRubrics {
   closing: ResolvedText | undefined;
   /** Compline's closing Marian antiphon. */
   marianAntiphon: boolean;
+  /** Which ordo file the little hours and Compline follow: the Office of the
+   * Dead has its own (`data/hours/<hour>-dead.yml`), a list of parts like any
+   * other hour's. `undefined` is the ordinary ordo. */
+  ordoVariant: 'dead' | undefined;
   /** The Marian antiphon closing Lauds. (The Triduum has always kept it
    * there; only the Office of the Dead drops it.) */
   laudsMarianAntiphon: boolean;
@@ -1625,6 +1629,7 @@ const PLAIN_RUBRICS = (): DayRubrics => ({
   matinsLitany: true,
   closing: undefined,
   marianAntiphon: true,
+  ordoVariant: undefined,
   laudsMarianAntiphon: true,
   hourPreces: true,
   closingVersicle: true,
@@ -1653,6 +1658,7 @@ export function resolveDayRubrics(day: LiturgicalDay): DayRubrics {
       matinsLitany: false,
       closing: resolveCommon('requiem-conclusio'),
       marianAntiphon: false,
+      ordoVariant: 'dead',
       laudsMarianAntiphon: false,
       hourPreces: false,
       closingVersicle: false,

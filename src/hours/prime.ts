@@ -2,6 +2,7 @@ import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart } from './typ
 import type { LiturgicalDay, Weekday } from '../calendar/types';
 import { resolveDay } from '../calendar';
 import { getDayLabel } from '../calendar/day-label';
+import { getSaintRecord } from '../calendar/feasts';
 import { getPsalmsFor } from '../psalter/distribution';
 import { getPsalmVerses } from '../psalter';
 import { getMartyrologyEntryFor } from '../martyrology';
@@ -25,12 +26,14 @@ import {
   usesFeriaPrimeCapitulum,
   resolveResponsory,
   getPrimeLectioBrevis,
+  getDayCollect,
 } from './resolve-common';
-import { isAllSouls, buildPrimeParts } from './all-souls';
 import primeDefinitionData from '../data/hours/prime.yml';
+import primeDeadDefinitionData from '../data/hours/prime-dead.yml';
 import antiphonsData from '../data/hours/prime-antiphons.yml';
 
 const primeDefinition = primeDefinitionData as HourDefinition;
+const primeDeadDefinition = primeDeadDefinitionData as HourDefinition;
 const antiphons = antiphonsData as Record<Weekday, Partial<Record<string, string>>>;
 
 function resolvePart(part: HourPart, date: string, day: LiturgicalDay): ResolvedPart[] {
@@ -150,7 +153,18 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
     case 'martyrology': {
       // Prime reads tomorrow's entry; the announcement is tomorrow's winner's.
       const entry = getMartyrologyEntryFor(date, martyrologyAnnouncementFor(addDays(date, 1)));
-      return [{ kind: 'lesson', text: { text: entry.text, status: entry.status }, label: 'Martyrology' }];
+      // A feast may open the Martyrology read at its own Prime with an
+      // introduction (All Souls' "Hac die Commemoratio...").
+      const winner = resolveOfficeWinner(day);
+      const saint = winner.kind === 'sanctoral' ? getSaintRecord(winner.id) : undefined;
+      const intro = saint?.propers ? resolveCommon(`martyrology-intro-${saint.propers}`) : undefined;
+      const text: Partial<Record<string, string>> = { ...entry.text };
+      if (intro) {
+        for (const lang of ['la', 'en'] as const) {
+          if (intro.text[lang] && text[lang]) text[lang] = `${intro.text[lang]}\n\n${text[lang]}`;
+        }
+      }
+      return [{ kind: 'lesson', text: { text, status: entry.status }, label: 'Martyrology' }];
     }
     case 'rule-reading': {
       const reading = getRegulaReadingFor(date);
@@ -161,10 +175,11 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
         { kind: 'preces', text: resolveCommon('lesson-close') },
       ];
     }
+    case 'day-collect':
+      return [{ kind: 'prayer', text: getDayCollect(day, 'prime') }];
     // Not used by Prime — Compline-only, or Little-Hours-only.
     case 'nunc-dimittis':
     case 'marian-antiphon':
-    case 'day-collect':
     case 'lauds-psalmody':
     case 'lauds-office':
     case 'benedictus':
@@ -180,10 +195,8 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
 }
 
 export function resolveOrdo(date: string): ResolvedOrdo {
-  if (isAllSouls(date)) {
-    return { hourId: 'prime', date, parts: buildPrimeParts(date), dayLabel: getDayLabel(resolveDay(date)) };
-  }
   const day = resolveDay(date);
-  const parts = primeDefinition.parts.flatMap((part) => resolvePart(part, date, day));
+  const definition = resolveDayRubrics(day).ordoVariant === 'dead' ? primeDeadDefinition : primeDefinition;
+  const parts = definition.parts.flatMap((part) => resolvePart(part, date, day));
   return { hourId: 'prime', date, parts, dayLabel: getDayLabel(day) };
 }
