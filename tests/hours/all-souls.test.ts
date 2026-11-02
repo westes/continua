@@ -32,6 +32,15 @@ describe('All Souls’ Day (Nov 2) — Office of the Dead', () => {
     }
   }
 
+  it('Prime includes the Rule reading before the Conclusio', () => {
+    const parts = resolveOrdo('prime', '2026-11-02').parts;
+    const i = parts.findIndex((p) => p.kind === 'lesson' && p.label && p.label !== 'Martyrology');
+    expect(i).toBeGreaterThan(-1);
+    const rule = parts[i] as { text: { status: Record<string, string> } };
+    expect(Object.values(rule.text.status)).not.toContain('missing');
+    expect(i).toBeLessThan(parts.length - 1);
+  });
+
   it('does not affect Nov 1 First Vespers of All Saints', () => {
     const ordo = resolveOrdo('vespers', '2026-11-01');
     const label = ordo.dayLabel?.en ?? '';

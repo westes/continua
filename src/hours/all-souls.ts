@@ -2,7 +2,8 @@ import type { ResolvedPart, ResolvedText } from './types';
 import { getMartyrologyEntryFor } from '../martyrology';
 import * as office from './office-of-the-dead';
 import { v, versicle, type Bilingual, type LessonText } from './office-of-the-dead';
-import { octaveCommemorationPart } from './resolve-common';
+import { octaveCommemorationPart, resolveCommon } from './resolve-common';
+import { getRegulaReadingFor } from '../regula';
 import { isAllSouls } from '../calendar/day-label';
 import { resolveDay, resolveActiveOctave } from '../calendar';
 import { getSaintRecord } from '../calendar/feasts';
@@ -201,6 +202,14 @@ export function buildPrimeParts(date: string): ResolvedPart[] {
   parts.push({ kind: 'lesson', text: introduced, label: 'Martyrology' });
   parts.push({ kind: 'versicle', text: MARTYROLOGY_VERSICLE });
   parts.push({ kind: 'prayer', text: MARTYROLOGY_COLLECT });
+  // The daily Rule reading is not part of the Office of the Dead proper; it is
+  // a deliberate addition so All Souls' Prime keeps what every other day has.
+  const rule = getRegulaReadingFor(date);
+  parts.push(
+    { kind: 'preces', text: resolveCommon('prime-regula-blessing') },
+    { kind: 'lesson', text: { text: rule.text, status: rule.status }, label: rule.label.en ?? rule.label.la },
+    { kind: 'preces', text: resolveCommon('lesson-close') },
+  );
   parts.push(office.CONCLUSIO);
   return parts;
 }
