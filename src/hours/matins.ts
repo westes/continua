@@ -76,7 +76,6 @@ import {
   activeOctavesFor,
   isAtLeast,
 } from '../calendar';
-import { isInTriduum } from '../calendar/temporal';
 import { getDayLabel, emberDayLabel, temporalLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getPsalmsFor, type PsalmRef } from '../psalter/distribution';
@@ -86,6 +85,7 @@ import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
+  resolveDayRubrics,
   substituteDoxology,
   getDayCollect,
   resolveOfficeWinner,
@@ -1225,7 +1225,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // shorter"), so the fix here is a pure omission, not a new part kind.
   const hymnDoxologyOverrideId = getHymnDoxologyOverrideId(day);
   const hymnDoxologyOverride = hymnDoxologyOverrideId ? resolveCommon(hymnDoxologyOverrideId) : undefined;
-  const parts: ResolvedPart[] = isInTriduum(day.date)
+  const parts: ResolvedPart[] = !resolveDayRubrics(day).matinsOpening
     ? []
     : [
         { kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) },
@@ -1326,7 +1326,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // 1617) to be byte-identical to `lauds-conclusio` (Domine exaudi / Benedicamus
   // Domino / Fidelium animae) — same reuse Vespers already makes (see
   // data/hours/vespers.yml's own header). Not dropped in the Triduum: the
-  // Triduum only omits the opening block (see isInTriduum comment above).
+  // Triduum only omits the opening block (see resolveDayRubrics).
   parts.push({ kind: 'preces', text: resolveCommon('lauds-conclusio') });
 
   return { hourId: 'matins', date, parts, dayLabel: getDayLabel(day) };

@@ -7,12 +7,13 @@ import { isAbsentByDesign, lookupPart } from './resolve-part';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
-import { isInTriduum, easterOffsetOf } from '../calendar/temporal';
+import { easterOffsetOf } from '../calendar/temporal';
 import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { getVespersSaintOverride, getVespersCommonOverride } from './vespers-psalmody-overrides';
 import { applyFlexaMark } from './antiphon';
 import { paschalizeAntiphon, paschalizeResponsory, paschalizeVersicle, usesAlleluiaDismissal } from './paschal-alleluia';
 import {
+  resolveDayRubrics,
   isSeasonalProperSunday,
   resolveCommon,
   substituteDoxology,
@@ -214,7 +215,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday, varia
       // `day` here is already resolveEveningDay's possibly-anticipated
       // identity, so Holy Saturday evening (already Easter's own First
       // Vespers) correctly keeps it rather than being wrongly suppressed.
-      if (isInTriduum(day.date)) {
+      if (!resolveDayRubrics(day).openingVersicle) {
         return [];
       }
       return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) }];

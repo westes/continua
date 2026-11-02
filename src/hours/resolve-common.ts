@@ -1573,20 +1573,43 @@ const GLORIA_PATRI: BilingualText = {
   en: 'Glory be to the Father, and to the Son, * and to the Holy Ghost.\nAs it was in the beginning, is now, * and ever shall be, world without end. Amen.',
 };
 
-/** The closing Gloria Patri for a psalm, or `undefined` during the Sacred
- * Triduum (calendar/temporal.ts's isInTriduum) when it's omitted
- * entirely — not just seasonally varied wording, an actual omission. */
-export function resolveGloriaPatri(day: LiturgicalDay): ResolvedText | undefined {
+/** What a day's rubrics change in the ordinary shape of the hours -- the one
+ * place the "this day omits or replaces the standard text" rules live, so no
+ * hour builder asks "is this the Triduum?" itself. A day that changes
+ * nothing gets the plain defaults.
+ *
+ * Today only the Sacred Triduum (calendar/temporal.ts's isInTriduum) and
+ * All Souls' Day set anything. Fields are added as a rite needs them. */
+export interface DayRubrics {
+  /** The closing Gloria Patri after a psalm or canticle; `undefined` means
+   * it is omitted entirely, not merely reworded. */
+  gloriaPatri: ResolvedText | undefined;
+  /** The opening "Deus in adjutorium ... Glória Patri" versicle of an hour
+   * (its Gloria is baked into the fixed text, so it goes whole). */
+  openingVersicle: boolean;
+  /** Matins' whole opening block: versicle, Domine labia, Ps 3, Invitatory
+   * and hymn. */
+  matinsOpening: boolean;
+  /** Compline's closing Marian antiphon. */
+  marianAntiphon: boolean;
+}
+
+export function resolveDayRubrics(day: LiturgicalDay): DayRubrics {
   if (isInTriduum(day.date)) {
-    return undefined;
+    return { gloriaPatri: undefined, openingVersicle: false, matinsOpening: false, marianAntiphon: false };
   }
-  // The Office of the Dead's "Requiem gloria" rubric — All Souls' Day
+  // The Office of the Dead's "Requiem gloria" rubric -- All Souls' Day
   // substitutes "Réquiem ætérnam/Et lux perpétua" for the ordinary Gloria
-  // Patri after every psalm and canticle, all day — see hours/all-souls.ts.
+  // Patri after every psalm and canticle, all day -- see hours/all-souls.ts.
   if (isAllSouls(day.date)) {
-    return REQUIEM_GLORIA_PATRI;
+    return { gloriaPatri: REQUIEM_GLORIA_PATRI, openingVersicle: true, matinsOpening: true, marianAntiphon: true };
   }
-  return verifiedText(GLORIA_PATRI);
+  return { gloriaPatri: verifiedText(GLORIA_PATRI), openingVersicle: true, matinsOpening: true, marianAntiphon: true };
+}
+
+/** The closing Gloria Patri for a psalm, or `undefined` when the day omits it. */
+export function resolveGloriaPatri(day: LiturgicalDay): ResolvedText | undefined {
+  return resolveDayRubrics(day).gloriaPatri;
 }
 
 // The responsory's own closing Gloria is a DIFFERENT rule from the psalm/

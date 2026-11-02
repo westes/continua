@@ -7,9 +7,8 @@ import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { getOpeningVersicleId } from './opening-versicle';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { isDoubleOrHigher } from './antiphon';
-import { resolveCommon, substituteDoxology, splitNamedAntiphon, openingAntiphon, resolveResponsory } from './resolve-common';
+import { resolveCommon, resolveDayRubrics, substituteDoxology, splitNamedAntiphon, openingAntiphon, resolveResponsory } from './resolve-common';
 import { isAllSouls, buildComplineParts } from './all-souls';
-import { isInTriduum } from '../calendar/temporal';
 import complineDefinitionData from '../data/hours/compline.yml';
 
 const complineDefinition = complineDefinitionData as HourDefinition;
@@ -61,7 +60,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       // opening-laus-tibi.yml) — dropped whole during the Sacred Triduum,
       // same real rubric matins.ts already applies to its own opening
       // block (Tenebrae: "Invitatorium{omittitur}", no versicle either).
-      if (isInTriduum(day.date)) {
+      if (!resolveDayRubrics(day).openingVersicle) {
         return [];
       }
       return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) }];
@@ -91,7 +90,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       // Dropped entirely during the Sacred Triduum (Maundy Thursday through
       // Holy Saturday) — real practice, distinct from the by-season lookup's
       // known Triduum gap noted in marian-antiphon.ts's own doc comment.
-      if (isInTriduum(day.date)) {
+      if (!resolveDayRubrics(day).marianAntiphon) {
         return [];
       }
       const id = getMarianAntiphonId(day);
