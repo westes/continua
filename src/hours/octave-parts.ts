@@ -57,7 +57,7 @@ export function octaveReadingParts(
       isScripture: reading.isScripture,
       part: {
         kind: 'lesson',
-        text: { text: normalize(reading.text), status: reading.status },
+        text: { text: normalize(reading.text), status: reading.status, citation: reading.citation },
         label: labelOf(reading.source),
         responsory: reading.responsory ? { text: reading.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
       },

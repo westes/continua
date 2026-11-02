@@ -10,6 +10,7 @@
 import type { LanguageCode, TranslationStatus } from '../psalter/types';
 import { getScriptureVerses } from '../scripture';
 import { octaveReadingRecords } from './store';
+import { formatCitation } from './citations';
 
 /** A citation into scripture/index.ts's own store — `verses` e.g. "1-13",
  * omitted for a whole (authored) chapter. */
@@ -104,7 +105,10 @@ export function resolvePassages(passages: ScriptureCitation[]): Partial<Record<L
 function resolveReading(record: OctaveReadingRecord): OctaveReadingText {
   const { passages, text, ...rest } = record;
   const isGospel = rest.id.endsWith('-gospel');
-  return { ...rest, text: text ?? (passages ? resolvePassages(passages) : {}), isScripture: !!passages && !isGospel, isGospel };
+  // A reading authored as passages carries the citation those passages
+  // spell out, unless the record states one itself (the Gospel pericopes).
+  const citation = rest.citation ?? (passages ? formatCitation(passages) : undefined);
+  return { ...rest, citation, text: text ?? (passages ? resolvePassages(passages) : {}), isScripture: !!passages && !isGospel, isGospel };
 }
 
 const octaveReadingsById = new Map<string, OctaveReadingText>();
