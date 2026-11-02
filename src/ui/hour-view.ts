@@ -178,17 +178,6 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
         </section>
       `;
     }
-    // Matins only. Not currently emitted by hours/matins.ts (its psalms
-    // render as a flat sequence of plain 'psalm'/'antiphon'/'versicle'
-    // parts instead) — handled here for the ResolvedPart union's sake,
-    // ready for whenever nocturn-grouped UI treatment is wanted.
-    case 'nocturn-psalmody':
-      return `
-        <section class="ordo-part ordo-part-nocturn-psalmody">
-          <h3 class="ordo-part-label">Nocturn ${part.nocturn}</h3>
-          ${part.psalms.map((p) => renderPart(p, languages)).join('')}
-        </section>
-      `;
     case 'section-heading':
       return `<h2 class="section-heading">${escapeHtml(part.label)}</h2>`;
     case 'te-deum':

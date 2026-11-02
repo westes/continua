@@ -37,7 +37,7 @@ const registry: Record<HourId, Resolver> = {
 };
 
 /** Attaches the closing Gloria Patri to every plain psalm and canticle part
- * (recursing into 'nocturn-psalmody' groups), so no per-hour builder has to
+ * so no per-hour builder has to
  * remember to do it — and so the Sacred Triduum omission
  * (resolveGloriaPatri) is enforced in exactly one place rather than once
  * per hour file. Live-verified (Divino Afflatu 1954, Tridentine 1906) that
@@ -47,9 +47,6 @@ function withGloriaPatri(parts: ResolvedPart[], gloriaPatri: ResolvedText | unde
   return parts.map((part) => {
     if (part.kind === 'psalm' || part.kind === 'canticle') {
       return { ...part, gloriaPatri };
-    }
-    if (part.kind === 'nocturn-psalmody') {
-      return { ...part, psalms: withGloriaPatri(part.psalms, gloriaPatri) };
     }
     return part;
   });

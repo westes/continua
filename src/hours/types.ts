@@ -249,12 +249,6 @@ export type ResolvedPart =
   // A standalone antiphon, said on its own rather than framing a psalm —
   // see 'closing-antiphon' above.
   | { kind: 'antiphon'; text: ResolvedText }
-  // Matins only. Groups a nocturn's psalms for the UI — each entry is a
-  // plain 'psalm' ResolvedPart (Sunday/Duplex+ nocturns 1-2 use the fixed
-  // Ps 20-31 table, nocturn 3 uses 'canticle' entries instead; ferial days
-  // have a single unnumbered nocturn and don't use this wrapper at all —
-  // see hours/matins.ts). `nocturn` is 1-3.
-  | { kind: 'nocturn-psalmody'; nocturn: number; psalms: ResolvedPart[] }
   // A standalone structural heading with no content of its own — marks the
   // start of a larger named section that doesn't correspond to one specific
   // part kind (Matins' "Invitatory", "Nocturn I/II/III"). Distinct from the
@@ -268,7 +262,7 @@ export type ResolvedPart =
   // label (a fixed section name for Martyrology, a date-derived chapter
   // title for Regula) rather than a fixed textRef.
   // `nocturn`/`source` are Matins-only (see hours/matins.ts): `nocturn`
-  // groups a reading under its 'nocturn-psalmody' sibling for the UI (1-3,
+  // groups a reading under its nocturn's section-heading for the UI (1-3,
   // omitted on a ferial 1-nocturn day); `source` is a human-readable
   // attribution ("St. John Chrysostom, Homily 3 on Matthew"; the user's
   // own bible-reading plan doesn't carry one). `label` is usually that same

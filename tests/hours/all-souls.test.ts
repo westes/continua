@@ -51,18 +51,42 @@ describe('All Souls’ Day (Nov 2) — Office of the Dead', () => {
 describe('All Souls Matins antiphons', () => {
   it('repeats each of the nine psalm antiphons in full, with its half-line *, after its psalm', () => {
     const ordo = resolveOrdo('matins', '2026-11-02');
-    const groups = ordo.parts.filter((p) => p.kind === 'nocturn-psalmody');
-    expect(groups).toHaveLength(3);
-    for (const g of groups) {
-      if (g.kind !== 'nocturn-psalmody') continue;
-      expect(g.psalms.map((p) => p.kind)).toEqual(['psalm', 'antiphon', 'psalm', 'antiphon', 'psalm', 'antiphon']);
-      for (const p of g.psalms) {
+    const headings = ordo.parts.map((p, i) => (p.kind === 'section-heading' && p.label.startsWith('Nocturn') ? i : -1)).filter((i) => i >= 0);
+    expect(headings).toHaveLength(3);
+    for (const start of headings) {
+      const kinds: string[] = [];
+      for (let i = start + 1; i < start + 7; i++) kinds.push(ordo.parts[i]!.kind);
+      expect(kinds).toEqual(['psalm', 'antiphon', 'psalm', 'antiphon', 'psalm', 'antiphon']);
+      for (let i = start + 1; i < start + 7; i++) {
+        const p = ordo.parts[i]!;
         if (p.kind === 'antiphon') {
           expect(p.text.text.la).toContain('*');
           expect(p.text.text.en).toContain('*');
         }
       }
     }
+  });
+});
+
+describe('structure: no duplicate or empty headings', () => {
+  for (const hourId of HOUR_IDS) {
+    it(`${hourId} on 2026-11-02 has no repeated or empty headings`, () => {
+      const parts = resolveOrdo(hourId, '2026-11-02').parts;
+      const headings = parts.filter((p) => p.kind === 'section-heading').map((p) => (p.kind === 'section-heading' ? p.label : ''));
+      expect(new Set(headings).size).toBe(headings.length);
+      parts.forEach((p, i) => {
+        if (p.kind === 'section-heading') {
+          expect(parts[i + 1]).toBeDefined();
+          expect(parts[i + 1]!.kind).not.toBe('section-heading');
+        }
+      });
+    });
+  }
+  it('Matins has exactly Invitatory and Nocturn I, II, III, in that order', () => {
+    const labels = resolveOrdo('matins', '2026-11-02')
+      .parts.filter((p) => p.kind === 'section-heading')
+      .map((p) => (p.kind === 'section-heading' ? p.label : ''));
+    expect(labels).toEqual(['Invitatory', 'Nocturn I', 'Nocturn II', 'Nocturn III']);
   });
 });
 

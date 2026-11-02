@@ -117,7 +117,9 @@ function octaveReading(date: string): ResolvedPart[] {
   if (!octave) {
     return [];
   }
-  return octaveReadingParts(octave.id, octave.dayNumber, getSaintRecord(octave.id)?.name, (t) => t).map((o) => o.part);
+  return octaveReadingParts(octave.id, octave.dayNumber, getSaintRecord(octave.id)?.name, (t) => t).map(
+    (o): ResolvedPart => ({ ...o.part, nocturn: 3 }) as ResolvedPart,
+  );
 }
 
 export function buildMatinsParts(date: string): ResolvedPart[] {

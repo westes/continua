@@ -329,7 +329,7 @@ function matinsNocturn(
   });
   return [
     { kind: 'section-heading', label: `Nocturn ${['I', 'II', 'III'][nocturnNumber - 1]}` },
-    { kind: 'nocturn-psalmody', nocturn: nocturnNumber, psalms },
+    ...psalms,
     { kind: 'versicle', text: versicleText },
     ...lessons.map(([lesson, responsory]) => lessonPart(nocturnNumber, lesson, responsory)),
   ];
