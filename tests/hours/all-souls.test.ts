@@ -57,6 +57,25 @@ describe('All Souls Matins antiphons', () => {
   });
 });
 
+describe('All Saints octave readings', () => {
+  it('All Souls Matins carries the day-2 Ezekiel, Bede and Augustine readings', () => {
+    const labels = resolveOrdo('matins', '2026-11-02')
+      .parts.filter((p) => p.kind === 'lesson')
+      .map((p) => (p.kind === 'lesson' ? JSON.stringify(p.label ?? '') : ''));
+    expect(labels.some((l) => l.includes('Ezekiel'))).toBe(true);
+    expect(labels.some((l) => l.includes('Bede'))).toBe(true);
+    const gospel = resolveOrdo('matins', '2026-11-02').parts.find((p) => p.kind === 'gospel');
+    expect(gospel?.kind === 'gospel' && gospel.text.text.en).toContain('Blessed are the poor in spirit');
+    expect(gospel?.kind === 'gospel' && gospel.text.text.la).toContain('Beati pauperes spiritu');
+    expect(gospel?.kind === 'gospel' && JSON.stringify(gospel.homily?.source)).toContain('Augustine');
+  });
+  it('an ordinary octave day (Nov 3 2026) also gets them', () => {
+    const text = JSON.stringify(resolveOrdo('matins', '2026-11-03').parts);
+    expect(text).toContain('Sermon 18 on the Saints');
+    expect(text).toContain('Beati mites');
+  });
+});
+
 describe('All Souls on a Sunday', () => {
   it('moves to Monday Nov 3 when Nov 2 is a Sunday (2025), and stays on Nov 2 otherwise', () => {
     expect(isAllSouls('2026-11-02')).toBe(true);

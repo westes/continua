@@ -321,7 +321,7 @@ export type ResolvedPart =
        * couldn't be identified. */
       label?: string | Partial<Record<string, string>>;
       responsory?: ResolvedText;
-      homily?: { source?: string; text: ResolvedText };
+      homily?: { source?: string | Partial<Record<string, string>>; text: ResolvedText };
     };
 
 export interface ResolvedVerse {

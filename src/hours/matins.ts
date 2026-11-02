@@ -101,7 +101,7 @@ import { lookupPart, lookupPartTiered } from './resolve-part';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { getBiblePlanReadings } from '../propers/bible-plan';
 import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-readings';
-import { getOctaveReading } from '../propers/octave-readings';
+import { octaveReadingParts } from './octave-parts';
 import { getResponsoryForCommon } from '../propers/matins-responsories';
 import { getGospelIncipitFromCitation, getScriptureIncipitFromCitation } from '../propers/bible-book-incipits';
 import { getMatinsSaintOverride, getMatinsCommonOverride, getMatinsPsalmodyOverride, type MatinsPsalmodyScheme } from './matins-psalmody-overrides';
@@ -1068,36 +1068,22 @@ function buildReadingPool(
   // multiple simultaneous non-scripture octaves.
   let nonScriptureOctaveIndex = 0;
   for (const octave of activeOctavesFor(date)) {
-    const reading = getOctaveReading(octave.id, octave.dayNumber);
-    if (!reading || isDuplicate(reading.text)) continue;
-    // Unlike nocturn-readings' `source` (a plain, non-bilingual string —
-    // see `withOccasion`'s own doc comment), an octave reading's `source`
-    // is itself `{la, en}` (2026-08 fix). The occasion name is still a
-    // single plain string either way, so it's appended to both language
-    // slots rather than routed through `withOccasion`.
-    const occasion = occasionName(octave.id, day);
-    const label = occasion
-      ? {
-          la: reading.source.la ? `${reading.source.la} (for ${occasion})` : reading.source.la,
-          en: reading.source.en ? `${reading.source.en} (for ${occasion})` : reading.source.en,
-        }
-      : reading.source;
-    const part: ResolvedPart = {
-      kind: 'lesson',
-      text: { text: normalizeParagraphs(reading.text), status: reading.status },
-      label,
-      responsory: reading.responsory
-        ? { text: reading.responsory, status: { la: 'verified', en: 'verified' } }
-        : undefined,
-    };
-    if (reading.isScripture) {
-      parts.push(part);
-    } else {
-      const priority = ids.length + nonScriptureOctaveIndex++;
-      const groupKey = `${priority}:0`;
-      const bucket = byGroup.get(groupKey) ?? [];
-      bucket.push(part);
-      byGroup.set(groupKey, bucket);
+    for (const { part, isScripture } of octaveReadingParts(
+      octave.id,
+      octave.dayNumber,
+      occasionName(octave.id, day),
+      normalizeParagraphs,
+      isDuplicate,
+    )) {
+      if (isScripture) {
+        parts.push(part);
+      } else {
+        const priority = ids.length + nonScriptureOctaveIndex++;
+        const groupKey = `${priority}:0`;
+        const bucket = byGroup.get(groupKey) ?? [];
+        bucket.push(part);
+        byGroup.set(groupKey, bucket);
+      }
     }
   }
   // The reference engine's own Tempora files sometimes independently reuse

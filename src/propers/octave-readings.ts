@@ -43,6 +43,12 @@ export interface OctaveReadingText {
    * plain Scripture (ahead of homiletic content) or with the day's
    * homiletic content (in winner/commemoration priority order). */
   isScripture: boolean;
+  /** True for a Gospel pericope (id ends `-gospel`), which pairs with the
+   * `-gospel-homily` reading right after it. Not counted as `isScripture`:
+   * it sorts with the homiletic content like any Gospel+homily pair. */
+  isGospel: boolean;
+  /** Bilingual citation, e.g. "Matt 5:1-12" — set on a Gospel pericope. */
+  citation?: Partial<Record<LanguageCode, string>>;
 }
 
 /**
@@ -65,6 +71,7 @@ interface OctaveReadingRecord {
   text?: Partial<Record<LanguageCode, string>>;
   passages?: ScriptureCitation[];
   responsory?: Partial<Record<LanguageCode, string>>;
+  citation?: Partial<Record<LanguageCode, string>>;
   status: Partial<Record<LanguageCode, TranslationStatus>>;
 }
 
@@ -96,7 +103,8 @@ export function resolvePassages(passages: ScriptureCitation[]): Partial<Record<L
 
 function resolveReading(record: OctaveReadingRecord): OctaveReadingText {
   const { passages, text, ...rest } = record;
-  return { ...rest, text: text ?? (passages ? resolvePassages(passages) : {}), isScripture: !!passages };
+  const isGospel = rest.id.endsWith('-gospel');
+  return { ...rest, text: text ?? (passages ? resolvePassages(passages) : {}), isScripture: !!passages && !isGospel, isGospel };
 }
 
 const octaveReadingsById = new Map<string, OctaveReadingText>();
@@ -110,4 +118,14 @@ for (const [id, record] of octaveReadingRecords) {
  * resolve to *something* eventually. */
 export function getOctaveReading(octaveId: string, dayNumber: number): OctaveReadingText | undefined {
   return octaveReadingsById.get(`${octaveId}-octave-day-${dayNumber}`);
+}
+
+/** Every reading authored for an octave day: its main reading
+ * (`~-octave-day-N`, usually Scripture) plus any further patristic ones
+ * (`-homily`, then a Gospel `-gospel` pulled from the scripture store and its `-gospel-homily`) — DESIGN.md:
+ * every active octave gets all its readings, generously. Empty when none. */
+export function getOctaveReadings(octaveId: string, dayNumber: number): OctaveReadingText[] {
+  return ['', '-homily', '-gospel', '-gospel-homily']
+    .map((suffix) => octaveReadingsById.get(`${octaveId}-octave-day-${dayNumber}${suffix}`))
+    .filter((r): r is OctaveReadingText => !!r);
 }

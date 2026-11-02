@@ -6,7 +6,7 @@ import { octaveCommemorationPart } from './resolve-common';
 import { isAllSouls } from '../calendar/day-label';
 import { resolveDay, resolveActiveOctave } from '../calendar';
 import { getSaintRecord } from '../calendar/feasts';
-import { getOctaveReading } from '../propers/octave-readings';
+import { octaveReadingParts } from './octave-parts';
 import { getBookIncipit } from '../propers/bible-book-incipits';
 
 /**
@@ -116,22 +116,7 @@ function octaveReading(date: string): ResolvedPart[] {
   if (!octave) {
     return [];
   }
-  const reading = getOctaveReading(octave.id, octave.dayNumber);
-  if (!reading) {
-    return [];
-  }
-  const occasion = getSaintRecord(octave.id)?.name;
-  const label = occasion
-    ? { la: reading.source.la ? `${reading.source.la} (for ${occasion})` : reading.source.la, en: reading.source.en ? `${reading.source.en} (for ${occasion})` : reading.source.en }
-    : reading.source;
-  return [
-    {
-      kind: 'lesson',
-      text: { text: reading.text, status: reading.status },
-      label,
-      responsory: reading.responsory ? { text: reading.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
-    },
-  ];
+  return octaveReadingParts(octave.id, octave.dayNumber, getSaintRecord(octave.id)?.name, (t) => t).map((o) => o.part);
 }
 
 export function buildMatinsParts(date: string): ResolvedPart[] {
