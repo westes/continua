@@ -321,7 +321,12 @@ function matinsNocturn(
   versicleText: ResolvedText,
   lessons: [LessonText, ResponsorySpec][],
 ): ResolvedPart[] {
-  const psalms = psalmNumbers.map((n, i) => psalmWithAntiphon(n, undefined, antiphons[i]));
+  // Each psalm is framed by its antiphon: the incipit before, the full
+  // text (asterisk kept) after.
+  const psalms = psalmNumbers.flatMap((n, i): ResolvedPart[] => {
+    const antiphon = antiphons[i];
+    return [psalmWithAntiphon(n, undefined, antiphon), ...(antiphon ? [{ kind: 'antiphon', text: antiphon } as ResolvedPart] : [])];
+  });
   return [
     { kind: 'section-heading', label: `Nocturn ${['I', 'II', 'III'][nocturnNumber - 1]}` },
     { kind: 'nocturn-psalmody', nocturn: nocturnNumber, psalms },

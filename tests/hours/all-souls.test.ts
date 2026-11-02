@@ -39,6 +39,24 @@ describe('All Souls’ Day (Nov 2) — Office of the Dead', () => {
   });
 });
 
+describe('All Souls Matins antiphons', () => {
+  it('repeats each of the nine psalm antiphons in full, with its half-line *, after its psalm', () => {
+    const ordo = resolveOrdo('matins', '2026-11-02');
+    const groups = ordo.parts.filter((p) => p.kind === 'nocturn-psalmody');
+    expect(groups).toHaveLength(3);
+    for (const g of groups) {
+      if (g.kind !== 'nocturn-psalmody') continue;
+      expect(g.psalms.map((p) => p.kind)).toEqual(['psalm', 'antiphon', 'psalm', 'antiphon', 'psalm', 'antiphon']);
+      for (const p of g.psalms) {
+        if (p.kind === 'antiphon') {
+          expect(p.text.text.la).toContain('*');
+          expect(p.text.text.en).toContain('*');
+        }
+      }
+    }
+  });
+});
+
 describe('All Souls on a Sunday', () => {
   it('moves to Monday Nov 3 when Nov 2 is a Sunday (2025), and stays on Nov 2 otherwise', () => {
     expect(isAllSouls('2026-11-02')).toBe(true);
