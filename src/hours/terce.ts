@@ -19,11 +19,12 @@ import {
   substituteDoxology,
   isFerialOrVigil,
 } from './resolve-common';
-import { isAllSouls, buildTerceParts } from './all-souls';
 import terceDefinitionData from '../data/hours/terce.yml';
+import terceDeadData from '../data/hours/terce-dead.yml';
 import antiphonsData from '../data/hours/terce-antiphons.yml';
 
 const terceDefinition = terceDefinitionData as HourDefinition;
+const terceDeadDefinition = terceDeadData as HourDefinition;
 const antiphons = antiphonsData as Record<Weekday, Partial<Record<string, string>>>;
 
 function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
@@ -66,6 +67,17 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     }
     case 'chapter':
       return [{ kind: 'chapter', text: lookupPart({ day, hour: 'terce', part: 'chapter', temporalKeys: [part.textRef.id.replace('terce-capitulum-', '')] }) }];
+    case 'psalm':
+      return [
+        {
+          kind: 'psalm',
+          psalmNumber: part.psalmNumber,
+          verses: getPsalmVerses(part.psalmNumber, part.verses).map((v) => ({ n: v.n, text: v.text, status: v.status })),
+          verseRange: part.verses,
+        },
+      ];
+    case 'prayer':
+      return [{ kind: 'prayer', text: resolveCommon(part.textRef.id) }];
     case 'day-collect':
       return [{ kind: 'prayer', text: getDayCollect(day) }];
     case 'preces':
@@ -93,10 +105,8 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       });
     }
     // Not used by Terce.
-    case 'prayer':
     case 'responsory':
     case 'versicle':
-    case 'psalm':
     case 'canticle':
     case 'lesson':
     case 'martyrology':
@@ -120,10 +130,8 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
 }
 
 export function resolveOrdo(date: string): ResolvedOrdo {
-  if (isAllSouls(date)) {
-    return { hourId: 'terce', date, parts: buildTerceParts(), dayLabel: getDayLabel(resolveDay(date)) };
-  }
   const day = resolveDay(date);
-  const parts = terceDefinition.parts.flatMap((part) => resolvePart(part, day));
+  const definition = resolveDayRubrics(day).ordoVariant === 'dead' ? terceDeadDefinition : terceDefinition;
+  const parts = definition.parts.flatMap((part) => resolvePart(part, day));
   return { hourId: 'terce', date, parts, dayLabel: getDayLabel(day) };
 }

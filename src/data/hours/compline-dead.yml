@@ -1,0 +1,22 @@
+# Compline of the Office of the Dead (Commune C9): the usual Confiteor, three
+# bare psalms, the Nunc dimittis without an antiphon, the closing versicles,
+# the day's own collect and the Requiem closing. No opening versicle, hymn,
+# chapter, responsory, Preces, Marian antiphon or short reading.
+id: compline
+parts:
+  - kind: preces
+    textRef: { source: common, id: compline-confiteor }
+  - kind: psalm
+    psalmNumber: 122
+  - kind: psalm
+    psalmNumber: 141
+  - kind: psalm
+    psalmNumber: 142
+  - kind: canticle
+    canticleId: nunc-dimittis
+    textRef: { source: common, id: nunc-dimittis }
+  - kind: versicle
+    textRef: { source: common, id: requiem-compline-versicles }
+  - kind: day-collect
+  - kind: preces
+    textRef: { source: common, id: requiem-conclusio }

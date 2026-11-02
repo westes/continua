@@ -19,11 +19,12 @@ import {
   substituteDoxology,
   isFerialOrVigil,
 } from './resolve-common';
-import { isAllSouls, buildSextParts } from './all-souls';
 import sextDefinitionData from '../data/hours/sext.yml';
+import sextDeadData from '../data/hours/sext-dead.yml';
 import antiphonsData from '../data/hours/sext-antiphons.yml';
 
 const sextDefinition = sextDefinitionData as HourDefinition;
+const sextDeadDefinition = sextDeadData as HourDefinition;
 const antiphons = antiphonsData as Record<Weekday, Partial<Record<string, string>>>;
 
 function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
@@ -43,6 +44,17 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     }
     case 'chapter':
       return [{ kind: 'chapter', text: lookupPart({ day, hour: 'sext', part: 'chapter', temporalKeys: [part.textRef.id.replace('sext-capitulum-', '')] }) }];
+    case 'psalm':
+      return [
+        {
+          kind: 'psalm',
+          psalmNumber: part.psalmNumber,
+          verses: getPsalmVerses(part.psalmNumber, part.verses).map((v) => ({ n: v.n, text: v.text, status: v.status })),
+          verseRange: part.verses,
+        },
+      ];
+    case 'prayer':
+      return [{ kind: 'prayer', text: resolveCommon(part.textRef.id) }];
     case 'day-collect':
       return [{ kind: 'prayer', text: getDayCollect(day) }];
     case 'preces':
@@ -70,10 +82,8 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       });
     }
     // Not used by Sext.
-    case 'prayer':
     case 'responsory':
     case 'versicle':
-    case 'psalm':
     case 'canticle':
     case 'lesson':
     case 'martyrology':
@@ -97,10 +107,8 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
 }
 
 export function resolveOrdo(date: string): ResolvedOrdo {
-  if (isAllSouls(date)) {
-    return { hourId: 'sext', date, parts: buildSextParts(), dayLabel: getDayLabel(resolveDay(date)) };
-  }
   const day = resolveDay(date);
-  const parts = sextDefinition.parts.flatMap((part) => resolvePart(part, day));
+  const definition = resolveDayRubrics(day).ordoVariant === 'dead' ? sextDeadDefinition : sextDefinition;
+  const parts = definition.parts.flatMap((part) => resolvePart(part, day));
   return { hourId: 'sext', date, parts, dayLabel: getDayLabel(day) };
 }

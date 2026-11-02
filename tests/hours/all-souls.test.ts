@@ -206,3 +206,19 @@ describe('All Souls Prime goes through the ordinary Prime resolver', () => {
     expect(parts.some((p) => p.kind === 'lesson' && /Rule of our Holy Father/.test(String(p.label)))).toBe(true);
   });
 });
+
+describe('All Souls Terce, Sext and None go through the ordinary little-hour resolvers', () => {
+  const expected = { terce: [37, 37, 55], sext: [69, 84, 85], none: [101, 101, 101] } as const;
+  for (const hour of ['terce', 'sext', 'none'] as const) {
+    it(`${hour} says three bare psalms, the Fidelium collect and the Requiem closing`, () => {
+      const parts = resolveOrdo(hour, '2026-11-02').parts;
+      expect(parts.flatMap((p) => (p.kind === 'psalm' ? [p.psalmNumber] : []))).toEqual(expected[hour]);
+      for (const kind of ['hymn', 'chapter', 'versicle'] as const) {
+        expect(parts.some((p) => p.kind === kind)).toBe(false);
+      }
+      const prayer = parts.find((p) => p.kind === 'prayer') as { text: { text: Record<string, string> } };
+      expect(prayer.text.text.en).toContain('Maker and the Redeemer');
+      expect((parts[parts.length - 1] as { text: { text: Record<string, string> } }).text.text.en).toContain('May they rest in peace');
+    });
+  }
+});

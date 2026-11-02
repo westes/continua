@@ -1,0 +1,16 @@
+# Terce of the Office of the Dead (Commune C9): three bare psalms, the generic
+# Fidelium collect and the Requiem closing. No versicle, hymn, antiphon, chapter or Preces.
+id: terce
+parts:
+  - kind: psalm
+    psalmNumber: 37
+    verses: '1-11'
+  - kind: psalm
+    psalmNumber: 37
+    verses: '12-23'
+  - kind: psalm
+    psalmNumber: 55
+  - kind: prayer
+    textRef: { source: common, id: requiem-collect-fidelium }
+  - kind: preces
+    textRef: { source: common, id: requiem-conclusio }

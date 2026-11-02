@@ -7,11 +7,12 @@ import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { getOpeningVersicleId } from './opening-versicle';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { isDoubleOrHigher } from './antiphon';
-import { resolveCommon, resolveDayRubrics, substituteDoxology, splitNamedAntiphon, openingAntiphon, resolveResponsory } from './resolve-common';
-import { isAllSouls, buildComplineParts } from './all-souls';
+import { resolveCommon, resolveDayRubrics, getDayCollect, substituteDoxology, splitNamedAntiphon, openingAntiphon, resolveResponsory } from './resolve-common';
 import complineDefinitionData from '../data/hours/compline.yml';
+import complineDeadData from '../data/hours/compline-dead.yml';
 
 const complineDefinition = complineDefinitionData as HourDefinition;
+const complineDeadDefinition = complineDeadData as HourDefinition;
 
 // Real practice starts this at Lent proper (Ash Wednesday), not the
 // preceding Septuagesima-tide — unlike the opening versicle's Alleluia
@@ -34,6 +35,8 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       const overrideId = getHymnDoxologyOverrideId(day);
       return [{ kind: 'hymn', text: substituteDoxology(hymn, overrideId ? resolveCommon(overrideId) : undefined) }];
     }
+    case 'day-collect':
+      return [{ kind: 'prayer', text: getDayCollect(day, 'compline') }];
     case 'chapter':
     case 'versicle':
     case 'prayer':
@@ -107,7 +110,6 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'closing-antiphon':
     case 'by-day-kind':
     case 'variable':
-    case 'day-collect':
     case 'lauds-psalmody':
     case 'lauds-office':
     case 'benedictus':
@@ -129,14 +131,8 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // identity actually governs tonight — see calendar/vespers.ts. Nothing
   // here is date-literal the way Prime's Martyrology is, so there's no
   // need to keep a separate "real" day around.
-  if (isAllSouls(date)) {
-    // Confiteor/Misereatur/Indulgentiam is unaffected by All Souls' Day —
-    // reused directly (same text every day) rather than duplicated in
-    // hours/all-souls.ts; everything after it (psalms onward) is special.
-    const parts: ResolvedPart[] = [{ kind: 'preces', text: resolveCommon('compline-confiteor') }, ...buildComplineParts()];
-    return { hourId: 'compline', date, parts, dayLabel: getDayLabel(resolveEveningDay(date)) };
-  }
   const day = resolveEveningDay(date);
-  const parts = complineDefinition.parts.flatMap((part) => resolvePart(part, day));
+  const definition = resolveDayRubrics(day).ordoVariant === 'dead' ? complineDeadDefinition : complineDefinition;
+  const parts = definition.parts.flatMap((part) => resolvePart(part, day));
   return { hourId: 'compline', date, parts, dayLabel: getDayLabel(day) };
 }

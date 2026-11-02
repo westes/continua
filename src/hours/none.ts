@@ -19,11 +19,12 @@ import {
   substituteDoxology,
   isFerialOrVigil,
 } from './resolve-common';
-import { isAllSouls, buildNoneParts } from './all-souls';
 import noneDefinitionData from '../data/hours/none.yml';
+import noneDeadData from '../data/hours/none-dead.yml';
 import antiphonsData from '../data/hours/none-antiphons.yml';
 
 const noneDefinition = noneDefinitionData as HourDefinition;
+const noneDeadDefinition = noneDeadData as HourDefinition;
 const antiphons = antiphonsData as Record<Weekday, Partial<Record<string, string>>>;
 
 function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
@@ -43,6 +44,17 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     }
     case 'chapter':
       return [{ kind: 'chapter', text: lookupPart({ day, hour: 'none', part: 'chapter', temporalKeys: [part.textRef.id.replace('none-capitulum-', '')] }) }];
+    case 'psalm':
+      return [
+        {
+          kind: 'psalm',
+          psalmNumber: part.psalmNumber,
+          verses: getPsalmVerses(part.psalmNumber, part.verses).map((v) => ({ n: v.n, text: v.text, status: v.status })),
+          verseRange: part.verses,
+        },
+      ];
+    case 'prayer':
+      return [{ kind: 'prayer', text: resolveCommon(part.textRef.id) }];
     case 'day-collect':
       return [{ kind: 'prayer', text: getDayCollect(day) }];
     case 'preces':
@@ -70,10 +82,8 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       });
     }
     // Not used by None.
-    case 'prayer':
     case 'responsory':
     case 'versicle':
-    case 'psalm':
     case 'canticle':
     case 'lesson':
     case 'martyrology':
@@ -97,10 +107,8 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
 }
 
 export function resolveOrdo(date: string): ResolvedOrdo {
-  if (isAllSouls(date)) {
-    return { hourId: 'none', date, parts: buildNoneParts(), dayLabel: getDayLabel(resolveDay(date)) };
-  }
   const day = resolveDay(date);
-  const parts = noneDefinition.parts.flatMap((part) => resolvePart(part, day));
+  const definition = resolveDayRubrics(day).ordoVariant === 'dead' ? noneDeadDefinition : noneDefinition;
+  const parts = definition.parts.flatMap((part) => resolvePart(part, day));
   return { hourId: 'none', date, parts, dayLabel: getDayLabel(day) };
 }

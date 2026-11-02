@@ -1,0 +1,17 @@
+# None of the Office of the Dead (Commune C9): three bare psalms, the generic
+# Fidelium collect and the Requiem closing. No versicle, hymn, antiphon, chapter or Preces.
+id: none
+parts:
+  - kind: psalm
+    psalmNumber: 101
+    verses: '1-13'
+  - kind: psalm
+    psalmNumber: 101
+    verses: '14-23'
+  - kind: psalm
+    psalmNumber: 101
+    verses: '24-29'
+  - kind: prayer
+    textRef: { source: common, id: requiem-collect-fidelium }
+  - kind: preces
+    textRef: { source: common, id: requiem-conclusio }

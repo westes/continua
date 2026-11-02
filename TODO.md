@@ -8988,12 +8988,13 @@ St. Francis of Paola.
   Catherine of Siena), Sancti/05-01r is St. Joseph the Worker (not Ss. Philip and James). St. Catherine of
   Siena and St. Gabriel/St. Raphael have no proper hymn file of their own in the reference.
 
-### All Souls rewired onto the ordinary resolvers: Matins, Lauds, Vespers, Prime (2026-11-02)
+### All Souls rewired onto the ordinary resolvers: every hour (2026-11-02)
 
 - All Souls (`office: dead` on its saint record) was a parallel engine: an `isAllSouls` early return in each
   of the eight hour files, its text in TypeScript. Matins, Lauds and Vespers now go through the same
   builders as every other day. Prime does too, from its own part list `data/hours/prime-dead.yml`
-  (chosen by the `ordoVariant: dead` rubric); the little hours and Compline are still to move.
+  (chosen by the `ordoVariant: dead` rubric); Terce, Sext, None and Compline do too, each from a `<hour>-dead.yml` part list.
+  `all-souls.ts` and `office-of-the-dead.ts` are deleted and no hour file has an `isAllSouls` early return.
 - `resolveDayRubrics` (resolve-common.ts) is the one record of what a day omits or replaces: closing Gloria,
   opening versicle, Matins opening block, Te Deum, short litany, closing, Marian antiphons, Preces, closing
   versicle, suffrages. The Triduum and the Office of the Dead are its two users. Output for the Triduum is
@@ -9009,5 +9010,4 @@ St. Francis of Paola.
 - Also shipped on the way: nocturn headings no longer duplicated; scripture octave readings carry a citation
   (`propers/citations.ts`); scripture lesson headings work for any book; a reading may carry an authored
   `label`.
-- Still to do: Terce/Sext/None, Compline, then delete `all-souls.ts`, `office-of-the-dead.ts`, the
-  remaining early returns and the stale `day-label` branches.
+- Left: the `isAllSouls` branches in calendar/day-label.ts (header label and tab title) are still bespoke text.
