@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { resolveOrdo } from '../../src/hours';
 import { HOUR_IDS } from '../../src/hours/types';
-import { isAllSouls } from '../../src/calendar/day-label';
+import { resolveDay } from '../../src/calendar';
+
+const isAllSouls = (date: string) => resolveDay(date).winner.id === 'all-souls';
 
 function collectStatuses(value: unknown, statuses: string[]): void {
   if (Array.isArray(value)) {
@@ -201,8 +203,10 @@ describe('All Souls Prime goes through the ordinary Prime resolver', () => {
       expect(kinds).not.toContain(kind);
     }
     expect(parts.flatMap((p) => (p.kind === 'psalm' ? [p.psalmNumber] : []))).toEqual([87, 27, 31]);
-    const martyrology = parts.find((p) => p.kind === 'lesson' && p.label === 'Martyrology') as { text: { text: Record<string, string> } };
-    expect(martyrology.text.text.en).toContain('Commemoration of all the Faithful Departed');
+    const martyrologyOf = (list: typeof parts) => list.find((p) => p.kind === 'lesson' && p.label === 'Martyrology') as { text: { text: Record<string, string> } };
+    // The Martyrology entry for All Souls is read at Prime the evening before.
+    expect(martyrologyOf(resolveOrdo('prime', '2026-11-01').parts).text.text.en).toContain('Commemoration of all the Faithful Departed');
+    expect(martyrologyOf(parts).text.text.en).not.toContain('Commemoration of all the Faithful Departed');
     expect(parts.some((p) => p.kind === 'lesson' && /Rule of our Holy Father/.test(String(p.label)))).toBe(true);
   });
 });

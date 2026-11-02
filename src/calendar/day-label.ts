@@ -30,7 +30,6 @@ import { activeOctavesFor, octaveGoverningPrivilegedDay, resolveActiveOctave, ty
 import { resolveTemporalId } from './temporal-id';
 import { compareCommemorations } from './commemoration-order';
 import { getSaintRecord } from './feasts';
-import { resolveDay } from './index';
 
 export interface Bi {
   en: string;
@@ -172,16 +171,6 @@ const WEEKDAY_LABELS: Record<Weekday, Bi> = {
 
 function weekdayLabel(day: LiturgicalDay): Bi {
   return WEEKDAY_LABELS[day.weekday];
-}
-
-/** All Souls' Day -- true when the commemoration of the faithful departed is
- * the day's winner. It is an ordinary calendar feast (Nov 2, or Nov 3 when
- * Nov 2 is a Sunday) whose office is the Office of the Dead (see
- * hours/all-souls.ts), so it needs this check to be what's actually prayed
- * rather than the Octave of All Saints that would otherwise be shown. */
-export function isAllSouls(date: string): boolean {
-  const winner = resolveDay(date).winner;
-  return winner.kind === 'sanctoral' && winner.id === 'all-souls';
 }
 
 interface OrdinalSeason {
@@ -848,24 +837,6 @@ function withTransferNote(day: LiturgicalDay, items: Bi[]): Bi[] {
  * still gets exactly the same value as before.
  */
 export function getDayLabelItems(day: LiturgicalDay): Bi[] {
-  if (isAllSouls(day.date)) {
-    // Rank: the reference engine's Sancti/11-02.txt carries two [Rank]
-    // entries — plain "Duplex" and, gated behind `rubrica 196` (the 1960
-    // rubrics reform), "I. classis". vu's rubric baseline is Divino
-    // Afflatu 1954, predating that reform, so plain "Duplex" applies.
-    // The same source file lists "Commemoratio" among what's omitted this
-    // day (`Omit Incipit Hymnus Capitulum Lectio Preces Commemoratio
-    // Suffragium`) — the historical office drops All Saints' still-active
-    // octave outright — but vu's generous-commemorations design (see
-    // this project's "Not a reconstruction" note) deliberately keeps it
-    // anyway, same `collectCommemorations` machinery every other headline
-    // branch here uses, same octave-headline ordering (primary, then
-    // octaves, then any other commemoration).
-    const rank = formatRank('duplex');
-    const primary = bi(`All Souls' Day (${rank.en})`, `In Commemoratióne Ómnium Fidélium Defunctórum (${rank.la})`);
-    const commemorations = collectCommemorations(day, { showOctaves: true });
-    return withTransferNote(day, [primary, ...commemorations]);
-  }
   if (day.winner.kind === 'sanctoral') {
     // Octaves only ride along here on `ordinary-feria` — a day with real
     // standing of its own (a Sunday, a privileged feria) doesn't mention
@@ -1013,9 +984,6 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
  * clause-stripping/truncation of `getDayLabel`'s output for it instead of
  * duplicating that logic here too. */
 export function getDayTitleName(day: LiturgicalDay): Bi | undefined {
-  if (isAllSouls(day.date)) {
-    return bi("All Souls' Day", 'In Commemoratióne Ómnium Fidélium Defunctórum');
-  }
   if (day.winner.kind === 'sanctoral') {
     const record = getSaintRecord(day.winner.id);
     return biTitleName(day.winner.name, day.winner.nameLa, record?.titleName, record?.titleNameLa);

@@ -153,9 +153,10 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
     case 'martyrology': {
       // Prime reads tomorrow's entry; the announcement is tomorrow's winner's.
       const entry = getMartyrologyEntryFor(date, martyrologyAnnouncementFor(addDays(date, 1)));
-      // A feast may open the Martyrology read at its own Prime with an
-      // introduction (All Souls' "Hac die Commemoratio...").
-      const winner = resolveOfficeWinner(day);
+      // A feast may open its own Martyrology entry with an introduction (All
+      // Souls' "Hac die Commemoratio..."); that entry is read at Prime the
+      // day before, so it comes from tomorrow's winner.
+      const winner = resolveOfficeWinner(resolveDay(addDays(date, 1)));
       const saint = winner.kind === 'sanctoral' ? getSaintRecord(winner.id) : undefined;
       const intro = saint?.propers ? resolveCommon(`martyrology-intro-${saint.propers}`) : undefined;
       const text: Partial<Record<string, string>> = { ...entry.text };
