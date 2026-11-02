@@ -152,3 +152,43 @@ describe('All Souls Matins goes through the ordinary Matins resolver', () => {
     expect(psalm?.kind === 'psalm' && psalm.gloriaPatri?.text.en).toContain('Eternal rest');
   });
 });
+
+describe('All Souls Lauds and Vespers go through the ordinary resolvers', () => {
+  const kinds = (hour: 'lauds' | 'vespers', date: string) => resolveOrdo(hour, date).parts.map((p) => p.kind);
+
+  it('Lauds has no chapter, hymn, responsory, versicle or Preces, and says psalms 62 and 66 together', () => {
+    const parts = resolveOrdo('lauds', '2026-11-02').parts;
+    for (const kind of ['chapter', 'hymn', 'responsory', 'versicle'] as const) {
+      expect(parts.some((p) => p.kind === kind)).toBe(false);
+    }
+    const psalms = parts.flatMap((p) => (p.kind === 'psalm' ? [p.psalmNumber] : []));
+    expect(psalms).toEqual([50, 64, 62, 66, 148, 149, 150]);
+  });
+
+  it('Lauds and Vespers say the Requiem Gloria and close with the Requiem couplet', () => {
+    for (const hour of ['lauds', 'vespers'] as const) {
+      const parts = resolveOrdo(hour, '2026-11-02').parts;
+      for (const p of parts) {
+        if (p.kind === 'psalm' && p.gloriaPatri) {
+          expect(p.gloriaPatri.text.en).toContain('Eternal rest');
+        }
+      }
+      const last = parts[parts.length - 1]!;
+      expect(last.kind).toBe('preces');
+      expect((last as { text: { text: Record<string, string> } }).text.text.en).toContain('May they rest in peace');
+    }
+  });
+
+  it('Vespers keeps only the Dead’s own versicle before the Magnificat', () => {
+    const k = kinds('vespers', '2026-11-02');
+    expect(k.filter((x) => x === 'versicle')).toHaveLength(1);
+    expect(k).not.toContain('chapter');
+    expect(k).not.toContain('hymn');
+  });
+
+  it('Vespers of the transferred All Souls (Monday Nov 3, 2025) is still the Dead’s, not St. Charles’s', () => {
+    const parts = resolveOrdo('vespers', '2025-11-03').parts;
+    expect(parts.some((p) => p.kind === 'psalm' && p.psalmNumber === 114)).toBe(true);
+    expect(parts.some((p) => p.kind === 'chapter')).toBe(false);
+  });
+});

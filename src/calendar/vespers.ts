@@ -94,6 +94,11 @@ function keepsOwnSecondVespers(today: LiturgicalDay, tomorrow: LiturgicalDay): b
   if (isMajorFixedFeastOfTheLord(today.date)) {
     return true;
   }
+  // The Office of the Dead is said whole, its Vespers included, whatever
+  // tomorrow's rank.
+  if (today.winner.kind === 'sanctoral' && getSaintRecord(today.winner.id)?.office === 'dead') {
+    return true;
+  }
   // A bare privileged feria (an Advent, Lent or Passion weekday, an Ember
   // Saturday, Easter-octave Saturday...) has no claim against tomorrow's
   // Sunday: Saturday evening is First Vespers of that Sunday (engine, e.g.

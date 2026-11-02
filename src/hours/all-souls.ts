@@ -2,10 +2,9 @@ import type { ResolvedPart, ResolvedText } from './types';
 import { getMartyrologyEntryFor } from '../martyrology';
 import * as office from './office-of-the-dead';
 import { v, versicle, type Bilingual } from './office-of-the-dead';
-import { octaveCommemorationPart, resolveCommon } from './resolve-common';
+import { resolveCommon } from './resolve-common';
 import { getRegulaReadingFor } from '../regula';
 import { isAllSouls } from '../calendar/day-label';
-import { resolveDay, resolveActiveOctave } from '../calendar';
 
 /**
  * All Souls' Day (Nov 2) — the Office of the Dead, layered on top of the
@@ -41,41 +40,6 @@ export const REQUIEM_GLORIA_PATRI = office.REQUIEM_GLORIA_PATRI;
 // Matins is no longer built here: it goes through the ordinary Matins resolver
 // (hours/matins.ts), with this feast's `office: dead` setting its shape and its
 // content in data/<lang>/propers/all-souls.yml.
-
-// ---------------------------------------------------------------------
-// Lauds / Vespers — the engine's own generic collect applies unchanged.
-// All Souls' Day doesn't suppress a simultaneously-active octave the way
-// the historical rubric does (Sancti/11-02.txt's own "Omit ... Commemoratio
-// Suffragium") — vu's generous-commemorations design (see this project's design notes) keeps
-// it, the same `getDayCollects`/`octaveCommemorationPart` machinery every
-// other day's Lauds/Vespers already uses for an active octave, appended
-// after the day's own Requiem content.
-// ---------------------------------------------------------------------
-
-function octaveCommemoration(date: string): ResolvedPart[] {
-  const day = resolveDay(date);
-  const octave = resolveActiveOctave(day.date);
-  if (!octave) {
-    return [];
-  }
-  return [octaveCommemorationPart({ kind: 'octave', id: octave.id, name: octave.name, nameLa: octave.nameLa })];
-}
-
-/** Splices the octave commemoration in right after the day's own collect
- * and before `office.CONCLUSIO` — same position `getDayCollects`' extra
- * commemoration parts take on every other day's Lauds/Vespers, not after
- * the closing Benedicamus Domino. */
-function withOctaveCommemoration(parts: ResolvedPart[], date: string): ResolvedPart[] {
-  return [...parts.slice(0, -1), ...octaveCommemoration(date), ...parts.slice(-1)];
-}
-
-export function buildLaudsParts(date: string): ResolvedPart[] {
-  return withOctaveCommemoration(office.buildLaudsParts(), date);
-}
-
-export function buildVespersParts(date: string): ResolvedPart[] {
-  return withOctaveCommemoration(office.buildVespersParts(), date);
-}
 
 // ---------------------------------------------------------------------
 // Prime — All Souls' Day's own "Súpplices, Dómine" collect (Sancti/

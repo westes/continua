@@ -29,7 +29,6 @@ import {
   isPaschaltide,
   overlayProperAntiphons,
 } from './resolve-common';
-import { isAllSouls, buildLaudsParts } from './all-souls';
 import laudsDefinitionData from '../data/hours/lauds.yml';
 import laudsAntiphonsData from '../data/hours/lauds-antiphons.yml';
 
@@ -223,13 +222,17 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
   const paschal = isPaschaltide(day.season);
   const alleluia = (antiphon: BilingualText): BilingualText => (paschal ? paschalizeAntiphon(antiphon) : antiphon);
   const opening = (antiphon: BilingualText) => openingAntiphon(verifiedText(alleluia(antiphon)), winner);
-  const parts: ResolvedPart[] = [
-    {
-      kind: 'psalm',
-      psalmNumber: 66,
-      verses: getPsalmVerses(66).map((v) => ({ n: v.n, text: v.text, status: v.status })),
-    },
-  ];
+  // Psalm 66 opens Lauds on its own, unless the scheme says it with another
+  // psalm under a shared antiphon (the Office of the Dead's 62 and 66).
+  const parts: ResolvedPart[] = wd.groups.some((g) => g.psalms.includes(66))
+    ? []
+    : [
+        {
+          kind: 'psalm',
+          psalmNumber: 66,
+          verses: getPsalmVerses(66).map((v) => ({ n: v.n, text: v.text, status: v.status })),
+        },
+      ];
   for (const group of wd.groups) {
     parts.push(...psalmParts(group.psalms, alleluia(group.antiphon), opening(group.antiphon)));
   }
@@ -299,11 +302,12 @@ function resolveOfficeParts(day: LiturgicalDay): ResolvedPart[] {
   const responsory: ResolvedPart[] = isAbsentByDesign(day, 'lauds', 'responsory')
     ? []
     : [{ kind: 'responsory', text: resolveResponsory(lookup('responsory', key), day) }];
+  const present = (part: 'chapter' | 'hymn' | 'versicle') => !isAbsentByDesign(day, 'lauds', part);
   return [
-    { kind: 'chapter', text: lookup('chapter', seasonSuffix ?? capitulumKey(day.weekday)) },
+    ...(present('chapter') ? [{ kind: 'chapter' as const, text: lookup('chapter', seasonSuffix ?? capitulumKey(day.weekday)) }] : []),
     ...responsory,
-    { kind: 'hymn', text: substituteDoxology(lookup('hymn', key), hymnDoxologyOverride) },
-    { kind: 'versicle', text: lookup('versicle', key) },
+    ...(present('hymn') ? [{ kind: 'hymn' as const, text: substituteDoxology(lookup('hymn', key), hymnDoxologyOverride) }] : []),
+    ...(present('versicle') ? [{ kind: 'versicle' as const, text: lookup('versicle', key) }] : []),
   ];
 }
 
@@ -331,6 +335,10 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       ];
     }
     case 'preces': {
+      const closing = resolveDayRubrics(day).closing;
+      if (part.textRef.id === 'lauds-conclusio' && closing) {
+        return [{ kind: 'preces', text: closing, label: part.label }];
+      }
       const id =
         part.textRef.id === 'lauds-conclusio' && usesAlleluiaDismissal('lauds', day.date, day.date)
           ? 'lauds-conclusio-alleluia'
@@ -340,13 +348,20 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'day-collects':
       return getDayCollects(day, 'lauds');
     case 'suffrages':
-      return resolveSuffrages(day, part.omitOnDouble, 'lauds');
+      return resolveDayRubrics(day).suffrages ? resolveSuffrages(day, part.omitOnDouble, 'lauds') : [];
     case 'versicle':
+      if (part.textRef.id === 'lauds-closing-versicle' && !resolveDayRubrics(day).closingVersicle) {
+        return [];
+      }
+      return [{ kind: part.kind, text: resolveCommon(part.textRef.id) }];
     case 'chapter':
     case 'responsory':
     case 'prayer':
       return [{ kind: part.kind, text: resolveCommon(part.textRef.id) }];
     case 'marian-antiphon': {
+      if (!resolveDayRubrics(day).laudsMarianAntiphon) {
+        return [];
+      }
       const id = getMarianAntiphonId(day);
       return [{ kind: 'preces', text: resolveCommon(id), label: getMarianAntiphonLabel(id) }];
     }
@@ -357,7 +372,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       // 1617 and Tridentine 1906, a plain Eastertide feria, 2026-04-20).
       // Sunday/feast's own short litany is untouched — that's a separate,
       // universal collect-opening dialogue, not this ferial-specific one.
-      if (isFerialOrVigil(day) && isPaschaltide(day.season)) {
+      if (!resolveDayRubrics(day).hourPreces || (isFerialOrVigil(day) && isPaschaltide(day.season))) {
         return [];
       }
       const id = isFerialOrVigil(day) ? 'lauds-preces-feriales' : 'lauds-short-litany';
@@ -385,9 +400,6 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
 }
 
 export function resolveOrdo(date: string): ResolvedOrdo {
-  if (isAllSouls(date)) {
-    return { hourId: 'lauds', date, parts: buildLaudsParts(date), dayLabel: getDayLabel(resolveDay(date)) };
-  }
   const day = resolveDay(date);
   const parts = laudsDefinition.parts.flatMap((part) => resolvePart(part, day));
   return { hourId: 'lauds', date, parts, dayLabel: getDayLabel(day) };

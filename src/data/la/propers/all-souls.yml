@@ -189,3 +189,54 @@ nocturn-readings:
 collect/~-matins:
   text: 'Fidélium, Deus, ómnium Cónditor et Redémptor, animábus famulórum famularúmque tuárum remissiónem cunctórum tríbue peccatórum: ut indulgéntiam, quam semper optavérunt, piis supplicatiónibus consequántur: Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.'
   status: verified
+
+# Lauds, Vespers: the Office of the Dead (Commune C9). The psalms, canticle and antiphons
+# are its own, whatever the rank; see resolve-common.ts's getPsalmodyNumbersOverrideId.
+lauds-psalmody:
+  groups:
+    - psalms:
+        - 50
+      antiphon: 'Exsultábunt Dómino * ossa humiliáta.'
+    - psalms:
+        - 64
+      antiphon: 'Exáudi, Dómine, * oratiónem meam: ad te omnis caro véniet.'
+    - psalms:
+        - 62
+        - 66
+      antiphon: 'Me suscépit * déxtera tua, Dómine.'
+  canticle:
+    id: canticum-ezechiae
+    antiphon: 'A porta ínferi * érue, Dómine, ánimam meam.'
+  laudate:
+    antiphon: 'Omnis spíritus * laudet Dóminum.'
+vespers-psalmody:
+  groups:
+    - psalms:
+        - 114
+      antiphon: 'Placébo Dómino * in regióne vivórum.'
+    - psalms:
+        - 119
+      antiphon: 'Heu mihi, Dómine, * quia incolátus meus prolongátus est.'
+    - psalms:
+        - 120
+      antiphon: 'Dóminus custódit te ab omni malo: * custódiat ánimam tuam Dóminus.'
+    - psalms:
+        - 129
+      antiphon: 'Si iniquitátes * observáveris, Dómine: Dómine, quis sustinébit?'
+    - psalms:
+        - 137
+      antiphon: 'Ópera * mánuum tuárum, Dómine, ne despícias.'
+benedictus-antiphon:
+  text: 'Ego sum resurréctio et vita: qui credit in me, étiam si mórtuus fúerit, vivet; et omnis qui vivit et credit in me, non moriétur in ætérnum.'
+  status: verified
+magnificat-antiphon:
+  text: 'Omne * quod dat mihi Pater, ad me véniet; et eum qui venit ad me, non ejíciam foras.'
+  status: verified
+vespers-versicle:
+  text: |
+    V. Audívi vocem de cælo dicéntem mihi.
+    R. Beáti mórtui qui in Dómino moriúntur.
+  status: verified
+collect:
+  text: 'Deus, véniæ largítor et humánæ salútis amátor: quǽsumus cleméntiam tuam; ut ánimas ómnium fidélium qui ex hoc sǽculo transiérunt, beáta María semper Vírgine intercedénte cum ómnibus Sanctis tuis, ad perpétuæ beatitúdinis consórtium perveníre concédas. Per Christum Dóminum nostrum. Amen.'
+  status: verified

@@ -2,7 +2,6 @@ import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart } from './typ
 import type { LiturgicalDay, Weekday } from '../calendar/types';
 import { resolveEveningDay } from '../calendar/vespers';
 import { weekdayOf } from '../calendar/weekday';
-import { resolveDay } from '../calendar';
 import { isAbsentByDesign, lookupPart } from './resolve-part';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
@@ -32,7 +31,6 @@ import {
   isPaschaltide,
   overlayProperAntiphons,
 } from './resolve-common';
-import { isAllSouls, buildVespersParts } from './all-souls';
 import vespersDefinitionData from '../data/hours/vespers.yml';
 import vespersAntiphonsData from '../data/hours/vespers-antiphons.yml';
 
@@ -198,11 +196,14 @@ function resolveOfficeParts(day: LiturgicalDay, weekday: Weekday, variant: Vespe
   const responsory: ResolvedPart[] = isAbsentByDesign(day, 'vespers', 'responsory')
     ? []
     : [{ kind: 'responsory', text: resolveResponsory(lookup('responsory', seasonSuffix ?? vespersResponsoryKey(officeWeekday), ferialEvening), day) }];
+  const present = (part: 'chapter' | 'hymn' | 'versicle') => !isAbsentByDesign(day, 'vespers', part);
   return [
-    { kind: 'chapter', text: lookup('chapter', seasonSuffix ?? vespersCapitulumKey(officeWeekday), false) },
+    ...(present('chapter') ? [{ kind: 'chapter' as const, text: lookup('chapter', seasonSuffix ?? vespersCapitulumKey(officeWeekday), false) }] : []),
     ...responsory,
-    { kind: 'hymn', text: substituteDoxology(lookup('hymn', key, ferialEvening), hymnDoxologyOverride) },
-    { kind: 'versicle', text: lookup('versicle', seasonSuffix ?? vespersVersicleKey(officeWeekday), ferialEvening) },
+    ...(present('hymn') ? [{ kind: 'hymn' as const, text: substituteDoxology(lookup('hymn', key, ferialEvening), hymnDoxologyOverride) }] : []),
+    ...(present('versicle')
+      ? [{ kind: 'versicle' as const, text: lookup('versicle', seasonSuffix ?? vespersVersicleKey(officeWeekday), ferialEvening) }]
+      : []),
   ];
 }
 
@@ -236,7 +237,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday, varia
       // Throughout Paschaltide, the whole ferial-Preces litany drops
       // entirely rather than being replaced by anything — see lauds.ts's
       // identical 'lauds-preces' case for the live-verification detail.
-      if (isFerialOrVigil(day) && isPaschaltide(day.season)) {
+      if (!resolveDayRubrics(day).hourPreces || (isFerialOrVigil(day) && isPaschaltide(day.season))) {
         return [];
       }
       const id = isFerialOrVigil(day) ? 'vespers-preces-feriales' : 'lauds-short-litany';
@@ -245,8 +246,12 @@ function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday, varia
     case 'day-collects':
       return getDayCollects(day, 'vespers');
     case 'suffrages':
-      return resolveSuffrages(day, part.omitOnDouble, 'vespers');
+      return resolveDayRubrics(day).suffrages ? resolveSuffrages(day, part.omitOnDouble, 'vespers') : [];
     case 'preces': {
+      const closing = resolveDayRubrics(day).closing;
+      if (part.textRef.id === 'lauds-conclusio' && closing) {
+        return [{ kind: 'preces', text: closing, label: part.label }];
+      }
       const id =
         part.textRef.id === 'lauds-conclusio' && usesAlleluiaDismissal('vespers', date, day.date)
           ? 'lauds-conclusio-alleluia'
@@ -310,14 +315,6 @@ function triduumVespersParts(parts: ResolvedPart[]): ResolvedPart[] {
 }
 
 export function resolveOrdo(date: string): ResolvedOrdo {
-  // Only Nov 2's own (Second) Vespers is the Office of the Dead — Nov 1
-  // evening stays First Vespers of All Saints unaffected (per user
-  // instruction: All Souls' Day has no First Vespers of its own; keyed on
-  // `date` itself, not resolveEveningDay's possibly-anticipated identity,
-  // since there's no "tomorrow anticipates All Souls" case to handle).
-  if (isAllSouls(date)) {
-    return { hourId: 'vespers', date, parts: buildVespersParts(date), dayLabel: getDayLabel(resolveDay(date)) };
-  }
   // Every part below is an evening-hour concern, same reasoning as
   // Compline — resolves off whichever day's identity actually governs
   // tonight, including the cross-day commemoration folded into

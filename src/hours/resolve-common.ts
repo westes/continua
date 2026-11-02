@@ -554,6 +554,10 @@ export function getPsalmodyNumbersOverrideId(day: LiturgicalDay): string | undef
   if (winner.kind !== 'sanctoral') {
     return undefined;
   }
+  // The Office of the Dead has one psalm scheme of its own, whatever its rank.
+  if (isOfficeOfTheDead(winner)) {
+    return winner.id;
+  }
   const effectiveRank = officeWinnerEffectiveRank(day, winner)!;
   return isAtLeast(effectiveRank, 'duplex-majus') ? winner.id : undefined;
 }
@@ -1602,6 +1606,15 @@ export interface DayRubrics {
   closing: ResolvedText | undefined;
   /** Compline's closing Marian antiphon. */
   marianAntiphon: boolean;
+  /** The Marian antiphon closing Lauds. (The Triduum has always kept it
+   * there; only the Office of the Dead drops it.) */
+  laudsMarianAntiphon: boolean;
+  /** The Preces or short litany before the collect at Lauds and Vespers. */
+  hourPreces: boolean;
+  /** The "Domine exaudi" versicle closing Lauds. */
+  closingVersicle: boolean;
+  /** The suffrages after the collect at Lauds and Vespers. */
+  suffrages: boolean;
 }
 
 const PLAIN_RUBRICS = (): DayRubrics => ({
@@ -1612,6 +1625,10 @@ const PLAIN_RUBRICS = (): DayRubrics => ({
   matinsLitany: true,
   closing: undefined,
   marianAntiphon: true,
+  laudsMarianAntiphon: true,
+  hourPreces: true,
+  closingVersicle: true,
+  suffrages: true,
 });
 
 /** Whether `winner` keeps the Office of the Dead (a feast record with
@@ -1636,6 +1653,10 @@ export function resolveDayRubrics(day: LiturgicalDay): DayRubrics {
       matinsLitany: false,
       closing: resolveCommon('requiem-conclusio'),
       marianAntiphon: false,
+      laudsMarianAntiphon: false,
+      hourPreces: false,
+      closingVersicle: false,
+      suffrages: false,
     };
   }
   return PLAIN_RUBRICS();
