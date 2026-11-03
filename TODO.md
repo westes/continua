@@ -59,6 +59,53 @@ content in the same shape, not a design change. The dated log below is that pipe
      knobs: demoting a feast's `rank` alone leaves its octave strength, so the UI should set
      or present both together.
 
+4. **Content and display fixes (noted 2026-11-03)**
+   Each item is independent; work and close them one at a time.
+   - Felix de Valois martyrology entry (`src/data/martyrology/11-04.yml`, the entry read at Prime on
+     Nov 3): cut the clause "whose feast is kept by decree of Innocent XI upon the 20th day of this same
+     month of November, but by us upon the 26th day of the same" from both languages. Felix gets his own
+     calendaring note through the `martyrologyAnnouncement` mechanism on
+     `calendar/saints/st-felix-of-valois.yml` (already set; wording is generated in
+     `hours/martyrology-announcement.ts`). Check that the generated note can say "kept on Nov 26", and
+     extend it if not. Do together with the Charles Borromeo item below.
+   - Philologus and Patrobas (`11-04.yml`): cut the parenthetical "(According to the Greek tradition
+     Patrobas was Bishop of Pozzuoli and then of Naples, and Philologus of Sinope, in Paphlagonia.)"
+     and check the Latin for a counterpart. The same entry runs "At Autun, the holy martyr Proculus"
+     onto the Philologus line and then gives Proculus again as his own paragraph; fix that duplicate
+     while there.
+   - Apocalypse naming sweep. New convention: the long form is "the Apocalypse of Saint John" (or
+     similar) and the book abbreviation is "Apoc". Scan `src`, tests and this file for Revelation,
+     Revelations, Apocal and Apoc. Known places: the `apoc` English incipit in
+     `propers/bible-book-incipits.ts` ("Revelation of Saint John the Apostle"); `citation:` fields in
+     `en/propers/most-holy-redeemer.yml` and `crown-of-thorns.yml`; the header comment of
+     `la/propers/dedication-of-the-basilica-of-the-most-holy-savior.yml`; a comment in
+     `data/hours/matins-responsories-by-book.yml`; martyrology prose in `04-11.yml` and `12-27.yml`;
+     the abbreviation table in `propers/citations.ts`; and the bible-plan chapter entries
+     (`apoc` key in `post-pentecost-23-*` and `post-pentecost-24-*`; check what displays). Leave
+     scripture text itself alone ("The Revelation of Jesus Christ" in `data/scripture/apoc-*.yml`).
+     Update any test that asserts the old labels.
+   - Charles Borromeo note at Prime on Nov 2: the Nov 3 martyrology entry ends "His feast, however, is
+     kept upon the next day", which is baked into the reference text. Produce that note from his own
+     record (`calendar/saints/st-charles-borromeo.yml`, `martyrologyAnnouncement`) so it comes from the
+     calendar, and remove the hardcoded sentence from `11-03.yml` in both languages.
+   - All Souls entries at Prime on Nov 1 (the Nov 2 martyrology) look garbled or repeated. First
+     reproduce the rendered Prime for 2026-11-01 and read it back; do not guess a cause. Places to
+     check: `11-02.yml` (`leadEntries: 1`), the All Souls handling in `hours/prime.ts` (~line 157),
+     `hours/martyrology-announcement.ts`, `martyrology/index.ts`. Then settle with Will what it should
+     say. Also in `11-02.yml`: the Latin Sebaste entry and the "In monastério Agaunénsi" entry run
+     together with no blank line between them.
+   - St. Siricius: take him off the Oct 31 calendar but keep him in the app. In
+     `calendar/sanctoral-calendar.yml`, change `"10-31": [vigil-of-all-saints, st-siricius]` to just the
+     Vigil. Keep his saint file and both propers files, as with the Sept 1 saints. Check tests that
+     depend on him, and note in his file header that he is off-calendar.
+   - Octave day headings, every octave (decided 2026-11-03): in the main area of the app, show "the nth
+     day in the octave of X" (e.g. "the third day in the octave of All Saints") for days 2-7; leave the
+     tab title as "Octave of X (nth Day)". Code is in `calendar/day-label.ts` (`octaveLabel`,
+     `octaveDayPhrase`, `octaveTitleName`), which today share one form for both. Latin headline:
+     "Dies tertia infra Octavam Omnium Sanctorum" (ordinal agreeing with dies, as `ordinalLa` already
+     does; "infra Octavam" is the breviary's own idiom). The closing day (Nov 8) keeps its "In Octava"
+     form.
+
 # Work Log
 
 ### St. Benedict Joseph Labre, St. Felix of Cantalice and St. Stanislaus Kostka added (2026-10-11)
