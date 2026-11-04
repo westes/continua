@@ -1,0 +1,31 @@
+# Read from the reference engine: web/www/horas/Latin/Sancti/08-22cc.txt [Oratio];
+# English from English/Sancti/08-22cc.txt.
+collect:
+  text: |
+    Orémus.
+    v. Auxílium tuum nobis, Dómine, quǽsumus, placátus impende: et, intercedéntibus beátis Mártyribus tuis Timótheo, Hippólyto et Symphoriáno, déxteram super nos tuæ propitiatiónis exténde.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: verified
+
+# No proper antiphon of their own -- standard de-Communi text and versicle for
+# common-of-several-martyrs; collect is their own.
+commemoration:
+  text: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    v. Auxílium tuum nobis, Dómine, quǽsumus, placátus impende: et, intercedéntibus beátis Mártyribus tuis Timótheo, Hippólyto et Symphoriáno, déxteram super nos tuæ propitiatiónis exténde.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  status: draft
+
+# Matins Nocturn 2 reading, sourced directly from web/www/horas/Latin/Sancti/08-22cc.txt
+# (Lectio93, one continuous account).
+nocturn-readings:
+  readings:
+    - nocturn: 2
+      isGospel: false
+      text: 'Timótheus Antiochénus, Romam véniens, Melchíade Summo Pontífice, cum per annum ibi Christi fidem prædicasset, a Tarquínio Urbis præfécto conjícitur in víncula: et post diutúrnas cárceris ærúmnas ad idóla perdúcitur, ut eis sacríficet. Quam impietátem summa libertáte detestátus, acerbíssime cǽditur, et excarnificátum corpus viva calce perfúnditur. In quibus aliísque supplíciis constans Mártyr cápite pléctitur. Corpus via Ostiénsi prope sepúlchrum beáti Pauli Apóstoli sepelítur. Quo die étiam, Alexándro imperatóre, apud Óstia Tiberína Hippólytus epíscopus Portuénsis ob præcláram fídei confessiónem mánibus pedibúsque ligátis, in altam fóveam aquis plenam præcipitátus, martýrio coronátus est, et ibídem a Christiánis sepúltus. Quo item die, Aureliáno imperatóre, propter eámdem fidem Augustodúni Symphoriánus adoléscens várie tortus est. Qui dum ad últimum supplícium ducerétur, matrem ita clamántem áudiens: Nate, nate, meménto ætérnæ vitæ, cælum suspíce, et ibi regnántem intuére: tibi enim vita non erípitur, sed mutátur in mélius: fórtiter Jesu Christi causa carnífici collum prǽbuit.'
+      status: verified

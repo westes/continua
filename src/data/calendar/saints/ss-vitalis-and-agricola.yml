@@ -1,0 +1,14 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/11-04cc.txt
+# ("Simplex;;1.1;;vide C3a"). Own collect and Matins reading; the rest is the Common.
+# The real commemoration under St. Charles on Nov 4 (Tabulae/Kalendaria/1570.txt,
+# C1951.txt: "11-04=...~11-04cc=...=S. Vitalis et Agricolae=1"). Missed by the earlier
+# cc-suffix sweep; ported 2026-11-04 at the user's request and wired on Nov 4.
+id: ss-vitalis-and-agricola
+name: "Ss. Vitalis and Agricola, Martyrs"
+nameLa: "Sancti Vitalis et Agricola, Martyres"
+rank: simplex
+common: common-of-several-martyrs
+propers: "ss-vitalis-and-agricola"
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true

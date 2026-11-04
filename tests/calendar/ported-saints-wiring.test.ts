@@ -23,6 +23,8 @@ const COMMEMORATED: [string, string, string][] = [
   ['2026-01-23', 'st-raymond-of-penafort', 'betrothal-of-the-bvm'],
   ['2026-07-02', 'ss-processus-and-martinian', 'visitation-of-the-bvm'],
   ['2026-11-09', 'st-theodore-martyr', 'dedication-of-the-basilica-of-the-most-holy-savior'],
+  ['2026-11-04', 'ss-vitalis-and-agricola', 'st-charles-borromeo'],
+  ['2026-08-22', 'ss-timothy-hippolytus-and-symphorian', 'post-pentecost-12'],
 ];
 
 describe('ported saints on the calendar', () => {
@@ -53,6 +55,8 @@ describe('ported saints on the calendar', () => {
     ['2026-05-01', 'St. Joseph the Worker'],
     ['2026-05-11', 'Ss. Philip and James'],
     ['2026-02-09', 'St. Cyril of Alexandria'],
+    ['2026-11-04', 'Ss. Vitalis and Agricola'],
+    ['2026-08-22', 'Ss. Timothy, Hippolytus and Symphorian'],
   ])('%s (%s): every hour renders with nothing missing', (date) => {
     for (const hour of HOUR_IDS) {
       const ordo = resolveOrdo(hour, date);

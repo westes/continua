@@ -111,7 +111,10 @@ describe('August sanctoral pull (first pass)', () => {
     // own Aug 12 case just above.
     const assumptionOctaveDay = resolveDay('2025-08-22');
     expect(assumptionOctaveDay.winner.kind).toBe('temporal');
+    // Ss. Timothy, Hippolytus and Symphorian (the reference's 08-22cc Simplex)
+    // ride along as a commemoration, ahead of the octave.
     expect(assumptionOctaveDay.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'ss-timothy-hippolytus-and-symphorian', name: 'Ss. Timothy, Hippolytus and Symphorian, Martyrs', nameLa: 'Sancti Timotheus, Hippolytus et Symphorianus, Martyres', rank: 'simplex' },
       { kind: 'octave', id: 'assumption', name: 'The Assumption of the Blessed Virgin Mary', nameLa: 'Assumptio Beatæ Mariæ Virginis' },
     ]);
   });
