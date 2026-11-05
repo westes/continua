@@ -74,6 +74,7 @@ import {
   resolveTemporalId,
   monthWeekId,
   activeOctavesFor,
+  resolveActiveOctave,
   isAtLeast,
 } from '../calendar';
 import { getDayLabel, emberDayLabel, temporalLabel } from '../calendar/day-label';
@@ -598,6 +599,10 @@ function ferialNamedAntiphonedNocturn(day: LiturgicalDay, override: FerialNamedO
 function ferialPsalmodyThreeNocturns(
   day: LiturgicalDay,
   common?: MatinsPsalmodyScheme,
+  /** Interior octave day: lay the scheme's per-psalm antiphons over the ferial
+   * psalms as one running list (not nocturn by nocturn), when there are
+   * enough of them. */
+  runningList = false,
 ): [ResolvedPart[], ResolvedPart[], ResolvedPart[]] {
   const refs = getPsalmsFor('matins', day.weekday);
   const size = Math.ceil(refs.length / 3);
@@ -611,6 +616,16 @@ function ferialPsalmodyThreeNocturns(
     return refChunks.map((chunk) => ferialAntiphonedPsalms(chunk, day, winner)) as [ResolvedPart[], ResolvedPart[], ResolvedPart[]];
   }
   const nocturns = [common.nocturn1, common.nocturn2, common.nocturn3];
+  const running = runningList
+    ? nocturns.flatMap((n) => (n.groups ?? []).map((g) => withStatus(g.antiphon as BilingualText, g.status)))
+    : [];
+  if (runningList && running.length >= refs.length) {
+    let next = 0;
+    return refChunks.map((chunk, i) => [
+      ...chunk.flatMap((ref) => psalmWithOwnAntiphon(ref, running[next++]!, winner)),
+      { kind: 'versicle', text: versicleText(nocturns[i]!.versicle) } as ResolvedPart,
+    ]) as [ResolvedPart[], ResolvedPart[], ResolvedPart[]];
+  }
   return refChunks.map((chunk, i) => {
     const nocturn = nocturns[i]!;
     const perPsalm = (nocturn.groups ?? []).map((g) => withStatus(g.antiphon as BilingualText, g.status));
@@ -1178,6 +1193,17 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // same class of bug 2026-09-09's Lauds/Vespers fix addressed
   // (getPsalmodyNumbersOverrideId), left un-patched here until 2026-09-10.
   const effectiveRank = officeWinnerEffectiveRank(day, winner);
+  // An interior octave day borrows the feast as its winner, but the feast's
+  // own psalm scheme belongs to the feast day (and the octave's own day, a
+  // real winner), not to the interior days -- those fall to the ferial
+  // psalms, as Lauds and Vespers already do.
+  const borrowedWeakOctaveWinner =
+    winner.kind === 'sanctoral' &&
+    day.winner.kind !== 'sanctoral' &&
+    effectiveRank !== undefined &&
+    !isAtLeast(effectiveRank, 'duplex-majus') &&
+    // The octave's closing day is an end day, not an interior one.
+    !resolveActiveOctave(date)?.isClosingDay;
   const temporalId = resolveTemporalId(date);
   // Every Sunday, unconditionally, a Semiduplex+ sanctoral winner — the
   // user's own chosen threshold (2026-08, lowered from Duplex to
@@ -1273,7 +1299,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // Sunday's); below that, the Sunday's psalm numbers carrying the Common's
   // antiphon text (psalmody follows rank, antiphon content does not).
   const sundaySanctoral = day.weekday === 'sunday' && winner.kind === 'sanctoral';
-  const sundaySanctoralProperOverride = sundaySanctoral ? getMatinsSaintOverride(winner.id) : undefined;
+  const sundaySanctoralProperOverride = sundaySanctoral && !borrowedWeakOctaveWinner ? getMatinsSaintOverride(winner.id) : undefined;
   const sundaySanctoralCommon = sundaySanctoral && !sundaySanctoralProperOverride ? getMatinsCommonOverride(winner.id) : undefined;
   const sundayCommonWholeScheme =
     sundaySanctoralCommon !== undefined && effectiveRank !== undefined && isAtLeast(effectiveRank, 'duplex-majus') ? sundaySanctoralCommon : undefined;
@@ -1325,11 +1351,15 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     //     them (see ferialPsalmodyThreeNocturns).
     // A named temporal feast with its own authored Matins psalmody (the Lenten
     // Passion feasts) takes it the same way a saint does.
-    const properOverride = winner.kind === 'temporal' ? temporalMatinsSource : getMatinsSaintOverride(winner.id);
+    const properOverride =
+      winner.kind === 'temporal' ? temporalMatinsSource : borrowedWeakOctaveWinner ? undefined : getMatinsSaintOverride(winner.id);
     const isAboveDuplex = effectiveRank !== undefined && isAtLeast(effectiveRank, 'duplex-majus');
     const commonOverride = winner.kind === 'sanctoral' && !properOverride ? getMatinsCommonOverride(winner.id) : undefined;
     const scheme = properOverride ?? (isAboveDuplex ? commonOverride : undefined);
-    parts.push(...nocturns(scheme ? schemeBlocks(scheme) : ferialPsalmodyThreeNocturns(day, commonOverride)));
+    // Antiphons stay independent of psalms: a borrowed octave day's ferial
+    // psalms still carry the feast's own antiphons (proper > Common > ferial).
+    const borrowedProper = borrowedWeakOctaveWinner ? getMatinsSaintOverride(winner.id) : undefined;
+    parts.push(...nocturns(scheme ? schemeBlocks(scheme) : ferialPsalmodyThreeNocturns(day, borrowedProper ?? commonOverride, borrowedProper !== undefined)));
   } else {
     parts.push(...ferialAntiphonedNocturn(day));
     parts.push(...(nocturn1Readings ?? []));

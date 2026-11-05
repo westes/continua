@@ -1352,3 +1352,35 @@ describe('Matins Nocturn 3 psalmody on a three-nocturn feast', () => {
     expect(nocturn3.filter((p) => p.kind === 'psalm' || p.kind === 'canticle').length).toBeGreaterThanOrEqual(3);
   });
 });
+
+describe('Matins psalms across the All Saints octave', () => {
+  const psalmsOf = (date: string) =>
+    resolveOrdo('matins', date)
+      .parts.filter((p) => p.kind === 'psalm')
+      .map((p) => (p as { psalmNumber: number }).psalmNumber)
+      .filter((n) => ![3, 94].includes(n));
+
+  it('keeps the feast scheme on the feast day and the octave day', () => {
+    expect(psalmsOf('2026-11-01').slice(0, 3)).toEqual([1, 4, 5]);
+    expect(psalmsOf('2026-11-08').slice(0, 3)).toEqual([1, 4, 5]);
+  });
+
+  it('uses the ferial psalms on an interior day (2026-11-05, Thursday)', () => {
+    expect(psalmsOf('2026-11-05')).not.toEqual(psalmsOf('2026-11-01'));
+  });
+
+  it('keeps the feast\'s own antiphons over the ferial psalms on an interior day', () => {
+    const ordo = resolveOrdo('matins', '2026-11-05');
+    const text = JSON.stringify(ordo.parts);
+    expect(text).toContain('Mirificávit');
+  });
+
+  it('runs the feast\'s antiphons on across the nine ferial psalms (2026-11-05)', () => {
+    const text = JSON.stringify(resolveOrdo('matins', '2026-11-05').parts);
+    const order = ['Novit Dóminus', 'Mirificávit', 'Læténtur', 'Admirábile', 'qui operáti', 'Hæc est generátio', 'Dilígite', 'Lætámini in Dómino, *', 'Timéte Dóminum'];
+    const idx = order.map((needle) => text.indexOf(needle));
+    expect(idx.every((i) => i >= 0)).toBe(true);
+    expect([...idx].sort((a, b) => a - b)).toEqual(idx);
+    expect(text).not.toContain('Laudem dícite');
+  });
+});
