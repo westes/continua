@@ -288,6 +288,10 @@ export interface LiturgicalDay {
   winner: DayWinner;
   /** Everything else commemorated alongside the winner — see the doc comment on Commemoration. */
   commemorations: Commemoration[];
+  /** Set by calendar/vespers.ts when `commemorations` was assembled in its
+   * final order (First Vespers: tomorrow's, then today's, then octaves), so
+   * calendar/commemoration-order.ts must leave it as given. */
+  commemorationsOrdered?: true;
   /** Set when this date's own native sanctoral candidate couldn't be kept
    * here at all (calendar/commemorations.ts's `decideOccurrence` `transfer`
    * signal) and moved to a later/earlier date instead. No landing date is

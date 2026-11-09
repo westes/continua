@@ -56,6 +56,9 @@ export function commemorationSortDate(day: LiturgicalDay, c: Commemoration): str
  * can reuse the same ordering without going through plain `Commemoration[]`.
  */
 export function compareCommemorations(day: LiturgicalDay, a: Commemoration, b: Commemoration): number {
+  if (day.commemorationsOrdered) {
+    return 0; // already assembled in order (First Vespers); sort is stable
+  }
   const dateA = commemorationSortDate(day, a);
   const dateB = commemorationSortDate(day, b);
   if (dateA !== dateB) {
