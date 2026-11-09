@@ -261,7 +261,62 @@ function anticipated(today: LiturgicalDay, tomorrow: LiturgicalDay): LiturgicalD
   if (!commemoration) {
     return tagged;
   }
-  return { ...tagged, commemorations: [...tagged.commemorations, commemoration] };
+  const carried = temporalToTemporal ? [] : carriedOverCommemorations(today, tagged, commemoration);
+  // Assembled in final order: tomorrow's commemorations, today's winner,
+  // today's carried commemorations, then every octave last.
+  const all = [...tagged.commemorations, commemoration, ...carried];
+  const ordered = [...all.filter((c) => c.kind !== 'octave'), ...all.filter((c) => c.kind === 'octave')];
+  return { ...tagged, commemorations: ordered, commemorationsOrdered: true };
+}
+
+/**
+ * The displaced day's own commemorations (e.g. the Sunday under an octave
+ * day that then loses the evening to tomorrow's higher feast) follow the
+ * displaced winner at tomorrow's First Vespers, in the order they had that
+ * day. General rule: a temporal commemoration (a Sunday or privileged feria
+ * with real standing) always carries; a sanctoral one only at Semiduplex or
+ * higher (a Simplex is dropped, as for the displaced winner itself).
+ * Octave-kind commemorations are independent of both kinds and carry no rank
+ * to test, so they always carry -- except the octave whose own day is the
+ * displaced winner, which would otherwise appear twice. Anything already
+ * present (tomorrow's own list, the winner) is skipped.
+ */
+function carriedOverCommemorations(today: LiturgicalDay, tomorrowTagged: LiturgicalDay, displacedWinner: Commemoration): Commemoration[] {
+  const seen = new Set<string>(
+    [...tomorrowTagged.commemorations, displacedWinner, tomorrowTagged.winner].map((c) => `${c.kind}:${c.id}`),
+  );
+  const out: Commemoration[] = [];
+  for (const c of today.commemorations) {
+    if (c.kind === 'octave') {
+      const winnerOctaveId = today.winner.kind === 'sanctoral' ? getSaintRecord(today.winner.id)?.propers : undefined;
+      if (winnerOctaveId === c.id || seen.has(`octave:${c.id}`)) {
+        continue;
+      }
+      seen.add(`octave:${c.id}`);
+      out.push(c);
+      continue;
+    }
+    if (c.kind === 'sanctoral' && !isAtLeast(c.rank, 'semiduplex')) {
+      continue;
+    }
+    let carried: Commemoration;
+    if (c.kind === 'temporal') {
+      if (today.temporalCategory === 'ordinary-feria') {
+        continue;
+      }
+      const label = temporalLabel(today);
+      carried = { kind: 'temporal', id: c.id, name: label.en, nameLa: label.la };
+    } else {
+      carried = { ...c, vespersNote: 'today' };
+    }
+    const key = `${carried.kind}:${carried.id}`;
+    if (seen.has(key)) {
+      continue;
+    }
+    seen.add(key);
+    out.push(carried);
+  }
+  return out;
 }
 
 /**

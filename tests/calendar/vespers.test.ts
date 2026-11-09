@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { resolveEveningDay } from '../../src/calendar/vespers';
+import { sortCommemorations } from '../../src/calendar/commemoration-order';
 
 describe('resolveEveningDay', () => {
   it('anticipates tomorrow when tomorrow is a Sunday and today is a plain feria (Saturday before Advent I)', () => {
@@ -139,5 +140,25 @@ describe('resolveEveningDay', () => {
     expect(day.date).toBe('2026-08-26');
     expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-zephyrinus' });
     expect(day.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-louis')).toBe(false);
+  });
+
+  it('carries the displaced day\'s own Sunday commemoration after the displaced winner (Nov 8 2026)', () => {
+    // Octave Day of All Saints (Duplex majus) wins the Sunday; the Lateran
+    // Dedication (Duplex II. classis) takes the evening. Order: tomorrow's
+    // own commemorations, the octave day, then the Sunday it displaced.
+    const day = resolveEveningDay('2026-11-08');
+    expect(day.date).toBe('2026-11-09');
+    const ids = day.commemorations.map((c) => `${c.kind}:${c.id}`);
+    const octave = ids.indexOf('sanctoral:octave-of-all-saints');
+    const sunday = ids.findIndex((x) => x.startsWith('temporal:'));
+    expect(octave).toBeGreaterThanOrEqual(0);
+    expect(sunday).toBeGreaterThan(octave);
+    // The displayed order (what the collects follow) agrees.
+    const shown = sortCommemorations(day, day.commemorations).map((c) => `${c.kind}:${c.id}`);
+    expect(shown.findIndex((x) => x.startsWith('temporal:'))).toBeGreaterThan(shown.indexOf('sanctoral:octave-of-all-saints'));
+    // Simplex Four Crowned Martyrs stay out; no duplicate octave entry.
+    expect(ids).not.toContain('sanctoral:ss-four-crowned-martyrs');
+    expect(ids.filter((x) => x.includes('octave-of-all-saints')).length).toBe(1);
+    expect(ids).not.toContain('octave:all-saints');
   });
 });
