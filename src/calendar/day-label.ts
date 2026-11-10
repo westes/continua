@@ -1010,5 +1010,45 @@ export function getDayTitleName(day: LiturgicalDay): Bi | undefined {
   if (activeOctave) {
     return octaveTitleName(activeOctave);
   }
-  return undefined;
+  const label = (day.winner.kind === 'temporal' ? emberDayLabel(day.winner.id) : undefined) ?? temporalLabel(day);
+  return compactWeekdayPhrase(label);
+}
+
+const WEEKDAY_ABBREVIATIONS_EN: Record<string, string> = {
+  Monday: 'Mon',
+  Tuesday: 'Tue',
+  Wednesday: 'Wed',
+  Thursday: 'Thu',
+  Friday: 'Fri',
+  Saturday: 'Sat',
+};
+
+const WEEKDAY_ABBREVIATIONS_LA: Record<string, string> = {
+  'Feria Secunda': 'Fer. II',
+  'Feria Tertia': 'Fer. III',
+  'Feria Quarta': 'Fer. IV',
+  'Feria Quinta': 'Fer. V',
+  'Feria Sexta': 'Fer. VI',
+  Sabbato: 'Sabb.',
+};
+
+/**
+ * Tab-title short form of a plain "Weekday in the Nth week after X" label:
+ * the weekday abbreviated and "in the" dropped, so a long season tail
+ * ("Epiphany, resumed") survives `documentTitle`'s length cap instead of
+ * being cut off after "after". Derived from the already-built label by
+ * rewriting its closed weekday vocabulary, so it can never disagree with
+ * the header. Labels that don't start with a weekday phrase (Sundays,
+ * Advent/Lent's weekday-less form, named days) pass through unchanged.
+ */
+function compactWeekdayPhrase(label: Bi): Bi {
+  const en = label.en.replace(/^(\w+) in (?:the )?/, (whole, weekday: string) => {
+    const abbreviation = WEEKDAY_ABBREVIATIONS_EN[weekday];
+    return abbreviation ? `${abbreviation}, ` : whole;
+  });
+  const la = label.la.replace(/^(Feria \w+|Sabbato) in /, (whole, weekday: string) => {
+    const abbreviation = WEEKDAY_ABBREVIATIONS_LA[weekday];
+    return abbreviation ? `${abbreviation}, ` : whole;
+  });
+  return { ...label, en, la };
 }

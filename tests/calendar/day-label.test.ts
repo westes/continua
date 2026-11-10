@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { resolveDay } from '../../src/calendar';
 import { resolveEveningDay } from '../../src/calendar/vespers';
-import { getDayLabel, getVespersStatusLabel, temporalLabel } from '../../src/calendar/day-label';
+import { documentTitle } from '../../src/ui/format';
+import { getDayLabel, getDayTitleName, getVespersStatusLabel, temporalLabel } from '../../src/calendar/day-label';
 import type { LiturgicalDay } from '../../src/calendar/types';
 
 describe('getDayLabel — ordinal temporal label', () => {
@@ -525,5 +526,23 @@ describe('getDayLabel — Passiontide (Passion Sunday through Holy Saturday)', (
   it('Passion Sunday and Palm Sunday show their real name via getDayLabel on a real date', () => {
     expect(getDayLabel(resolveDay('2026-03-22')).en).toBe('Passion Sunday (Semiduplex)');
     expect(getDayLabel(resolveDay('2026-03-29')).en).toBe('Palm Sunday (Semiduplex)');
+  });
+});
+
+describe('getDayTitleName — compact plain-ordinal form', () => {
+  it('keeps the season for a resumed post-Epiphany feria instead of truncating it away', () => {
+    const title = getDayTitleName(resolveDay('2026-11-10'));
+    expect(title?.en).toBe('Tue, 5th week after Epiphany, resumed');
+    expect(documentTitle('lauds', getDayLabel(resolveDay('2026-11-10')), ['en'], title)).toBe(
+      'Continua · Lauds · Tue, 5th week after Epiphany, resumed',
+    );
+  });
+
+  it('abbreviates the weekday in Latin too', () => {
+    expect(getDayTitleName(resolveDay('2026-11-10'))?.la).toBe('Fer. III, hebdomada quinta post Epiphaniam, resumpta');
+  });
+
+  it('leaves a Sunday untouched', () => {
+    expect(getDayTitleName(resolveDay('2024-11-10'))?.en).toBe('The 5th Sunday after Epiphany, resumed');
   });
 });
