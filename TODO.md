@@ -9058,3 +9058,16 @@ St. Francis of Paola.
   (`propers/citations.ts`); scripture lesson headings work for any book; a reading may carry an authored
   `label`.
 - Left: the `isAllSouls` branches in calendar/day-label.ts (header label and tab title) are still bespoke text.
+
+### Ferial Matins: one antiphon per half of a split psalm (2026-11-13)
+
+- The plain-feria Matins nocturn kept the two halves of a split psalm under one antiphon (Ps 88 and 103 on
+  Friday, for one). Each half now has its own, in `data/hours/matins-ferial-antiphons.yml`; nine psalms
+  across Monday to Saturday (36, 67, 68, 77, 88, 103, 104, 105, 106). No code changed.
+- Real, from the reference's Roman secular ferial Matins table: Ps 36:27-40, 67:2-19, 68:2-16, 77:36-72,
+  104:23-45, 105:32-48, 106:25-43 (English from the same file).
+- Composed from the half's own verse: Ps 88:2-19 (v.2) and Ps 103:25-35 (v.31).
+- Ps 67, 68 and 88 had the old antiphon quoting the second half, so it stayed there and the first half
+  got the new one. For the other six it stayed on the first half.
+- `tests/hours/matins.test.ts` checks every ferial weekday has one psalm section per group and no repeated
+  antiphon, and that 2026-11-13 frames both halves of Ps 88 and 103 differently.

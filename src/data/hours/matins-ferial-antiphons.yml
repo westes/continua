@@ -13,8 +13,7 @@
 # Monday's own closing pair under "Eructávit" — now open Tuesday instead).
 #
 # **One antiphon per psalm (2026-09-01)**: the source's own Daym1_-Daym6_
-# tables frame several pairs of *different* psalms (not the same psalm
-# split across a chapter boundary, which stays paired) under one shared
+# tables frame several pairs of *different* psalms under one shared
 # antiphon — normal Monastic practice, but it read strangely once vu's own
 # reslice left some psalms paired and others solitary within the same
 # nocturn. Every one of those cross-psalm pairs is now split so each psalm
@@ -39,10 +38,19 @@
 # at `[Daym1]`-`[Daym6]` in the `English/` tree — the Latin file only
 # carries the full per-weekday text under the `_`-suffixed key, redirecting
 # its own unsuffixed `[Daym1]` etc. to it via `@:` references; the English
-# file has no such indirection); a same-psalm split across a chapter
-# boundary keeps its one shared antiphon (that's still one antiphon per
-# psalm, just spread over two verse ranges); any cross-psalm pair is now
-# split per the "One antiphon per psalm" note above.
+# file has no such indirection); any cross-psalm pair is now split per the
+# "One antiphon per psalm" note above, and so is every same-psalm split
+# across a chapter boundary (2026-11-13, below).
+#
+# **One antiphon per half of a split psalm (2026-11-13)**: Ps 36, 67, 68,
+# 77, 88, 103, 104, 105 and 106 are each cut in two verse ranges. The
+# halves used to share one antiphon; each half now has its own. The half
+# the old antiphon's words quote keeps it (Ps 88's "Benedíctus Dóminus"
+# is v.53, so it stays on the second half). The other half takes the
+# reference's Roman secular ferial antiphon for that range where there is
+# one (Ps 36:27-40, 67:2-19, 68:2-16, 77:36-72, 104:23-45, 105:32-48,
+# 106:25-43) or is composed from its own verse (Ps 88:2-19 from v.2,
+# Ps 103:25-35 from v.31).
 #
 # No mid-nocturn versicle (fixed 2026-09-02): the source `Psalmi
 # matutinum.txt` files (`[Daym1_]`-`[Daym6_]`) embed a V./R. line partway
@@ -81,10 +89,14 @@ monday:
       antiphon:
         la: "Expúgna * impugnántes me."
         en: "Fight against them * that fight against me."
-    - psalms: [{ number: 36, verses: "1-26" }, { number: 36, verses: "27-40" }]
+    - psalms: [{ number: 36, verses: "1-26" }]
       antiphon:
         la: "Revéla * Dómino viam meam."
         en: "Commit my way * to the Lord."
+    - psalms: [{ number: 36, verses: "27-40" }]
+      antiphon:
+        la: "Custódi innocéntiam * et vide æquitátem."
+        en: "Keep innocence * and behold justice."
     - psalms: [{ number: 37 }]
       antiphon:
         la: "Ne in ira tua * árguas me Dómine."
@@ -160,11 +172,19 @@ wednesday:
       antiphon:
         la: "Benedícite, * gentes, Deum nostrum."
         en: "O bless our God * ye people."
-    - psalms: [{ number: 67, verses: "2-19" }, { number: 67, verses: "20-36" }]
+    - psalms: [{ number: 67, verses: "2-19" }]
+      antiphon:
+        la: "Exsúrgat Deus, * et dissipéntur inimíci ejus."
+        en: "Let God arise, * and let his enemies be scattered."
+    - psalms: [{ number: 67, verses: "20-36" }]
       antiphon:
         la: "In ecclésiis, * benedícite Dóminum."
         en: "In the churches * bless ye the Lord."
-    - psalms: [{ number: 68, verses: "2-16" }, { number: 68, verses: "17-37" }]
+    - psalms: [{ number: 68, verses: "2-16" }]
+      antiphon:
+        la: "Salvum me fac, * Deus, quóniam intravérunt aquæ usque ad ánimam meam."
+        en: "Save me, O God, * for the waters are come in even unto my soul."
+    - psalms: [{ number: 68, verses: "17-37" }]
       antiphon:
         la: "Quǽrite Dóminum * et vivet ánima vestra."
         en: "Seek ye the Lord * and your soul shall live."
@@ -197,10 +217,14 @@ thursday:
       antiphon:
         la: "Tu es Deus * qui facis mirabília."
         en: "Thou art the God * That doest wonders."
-    - psalms: [{ number: 77, verses: "1-35" }, { number: 77, verses: "36-72" }]
+    - psalms: [{ number: 77, verses: "1-35" }]
       antiphon:
         la: "Inclináte * aurem vestram in verba oris mei."
         en: "Incline your ears * to the words of My mouth."
+    - psalms: [{ number: 77, verses: "36-72" }]
+      antiphon:
+        la: "Redémit eos * Dóminus de manu tribulántis."
+        en: "The Lord redeemed them * from the hand of him that afflicted them."
     - psalms: [{ number: 78 }]
       antiphon:
         la: "Propítius esto * peccátis nostris, Dómine."
@@ -242,7 +266,11 @@ friday:
       antiphon:
         la: "Inclína Dómine, * aurem tuam, et exáudi me."
         en: "Incline thy ear, O Lord, * and hear me."
-    - psalms: [{ number: 88, verses: "2-19" }, { number: 88, verses: "20-53" }]
+    - psalms: [{ number: 88, verses: "2-19" }]
+      antiphon:
+        la: "Misericórdias Dómini * in ætérnum cantábo."
+        en: "The mercies of the Lord * I will sing for ever."
+    - psalms: [{ number: 88, verses: "20-53" }]
       antiphon:
         la: "Benedíctus * Dóminus in ætérnum."
         en: "Blessed be the Lord * for evermore."
@@ -264,10 +292,14 @@ friday:
       antiphon:
         la: "Miserátor * et miséricors Dóminus replet in bonis desidérium tuum."
         en: "The Lord is compassionate and merciful, * who satisfieth thy desire with good things."
-    - psalms: [{ number: 103, verses: "1-24" }, { number: 103, verses: "25-35" }]
+    - psalms: [{ number: 103, verses: "1-24" }]
       antiphon:
         la: "Bénedic, * ánima mea Dómino."
         en: "Bless the Lord, * O my soul."
+    - psalms: [{ number: 103, verses: "25-35" }]
+      antiphon:
+        la: "Sit glória Dómini * in sǽculum: lætábitur Dóminus in opéribus suis."
+        en: "May the glory of the Lord * endure for ever: the Lord shall rejoice in his works."
 
 saturday:
   # Ps 96 is Daym5_'s own tail (moved here by the redistribution's own
@@ -279,18 +311,30 @@ saturday:
       antiphon:
         la: "Cantáte Dómino, * et benedícite nómini ejus."
         en: "Sing ye to the Lord * and bless his name."
-    - psalms: [{ number: 104, verses: "1-22" }, { number: 104, verses: "23-45" }]
+    - psalms: [{ number: 104, verses: "1-22" }]
       antiphon:
         la: "Lætétur cor * quæréntium Dóminum."
         en: "Let the heart of them rejoice, * that seek the Lord."
-    - psalms: [{ number: 105, verses: "1-31" }, { number: 105, verses: "32-48" }]
+    - psalms: [{ number: 104, verses: "23-45" }]
+      antiphon:
+        la: "Edúxit Deus * pópulum suum in exsultatióne, et eléctos suos in lætítia."
+        en: "The Lord brought forth * his people with joy, and his chosen with gladness."
+    - psalms: [{ number: 105, verses: "1-31" }]
       antiphon:
         la: "Vísita nos, * Dómine, in salutári tuo."
         en: "Visit us * with Thy salvation, O Lord."
-    - psalms: [{ number: 106, verses: "1-24" }, { number: 106, verses: "25-43" }]
+    - psalms: [{ number: 105, verses: "32-48" }]
+      antiphon:
+        la: "Cum tribularéntur * vidit Dóminus: et audívit oratiónem eórum."
+        en: "He saw when they were in tribulation, * and he heard their prayer."
+    - psalms: [{ number: 106, verses: "1-24" }]
       antiphon:
         la: "De necessitátibus meis * éripe me, Dómine."
         en: "From my necessities, deliver me, O Lord."
+    - psalms: [{ number: 106, verses: "25-43" }]
+      antiphon:
+        la: "Vidébunt recti * et lætabúntur, et intéllegent misericórdias Dómini."
+        en: "The just see and rejoice, * and understand the mercy of the Lord."
     - psalms: [{ number: 107 }]
       # New (2026-09-01): the source's shared antiphon for this pair
       # ("Confitébor Dómino nimis in ore meo") is actually Ps 108's own

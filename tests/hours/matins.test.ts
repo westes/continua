@@ -3,6 +3,7 @@ import { resolveOrdo } from '../../src/hours';
 import { getPsalmsFor } from '../../src/psalter/distribution';
 import { resolveDay } from '../../src/calendar';
 import { getMatinsCommonOverride } from '../../src/hours/matins-psalmody-overrides';
+import ferialAntiphonData from '../../src/data/hours/matins-ferial-antiphons.yml';
 
 // Two clean proof dates, one per branch — see hours/matins.ts's own header
 // and TODO.md for why this is a mechanism build with a small content slice,
@@ -105,6 +106,27 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     // real single-nocturn ferial office runs straight to the Capitulum.
     const nocturnVersicles = ordo.parts.slice(5).filter((p) => p.kind === 'versicle');
     expect(nocturnVersicles).toHaveLength(0);
+  });
+
+  it('gives each half of a split ferial psalm its own antiphon (data/hours/matins-ferial-antiphons.yml, 2026-11-13)', () => {
+    type Group = { psalms: { number: number; verses?: string }[]; antiphon: { la: string; en: string } };
+    const weekdays = ferialAntiphonData as unknown as Record<string, { groups: Group[] }>;
+    for (const [weekday, { groups }] of Object.entries(weekdays)) {
+      for (const g of groups) expect(g.psalms, `${weekday} ${g.psalms[0]?.number}`).toHaveLength(1);
+      const las = groups.map((g) => g.antiphon.la);
+      expect(new Set(las).size, `${weekday} repeats an antiphon`).toBe(las.length);
+    }
+    // Friday 2026-11-13: Ps 88 and 103 are each split, and every section is framed by a different antiphon.
+    const friday = resolveOrdo('matins', '2026-11-13');
+    const psalms = friday.parts.filter((p) => p.kind === 'psalm') as { psalmNumber: number; antiphon?: { text: Record<string, string> } }[];
+    const forPsalm = (n: number) => psalms.filter((p) => p.psalmNumber === n).map((p) => p.antiphon?.text.la);
+    for (const n of [88, 103]) {
+      const got = forPsalm(n);
+      expect(got).toHaveLength(2);
+      expect(got[0]).toBeTruthy();
+      expect(got[1]).toBeTruthy();
+      expect(got[0]).not.toBe(got[1]);
+    }
   });
 
   it("resolves the user's own bible-plan readings for the day, not the historical lectionary", () => {
