@@ -201,7 +201,7 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // the label itself, using the same fixed 23rd-after-Trinity ordinal,
     // not a raw elapsed-week count recomputed for 1943.
     expect(getDayLabel(resolveDay('1943-11-21')).en).toBe(
-      'The Presentation of the Blessed Virgin Mary (Duplex Majus) — The 23rd Sunday after Trinity — St. Columban, Abbot',
+      'The Presentation of the Blessed Virgin Mary (Duplex Majus) — The 23rd Sunday after Trinity',
     );
   });
 });
