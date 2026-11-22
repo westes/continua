@@ -584,8 +584,11 @@ describe('resolveOrdo("vespers", ...)', () => {
   it("resolves St. Gregory the Great's own proper Vespers hymn, distinct from the Lauds one", () => {
     // Live-verified against Divinum Officium (Monastic Tridentinum
     // 1617), 2033-03-12 (clean year). See lauds-capitulum-st-gregory-
-    // the-great.yml's header.
-    const ordo = resolveOrdo('vespers', '2033-03-12');
+    // the-great.yml's header. Re-pointed 2026-11-22 to 2029-03-12 (a
+    // Monday): on 2033-03-12, a Saturday before Lent II, Continua now
+    // deliberately gives the evening to the Sunday (privileged Sundays win
+    // at Vespers, unlike the 1617 engine).
+    const ordo = resolveOrdo('vespers', '2029-03-12');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Anglórum jam Apóstolus');
   });

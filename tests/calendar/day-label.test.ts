@@ -446,7 +446,7 @@ describe('getDayLabel — feast name combination', () => {
 });
 
 describe('getDayLabel/getVespersStatusLabel — Vespers evening with a temporal (Sunday) winner', () => {
-  it('2026-08-29 (Decollation of St. John Baptist, plain Duplex, below keepsOwnSecondVespers threshold) anticipates the following ordinary Sunday, which wins outright -- the Sunday must lead the label, with the displaced Decollation trailing, and the status must read First, not Second, Vespers', () => {
+  it('2027-08-07 (St. Cajetan, Semiduplex, below the Duplex threshold for holding off a Sunday) anticipates the following ordinary Sunday, which wins outright -- the Sunday must lead the label, with the displaced Decollation trailing, and the status must read First, not Second, Vespers', () => {
     // Regression test: getDayLabel's temporal-fallback branch used to list
     // commemorations *before* the winner, so this read "Ss. Felix and
     // Adauctus, Martyrs -- The Beheading of St. John the Baptist (of
@@ -458,13 +458,15 @@ describe('getDayLabel/getVespersStatusLabel — Vespers evening with a temporal 
     // "Second Vespers (of today)" here since its old detection
     // (`winner.vespersFrom`) only ever fires for a *sanctoral*
     // tomorrow-winner, never a temporal one like this Sunday.
-    const day = resolveEveningDay('2026-08-29');
-    expect(day.date).toBe('2026-08-30');
-    expect(day.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-14' });
-    expect(getDayLabel(day).en).toBe(
-      "The 13th Sunday after Trinity (Semiduplex) — The Beheading of St. John the Baptist (of today) — St. Rose of Lima, Virgin (transferred away)",
-    );
-    expect(getVespersStatusLabel(day, '2026-08-29').en).toBe('First Vespers (of tomorrow)');
+    // Re-pointed 2026-11-22 from 2026-08-29 (the Decollation, plain Duplex):
+    // a Saturday Duplex now keeps its own Second Vespers over an ordinary
+    // Sunday (Monastic 1617 / Tridentine 1906), so the displaced-saint case
+    // needs a Semiduplex.
+    const day = resolveEveningDay('2027-08-07');
+    expect(day.date).toBe('2027-08-08');
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-12' });
+    expect(getDayLabel(day).en).toBe('The 11th Sunday after Trinity (Semiduplex) — St. Cajetan, Confessor (of today)');
+    expect(getVespersStatusLabel(day, '2027-08-07').en).toBe('First Vespers (of tomorrow)');
   });
 
   it("a plain kept evening (no anticipation) still reads Second Vespers", () => {

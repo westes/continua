@@ -351,12 +351,11 @@ function carriedOverCommemorations(today: LiturgicalDay, tomorrowTagged: Liturgi
  * Sunday's daytime office (see commemorations.ts's header comment, e.g. St.
  * Anne beating an ordinary Sunday on 2026-07-26), in which case it's that
  * Duplex's own rank being compared, not some notion of "Sunday's rank".
- * When tomorrow's winner is genuinely the Sunday itself (`kind !==
- * 'sanctoral'`), today's sufficiently high sanctoral rank
- * (`duplex-2-classis`+) still claims the evening outright per the rubric's
- * "Duplex always keeps both Vespers" rule — handled by the
- * `isAtLeast`-style fallback below, same floor as before, just no longer
- * applied when tomorrow also has a real (comparable) sanctoral winner.
+ * When tomorrow's winner is genuinely a Sunday (a `temporal` winner), today's
+ * sanctoral rank of `duplex`+ claims the evening (`saintHoldsOffSunday`, the
+ * Monastic 1617 / Tridentine 1906 rule, matching the daytime threshold) and
+ * the Sunday is commemorated. For any other non-sanctoral tomorrow the older
+ * `duplex-2-classis` fallback below still applies.
  */
 export function resolveEveningDay(isoDate: string): LiturgicalDay {
   const today = resolveDay(isoDate);
@@ -387,9 +386,38 @@ export function resolveEveningDay(isoDate: string): LiturgicalDay {
   const todayFeastRank = todayFeast?.firstVespers ? todayFeast.rank : undefined;
   const tomorrowFeast = tomorrow.winner.kind === 'temporal' ? getTemporalFeastRecord(tomorrow.winner.id) : undefined;
   const tomorrowFeastRank = tomorrowFeast?.firstVespers ? tomorrowFeast.rank : undefined;
+  // A Saturday (or any) saint of Duplex or higher keeps Second Vespers over
+  // tomorrow's Sunday, which is commemorated -- Monastic 1617 / Tridentine
+  // 1906 concurrence (horascommon.pl `concurrence`: a Sunday's First Vespers
+  // counts as 2.9, below Duplex's 3), the same `duplex` threshold that lets a
+  // Duplex win an ordinary Sunday's daytime office. (Divino Afflatu would
+  // raise the Sunday to 4.9, i.e. `duplex-2-classis`; deliberately not used
+  // here.) A named movable feast on the Sunday (Trinity, Pentecost...) still
+  // competes by its own rank further down.
+  const saintHoldsOffSunday =
+    today.winner.kind === 'sanctoral' &&
+    tomorrow.weekday === 'sunday' &&
+    tomorrow.winner.kind === 'temporal' &&
+    !tomorrowFeastRank &&
+    isAtLeast(today.winner.rank, 'duplex');
+  // A privileged Sunday (Advent, Septuagesima, Lent, Passiontide...) takes
+  // nothing by day -- no saint of any rank beats it -- so no saint, however
+  // high, holds off its First Vespers either: the Sunday takes the evening and
+  // the saint is commemorated (anticipated()). Decided with the user
+  // 2026-11-22; the one exception is a major fixed feast of the Lord or the
+  // Office of the Dead, which stay absolute (keepsOwnSecondVespers).
+  const privilegedSundayTakesEvening =
+    today.winner.kind === 'sanctoral' &&
+    tomorrow.weekday === 'sunday' &&
+    tomorrow.winner.kind === 'temporal' &&
+    tomorrow.temporalCategory === 'privileged-sunday' &&
+    !isMajorFixedFeastOfTheLord(today.date) &&
+    getSaintRecord(today.winner.id)?.office !== 'dead';
   let todayWins: boolean;
   if (octaveDecision !== undefined) {
     todayWins = octaveDecision;
+  } else if (privilegedSundayTakesEvening) {
+    todayWins = false;
   } else if (keepsOwnSecondVespers(today, tomorrow)) {
     todayWins = true;
   } else if (today.winner.kind === 'sanctoral' && tomorrow.winner.kind === 'sanctoral') {
@@ -400,6 +428,8 @@ export function resolveEveningDay(isoDate: string): LiturgicalDay {
     todayWins = compareFeastClass(todayFeastRank, tomorrow.winner.rank) > 0;
   } else if (governingOctave(today) && tomorrow.winner.kind === 'sanctoral') {
     todayWins = compareFeastClass(governingOctave(today)!.wins, tomorrow.winner.rank) > 0;
+  } else if (saintHoldsOffSunday) {
+    todayWins = true;
   } else if (today.winner.kind === 'sanctoral' && isAtLeast(today.winner.rank, 'duplex-2-classis')) {
     todayWins = true;
   } else if (today.winner.kind === 'sanctoral' && tomorrowFeastRank) {
@@ -419,7 +449,8 @@ export function resolveEveningDay(isoDate: string): LiturgicalDay {
     if (commemoration) {
       return { ...today, commemorations: [...today.commemorations, commemoration] };
     }
-    if (octaveDecision && tomorrow.weekday === 'sunday' && tomorrow.winner.kind === 'temporal' && !tomorrowOctave) {
+    const sundayHeldOffBySaint = today.winner.kind === 'sanctoral' && !tomorrowFeastRank;
+    if ((octaveDecision || sundayHeldOffBySaint) && tomorrow.weekday === 'sunday' && tomorrow.winner.kind === 'temporal' && !tomorrowOctave) {
       const label = temporalLabel(tomorrow);
       return {
         ...today,

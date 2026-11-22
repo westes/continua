@@ -130,6 +130,35 @@ describe('resolveEveningDay', () => {
     expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-callistus', vespersNote: 'tomorrow' }));
   });
 
+  it('a Saturday Duplex-majus saint keeps Second Vespers over an ordinary Sunday, which is commemorated', () => {
+    // 2026-11-21: Presentation of the BVM (duplex-majus) before the 24th
+    // Sunday after Pentecost. Monastic 1617 / Tridentine 1906 concurrence:
+    // Duplex+ beats a Sunday's First Vespers, same `duplex` threshold as the
+    // Sunday's own daytime office.
+    const day = resolveEveningDay('2026-11-21');
+    expect(day.date).toBe('2026-11-21');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'presentation-of-the-bvm' });
+    expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'temporal', id: 'post-pentecost-24' }));
+  });
+
+  it('a privileged Sunday takes Saturday evening from a Duplex saint, who is commemorated (Advent, Lent)', () => {
+    // 2025-12-06: St. Nicholas (Duplex) before Advent II; 2022-03-12: St.
+    // Gregory the Great (Duplex) on Lent's Ember Saturday before Lent III.
+    const advent = resolveEveningDay('2025-12-06');
+    expect(advent.date).toBe('2025-12-07');
+    expect(advent.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-nicholas' }));
+    const lent = resolveEveningDay('2022-03-12');
+    expect(lent.date).toBe('2022-03-13');
+    expect(lent.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-gregory-the-great' }));
+  });
+
+  it('a Saturday Semiduplex saint still yields to the Sunday\'s First Vespers', () => {
+    // 2027-08-07: St. Cajetan (Semiduplex) before the Sunday.
+    const day = resolveEveningDay('2027-08-07');
+    expect(day.date).toBe('2027-08-08');
+    expect(day.winner.kind).toBe('temporal');
+  });
+
   it('an exact rank tie goes to tomorrow, per the rubric\'s tie-break', () => {
     // Aug 25, 2026: St. Louis (Simplex) vs. Aug 26's St. Zephyrinus (also
     // Simplex) -- live-verified (see hasFirstVespers's own doc comment):

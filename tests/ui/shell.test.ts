@@ -76,18 +76,18 @@ describe('shell', () => {
     // Regression test: getVespersStatusLabel used to detect anticipation
     // only via a tag that's only ever set for a *sanctoral* tomorrow-
     // winner (see the equivalent calendar-level test in
-    // tests/calendar/day-label.test.ts) -- 2026-08-29 (the Decollation of
-    // St. John Baptist, Duplex) anticipates 2026-08-30's ordinary Sunday,
-    // which wins outright (over Ss. Felix and Adauctus, Simplex, until the
-    // 2026-10 thinning pass removed them), so tomorrow's winner is
-    // `temporal`, not `sanctoral`.
-    setDate('2026-08-29');
+    // tests/calendar/day-label.test.ts) -- 2027-08-07 (St. Cajetan,
+    // Semiduplex) anticipates 2027-08-08's ordinary Sunday, which wins
+    // outright, so tomorrow's winner is `temporal`, not `sanctoral`.
+    // (Re-pointed 2026-11-22 from 2026-08-29's Duplex Decollation, which now
+    // keeps its own evening.)
+    setDate('2027-08-07');
     setSelectedHour('vespers');
-    window.history.replaceState(null, '', '/2026-08-29/vespers');
+    window.history.replaceState(null, '', '/2027-08-07/vespers');
     const root = document.getElementById('app')!;
     mountShell(root);
 
-    expect(root.querySelector('.day-nav-label')?.textContent).toContain('13th Sunday after Trinity');
+    expect(root.querySelector('.day-nav-label')?.textContent).toContain('11th Sunday after Trinity');
     expect(root.querySelector('.day-nav-vespers-status')?.textContent).toContain('First Vespers');
   });
 
