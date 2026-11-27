@@ -70,7 +70,7 @@ matins-invitatory:
   text: 'Domum Dei decet sanctitúdo: * Sponsum ejus Christum adorémus in ea.'
   status: verified
 
-# Chapter (Rev 21:2), the same at Lauds and Vespers. Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-11-09, the Dedication of the Basilica of the Most Holy Savior; the Nov 18 Dedication of the Basilicas of Ss. Peter and Paul, also ex C8, takes the same Common). Before this file the Common of a Dedication had no Lauds/Vespers bundle and both feasts fell through to the ferial chapter, responsory and hymn.
+# Chapter (Apoc 21:2), the same at Lauds and Vespers. Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-11-09, the Dedication of the Basilica of the Most Holy Savior; the Nov 18 Dedication of the Basilicas of Ss. Peter and Paul, also ex C8, takes the same Common). Before this file the Common of a Dedication had no Lauds/Vespers bundle and both feasts fell through to the ferial chapter, responsory and hymn.
 lauds-capitulum:
   text: |
     Vidi civitátem sanctam, Jerúsalem novam, descendéntem de cælo a Deo, parátam sicut sponsam ornátam viro suo.
@@ -157,8 +157,8 @@ prime-antiphon:
 # Common category, uses that category's own text rather than falling all
 # the way to the generic per-annum default. Sourced directly from
 # web/www/horas/Latin/Commune/C8.txt's own [Lectio Prima] tag and its
-# English counterpart. English citation "Rev 21:4-4" in the source is a
-# single-character typo (duplicated "4"); corrected to "Rev 21:4-5" to
+# English counterpart. English citation "Apoc 21:4-4" in the source is a
+# single-character typo (duplicated "4"); corrected to "Apoc 21:4-5" to
 # match the Latin's own "Apo 21:4-5".
 prime-lectio:
   text: 'Et abstérget Deus omnem lácrimam ab óculis eórum: et mors ultra non erit, neque luctus, neque clamor, neque dolor erit ultra, quia prima abiérunt. Et dixit qui sedébat in throno: Ecce nova fácio ómnia.'

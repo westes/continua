@@ -34,7 +34,7 @@ describe('proper bundles no longer fall through to the ferial chapter/hymn/versi
     expect(partText('vespers', '2026-09-28', 'versicle')).toContain('Stetit Angelus juxta aram templi.');
   });
 
-  it('the Dedication feasts take the Common of a Dedication (Rev 21:2, Urbs beáta, Locus iste)', () => {
+  it('the Dedication feasts take the Common of a Dedication (Apoc 21:2, Urbs beáta, Locus iste)', () => {
     for (const date of ['2026-11-09', '2026-11-17']) {
       expect(partText('vespers', date, 'chapter')).toContain('Vidi civitátem sanctam');
       expect(partText('vespers', date, 'hymn')).toContain('Urbs beáta Jerúsalem');

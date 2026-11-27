@@ -276,7 +276,7 @@ describe('resolveOrdo("lauds", ...)', () => {
     // [Capitulum Laudes] (Exod 23:20-21 and Tob 12:12); only the
     // responsory breve, Versum 3 and hymns are shared from the Apparition
     // (Sancti/05-08). These were once copies of the Apparition's chapter
-    // (Rev 1:1-2), which the reference does not use for either feast.
+    // (Apoc 1:1-2), which the reference does not use for either feast.
     // St. Gabriel's own chapter is likewise proper (Dan 9:21-22).
     const expected = { '2026-10-02': 'Exod 23:20-21', '2026-10-24': 'Tob 12:12' } as const;
     for (const [date, citation] of Object.entries(expected)) {
