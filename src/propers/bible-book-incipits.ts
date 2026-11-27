@@ -26,7 +26,7 @@ import { canonicalBook } from '../scripture';
 //
 // Book names: the English column uses the modern common-English book name
 // (Joshua, Tobit, Isaiah, 1-2 Samuel/1-2 Kings, Ezra/Nehemiah, Maccabees,
-// Sirach, Song of Songs, Revelation, etc.) even where that means a
+// Sirach, Song of Songs, etc.; the Apocalypse of Saint John is the deliberate exception, never "Revelation") even where that means a
 // different name or split than the Vulgate original — an English reader
 // should recognize the book being named. This is deliberately independent
 // of the Latin column, which keeps the Vulgate/Douay-Rheims Latinate forms
@@ -116,7 +116,7 @@ export const BOOK_INCIPITS: Record<string, { la: string; en: string }> = {
   '3joan': { la: 'Léctio Epístolæ tértiæ beáti Joánnis Apóstoli', en: 'A reading from the third Epistle of Saint John the Apostle' },
   jud: { la: 'Léctio Epístolæ beáti Judæ Apóstoli', en: 'A reading from the Epistle of Saint Jude the Apostle' },
   // Apocalypse
-  apoc: { la: 'Léctio libri Apocalýpsis beáti Joánnis Apóstoli', en: 'A reading from the book of the Revelation of Saint John the Apostle' },
+  apoc: { la: 'Léctio libri Apocalýpsis beáti Joánnis Apóstoli', en: 'A reading from the Apocalypse of Saint John the Apostle' },
 };
 
 /** Book abbreviation -> {la, en} incipit, or undefined for an unrecognized
